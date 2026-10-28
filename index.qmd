@@ -2,15 +2,31 @@
 title: "NFIFM Toolbox"
 subtitle: "Shared method library and code for stock assessment, from data to management advice"
 toc: false
+lightbox: true
 ---
 
 ::: {.callout-important appearance="simple"}
 **Development version.** *NFIFM Toolbox* is a working title for the shared method library of the FAO Global Stock Assessment Capacity Programme. Content is draft and not an official FAO product.
 :::
 
-The toolbox is the **shared method library and code** of the programme's cross-regional learning hub. It helps national and regional analysts pick an assessment method that fits their data, prepare the data properly, run and diagnose the assessment, and turn results into management advice. It is used across the regional implementation platforms and reports into SOFIA, FIRMS and SDG 14.4.1.
+## Part of the Global Stock Assessment Capacity Programme
 
-Every method is documented the same way. Each page covers data requirements, assumptions, diagnostics, worked examples and code, and has an explicit **misuse prevention** section: when *not* to use the method, common misuses, and checks to pass before results are used for advice.
+![The FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the *shared method library and code* of the cross-regional learning hub (bottom). Click to enlarge.](assets/img/global-capacity-programme.jpg){fig-alt="Diagram of the FAO Global Stock Assessment Capacity Programme: FAO normative work and global reporting (SOFIA, State of stocks, FIRMS, global fishery management) on the left; six regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, developed countries as partners) across the top; six thematic workstreams across all regions in the middle; the cross-regional learning hub with a shared method library and code at the bottom; and outcomes for fleet capacity, effort management and harvest strategies on the right." .lightbox}
+
+The programme links FAO's normative work and global reporting with **regional implementation platforms** and six **thematic workstreams**, so that stock assessments routinely inform fleet capacity limits, effort management and harvest strategies. Its **cross-regional learning hub** connects regions and themes. The toolbox is the hub's **shared method library and code**: the common place where methods, data tools, guidance and training material are documented once and used by every region.
+
+### Where the toolbox fits
+
+| Programme element | What the toolbox provides |
+|---|---|
+| **Cross-regional learning hub:** shared method library and code | The whole toolbox: [data preparation](data-tools/index.qmd), [method selector](select/index.qmd), [method catalogue](methods/index.qmd), [fishery indicators](methods/empirical/index.qmd), [advice and harvest strategies](advice/index.qmd) |
+| Joint working groups; analyst and trainer exchange | [Training and apps](training/index.qmd), with the Stock Monitoring Tool as the main training environment; shared [case studies](regions/index.qmd) |
+| **Regional implementation platforms** | [Regional hubs](regions/index.qmd) that add their own case studies and priorities (first: [CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)) |
+| **Thematic workstreams 1–6** | Entry points by workstream (below) |
+| **FAO normative work and global reporting** (SOFIA, FIRMS, SDG 14.4.1) | Common [principles](framework/principles.qmd), [model acceptance criteria](guidance/diagnostics.qmd#model-acceptance-checklist) and [misuse prevention](guidance/misuse.qmd), so that status reported from different regions and data tiers is comparable |
+| Developed-country partners: method partners and peer review | Contributions through GitHub review and a proposed expert review panel |
+
+Every method is documented the same way. Each page follows the pipeline **data → method → outputs**, with diagnostics, sensitivity demos, worked examples and code, and an explicit **use and misuse** section: when *not* to use the method, pre-run checks, and the checks to pass before results are used for advice.
 
 ## Philosophy
 
@@ -24,7 +40,7 @@ The toolbox follows a **[hierarchical assessment framework](framework/principles
 
 Start by [preparing and inventorying the data](data-tools/data-preparation.qmd), then use the **[method selector](select/index.qmd)**: describe your data (catch, indices, length or age composition, life history, gears, fishery) and it lists the candidate methods, the data you would still need for others, and the misuse warnings for your situation.
 
-## Thematic workstreams
+## The toolbox by workstream
 
 ::: {.ws-grid}
 ::: {.ws-card style="--ws:#1f5fa8"}
@@ -67,7 +83,7 @@ Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, R
 
 ## Regional platforms
 
-The toolbox is shared; regional hubs add their own case studies, data and priorities. See [Regional hubs](regions/index.qmd). The first hub is the **[CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)** (Africa, WASOP-CECAF).
+The toolbox is shared across the regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, with developed countries as partners); regional hubs add their own case studies, data and priorities. See [Regional hubs](regions/index.qmd). The first hub is the **[CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)** (Africa, WASOP-CECAF).
 
 ## Showcase entries
 
