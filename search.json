@@ -1892,7 +1892,18 @@
     "href": "index.html",
     "title": "NFIFM Toolbox",
     "section": "",
-    "text": "Development version. NFIFM Toolbox is a working title for the shared method library of the FAO Global Stock Assessment Capacity Programme. Content is draft and not an official FAO product.\nThe toolbox is the shared method library and code of the programme’s cross-regional learning hub. It helps national and regional analysts pick an assessment method that fits their data, prepare the data properly, run and diagnose the assessment, and turn results into management advice. It is used across the regional implementation platforms and reports into SOFIA, FIRMS and SDG 14.4.1.\nEvery method is documented the same way. Each page covers data requirements, assumptions, diagnostics, worked examples and code, and has an explicit misuse prevention section: when not to use the method, common misuses, and checks to pass before results are used for advice.",
+    "text": "Development version. NFIFM Toolbox is a working title for the shared method library of the FAO Global Stock Assessment Capacity Programme. Content is draft and not an official FAO product.",
+    "crumbs": [
+      "Method selector",
+      "NFIFM Toolbox"
+    ]
+  },
+  {
+    "objectID": "index.html#part-of-the-global-stock-assessment-capacity-programme",
+    "href": "index.html#part-of-the-global-stock-assessment-capacity-programme",
+    "title": "NFIFM Toolbox",
+    "section": "Part of the Global Stock Assessment Capacity Programme",
+    "text": "Part of the Global Stock Assessment Capacity Programme\n\n\n\nThe FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the shared method library and code of the cross-regional learning hub (bottom). Click to enlarge.\n\n\nThe programme links FAO’s normative work and global reporting with regional implementation platforms and six thematic workstreams, so that stock assessments routinely inform fleet capacity limits, effort management and harvest strategies. Its cross-regional learning hub connects regions and themes. The toolbox is the hub’s shared method library and code: the common place where methods, data tools, guidance and training material are documented once and used by every region.\n\nWhere the toolbox fits\n\n\n\nProgramme element\nWhat the toolbox provides\n\n\n\n\nCross-regional learning hub: shared method library and code\nThe whole toolbox: data preparation, method selector, method catalogue, fishery indicators, advice and harvest strategies\n\n\nJoint working groups; analyst and trainer exchange\nTraining and apps, with the Stock Monitoring Tool as the main training environment; shared case studies\n\n\nRegional implementation platforms\nRegional hubs that add their own case studies and priorities (first: CECAF assessment catalogue)\n\n\nThematic workstreams 1–6\nEntry points by workstream (below)\n\n\nFAO normative work and global reporting (SOFIA, FIRMS, SDG 14.4.1)\nCommon principles, model acceptance criteria and misuse prevention, so that status reported from different regions and data tiers is comparable\n\n\nDeveloped-country partners: method partners and peer review\nContributions through GitHub review and a proposed expert review panel\n\n\n\nEvery method is documented the same way. Each page follows the pipeline data → method → outputs, with diagnostics, sensitivity demos, worked examples and code, and an explicit use and misuse section: when not to use the method, pre-run checks, and the checks to pass before results are used for advice.",
     "crumbs": [
       "Method selector",
       "NFIFM Toolbox"
@@ -1921,11 +1932,11 @@
     ]
   },
   {
-    "objectID": "index.html#thematic-workstreams",
-    "href": "index.html#thematic-workstreams",
+    "objectID": "index.html#the-toolbox-by-workstream",
+    "href": "index.html#the-toolbox-by-workstream",
     "title": "NFIFM Toolbox",
-    "section": "Thematic workstreams",
-    "text": "Thematic workstreams\n\n\nWorkstream 1\n\nMultispecies and multigear assessment\nMultispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity (mmsyFM).\n\n\n\nWorkstream 2\n\nData-poor and small-scale fisheries\nLength-based and catch-only methods, SSF catch and effort monitoring, participatory data collection.\n\n\n\nWorkstream 3\n\nAssessment to advice and harvest strategies\nStock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE.\n\n\n\nWorkstream 4\n\nCapacity building\nNational and regional mentoring, working groups, e-learning, training of trainers, with the Stock Monitoring Tool as the main training environment.\n\n\n\nWorkstream 5\n\nKnowledge sharing and consensus\nShared methods and code, peer review, technical consultations, global reporting (SOFIA, SDG 14.4.1).\n\n\n\nWorkstream 6\n\nNational assessments ↔︎ RFMOs\nStronger national EEZ assessments, small-scale catches of RFMO-managed stocks, RFMO data obligations.",
+    "section": "The toolbox by workstream",
+    "text": "The toolbox by workstream\n\n\nWorkstream 1\n\nMultispecies and multigear assessment\nMultispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity (mmsyFM).\n\n\n\nWorkstream 2\n\nData-poor and small-scale fisheries\nLength-based and catch-only methods, SSF catch and effort monitoring, participatory data collection.\n\n\n\nWorkstream 3\n\nAssessment to advice and harvest strategies\nStock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE.\n\n\n\nWorkstream 4\n\nCapacity building\nNational and regional mentoring, working groups, e-learning, training of trainers, with the Stock Monitoring Tool as the main training environment.\n\n\n\nWorkstream 5\n\nKnowledge sharing and consensus\nShared methods and code, peer review, technical consultations, global reporting (SOFIA, SDG 14.4.1).\n\n\n\nWorkstream 6\n\nNational assessments ↔︎ RFMOs\nStronger national EEZ assessments, small-scale catches of RFMO-managed stocks, RFMO data obligations.",
     "crumbs": [
       "Method selector",
       "NFIFM Toolbox"
@@ -1936,7 +1947,7 @@
     "href": "index.html#regional-platforms",
     "title": "NFIFM Toolbox",
     "section": "Regional platforms",
-    "text": "Regional platforms\nThe toolbox is shared; regional hubs add their own case studies, data and priorities. See Regional hubs. The first hub is the CECAF assessment catalogue (Africa, WASOP-CECAF).",
+    "text": "Regional platforms\nThe toolbox is shared across the regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, with developed countries as partners); regional hubs add their own case studies, data and priorities. See Regional hubs. The first hub is the CECAF assessment catalogue (Africa, WASOP-CECAF).",
     "crumbs": [
       "Method selector",
       "NFIFM Toolbox"
