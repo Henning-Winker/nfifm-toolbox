@@ -93,3 +93,12 @@ Mildenberger, T.K. et al. 2025. Estimating time-varying productivity and referen
 *State-space and Bayesian biomass dynamic models*
 
 - Meyer, R. and Millar, R.B. (1999). BUGS in Bayesian stock assessments. *Canadian Journal of Fisheries and Aquatic Sciences*, 56: 1078–1087.
+
+### Fishery performance and participatory MSE (FPAT)
+
+De Alessi, M., Anderson, C., Carruthers, T., Hordyk, A., Sock, F. and Gutierrez, N.L. 2026. *The Fisheries Performance Assessment Toolkit (FPAT): a practical manual.* FAO Fisheries and Aquaculture Technical Paper 737. Rome, FAO (in press).
+
+- Manual for the FPAT cycle: benchmarking with Fishery Performance Indicators and a governance module, then MSE of management options in the FPAT App (openMSE).
+- Data guidance, scoresheets, interview guide and workshop formats; lessons from the Coastal Fisheries Initiative.
+
+Anderson, J.L., Anderson, C.M., Chu, J., Meredith, J., Asche, F., Sylvia, G., Smith, M.D. *et al.* 2015. The fishery performance indicators: a management tool for triple bottom line outcomes. *PLoS ONE*, 10(5): e0122809. <https://doi.org/10.1371/journal.pone.0122809>

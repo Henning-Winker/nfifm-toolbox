@@ -1,0 +1,78 @@
+---
+title: "Fishery Performance Indicators (FPI) and governance"
+subtitle: "Triple-bottom-line and governance scoring: step 1 of the Fisheries Performance Assessment Toolkit (FPAT)"
+categories: [empirical, socio-economic, governance, FPAT]
+---
+
+[Basic]{.status-badge .status-basic}
+
+::: {.path}
+[1 · Data](#data){.step} [→]{.arrow} [2 · Method](#method){.step} [→]{.arrow} [3 · Outputs](#outputs-diagnostics-and-sensitivities){.step} [·]{.arrow} [Use and misuse](#use-and-misuse){.step} [·]{.arrow} [Case studies](#case-studies-and-references){.step}
+:::
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+method_attributes("fpi")
+```
+
+## Overview
+
+Stock indicators say how the resource is doing; they do not say whether the fishery generates livelihoods, food and wealth, or whether management can act. The **Fishery Performance Indicators** (Anderson *et al.*, 2015) score the ecological, economic and community performance of a fishery, and the **FPAT governance module** adds how management and science are organised. Together they form the benchmarking step of [FPAT](../../advice/fpat.qmd) (FAO Technical Paper 737): they show where the fishery underperforms and which enabling conditions to change, and they shortlist the management options that the [FPAT App](../../advice/fpat.qmd) then compares in simulation.
+
+| Field | Entry |
+|---|---|
+| **Family / class** | Empirical indicators → Triple-bottom-line and governance indicators |
+| **Method name** | Fishery Performance Indicators (FPI) with the FPAT governance module |
+| **Short description** | 122 FPI metrics, split into outputs (ecology, economics, community; or stock, harvest sector, post-harvest sector) and inputs (enabling conditions), plus 27 governance metrics based on the SSF Guidelines (FAO, 2015). Each metric is scored 1–5 with a quality grade (A, B, C). |
+| **Main outputs** | Aggregate scores by triple bottom line and by sector; input dimension scores; comparison with reference sets of assessed fisheries; a shortlist of outcomes to improve and actions to get there |
+| **Typical use case** | Participatory benchmarking of a coastal or small-scale fishery before choosing interventions, and re-scoring later to monitor progress |
+
+## 1 · Data {#data}
+
+| Field | Entry |
+|---|---|
+| **Minimum data** | Fishery definition (species, grounds, harvesters, buyers and processors, communities, rules); landings and price series; key informant interviews. No primary data collection is required. |
+| **Preferred data** | Published statistics and reports on catch, effort, prices, costs and revenue, employment, assets; an existing stock assessment for the stock metrics. |
+| **Data quality considerations** | Each score carries a quality grade: A (data-based, e.g. a stock assessment), B, C (best guess from anecdotal reports). Report the grades with the scores. |
+| **Pre-processing steps** | Define the fishery first (TP 737, Section 3.1): by area, fleet, gear or species, so that the economic and community metrics refer to one group of harvesters. |
+| **Missing data handling** | Interviews and expert judgement fill gaps (semi-structured interview guide, TP 737 Annex 3); unscored metrics can be completed collectively in the workshop. |
+
+**Data template:** FPAT Excel workbook: "Output-table", "Input-table" and "Governance Supplement" sheets ([fpilab.org](https://fpilab.org/fishery-performance-indicators/); scoring guidance in TP 737, Annexes 1, 2 and 5).
+
+## 2 · Method {#method}
+
+| Field | Entry |
+|---|---|
+| **Software / tools** | FPAT Excel workbook (summary scores and charts computed automatically); FPI panels in the [FPAT App](../../advice/fpat.qmd) |
+| **Implementation notes** | A focal point pre-scores the metrics from desk research and interviews; scores are reviewed by sector in a three-day assessment workshop with harvesters, post-harvest representatives, managers and scientists. |
+| **Core assumptions** | Scores reflect the best available information across stakeholders; the fishery definition captures one management unit and one group of harvesters. |
+
+## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}
+
+| Field | Entry |
+|---|---|
+| **Main outputs** | Spider diagrams of aggregate scores; worst-performing output dimensions; input dimensions linked to them (a theory of change). |
+| **Main sensitivities** | Who scored (sector balance in the workshop); low-quality (C) scores on the metrics that drive the conclusions. |
+| **Warning signs** | Large disagreement between sectors on stock metrics (as in the Côte d'Ivoire and Cabo Verde workshops); stock scores inconsistent with the [exploitation history](exploitation-history.qmd) or an assessment. |
+
+## Use and misuse {#use-and-misuse}
+
+```{r}
+#| echo: false
+#| results: asis
+method_warnings("fpi")
+```
+
+| Field | Entry |
+|---|---|
+| **Do not use when** | A stock status or a catch level is needed: FPI stock metrics are indicative scores, not an assessment. |
+| **Common misuses** | Treating aggregate scores as precise; comparing fisheries defined at different scales; scoring by the analyst alone without stakeholder review. |
+| **Advice suitability** | Context for the weight of evidence, choice of interventions, data priorities and monitoring of broad progress. |
+
+## Case studies and references {#case-studies-and-references}
+
+| Field | Entry |
+|---|---|
+| **Applications / case studies** | Coastal Fisheries Initiative: ten fisheries in Cabo Verde, Côte d'Ivoire, Ecuador, Indonesia and Senegal (TP 737, Chapter 6); global tuna fisheries (McCluney *et al.*, 2019). |
+| **References** | Anderson, J.L. *et al.* (2015). The fishery performance indicators: a management tool for triple bottom line outcomes. *PLoS ONE* 10(5): e0122809. <https://doi.org/10.1371/journal.pone.0122809> <br> McCluney, J.K., Anderson, C.M. & Anderson, J.L. (2019). The fishery performance indicators for global tuna fisheries. *Nature Communications* 10: 1641. <https://doi.org/10.1038/s41467-019-09466-6> <br> De Alessi, M. *et al.* (2026). *The Fisheries Performance Assessment Toolkit (FPAT): a practical manual.* FAO Fisheries and Aquaculture Technical Paper 737 (in press). |

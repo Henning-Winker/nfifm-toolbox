@@ -11,6 +11,7 @@ The toolbox is closely tied to the programme's capacity-building work. The **[St
 | Surplus production models | SMT: SPiCT, JABBA, CMSY | Live; CMSY temporarily unavailable |
 | Data preparation | FishualizeR | Live |
 | Mixed fisheries and harvest strategies | mmsyFM Shiny app | Runs locally; iMarine hosting under consideration |
+| Assessment to management (participatory) | FPAT workbook and FPAT App | R package runs locally; hosted app to be confirmed |
 
 ::: {.ws-grid}
 ::: {.ws-card style="--ws:#1f6a8a"}
@@ -39,6 +40,15 @@ Background on the methods behind stock status reporting; linked from each method
 :::
 :::
 
+::: {.ws-grid}
+::: {.ws-card style="--ws:#b7791f"}
+[Workshop app]{.ws-num}
+
+#### [FPAT](../advice/fpat.qmd)
+Fishery performance and governance scoring with stakeholders, then the FPAT App to compare management options (FAO TP 737).
+:::
+:::
+
 ## Methods and where to run them
 
 ```{r}
@@ -50,6 +60,22 @@ knitr::kable(data.frame(Method = link_name(m, "../"), Category = m$category,
                         `In R` = m$software, `No-code app` = ifelse(m$app == "", "–", m$app),
                         check.names = FALSE), row.names = FALSE, escape = FALSE)
 ```
+
+## From assessment to management: FPAT workshops
+
+FAO Technical Paper 737 describes two linked workshops, each about three days, tested in West Africa, Indonesia and Latin America.
+
+| Workshop | Participants | Sequence |
+|---|---|---|
+| **Fishery performance assessment** | 3–12 each of harvesters, post-harvest representatives and managers, plus scientists | Review pre-scored [FPI and governance metrics](../methods/empirical/fpi.qmd) by sector → share and compare with reference fisheries → agree 3–8 outcomes to improve → identify actions and the enabling conditions they change |
+| **FPAT App / MSE** | 4–12 scientists and technical managers | Population dynamics basics → app overview → agree the input data → agree feasible measures → historical reconstruction and projections → compare options against the agreed outcomes → try alternative datasets → assign responsibility for a management plan and data collection |
+
+Lessons from the pilots that apply to any toolbox training:
+
+- Agree the basic terms (*stock*, *population*, *fishery*, *fishing effort*) first, in a dedicated session or pre-reading.
+- A slide overview, then a live demonstration on a case study, then hands-on work in small groups. One-to-one work on the participants' own data teaches more than presentations about data.
+- Start the MSE session from a summary of the current management system for each stock (size limits, closures, catch limits).
+- Taking part in a workshop does not by itself build the capacity to lead one; train facilitators separately.
 
 ## From training to assessment
 

@@ -59,7 +59,7 @@ Length-based and catch-only methods, SSF catch and effort monitoring, participat
 [Workstream 3]{.ws-num}
 
 #### [Assessment to advice and harvest strategies](advice/index.qmd)
-Stock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE.
+Stock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE and participatory comparison of management options (FPAT).
 :::
 ::: {.ws-card style="--ws:#6b4fa0"}
 [Workstream 4]{.ws-num}

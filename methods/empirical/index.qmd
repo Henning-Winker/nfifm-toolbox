@@ -12,6 +12,7 @@ Not every stock can be assessed with a model, and models are not the only eviden
 | **Size-based** | Length compositions, life-history reference lengths | Selectivity and exploitation pattern | [Length-based indicators (LBI)](lbi.qmd) |
 | **Multi-indicator** | Several indicators, including local and traditional knowledge | Traffic-light status, agreed management responses | [Multi-indicator dashboards](dashboard.qmd) |
 | **Risk-based** | Life history and fishery exposure | Prioritising which stocks to assess | [PSA](psa.qmd) |
+| **Fishery performance** | Expert and interview scores of ecology, economics, community and governance | Benchmarking, choice of interventions, monitoring (FPAT step 1) | [FPI and governance](fpi.qmd) |
 
 ::: {.callout-warning}
 ## Using indicators responsibly

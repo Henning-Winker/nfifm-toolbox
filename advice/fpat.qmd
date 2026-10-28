@@ -1,0 +1,145 @@
+---
+title: "FPAT App"
+subtitle: "Rapid, participatory MSE of management options with openMSE: part of the Fisheries Performance Assessment Toolkit"
+categories: [advice, MSE, openMSE, participatory]
+---
+
+[Draft]{.status-badge .status-draft}
+
+::: {.path}
+[1 · Data](#data){.step} [→]{.arrow} [2 · Method](#method){.step} [→]{.arrow} [3 · Outputs](#outputs-diagnostics-and-sensitivities){.step} [·]{.arrow} [Use and misuse](#use-and-misuse){.step} [·]{.arrow} [Case studies](#case-studies-and-references){.step}
+:::
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+method_attributes("fpat")
+```
+
+## Overview
+
+The **Fisheries Performance Assessment Toolkit (FPAT)** was developed by FAO with the University of Washington and Blue Matter Science under the GEF Coastal Fisheries Initiative, and piloted on ten fisheries in Cabo Verde, Côte d'Ivoire, Ecuador, Indonesia and Senegal (FAO Technical Paper 737). It runs as a four-step cycle:
+
+::: {.path}
+[1 · Benchmarking: FPI and governance scores](../methods/empirical/fpi.qmd){.step} [→]{.arrow} [2 · Planning: FPAT App MSE]{.step} [→]{.arrow} [3 · Decision-making]{.step} [→]{.arrow} [4 · Monitoring, then repeat]{.step}
+:::
+
+This page covers step 2, the **FPAT App**: a Shiny app that builds an operating model from the FPAT workbook and projects the stock under alternative management procedures, so that stakeholders can see how catch limits, effort limits, size limits or closures are likely to change abundance and catch. The manual describes it as a *fishery management calculator*. Step 1 is documented under [Fishery Performance Indicators](../methods/empirical/fpi.qmd).
+
+| Field | Entry |
+|---|---|
+| **Family / class** | Management strategy evaluation → Rapid participatory MSE |
+| **Method name** | FPAT App (openMSE) |
+| **Short description** | Closed-loop simulation of a single stock under a fixed menu of management procedures, conditioned on catch, life-history and fishery information from the FPAT workbook. |
+| **Main outputs** | Historical reconstruction of the stock; projected catch and spawning biomass relative to $B_{MSY}$ and current levels; trade-off plots across management procedures |
+| **Typical use case** | Workshops with scientists and technical managers that compare feasible measures identified in the FPI/governance benchmarking |
+| **Place in the toolbox** | Screening end of the [Advice and MSE](index.qmd) pillar. Formal testing of a harvest control rule against a set of operating models is done with [FLR mse](mse.qmd); joint advice in mixed fisheries with [mmsyFM](../methods/multispecies/mmsyfm.qmd). |
+
+## 1 · Data {#data}
+
+| Field | Entry |
+|---|---|
+| **Minimum data** | Catch history and the core life-history parameters marked in red on the "Fishery Data" sheet (TP 737, Table 4), plus all ten "FPAT App Questions". |
+| **Preferred data** | Abundance index with CV, mean length or catch-at-length, local estimates of growth, $M$ and maturity, recent depletion from an assessment. |
+| **Optional auxiliary data** | Effort series, additional indices with vulnerability schedules, recruitment index, catch-at-age, reference catch or index levels, previous TAC/TAE. |
+| **Data quality considerations** | Catch completeness (App Question 9), proportionality of the index (Question 10), changes in effort and efficiency (Questions 1–2). These answers become uncertainty in the operating model, so they should be agreed with the people who know the fishery. |
+| **Pre-processing steps** | Run the [data preparation workflow](../data-tools/data-preparation.qmd) first; TP 737 Chapter 4 covers landings, price and revenue series, and life-history proxies (FishBase, related stocks in the region, Annex 4). |
+| **Standardization needs** | Use a standardised index ([cpueTargeting](../data-tools/cpuetargeting.qmd)); nominal CPUE with efficiency creep biases the reconstruction. |
+| **Fleet / gear handling** | One aggregate fleet with one selectivity curve (length at first capture, full selection, vulnerability at $L_\infty$). |
+| **Missing data handling** | Blank cells are left empty or set to `NA`; missing biological parameters are filled with wide priors, which widens the uncertainty. |
+
+**Data template:** the FPAT Excel workbook, sheets 13 "Fishery Data" and 14 "FPAT App Questions" ([FPAT input file on GitHub](https://github.com/Blue-Matter/FPAT/tree/master/inst/shiny_apps/FPAT/Data); FPI scoresheets at [fpilab.org](https://fpilab.org/fishery-performance-indicators/)).
+
+The ten **App Questions** turn local knowledge into operating-model assumptions:
+
+| # | Question | Enters the operating model as |
+|---|---|---|
+| 1 | How variable has historic fishing effort been? | Inter-annual variability in effort |
+| 2 | Has fishing efficiency changed? | Trend in catchability (effort creep) |
+| 3 | What fraction of the catch is discarded? | Discard rate |
+| 4 | What fraction of discards die? | Post-release mortality |
+| 5 | Mixing between open and closed areas (existing closures) | Movement between areas |
+| 6 | Size of planned closures | Area closed under the closure procedure |
+| 7 | Mixing expected with planned closures | Movement under the closure procedure |
+| 8 | Which measures are feasible (TAC, TAE, size limits, time-area closures)? | Which management procedures are offered |
+| 9 | Are catches reported accurately? | Implementation and reporting bias |
+| 10 | Is the main index proportional to biomass? | Hyperstability or hyperdepletion of the index |
+
+Questions 2, 8 and 10 are also asked in the [method selector](../select/index.qmd), under *Management context*.
+
+## 2 · Method {#method}
+
+| Field | Entry |
+|---|---|
+| **Software / tools** | R package `FPAT` (Shiny app, v0.2.0, [github.com/Blue-Matter/FPAT](https://github.com/Blue-Matter/FPAT)) built on openMSE (DLMtool, MSEtool); online version linked from TP 737 at fisheriesperformancetoolkit.com |
+| **Run locally** | `remotes::install_github("Blue-Matter/FPAT"); FPAT::FPAT()` |
+| **Management procedures offered** | Current catch; current effort; two size limits (based on length at maturity); two length-targeting rules; two index-targeting rules; keep existing areas open or close the planned area |
+| **Implementation notes** | The workbook is uploaded, the app builds and conditions an operating model, shows the FPI panels and the historical dynamics, then projects the selected procedures. |
+| **Priors / fixed inputs** | Means and CVs from the "Fishery Data" sheet; App Questions set the ranges of effort, discard, mixing, reporting and index-behaviour assumptions. In the current code, initial depletion is assumed to be 1 (the stock starts unfished at the beginning of the catch series). |
+| **Error structure** | Process and observation error sampled across simulations (openMSE) |
+| **State-space formulation** | n/a (simulation) |
+| **Core assumptions** | Single stock and species; one aggregate fleet; the catch series starts close to unfished; life-history parameters and their CVs bracket the truth. |
+
+## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}
+
+| Field | Entry |
+|---|---|
+| **Main outputs** | Projections of catch and abundance by management procedure; trade-off plots (e.g. yield against probability of being above $B_{MSY}$, catch variability). |
+| **Main sensitivities** | Depletion at the start of the catch series; $M$ and steepness; catch reporting bias; effort creep; index behaviour. |
+| **Likely violations** | Fishery already depleted when the catch series starts; incomplete catches; several fleets with different selectivity. |
+| **Expected bias** | Starting unfished when the stock was already fished overestimates productivity and current status; under-reported catches underestimate scale. |
+| **Warning signs** | Historical reconstruction at odds with local knowledge or the FPI stock scores; projections dominated by the prior ranges; very wide envelopes across all procedures. |
+
+#### Sensitivity demos
+
+[To be added: the same case study run with alternative assumptions on initial depletion, steepness and catch reporting, and the effect on the ranking of procedures.]{.todo}
+
+## Use and misuse {#use-and-misuse}
+
+```{r}
+#| echo: false
+#| results: asis
+method_warnings("fpat")
+```
+
+| Field | Entry |
+|---|---|
+| **Pre-run checks** | (1) Does the catch series start near the beginning of the fishery? If not, the start-unfished assumption must be revisited. (2) Are the life-history parameters local, or proxies with CVs wide enough? (3) Have the App Questions been answered with harvesters and managers, not only by the analyst? (4) Are the management procedures in the run the ones flagged as feasible in Question 8? |
+| **Do not use when** | The outcome is a formally adopted harvest control rule (use [FLR mse](mse.qmd) with an agreed set of operating models); the fishery is strongly mixed and the joint outcome matters (use [mmsyFM](../methods/multispecies/mmsyfm.qmd)). |
+| **Common misuses** | Reading projections as forecasts rather than comparisons between options; reporting the reconstructed depletion as stock status; ignoring that results are biological only (economic and social consequences come from the FPI benchmarking). |
+| **Pre-use checklist** | Data reviewed and agreed in the workshop; historical reconstruction plausible; alternative datasets tried where there is disagreement; ranking of procedures robust to the main sensitivities. |
+| **Advice suitability** | Screening of management options and identification of data priorities; not a stand-alone basis for catch advice. |
+
+## Case studies and references {#case-studies-and-references}
+
+| Field | Entry |
+|---|---|
+| **Applications / case studies** | Coastal Fisheries Initiative workshops in West Africa (Cabo Verde, Côte d'Ivoire, Senegal), Indonesia and Latin America (TP 737, Chapter 6): comparisons of size limits with the status quo; data-collection priorities; feasibility of TACs given monitoring and enforcement. |
+| **Workshop format** | Three-day MSE workshop for 4–12 scientists and technical managers after the assessment workshop; see [Training and apps](../training/index.qmd#from-assessment-to-management-fpat-workshops). |
+| **References** | De Alessi, M., Anderson, C., Carruthers, T., Hordyk, A., Sock, F. & Gutierrez, N.L. (2026). *The Fisheries Performance Assessment Toolkit (FPAT): a practical manual.* FAO Fisheries and Aquaculture Technical Paper 737. Rome, FAO (in press). <br> Hordyk, A., Huynh, Q. & Carruthers, T. (2025). MSEtool: Management Strategy Evaluation Toolkit. R package, <https://msetool.openmse.com/>. |
+
+::: {.catalogue-example-grid}
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Suitable example
+:::
+A single-species, single-gear coastal fishery with a catch history from the start of the fishery, where stakeholders want to compare a size limit with current catch and current effort.
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Assumption sensitivity
+:::
+Catch records start after decades of unrecorded fishing: rerun with lower initial depletion and compare the ranking of procedures.
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Unsuitable example
+:::
+A multispecies trawl fishery where the question is a joint effort cap across species and fleets.
+:::
+:::
+
+::: {.callout-note}
+## Status of the software
+The R package was last updated in September 2023. The availability of the hosted app and its maintenance should be confirmed with Blue Matter Science before it is used in training.
+:::

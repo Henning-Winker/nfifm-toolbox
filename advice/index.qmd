@@ -11,4 +11,14 @@ source("R/toolbox.R")
 crosswalk_table(site_root = "../", category = "Advice and MSE")
 ```
 
+## Comparing management options: FPAT
+
+Where the question is *which measure* (a size limit, an effort cap, a closure or a catch limit) rather than *which catch*, the [Fisheries Performance Assessment Toolkit](fpat.qmd) (FAO Technical Paper 737) provides a participatory route:
+
+::: {.path}
+[1 · Benchmark: FPI and governance](../methods/empirical/fpi.qmd){.step} [→]{.arrow} [2 · Plan: FPAT App MSE](fpat.qmd){.step} [→]{.arrow} [3 · Decide]{.step} [→]{.arrow} [4 · Monitor and repeat]{.step}
+:::
+
+The benchmarking shows where the fishery underperforms and which measures are feasible to enforce; the FPAT App compares those measures in simulation; the choice is made with stakeholders and re-assessed as data improve. FPAT is the quick screening end of MSE. Harvest control rules for formal adoption are tested with [FLR mse](mse.qmd).
+
 [Content to be added: standard advice formats, reference-point conventions (e.g. $B_{lim}$, $F_{MSY}$ proxies), capacity and effort limits.]{.todo}

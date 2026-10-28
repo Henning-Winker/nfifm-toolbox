@@ -86,6 +86,7 @@ website:
               - methods/empirical/lbi.qmd
               - methods/empirical/dashboard.qmd
               - methods/empirical/psa.qmd
+              - methods/empirical/fpi.qmd
           - methods/age-structured/age-structured.qmd
           - section: "Multispecies"
             contents:
@@ -103,6 +104,7 @@ website:
           - advice/index.qmd
           - advice/flref.qmd
           - advice/mse.qmd
+          - advice/fpat.qmd
       - section: "Guidance"
         contents:
           - guidance/misuse.qmd

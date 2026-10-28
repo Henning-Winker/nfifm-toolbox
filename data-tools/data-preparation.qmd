@@ -29,6 +29,10 @@ Fishery data are often used at face value as inputs to data-limited assessments 
 - **CPUE:** changes in targeting, fleet composition or technology. Nominal CPUE should not go into an assessment without [standardisation](cpuetargeting.qmd).
 - **Short index, long exploitation history:** complement with local knowledge and alternative sources (export records, vessel registries). Expert knowledge can reveal early depletion that official series miss.
 
+## Socio-economic and management data (FAO TP 737)
+
+The FPAT manual (De Alessi *et al.*, 2026, Chapter 4) extends TP 706 beyond the stock: landings, trips, ex-vessel and wholesale prices and revenue by year, costs and assets, and the information needed to score fishery performance and governance. Its Annex 3 is a semi-structured interview guide for filling gaps with harvesters, buyers and managers, and Annex 4 shows how to take life-history proxies from related stocks and FishBase. The same workbook feeds the [Fishery Performance Indicators](../methods/empirical/fpi.qmd) and the [FPAT App](../advice/fpat.qmd).
+
 ## Method data templates
 
 Each method expects its inputs in a fixed layout. Download a template, fill it from the cleaned data, and keep it alongside the analysis.
@@ -38,6 +42,7 @@ Each method expects its inputs in a fixed layout. Download a template, fill it f
 | [`length_long.csv`](../data/templates/length_long.csv) | FLicc, LBSPR, LBB, fishblicc | `len` (bin lower bound), `year`, `data` (count), `qname` (gear) |
 | [`catch_index.csv`](../data/templates/catch_index.csv) | SPiCT, JABBA, BSM | `year`, `catch`, `index_1`, `se_1` (add `index_2`, `se_2` …) |
 | [`logbook_long.csv`](../data/templates/logbook_long.csv) | cpueTargeting | `trip`, `vessel`, `year`, `month`, `lat`, `lon`, `effort`, `species`, `catch` |
+| [FPAT workbook](https://github.com/Blue-Matter/FPAT/tree/master/inst/shiny_apps/FPAT/Data) (Excel, external) | FPAT App, FPI | Sheets "Fishery Data" (metadata, biology, selectivity, time series, CAA, CAL, reference points) and "FPAT App Questions"; FPI and governance scoresheets |
 | [`life_history.csv`](../data/templates/life_history.csv) | All length-based and per-recruit methods | `parameter`, `value`, `sd`, `sex`, `area`, `source` |
 
 [Templates are first drafts; method owners to confirm.]{.todo}
@@ -45,3 +50,5 @@ Each method expects its inputs in a fixed layout. Download a template, fill it f
 ## Reference
 
 Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. Rome, FAO. <https://doi.org/10.4060/cd0366en>. The Excel templates and mock datasets (`Mock_length_freq.csv` and others) are distributed with the manual.
+
+De Alessi, M., Anderson, C., Carruthers, T., Hordyk, A., Sock, F. & Gutierrez, N.L. 2026. *The Fisheries Performance Assessment Toolkit (FPAT): a practical manual.* FAO Fisheries and Aquaculture Technical Paper 737. Rome, FAO (in press).
