@@ -15,10 +15,10 @@ Every method is documented the same way. Each page covers data requirements, ass
 ## From data to advice
 
 ::: {.path}
-[1 · Select a method](select/index.qmd) [→]{.arrow} [2 · Prepare data](data-tools/index.qmd) [→]{.arrow} [3 · Assess](methods/index.qmd) [→]{.arrow} [4 · Diagnose and check for misuse](guidance/diagnostics.qmd) [→]{.arrow} [5 · Advice and HCRs](advice/index.qmd)
+[1 · Prepare data](data-tools/data-preparation.qmd) [→]{.arrow} [2 · Select methods](select/index.qmd) [→]{.arrow} [3 · Assess](methods/index.qmd) [→]{.arrow} [4 · Diagnose and check for misuse](guidance/diagnostics.qmd) [→]{.arrow} [5 · Advice and HCRs](advice/index.qmd)
 :::
 
-Start with the **[method selector](select/index.qmd)**. Describe your data (catch, indices, length or age composition, life history, gears, fishery) and it lists the candidate methods, the data you would still need for others, and the misuse warnings for your situation.
+Start by [preparing and inventorying the data](data-tools/data-preparation.qmd), then use the **[method selector](select/index.qmd)**: describe your data (catch, indices, length or age composition, life history, gears, fishery) and it lists the candidate methods, the data you would still need for others, and the misuse warnings for your situation.
 
 ## Thematic workstreams
 

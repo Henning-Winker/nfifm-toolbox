@@ -1,10 +1,10 @@
 ---
 title: "cpueTargeting"
-subtitle: "Commercial CPUE with changing targeting"
-categories: [data, CPUE standardisation, targeting]
+subtitle: "CPUE standardisation with changing targeting"
+categories: [data, CPUE standardisation, targeting, GAM]
 ---
 
-[Stub]{.status-badge .status-stub}
+[Draft]{.status-badge .status-draft}
 
 ```{r}
 #| echo: false
@@ -17,58 +17,78 @@ method_attributes("cpuetargeting")
 
 | Field | Entry |
 |---|---|
-| **Family / class** | CPUE and abundance indices → CPUE standardisation |
-| **Method name** | [To be completed]{.todo} <br><small>Identifies the named method or platform.</small> |
-| **Short description** | [To be completed]{.todo} <br><small>Summarizes the method in plain language.</small> |
-| **Main outputs** | [To be completed]{.todo} <br><small>Lists key status indicators or reference-point outputs.</small> |
-| **Typical use case** | [To be completed]{.todo} <br><small>Describes when the method is commonly applied.</small> |
+| **Family / class** | Data and CPUE tools → CPUE and abundance indices |
+| **Method name** | cpueTargeting (R): [Henning-Winker/cpueTargeting](https://github.com/Henning-Winker/cpueTargeting) · [project page](https://henning-winker.github.io/cpueTargeting/) |
+| **Short description** | Toolbox for standardising real multispecies catch and effort data where targeting changes over time, plus operating models that test how well standardisation copes with targeting. |
+| **Main outputs** | Standardised CPUE index with log SE and CV for the assessment (`export_index()`), model comparison, influence and step plots, residual and predictive checks, processing log. |
+| **Typical use case** | Commercial logbook or observer CPUE from multispecies or multi-tactic fisheries, before it is used as an index in SPiCT, JABBA, BSM or an empirical rule. |
 
-::: {.callout-tip}
-## Help complete this entry
-This page is a stub. Use **Edit this page** (top right) or open a *New method entry* issue. Each field is described in [Catalogue structure](../framework/catalogue-structure.qmd).
-:::
+Author: Henning Winker (FAO NFIFM). The package has two parts: **operating models** that simulate fisheries with changing targeting, so that standardisation methods can be tested against a known truth, and a **step-by-step toolbox** for real data.
 
-Repository: [Henning-Winker/cpueTargeting](https://github.com/Henning-Winker/cpueTargeting). Description to be added.
+| Step | Functions |
+|---|---|
+| 1. Format: one row per operation, synonyms, processing log | `cpue_data()`, `subset()`, `cpue_matrix()` |
+| 2. Fleet: operations by year and vessel, indicator vessels, vessel profiles | `plot_fleet()`, `vessel_summary()`, `select_vessels()`, `plot_vessel_profile()` |
+| 3. Species: cumulative species curves and the species set | `species_curve()`, `plot_species_curve()`, `select_species()` |
+| 4. Nominal CPUE and catch composition | `nominal_cpue()`, `plot_nominal()`, `plot_composition()`, `plot_cpue_map()` |
+| 5. Subsetting: habitat-based (Stephens and MacCall), removing irrelevant tactics | `stephens_maccall()`, `plot_stephens_maccall()`, `select_tactics()` |
+| 6. Targeting covariates: composition PCA, Optimal Coordinates test, clustering | `add_targeting()`, `composition_pca()`, `compute_oc()`, `cluster_tactics()`, `tactic_table()` |
+| 7. Models (mgcv): Base, Covariates, DPC, Cluster, spatial, random vessel effects | `fit_cpue()` |
+| 8. Diagnostics: model table, influence, step plot, residuals, predictive check | `cpue_diagnostics()`, `plot_step()`, `plot_influence()`, `plot_residuals()`, `ppc_cpue()` |
+| 9. Index for the assessment, with log SE and CV | `cpue_index()`, `export_index()` |
 
 
 ## Data requirements
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | [To be completed]{.todo} <br><small>Defines the minimum inputs needed for implementation.</small> |
-| **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
-| **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
-| **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
+| **Minimum data** | Operation-level (trip or set) records with year, vessel, effort and catch by species (template: [`logbook_long.csv`](../data/templates/logbook_long.csv)). |
+| **Preferred data** | Positions, month, gear or hook configuration; several years of indicator vessels; full species composition of each operation. |
+| **Optional auxiliary data** | Habitat or depth covariates; hooks between floats for longlines; survey index for comparison. |
+| **Data quality considerations** | Species synonyms, rounded catches, under-reported bycatch, mixed-tactic trips, coarse or missing positions, vessel turnover. |
 
 ## Data processing requirements
 
 | Field | Entry |
 |---|---|
-| **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
-| **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
+| **Pre-processing steps** | `cpue_data()` to one row per operation with synonyms resolved; `select_vessels()`, `select_species()`; every selection is recorded in `x$log`. |
+| **Standardization needs** | This is the standardisation step: Base, Covariates, Cluster and DPC (direct principal components) GAMs, optional spatial terms and random vessel effects; Tweedie or delta families. |
 | **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
-| **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
-| **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
+| **Fleet / gear handling** | Indicator fleets by activity and target-species rules; fishing tactics from clustering the catch composition; habitat-based subsetting (Stephens and MacCall 2004). |
+| **Missing data handling** | Operations with missing covariates are flagged in the processing log; zeros are kept and modelled by the Tweedie or delta family. |
+
+```r
+library(cpueTargeting)
+x <- cpue_data(logbook, year = "year", species = "species", catch = "kg",
+               effort = "hours", id = "trip", vessel = "vessel", covariates = "month")
+x <- select_species(x, threshold = 0.95, keep = "Pagellus bogaraveo")
+x <- add_targeting(x)          # PCs (Optimal Coordinates test) and clusters
+fit <- fit_cpue(x, species = "Pagellus bogaraveo",
+                models = c("Base", "Covariates", "Cluster", "DPC"), vessel = TRUE)
+cpue_diagnostics(fit)
+export_index(fit, "cpue_index.csv", model = "DPC")   # index with log SE for SPiCT/JABBA
+```
+
 
 ## Model documentation
 
 | Field | Entry |
 |---|---|
-| **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
+| **Key parameters** | Species set threshold, number of PCs (Optimal Coordinates test), number of clusters, model terms, error family. |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
-| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+| **Error structure** | Tweedie or delta (binomial + positive) GAM in mgcv. |
+| **State-space formulation** | No. |
+| **Implementation notes** | Operating models: `simulate_cluster()`, `simulate_bathymetric()` (WKBMSYSPICT CPUE guidelines), `simulate_tuna()` (hook depth by HBF), `simulate_logbook()` (messy logbook with known truth). |
 
 ## Assumptions and sensitivities
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
-| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
-| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
-| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
-| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
+| **Core assumptions** | Targeting is captured by the catch composition (PCs or clusters); the reference set of covariates is constant over time; the indicator fleet samples the stock consistently. |
+| **Main sensitivities** | Species set, number of PCs and clusters, error family, habitat subsetting. |
+| **Likely violations** | Persistent changes in relative abundance of the species in the composition; shifts in fishing grounds outside the data; technology creep. |
+| **Expected bias** | When relative abundances change persistently, PCs can absorb part of the real trend of the species whose abundance changes most (more PCs absorb more); coarser clusters are less affected. |
+| **Warning signs** | Large influence of targeting terms in years where the trend changes; poor predictive check of zeros or tails by year; index follows nominal CPUE of a single tactic. |
 
 ## Misuse prevention
 
@@ -80,36 +100,52 @@ method_warnings("cpuetargeting")
 
 | Field | Entry |
 |---|---|
-| **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
-| **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
-| **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | [To be completed]{.todo} <br><small>States whether outputs support status only, indicator-based HCRs, catch advice or MSE.</small> |
+| **Do not use when** | There is no operation-level data (only annual aggregates); the species is a rare bycatch whose catches are not reliably recorded. |
+| **Common misuses** | Using nominal CPUE directly in an assessment; adding many PCs to improve fit, which absorbs the abundance signal; dropping the processing log so the selections cannot be reviewed. |
+| **Pre-use checklist** | Complete the reporting checklist below; compare Cluster and DPC indices; run sensitivity to species set and number of PCs; check influence and predictive plots. |
+| **Advice suitability** | Input data: produces the abundance index used by assessments and empirical rules. |
+
+### Reporting checklist
+
+| Item | Report |
+|---|---|
+| Operation and effort | Unit (set, trip, …), effort measure |
+| Data selection | All subsetting rules and the processing log |
+| Species set | Threshold, criterion (occurrence or weight), species kept |
+| Fleet | Indicator-fleet rules, number of vessels |
+| Subsetting | Stephens & MacCall target, critical value, share kept over time; tactics removed |
+| Targeting | Transformation, eigenvalues, OC result, number of PCs and clusters, clustering method |
+| Models | Family, terms, random effects, reference set of the index |
+| Diagnostics | Model table, step and influence plots, residuals, predictive check, vessel effects |
+| Index | Nominal and standardised CPUE, log SE and CV |
+| Sensitivity | Indices with alternative species sets, numbers of PCs, clusters, families |
+
 
 ## Applications and support
 
 | Field | Entry |
 |---|---|
-| **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | [To be completed]{.todo} <br><small>Provides primary literature and supporting documents.</small> |
-| **Software / tools** | cpueTargeting (R) |
+| **Applications / case studies** | Worked examples on the [project page](https://henning-winker.github.io/cpueTargeting/): bathymetric targeting, tuna longline (flat vs contrasting trends), logbook standardisation for blackspot seabream and dolphinfish. |
+| **References** | Winker et al. (2014); Thorson et al. (2017) doi:10.1139/cjfas-2015-0598; Ono et al. (2015) doi:10.1016/j.fishres.2015.05.021; Bigelow et al. (2002); Stephens & MacCall (2004); Bentley et al. (2012). |
+| **Software / tools** | `remotes::install_github("henning-winker/cpueTargeting")`; needs `ggplot2`, `mgcv` for model fitting. |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Suitable example
 :::
-[To be completed]{.todo}
+Simulated logbook with known truth (`simulate_logbook()`): blackspot seabream and dolphinfish examples on the [project page](https://henning-winker.github.io/cpueTargeting/).
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Assumption sensitivity
 :::
-[To be completed]{.todo}
+Tuna longline, flat vs contrasting true trends: when the catch composition captures targeting and when it also absorbs abundance.
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Unsuitable example
 :::
-[To be completed]{.todo}
+Many PCs on a fishery where species relative abundances diverge: the targeting terms remove part of the real trend.
 :::
 :::

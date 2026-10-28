@@ -1,0 +1,3 @@
+trip,vessel,year,month,lat,lon,effort,species,catch
+T0001,V01,2020,3,-12.5,13.2,10.5,Pagellus bogaraveo,42
+T0001,V01,2020,3,-12.5,13.2,10.5,Lepidopus caudatus,7

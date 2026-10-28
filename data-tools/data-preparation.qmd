@@ -1,0 +1,47 @@
+---
+title: "Data preparation workflow"
+subtitle: "Inventory, clean and explore fishery data before any assessment or indicator"
+---
+
+[Draft]{.status-badge .status-draft}
+
+Fishery data are often used at face value as inputs to data-limited assessments or indicator-based frameworks, without first being explored and critically reviewed. Biased inputs lead to biased status and misdirected management. This workflow is the step that comes **before** the [decision framework](../select/index.qmd) and any method. It follows FAO Fisheries and Aquaculture Technical Paper 706 (Amoroso *et al.*, 2024), with its Excel templates and the FishualizeR app as tools.
+
+::: {.path}
+[1 · Inventory and timeline]{.step} [→]{.arrow} [2 · Life-history inventory]{.step} [→]{.arrow} [3 · Database and formats]{.step} [→]{.arrow} [4 · Cleaning and outliers]{.step} [→]{.arrow} [5 · Exploratory analysis]{.step} [→]{.arrow} [6 · Data-type tools]{.step}
+:::
+
+| Step | What to do | Tools | Output that feeds the toolbox |
+|---|---|---|---|
+| **1. Data inventory and timeline** | List every data source (catch, effort, length, biology, surveys, local knowledge) with its spatial and temporal coverage, resolution and quality. Record influential events (gear changes, closures, regulation, reporting changes, environmental shocks) on a timeline. | `Excel_Template1_DataInventory_Events`; FishualizeR inventory view | The answers to the [method selector](../select/index.qmd) (which data exist, for how long, at what quality) |
+| **2. Life-history parameter inventory** | Compile growth, natural mortality, maturity and length–weight parameters from the literature and local studies, with sex, area and method. | `Excel_Template2_LifeHistoryInventory`; FishualizeR life-history view | Life-history inputs and plausible ranges for sensitivity runs ($L_\infty$, $M/k$) |
+| **3. Database set-up and formats** | Organise data in long format, one record per observation, with validation rules and a log of every change. | Excel data validation; CSV | Inputs in the [method templates](#method-data-templates) |
+| **4. Cleaning and outliers** | Clean text and categories (species names, gear codes, units), check numbers and dates, identify outliers (IQR, MAD, plots) and decide how to handle them, keeping "interesting" outliers that carry real signal. | Excel; [FishualizeR](fishualizer.qmd) | Corrected dataset plus change log |
+| **5. Exploratory data analysis** | Data coverage over time and space; information content of length compositions (selectivity, sample size, representativeness); catch and effort trends; abundance indices (representativeness, short series versus exploitation history). | [FishualizeR](fishualizer.qmd) | Decisions on which years, gears and areas can be used |
+| **6. Data-type tools** | Standardise CPUE, combine indices, prepare length compositions by gear and year. | [cpueTargeting](cpuetargeting.qmd), [JARA](jara.qmd), [FishualizeR](fishualizer.qmd) | Standardised index with SE; length compositions; joint index |
+
+## Checks that most often change the assessment
+
+- **Coverage:** gaps in years, areas or gears. A length composition from one port or one gear is not the catch composition of the stock.
+- **Changes on the timeline:** a new gear, regulation or reporting system can create a step in CPUE or length data that is not a change in abundance.
+- **Length compositions:** at least about 50 fish and 10 length bins per gear and year; consistent units; no fish far beyond $L_\infty$.
+- **Catch:** under-reporting, missing fleets (small-scale, recreational, IUU) and species aggregated as "nei".
+- **CPUE:** changes in targeting, fleet composition or technology. Nominal CPUE should not go into an assessment without [standardisation](cpuetargeting.qmd).
+- **Short index, long exploitation history:** complement with local knowledge and alternative sources (export records, vessel registries). Expert knowledge can reveal early depletion that official series miss.
+
+## Method data templates
+
+Each method expects its inputs in a fixed layout. Download a template, fill it from the cleaned data, and keep it alongside the analysis.
+
+| Template | For | Columns |
+|---|---|---|
+| [`length_long.csv`](../data/templates/length_long.csv) | FLicc, LBSPR, LBB, fishblicc | `len` (bin lower bound), `year`, `data` (count), `qname` (gear) |
+| [`catch_index.csv`](../data/templates/catch_index.csv) | SPiCT, JABBA, BSM | `year`, `catch`, `index_1`, `se_1` (add `index_2`, `se_2` …) |
+| [`logbook_long.csv`](../data/templates/logbook_long.csv) | cpueTargeting | `trip`, `vessel`, `year`, `month`, `lat`, `lon`, `effort`, `species`, `catch` |
+| [`life_history.csv`](../data/templates/life_history.csv) | All length-based and per-recruit methods | `parameter`, `value`, `sd`, `sex`, `area`, `source` |
+
+[Templates are first drafts; method owners to confirm.]{.todo}
+
+## Reference
+
+Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. Rome, FAO. <https://doi.org/10.4060/cd0366en>. The Excel templates and mock datasets (`Mock_length_freq.csv` and others) are distributed with the manual.

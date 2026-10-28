@@ -1,5 +1,5 @@
 ---
-title: "fishualizeR"
+title: "FishualizeR"
 subtitle: "Visualisation and quality control of length data"
 categories: [data, length composition, QC, Shiny]
 ---

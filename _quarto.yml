@@ -4,6 +4,7 @@ project:
   resources:
     - "resources/guides/*.html"   # full package guides, served as-is
     - "data/*.csv"                # read by the method selector in the browser
+    - "data/templates/*.csv"      # downloadable data templates
   render:
     - "**/*.qmd"                  # .md files (README, CONTRIBUTING, LICENSE) are for GitHub only
   execute-dir: project            # all R paths (e.g. "data/...") are relative to the repo root
@@ -33,7 +34,7 @@ website:
         href: framework/hierarchy.qmd
       - text: "Methods"
         href: methods/index.qmd
-      - text: "Data tools"
+      - text: "Data"
         href: data-tools/index.qmd
       - text: "Advice"
         href: advice/index.qmd
@@ -78,12 +79,13 @@ website:
             contents:
               - methods/multispecies/index.qmd
               - methods/multispecies/mmsyfm.qmd
-      - section: "Data and CPUE tools"
+      - section: "Data preparation and tools"
         contents:
           - data-tools/index.qmd
+          - data-tools/data-preparation.qmd
           - data-tools/cpuetargeting.qmd
-          - data-tools/jara.qmd
           - data-tools/fishualizer.qmd
+          - data-tools/jara.qmd
       - section: "Advice and MSE"
         contents:
           - advice/index.qmd

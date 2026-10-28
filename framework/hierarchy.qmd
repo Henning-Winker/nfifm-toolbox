@@ -49,8 +49,9 @@ Stock assessment methods
 
 ::: {.class-grid style="margin-top:18px"}
 ::: {.class-card .note-box}
-### Data and CPUE tools
+### Data preparation and tools
 
+- [Inventory, cleaning, EDA]{.app-label}<br>[[Data preparation workflow (TP 706)](../data-tools/data-preparation.qmd)]{.method-label}
 - [CPUE standardisation]{.app-label}<br>[[cpueTargeting](../data-tools/cpuetargeting.qmd)]{.method-label}
 - [Joint indices, trends]{.app-label}<br>[[JARA](../data-tools/jara.qmd)]{.method-label}
 - [Length compositions]{.app-label}<br>[[fishualizeR](../data-tools/fishualizer.qmd)]{.method-label}

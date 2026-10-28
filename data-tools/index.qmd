@@ -1,15 +1,50 @@
 ---
-title: "Data and CPUE tools"
-subtitle: "Preparing catch, abundance indices and length data before assessment"
-listing:
-  id: datatools
-  contents: ["*.qmd", "!index.qmd"]
-  type: table
-  fields: [title, subtitle, categories]
-  sort: title
+title: "Data preparation and tools"
+subtitle: "From raw fishery data to inputs an assessment or indicator can trust"
 ---
 
-Most assessment problems start in the data. Unstandardised CPUE, incomplete catches and unrepresentative length samples bias any method, whichever one is chosen. These tools prepare the inputs; each page follows the same catalogue fields as the methods, including misuse prevention.
+Most assessment problems start in the data: unstandardised CPUE, incomplete catches and unrepresentative length samples bias any method, however well it is chosen. This pillar of the toolbox covers everything that happens **before** a method is run. It sits alongside the assessment catalogue, not underneath it, because the same prepared data feed several methods and the weight of evidence across methods.
+
+::: {.ws-grid}
+::: {.ws-card style="--ws:#1f6a8a"}
+[Fishery level]{.ws-num}
+
+#### [Data preparation workflow](data-preparation.qmd)
+Data inventory and timeline of events, life-history inventory, database set-up, cleaning and outliers, exploratory analysis. Based on FAO Technical Paper 706, with Excel templates.
+:::
+::: {.ws-card style="--ws:#2e7d4f"}
+[Abundance indices]{.ws-num}
+
+#### [cpueTargeting](cpuetargeting.qmd)
+CPUE standardisation for multispecies and multi-tactic fisheries, in nine steps from the raw logbook to an index with SE, with simulation tests of targeting.
+:::
+::: {.ws-card style="--ws:#c4552b"}
+[Length and biology]{.ws-num}
+
+#### [FishualizeR](fishualizer.qmd)
+Interactive quality control, coverage and binning of length data; companion app to Technical Paper 706.
+:::
+::: {.ws-card style="--ws:#6b4fa0"}
+[Combining indices]{.ws-num}
+
+#### [JARA](jara.qmd)
+Joint index from several noisy series with missing years; trend and decline rates.
+:::
+::: {.ws-card style="--ws:#0f7c86"}
+[Inputs for each method]{.ws-num}
+
+#### [Method data templates](data-preparation.qmd#method-data-templates)
+CSV layouts for length-based methods, surplus production models, CPUE standardisation and life history.
+:::
+::: {.ws-card style="--ws:#b7791f"}
+[Next step]{.ws-num}
+
+#### [Method selector](../select/index.qmd)
+The data inventory answers the selector's questions: which methods the prepared data can support.
+:::
+:::
+
+## All data tools
 
 ```{r}
 #| echo: false
@@ -17,7 +52,4 @@ source("R/toolbox.R")
 crosswalk_table(site_root = "../", category = "Data and CPUE tools")
 ```
 
-::: {#datatools}
-:::
-
-[More tools to be added (CPUE standardisation, catch reconstruction, length raising to catch).]{.todo}
+[To add: catch reconstruction, raising length samples to the catch, survey index design-based estimators.]{.todo}
