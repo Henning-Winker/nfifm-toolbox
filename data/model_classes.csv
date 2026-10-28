@@ -1,0 +1,5 @@
+Primary model class,Sub-class or population structure,General description,Typical application contexts
+Biomass dynamic models,Unstructured biomass dynamics,Dynamic models representing stock status through changes in total biomass over time.,Catch-only; catch + index; catch + multiple indices; catch + index + auxiliary data
+Dynamic pool models,Equilibrium per-recruit,Structured approaches evaluating the expected contribution of an average recruit under assumed constant conditions.,Age-based; length-based single-fleet; length-based multi-gear
+Dynamic pool models,Length- and age-structured dynamic,Dynamic structured models using size or age composition with catch and indices.,Catch-at-length; catch-at-age; integrated assessments
+Multispecies and mixed fisheries,Multispecies MSY and technical interactions,Approaches that account for several species caught together by several gears.,Multispecies trawl; multigear fleets; effort allocation

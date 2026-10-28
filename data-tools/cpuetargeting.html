@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>cpueTargeting – NFIFM Toolbox</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../data-tools/fishualizer.html" rel="next">
+<link href="../data-tools/data-preparation.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-2a840f158fcfed2a52a11d25bfc5ad6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
+<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NFIFM Toolbox</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../select/index.html" aria-current="page"> 
+<span class="menu-text">Method selector</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../framework/principles.html"> 
+<span class="menu-text">Framework</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../methods/index.html"> 
+<span class="menu-text">Methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data-tools/index.html"> 
+<span class="menu-text">Data</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../advice/index.html"> 
+<span class="menu-text">Advice</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../training/index.html"> 
+<span class="menu-text">Training and apps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../regions/index.html"> 
+<span class="menu-text">Regional hubs</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../contributing.html"> 
+<span class="menu-text">Contribute</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Henning-Winker/nfifm-toolbox"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/cpuetargeting.html">cpueTargeting</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NFIFM Toolbox</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../select/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Method selector</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Framework</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../framework/principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../framework/hierarchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hierarchical framework</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../framework/crosswalk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Crosswalk</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../framework/catalogue-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Catalogue structure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Assessment methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assessment methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Biomass dynamic</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/biomass-dynamic/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Surplus production models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/biomass-dynamic/spict.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SPiCT</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/biomass-dynamic/jabba.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JABBA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/biomass-dynamic/cmsy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CMSY+</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Length-based and per-recruit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Length-based and per-recruit methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/flicc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FLicc</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/lbspr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBSPR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/lbb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LBB</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/fishblicc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">fishblicc</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/tropfishr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TropFishR (ELEFAN_GA + YPR/SBPR)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/ypr-spr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">YPR / SPR / Thompson &amp; Bell</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/dynamic-pool/scal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical catch-at-length</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Fishery indicators</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fishery indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/exploitation-history.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exploitation history indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/trend-indicators.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Catch, CPUE and effort trend indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/lbi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Length-based indicators (LBI)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/dashboard.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multi-indicator dashboards (traffic light)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/psa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/age-structured/age-structured.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Age-structured models (XSA, SAM, a4a, SS3)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Multispecies</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/multispecies/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Multispecies and mixed fisheries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/multispecies/mmsyfm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">mmsyFM</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data preparation and tools</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-tools/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data preparation and tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-tools/data-preparation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data preparation workflow</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-tools/cpuetargeting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">cpueTargeting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-tools/fishualizer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FishualizeR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-tools/jara.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JARA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advice and MSE</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advice/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Advice and harvest strategies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advice/flref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FLRef</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advice/mse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FLR mse</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Guidance</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guidance/misuse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Misuse prevention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guidance/diagnostics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diagnostics and model validation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../guidance/sensitivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sensitivity analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Training and apps</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../training/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Training and apps</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../training/smt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stock Monitoring Tool</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../regions/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regional hubs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installation guide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodological literature</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/applications.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Institutional applications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/guides/FLicc_user_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FLicc user guide</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#method-overview" id="toc-method-overview" class="nav-link active" data-scroll-target="#method-overview">Method overview</a></li>
+  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
+  <li><a href="#data-processing-requirements" id="toc-data-processing-requirements" class="nav-link" data-scroll-target="#data-processing-requirements">Data processing requirements</a></li>
+  <li><a href="#model-documentation" id="toc-model-documentation" class="nav-link" data-scroll-target="#model-documentation">Model documentation</a></li>
+  <li><a href="#assumptions-and-sensitivities" id="toc-assumptions-and-sensitivities" class="nav-link" data-scroll-target="#assumptions-and-sensitivities">Assumptions and sensitivities</a></li>
+  <li><a href="#misuse-prevention" id="toc-misuse-prevention" class="nav-link" data-scroll-target="#misuse-prevention">Misuse prevention</a>
+  <ul class="collapse">
+  <li><a href="#reporting-checklist" id="toc-reporting-checklist" class="nav-link" data-scroll-target="#reporting-checklist">Reporting checklist</a></li>
+  </ul></li>
+  <li><a href="#applications-and-support" id="toc-applications-and-support" class="nav-link" data-scroll-target="#applications-and-support">Applications and support</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/data-tools/cpuetargeting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data-tools/cpuetargeting.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/cpuetargeting.html">cpueTargeting</a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">cpueTargeting</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">CPUE standardisation with changing targeting</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">data</div>
+    <div class="quarto-category">CPUE standardisation</div>
+    <div class="quarto-category">targeting</div>
+    <div class="quarto-category">GAM</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><span class="status-badge status-draft">Draft</span> <span class="status-badge status-showcase">Showcase entry</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 5%">
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 45%">
+<col style="width: 4%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Application</th>
+<th style="text-align: left;">Bayesian</th>
+<th style="text-align: left;">State space</th>
+<th style="text-align: left;">Error structure</th>
+<th style="text-align: left;">Multi-gear</th>
+<th style="text-align: left;">Dome selectivity</th>
+<th style="text-align: left;">Outputs</th>
+<th style="text-align: left;">Advice role</th>
+<th style="text-align: left;">No-code app</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Multispecies logbook or observer catch and effort</td>
+<td style="text-align: left;">No (GAM, mgcv)</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Tweedie or delta GAM</td>
+<td style="text-align: left;">Yes (tactics)</td>
+<td style="text-align: left;">n/a</td>
+<td style="text-align: left;">Standardised CPUE index with log SE and CV; diagnostics (influence, residuals, predictive checks); simulation tests of targeting</td>
+<td style="text-align: left;">Input data</td>
+<td style="text-align: left;">None yet</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="method-overview" class="level2">
+<h2 class="anchored" data-anchor-id="method-overview">Method overview</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Family / class</strong></td>
+<td>Data and CPUE tools → CPUE and abundance indices</td>
+</tr>
+<tr class="even">
+<td><strong>Method name</strong></td>
+<td>cpueTargeting (R): <a href="https://github.com/Henning-Winker/cpueTargeting">Henning-Winker/cpueTargeting</a> · <a href="https://henning-winker.github.io/cpueTargeting/">project page</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Short description</strong></td>
+<td>Toolbox for standardising real multispecies catch and effort data where targeting changes over time, plus operating models that test how well standardisation copes with targeting.</td>
+</tr>
+<tr class="even">
+<td><strong>Main outputs</strong></td>
+<td>Standardised CPUE index with log SE and CV for the assessment (<code>export_index()</code>), model comparison, influence and step plots, residual and predictive checks, processing log.</td>
+</tr>
+<tr class="odd">
+<td><strong>Typical use case</strong></td>
+<td>Commercial logbook or observer CPUE from multispecies or multi-tactic fisheries, before it is used as an index in SPiCT, JABBA, BSM or an empirical rule.</td>
+</tr>
+</tbody>
+</table>
+<p>Author: Henning Winker (FAO NFIFM). The package has two parts: <strong>operating models</strong> that simulate fisheries with changing targeting, so that standardisation methods can be tested against a known truth, and a <strong>step-by-step toolbox</strong> for real data.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Format: one row per operation, synonyms, processing log</td>
+<td><code>cpue_data()</code>, <code>subset()</code>, <code>cpue_matrix()</code></td>
+</tr>
+<tr class="even">
+<td>2. Fleet: operations by year and vessel, indicator vessels, vessel profiles</td>
+<td><code>plot_fleet()</code>, <code>vessel_summary()</code>, <code>select_vessels()</code>, <code>plot_vessel_profile()</code></td>
+</tr>
+<tr class="odd">
+<td>3. Species: cumulative species curves and the species set</td>
+<td><code>species_curve()</code>, <code>plot_species_curve()</code>, <code>select_species()</code></td>
+</tr>
+<tr class="even">
+<td>4. Nominal CPUE and catch composition</td>
+<td><code>nominal_cpue()</code>, <code>plot_nominal()</code>, <code>plot_composition()</code>, <code>plot_cpue_map()</code></td>
+</tr>
+<tr class="odd">
+<td>5. Subsetting: habitat-based (Stephens and MacCall), removing irrelevant tactics</td>
+<td><code>stephens_maccall()</code>, <code>plot_stephens_maccall()</code>, <code>select_tactics()</code></td>
+</tr>
+<tr class="even">
+<td>6. Targeting covariates: composition PCA, Optimal Coordinates test, clustering</td>
+<td><code>add_targeting()</code>, <code>composition_pca()</code>, <code>compute_oc()</code>, <code>cluster_tactics()</code>, <code>tactic_table()</code></td>
+</tr>
+<tr class="odd">
+<td>7. Models (mgcv): Base, Covariates, DPC, Cluster, spatial, random vessel effects</td>
+<td><code>fit_cpue()</code></td>
+</tr>
+<tr class="even">
+<td>8. Diagnostics: model table, influence, step plot, residuals, predictive check</td>
+<td><code>cpue_diagnostics()</code>, <code>plot_step()</code>, <code>plot_influence()</code>, <code>plot_residuals()</code>, <code>ppc_cpue()</code></td>
+</tr>
+<tr class="odd">
+<td>9. Index for the assessment, with log SE and CV</td>
+<td><code>cpue_index()</code>, <code>export_index()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="data-requirements">Data requirements</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Minimum data</strong></td>
+<td>Operation-level (trip or set) records with year, vessel, effort and catch by species (template: <a href="../data/templates/logbook_long.csv"><code>logbook_long.csv</code></a>).</td>
+</tr>
+<tr class="even">
+<td><strong>Preferred data</strong></td>
+<td>Positions, month, gear or hook configuration; several years of indicator vessels; full species composition of each operation.</td>
+</tr>
+<tr class="odd">
+<td><strong>Optional auxiliary data</strong></td>
+<td>Habitat or depth covariates; hooks between floats for longlines; survey index for comparison.</td>
+</tr>
+<tr class="even">
+<td><strong>Data quality considerations</strong></td>
+<td>Species synonyms, rounded catches, under-reported bycatch, mixed-tactic trips, coarse or missing positions, vessel turnover.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-processing-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="data-processing-requirements">Data processing requirements</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pre-processing steps</strong></td>
+<td><code>cpue_data()</code> to one row per operation with synonyms resolved; <code>select_vessels()</code>, <code>select_species()</code>; every selection is recorded in <code>x$log</code>.</td>
+</tr>
+<tr class="even">
+<td><strong>Standardization needs</strong></td>
+<td>This is the standardisation step: Base, Covariates, Cluster and DPC (direct principal components) GAMs, optional spatial terms and random vessel effects; Tweedie or delta families.</td>
+</tr>
+<tr class="odd">
+<td><strong>Aggregation / binning choices</strong></td>
+<td><span class="todo">To be completed</span> <br><small>Documents how catches, ages or lengths should be grouped.</small></td>
+</tr>
+<tr class="even">
+<td><strong>Fleet / gear handling</strong></td>
+<td>Indicator fleets by activity and target-species rules; fishing tactics from clustering the catch composition; habitat-based subsetting (Stephens and MacCall 2004).</td>
+</tr>
+<tr class="odd">
+<td><strong>Missing data handling</strong></td>
+<td>Operations with missing covariates are flagged in the processing log; zeros are kept and modelled by the Tweedie or delta family.</td>
+</tr>
+</tbody>
+</table>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cpueTargeting)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cpue_data</span>(logbook, <span class="at">year =</span> <span class="st">"year"</span>, <span class="at">species =</span> <span class="st">"species"</span>, <span class="at">catch =</span> <span class="st">"kg"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">effort =</span> <span class="st">"hours"</span>, <span class="at">id =</span> <span class="st">"trip"</span>, <span class="at">vessel =</span> <span class="st">"vessel"</span>, <span class="at">covariates =</span> <span class="st">"month"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">select_species</span>(x, <span class="at">threshold =</span> <span class="fl">0.95</span>, <span class="at">keep =</span> <span class="st">"Pagellus bogaraveo"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">add_targeting</span>(x)          <span class="co"># PCs (Optimal Coordinates test) and clusters</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fit_cpue</span>(x, <span class="at">species =</span> <span class="st">"Pagellus bogaraveo"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">models =</span> <span class="fu">c</span>(<span class="st">"Base"</span>, <span class="st">"Covariates"</span>, <span class="st">"Cluster"</span>, <span class="st">"DPC"</span>), <span class="at">vessel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cpue_diagnostics</span>(fit)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">export_index</span>(fit, <span class="st">"cpue_index.csv"</span>, <span class="at">model =</span> <span class="st">"DPC"</span>)   <span class="co"># index with log SE for SPiCT/JABBA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="model-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="model-documentation">Model documentation</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Key parameters</strong></td>
+<td>Species set threshold, number of PCs (Optimal Coordinates test), number of clusters, model terms, error family.</td>
+</tr>
+<tr class="even">
+<td><strong>Priors / fixed inputs</strong></td>
+<td><span class="todo">To be completed</span> <br><small>Documents fixed values, priors and externally supplied assumptions.</small></td>
+</tr>
+<tr class="odd">
+<td><strong>Error structure</strong></td>
+<td>Tweedie or delta (binomial + positive) GAM in mgcv.</td>
+</tr>
+<tr class="even">
+<td><strong>State-space formulation</strong></td>
+<td>No.</td>
+</tr>
+<tr class="odd">
+<td><strong>Implementation notes</strong></td>
+<td>Operating models: <code>simulate_cluster()</code>, <code>simulate_bathymetric()</code> (WKBMSYSPICT CPUE guidelines), <code>simulate_tuna()</code> (hook depth by HBF), <code>simulate_logbook()</code> (messy logbook with known truth).</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="assumptions-and-sensitivities" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-and-sensitivities">Assumptions and sensitivities</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Core assumptions</strong></td>
+<td>Targeting is captured by the catch composition (PCs or clusters); the reference set of covariates is constant over time; the indicator fleet samples the stock consistently.</td>
+</tr>
+<tr class="even">
+<td><strong>Main sensitivities</strong></td>
+<td>Species set, number of PCs and clusters, error family, habitat subsetting.</td>
+</tr>
+<tr class="odd">
+<td><strong>Likely violations</strong></td>
+<td>Persistent changes in relative abundance of the species in the composition; shifts in fishing grounds outside the data; technology creep.</td>
+</tr>
+<tr class="even">
+<td><strong>Expected bias</strong></td>
+<td>When relative abundances change persistently, PCs can absorb part of the real trend of the species whose abundance changes most (more PCs absorb more); coarser clusters are less affected.</td>
+</tr>
+<tr class="odd">
+<td><strong>Warning signs</strong></td>
+<td>Large influence of targeting terms in years where the trend changes; poor predictive check of zeros or tails by year; index follows nominal CPUE of a single tactic.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="misuse-prevention" class="level2">
+<h2 class="anchored" data-anchor-id="misuse-prevention">Misuse prevention</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Misuse warnings shown by the method selector
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Caution:</strong> when <em>goal = HCR testing</em>: An assessment fit alone does not test a harvest control rule. Use the assessment as the estimation model in an MSE (see FLR mse).</li>
+</ul>
+<p>Rules are maintained in <code>data/misuse_rules.csv</code>.</p>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Do not use when</strong></td>
+<td>There is no operation-level data (only annual aggregates); the species is a rare bycatch whose catches are not reliably recorded.</td>
+</tr>
+<tr class="even">
+<td><strong>Common misuses</strong></td>
+<td>Using nominal CPUE directly in an assessment; adding many PCs to improve fit, which absorbs the abundance signal; dropping the processing log so the selections cannot be reviewed.</td>
+</tr>
+<tr class="odd">
+<td><strong>Pre-use checklist</strong></td>
+<td>Complete the reporting checklist below; compare Cluster and DPC indices; run sensitivity to species set and number of PCs; check influence and predictive plots.</td>
+</tr>
+<tr class="even">
+<td><strong>Pre-run checks</strong></td>
+<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
+</tr>
+<tr class="odd">
+<td><strong>Advice suitability</strong></td>
+<td>Input data: produces the abundance index used by assessments and empirical rules.</td>
+</tr>
+</tbody>
+</table>
+<section id="reporting-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="reporting-checklist">Reporting checklist</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Report</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Operation and effort</td>
+<td>Unit (set, trip, …), effort measure</td>
+</tr>
+<tr class="even">
+<td>Data selection</td>
+<td>All subsetting rules and the processing log</td>
+</tr>
+<tr class="odd">
+<td>Species set</td>
+<td>Threshold, criterion (occurrence or weight), species kept</td>
+</tr>
+<tr class="even">
+<td>Fleet</td>
+<td>Indicator-fleet rules, number of vessels</td>
+</tr>
+<tr class="odd">
+<td>Subsetting</td>
+<td>Stephens &amp; MacCall target, critical value, share kept over time; tactics removed</td>
+</tr>
+<tr class="even">
+<td>Targeting</td>
+<td>Transformation, eigenvalues, OC result, number of PCs and clusters, clustering method</td>
+</tr>
+<tr class="odd">
+<td>Models</td>
+<td>Family, terms, random effects, reference set of the index</td>
+</tr>
+<tr class="even">
+<td>Diagnostics</td>
+<td>Model table, step and influence plots, residuals, predictive check, vessel effects</td>
+</tr>
+<tr class="odd">
+<td>Index</td>
+<td>Nominal and standardised CPUE, log SE and CV</td>
+</tr>
+<tr class="even">
+<td>Sensitivity</td>
+<td>Indices with alternative species sets, numbers of PCs, clusters, families</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="applications-and-support" class="level2">
+<h2 class="anchored" data-anchor-id="applications-and-support">Applications and support</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Entry</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Applications / case studies</strong></td>
+<td>Worked examples on the <a href="https://henning-winker.github.io/cpueTargeting/">project page</a>: bathymetric targeting, tuna longline (flat vs contrasting trends), logbook standardisation for blackspot seabream and dolphinfish.</td>
+</tr>
+<tr class="even">
+<td><strong>References</strong></td>
+<td>Winker et al.&nbsp;(2014); Thorson et al.&nbsp;(2017) doi:10.1139/cjfas-2015-0598; Ono et al.&nbsp;(2015) doi:10.1016/j.fishres.2015.05.021; Bigelow et al.&nbsp;(2002); Stephens &amp; MacCall (2004); Bentley et al.&nbsp;(2012).</td>
+</tr>
+<tr class="odd">
+<td><strong>Software / tools</strong></td>
+<td><code>remotes::install_github("henning-winker/cpueTargeting")</code>; needs <code>ggplot2</code>, <code>mgcv</code> for model fitting.</td>
+</tr>
+</tbody>
+</table>
+<div class="catalogue-example-grid">
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Suitable example</p>
+</div>
+<p>Simulated logbook with known truth (<code>simulate_logbook()</code>): blackspot seabream and dolphinfish examples on the <a href="https://henning-winker.github.io/cpueTargeting/">project page</a>.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Assumption sensitivity</p>
+</div>
+<p>Tuna longline, flat vs contrasting true trends: when the catch composition captures targeting and when it also absorbs abundance.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Unsuitable example</p>
+</div>
+<p>Many PCs on a fishery where species relative abundances diverge: the targeting terms remove part of the real trend.</p>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/henning-winker\.github\.io\/nfifm-toolbox");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../data-tools/data-preparation.html" class="pagination-link" aria-label="Data preparation workflow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data preparation workflow</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../data-tools/fishualizer.html" class="pagination-link" aria-label="FishualizeR">
+        <span class="nav-page-text">FishualizeR</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "cpueTargeting"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "CPUE standardisation with changing targeting"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [data, CPUE standardisation, targeting, GAM]</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Draft</span><span class="co">]</span>{.status-badge .status-draft} <span class="co">[</span><span class="ot">Showcase entry</span><span class="co">]</span>{.status-badge .status-showcase}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"cpuetargeting"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method overview</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Data and CPUE tools → CPUE and abundance indices <span class="pp">|</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> cpueTargeting (R): <span class="co">[</span><span class="ot">Henning-Winker/cpueTargeting</span><span class="co">](https://github.com/Henning-Winker/cpueTargeting)</span> · <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span> <span class="pp">|</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Toolbox for standardising real multispecies catch and effort data where targeting changes over time, plus operating models that test how well standardisation copes with targeting. <span class="pp">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Standardised CPUE index with log SE and CV for the assessment (<span class="in">`export_index()`</span>), model comparison, influence and step plots, residual and predictive checks, processing log. <span class="pp">|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Commercial logbook or observer CPUE from multispecies or multi-tactic fisheries, before it is used as an index in SPiCT, JABBA, BSM or an empirical rule. <span class="pp">|</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>Author: Henning Winker (FAO NFIFM). The package has two parts: **operating models** that simulate fisheries with changing targeting, so that standardisation methods can be tested against a known truth, and a **step-by-step toolbox** for real data.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Functions <span class="pp">|</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1. Format: one row per operation, synonyms, processing log <span class="pp">|</span> <span class="in">`cpue_data()`</span>, <span class="in">`subset()`</span>, <span class="in">`cpue_matrix()`</span> <span class="pp">|</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2. Fleet: operations by year and vessel, indicator vessels, vessel profiles <span class="pp">|</span> <span class="in">`plot_fleet()`</span>, <span class="in">`vessel_summary()`</span>, <span class="in">`select_vessels()`</span>, <span class="in">`plot_vessel_profile()`</span> <span class="pp">|</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3. Species: cumulative species curves and the species set <span class="pp">|</span> <span class="in">`species_curve()`</span>, <span class="in">`plot_species_curve()`</span>, <span class="in">`select_species()`</span> <span class="pp">|</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4. Nominal CPUE and catch composition <span class="pp">|</span> <span class="in">`nominal_cpue()`</span>, <span class="in">`plot_nominal()`</span>, <span class="in">`plot_composition()`</span>, <span class="in">`plot_cpue_map()`</span> <span class="pp">|</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5. Subsetting: habitat-based (Stephens and MacCall), removing irrelevant tactics <span class="pp">|</span> <span class="in">`stephens_maccall()`</span>, <span class="in">`plot_stephens_maccall()`</span>, <span class="in">`select_tactics()`</span> <span class="pp">|</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6. Targeting covariates: composition PCA, Optimal Coordinates test, clustering <span class="pp">|</span> <span class="in">`add_targeting()`</span>, <span class="in">`composition_pca()`</span>, <span class="in">`compute_oc()`</span>, <span class="in">`cluster_tactics()`</span>, <span class="in">`tactic_table()`</span> <span class="pp">|</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7. Models (mgcv): Base, Covariates, DPC, Cluster, spatial, random vessel effects <span class="pp">|</span> <span class="in">`fit_cpue()`</span> <span class="pp">|</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 8. Diagnostics: model table, influence, step plot, residuals, predictive check <span class="pp">|</span> <span class="in">`cpue_diagnostics()`</span>, <span class="in">`plot_step()`</span>, <span class="in">`plot_influence()`</span>, <span class="in">`plot_residuals()`</span>, <span class="in">`ppc_cpue()`</span> <span class="pp">|</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 9. Index for the assessment, with log SE and CV <span class="pp">|</span> <span class="in">`cpue_index()`</span>, <span class="in">`export_index()`</span> <span class="pp">|</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data requirements</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> Operation-level (trip or set) records with year, vessel, effort and catch by species (template: <span class="co">[</span><span class="ot">`logbook_long.csv`</span><span class="co">](../data/templates/logbook_long.csv)</span>). <span class="pp">|</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Positions, month, gear or hook configuration; several years of indicator vessels; full species composition of each operation. <span class="pp">|</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Habitat or depth covariates; hooks between floats for longlines; survey index for comparison. <span class="pp">|</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> Species synonyms, rounded catches, under-reported bycatch, mixed-tactic trips, coarse or missing positions, vessel turnover. <span class="pp">|</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data processing requirements</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> <span class="in">`cpue_data()`</span> to one row per operation with synonyms resolved; <span class="in">`select_vessels()`</span>, <span class="in">`select_species()`</span>; every selection is recorded in <span class="in">`x$log`</span>. <span class="pp">|</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> This is the standardisation step: Base, Covariates, Cluster and DPC (direct principal components) GAMs, optional spatial terms and random vessel effects; Tweedie or delta families. <span class="pp">|</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents how catches, ages or lengths should be grouped.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> Indicator fleets by activity and target-species rules; fishing tactics from clustering the catch composition; habitat-based subsetting (Stephens and MacCall 2004). <span class="pp">|</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> Operations with missing covariates are flagged in the processing log; zeros are kept and modelled by the Tweedie or delta family. <span class="pp">|</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cpueTargeting)</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cpue_data</span>(logbook, <span class="at">year =</span> <span class="st">"year"</span>, <span class="at">species =</span> <span class="st">"species"</span>, <span class="at">catch =</span> <span class="st">"kg"</span>,</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>               <span class="at">effort =</span> <span class="st">"hours"</span>, <span class="at">id =</span> <span class="st">"trip"</span>, <span class="at">vessel =</span> <span class="st">"vessel"</span>, <span class="at">covariates =</span> <span class="st">"month"</span>)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">select_species</span>(x, <span class="at">threshold =</span> <span class="fl">0.95</span>, <span class="at">keep =</span> <span class="st">"Pagellus bogaraveo"</span>)</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">add_targeting</span>(x)          <span class="co"># PCs (Optimal Coordinates test) and clusters</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fit_cpue</span>(x, <span class="at">species =</span> <span class="st">"Pagellus bogaraveo"</span>,</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>                <span class="at">models =</span> <span class="fu">c</span>(<span class="st">"Base"</span>, <span class="st">"Covariates"</span>, <span class="st">"Cluster"</span>, <span class="st">"DPC"</span>), <span class="at">vessel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="fu">cpue_diagnostics</span>(fit)</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="fu">export_index</span>(fit, <span class="st">"cpue_index.csv"</span>, <span class="at">model =</span> <span class="st">"DPC"</span>)   <span class="co"># index with log SE for SPiCT/JABBA</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model documentation</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> Species set threshold, number of PCs (Optimal Coordinates test), number of clusters, model terms, error family. <span class="pp">|</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents fixed values, priors and externally supplied assumptions.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> Tweedie or delta (binomial + positive) GAM in mgcv. <span class="pp">|</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> No. <span class="pp">|</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Operating models: <span class="in">`simulate_cluster()`</span>, <span class="in">`simulate_bathymetric()`</span> (WKBMSYSPICT CPUE guidelines), <span class="in">`simulate_tuna()`</span> (hook depth by HBF), <span class="in">`simulate_logbook()`</span> (messy logbook with known truth). <span class="pp">|</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assumptions and sensitivities</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Targeting is captured by the catch composition (PCs or clusters); the reference set of covariates is constant over time; the indicator fleet samples the stock consistently. <span class="pp">|</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> Species set, number of PCs and clusters, error family, habitat subsetting. <span class="pp">|</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Persistent changes in relative abundance of the species in the composition; shifts in fishing grounds outside the data; technology creep. <span class="pp">|</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> When relative abundances change persistently, PCs can absorb part of the real trend of the species whose abundance changes most (more PCs absorb more); coarser clusters are less affected. <span class="pp">|</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> Large influence of targeting terms in years where the trend changes; poor predictive check of zeros or tails by year; index follows nominal CPUE of a single tactic. <span class="pp">|</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Misuse prevention</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"cpuetargeting"</span>)</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> There is no operation-level data (only annual aggregates); the species is a rare bycatch whose catches are not reliably recorded. <span class="pp">|</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Using nominal CPUE directly in an assessment; adding many PCs to improve fit, which absorbs the abundance signal; dropping the processing log so the selections cannot be reviewed. <span class="pp">|</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> Complete the reporting checklist below; compare Cluster and DPC indices; run sensitivity to species set and number of PCs; check influence and predictive plots. <span class="pp">|</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Input data: produces the abundance index used by assessments and empirical rules. <span class="pp">|</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reporting checklist</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Item <span class="pp">|</span> Report <span class="pp">|</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Operation and effort <span class="pp">|</span> Unit (set, trip, …), effort measure <span class="pp">|</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data selection <span class="pp">|</span> All subsetting rules and the processing log <span class="pp">|</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Species set <span class="pp">|</span> Threshold, criterion (occurrence or weight), species kept <span class="pp">|</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fleet <span class="pp">|</span> Indicator-fleet rules, number of vessels <span class="pp">|</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Subsetting <span class="pp">|</span> Stephens &amp; MacCall target, critical value, share kept over time; tactics removed <span class="pp">|</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Targeting <span class="pp">|</span> Transformation, eigenvalues, OC result, number of PCs and clusters, clustering method <span class="pp">|</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Models <span class="pp">|</span> Family, terms, random effects, reference set of the index <span class="pp">|</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Diagnostics <span class="pp">|</span> Model table, step and influence plots, residuals, predictive check, vessel effects <span class="pp">|</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Index <span class="pp">|</span> Nominal and standardised CPUE, log SE and CV <span class="pp">|</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sensitivity <span class="pp">|</span> Indices with alternative species sets, numbers of PCs, clusters, families <span class="pp">|</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications and support</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Worked examples on the <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span>: bathymetric targeting, tuna longline (flat vs contrasting trends), logbook standardisation for blackspot seabream and dolphinfish. <span class="pp">|</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Winker et al. (2014); Thorson et al. (2017) doi:10.1139/cjfas-2015-0598; Ono et al. (2015) doi:10.1016/j.fishres.2015.05.021; Bigelow et al. (2002); Stephens &amp; MacCall (2004); Bentley et al. (2012). <span class="pp">|</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> <span class="in">`remotes::install_github("henning-winker/cpueTargeting")`</span>; needs <span class="in">`ggplot2`</span>, <span class="in">`mgcv`</span> for model fitting. <span class="pp">|</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>Simulated logbook with known truth (<span class="in">`simulate_logbook()`</span>): blackspot seabream and dolphinfish examples on the <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span>.</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Tuna longline, flat vs contrasting true trends: when the catch composition captures targeting and when it also absorbs abundance.</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Many PCs on a fishery where species relative abundances diverge: the targeting terms remove part of the real trend.</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>NFIFM Toolbox · development version, not an official FAO product</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/data-tools/cpuetargeting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data-tools/cpuetargeting.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Content CC BY 4.0 · Code MIT</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

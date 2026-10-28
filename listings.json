@@ -1,0 +1,24 @@
+[
+  {
+    "listing": "/methods/index.html",
+    "items": [
+      "/methods/age-structured/age-structured.html",
+      "/methods/biomass-dynamic/cmsy.html",
+      "/methods/empirical/trend-indicators.html",
+      "/methods/empirical/exploitation-history.html",
+      "/methods/dynamic-pool/flicc.html",
+      "/methods/biomass-dynamic/jabba.html",
+      "/methods/dynamic-pool/lbb.html",
+      "/methods/dynamic-pool/lbspr.html",
+      "/methods/empirical/lbi.html",
+      "/methods/empirical/dashboard.html",
+      "/methods/empirical/psa.html",
+      "/methods/biomass-dynamic/spict.html",
+      "/methods/dynamic-pool/scal.html",
+      "/methods/dynamic-pool/tropfishr.html",
+      "/methods/dynamic-pool/ypr-spr.html",
+      "/methods/dynamic-pool/fishblicc.html",
+      "/methods/multispecies/mmsyfm.html"
+    ]
+  }
+]
