@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-2a840f158fcfed2a52a11d25bfc5ad6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8357332147aef23ee49569f9a9ac6ceb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -809,20 +809,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#method-overview" id="toc-method-overview" class="nav-link active" data-scroll-target="#method-overview">Method overview</a></li>
-  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">1 · Data</a>
   <ul class="collapse">
   <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick start</a></li>
   </ul></li>
-  <li><a href="#data-processing-requirements" id="toc-data-processing-requirements" class="nav-link" data-scroll-target="#data-processing-requirements">Data processing requirements</a></li>
-  <li><a href="#model-documentation" id="toc-model-documentation" class="nav-link" data-scroll-target="#model-documentation">Model documentation</a></li>
-  <li><a href="#assumptions-and-sensitivities" id="toc-assumptions-and-sensitivities" class="nav-link" data-scroll-target="#assumptions-and-sensitivities">Assumptions and sensitivities</a>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">2 · Method</a></li>
+  <li><a href="#outputs-diagnostics-and-sensitivities" id="toc-outputs-diagnostics-and-sensitivities" class="nav-link" data-scroll-target="#outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</a>
   <ul class="collapse">
   <li><a href="#checks-and-red-flags" id="toc-checks-and-red-flags" class="nav-link" data-scroll-target="#checks-and-red-flags">Checks and red flags</a></li>
   <li><a href="#recommended-defaults" id="toc-recommended-defaults" class="nav-link" data-scroll-target="#recommended-defaults">Recommended defaults</a></li>
   </ul></li>
-  <li><a href="#misuse-prevention" id="toc-misuse-prevention" class="nav-link" data-scroll-target="#misuse-prevention">Misuse prevention</a></li>
-  <li><a href="#applications-and-support" id="toc-applications-and-support" class="nav-link" data-scroll-target="#applications-and-support">Applications and support</a></li>
+  <li><a href="#use-and-misuse" id="toc-use-and-misuse" class="nav-link" data-scroll-target="#use-and-misuse">Use and misuse</a></li>
+  <li><a href="#case-studies-and-references" id="toc-case-studies-and-references" class="nav-link" data-scroll-target="#case-studies-and-references">Case studies and references</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/methods/dynamic-pool/flicc.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/methods/dynamic-pool/flicc.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -858,6 +857,9 @@ window.Quarto = {
 
 
 <p><span class="status-badge status-draft">Draft</span> <span class="status-badge status-showcase">Showcase entry</span></p>
+<div class="path">
+<p><a href="#data" class="step">1 · Data</a> <span class="arrow">→</span> <a href="#method" class="step">2 · Method</a> <span class="arrow">→</span> <a href="#outputs-diagnostics-and-sensitivities" class="step">3 · Outputs</a> <span class="arrow">·</span> <a href="#use-and-misuse" class="step">Use and misuse</a> <span class="arrow">·</span> <a href="#case-studies-and-references" class="step">Case studies</a></p>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -901,8 +903,8 @@ window.Quarto = {
 </table>
 </div>
 </div>
-<section id="method-overview" class="level2">
-<h2 class="anchored" data-anchor-id="method-overview">Method overview</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -983,8 +985,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="data-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-requirements">Data requirements</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">1 · Data</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1013,8 +1015,29 @@ window.Quarto = {
 <td><strong>Data quality considerations</strong></td>
 <td>Representativeness and sample size per gear-year; consistency of modes and left limbs between years; share of fish at or above <span class="math inline">\(L_\infty\)</span> (red flag &gt; 1%).</td>
 </tr>
+<tr class="odd">
+<td><strong>Pre-processing steps</strong></td>
+<td>Long table → <code>lfd_long_to_wide()</code> → <code>FLQuantLen()</code> (<code>midL</code>, <code>unit</code>); <code>stocklen()</code> to build the <code>FLStockLen</code> with an M-at-length model.</td>
+</tr>
+<tr class="even">
+<td><strong>Standardization needs</strong></td>
+<td><span class="todo">To be completed</span> <br><small>Identifies whether indices or samples require standardization.</small></td>
+</tr>
+<tr class="odd">
+<td><strong>Aggregation / binning choices</strong></td>
+<td>Bin lower bound vs mid-point (<code>midL</code>); tail cut at about 0.80–0.85 × <span class="math inline">\(L_\infty\)</span> as an absolute length; plus group.</td>
+</tr>
+<tr class="even">
+<td><strong>Fleet / gear handling</strong></td>
+<td>One selectivity per gear (<code>logistic</code>, <code>dsnormal</code>, <code>normal</code>, <code>binormal</code>, <code>bidsnormal</code>); F split between gears through <code>catch_by_gear</code>.</td>
+</tr>
+<tr class="odd">
+<td><strong>Missing data handling</strong></td>
+<td>Keep zeros and rely on the random walk on F; do not drop the random walk when years are missing.</td>
+</tr>
 </tbody>
 </table>
+<p><strong>Data template:</strong> <a href="../../data/templates/length_long.csv"><code>length_long.csv</code></a> and <a href="../../data/templates/life_history.csv"><code>life_history.csv</code></a>. Prepare the data first with the <a href="../../data-tools/data-preparation.html">data preparation workflow</a>.</p>
 <section id="quick-start" class="level3">
 <h3 class="anchored" data-anchor-id="quick-start">Quick start</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("TMB", type = "source")</span></span>
@@ -1048,13 +1071,9 @@ window.Quarto = {
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">sprcur_flicc</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="data-processing-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-processing-requirements">Data processing requirements</h2>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">2 · Method</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Field</th>
@@ -1063,42 +1082,13 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Pre-processing steps</strong></td>
-<td>Long table → <code>lfd_long_to_wide()</code> → <code>FLQuantLen()</code> (<code>midL</code>, <code>unit</code>); <code>stocklen()</code> to build the <code>FLStockLen</code> with an M-at-length model.</td>
+<td><strong>Software / tools</strong></td>
+<td>R package <code>FLicc</code> (<a href="https://github.com/henning-winker/FLicc">henning-winker/FLicc</a>); depends on <code>FLCore</code>, <code>ggplotFL</code>, <code>TMB</code>. MSE: <code>flicc.sa()</code>, <code>lbi.hcr()</code>, <code>rfb.flicc.hcr()</code>.</td>
 </tr>
 <tr class="even">
-<td><strong>Standardization needs</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Identifies whether indices or samples require standardization.</small></td>
+<td><strong>Implementation notes</strong></td>
+<td>Default: <code>pop_model = "gtg"</code>, <code>obs_model = "dm"</code>, <code>dm_theta = "saturating"</code>, all years fitted jointly. <code>pop_model = "gamma"</code> + <code>obs_model = "nb"</code> reproduces fishblicc; <code>lbb_flicc()</code> reproduces LBB.</td>
 </tr>
-<tr class="odd">
-<td><strong>Aggregation / binning choices</strong></td>
-<td>Bin lower bound vs mid-point (<code>midL</code>); tail cut at about 0.80–0.85 × <span class="math inline">\(L_\infty\)</span> as an absolute length; plus group.</td>
-</tr>
-<tr class="even">
-<td><strong>Fleet / gear handling</strong></td>
-<td>One selectivity per gear (<code>logistic</code>, <code>dsnormal</code>, <code>normal</code>, <code>binormal</code>, <code>bidsnormal</code>); F split between gears through <code>catch_by_gear</code>.</td>
-</tr>
-<tr class="odd">
-<td><strong>Missing data handling</strong></td>
-<td>Keep zeros and rely on the random walk on F; do not drop the random walk when years are missing.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="model-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="model-documentation">Model documentation</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
 <td><strong>Key parameters</strong></td>
 <td>F by year (random walk, <code>sigmaF</code>), selectivity parameters per gear, Dirichlet-multinomial precision; fixed <span class="math inline">\(L_\infty\)</span>, CVL, <span class="math inline">\(M\)</span>, <span class="math inline">\(k\)</span>.</td>
@@ -1116,14 +1106,14 @@ window.Quarto = {
 <td>Partly: F can follow a random walk (random effects); the population model is equilibrium.</td>
 </tr>
 <tr class="odd">
-<td><strong>Implementation notes</strong></td>
-<td>Default: <code>pop_model = "gtg"</code>, <code>obs_model = "dm"</code>, <code>dm_theta = "saturating"</code>, all years fitted jointly. <code>pop_model = "gamma"</code> + <code>obs_model = "nb"</code> reproduces fishblicc; <code>lbb_flicc()</code> reproduces LBB.</td>
+<td><strong>Core assumptions</strong></td>
+<td>Equilibrium within each year (constant recruitment and mortality), von Bertalanffy growth with variability among growth-type groups, selectivity constant over the years fitted, representative length samples.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="assumptions-and-sensitivities" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-sensitivities">Assumptions and sensitivities</h2>
+<section id="outputs-diagnostics-and-sensitivities" class="level2">
+<h2 class="anchored" data-anchor-id="outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1137,22 +1127,18 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Core assumptions</strong></td>
-<td>Equilibrium within each year (constant recruitment and mortality), von Bertalanffy growth with variability among growth-type groups, selectivity constant over the years fitted, representative length samples.</td>
-</tr>
-<tr class="even">
 <td><strong>Main sensitivities</strong></td>
 <td><span class="math inline">\(L_\infty\)</span> (the main one), dome-shaped vs logistic selectivity, CVL, tail cut, effective sample size.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Likely violations</strong></td>
 <td>Recruitment pulses and cohort signals; changing gear mix or selectivity; non-representative sampling; <span class="math inline">\(L_\infty\)</span> inconsistent with the data.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Expected bias</strong></td>
 <td>The equilibrium model tends to be pessimistic during a rebuild and optimistic while F is increasing; unsupported domes inflate SPR.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Warning signs</strong></td>
 <td>Failed convergence checks, narrow or unsupported domes, systematic residuals or failed runs test, retrospective rho beyond ±0.2, gears disagreeing on status.</td>
 </tr>
@@ -1300,10 +1286,34 @@ window.Quarto = {
 </tbody>
 </table>
 <p>See also the general <a href="../../guidance/diagnostics.html">diagnostics</a> and <a href="../../guidance/sensitivity.html">sensitivity</a> guidance.</p>
+<p><strong>Diagnostics:</strong> apply the <a href="../../guidance/diagnostics.html#model-acceptance-checklist">model acceptance checklist</a> (convergence, residuals, prior vs posterior, retrospective, hindcast, jitter, plausibility) before results are used for advice.</p>
+<section id="sensitivity-demos" class="level4">
+<h4 class="anchored" data-anchor-id="sensitivity-demos">Sensitivity demos</h4>
+<div class="catalogue-example-grid">
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Dome-shaped selectivity</p>
+</div>
+<p><code>dome_sens_flicc()</code> from flat (rsd 1000) to strongly domed (0.4 × <span class="math inline">\(L_\infty\)</span>): how much SPR depends on the dome. <a href="../../resources/guides/FLicc_user_guide.html">FLicc user guide</a>, section on dome sensitivity.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Sensitivity to <span class="math inline">\(L_\infty\)</span></p>
+</div>
+<p>Refit over a plausible range of <span class="math inline">\(L_\infty\)</span>; summarise with <code>fits_summary()</code>. <a href="../../resources/guides/FLicc_user_guide.html">FLicc user guide</a>.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Tail cut and CVL</p>
+</div>
+<p>Tail cut at 0.80–0.85 × <span class="math inline">\(L_\infty\)</span> and alternative CVL; ensemble with <code>ensemble_flicc()</code>. <a href="../../resources/guides/FLicc_user_guide.html">FLicc user guide</a>.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="misuse-prevention" class="level2">
-<h2 class="anchored" data-anchor-id="misuse-prevention">Misuse prevention</h2>
+</section>
+<section id="use-and-misuse" class="level2">
+<h2 class="anchored" data-anchor-id="use-and-misuse">Use and misuse</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1338,20 +1348,20 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
+<td><strong>Pre-run checks</strong></td>
+<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
+</tr>
+<tr class="even">
 <td><strong>Do not use when</strong></td>
 <td>Length samples are not representative of the catch; <span class="math inline">\(L_\infty\)</span> is inconsistent with the largest fish; strong recruitment pulses dominate the compositions and are read as F.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Common misuses</strong></td>
 <td>Unsupported dome-shaped selectivity that inflates SPR; using raw counts in the thousands with a multinomial likelihood; treating equilibrium SPR as current status during rebuilding.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Pre-use checklist</strong></td>
 <td>The 10 FLicc checks (sample size, consistency, largest fish vs <span class="math inline">\(L_\infty\)</span>, catch curves, life history, selectivity, convergence, fit, retrospective, indicators).</td>
-</tr>
-<tr class="even">
-<td><strong>Pre-run checks</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
 </tr>
 <tr class="odd">
 <td><strong>Advice suitability</strong></td>
@@ -1360,8 +1370,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="applications-and-support" class="level2">
-<h2 class="anchored" data-anchor-id="applications-and-support">Applications and support</h2>
+<section id="case-studies-and-references" class="level2">
+<h2 class="anchored" data-anchor-id="case-studies-and-references">Case studies and references</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1377,10 +1387,6 @@ window.Quarto = {
 <tr class="even">
 <td><strong>References</strong></td>
 <td>Medley (2025) <em>ICES J. Mar.&nbsp;Sci.</em> 82: fsaf224 · Hordyk et al.&nbsp;(2015, 2016) · Froese et al.&nbsp;(2018) · Kell et al.&nbsp;(2007) · Kristensen et al.&nbsp;(2016). Full list in the <a href="../../resources/guides/FLicc_user_guide.html">FLicc user guide</a>.</td>
-</tr>
-<tr class="odd">
-<td><strong>Software / tools</strong></td>
-<td>R package <code>FLicc</code> (<a href="https://github.com/henning-winker/FLicc">henning-winker/FLicc</a>); depends on <code>FLCore</code>, <code>ggplotFL</code>, <code>TMB</code>. MSE: <code>flicc.sa()</code>, <code>lbi.hcr()</code>, <code>rfb.flicc.hcr()</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1895,192 +1901,221 @@ window.Quarto = {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Draft</span><span class="co">]</span>{.status-badge .status-draft} <span class="co">[</span><span class="ot">Showcase entry</span><span class="co">]</span>{.status-badge .status-showcase}</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"flicc"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method overview</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Dynamic pool models → equilibrium per-recruit (length-based, single-fleet and multi-gear) <span class="pp">|</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> FLicc (R/FLR/TMB): length-interval catch curves <span class="pp">|</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Equilibrium length-interval catch curve that explains the length composition of the catch by growth, natural mortality, fishing mortality and gear selectivity, integrated over length bins. LBSPR, LBB and fishblicc are each a configuration of FLicc. <span class="pp">|</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> SPR by year with CI, $F_{SPR}$ reference points, exploitable potential ratio (EPR, the LBB $B/B_0$), steepness-corrected $B/B_{tgt}$, selectivity by gear, length-based indicators (LBIspr, LBImean), yield/SPR contours over selectivity and F. <span class="pp">|</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Length-frequency data by gear and year with life-history information and no reliable index or age data; multi-gear fisheries with asymptotic and dome-shaped selectivity; estimation model in an FLR MSE. <span class="pp">|</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>FLicc brings the main lines of length-based per-recruit assessment into one framework, built on FLR and fitted with TMB:</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tool <span class="pp">|</span> FLicc configuration <span class="pp">|</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LBSPR <span class="pp">|</span> <span class="in">`pop_model = "gtg"`</span> (<span class="in">`ngtg = 13`</span>, <span class="in">`maxsd = 2`</span>, CVL 0.1), <span class="in">`obs_model = "mn"`</span>, Linf, M/k and CVL fixed, <span class="in">`by_year = TRUE`</span> <span class="pp">|</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LBB <span class="pp">|</span> <span class="in">`lbb_flicc()`</span>: <span class="in">`pop_model = "gtg"`</span> with <span class="in">`ngtg = 1`</span>, <span class="in">`obs_model = "dm"`</span> (fixed precision, <span class="in">`ess = 20000`</span>), priors on Linf and M/k, <span class="in">`by_year = TRUE`</span> <span class="pp">|</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> fishblicc <span class="pp">|</span> <span class="in">`pop_model = "gamma"`</span>, <span class="in">`obs_model = "nb"`</span>, several gears, catch shares in numbers <span class="pp">|</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> FLicc default <span class="pp">|</span> <span class="in">`pop_model = "gtg"`</span>, <span class="in">`obs_model = "dm"`</span> with precision estimated (<span class="in">`dm_theta = "saturating"`</span>), all years jointly with a random walk on F <span class="pp">|</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>On this basis FLicc adds what a routine assessment and management procedure needs: several years fitted jointly with shared selectivity, alternative observation models, treatment of the tail of the composition, reference points with steepness, length-based indicators, residual diagnostics, and use as the estimation model of an MSE in FLR.</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Full documentation</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>The complete <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span> (H. Winker, FAO-NFI, October 2026) covers the assessment step by step (Part I), the technical options (Part II) and use in MSE (Part III).</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data requirements</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> Length-frequency counts by length bin, year and gear (<span class="in">`len`</span>, <span class="in">`year`</span>, <span class="in">`data`</span>, <span class="in">`qname`</span>); life history: $L_\infty$, $k$, $M$, $L_{50}$, length–weight $a$, $b$. <span class="pp">|</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Several years per gear with ≥ 50 fish and ≥ 10 bins per gear-year; raw counts or ESS ≥ 500 per gear-year; catch shares by gear (in weight). <span class="pp">|</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Catch shares by gear; priors on $L_\infty$ and $M/k$; external selectivity information; steepness for $B/B_{tgt}$. <span class="pp">|</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> Representativeness and sample size per gear-year; consistency of modes and left limbs between years; share of fish at or above $L_\infty$ (red flag &gt; 1%). <span class="pp">|</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quick start</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("TMB", type = "source")</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c("FLCore", "ggplotFL"),</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">#   repos = c("https://flr.r-universe.dev", "https://cloud.r-project.org"))</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co"># remotes::install_github("henning-winker/FLicc")</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FLicc)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>::: {.path}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1 · Data</span><span class="co">](#data)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">2 · Method</span><span class="co">](#method)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">3 · Outputs</span><span class="co">](#outputs-diagnostics-and-sensitivities)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Use and misuse</span><span class="co">](#use-and-misuse)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Case studies</span><span class="co">](#case-studies-and-references)</span>{.step}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"flicc"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Dynamic pool models → equilibrium per-recruit (length-based, single-fleet and multi-gear) <span class="pp">|</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> FLicc (R/FLR/TMB): length-interval catch curves <span class="pp">|</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Equilibrium length-interval catch curve that explains the length composition of the catch by growth, natural mortality, fishing mortality and gear selectivity, integrated over length bins. LBSPR, LBB and fishblicc are each a configuration of FLicc. <span class="pp">|</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> SPR by year with CI, $F_{SPR}$ reference points, exploitable potential ratio (EPR, the LBB $B/B_0$), steepness-corrected $B/B_{tgt}$, selectivity by gear, length-based indicators (LBIspr, LBImean), yield/SPR contours over selectivity and F. <span class="pp">|</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Length-frequency data by gear and year with life-history information and no reliable index or age data; multi-gear fisheries with asymptotic and dome-shaped selectivity; estimation model in an FLR MSE. <span class="pp">|</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>FLicc brings the main lines of length-based per-recruit assessment into one framework, built on FLR and fitted with TMB:</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tool <span class="pp">|</span> FLicc configuration <span class="pp">|</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LBSPR <span class="pp">|</span> <span class="in">`pop_model = "gtg"`</span> (<span class="in">`ngtg = 13`</span>, <span class="in">`maxsd = 2`</span>, CVL 0.1), <span class="in">`obs_model = "mn"`</span>, Linf, M/k and CVL fixed, <span class="in">`by_year = TRUE`</span> <span class="pp">|</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LBB <span class="pp">|</span> <span class="in">`lbb_flicc()`</span>: <span class="in">`pop_model = "gtg"`</span> with <span class="in">`ngtg = 1`</span>, <span class="in">`obs_model = "dm"`</span> (fixed precision, <span class="in">`ess = 20000`</span>), priors on Linf and M/k, <span class="in">`by_year = TRUE`</span> <span class="pp">|</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> fishblicc <span class="pp">|</span> <span class="in">`pop_model = "gamma"`</span>, <span class="in">`obs_model = "nb"`</span>, several gears, catch shares in numbers <span class="pp">|</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> FLicc default <span class="pp">|</span> <span class="in">`pop_model = "gtg"`</span>, <span class="in">`obs_model = "dm"`</span> with precision estimated (<span class="in">`dm_theta = "saturating"`</span>), all years jointly with a random walk on F <span class="pp">|</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>On this basis FLicc adds what a routine assessment and management procedure needs: several years fitted jointly with shared selectivity, alternative observation models, treatment of the tail of the composition, reference points with steepness, length-based indicators, residual diagnostics, and use as the estimation model of an MSE in FLR.</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Full documentation</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>The complete <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span> (H. Winker, FAO-NFI, October 2026) covers the assessment step by step (Part I), the technical options (Part II) and use in MSE (Part III).</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1 · Data {#data}</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> Length-frequency counts by length bin, year and gear (<span class="in">`len`</span>, <span class="in">`year`</span>, <span class="in">`data`</span>, <span class="in">`qname`</span>); life history: $L_\infty$, $k$, $M$, $L_{50}$, length–weight $a$, $b$. <span class="pp">|</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Several years per gear with ≥ 50 fish and ≥ 10 bins per gear-year; raw counts or ESS ≥ 500 per gear-year; catch shares by gear (in weight). <span class="pp">|</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Catch shares by gear; priors on $L_\infty$ and $M/k$; external selectivity information; steepness for $B/B_{tgt}$. <span class="pp">|</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> Representativeness and sample size per gear-year; consistency of modes and left limbs between years; share of fish at or above $L_\infty$ (red flag &gt; 1%). <span class="pp">|</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> Long table → <span class="in">`lfd_long_to_wide()`</span> → <span class="in">`FLQuantLen()`</span> (<span class="in">`midL`</span>, <span class="in">`unit`</span>); <span class="in">`stocklen()`</span> to build the <span class="in">`FLStockLen`</span> with an M-at-length model. <span class="pp">|</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies whether indices or samples require standardization.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> Bin lower bound vs mid-point (<span class="in">`midL`</span>); tail cut at about 0.80–0.85 × $L_\infty$ as an absolute length; plus group. <span class="pp">|</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> One selectivity per gear (<span class="in">`logistic`</span>, <span class="in">`dsnormal`</span>, <span class="in">`normal`</span>, <span class="in">`binormal`</span>, <span class="in">`bidsnormal`</span>); F split between gears through <span class="in">`catch_by_gear`</span>. <span class="pp">|</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> Keep zeros and rely on the random walk on F; do not drop the random walk when years are missing. <span class="pp">|</span></span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. length data as a long table: len (bin lower bound), year, data (count), qname (gear)</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"alfonsino"</span>)</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>lfd_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lfd_alfonsino)[, <span class="fu">c</span>(<span class="st">"len"</span>, <span class="st">"year"</span>, <span class="st">"data"</span>, <span class="st">"qname"</span>)]</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. convert to FLQuants, one per gear</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>lfd <span class="ot">&lt;-</span> <span class="fu">FLQuantLen</span>(<span class="fu">lfd_long_to_wide</span>(lfd_df), <span class="at">unit =</span> <span class="st">"cm"</span>, <span class="at">midL =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_lfd</span>(lfd)</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. life history and stock object</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>lhpar  <span class="ot">&lt;-</span> <span class="fu">FLPar</span>(<span class="at">linf =</span> <span class="fl">55.7</span>, <span class="at">k =</span> <span class="fl">0.08</span>, <span class="at">M =</span> <span class="fl">0.162</span>, <span class="at">L50 =</span> <span class="fl">31.1859</span>,</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>                <span class="at">a =</span> <span class="fl">0.004721956</span> <span class="sc">/</span> <span class="dv">1000</span>, <span class="at">b =</span> <span class="fl">3.146168</span>)</span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>stklen <span class="ot">&lt;-</span> <span class="fu">stocklen</span>(lfd, lhpar, <span class="at">m_model =</span> <span class="st">"constant"</span>)</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. fit: one selectivity shape and one catch share (by weight) per gear</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fiticc</span>(lfd, stklen,</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>              <span class="at">sel_fun =</span> <span class="fu">c</span>(<span class="st">"dsnormal"</span>, <span class="st">"logistic"</span>),</span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>              <span class="at">catch_by_gear =</span> <span class="fu">c</span>(<span class="fl">0.95</span>, <span class="fl">0.05</span>),</span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>              <span class="at">settings =</span> <span class="fu">list</span>(<span class="at">CVL =</span> <span class="fl">0.1</span>, <span class="at">obs_model =</span> <span class="st">"dm"</span>, <span class="at">dm_theta =</span> <span class="st">"saturating"</span>))</span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. check and report</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="fu">flicc_convergence</span>(fit)</span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_len</span>(fit); <span class="fu">plot_sel</span>(fit); <span class="fu">plot_spr</span>(fit, <span class="at">ci =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="fu">sprcur_flicc</span>(fit)</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>**Data template:** <span class="co">[</span><span class="ot">`length_long.csv`</span><span class="co">](../../data/templates/length_long.csv)</span> and <span class="co">[</span><span class="ot">`life_history.csv`</span><span class="co">](../../data/templates/life_history.csv)</span>. Prepare the data first with the <span class="co">[</span><span class="ot">data preparation workflow</span><span class="co">](../../data-tools/data-preparation.qmd)</span>.</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### Quick start</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("TMB", type = "source")</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c("FLCore", "ggplotFL"),</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">#   repos = c("https://flr.r-universe.dev", "https://cloud.r-project.org"))</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co"># remotes::install_github("henning-winker/FLicc")</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FLicc)</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. length data as a long table: len (bin lower bound), year, data (count), qname (gear)</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"alfonsino"</span>)</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>lfd_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lfd_alfonsino)[, <span class="fu">c</span>(<span class="st">"len"</span>, <span class="st">"year"</span>, <span class="st">"data"</span>, <span class="st">"qname"</span>)]</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. convert to FLQuants, one per gear</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>lfd <span class="ot">&lt;-</span> <span class="fu">FLQuantLen</span>(<span class="fu">lfd_long_to_wide</span>(lfd_df), <span class="at">unit =</span> <span class="st">"cm"</span>, <span class="at">midL =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_lfd</span>(lfd)</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. life history and stock object</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>lhpar  <span class="ot">&lt;-</span> <span class="fu">FLPar</span>(<span class="at">linf =</span> <span class="fl">55.7</span>, <span class="at">k =</span> <span class="fl">0.08</span>, <span class="at">M =</span> <span class="fl">0.162</span>, <span class="at">L50 =</span> <span class="fl">31.1859</span>,</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>                <span class="at">a =</span> <span class="fl">0.004721956</span> <span class="sc">/</span> <span class="dv">1000</span>, <span class="at">b =</span> <span class="fl">3.146168</span>)</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>stklen <span class="ot">&lt;-</span> <span class="fu">stocklen</span>(lfd, lhpar, <span class="at">m_model =</span> <span class="st">"constant"</span>)</span>
 <span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data processing requirements</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> Long table → <span class="in">`lfd_long_to_wide()`</span> → <span class="in">`FLQuantLen()`</span> (<span class="in">`midL`</span>, <span class="in">`unit`</span>); <span class="in">`stocklen()`</span> to build the <span class="in">`FLStockLen`</span> with an M-at-length model. <span class="pp">|</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies whether indices or samples require standardization.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> Bin lower bound vs mid-point (<span class="in">`midL`</span>); tail cut at about 0.80–0.85 × $L_\infty$ as an absolute length; plus group. <span class="pp">|</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> One selectivity per gear (<span class="in">`logistic`</span>, <span class="in">`dsnormal`</span>, <span class="in">`normal`</span>, <span class="in">`binormal`</span>, <span class="in">`bidsnormal`</span>); F split between gears through <span class="in">`catch_by_gear`</span>. <span class="pp">|</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> Keep zeros and rely on the random walk on F; do not drop the random walk when years are missing. <span class="pp">|</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model documentation</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. fit: one selectivity shape and one catch share (by weight) per gear</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fiticc</span>(lfd, stklen,</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>              <span class="at">sel_fun =</span> <span class="fu">c</span>(<span class="st">"dsnormal"</span>, <span class="st">"logistic"</span>),</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>              <span class="at">catch_by_gear =</span> <span class="fu">c</span>(<span class="fl">0.95</span>, <span class="fl">0.05</span>),</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>              <span class="at">settings =</span> <span class="fu">list</span>(<span class="at">CVL =</span> <span class="fl">0.1</span>, <span class="at">obs_model =</span> <span class="st">"dm"</span>, <span class="at">dm_theta =</span> <span class="st">"saturating"</span>))</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. check and report</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="fu">flicc_convergence</span>(fit)</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_len</span>(fit); <span class="fu">plot_sel</span>(fit); <span class="fu">plot_spr</span>(fit, <span class="at">ci =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="fu">sprcur_flicc</span>(fit)</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> F by year (random walk, <span class="in">`sigmaF`</span>), selectivity parameters per gear, Dirichlet-multinomial precision; fixed $L_\infty$, CVL, $M$, $k$. <span class="pp">|</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> Growth ($L_\infty$, CVL) and M fixed by default; optional priors (<span class="in">`linf.sd`</span>); <span class="in">`sigmaF`</span> fixed at 0.3 by default. <span class="pp">|</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> Observation error: multinomial (<span class="in">`mn`</span>), Dirichlet-multinomial (<span class="in">`dm`</span>, default, precision estimated) or negative binomial (<span class="in">`nb`</span>). <span class="pp">|</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> Partly: F can follow a random walk (random effects); the population model is equilibrium. <span class="pp">|</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Default: <span class="in">`pop_model = "gtg"`</span>, <span class="in">`obs_model = "dm"`</span>, <span class="in">`dm_theta = "saturating"`</span>, all years fitted jointly. <span class="in">`pop_model = "gamma"`</span> + <span class="in">`obs_model = "nb"`</span> reproduces fishblicc; <span class="in">`lbb_flicc()`</span> reproduces LBB. <span class="pp">|</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assumptions and sensitivities</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Equilibrium within each year (constant recruitment and mortality), von Bertalanffy growth with variability among growth-type groups, selectivity constant over the years fitted, representative length samples. <span class="pp">|</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> $L_\infty$ (the main one), dome-shaped vs logistic selectivity, CVL, tail cut, effective sample size. <span class="pp">|</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Recruitment pulses and cohort signals; changing gear mix or selectivity; non-representative sampling; $L_\infty$ inconsistent with the data. <span class="pp">|</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> The equilibrium model tends to be pessimistic during a rebuild and optimistic while F is increasing; unsupported domes inflate SPR. <span class="pp">|</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> Failed convergence checks, narrow or unsupported domes, systematic residuals or failed runs test, retrospective rho beyond ±0.2, gears disagreeing on status. <span class="pp">|</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="fu">### Checks and red flags</span></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> # <span class="pp">|</span> Check <span class="pp">|</span> Red flag <span class="pp">|</span> Action <span class="pp">|</span></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> Sample size by gear-year (<span class="in">`plot_lfdn`</span>) <span class="pp">|</span> &lt; 50 fish or &lt; 10 bins; gear mix changing <span class="pp">|</span> ESS per gear; drop or pool poor gear-years <span class="pp">|</span></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> Composition consistency (<span class="in">`plot_lfd`</span>) <span class="pp">|</span> Shifts in mode or left limb <span class="pp">|</span> Split gears or periods; restrict years <span class="pp">|</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3 <span class="pp">|</span> Largest fish vs $L_\infty$ <span class="pp">|</span> &gt; 1% at or above $L_\infty$ <span class="pp">|</span> Revisit $L_\infty$; tail cut <span class="pp">|</span></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4 <span class="pp">|</span> Empirical catch curves (<span class="in">`plot_zlcc`</span>) <span class="pp">|</span> Curved limbs, jumping slopes <span class="pp">|</span> Dome or tail cut; keep random walk <span class="pp">|</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5 <span class="pp">|</span> Life-history inputs (<span class="in">`plot_growth`</span>, <span class="in">`growth_phase_flicc`</span>) <span class="pp">|</span> $L_\infty$ inconsistent with data; odd $M/k$; cohort modes not following growth <span class="pp">|</span> $L_\infty$ sensitivity; priors as a check; <span class="in">`maxsd`</span> <span class="pp">|</span></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6 <span class="pp">|</span> Selectivity plausibility (<span class="in">`plot_sel`</span>) <span class="pp">|</span> Narrow or unsupported domes <span class="pp">|</span> Logistic; fix from external data; <span class="in">`dome_sens_flicc()`</span> <span class="pp">|</span></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7 <span class="pp">|</span> Convergence (<span class="in">`flicc_convergence`</span>) <span class="pp">|</span> Gradient, Hessian, bounds <span class="pp">|</span> Restarts; simplify; tail cut <span class="pp">|</span></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 8 <span class="pp">|</span> Fit to compositions (<span class="in">`plot_len`</span>, <span class="in">`plot_resid_bubble`</span>, <span class="in">`lmean_resid_flicc`</span>, <span class="in">`ppc_flicc`</span>) <span class="pp">|</span> Systematic misfit; failed runs test <span class="pp">|</span> Selectivity, $L_\infty$, tail cut; lower ESS <span class="pp">|</span></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 9 <span class="pp">|</span> Retrospective <span class="pp">|</span> Rho beyond ±0.2 <span class="pp">|</span> Look for trends in selectivity or sampling <span class="pp">|</span></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10 <span class="pp">|</span> Indicators vs status <span class="pp">|</span> Gears disagree <span class="pp">|</span> Best gear; pooling; HCR smoothing <span class="pp">|</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="fu">### Recommended defaults</span></span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Topic <span class="pp">|</span> Recommendation <span class="pp">|</span></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Observation model <span class="pp">|</span> <span class="in">`dm`</span> with real data <span class="pp">|</span></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sample size <span class="pp">|</span> <span class="in">`dm`</span> with <span class="in">`dm_theta = "saturating"`</span> on raw counts or ESS ≥ 500; with fixed precision or <span class="in">`mn`</span>, ESS about 150–200 per gear-year <span class="pp">|</span></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Single year <span class="pp">|</span> <span class="in">`mn`</span> (ESS 150–200 per gear) or <span class="in">`dm`</span> with <span class="in">`dm_theta = "fixed"`</span> <span class="pp">|</span></span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Growth <span class="pp">|</span> Fix $L_\infty$ and CVL; $L_\infty$ is the main sensitivity; default <span class="in">`maxsd = 3`</span>, <span class="in">`ngtg = 13`</span> <span class="pp">|</span></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Selectivity <span class="pp">|</span> Logistic unless supported; always run <span class="in">`dome_sens_flicc()`</span> <span class="pp">|</span></span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sensitivity runs <span class="pp">|</span> <span class="in">`fits_summary()`</span> for the table; <span class="in">`ensemble_flicc()`</span> with equal weights <span class="pp">|</span></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> F over time <span class="pp">|</span> Random walk, <span class="in">`sigmaF`</span> fixed (0.3 or the estimate) <span class="pp">|</span></span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tail <span class="pp">|</span> <span class="in">`tail_cut`</span> at about 0.80–0.85 × $L_\infty$, as a length <span class="pp">|</span></span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Missing data <span class="pp">|</span> Keep zeros, rely on the random walk <span class="pp">|</span></span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Status <span class="pp">|</span> SPR at the year's F; <span class="in">`s`</span> for $B/B_{tgt}$ under Beverton–Holt; <span class="in">`plot_LBAdvice(flicc2FLStockR(fit))`</span> <span class="pp">|</span></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MSE <span class="pp">|</span> Fixed <span class="in">`sigmaF`</span>, absolute tail cut, <span class="in">`se = FALSE`</span>; tune with the HCR <span class="pp">|</span></span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>See also the general <span class="co">[</span><span class="ot">diagnostics</span><span class="co">](../../guidance/diagnostics.qmd)</span> and <span class="co">[</span><span class="ot">sensitivity</span><span class="co">](../../guidance/sensitivity.qmd)</span> guidance.</span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2 · Method {#method}</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> R package <span class="in">`FLicc`</span> (<span class="co">[</span><span class="ot">henning-winker/FLicc</span><span class="co">](https://github.com/henning-winker/FLicc)</span>); depends on <span class="in">`FLCore`</span>, <span class="in">`ggplotFL`</span>, <span class="in">`TMB`</span>. MSE: <span class="in">`flicc.sa()`</span>, <span class="in">`lbi.hcr()`</span>, <span class="in">`rfb.flicc.hcr()`</span>. <span class="pp">|</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Default: <span class="in">`pop_model = "gtg"`</span>, <span class="in">`obs_model = "dm"`</span>, <span class="in">`dm_theta = "saturating"`</span>, all years fitted jointly. <span class="in">`pop_model = "gamma"`</span> + <span class="in">`obs_model = "nb"`</span> reproduces fishblicc; <span class="in">`lbb_flicc()`</span> reproduces LBB. <span class="pp">|</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> F by year (random walk, <span class="in">`sigmaF`</span>), selectivity parameters per gear, Dirichlet-multinomial precision; fixed $L_\infty$, CVL, $M$, $k$. <span class="pp">|</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> Growth ($L_\infty$, CVL) and M fixed by default; optional priors (<span class="in">`linf.sd`</span>); <span class="in">`sigmaF`</span> fixed at 0.3 by default. <span class="pp">|</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> Observation error: multinomial (<span class="in">`mn`</span>), Dirichlet-multinomial (<span class="in">`dm`</span>, default, precision estimated) or negative binomial (<span class="in">`nb`</span>). <span class="pp">|</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> Partly: F can follow a random walk (random effects); the population model is equilibrium. <span class="pp">|</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Equilibrium within each year (constant recruitment and mortality), von Bertalanffy growth with variability among growth-type groups, selectivity constant over the years fitted, representative length samples. <span class="pp">|</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> $L_\infty$ (the main one), dome-shaped vs logistic selectivity, CVL, tail cut, effective sample size. <span class="pp">|</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Recruitment pulses and cohort signals; changing gear mix or selectivity; non-representative sampling; $L_\infty$ inconsistent with the data. <span class="pp">|</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> The equilibrium model tends to be pessimistic during a rebuild and optimistic while F is increasing; unsupported domes inflate SPR. <span class="pp">|</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> Failed convergence checks, narrow or unsupported domes, systematic residuals or failed runs test, retrospective rho beyond ±0.2, gears disagreeing on status. <span class="pp">|</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### Checks and red flags</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> # <span class="pp">|</span> Check <span class="pp">|</span> Red flag <span class="pp">|</span> Action <span class="pp">|</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|---|</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> Sample size by gear-year (<span class="in">`plot_lfdn`</span>) <span class="pp">|</span> &lt; 50 fish or &lt; 10 bins; gear mix changing <span class="pp">|</span> ESS per gear; drop or pool poor gear-years <span class="pp">|</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> Composition consistency (<span class="in">`plot_lfd`</span>) <span class="pp">|</span> Shifts in mode or left limb <span class="pp">|</span> Split gears or periods; restrict years <span class="pp">|</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3 <span class="pp">|</span> Largest fish vs $L_\infty$ <span class="pp">|</span> &gt; 1% at or above $L_\infty$ <span class="pp">|</span> Revisit $L_\infty$; tail cut <span class="pp">|</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4 <span class="pp">|</span> Empirical catch curves (<span class="in">`plot_zlcc`</span>) <span class="pp">|</span> Curved limbs, jumping slopes <span class="pp">|</span> Dome or tail cut; keep random walk <span class="pp">|</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5 <span class="pp">|</span> Life-history inputs (<span class="in">`plot_growth`</span>, <span class="in">`growth_phase_flicc`</span>) <span class="pp">|</span> $L_\infty$ inconsistent with data; odd $M/k$; cohort modes not following growth <span class="pp">|</span> $L_\infty$ sensitivity; priors as a check; <span class="in">`maxsd`</span> <span class="pp">|</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6 <span class="pp">|</span> Selectivity plausibility (<span class="in">`plot_sel`</span>) <span class="pp">|</span> Narrow or unsupported domes <span class="pp">|</span> Logistic; fix from external data; <span class="in">`dome_sens_flicc()`</span> <span class="pp">|</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7 <span class="pp">|</span> Convergence (<span class="in">`flicc_convergence`</span>) <span class="pp">|</span> Gradient, Hessian, bounds <span class="pp">|</span> Restarts; simplify; tail cut <span class="pp">|</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 8 <span class="pp">|</span> Fit to compositions (<span class="in">`plot_len`</span>, <span class="in">`plot_resid_bubble`</span>, <span class="in">`lmean_resid_flicc`</span>, <span class="in">`ppc_flicc`</span>) <span class="pp">|</span> Systematic misfit; failed runs test <span class="pp">|</span> Selectivity, $L_\infty$, tail cut; lower ESS <span class="pp">|</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 9 <span class="pp">|</span> Retrospective <span class="pp">|</span> Rho beyond ±0.2 <span class="pp">|</span> Look for trends in selectivity or sampling <span class="pp">|</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10 <span class="pp">|</span> Indicators vs status <span class="pp">|</span> Gears disagree <span class="pp">|</span> Best gear; pooling; HCR smoothing <span class="pp">|</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### Recommended defaults</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Topic <span class="pp">|</span> Recommendation <span class="pp">|</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Observation model <span class="pp">|</span> <span class="in">`dm`</span> with real data <span class="pp">|</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sample size <span class="pp">|</span> <span class="in">`dm`</span> with <span class="in">`dm_theta = "saturating"`</span> on raw counts or ESS ≥ 500; with fixed precision or <span class="in">`mn`</span>, ESS about 150–200 per gear-year <span class="pp">|</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Single year <span class="pp">|</span> <span class="in">`mn`</span> (ESS 150–200 per gear) or <span class="in">`dm`</span> with <span class="in">`dm_theta = "fixed"`</span> <span class="pp">|</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Growth <span class="pp">|</span> Fix $L_\infty$ and CVL; $L_\infty$ is the main sensitivity; default <span class="in">`maxsd = 3`</span>, <span class="in">`ngtg = 13`</span> <span class="pp">|</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Selectivity <span class="pp">|</span> Logistic unless supported; always run <span class="in">`dome_sens_flicc()`</span> <span class="pp">|</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sensitivity runs <span class="pp">|</span> <span class="in">`fits_summary()`</span> for the table; <span class="in">`ensemble_flicc()`</span> with equal weights <span class="pp">|</span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> F over time <span class="pp">|</span> Random walk, <span class="in">`sigmaF`</span> fixed (0.3 or the estimate) <span class="pp">|</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tail <span class="pp">|</span> <span class="in">`tail_cut`</span> at about 0.80–0.85 × $L_\infty$, as a length <span class="pp">|</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Missing data <span class="pp">|</span> Keep zeros, rely on the random walk <span class="pp">|</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Status <span class="pp">|</span> SPR at the year's F; <span class="in">`s`</span> for $B/B_{tgt}$ under Beverton–Holt; <span class="in">`plot_LBAdvice(flicc2FLStockR(fit))`</span> <span class="pp">|</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MSE <span class="pp">|</span> Fixed <span class="in">`sigmaF`</span>, absolute tail cut, <span class="in">`se = FALSE`</span>; tune with the HCR <span class="pp">|</span></span>
 <span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Misuse prevention</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>See also the general <span class="co">[</span><span class="ot">diagnostics</span><span class="co">](../../guidance/diagnostics.qmd)</span> and <span class="co">[</span><span class="ot">sensitivity</span><span class="co">](../../guidance/sensitivity.qmd)</span> guidance.</span>
 <span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"flicc"</span>)</span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> Length samples are not representative of the catch; $L_\infty$ is inconsistent with the largest fish; strong recruitment pulses dominate the compositions and are read as F. <span class="pp">|</span></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Unsupported dome-shaped selectivity that inflates SPR; using raw counts in the thousands with a multinomial likelihood; treating equilibrium SPR as current status during rebuilding. <span class="pp">|</span></span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> The 10 FLicc checks (sample size, consistency, largest fish vs $L_\infty$, catch curves, life history, selectivity, convergence, fit, retrospective, indicators). <span class="pp">|</span></span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Status relative to $F_{SPR}$; indicator-based HCRs; estimation model in MSE (<span class="in">`flicc.sa()`</span>). <span class="pp">|</span></span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications and support</span></span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Alfonsino worked example in the <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>; reproductions of LBSPR, LBB (*Illex*) and fishblicc on their own example data. CECAF case study: to be added. <span class="pp">|</span></span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Medley (2025) *ICES J. Mar. Sci.* 82: fsaf224 · Hordyk et al. (2015, 2016) · Froese et al. (2018) · Kell et al. (2007) · Kristensen et al. (2016). Full list in the <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>. <span class="pp">|</span></span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> R package <span class="in">`FLicc`</span> (<span class="co">[</span><span class="ot">henning-winker/FLicc</span><span class="co">](https://github.com/henning-winker/FLicc)</span>); depends on <span class="in">`FLCore`</span>, <span class="in">`ggplotFL`</span>, <span class="in">`TMB`</span>. MSE: <span class="in">`flicc.sa()`</span>, <span class="in">`lbi.hcr()`</span>, <span class="in">`rfb.flicc.hcr()`</span>. <span class="pp">|</span></span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>Alfonsino reference fit in the <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>.</span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
-<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>Dome sensitivity, $L_\infty$, CVL and tail-cut runs (<span class="in">`fits_summary()`</span>, <span class="in">`ensemble_flicc()`</span>).</span>
-<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
-<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>Rebuilding stock refitted year by year: equilibrium SPR stays pessimistic while biomass recovers.</span>
-<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>**Diagnostics:** apply the <span class="co">[</span><span class="ot">model acceptance checklist</span><span class="co">](../../guidance/diagnostics.qmd#model-acceptance-checklist)</span> (convergence, residuals, prior vs posterior, retrospective, hindcast, jitter, plausibility) before results are used for advice.</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sensitivity demos</span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>Dome-shaped selectivity</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a><span class="in">`dome_sens_flicc()`</span> from flat (rsd 1000) to strongly domed (0.4 × $L_\infty$): how much SPR depends on the dome. <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>, section on dome sensitivity.</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>Sensitivity to $L_\infty$</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>Refit over a plausible range of $L_\infty$; summarise with <span class="in">`fits_summary()`</span>. <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>.</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>Tail cut and CVL</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Tail cut at 0.80–0.85 × $L_\infty$ and alternative CVL; ensemble with <span class="in">`ensemble_flicc()`</span>. <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>.</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use and misuse {#use-and-misuse}</span></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"flicc"</span>)</span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> Length samples are not representative of the catch; $L_\infty$ is inconsistent with the largest fish; strong recruitment pulses dominate the compositions and are read as F. <span class="pp">|</span></span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Unsupported dome-shaped selectivity that inflates SPR; using raw counts in the thousands with a multinomial likelihood; treating equilibrium SPR as current status during rebuilding. <span class="pp">|</span></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> The 10 FLicc checks (sample size, consistency, largest fish vs $L_\infty$, catch curves, life history, selectivity, convergence, fit, retrospective, indicators). <span class="pp">|</span></span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Status relative to $F_{SPR}$; indicator-based HCRs; estimation model in MSE (<span class="in">`flicc.sa()`</span>). <span class="pp">|</span></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## Case studies and references {#case-studies-and-references}</span></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Alfonsino worked example in the <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>; reproductions of LBSPR, LBB (*Illex*) and fishblicc on their own example data. CECAF case study: to be added. <span class="pp">|</span></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Medley (2025) *ICES J. Mar. Sci.* 82: fsaf224 · Hordyk et al. (2015, 2016) · Froese et al. (2018) · Kell et al. (2007) · Kristensen et al. (2016). Full list in the <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>. <span class="pp">|</span></span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a>Alfonsino reference fit in the <span class="co">[</span><span class="ot">FLicc user guide</span><span class="co">](../../resources/guides/FLicc_user_guide.html)</span>.</span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a>Dome sensitivity, $L_\infty$, CVL and tail-cut runs (<span class="in">`fits_summary()`</span>, <span class="in">`ensemble_flicc()`</span>).</span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a>Rebuilding stock refitted year by year: equilibrium SPR stays pessimistic while biomass recovers.</span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

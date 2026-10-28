@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-2a840f158fcfed2a52a11d25bfc5ad6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8357332147aef23ee49569f9a9ac6ceb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -809,16 +809,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#method-overview" id="toc-method-overview" class="nav-link active" data-scroll-target="#method-overview">Method overview</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#shiny-app-for-workshops" id="toc-shiny-app-for-workshops" class="nav-link" data-scroll-target="#shiny-app-for-workshops">Shiny app for workshops</a></li>
   </ul></li>
-  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
-  <li><a href="#data-processing-requirements" id="toc-data-processing-requirements" class="nav-link" data-scroll-target="#data-processing-requirements">Data processing requirements</a></li>
-  <li><a href="#model-documentation" id="toc-model-documentation" class="nav-link" data-scroll-target="#model-documentation">Model documentation</a></li>
-  <li><a href="#assumptions-and-sensitivities" id="toc-assumptions-and-sensitivities" class="nav-link" data-scroll-target="#assumptions-and-sensitivities">Assumptions and sensitivities</a></li>
-  <li><a href="#misuse-prevention" id="toc-misuse-prevention" class="nav-link" data-scroll-target="#misuse-prevention">Misuse prevention</a></li>
-  <li><a href="#applications-and-support" id="toc-applications-and-support" class="nav-link" data-scroll-target="#applications-and-support">Applications and support</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">1 · Data</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">2 · Method</a></li>
+  <li><a href="#outputs-diagnostics-and-sensitivities" id="toc-outputs-diagnostics-and-sensitivities" class="nav-link" data-scroll-target="#outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</a></li>
+  <li><a href="#use-and-misuse" id="toc-use-and-misuse" class="nav-link" data-scroll-target="#use-and-misuse">Use and misuse</a></li>
+  <li><a href="#case-studies-and-references" id="toc-case-studies-and-references" class="nav-link" data-scroll-target="#case-studies-and-references">Case studies and references</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/methods/multispecies/mmsyfm.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/methods/multispecies/mmsyfm.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -854,6 +853,9 @@ window.Quarto = {
 
 
 <p><span class="status-badge status-draft">Draft</span> <span class="status-badge status-showcase">Showcase entry</span></p>
+<div class="path">
+<p><a href="#data" class="step">1 · Data</a> <span class="arrow">→</span> <a href="#method" class="step">2 · Method</a> <span class="arrow">→</span> <a href="#outputs-diagnostics-and-sensitivities" class="step">3 · Outputs</a> <span class="arrow">·</span> <a href="#use-and-misuse" class="step">Use and misuse</a> <span class="arrow">·</span> <a href="#case-studies-and-references" class="step">Case studies</a></p>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -897,8 +899,8 @@ window.Quarto = {
 </table>
 </div>
 </div>
-<section id="method-overview" class="level2">
-<h2 class="anchored" data-anchor-id="method-overview">Method overview</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -944,8 +946,8 @@ window.Quarto = {
 <p>Hosting on the iMarine gateway next to the <a href="../../training/smt.html">Stock Monitoring Tool</a> is under consideration.</p>
 </section>
 </section>
-<section id="data-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-requirements">Data requirements</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">1 · Data</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -974,28 +976,6 @@ window.Quarto = {
 <td><strong>Data quality considerations</strong></td>
 <td><span class="todo">To be completed</span> <br><small>Highlights representativeness, consistency and screening needs.</small></td>
 </tr>
-</tbody>
-</table>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mmsyFM)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys <span class="ot">&lt;-</span> <span class="fu">atlantic_system</span>()                                        <span class="co"># 10 stocks, 6 métiers, 3 segments</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sq  <span class="ot">&lt;-</span> <span class="fu">ms_status_quo</span>(sys, <span class="at">capacity =</span> <span class="dv">1000</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)          <span class="co"># open-access status quo</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>opt <span class="ot">&lt;-</span> <span class="fu">ms_optimise</span>(sys, <span class="st">"yield"</span>, <span class="at">levers =</span> <span class="st">"total"</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)  <span class="co"># MMSY with every stock &gt;= Bpa</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_kobe</span>(<span class="fu">list</span>(<span class="st">"Status quo"</span> <span class="ot">=</span> sq, <span class="st">"Safeguarded MMSY"</span> <span class="ot">=</span> opt), sys)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="data-processing-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-processing-requirements">Data processing requirements</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
 <td><strong>Pre-processing steps</strong></td>
 <td>Build or upload the four tables; tune the fleet to the open-access status quo (<code>ms_tune()</code>); condition stock status (<code>ms_condition()</code>).</td>
@@ -1018,9 +998,15 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p><strong>Data template:</strong> <span class="todo">To be added</span>. Prepare the data first with the <a href="../../data-tools/data-preparation.html">data preparation workflow</a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mmsyFM)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys <span class="ot">&lt;-</span> <span class="fu">atlantic_system</span>()                                        <span class="co"># 10 stocks, 6 métiers, 3 segments</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sq  <span class="ot">&lt;-</span> <span class="fu">ms_status_quo</span>(sys, <span class="at">capacity =</span> <span class="dv">1000</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)          <span class="co"># open-access status quo</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>opt <span class="ot">&lt;-</span> <span class="fu">ms_optimise</span>(sys, <span class="st">"yield"</span>, <span class="at">levers =</span> <span class="st">"total"</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)  <span class="co"># MMSY with every stock &gt;= Bpa</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_kobe</span>(<span class="fu">list</span>(<span class="st">"Status quo"</span> <span class="ot">=</span> sq, <span class="st">"Safeguarded MMSY"</span> <span class="ot">=</span> opt), sys)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="model-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="model-documentation">Model documentation</h2>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">2 · Method</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1033,6 +1019,14 @@ window.Quarto = {
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td><strong>Software / tools</strong></td>
+<td><code>remotes::install_github("Henning-Winker/mmsyFM")</code>; Shiny app <code>mmsyFM::run_app()</code>. Authors: H. Winker, R. Amoroso, M. Pons, R. Sharma. Licence MIT.</td>
+</tr>
+<tr class="even">
+<td><strong>Implementation notes</strong></td>
+<td>Key functions: <code>ms_status_quo()</code>, <code>ms_optimise()</code>, <code>hcr_effort()</code>, <code>ms_tune_hcr()</code>, <code>ms_perf()</code>, <code>plot_kobe()</code>, <code>plot_quilt()</code>. Examples: <code>atlantic_system()</code> (10 stocks, 6 métiers, 3 segments) and <code>got_system_draft()</code> (Gulf of Thailand, 20 stock groups).</td>
+</tr>
 <tr class="odd">
 <td><strong>Key parameters</strong></td>
 <td>Stock <span class="math inline">\(r\)</span>, <span class="math inline">\(K\)</span>, price; catchability matrix; segment loyalty, efficiency and costs; profit preference <span class="math inline">\(\gamma\)</span>; fleet capacity.</td>
@@ -1050,14 +1044,14 @@ window.Quarto = {
 <td>Simulation model (operating model), not fitted to data.</td>
 </tr>
 <tr class="odd">
-<td><strong>Implementation notes</strong></td>
-<td>Key functions: <code>ms_status_quo()</code>, <code>ms_optimise()</code>, <code>hcr_effort()</code>, <code>ms_tune_hcr()</code>, <code>ms_perf()</code>, <code>plot_kobe()</code>, <code>plot_quilt()</code>. Examples: <code>atlantic_system()</code> (10 stocks, 6 métiers, 3 segments) and <code>got_system_draft()</code> (Gulf of Thailand, 20 stock groups).</td>
+<td><strong>Core assumptions</strong></td>
+<td>Schaefer production for each stock; catchability by métier constant over time; effort allocated by expected profit; stock parameters (<span class="math inline">\(r\)</span>, <span class="math inline">\(K\)</span>, depletion) taken from assessments.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="assumptions-and-sensitivities" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-sensitivities">Assumptions and sensitivities</h2>
+<section id="outputs-diagnostics-and-sensitivities" class="level2">
+<h2 class="anchored" data-anchor-id="outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1071,30 +1065,49 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Core assumptions</strong></td>
-<td>Schaefer production for each stock; catchability by métier constant over time; effort allocated by expected profit; stock parameters (<span class="math inline">\(r\)</span>, <span class="math inline">\(K\)</span>, depletion) taken from assessments.</td>
-</tr>
-<tr class="even">
 <td><strong>Main sensitivities</strong></td>
 <td>Catchability matrix, profit preference <span class="math inline">\(\gamma\)</span>, prices and costs, stock productivity and depletion used for conditioning.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Likely violations</strong></td>
 <td>Catchability changing with technology or targeting; stocks whose dynamics are poorly described by Schaefer production; prices and costs that shift effort in ways not modelled.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Expected bias</strong></td>
 <td>If <span class="math inline">\(r\)</span> and <span class="math inline">\(K\)</span> are taken from weak assessments, the MMSY and the risk of breaching Bpa inherit their bias; a shared-q simplification forces all rules along one line (<span class="math inline">\(F_i/F_j = q_i/q_j\)</span>).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Warning signs</strong></td>
 <td>Status quo that cannot be tuned to observed effort and depletions; MMSY that requires effort far outside historical levels; decision tables dominated by one stock at its safeguard.</td>
 </tr>
 </tbody>
 </table>
+<section id="sensitivity-demos" class="level4">
+<h4 class="anchored" data-anchor-id="sensitivity-demos">Sensitivity demos</h4>
+<div class="catalogue-example-grid">
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Fleet behaviour</p>
+</div>
+<p>Shared-q versus profit-seeking fleets in the Yield curves tab of <code>run_app()</code>.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Catchability matrix</p>
+</div>
+<p>Alternative catchability by métier, e.g.&nbsp;from <code>ms_landscape()</code> habitat maps.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Profit preference <span class="math inline">\(\gamma\)</span></p>
+</div>
+<p>How strongly effort follows expected profit; tune against the status quo.</p>
+</div>
+</div>
 </section>
-<section id="misuse-prevention" class="level2">
-<h2 class="anchored" data-anchor-id="misuse-prevention">Misuse prevention</h2>
+</section>
+<section id="use-and-misuse" class="level2">
+<h2 class="anchored" data-anchor-id="use-and-misuse">Use and misuse</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1124,20 +1137,20 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
+<td><strong>Pre-run checks</strong></td>
+<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
+</tr>
+<tr class="even">
 <td><strong>Do not use when</strong></td>
 <td>As a stock assessment: it does not estimate stock status from data. It needs status and productivity from assessments of the main stocks.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Common misuses</strong></td>
 <td>Reading the safeguarded MMSY as a precise target rather than a comparison of options; ignoring the stocks held at their Bpa safeguard; skipping conditioning on current depletions.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Pre-use checklist</strong></td>
 <td>Fleet tuned to the status quo; stocks conditioned on current depletion; sensitivity to the catchability matrix and <span class="math inline">\(\gamma\)</span>; rules tested with assessment and implementation error.</td>
-</tr>
-<tr class="even">
-<td><strong>Pre-run checks</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
 </tr>
 <tr class="odd">
 <td><strong>Advice suitability</strong></td>
@@ -1146,8 +1159,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="applications-and-support" class="level2">
-<h2 class="anchored" data-anchor-id="applications-and-support">Applications and support</h2>
+<section id="case-studies-and-references" class="level2">
+<h2 class="anchored" data-anchor-id="case-studies-and-references">Case studies and references</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1163,10 +1176,6 @@ window.Quarto = {
 <tr class="even">
 <td><strong>References</strong></td>
 <td>Builds on the multispecies MSY app <a href="https://maitepons.shinyapps.io/mmsyapp/">mmsyapp</a> (Amoroso, Pons and Sharma) and the logbook simulator of <a href="../../data-tools/cpuetargeting.html">cpueTargeting</a>; Thorson et al.&nbsp;(2017); Winker et al.&nbsp;(2013, 2014, 2025).</td>
-</tr>
-<tr class="odd">
-<td><strong>Software / tools</strong></td>
-<td><code>remotes::install_github("Henning-Winker/mmsyFM")</code>; Shiny app <code>mmsyFM::run_app()</code>. Authors: H. Winker, R. Amoroso, M. Pons, R. Sharma. Licence MIT.</td>
 </tr>
 </tbody>
 </table>
@@ -1681,130 +1690,156 @@ window.Quarto = {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Draft</span><span class="co">]</span>{.status-badge .status-draft} <span class="co">[</span><span class="ot">Showcase entry</span><span class="co">]</span>{.status-badge .status-showcase}</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"mmsyfm"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method overview</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Multispecies and mixed fisheries → multispecies MSY and harvest strategies <span class="pp">|</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> mmsyFM, multispecies MSY fleet model (R + Shiny): <span class="co">[</span><span class="ot">Henning-Winker/mmsyFM</span><span class="co">](https://github.com/Henning-Winker/mmsyFM)</span> · <span class="co">[</span><span class="ot">documentation</span><span class="co">](https://henning-winker.github.io/mmsyFM/)</span> <span class="pp">|</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Simulates mixed fisheries in which fleet segments allocate fishing days across métiers by expected profit, on Schaefer stocks with seasonal availability. Finds the multispecies MSY with a safeguard for every stock and tunes and tests effort- and closure-based harvest strategies under uncertainty. <span class="pp">|</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Equilibrium effort by segment and métier; yield curves (shared q, profit-blind and profit-seeking fleets, closures); safeguarded MMSY for yield, revenue, profit or one stock; harvest-strategy comparisons with projections, trade-offs and colour-coded decision tables. <span class="pp">|</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Multispecies trawl and multigear fisheries where single-stock MSY targets cannot all be met at once; participatory workshops on effort caps and closures. <span class="pp">|</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Shiny app for workshops</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="in">`mmsyFM::run_app()`</span> opens an app for participatory workshops, with these tabs:</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>::: {.path}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1 · Data</span><span class="co">](#data)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">2 · Method</span><span class="co">](#method)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">3 · Outputs</span><span class="co">](#outputs-diagnostics-and-sensitivities)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Use and misuse</span><span class="co">](#use-and-misuse)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Case studies</span><span class="co">](#case-studies-and-references)</span>{.step}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"mmsyfm"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Multispecies and mixed fisheries → multispecies MSY and harvest strategies <span class="pp">|</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> mmsyFM, multispecies MSY fleet model (R + Shiny): <span class="co">[</span><span class="ot">Henning-Winker/mmsyFM</span><span class="co">](https://github.com/Henning-Winker/mmsyFM)</span> · <span class="co">[</span><span class="ot">documentation</span><span class="co">](https://henning-winker.github.io/mmsyFM/)</span> <span class="pp">|</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Simulates mixed fisheries in which fleet segments allocate fishing days across métiers by expected profit, on Schaefer stocks with seasonal availability. Finds the multispecies MSY with a safeguard for every stock and tunes and tests effort- and closure-based harvest strategies under uncertainty. <span class="pp">|</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Equilibrium effort by segment and métier; yield curves (shared q, profit-blind and profit-seeking fleets, closures); safeguarded MMSY for yield, revenue, profit or one stock; harvest-strategy comparisons with projections, trade-offs and colour-coded decision tables. <span class="pp">|</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Multispecies trawl and multigear fisheries where single-stock MSY targets cannot all be met at once; participatory workshops on effort caps and closures. <span class="pp">|</span></span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Set-up:** Atlantic example, Gulf of Thailand draft or uploaded tables; capacity, profit preference, daily costs.</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Equilibrium:** days by segment and open métiers.</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Yield curves:** shared q, profit-blind and profit-seeking fleets, closures.</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Safeguarded MMSY:** total yield, revenue, profit or the catch of one stock, with every stock at or above Bpa.</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Harvest strategy:** compare rules (no control, fixed MMSY effort, feedback rules, stock and métier closures) under uncertainty.</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Tune triggers.**</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Management options** and **Guide.**</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>Hosting on the iMarine gateway next to the <span class="co">[</span><span class="ot">Stock Monitoring Tool</span><span class="co">](../../training/smt.qmd)</span> is under consideration.</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data requirements</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> Four tables (<span class="in">`read_ms_system()`</span>): <span class="in">`species`</span> (species, code, group, r, K, price), <span class="in">`metiers`</span> (metier, tactic, ground), <span class="in">`catchability`</span> (metier × stock), <span class="in">`segments`</span> (share, loyalty, efficiency, cost multiplier, vessel CV, home métier). <span class="pp">|</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Stock depletions from assessments for conditioning (<span class="in">`ms_condition()`</span>); real prices and daily costs; habitat maps to derive catchability (<span class="in">`ms_landscape()`</span>). <span class="pp">|</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Seasonal availability (<span class="in">`season_amp`</span>, <span class="in">`season_peak`</span>), persistence floor <span class="in">`F_cap`</span>, starting depletion <span class="in">`dep_init`</span>, segment capacity. <span class="pp">|</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Highlights representativeness, consistency and screening needs.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mmsyFM)</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>sys <span class="ot">&lt;-</span> <span class="fu">atlantic_system</span>()                                        <span class="co"># 10 stocks, 6 métiers, 3 segments</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>sq  <span class="ot">&lt;-</span> <span class="fu">ms_status_quo</span>(sys, <span class="at">capacity =</span> <span class="dv">1000</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)          <span class="co"># open-access status quo</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>opt <span class="ot">&lt;-</span> <span class="fu">ms_optimise</span>(sys, <span class="st">"yield"</span>, <span class="at">levers =</span> <span class="st">"total"</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)  <span class="co"># MMSY with every stock &gt;= Bpa</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_kobe</span>(<span class="fu">list</span>(<span class="st">"Status quo"</span> <span class="ot">=</span> sq, <span class="st">"Safeguarded MMSY"</span> <span class="ot">=</span> opt), sys)</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### Shiny app for workshops</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="in">`mmsyFM::run_app()`</span> opens an app for participatory workshops, with these tabs:</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Set-up:** Atlantic example, Gulf of Thailand draft or uploaded tables; capacity, profit preference, daily costs.</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Equilibrium:** days by segment and open métiers.</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Yield curves:** shared q, profit-blind and profit-seeking fleets, closures.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Safeguarded MMSY:** total yield, revenue, profit or the catch of one stock, with every stock at or above Bpa.</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Harvest strategy:** compare rules (no control, fixed MMSY effort, feedback rules, stock and métier closures) under uncertainty.</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Tune triggers.**</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Management options** and **Guide.**</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>Hosting on the iMarine gateway next to the <span class="co">[</span><span class="ot">Stock Monitoring Tool</span><span class="co">](../../training/smt.qmd)</span> is under consideration.</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1 · Data {#data}</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> Four tables (<span class="in">`read_ms_system()`</span>): <span class="in">`species`</span> (species, code, group, r, K, price), <span class="in">`metiers`</span> (metier, tactic, ground), <span class="in">`catchability`</span> (metier × stock), <span class="in">`segments`</span> (share, loyalty, efficiency, cost multiplier, vessel CV, home métier). <span class="pp">|</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Stock depletions from assessments for conditioning (<span class="in">`ms_condition()`</span>); real prices and daily costs; habitat maps to derive catchability (<span class="in">`ms_landscape()`</span>). <span class="pp">|</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Seasonal availability (<span class="in">`season_amp`</span>, <span class="in">`season_peak`</span>), persistence floor <span class="in">`F_cap`</span>, starting depletion <span class="in">`dep_init`</span>, segment capacity. <span class="pp">|</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Highlights representativeness, consistency and screening needs.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> Build or upload the four tables; tune the fleet to the open-access status quo (<span class="in">`ms_tune()`</span>); condition stock status (<span class="in">`ms_condition()`</span>). <span class="pp">|</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies whether indices or samples require standardization.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents how catches, ages or lengths should be grouped.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> Métiers are tactic × ground; segments have home métiers, loyalty, efficiency and costs; fishers choose métiers by expected profit, $P(\text{métier}) \propto \max(\text{efficiency} \times \text{revenue} - \text{cost}, 0)^\gamma$. <span class="pp">|</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Describes treatment of gaps and partial information.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
 <span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data processing requirements</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>**Data template:** <span class="co">[</span><span class="ot">To be added</span><span class="co">]</span>{.todo}. Prepare the data first with the <span class="co">[</span><span class="ot">data preparation workflow</span><span class="co">](../../data-tools/data-preparation.qmd)</span>.</span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> Build or upload the four tables; tune the fleet to the open-access status quo (<span class="in">`ms_tune()`</span>); condition stock status (<span class="in">`ms_condition()`</span>). <span class="pp">|</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies whether indices or samples require standardization.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents how catches, ages or lengths should be grouped.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> Métiers are tactic × ground; segments have home métiers, loyalty, efficiency and costs; fishers choose métiers by expected profit, $P(\text{métier}) \propto \max(\text{efficiency} \times \text{revenue} - \text{cost}, 0)^\gamma$. <span class="pp">|</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Describes treatment of gaps and partial information.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model documentation</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mmsyFM)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>sys <span class="ot">&lt;-</span> <span class="fu">atlantic_system</span>()                                        <span class="co"># 10 stocks, 6 métiers, 3 segments</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>sq  <span class="ot">&lt;-</span> <span class="fu">ms_status_quo</span>(sys, <span class="at">capacity =</span> <span class="dv">1000</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)          <span class="co"># open-access status quo</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>opt <span class="ot">&lt;-</span> <span class="fu">ms_optimise</span>(sys, <span class="st">"yield"</span>, <span class="at">levers =</span> <span class="st">"total"</span>, <span class="at">gamma =</span> <span class="fl">1.5</span>)  <span class="co"># MMSY with every stock &gt;= Bpa</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_kobe</span>(<span class="fu">list</span>(<span class="st">"Status quo"</span> <span class="ot">=</span> sq, <span class="st">"Safeguarded MMSY"</span> <span class="ot">=</span> opt), sys)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> Stock $r$, $K$, price; catchability matrix; segment loyalty, efficiency and costs; profit preference $\gamma$; fleet capacity. <span class="pp">|</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents fixed values, priors and externally supplied assumptions.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> JABBA-type process error scaled by $r$ and depletion; assessment and implementation error, effort noise and data lags in closed-loop rules. <span class="pp">|</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> Simulation model (operating model), not fitted to data. <span class="pp">|</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Key functions: <span class="in">`ms_status_quo()`</span>, <span class="in">`ms_optimise()`</span>, <span class="in">`hcr_effort()`</span>, <span class="in">`ms_tune_hcr()`</span>, <span class="in">`ms_perf()`</span>, <span class="in">`plot_kobe()`</span>, <span class="in">`plot_quilt()`</span>. Examples: <span class="in">`atlantic_system()`</span> (10 stocks, 6 métiers, 3 segments) and <span class="in">`got_system_draft()`</span> (Gulf of Thailand, 20 stock groups). <span class="pp">|</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assumptions and sensitivities</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Schaefer production for each stock; catchability by métier constant over time; effort allocated by expected profit; stock parameters ($r$, $K$, depletion) taken from assessments. <span class="pp">|</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> Catchability matrix, profit preference $\gamma$, prices and costs, stock productivity and depletion used for conditioning. <span class="pp">|</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Catchability changing with technology or targeting; stocks whose dynamics are poorly described by Schaefer production; prices and costs that shift effort in ways not modelled. <span class="pp">|</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> If $r$ and $K$ are taken from weak assessments, the MMSY and the risk of breaching Bpa inherit their bias; a shared-q simplification forces all rules along one line ($F_i/F_j = q_i/q_j$). <span class="pp">|</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> Status quo that cannot be tuned to observed effort and depletions; MMSY that requires effort far outside historical levels; decision tables dominated by one stock at its safeguard. <span class="pp">|</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Misuse prevention</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"mmsyfm"</span>)</span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> As a stock assessment: it does not estimate stock status from data. It needs status and productivity from assessments of the main stocks. <span class="pp">|</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Reading the safeguarded MMSY as a precise target rather than a comparison of options; ignoring the stocks held at their Bpa safeguard; skipping conditioning on current depletions. <span class="pp">|</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> Fleet tuned to the status quo; stocks conditioned on current depletion; sensitivity to the catchability matrix and $\gamma$; rules tested with assessment and implementation error. <span class="pp">|</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Harvest strategies for mixed fisheries (effort caps by segment, métier and seasonal closures, feedback rules); trade-off analysis for workshops. <span class="pp">|</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications and support</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Atlantic example system; Gulf of Thailand draft (trawl, purse seine and small-scale fisheries, conditioned on 2024 depletions). <span class="pp">|</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Builds on the multispecies MSY app <span class="co">[</span><span class="ot">mmsyapp</span><span class="co">](https://maitepons.shinyapps.io/mmsyapp/)</span> (Amoroso, Pons and Sharma) and the logbook simulator of <span class="co">[</span><span class="ot">cpueTargeting</span><span class="co">](../../data-tools/cpuetargeting.qmd)</span>; Thorson et al. (2017); Winker et al. (2013, 2014, 2025). <span class="pp">|</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> <span class="in">`remotes::install_github("Henning-Winker/mmsyFM")`</span>; Shiny app <span class="in">`mmsyFM::run_app()`</span>. Authors: H. Winker, R. Amoroso, M. Pons, R. Sharma. Licence MIT. <span class="pp">|</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2 · Method {#method}</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> <span class="in">`remotes::install_github("Henning-Winker/mmsyFM")`</span>; Shiny app <span class="in">`mmsyFM::run_app()`</span>. Authors: H. Winker, R. Amoroso, M. Pons, R. Sharma. Licence MIT. <span class="pp">|</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Key functions: <span class="in">`ms_status_quo()`</span>, <span class="in">`ms_optimise()`</span>, <span class="in">`hcr_effort()`</span>, <span class="in">`ms_tune_hcr()`</span>, <span class="in">`ms_perf()`</span>, <span class="in">`plot_kobe()`</span>, <span class="in">`plot_quilt()`</span>. Examples: <span class="in">`atlantic_system()`</span> (10 stocks, 6 métiers, 3 segments) and <span class="in">`got_system_draft()`</span> (Gulf of Thailand, 20 stock groups). <span class="pp">|</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> Stock $r$, $K$, price; catchability matrix; segment loyalty, efficiency and costs; profit preference $\gamma$; fleet capacity. <span class="pp">|</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents fixed values, priors and externally supplied assumptions.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> JABBA-type process error scaled by $r$ and depletion; assessment and implementation error, effort noise and data lags in closed-loop rules. <span class="pp">|</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> Simulation model (operating model), not fitted to data. <span class="pp">|</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Schaefer production for each stock; catchability by métier constant over time; effort allocated by expected profit; stock parameters ($r$, $K$, depletion) taken from assessments. <span class="pp">|</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> Catchability matrix, profit preference $\gamma$, prices and costs, stock productivity and depletion used for conditioning. <span class="pp">|</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Catchability changing with technology or targeting; stocks whose dynamics are poorly described by Schaefer production; prices and costs that shift effort in ways not modelled. <span class="pp">|</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> If $r$ and $K$ are taken from weak assessments, the MMSY and the risk of breaching Bpa inherit their bias; a shared-q simplification forces all rules along one line ($F_i/F_j = q_i/q_j$). <span class="pp">|</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> Status quo that cannot be tuned to observed effort and depletions; MMSY that requires effort far outside historical levels; decision tables dominated by one stock at its safeguard. <span class="pp">|</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sensitivity demos</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>Fleet behaviour</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>Shared-q versus profit-seeking fleets in the Yield curves tab of <span class="in">`run_app()`</span>.</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>Catchability matrix</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>Alternative catchability by métier, e.g. from <span class="in">`ms_landscape()`</span> habitat maps.</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>Profit preference $\gamma$</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>How strongly effort follows expected profit; tune against the status quo.</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>Gulf of Thailand draft: 20 stock groups, trawl, purse seine and small-scale segments with coastal zoning, conditioned on 2024 depletions.</span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>Shared-q versus profit-seeking fleets in the yield curves: how much the MMSY depends on fleet behaviour.</span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo}</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use and misuse {#use-and-misuse}</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"mmsyfm"</span>)</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> As a stock assessment: it does not estimate stock status from data. It needs status and productivity from assessments of the main stocks. <span class="pp">|</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Reading the safeguarded MMSY as a precise target rather than a comparison of options; ignoring the stocks held at their Bpa safeguard; skipping conditioning on current depletions. <span class="pp">|</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> Fleet tuned to the status quo; stocks conditioned on current depletion; sensitivity to the catchability matrix and $\gamma$; rules tested with assessment and implementation error. <span class="pp">|</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Harvest strategies for mixed fisheries (effort caps by segment, métier and seasonal closures, feedback rules); trade-off analysis for workshops. <span class="pp">|</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="fu">## Case studies and references {#case-studies-and-references}</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Atlantic example system; Gulf of Thailand draft (trawl, purse seine and small-scale fisheries, conditioned on 2024 depletions). <span class="pp">|</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Builds on the multispecies MSY app <span class="co">[</span><span class="ot">mmsyapp</span><span class="co">](https://maitepons.shinyapps.io/mmsyapp/)</span> (Amoroso, Pons and Sharma) and the logbook simulator of <span class="co">[</span><span class="ot">cpueTargeting</span><span class="co">](../../data-tools/cpuetargeting.qmd)</span>; Thorson et al. (2017); Winker et al. (2013, 2014, 2025). <span class="pp">|</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Gulf of Thailand draft: 20 stock groups, trawl, purse seine and small-scale segments with coastal zoning, conditioned on 2024 depletions.</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Shared-q versus profit-seeking fleets in the yield curves: how much the MMSY depends on fleet behaviour.</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo}</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

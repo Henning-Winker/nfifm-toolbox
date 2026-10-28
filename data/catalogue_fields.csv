@@ -1,33 +1,33 @@
-Section,Field,Purpose
-Method overview,Family / class,Places the method within the high-level hierarchy.
-Method overview,Method name,Identifies the named method or platform.
-Method overview,Short description,Summarizes the method in plain language.
-Method overview,Main outputs,Lists key status indicators or reference-point outputs.
-Method overview,Typical use case,Describes when the method is commonly applied.
-Data requirements,Minimum data,Defines the minimum inputs needed for implementation.
-Data requirements,Preferred data,Describes additional data that improve performance or interpretation.
-Data requirements,Optional auxiliary data,Lists supporting information such as effort or related inputs.
-Data requirements,Data quality considerations,"Highlights representativeness, consistency and screening needs."
-Data processing requirements,Pre-processing steps,Specifies preparation steps before fitting or calculation.
-Data processing requirements,Standardization needs,Identifies whether indices or samples require standardization.
-Data processing requirements,Aggregation / binning choices,"Documents how catches, ages or lengths should be grouped."
-Data processing requirements,Fleet / gear handling,Explains whether fleets or gears should be split or combined.
-Data processing requirements,Missing data handling,Describes treatment of gaps and partial information.
-Model documentation,Key parameters,Lists principal model parameters or derived quantities.
-Model documentation,Priors / fixed inputs,"Documents fixed values, priors and externally supplied assumptions."
-Model documentation,Error structure,Describes whether the method is deterministic or includes observation and/or process error.
-Model documentation,State-space formulation,States whether latent process and observation components are separated explicitly.
-Model documentation,Implementation notes,Captures practical details relevant to coding or interpretation.
-Assumptions and sensitivities,Core assumptions,Summarizes the assumptions needed for valid interpretation.
-Assumptions and sensitivities,Main sensitivities,"Identifies parameters, inputs or settings to which results are most sensitive."
-Assumptions and sensitivities,Likely violations,Highlights common ways the assumptions may be broken in practice.
-Assumptions and sensitivities,Expected bias,Describes likely bias or misleading inference under assumption violation.
-Assumptions and sensitivities,Warning signs,Lists simple indicators that the method may be unsuitable.
-Misuse prevention,Do not use when,Lists data situations or configurations under which the method should not be applied.
-Misuse prevention,Common misuses,Describes frequent ways the method is applied incorrectly and their consequences.
-Misuse prevention,Pre-use checklist,Minimum checks to pass before results are used for advice.
-Misuse prevention,Pre-run checks,"Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018)."
-Misuse prevention,Advice suitability,"States whether outputs support status only, indicator-based HCRs, catch advice or MSE."
-Applications / support,Applications / case studies,Links to worked examples or comparative applications.
-Applications / support,References,Provides primary literature and supporting documents.
-Applications / support,Software / tools,"Lists packages, templates or code resources."
+Section,Field,Purpose,Page section
+Method overview,Family / class,Places the method within the high-level hierarchy.,Overview
+Method overview,Method name,Identifies the named method or platform.,Overview
+Method overview,Short description,Summarizes the method in plain language.,Overview
+Method overview,Main outputs,Lists key status indicators or reference-point outputs.,Overview
+Method overview,Typical use case,Describes when the method is commonly applied.,Overview
+Data requirements,Minimum data,Defines the minimum inputs needed for implementation.,1 · Data
+Data requirements,Preferred data,Describes additional data that improve performance or interpretation.,1 · Data
+Data requirements,Optional auxiliary data,Lists supporting information such as effort or related inputs.,1 · Data
+Data requirements,Data quality considerations,"Highlights representativeness, consistency and screening needs.",1 · Data
+Data processing requirements,Pre-processing steps,Specifies preparation steps before fitting or calculation.,1 · Data
+Data processing requirements,Standardization needs,Identifies whether indices or samples require standardization.,1 · Data
+Data processing requirements,Aggregation / binning choices,"Documents how catches, ages or lengths should be grouped.",1 · Data
+Data processing requirements,Fleet / gear handling,Explains whether fleets or gears should be split or combined.,1 · Data
+Data processing requirements,Missing data handling,Describes treatment of gaps and partial information.,1 · Data
+Model documentation,Key parameters,Lists principal model parameters or derived quantities.,2 · Method
+Model documentation,Priors / fixed inputs,"Documents fixed values, priors and externally supplied assumptions.",2 · Method
+Model documentation,Error structure,Describes whether the method is deterministic or includes observation and/or process error.,2 · Method
+Model documentation,State-space formulation,States whether latent process and observation components are separated explicitly.,2 · Method
+Model documentation,Implementation notes,Captures practical details relevant to coding or interpretation.,2 · Method
+Assumptions and sensitivities,Core assumptions,Summarizes the assumptions needed for valid interpretation.,2 · Method
+Assumptions and sensitivities,Main sensitivities,"Identifies parameters, inputs or settings to which results are most sensitive.","3 · Outputs, diagnostics and sensitivities"
+Assumptions and sensitivities,Likely violations,Highlights common ways the assumptions may be broken in practice.,"3 · Outputs, diagnostics and sensitivities"
+Assumptions and sensitivities,Expected bias,Describes likely bias or misleading inference under assumption violation.,"3 · Outputs, diagnostics and sensitivities"
+Assumptions and sensitivities,Warning signs,Lists simple indicators that the method may be unsuitable.,"3 · Outputs, diagnostics and sensitivities"
+Misuse prevention,Do not use when,Lists data situations or configurations under which the method should not be applied.,Use and misuse
+Misuse prevention,Common misuses,Describes frequent ways the method is applied incorrectly and their consequences.,Use and misuse
+Misuse prevention,Pre-use checklist,Minimum checks to pass before results are used for advice.,Use and misuse
+Misuse prevention,Pre-run checks,"Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).",Use and misuse
+Misuse prevention,Advice suitability,"States whether outputs support status only, indicator-based HCRs, catch advice or MSE.",Use and misuse
+Applications / support,Applications / case studies,Links to worked examples or comparative applications.,Case studies and references
+Applications / support,References,Provides primary literature and supporting documents.,Case studies and references
+Applications / support,Software / tools,"Lists packages, templates or code resources.",2 · Method

@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-2a840f158fcfed2a52a11d25bfc5ad6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8357332147aef23ee49569f9a9ac6ceb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -809,16 +809,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#method-overview" id="toc-method-overview" class="nav-link active" data-scroll-target="#method-overview">Method overview</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#functions-by-step" id="toc-functions-by-step" class="nav-link" data-scroll-target="#functions-by-step">Functions by step</a></li>
   </ul></li>
-  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
-  <li><a href="#data-processing-requirements" id="toc-data-processing-requirements" class="nav-link" data-scroll-target="#data-processing-requirements">Data processing requirements</a></li>
-  <li><a href="#model-documentation" id="toc-model-documentation" class="nav-link" data-scroll-target="#model-documentation">Model documentation</a></li>
-  <li><a href="#assumptions-and-sensitivities" id="toc-assumptions-and-sensitivities" class="nav-link" data-scroll-target="#assumptions-and-sensitivities">Assumptions and sensitivities</a></li>
-  <li><a href="#misuse-prevention" id="toc-misuse-prevention" class="nav-link" data-scroll-target="#misuse-prevention">Misuse prevention</a></li>
-  <li><a href="#applications-and-support" id="toc-applications-and-support" class="nav-link" data-scroll-target="#applications-and-support">Applications and support</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">1 · Data</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">2 · Method</a></li>
+  <li><a href="#outputs-diagnostics-and-sensitivities" id="toc-outputs-diagnostics-and-sensitivities" class="nav-link" data-scroll-target="#outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</a></li>
+  <li><a href="#use-and-misuse" id="toc-use-and-misuse" class="nav-link" data-scroll-target="#use-and-misuse">Use and misuse</a></li>
+  <li><a href="#case-studies-and-references" id="toc-case-studies-and-references" class="nav-link" data-scroll-target="#case-studies-and-references">Case studies and references</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/methods/dynamic-pool/tropfishr.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/methods/dynamic-pool/tropfishr.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -852,7 +851,10 @@ window.Quarto = {
 </header>
 
 
-<p><span class="status-badge status-basic">Basic</span></p>
+<p><span class="status-badge status-draft">Draft</span></p>
+<div class="path">
+<p><a href="#data" class="step">1 · Data</a> <span class="arrow">→</span> <a href="#method" class="step">2 · Method</a> <span class="arrow">→</span> <a href="#outputs-diagnostics-and-sensitivities" class="step">3 · Outputs</a> <span class="arrow">·</span> <a href="#use-and-misuse" class="step">Use and misuse</a> <span class="arrow">·</span> <a href="#case-studies-and-references" class="step">Case studies</a></p>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -896,8 +898,8 @@ window.Quarto = {
 </table>
 </div>
 </div>
-<section id="method-overview" class="level2">
-<h2 class="anchored" data-anchor-id="method-overview">Method overview</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -974,8 +976,8 @@ window.Quarto = {
 </table>
 </section>
 </section>
-<section id="data-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-requirements">Data requirements</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">1 · Data</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1004,23 +1006,6 @@ window.Quarto = {
 <td><strong>Data quality considerations</strong></td>
 <td><span class="todo">To be completed</span> <br><small>Highlights representativeness, consistency and screening needs.</small></td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="data-processing-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-processing-requirements">Data processing requirements</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
 <td><strong>Pre-processing steps</strong></td>
 <td><code>lfqCreate()</code> from raw lengths, <code>lfqModify()</code> to aggregate bins, years or plus groups, <code>lfqRestructure()</code> (moving-average restructuring used by ELEFAN).</td>
@@ -1043,6 +1028,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p><strong>Data template:</strong> <a href="../../data/templates/length_long.csv"><code>length_long.csv</code></a> and <a href="../../data/templates/life_history.csv"><code>life_history.csv</code></a>. Prepare the data first with the <a href="../../data-tools/data-preparation.html">data preparation workflow</a>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TropFishR)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(synLFQ7)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>lfq <span class="ot">&lt;-</span> <span class="fu">lfqModify</span>(synLFQ7, <span class="at">bin_size =</span> <span class="dv">4</span>)</span>
@@ -1054,8 +1040,8 @@ window.Quarto = {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>cc  <span class="ot">&lt;-</span> <span class="fu">catchCurve</span>(lfq2, <span class="at">reg_int =</span> <span class="cn">NULL</span>, <span class="at">calc_ogive =</span> <span class="cn">TRUE</span>)   <span class="co"># Z and selectivity</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Settings are illustrative; check argument names against the <a href="https://cran.r-universe.dev/TropFishR/doc/manual.html">manual</a>.</p>
 </section>
-<section id="model-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="model-documentation">Model documentation</h2>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">2 · Method</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1068,6 +1054,14 @@ window.Quarto = {
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td><strong>Software / tools</strong></td>
+<td><code>install.packages("TropFishR")</code>; Stock Monitoring Tool (ELEFAN_GA and YPR/SBPR, TropFishR 1.6.6).</td>
+</tr>
+<tr class="even">
+<td><strong>Implementation notes</strong></td>
+<td>ELEFAN restructures the length frequencies (bin scores relative to a moving average), scores growth curves by the bins they cross, and searches for the VBGF parameters with the highest score; growth is more reliable when at least some direct age readings are available.</td>
+</tr>
 <tr class="odd">
 <td><strong>Key parameters</strong></td>
 <td><span class="math inline">\(L_\infty\)</span>, <span class="math inline">\(K\)</span>, <span class="math inline">\(t_{anchor}\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(t_s\)</span>; <span class="math inline">\(M\)</span>; selectivity; <span class="math inline">\(L_c\)</span> or <span class="math inline">\(t_c\)</span>.</td>
@@ -1085,14 +1079,14 @@ window.Quarto = {
 <td>No.</td>
 </tr>
 <tr class="odd">
-<td><strong>Implementation notes</strong></td>
-<td>ELEFAN restructures the length frequencies (bin scores relative to a moving average), scores growth curves by the bins they cross, and searches for the VBGF parameters with the highest score; growth is more reliable when at least some direct age readings are available.</td>
+<td><strong>Core assumptions</strong></td>
+<td>Length frequencies represent the population (all ages, areas and habitats sampled); growth follows a (seasonal) von Bertalanffy curve; mortality and recruitment are constant (equilibrium).</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="assumptions-and-sensitivities" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-sensitivities">Assumptions and sensitivities</h2>
+<section id="outputs-diagnostics-and-sensitivities" class="level2">
+<h2 class="anchored" data-anchor-id="outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1106,30 +1100,31 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Core assumptions</strong></td>
-<td>Length frequencies represent the population (all ages, areas and habitats sampled); growth follows a (seasonal) von Bertalanffy curve; mortality and recruitment are constant (equilibrium).</td>
-</tr>
-<tr class="even">
 <td><strong>Main sensitivities</strong></td>
 <td>Moving-average span and bin width; search ranges for <span class="math inline">\(L_\infty\)</span> and <span class="math inline">\(K\)</span>; <span class="math inline">\(M\)</span> estimator; seasonal growth on or off.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Likely violations</strong></td>
 <td>Emigration from the fishing grounds (overestimates Z); strong sexual dimorphism in size (biases growth); juveniles and adults in different habitats with sampling in only one of them.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Expected bias</strong></td>
 <td>Wrong growth parameters propagate into <span class="math inline">\(Z\)</span>, <span class="math inline">\(M\)</span> and status; under emigration <span class="math inline">\(Z\)</span> is overestimated.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Warning signs</strong></td>
 <td>ELEFAN score surface flat or with several peaks; <span class="math inline">\(L_\infty\)</span> at a search bound; growth curves not following visible modes.</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Diagnostics:</strong> apply the <a href="../../guidance/diagnostics.html#model-acceptance-checklist">model acceptance checklist</a> (convergence, residuals, prior vs posterior, retrospective, hindcast, jitter, plausibility) before results are used for advice.</p>
+<section id="sensitivity-demos" class="level4">
+<h4 class="anchored" data-anchor-id="sensitivity-demos">Sensitivity demos</h4>
+<p><span class="todo">Demos of the key sensitivities to be added (each sensitivity → a worked demo in markdown or an app).</span></p>
 </section>
-<section id="misuse-prevention" class="level2">
-<h2 class="anchored" data-anchor-id="misuse-prevention">Misuse prevention</h2>
+</section>
+<section id="use-and-misuse" class="level2">
+<h2 class="anchored" data-anchor-id="use-and-misuse">Use and misuse</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1161,20 +1156,20 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
+<td><strong>Pre-run checks</strong></td>
+<td>Is the length-frequency sample representative of the whole population? Are all age groups sampled? Were samples taken across the areas where different life stages live (e.g.&nbsp;juveniles nearshore, adults offshore)? Were gears with different selectivity used, so that several age groups appear? If not, F estimates will be biased (after Gutierrez and Kleisner, 2018).</td>
+</tr>
+<tr class="even">
 <td><strong>Do not use when</strong></td>
 <td>Length samples come from one habitat or gear that misses part of the population; modes are not visible (slow growth, long-lived species); several gears with different selectivity are pooled.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Common misuses</strong></td>
 <td>Accepting the first ELEFAN solution without checking the score surface; using one empirical <span class="math inline">\(M\)</span>; reading <span class="math inline">\(F_{current} &gt; F_{0.1}\)</span> as precise status.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Pre-use checklist</strong></td>
 <td><span class="todo">To be completed</span> <br><small>Minimum checks to pass before results are used for advice.</small></td>
-</tr>
-<tr class="even">
-<td><strong>Pre-run checks</strong></td>
-<td>Is the length-frequency sample representative of the whole population? Are all age groups sampled? Were samples taken across the areas where different life stages live (e.g.&nbsp;juveniles nearshore, adults offshore)? Were gears with different selectivity used, so that several age groups appear? If not, F estimates will be biased (after Gutierrez and Kleisner, 2018).</td>
 </tr>
 <tr class="odd">
 <td><strong>Advice suitability</strong></td>
@@ -1183,8 +1178,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="applications-and-support" class="level2">
-<h2 class="anchored" data-anchor-id="applications-and-support">Applications and support</h2>
+<section id="case-studies-and-references" class="level2">
+<h2 class="anchored" data-anchor-id="case-studies-and-references">Case studies and references</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1204,10 +1199,6 @@ window.Quarto = {
 <tr class="even">
 <td><strong>References</strong></td>
 <td>Mildenberger, T.K., Taylor, M.H. &amp; Wolff, M. (2017) <em>Methods in Ecology and Evolution</em> 8: 1520–1527; Sparre, P. &amp; Venema, S.C. (1998) <em>Introduction to tropical fish stock assessment</em>. FAO Fisheries Technical Paper 306/1; Gutierrez, N.L. and Kleisner, K. (2018).</td>
-</tr>
-<tr class="odd">
-<td><strong>Software / tools</strong></td>
-<td><code>install.packages("TropFishR")</code>; Stock Monitoring Tool (ELEFAN_GA and YPR/SBPR, TropFishR 1.6.6).</td>
 </tr>
 </tbody>
 </table>
@@ -1720,135 +1711,145 @@ window.Quarto = {
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [dynamic pool, per-recruit, length-based, growth]</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Basic</span><span class="co">]</span>{.status-badge .status-basic}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Draft</span><span class="co">]</span>{.status-badge .status-draft}</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"tropfishr"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method overview</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Dynamic pool models → equilibrium per-recruit (length-based, with growth estimation) <span class="pp">|</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> TropFishR 1.6.6 (R, CRAN; GPL-3): <span class="co">[</span><span class="ot">tokami/TropFishR</span><span class="co">](https://github.com/tokami/TropFishR)</span> · <span class="co">[</span><span class="ot">manual</span><span class="co">](https://cran.r-universe.dev/TropFishR/doc/manual.html)</span> <span class="pp">|</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Compilation of length-frequency methods for data-poor fisheries, implementing the FAO manual of Sparre and Venema (1998) and newer methods: growth from length frequencies (ELEFAN with genetic algorithm or simulated annealing), mortality from length-converted catch curves, selectivity, VPA and per-recruit and yield models. <span class="pp">|</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Growth parameters ($L_\infty$, $K$, $t_{anchor}$, seasonal $C$, $t_s$); $Z$, $M$, $F = Z - M$; selectivity ($L_{50}$, $L_{75}$); YPR and SBPR curves with $F_{max}$, $F_{0.1}$, $F_{0.5}$ and current exploitation status. <span class="pp">|</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Tropical and data-poor fisheries with length-frequency samples and no reliable age data, typically a single gear. <span class="pp">|</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Functions by step</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Functions <span class="pp">|</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data <span class="pp">|</span> <span class="in">`lfqCreate()`</span>, <span class="in">`lfqModify()`</span>, <span class="in">`lfqRestructure()`</span>, <span class="in">`plot.lfq()`</span> <span class="pp">|</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Growth <span class="pp">|</span> <span class="in">`ELEFAN()`</span>, <span class="in">`ELEFAN_GA()`</span>, <span class="in">`ELEFAN_SA()`</span>, <span class="in">`Bhattacharya()`</span>, <span class="in">`powell_wetherall()`</span>, <span class="in">`growth_length_age()`</span>, <span class="in">`growth_tagging()`</span>, <span class="in">`VBGF()`</span>, <span class="in">`lfqFitCurves()`</span> <span class="pp">|</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mortality <span class="pp">|</span> <span class="in">`M_empirical()`</span>, <span class="in">`catchCurve()`</span>, <span class="in">`Z_BevertonHolt()`</span>, <span class="in">`Z_CPUE()`</span> <span class="pp">|</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Selectivity <span class="pp">|</span> <span class="in">`select()`</span>, <span class="in">`select_ogive()`</span>, <span class="in">`select_Millar()`</span>, <span class="in">`gillnetfit()`</span> <span class="pp">|</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Recruitment <span class="pp">|</span> <span class="in">`recruitment()`</span> <span class="pp">|</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Stock and yield <span class="pp">|</span> <span class="in">`VPA()`</span>, <span class="in">`ypr()`</span>, <span class="in">`ypr_sel()`</span>, <span class="in">`predict_mod()`</span> (Thompson &amp; Bell, Beverton &amp; Holt), <span class="in">`prod_mod()`</span>, <span class="in">`prod_mod_ts()`</span> <span class="pp">|</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Simulation <span class="pp">|</span> <span class="in">`stock_sim()`</span>, synthetic datasets <span class="in">`synLFQ1`</span>–<span class="in">`synLFQ8`</span> <span class="pp">|</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data requirements</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> A length-frequency matrix: catches in numbers by length class (rows) and sampling date (columns), with the vector of sampling dates (<span class="in">`lfqCreate()`</span>). <span class="pp">|</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Monthly or more frequent samples over at least a year, covering all sizes; some direct age readings to check growth. <span class="pp">|</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Water temperature and $L_{max}$ for empirical $M$ (<span class="in">`M_empirical()`</span>); length–weight parameters; gear selectivity experiments (<span class="in">`select_Millar()`</span>, <span class="in">`gillnetfit()`</span>). <span class="pp">|</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Highlights representativeness, consistency and screening needs.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data processing requirements</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> <span class="in">`lfqCreate()`</span> from raw lengths, <span class="in">`lfqModify()`</span> to aggregate bins, years or plus groups, <span class="in">`lfqRestructure()`</span> (moving-average restructuring used by ELEFAN). <span class="pp">|</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies whether indices or samples require standardization.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> Bin width and moving-average span (<span class="in">`MA`</span>) strongly affect ELEFAN; aggregate by year or quarter consistently. <span class="pp">|</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Explains whether fleets or gears should be split or combined.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Describes treatment of gaps and partial information.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TropFishR)</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(synLFQ7)</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>lfq <span class="ot">&lt;-</span> <span class="fu">lfqModify</span>(synLFQ7, <span class="at">bin_size =</span> <span class="dv">4</span>)</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">ELEFAN_GA</span>(lfq, <span class="at">MA =</span> <span class="dv">5</span>, <span class="at">seasonalised =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>                 <span class="at">low_par =</span> <span class="fu">list</span>(<span class="at">Linf =</span> <span class="dv">70</span>, <span class="at">K =</span> <span class="fl">0.1</span>, <span class="at">t_anchor =</span> <span class="dv">0</span>),</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>                 <span class="at">up_par  =</span> <span class="fu">list</span>(<span class="at">Linf =</span> <span class="dv">110</span>, <span class="at">K =</span> <span class="dv">1</span>, <span class="at">t_anchor =</span> <span class="dv">1</span>))</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>Ms  <span class="ot">&lt;-</span> <span class="fu">M_empirical</span>(<span class="at">Linf =</span> fit<span class="sc">$</span>par<span class="sc">$</span>Linf, <span class="at">K_l =</span> fit<span class="sc">$</span>par<span class="sc">$</span>K, <span class="at">method =</span> <span class="st">"Then_growth"</span>)</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>lfq2 <span class="ot">&lt;-</span> <span class="fu">lfqModify</span>(<span class="fu">lfqRestructure</span>(lfq, <span class="at">MA =</span> <span class="dv">5</span>), <span class="at">par =</span> <span class="fu">list</span>(<span class="at">Linf =</span> fit<span class="sc">$</span>par<span class="sc">$</span>Linf, <span class="at">K =</span> fit<span class="sc">$</span>par<span class="sc">$</span>K))</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>cc  <span class="ot">&lt;-</span> <span class="fu">catchCurve</span>(lfq2, <span class="at">reg_int =</span> <span class="cn">NULL</span>, <span class="at">calc_ogive =</span> <span class="cn">TRUE</span>)   <span class="co"># Z and selectivity</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>Settings are illustrative; check argument names against the <span class="co">[</span><span class="ot">manual</span><span class="co">](https://cran.r-universe.dev/TropFishR/doc/manual.html)</span>.</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model documentation</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>::: {.path}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1 · Data</span><span class="co">](#data)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">2 · Method</span><span class="co">](#method)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">3 · Outputs</span><span class="co">](#outputs-diagnostics-and-sensitivities)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Use and misuse</span><span class="co">](#use-and-misuse)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Case studies</span><span class="co">](#case-studies-and-references)</span>{.step}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"tropfishr"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Dynamic pool models → equilibrium per-recruit (length-based, with growth estimation) <span class="pp">|</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> TropFishR 1.6.6 (R, CRAN; GPL-3): <span class="co">[</span><span class="ot">tokami/TropFishR</span><span class="co">](https://github.com/tokami/TropFishR)</span> · <span class="co">[</span><span class="ot">manual</span><span class="co">](https://cran.r-universe.dev/TropFishR/doc/manual.html)</span> <span class="pp">|</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Compilation of length-frequency methods for data-poor fisheries, implementing the FAO manual of Sparre and Venema (1998) and newer methods: growth from length frequencies (ELEFAN with genetic algorithm or simulated annealing), mortality from length-converted catch curves, selectivity, VPA and per-recruit and yield models. <span class="pp">|</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Growth parameters ($L_\infty$, $K$, $t_{anchor}$, seasonal $C$, $t_s$); $Z$, $M$, $F = Z - M$; selectivity ($L_{50}$, $L_{75}$); YPR and SBPR curves with $F_{max}$, $F_{0.1}$, $F_{0.5}$ and current exploitation status. <span class="pp">|</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Tropical and data-poor fisheries with length-frequency samples and no reliable age data, typically a single gear. <span class="pp">|</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### Functions by step</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Functions <span class="pp">|</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data <span class="pp">|</span> <span class="in">`lfqCreate()`</span>, <span class="in">`lfqModify()`</span>, <span class="in">`lfqRestructure()`</span>, <span class="in">`plot.lfq()`</span> <span class="pp">|</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Growth <span class="pp">|</span> <span class="in">`ELEFAN()`</span>, <span class="in">`ELEFAN_GA()`</span>, <span class="in">`ELEFAN_SA()`</span>, <span class="in">`Bhattacharya()`</span>, <span class="in">`powell_wetherall()`</span>, <span class="in">`growth_length_age()`</span>, <span class="in">`growth_tagging()`</span>, <span class="in">`VBGF()`</span>, <span class="in">`lfqFitCurves()`</span> <span class="pp">|</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mortality <span class="pp">|</span> <span class="in">`M_empirical()`</span>, <span class="in">`catchCurve()`</span>, <span class="in">`Z_BevertonHolt()`</span>, <span class="in">`Z_CPUE()`</span> <span class="pp">|</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Selectivity <span class="pp">|</span> <span class="in">`select()`</span>, <span class="in">`select_ogive()`</span>, <span class="in">`select_Millar()`</span>, <span class="in">`gillnetfit()`</span> <span class="pp">|</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Recruitment <span class="pp">|</span> <span class="in">`recruitment()`</span> <span class="pp">|</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Stock and yield <span class="pp">|</span> <span class="in">`VPA()`</span>, <span class="in">`ypr()`</span>, <span class="in">`ypr_sel()`</span>, <span class="in">`predict_mod()`</span> (Thompson &amp; Bell, Beverton &amp; Holt), <span class="in">`prod_mod()`</span>, <span class="in">`prod_mod_ts()`</span> <span class="pp">|</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Simulation <span class="pp">|</span> <span class="in">`stock_sim()`</span>, synthetic datasets <span class="in">`synLFQ1`</span>–<span class="in">`synLFQ8`</span> <span class="pp">|</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1 · Data {#data}</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> A length-frequency matrix: catches in numbers by length class (rows) and sampling date (columns), with the vector of sampling dates (<span class="in">`lfqCreate()`</span>). <span class="pp">|</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Monthly or more frequent samples over at least a year, covering all sizes; some direct age readings to check growth. <span class="pp">|</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Water temperature and $L_{max}$ for empirical $M$ (<span class="in">`M_empirical()`</span>); length–weight parameters; gear selectivity experiments (<span class="in">`select_Millar()`</span>, <span class="in">`gillnetfit()`</span>). <span class="pp">|</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Highlights representativeness, consistency and screening needs.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> <span class="in">`lfqCreate()`</span> from raw lengths, <span class="in">`lfqModify()`</span> to aggregate bins, years or plus groups, <span class="in">`lfqRestructure()`</span> (moving-average restructuring used by ELEFAN). <span class="pp">|</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies whether indices or samples require standardization.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> Bin width and moving-average span (<span class="in">`MA`</span>) strongly affect ELEFAN; aggregate by year or quarter consistently. <span class="pp">|</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Explains whether fleets or gears should be split or combined.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Describes treatment of gaps and partial information.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>**Data template:** <span class="co">[</span><span class="ot">`length_long.csv`</span><span class="co">](../../data/templates/length_long.csv)</span> and <span class="co">[</span><span class="ot">`life_history.csv`</span><span class="co">](../../data/templates/life_history.csv)</span>. Prepare the data first with the <span class="co">[</span><span class="ot">data preparation workflow</span><span class="co">](../../data-tools/data-preparation.qmd)</span>.</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TropFishR)</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(synLFQ7)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>lfq <span class="ot">&lt;-</span> <span class="fu">lfqModify</span>(synLFQ7, <span class="at">bin_size =</span> <span class="dv">4</span>)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">ELEFAN_GA</span>(lfq, <span class="at">MA =</span> <span class="dv">5</span>, <span class="at">seasonalised =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>                 <span class="at">low_par =</span> <span class="fu">list</span>(<span class="at">Linf =</span> <span class="dv">70</span>, <span class="at">K =</span> <span class="fl">0.1</span>, <span class="at">t_anchor =</span> <span class="dv">0</span>),</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>                 <span class="at">up_par  =</span> <span class="fu">list</span>(<span class="at">Linf =</span> <span class="dv">110</span>, <span class="at">K =</span> <span class="dv">1</span>, <span class="at">t_anchor =</span> <span class="dv">1</span>))</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>Ms  <span class="ot">&lt;-</span> <span class="fu">M_empirical</span>(<span class="at">Linf =</span> fit<span class="sc">$</span>par<span class="sc">$</span>Linf, <span class="at">K_l =</span> fit<span class="sc">$</span>par<span class="sc">$</span>K, <span class="at">method =</span> <span class="st">"Then_growth"</span>)</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>lfq2 <span class="ot">&lt;-</span> <span class="fu">lfqModify</span>(<span class="fu">lfqRestructure</span>(lfq, <span class="at">MA =</span> <span class="dv">5</span>), <span class="at">par =</span> <span class="fu">list</span>(<span class="at">Linf =</span> fit<span class="sc">$</span>par<span class="sc">$</span>Linf, <span class="at">K =</span> fit<span class="sc">$</span>par<span class="sc">$</span>K))</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>cc  <span class="ot">&lt;-</span> <span class="fu">catchCurve</span>(lfq2, <span class="at">reg_int =</span> <span class="cn">NULL</span>, <span class="at">calc_ogive =</span> <span class="cn">TRUE</span>)   <span class="co"># Z and selectivity</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>Settings are illustrative; check argument names against the <span class="co">[</span><span class="ot">manual</span><span class="co">](https://cran.r-universe.dev/TropFishR/doc/manual.html)</span>.</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> $L_\infty$, $K$, $t_{anchor}$, $C$, $t_s$; $M$; selectivity; $L_c$ or $t_c$. <span class="pp">|</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> Search ranges for growth parameters (<span class="in">`low_par`</span>, <span class="in">`up_par`</span>); $L_\infty$ starting value from <span class="in">`powell_wetherall()`</span> or $L_{max}$. <span class="pp">|</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> None formal: ELEFAN maximises a score; catch curve by regression. <span class="pp">|</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> No. <span class="pp">|</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> ELEFAN restructures the length frequencies (bin scores relative to a moving average), scores growth curves by the bins they cross, and searches for the VBGF parameters with the highest score; growth is more reliable when at least some direct age readings are available. <span class="pp">|</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assumptions and sensitivities</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Length frequencies represent the population (all ages, areas and habitats sampled); growth follows a (seasonal) von Bertalanffy curve; mortality and recruitment are constant (equilibrium). <span class="pp">|</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> Moving-average span and bin width; search ranges for $L_\infty$ and $K$; $M$ estimator; seasonal growth on or off. <span class="pp">|</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Emigration from the fishing grounds (overestimates Z); strong sexual dimorphism in size (biases growth); juveniles and adults in different habitats with sampling in only one of them. <span class="pp">|</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> Wrong growth parameters propagate into $Z$, $M$ and status; under emigration $Z$ is overestimated. <span class="pp">|</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> ELEFAN score surface flat or with several peaks; $L_\infty$ at a search bound; growth curves not following visible modes. <span class="pp">|</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Misuse prevention</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"tropfishr"</span>)</span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2 · Method {#method}</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> <span class="in">`install.packages("TropFishR")`</span>; Stock Monitoring Tool (ELEFAN_GA and YPR/SBPR, TropFishR 1.6.6). <span class="pp">|</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> ELEFAN restructures the length frequencies (bin scores relative to a moving average), scores growth curves by the bins they cross, and searches for the VBGF parameters with the highest score; growth is more reliable when at least some direct age readings are available. <span class="pp">|</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> $L_\infty$, $K$, $t_{anchor}$, $C$, $t_s$; $M$; selectivity; $L_c$ or $t_c$. <span class="pp">|</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> Search ranges for growth parameters (<span class="in">`low_par`</span>, <span class="in">`up_par`</span>); $L_\infty$ starting value from <span class="in">`powell_wetherall()`</span> or $L_{max}$. <span class="pp">|</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> None formal: ELEFAN maximises a score; catch curve by regression. <span class="pp">|</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> No. <span class="pp">|</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Length frequencies represent the population (all ages, areas and habitats sampled); growth follows a (seasonal) von Bertalanffy curve; mortality and recruitment are constant (equilibrium). <span class="pp">|</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> Moving-average span and bin width; search ranges for $L_\infty$ and $K$; $M$ estimator; seasonal growth on or off. <span class="pp">|</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Emigration from the fishing grounds (overestimates Z); strong sexual dimorphism in size (biases growth); juveniles and adults in different habitats with sampling in only one of them. <span class="pp">|</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> Wrong growth parameters propagate into $Z$, $M$ and status; under emigration $Z$ is overestimated. <span class="pp">|</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> ELEFAN score surface flat or with several peaks; $L_\infty$ at a search bound; growth curves not following visible modes. <span class="pp">|</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>**Diagnostics:** apply the <span class="co">[</span><span class="ot">model acceptance checklist</span><span class="co">](../../guidance/diagnostics.qmd#model-acceptance-checklist)</span> (convergence, residuals, prior vs posterior, retrospective, hindcast, jitter, plausibility) before results are used for advice.</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sensitivity demos</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Demos of the key sensitivities to be added (each sensitivity → a worked demo in markdown or an app).</span><span class="co">]</span>{.todo}</span>
 <span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> Length samples come from one habitat or gear that misses part of the population; modes are not visible (slow growth, long-lived species); several gears with different selectivity are pooled. <span class="pp">|</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Accepting the first ELEFAN solution without checking the score surface; using one empirical $M$; reading $F_{current} &gt; F_{0.1}$ as precise status. <span class="pp">|</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Minimum checks to pass before results are used for advice.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> Is the length-frequency sample representative of the whole population? Are all age groups sampled? Were samples taken across the areas where different life stages live (e.g. juveniles nearshore, adults offshore)? Were gears with different selectivity used, so that several age groups appear? If not, F estimates will be biased (after Gutierrez and Kleisner, 2018). <span class="pp">|</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> F-based status relative to per-recruit reference points ($F_{0.1}$ preferred to $F_{max}$); no biomass or catch level. <span class="pp">|</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications and support</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Example datasets in the package (<span class="in">`synLFQ1`</span>–<span class="in">`synLFQ8`</span>, <span class="in">`alba`</span>, <span class="in">`goatfish`</span>, <span class="in">`hake`</span> and others); the Stock Monitoring Tool length-based workflow. <span class="pp">|</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Mildenberger, T.K., Taylor, M.H. &amp; Wolff, M. (2017) *Methods in Ecology and Evolution* 8: 1520–1527; Sparre, P. &amp; Venema, S.C. (1998) *Introduction to tropical fish stock assessment*. FAO Fisheries Technical Paper 306/1; Gutierrez, N.L. and Kleisner, K. (2018). <span class="pp">|</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> <span class="in">`install.packages("TropFishR")`</span>; Stock Monitoring Tool (ELEFAN_GA and YPR/SBPR, TropFishR 1.6.6). <span class="pp">|</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>Synthetic data <span class="in">`synLFQ7`</span> with known growth: recover $L_\infty$ and $K$ and check against the truth.</span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>ELEFAN results across moving-average spans (<span class="in">`MA`</span>) and bin sizes; alternative empirical $M$ estimators.</span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use and misuse {#use-and-misuse}</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"tropfishr"</span>)</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> Is the length-frequency sample representative of the whole population? Are all age groups sampled? Were samples taken across the areas where different life stages live (e.g. juveniles nearshore, adults offshore)? Were gears with different selectivity used, so that several age groups appear? If not, F estimates will be biased (after Gutierrez and Kleisner, 2018). <span class="pp">|</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> Length samples come from one habitat or gear that misses part of the population; modes are not visible (slow growth, long-lived species); several gears with different selectivity are pooled. <span class="pp">|</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Accepting the first ELEFAN solution without checking the score surface; using one empirical $M$; reading $F_{current} &gt; F_{0.1}$ as precise status. <span class="pp">|</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Minimum checks to pass before results are used for advice.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> F-based status relative to per-recruit reference points ($F_{0.1}$ preferred to $F_{max}$); no biomass or catch level. <span class="pp">|</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Case studies and references {#case-studies-and-references}</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Example datasets in the package (<span class="in">`synLFQ1`</span>–<span class="in">`synLFQ8`</span>, <span class="in">`alba`</span>, <span class="in">`goatfish`</span>, <span class="in">`hake`</span> and others); the Stock Monitoring Tool length-based workflow. <span class="pp">|</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Mildenberger, T.K., Taylor, M.H. &amp; Wolff, M. (2017) *Methods in Ecology and Evolution* 8: 1520–1527; Sparre, P. &amp; Venema, S.C. (1998) *Introduction to tropical fish stock assessment*. FAO Fisheries Technical Paper 306/1; Gutierrez, N.L. and Kleisner, K. (2018). <span class="pp">|</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>Synthetic data <span class="in">`synLFQ7`</span> with known growth: recover $L_\infty$ and $K$ and check against the truth.</span>
 <span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>Samples from one gear or habitat only (e.g. adults offshore), or a slow-growing species without visible modes.</span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>ELEFAN results across moving-average spans (<span class="in">`MA`</span>) and bin sizes; alternative empirical $M$ estimators.</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>Samples from one gear or habitat only (e.g. adults offshore), or a slow-growing species without visible modes.</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

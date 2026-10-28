@@ -84,9 +84,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-2a840f158fcfed2a52a11d25bfc5ad6b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-fd396b923067c2e4c2881a1ff080830c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-8357332147aef23ee49569f9a9ac6ceb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -780,16 +780,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#method-overview" id="toc-method-overview" class="nav-link active" data-scroll-target="#method-overview">Method overview</a></li>
-  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data requirements</a></li>
-  <li><a href="#data-processing-requirements" id="toc-data-processing-requirements" class="nav-link" data-scroll-target="#data-processing-requirements">Data processing requirements</a></li>
-  <li><a href="#model-documentation" id="toc-model-documentation" class="nav-link" data-scroll-target="#model-documentation">Model documentation</a></li>
-  <li><a href="#assumptions-and-sensitivities" id="toc-assumptions-and-sensitivities" class="nav-link" data-scroll-target="#assumptions-and-sensitivities">Assumptions and sensitivities</a></li>
-  <li><a href="#misuse-prevention" id="toc-misuse-prevention" class="nav-link" data-scroll-target="#misuse-prevention">Misuse prevention</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">1 · Data</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">2 · Method</a></li>
+  <li><a href="#outputs-diagnostics-and-sensitivities" id="toc-outputs-diagnostics-and-sensitivities" class="nav-link" data-scroll-target="#outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</a></li>
+  <li><a href="#use-and-misuse" id="toc-use-and-misuse" class="nav-link" data-scroll-target="#use-and-misuse">Use and misuse</a>
   <ul class="collapse">
   <li><a href="#reporting-checklist" id="toc-reporting-checklist" class="nav-link" data-scroll-target="#reporting-checklist">Reporting checklist</a></li>
   </ul></li>
-  <li><a href="#applications-and-support" id="toc-applications-and-support" class="nav-link" data-scroll-target="#applications-and-support">Applications and support</a></li>
+  <li><a href="#case-studies-and-references" id="toc-case-studies-and-references" class="nav-link" data-scroll-target="#case-studies-and-references">Case studies and references</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/data-tools/cpuetargeting.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data-tools/cpuetargeting.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -824,6 +823,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><span class="status-badge status-draft">Draft</span> <span class="status-badge status-showcase">Showcase entry</span></p>
+<div class="path">
+<p><a href="#data" class="step">1 · Data</a> <span class="arrow">→</span> <a href="#method" class="step">2 · Method</a> <span class="arrow">→</span> <a href="#outputs-diagnostics-and-sensitivities" class="step">3 · Outputs</a> <span class="arrow">·</span> <a href="#use-and-misuse" class="step">Use and misuse</a> <span class="arrow">·</span> <a href="#case-studies-and-references" class="step">Case studies</a></p>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -867,8 +869,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
-<section id="method-overview" class="level2">
-<h2 class="anchored" data-anchor-id="method-overview">Method overview</h2>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -951,8 +953,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="data-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-requirements">Data requirements</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">1 · Data</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -977,23 +979,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td><strong>Data quality considerations</strong></td>
 <td>Species synonyms, rounded catches, under-reported bycatch, mixed-tactic trips, coarse or missing positions, vessel turnover.</td>
 </tr>
-</tbody>
-</table>
-</section>
-<section id="data-processing-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-processing-requirements">Data processing requirements</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
 <td><strong>Pre-processing steps</strong></td>
 <td><code>cpue_data()</code> to one row per operation with synonyms resolved; <code>select_vessels()</code>, <code>select_species()</code>; every selection is recorded in <code>x$log</code>.</td>
@@ -1016,6 +1001,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+<p><strong>Data template:</strong> <a href="../data/templates/logbook_long.csv"><code>logbook_long.csv</code></a>. Prepare the data first with the <a href="../data-tools/data-preparation.html">data preparation workflow</a>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cpueTargeting)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cpue_data</span>(logbook, <span class="at">year =</span> <span class="st">"year"</span>, <span class="at">species =</span> <span class="st">"species"</span>, <span class="at">catch =</span> <span class="st">"kg"</span>,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">effort =</span> <span class="st">"hours"</span>, <span class="at">id =</span> <span class="st">"trip"</span>, <span class="at">vessel =</span> <span class="st">"vessel"</span>, <span class="at">covariates =</span> <span class="st">"month"</span>)</span>
@@ -1026,8 +1012,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cpue_diagnostics</span>(fit)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">export_index</span>(fit, <span class="st">"cpue_index.csv"</span>, <span class="at">model =</span> <span class="st">"DPC"</span>)   <span class="co"># index with log SE for SPiCT/JABBA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="model-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="model-documentation">Model documentation</h2>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">2 · Method</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1040,6 +1026,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td><strong>Software / tools</strong></td>
+<td><code>remotes::install_github("henning-winker/cpueTargeting")</code>; needs <code>ggplot2</code>, <code>mgcv</code> for model fitting.</td>
+</tr>
+<tr class="even">
+<td><strong>Implementation notes</strong></td>
+<td>Operating models: <code>simulate_cluster()</code>, <code>simulate_bathymetric()</code> (WKBMSYSPICT CPUE guidelines), <code>simulate_tuna()</code> (hook depth by HBF), <code>simulate_logbook()</code> (messy logbook with known truth).</td>
+</tr>
 <tr class="odd">
 <td><strong>Key parameters</strong></td>
 <td>Species set threshold, number of PCs (Optimal Coordinates test), number of clusters, model terms, error family.</td>
@@ -1057,14 +1051,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>No.</td>
 </tr>
 <tr class="odd">
-<td><strong>Implementation notes</strong></td>
-<td>Operating models: <code>simulate_cluster()</code>, <code>simulate_bathymetric()</code> (WKBMSYSPICT CPUE guidelines), <code>simulate_tuna()</code> (hook depth by HBF), <code>simulate_logbook()</code> (messy logbook with known truth).</td>
+<td><strong>Core assumptions</strong></td>
+<td>Targeting is captured by the catch composition (PCs or clusters); the reference set of covariates is constant over time; the indicator fleet samples the stock consistently.</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="assumptions-and-sensitivities" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-and-sensitivities">Assumptions and sensitivities</h2>
+<section id="outputs-diagnostics-and-sensitivities" class="level2">
+<h2 class="anchored" data-anchor-id="outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1078,30 +1072,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Core assumptions</strong></td>
-<td>Targeting is captured by the catch composition (PCs or clusters); the reference set of covariates is constant over time; the indicator fleet samples the stock consistently.</td>
-</tr>
-<tr class="even">
 <td><strong>Main sensitivities</strong></td>
 <td>Species set, number of PCs and clusters, error family, habitat subsetting.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Likely violations</strong></td>
 <td>Persistent changes in relative abundance of the species in the composition; shifts in fishing grounds outside the data; technology creep.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Expected bias</strong></td>
 <td>When relative abundances change persistently, PCs can absorb part of the real trend of the species whose abundance changes most (more PCs absorb more); coarser clusters are less affected.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Warning signs</strong></td>
 <td>Large influence of targeting terms in years where the trend changes; poor predictive check of zeros or tails by year; index follows nominal CPUE of a single tactic.</td>
 </tr>
 </tbody>
 </table>
+<section id="sensitivity-demos" class="level4">
+<h4 class="anchored" data-anchor-id="sensitivity-demos">Sensitivity demos</h4>
+<div class="catalogue-example-grid">
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Species set</p>
+</div>
+<p>Alternative species-set thresholds in <code>select_species()</code>: <a href="https://henning-winker.github.io/cpueTargeting/real-data-guide.html">real-data guide</a>.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Number of PCs and clusters</p>
+</div>
+<p>More PCs absorb more of the real trend: <a href="https://henning-winker.github.io/cpueTargeting/tuna-flat-vs-contrast.html">tuna flat vs contrast</a>.</p>
+</div>
+<div class="catalogue-example">
+<div class="catalogue-example-title">
+<p>Error family</p>
+</div>
+<p>Tweedie versus delta models; predictive check of zeros and tails: <a href="https://henning-winker.github.io/cpueTargeting/logbook-example.html">logbook example</a>.</p>
+</div>
+</div>
 </section>
-<section id="misuse-prevention" class="level2">
-<h2 class="anchored" data-anchor-id="misuse-prevention">Misuse prevention</h2>
+</section>
+<section id="use-and-misuse" class="level2">
+<h2 class="anchored" data-anchor-id="use-and-misuse">Use and misuse</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1131,20 +1144,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
+<td><strong>Pre-run checks</strong></td>
+<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
+</tr>
+<tr class="even">
 <td><strong>Do not use when</strong></td>
 <td>There is no operation-level data (only annual aggregates); the species is a rare bycatch whose catches are not reliably recorded.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Common misuses</strong></td>
 <td>Using nominal CPUE directly in an assessment; adding many PCs to improve fit, which absorbs the abundance signal; dropping the processing log so the selections cannot be reviewed.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Pre-use checklist</strong></td>
 <td>Complete the reporting checklist below; compare Cluster and DPC indices; run sensitivity to species set and number of PCs; check influence and predictive plots.</td>
-</tr>
-<tr class="even">
-<td><strong>Pre-run checks</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
 </tr>
 <tr class="odd">
 <td><strong>Advice suitability</strong></td>
@@ -1210,8 +1223,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </section>
 </section>
-<section id="applications-and-support" class="level2">
-<h2 class="anchored" data-anchor-id="applications-and-support">Applications and support</h2>
+<section id="case-studies-and-references" class="level2">
+<h2 class="anchored" data-anchor-id="case-studies-and-references">Case studies and references</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1227,10 +1240,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="even">
 <td><strong>References</strong></td>
 <td>Winker et al.&nbsp;(2014); Thorson et al.&nbsp;(2017) doi:10.1139/cjfas-2015-0598; Ono et al.&nbsp;(2015) doi:10.1016/j.fishres.2015.05.021; Bigelow et al.&nbsp;(2002); Stephens &amp; MacCall (2004); Bentley et al.&nbsp;(2012).</td>
-</tr>
-<tr class="odd">
-<td><strong>Software / tools</strong></td>
-<td><code>remotes::install_github("henning-winker/cpueTargeting")</code>; needs <code>ggplot2</code>, <code>mgcv</code> for model fitting.</td>
 </tr>
 </tbody>
 </table>
@@ -1745,150 +1754,176 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Draft</span><span class="co">]</span>{.status-badge .status-draft} <span class="co">[</span><span class="ot">Showcase entry</span><span class="co">]</span>{.status-badge .status-showcase}</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"cpuetargeting"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method overview</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Data and CPUE tools → CPUE and abundance indices <span class="pp">|</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> cpueTargeting (R): <span class="co">[</span><span class="ot">Henning-Winker/cpueTargeting</span><span class="co">](https://github.com/Henning-Winker/cpueTargeting)</span> · <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span> <span class="pp">|</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Toolbox for standardising real multispecies catch and effort data where targeting changes over time, plus operating models that test how well standardisation copes with targeting. <span class="pp">|</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Standardised CPUE index with log SE and CV for the assessment (<span class="in">`export_index()`</span>), model comparison, influence and step plots, residual and predictive checks, processing log. <span class="pp">|</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Commercial logbook or observer CPUE from multispecies or multi-tactic fisheries, before it is used as an index in SPiCT, JABBA, BSM or an empirical rule. <span class="pp">|</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>Author: Henning Winker (FAO NFIFM). The package has two parts: **operating models** that simulate fisheries with changing targeting, so that standardisation methods can be tested against a known truth, and a **step-by-step toolbox** for real data.</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Functions <span class="pp">|</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1. Format: one row per operation, synonyms, processing log <span class="pp">|</span> <span class="in">`cpue_data()`</span>, <span class="in">`subset()`</span>, <span class="in">`cpue_matrix()`</span> <span class="pp">|</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2. Fleet: operations by year and vessel, indicator vessels, vessel profiles <span class="pp">|</span> <span class="in">`plot_fleet()`</span>, <span class="in">`vessel_summary()`</span>, <span class="in">`select_vessels()`</span>, <span class="in">`plot_vessel_profile()`</span> <span class="pp">|</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3. Species: cumulative species curves and the species set <span class="pp">|</span> <span class="in">`species_curve()`</span>, <span class="in">`plot_species_curve()`</span>, <span class="in">`select_species()`</span> <span class="pp">|</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4. Nominal CPUE and catch composition <span class="pp">|</span> <span class="in">`nominal_cpue()`</span>, <span class="in">`plot_nominal()`</span>, <span class="in">`plot_composition()`</span>, <span class="in">`plot_cpue_map()`</span> <span class="pp">|</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5. Subsetting: habitat-based (Stephens and MacCall), removing irrelevant tactics <span class="pp">|</span> <span class="in">`stephens_maccall()`</span>, <span class="in">`plot_stephens_maccall()`</span>, <span class="in">`select_tactics()`</span> <span class="pp">|</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6. Targeting covariates: composition PCA, Optimal Coordinates test, clustering <span class="pp">|</span> <span class="in">`add_targeting()`</span>, <span class="in">`composition_pca()`</span>, <span class="in">`compute_oc()`</span>, <span class="in">`cluster_tactics()`</span>, <span class="in">`tactic_table()`</span> <span class="pp">|</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7. Models (mgcv): Base, Covariates, DPC, Cluster, spatial, random vessel effects <span class="pp">|</span> <span class="in">`fit_cpue()`</span> <span class="pp">|</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 8. Diagnostics: model table, influence, step plot, residuals, predictive check <span class="pp">|</span> <span class="in">`cpue_diagnostics()`</span>, <span class="in">`plot_step()`</span>, <span class="in">`plot_influence()`</span>, <span class="in">`plot_residuals()`</span>, <span class="in">`ppc_cpue()`</span> <span class="pp">|</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 9. Index for the assessment, with log SE and CV <span class="pp">|</span> <span class="in">`cpue_index()`</span>, <span class="in">`export_index()`</span> <span class="pp">|</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data requirements</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> Operation-level (trip or set) records with year, vessel, effort and catch by species (template: <span class="co">[</span><span class="ot">`logbook_long.csv`</span><span class="co">](../data/templates/logbook_long.csv)</span>). <span class="pp">|</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Positions, month, gear or hook configuration; several years of indicator vessels; full species composition of each operation. <span class="pp">|</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Habitat or depth covariates; hooks between floats for longlines; survey index for comparison. <span class="pp">|</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> Species synonyms, rounded catches, under-reported bycatch, mixed-tactic trips, coarse or missing positions, vessel turnover. <span class="pp">|</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data processing requirements</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> <span class="in">`cpue_data()`</span> to one row per operation with synonyms resolved; <span class="in">`select_vessels()`</span>, <span class="in">`select_species()`</span>; every selection is recorded in <span class="in">`x$log`</span>. <span class="pp">|</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> This is the standardisation step: Base, Covariates, Cluster and DPC (direct principal components) GAMs, optional spatial terms and random vessel effects; Tweedie or delta families. <span class="pp">|</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents how catches, ages or lengths should be grouped.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> Indicator fleets by activity and target-species rules; fishing tactics from clustering the catch composition; habitat-based subsetting (Stephens and MacCall 2004). <span class="pp">|</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> Operations with missing covariates are flagged in the processing log; zeros are kept and modelled by the Tweedie or delta family. <span class="pp">|</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cpueTargeting)</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cpue_data</span>(logbook, <span class="at">year =</span> <span class="st">"year"</span>, <span class="at">species =</span> <span class="st">"species"</span>, <span class="at">catch =</span> <span class="st">"kg"</span>,</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>               <span class="at">effort =</span> <span class="st">"hours"</span>, <span class="at">id =</span> <span class="st">"trip"</span>, <span class="at">vessel =</span> <span class="st">"vessel"</span>, <span class="at">covariates =</span> <span class="st">"month"</span>)</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">select_species</span>(x, <span class="at">threshold =</span> <span class="fl">0.95</span>, <span class="at">keep =</span> <span class="st">"Pagellus bogaraveo"</span>)</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">add_targeting</span>(x)          <span class="co"># PCs (Optimal Coordinates test) and clusters</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fit_cpue</span>(x, <span class="at">species =</span> <span class="st">"Pagellus bogaraveo"</span>,</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>                <span class="at">models =</span> <span class="fu">c</span>(<span class="st">"Base"</span>, <span class="st">"Covariates"</span>, <span class="st">"Cluster"</span>, <span class="st">"DPC"</span>), <span class="at">vessel =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="fu">cpue_diagnostics</span>(fit)</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="fu">export_index</span>(fit, <span class="st">"cpue_index.csv"</span>, <span class="at">model =</span> <span class="st">"DPC"</span>)   <span class="co"># index with log SE for SPiCT/JABBA</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Model documentation</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>::: {.path}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1 · Data</span><span class="co">](#data)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">2 · Method</span><span class="co">](#method)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">3 · Outputs</span><span class="co">](#outputs-diagnostics-and-sensitivities)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Use and misuse</span><span class="co">](#use-and-misuse)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Case studies</span><span class="co">](#case-studies-and-references)</span>{.step}</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"cpuetargeting"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Data and CPUE tools → CPUE and abundance indices <span class="pp">|</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> cpueTargeting (R): <span class="co">[</span><span class="ot">Henning-Winker/cpueTargeting</span><span class="co">](https://github.com/Henning-Winker/cpueTargeting)</span> · <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span> <span class="pp">|</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Toolbox for standardising real multispecies catch and effort data where targeting changes over time, plus operating models that test how well standardisation copes with targeting. <span class="pp">|</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Standardised CPUE index with log SE and CV for the assessment (<span class="in">`export_index()`</span>), model comparison, influence and step plots, residual and predictive checks, processing log. <span class="pp">|</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> Commercial logbook or observer CPUE from multispecies or multi-tactic fisheries, before it is used as an index in SPiCT, JABBA, BSM or an empirical rule. <span class="pp">|</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>Author: Henning Winker (FAO NFIFM). The package has two parts: **operating models** that simulate fisheries with changing targeting, so that standardisation methods can be tested against a known truth, and a **step-by-step toolbox** for real data.</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Functions <span class="pp">|</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1. Format: one row per operation, synonyms, processing log <span class="pp">|</span> <span class="in">`cpue_data()`</span>, <span class="in">`subset()`</span>, <span class="in">`cpue_matrix()`</span> <span class="pp">|</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2. Fleet: operations by year and vessel, indicator vessels, vessel profiles <span class="pp">|</span> <span class="in">`plot_fleet()`</span>, <span class="in">`vessel_summary()`</span>, <span class="in">`select_vessels()`</span>, <span class="in">`plot_vessel_profile()`</span> <span class="pp">|</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3. Species: cumulative species curves and the species set <span class="pp">|</span> <span class="in">`species_curve()`</span>, <span class="in">`plot_species_curve()`</span>, <span class="in">`select_species()`</span> <span class="pp">|</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4. Nominal CPUE and catch composition <span class="pp">|</span> <span class="in">`nominal_cpue()`</span>, <span class="in">`plot_nominal()`</span>, <span class="in">`plot_composition()`</span>, <span class="in">`plot_cpue_map()`</span> <span class="pp">|</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5. Subsetting: habitat-based (Stephens and MacCall), removing irrelevant tactics <span class="pp">|</span> <span class="in">`stephens_maccall()`</span>, <span class="in">`plot_stephens_maccall()`</span>, <span class="in">`select_tactics()`</span> <span class="pp">|</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6. Targeting covariates: composition PCA, Optimal Coordinates test, clustering <span class="pp">|</span> <span class="in">`add_targeting()`</span>, <span class="in">`composition_pca()`</span>, <span class="in">`compute_oc()`</span>, <span class="in">`cluster_tactics()`</span>, <span class="in">`tactic_table()`</span> <span class="pp">|</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7. Models (mgcv): Base, Covariates, DPC, Cluster, spatial, random vessel effects <span class="pp">|</span> <span class="in">`fit_cpue()`</span> <span class="pp">|</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 8. Diagnostics: model table, influence, step plot, residuals, predictive check <span class="pp">|</span> <span class="in">`cpue_diagnostics()`</span>, <span class="in">`plot_step()`</span>, <span class="in">`plot_influence()`</span>, <span class="in">`plot_residuals()`</span>, <span class="in">`ppc_cpue()`</span> <span class="pp">|</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 9. Index for the assessment, with log SE and CV <span class="pp">|</span> <span class="in">`cpue_index()`</span>, <span class="in">`export_index()`</span> <span class="pp">|</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1 · Data {#data}</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> Operation-level (trip or set) records with year, vessel, effort and catch by species (template: <span class="co">[</span><span class="ot">`logbook_long.csv`</span><span class="co">](../data/templates/logbook_long.csv)</span>). <span class="pp">|</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> Positions, month, gear or hook configuration; several years of indicator vessels; full species composition of each operation. <span class="pp">|</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> Habitat or depth covariates; hooks between floats for longlines; survey index for comparison. <span class="pp">|</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> Species synonyms, rounded catches, under-reported bycatch, mixed-tactic trips, coarse or missing positions, vessel turnover. <span class="pp">|</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> <span class="in">`cpue_data()`</span> to one row per operation with synonyms resolved; <span class="in">`select_vessels()`</span>, <span class="in">`select_species()`</span>; every selection is recorded in <span class="in">`x$log`</span>. <span class="pp">|</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> This is the standardisation step: Base, Covariates, Cluster and DPC (direct principal components) GAMs, optional spatial terms and random vessel effects; Tweedie or delta families. <span class="pp">|</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents how catches, ages or lengths should be grouped.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> Indicator fleets by activity and target-species rules; fishing tactics from clustering the catch composition; habitat-based subsetting (Stephens and MacCall 2004). <span class="pp">|</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> Operations with missing covariates are flagged in the processing log; zeros are kept and modelled by the Tweedie or delta family. <span class="pp">|</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>**Data template:** <span class="co">[</span><span class="ot">`logbook_long.csv`</span><span class="co">](../data/templates/logbook_long.csv)</span>. Prepare the data first with the <span class="co">[</span><span class="ot">data preparation workflow</span><span class="co">](../data-tools/data-preparation.qmd)</span>.</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cpueTargeting)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cpue_data</span>(logbook, <span class="at">year =</span> <span class="st">"year"</span>, <span class="at">species =</span> <span class="st">"species"</span>, <span class="at">catch =</span> <span class="st">"kg"</span>,</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>               <span class="at">effort =</span> <span class="st">"hours"</span>, <span class="at">id =</span> <span class="st">"trip"</span>, <span class="at">vessel =</span> <span class="st">"vessel"</span>, <span class="at">covariates =</span> <span class="st">"month"</span>)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">select_species</span>(x, <span class="at">threshold =</span> <span class="fl">0.95</span>, <span class="at">keep =</span> <span class="st">"Pagellus bogaraveo"</span>)</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">add_targeting</span>(x)          <span class="co"># PCs (Optimal Coordinates test) and clusters</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fit_cpue</span>(x, <span class="at">species =</span> <span class="st">"Pagellus bogaraveo"</span>,</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>                <span class="at">models =</span> <span class="fu">c</span>(<span class="st">"Base"</span>, <span class="st">"Covariates"</span>, <span class="st">"Cluster"</span>, <span class="st">"DPC"</span>), <span class="at">vessel =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="fu">cpue_diagnostics</span>(fit)</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="fu">export_index</span>(fit, <span class="st">"cpue_index.csv"</span>, <span class="at">model =</span> <span class="st">"DPC"</span>)   <span class="co"># index with log SE for SPiCT/JABBA</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> Species set threshold, number of PCs (Optimal Coordinates test), number of clusters, model terms, error family. <span class="pp">|</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents fixed values, priors and externally supplied assumptions.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> Tweedie or delta (binomial + positive) GAM in mgcv. <span class="pp">|</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> No. <span class="pp">|</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Operating models: <span class="in">`simulate_cluster()`</span>, <span class="in">`simulate_bathymetric()`</span> (WKBMSYSPICT CPUE guidelines), <span class="in">`simulate_tuna()`</span> (hook depth by HBF), <span class="in">`simulate_logbook()`</span> (messy logbook with known truth). <span class="pp">|</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Assumptions and sensitivities</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Targeting is captured by the catch composition (PCs or clusters); the reference set of covariates is constant over time; the indicator fleet samples the stock consistently. <span class="pp">|</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> Species set, number of PCs and clusters, error family, habitat subsetting. <span class="pp">|</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Persistent changes in relative abundance of the species in the composition; shifts in fishing grounds outside the data; technology creep. <span class="pp">|</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> When relative abundances change persistently, PCs can absorb part of the real trend of the species whose abundance changes most (more PCs absorb more); coarser clusters are less affected. <span class="pp">|</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> Large influence of targeting terms in years where the trend changes; poor predictive check of zeros or tails by year; index follows nominal CPUE of a single tactic. <span class="pp">|</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Misuse prevention</span></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"cpuetargeting"</span>)</span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> There is no operation-level data (only annual aggregates); the species is a rare bycatch whose catches are not reliably recorded. <span class="pp">|</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Using nominal CPUE directly in an assessment; adding many PCs to improve fit, which absorbs the abundance signal; dropping the processing log so the selections cannot be reviewed. <span class="pp">|</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> Complete the reporting checklist below; compare Cluster and DPC indices; run sensitivity to species set and number of PCs; check influence and predictive plots. <span class="pp">|</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Input data: produces the abundance index used by assessments and empirical rules. <span class="pp">|</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reporting checklist</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Item <span class="pp">|</span> Report <span class="pp">|</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Operation and effort <span class="pp">|</span> Unit (set, trip, …), effort measure <span class="pp">|</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data selection <span class="pp">|</span> All subsetting rules and the processing log <span class="pp">|</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Species set <span class="pp">|</span> Threshold, criterion (occurrence or weight), species kept <span class="pp">|</span></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fleet <span class="pp">|</span> Indicator-fleet rules, number of vessels <span class="pp">|</span></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Subsetting <span class="pp">|</span> Stephens &amp; MacCall target, critical value, share kept over time; tactics removed <span class="pp">|</span></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Targeting <span class="pp">|</span> Transformation, eigenvalues, OC result, number of PCs and clusters, clustering method <span class="pp">|</span></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Models <span class="pp">|</span> Family, terms, random effects, reference set of the index <span class="pp">|</span></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Diagnostics <span class="pp">|</span> Model table, step and influence plots, residuals, predictive check, vessel effects <span class="pp">|</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Index <span class="pp">|</span> Nominal and standardised CPUE, log SE and CV <span class="pp">|</span></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sensitivity <span class="pp">|</span> Indices with alternative species sets, numbers of PCs, clusters, families <span class="pp">|</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Applications and support</span></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Worked examples on the <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span>: bathymetric targeting, tuna longline (flat vs contrasting trends), logbook standardisation for blackspot seabream and dolphinfish. <span class="pp">|</span></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Winker et al. (2014); Thorson et al. (2017) doi:10.1139/cjfas-2015-0598; Ono et al. (2015) doi:10.1016/j.fishres.2015.05.021; Bigelow et al. (2002); Stephens &amp; MacCall (2004); Bentley et al. (2012). <span class="pp">|</span></span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> <span class="in">`remotes::install_github("henning-winker/cpueTargeting")`</span>; needs <span class="in">`ggplot2`</span>, <span class="in">`mgcv`</span> for model fitting. <span class="pp">|</span></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>Simulated logbook with known truth (<span class="in">`simulate_logbook()`</span>): blackspot seabream and dolphinfish examples on the <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span>.</span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Tuna longline, flat vs contrasting true trends: when the catch composition captures targeting and when it also absorbs abundance.</span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>Many PCs on a fishery where species relative abundances diverge: the targeting terms remove part of the real trend.</span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2 · Method {#method}</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> <span class="in">`remotes::install_github("henning-winker/cpueTargeting")`</span>; needs <span class="in">`ggplot2`</span>, <span class="in">`mgcv`</span> for model fitting. <span class="pp">|</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Operating models: <span class="in">`simulate_cluster()`</span>, <span class="in">`simulate_bathymetric()`</span> (WKBMSYSPICT CPUE guidelines), <span class="in">`simulate_tuna()`</span> (hook depth by HBF), <span class="in">`simulate_logbook()`</span> (messy logbook with known truth). <span class="pp">|</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> Species set threshold, number of PCs (Optimal Coordinates test), number of clusters, model terms, error family. <span class="pp">|</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents fixed values, priors and externally supplied assumptions.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> Tweedie or delta (binomial + positive) GAM in mgcv. <span class="pp">|</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> No. <span class="pp">|</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> Targeting is captured by the catch composition (PCs or clusters); the reference set of covariates is constant over time; the indicator fleet samples the stock consistently. <span class="pp">|</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> Species set, number of PCs and clusters, error family, habitat subsetting. <span class="pp">|</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> Persistent changes in relative abundance of the species in the composition; shifts in fishing grounds outside the data; technology creep. <span class="pp">|</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> When relative abundances change persistently, PCs can absorb part of the real trend of the species whose abundance changes most (more PCs absorb more); coarser clusters are less affected. <span class="pp">|</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> Large influence of targeting terms in years where the trend changes; poor predictive check of zeros or tails by year; index follows nominal CPUE of a single tactic. <span class="pp">|</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sensitivity demos</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>Species set</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>Alternative species-set thresholds in <span class="in">`select_species()`</span>: <span class="co">[</span><span class="ot">real-data guide</span><span class="co">](https://henning-winker.github.io/cpueTargeting/real-data-guide.html)</span>.</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>Number of PCs and clusters</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>More PCs absorb more of the real trend: <span class="co">[</span><span class="ot">tuna flat vs contrast</span><span class="co">](https://henning-winker.github.io/cpueTargeting/tuna-flat-vs-contrast.html)</span>.</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>Error family</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>Tweedie versus delta models; predictive check of zeros and tails: <span class="co">[</span><span class="ot">logbook example</span><span class="co">](https://henning-winker.github.io/cpueTargeting/logbook-example.html)</span>.</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use and misuse {#use-and-misuse}</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"cpuetargeting"</span>)</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> There is no operation-level data (only annual aggregates); the species is a rare bycatch whose catches are not reliably recorded. <span class="pp">|</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Using nominal CPUE directly in an assessment; adding many PCs to improve fit, which absorbs the abundance signal; dropping the processing log so the selections cannot be reviewed. <span class="pp">|</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> Complete the reporting checklist below; compare Cluster and DPC indices; run sensitivity to species set and number of PCs; check influence and predictive plots. <span class="pp">|</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Input data: produces the abundance index used by assessments and empirical rules. <span class="pp">|</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="fu">### Reporting checklist</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Item <span class="pp">|</span> Report <span class="pp">|</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Operation and effort <span class="pp">|</span> Unit (set, trip, …), effort measure <span class="pp">|</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data selection <span class="pp">|</span> All subsetting rules and the processing log <span class="pp">|</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Species set <span class="pp">|</span> Threshold, criterion (occurrence or weight), species kept <span class="pp">|</span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fleet <span class="pp">|</span> Indicator-fleet rules, number of vessels <span class="pp">|</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Subsetting <span class="pp">|</span> Stephens &amp; MacCall target, critical value, share kept over time; tactics removed <span class="pp">|</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Targeting <span class="pp">|</span> Transformation, eigenvalues, OC result, number of PCs and clusters, clustering method <span class="pp">|</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Models <span class="pp">|</span> Family, terms, random effects, reference set of the index <span class="pp">|</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Diagnostics <span class="pp">|</span> Model table, step and influence plots, residuals, predictive check, vessel effects <span class="pp">|</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Index <span class="pp">|</span> Nominal and standardised CPUE, log SE and CV <span class="pp">|</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sensitivity <span class="pp">|</span> Indices with alternative species sets, numbers of PCs, clusters, families <span class="pp">|</span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Case studies and references {#case-studies-and-references}</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> Worked examples on the <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span>: bathymetric targeting, tuna longline (flat vs contrasting trends), logbook standardisation for blackspot seabream and dolphinfish. <span class="pp">|</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Winker et al. (2014); Thorson et al. (2017) doi:10.1139/cjfas-2015-0598; Ono et al. (2015) doi:10.1016/j.fishres.2015.05.021; Bigelow et al. (2002); Stephens &amp; MacCall (2004); Bentley et al. (2012). <span class="pp">|</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>Simulated logbook with known truth (<span class="in">`simulate_logbook()`</span>): blackspot seabream and dolphinfish examples on the <span class="co">[</span><span class="ot">project page</span><span class="co">](https://henning-winker.github.io/cpueTargeting/)</span>.</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>Tuna longline, flat vs contrasting true trends: when the catch composition captures targeting and when it also absorbs abundance.</span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>Many PCs on a fishery where species relative abundances diverge: the targeting terms remove part of the real trend.</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
