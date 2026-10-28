@@ -83,7 +83,7 @@ website:
           - data-tools/index.qmd
           - data-tools/cpuetargeting.qmd
           - data-tools/jara.qmd
-          - data-tools/fishsize.qmd
+          - data-tools/fishualizer.qmd
       - section: "Advice and MSE"
         contents:
           - advice/index.qmd

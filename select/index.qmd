@@ -149,7 +149,7 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
       return card(x.m, cls, pill, body);
     }).join("") : '<p class="sel-none">No assessment method fits these data. See the table below for what each method would need.</p>';
     var data = methods.filter(function (m) { return m.category === "Data and CPUE tools"; }).filter(function (m) {
-      return (m.id === "cpuetargeting" && a.index > 0 && a.index_type === "commercial") || (m.id === "jara" && (a.index >= 2 || a.catch === "incomplete")) || (m.id === "fishsize" && a.length !== "none");
+      return (m.id === "cpuetargeting" && a.index > 0 && a.index_type === "commercial") || (m.id === "jara" && (a.index >= 2 || a.catch === "incomplete")) || (m.id === "fishualizer" && a.length !== "none");
     });
     document.getElementById("sel-data").innerHTML = data.length ? data.map(function (m) { return card(m, "sel-data", "Data step", '<div class="sel-meta">' + esc(m.subclass) + " · " + esc(m.application) + "</div>"); }).join("") : '<p class="sel-none">No specific data-preparation tool suggested for these answers.</p>';
     var adv = methods.filter(function (m) { return m.category === "Advice and MSE"; }).filter(function (m) { return m.id === "flref" ? fit.length > 0 : a.goal === "HCR testing"; });

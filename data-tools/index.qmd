@@ -20,4 +20,4 @@ crosswalk_table(site_root = "../", category = "Data and CPUE tools")
 ::: {#datatools}
 :::
 
-[More tools to be added (CPUE standardisation, catch reconstruction, length raising).]{.todo}
+[More tools to be added (CPUE standardisation, catch reconstruction, length raising to catch).]{.todo}

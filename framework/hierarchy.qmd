@@ -53,7 +53,7 @@ Stock assessment methods
 
 - [CPUE standardisation]{.app-label}<br>[[cpueTargeting](../data-tools/cpuetargeting.qmd)]{.method-label}
 - [Joint indices, trends]{.app-label}<br>[[JARA](../data-tools/jara.qmd)]{.method-label}
-- [Length compositions]{.app-label}<br>[[fishsize (TBC)](../data-tools/fishsize.qmd)]{.method-label}
+- [Length compositions]{.app-label}<br>[[fishualizeR](../data-tools/fishualizer.qmd)]{.method-label}
 :::
 ::: {.class-card .note-box}
 ### Advice and MSE
