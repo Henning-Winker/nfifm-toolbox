@@ -4,7 +4,7 @@ subtitle: "Testing HCRs and management procedures"
 categories: [advice, MSE, FLR]
 ---
 
-[Stub]{.status-badge .status-stub}
+[Basic]{.status-badge .status-basic}
 
 ```{r}
 #| echo: false
@@ -18,14 +18,14 @@ method_attributes("mse")
 | Field | Entry |
 |---|---|
 | **Family / class** | Management strategy evaluation → Simplified and full MSE |
-| **Method name** | [To be completed]{.todo} <br><small>Identifies the named method or platform.</small> |
-| **Short description** | [To be completed]{.todo} <br><small>Summarizes the method in plain language.</small> |
-| **Main outputs** | [To be completed]{.todo} <br><small>Lists key status indicators or reference-point outputs.</small> |
-| **Typical use case** | [To be completed]{.todo} <br><small>Describes when the method is commonly applied.</small> |
+| **Method name** | FLR mse |
+| **Short description** | FLR management strategy evaluation framework for testing harvest control rules and management procedures against operating models. |
+| **Main outputs** | Performance of HCRs against risk, yield and stability |
+| **Typical use case** | Testing HCRs and management procedures |
 
 ::: {.callout-tip}
-## Help complete this entry
-This page is a stub. Use **Edit this page** (top right) or open a *New method entry* issue. Each field is described in [Catalogue structure](../framework/catalogue-structure.qmd).
+## Basic entry
+This page is populated with the information available so far. Full documentation will follow the pattern of the showcase entries ([FLicc](../methods/dynamic-pool/flicc.qmd), [cpueTargeting](../data-tools/cpuetargeting.qmd), [FishualizeR](../data-tools/fishualizer.qmd), [mmsyFM](../methods/multispecies/mmsyfm.qmd)). Use **Edit this page** (top right) or open a *New method entry* issue to contribute.
 :::
 
 FLR `mse` package; FLicc provides `flicc.sa()` as estimation model.
@@ -35,7 +35,7 @@ FLR `mse` package; FLicc provides `flicc.sa()` as estimation model.
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | [To be completed]{.todo} <br><small>Defines the minimum inputs needed for implementation.</small> |
+| **Minimum data** | See method documentation. |
 | **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
 | **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
@@ -56,8 +56,8 @@ FLR `mse` package; FLicc provides `flicc.sa()` as estimation model.
 |---|---|
 | **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
+| **Error structure** | n/a |
+| **State-space formulation** | n/a |
 | **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
 
 ## Assumptions and sensitivities
@@ -83,14 +83,14 @@ method_warnings("mse")
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | [To be completed]{.todo} <br><small>States whether outputs support status only, indicator-based HCRs, catch advice or MSE.</small> |
+| **Advice suitability** | HCR testing |
 
 ## Applications and support
 
 | Field | Entry |
 |---|---|
 | **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | [To be completed]{.todo} <br><small>Provides primary literature and supporting documents.</small> |
+| **References** | Kell, L.T. et al. (2007) FLR: an open-source framework for the evaluation and development of management strategies. *ICES J. Mar. Sci.* 64(4): 640–646. |
 | **Software / tools** | mse (R/FLR) |
 
 ::: {.catalogue-example-grid}

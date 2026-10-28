@@ -4,7 +4,7 @@ subtitle: "Length-based (single fleet)"
 categories: [dynamic pool, per-recruit, length-based]
 ---
 
-[Stub]{.status-badge .status-stub}
+[Basic]{.status-badge .status-basic}
 
 ```{r}
 #| echo: false
@@ -18,14 +18,14 @@ method_attributes("lbb")
 | Field | Entry |
 |---|---|
 | **Family / class** | Dynamic pool models → Equilibrium per-recruit |
-| **Method name** | [To be completed]{.todo} <br><small>Identifies the named method or platform.</small> |
-| **Short description** | [To be completed]{.todo} <br><small>Summarizes the method in plain language.</small> |
-| **Main outputs** | [To be completed]{.todo} <br><small>Lists key status indicators or reference-point outputs.</small> |
-| **Typical use case** | [To be completed]{.todo} <br><small>Describes when the method is commonly applied.</small> |
+| **Method name** | LBB |
+| **Short description** | Bayesian method that estimates $L_\infty$, $Z/K$, $M/K$ and selectivity from length frequencies and derives relative biomass $B/B_0$ and $B/B_{MSY}$ proxies. |
+| **Main outputs** | B/B0, B/BMSY proxy, F/M, length indicators |
+| **Typical use case** | Length-based (single fleet) |
 
 ::: {.callout-tip}
-## Help complete this entry
-This page is a stub. Use **Edit this page** (top right) or open a *New method entry* issue. Each field is described in [Catalogue structure](../../framework/catalogue-structure.qmd).
+## Basic entry
+This page is populated with the information available so far. Full documentation will follow the pattern of the showcase entries ([FLicc](../../methods/dynamic-pool/flicc.qmd), [cpueTargeting](../../data-tools/cpuetargeting.qmd), [FishualizeR](../../data-tools/fishualizer.qmd), [mmsyFM](../../methods/multispecies/mmsyfm.qmd)). Use **Edit this page** (top right) or open a *New method entry* issue to contribute.
 :::
 
 Can be reproduced as a configuration of [FLicc](flicc.qmd) (`lbb_flicc()`).
@@ -35,7 +35,7 @@ Can be reproduced as a configuration of [FLicc](flicc.qmd) (`lbb_flicc()`).
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | [To be completed]{.todo} <br><small>Defines the minimum inputs needed for implementation.</small> |
+| **Minimum data** | Length compositions, life-history proxies (as recorded in the method selector). |
 | **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
 | **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
@@ -56,8 +56,8 @@ Can be reproduced as a configuration of [FLicc](flicc.qmd) (`lbb_flicc()`).
 |---|---|
 | **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
+| **Error structure** | Observation error |
+| **State-space formulation** | No |
 | **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
 
 ## Assumptions and sensitivities
@@ -83,14 +83,14 @@ method_warnings("lbb")
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | [To be completed]{.todo} <br><small>States whether outputs support status only, indicator-based HCRs, catch advice or MSE.</small> |
+| **Advice suitability** | Status (indicator) |
 
 ## Applications and support
 
 | Field | Entry |
 |---|---|
 | **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | [To be completed]{.todo} <br><small>Provides primary literature and supporting documents.</small> |
+| **References** | Froese, R. et al. (2018) A new approach for estimating stock status from length frequency data. *ICES J. Mar. Sci.* 75(6): 2004–2015, doi:10.1093/icesjms/fsy078. |
 | **Software / tools** | LBB (R/JAGS); FLicc configuration |
 
 ::: {.catalogue-example-grid}

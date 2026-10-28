@@ -1,0 +1,40 @@
+---
+title: "Stock Monitoring Tool"
+subtitle: "FAO R-Shiny app for running data-limited methods without programming"
+---
+
+[Draft]{.status-badge .status-draft}
+
+The **Stock Monitoring Tool (SMT)**, developed by FAO, is an R-Shiny application hosted on the [iMarine gateway](https://i-marine.d4science.org/group/imarine-gateway) (D4Science), with remote computing resources. It lets users with little or no programming experience run data-limited methods to evaluate and monitor stock status, and it is the **main training environment** of the toolbox: courses use the SMT to run a method, and the toolbox pages to understand its data needs, assumptions, diagnostics and misuse risks. Source code: [fdiwg/smt-shiny](https://github.com/fdiwg/smt-shiny).
+
+## Modules
+
+| Menu | Module | Method in the toolbox | Notes |
+|---|---|---|---|
+| Length-based methods | TropFishR | [TropFishR (ELEFAN_GA + YPR/SBPR)](../methods/dynamic-pool/tropfishr.qmd) | Genetic-algorithm ELEFAN and YPR/SBPR from TropFishR 1.6.6 |
+| | LBI | [Length-based indicators](../methods/empirical/lbi.qmd) | Empirical indicators |
+| | LBSPR | [LBSPR](../methods/dynamic-pool/lbspr.qmd) | |
+| Surplus production models | SPiCT | [SPiCT](../methods/biomass-dynamic/spict.qmd) | |
+| | JABBA | [JABBA](../methods/biomass-dynamic/jabba.qmd) | Runs locally since SMT 0.8.0 (needs JAGS); PDF report saved to the user workspace |
+| | CMSY | [CMSY+](../methods/biomass-dynamic/cmsy.qmd) | **Temporarily unavailable**: it ran on the D4Science DataMiner service, which has been decommissioned |
+| Supporting tools | Schaefer logistic growth; von Bertalanffy growth; seasonal von Bertalanffy; natural mortality estimators | Inputs for the [life-history inventory](../data-tools/data-preparation.qmd) | Help choose and check $r$, $L_\infty$, $k$ and $M$ |
+| In development | FLicc | [FLicc](../methods/dynamic-pool/flicc.qmd) | Prototype module developed by Sophia (NFIFM), to be added to the SMT |
+| Candidate app on iMarine | mmsyFM | [mmsyFM](../methods/multispecies/mmsyfm.qmd) | Multispecies MSY and mixed-fishery harvest strategies; own Shiny app (`mmsyFM::run_app()`) |
+
+## Workflow in the app
+
+Each method has an **Introduction** page (background and links to the FAO SDG 14.4.1 eLearning module), a **Data** tab (format and data considerations), a **Workflow** tab, and a **Sample dataset** page that doubles as the input template. Users upload data, set parameters (with information buttons on each field), run the method, and download a report; reports are also saved to the user's private workspace. Run time with the sample datasets is 1–3 minutes.
+
+## Use and misuse
+
+::: {.callout-warning}
+## Before using SMT results for advice
+- **Sample datasets are for practice.** The JABBA sample file, for example, is synthetic and not a validated assessment.
+- **Default settings are not a recommendation.** Priors, growth parameters and selectivity must be justified for the stock; check each method's misuse-prevention section in this toolbox.
+- **Diagnostics are not optional.** A run that completes is not a converged or validated assessment; report the diagnostics and sensitivity runs listed on the method page.
+- **Keep the record.** Save data, settings and the report, so the run can be reviewed and repeated.
+:::
+
+## Running it locally
+
+The repository includes a `Dockerfile` and an `renv.lock` that pin the R packages (including JABBA 2.3.7 and its JAGS dependency), so the app can be deployed for a national institute or a course without the iMarine gateway.

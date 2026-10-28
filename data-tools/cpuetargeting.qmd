@@ -4,7 +4,7 @@ subtitle: "CPUE standardisation with changing targeting"
 categories: [data, CPUE standardisation, targeting, GAM]
 ---
 
-[Draft]{.status-badge .status-draft}
+[Draft]{.status-badge .status-draft} [Showcase entry]{.status-badge .status-showcase}
 
 ```{r}
 #| echo: false

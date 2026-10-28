@@ -7,6 +7,8 @@ Many fisheries in the programme's regions are multispecies trawl and multigear f
 
 | Tool | Purpose | Status |
 |---|---|---|
-| [mmsyFM](mmsyfm.qmd) | Multispecies MSY and fishing-mortality trade-offs (description to come) | Stub |
+| [mmsyFM](mmsyfm.qmd) | Fleet model for mixed fisheries: safeguarded multispecies MSY, effort and closure rules tested under uncertainty; Shiny app for workshops | Draft |
 
-[Content to be added: scope, methods and case studies for this workstream.]{.todo}
+mmsyFM needs stock productivity and status from single-stock assessments (e.g. [SPiCT](../biomass-dynamic/spict.qmd) or [JABBA](../biomass-dynamic/jabba.qmd)) of the main stocks, and builds on the fleet-targeting logic of [cpueTargeting](../../data-tools/cpuetargeting.qmd).
+
+[To add: further multispecies methods and case studies.]{.todo}

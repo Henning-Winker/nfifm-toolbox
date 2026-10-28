@@ -3,7 +3,7 @@ title: "Hierarchical framework"
 subtitle: "Classifying assessment methods and the tools around them"
 ---
 
-Methods are described at three levels: **model class** (with sub-class or population structure), **application context** (the data situation the method is intended for) and **named method**. Cross-cutting attributes (Bayesian, state-space, process error, multiple indices, multi-gear, dome selectivity) are listed in the [crosswalk](crosswalk.qmd). Around the assessment methods sit two further layers: **data and CPUE tools** that prepare the inputs, and **advice and MSE tools** that turn accepted assessments into management advice.
+Methods are described at three levels: **model class** (with sub-class or population structure), **application context** (the data situation the method is intended for) and **named method**. Cross-cutting attributes (Bayesian, state-space, process error, multiple indices, multi-gear, dome selectivity) are listed in the [crosswalk](crosswalk.qmd). Use the [method selector](../select/index.qmd) to match methods to your data. Around the assessment methods sit two further layers: **data and CPUE tools** that prepare the inputs, and **advice and MSE tools** that turn accepted assessments into management advice.
 
 ::: {.hierarchy-wrap}
 ::: {.hierarchy-root}
@@ -29,7 +29,7 @@ Stock assessment methods
 #### Equilibrium per-recruit
 
 - [Age-based]{.app-label}<br>[[YPR / SPR / Thompson & Bell](../methods/dynamic-pool/ypr-spr.qmd)]{.method-label}
-- [Length-based (single fleet)]{.app-label}<br>[[LBSPR](../methods/dynamic-pool/lbspr.qmd) / [LBB](../methods/dynamic-pool/lbb.qmd) / [FLicc](../methods/dynamic-pool/flicc.qmd)]{.method-label}
+- [Length-based (single fleet)]{.app-label}<br>[[LBSPR](../methods/dynamic-pool/lbspr.qmd) / [LBB](../methods/dynamic-pool/lbb.qmd) / [TropFishR](../methods/dynamic-pool/tropfishr.qmd) / [FLicc](../methods/dynamic-pool/flicc.qmd)]{.method-label}
 - [Length-based (multi-gear)]{.app-label}<br>[[FLicc](../methods/dynamic-pool/flicc.qmd) / [fishblicc](../methods/dynamic-pool/fishblicc.qmd)]{.method-label}
 
 #### Structured dynamic
@@ -43,7 +43,7 @@ Stock assessment methods
 
 #### Technical interactions
 
-- [Multispecies MSY / multigear]{.app-label}<br>[[mmsyFM](../methods/multispecies/mmsyfm.qmd)]{.method-label}
+- [Multispecies MSY, effort and closure rules]{.app-label}<br>[[mmsyFM](../methods/multispecies/mmsyfm.qmd)]{.method-label}
 :::
 :::
 
@@ -63,9 +63,10 @@ Stock assessment methods
 - [HCR testing]{.app-label}<br>[[FLR mse](../advice/mse.qmd)]{.method-label}
 :::
 ::: {.class-card .note-box}
-### Choosing among them
+### Empirical indicators
 
-Use the [method selector](../select/index.qmd) to match methods to your data, and check the [misuse warnings](../guidance/misuse.qmd).
+- [Length-based indicators]{.app-label}<br>[[LBI](../methods/empirical/lbi.qmd)]{.method-label}
+- [Indicator-based HCRs]{.app-label}<br>[FLicc `lbi.hcr()`, `rfb.flicc.hcr()`]{.method-label}
 :::
 :::
 :::

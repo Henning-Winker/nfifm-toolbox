@@ -4,7 +4,7 @@ subtitle: "Catch + one or more indices (+ auxiliary)"
 categories: [biomass dynamic, state-space, Bayesian]
 ---
 
-[Draft]{.status-badge .status-draft}
+[Draft]{.status-badge .status-draft} [Showcase candidate]{.status-badge .status-candidate}
 
 ```{r}
 #| echo: false

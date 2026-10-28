@@ -4,7 +4,7 @@ subtitle: "Any accepted assessment"
 categories: [advice, reference points, FLR]
 ---
 
-[Stub]{.status-badge .status-stub}
+[Basic]{.status-badge .status-basic}
 
 ```{r}
 #| echo: false
@@ -18,14 +18,14 @@ method_attributes("flref")
 | Field | Entry |
 |---|---|
 | **Family / class** | Advice and reference points → Reference points and advice tables |
-| **Method name** | [To be completed]{.todo} <br><small>Identifies the named method or platform.</small> |
-| **Short description** | [To be completed]{.todo} <br><small>Summarizes the method in plain language.</small> |
-| **Main outputs** | [To be completed]{.todo} <br><small>Lists key status indicators or reference-point outputs.</small> |
-| **Typical use case** | [To be completed]{.todo} <br><small>Describes when the method is commonly applied.</small> |
+| **Method name** | FLRef |
+| **Short description** | FLR package that turns accepted assessments (SPiCT, JABBA, FLicc and others) into reference points, standard advice plots and tables. |
+| **Main outputs** | Reference points, stock status plots, advice tables, HCR summaries |
+| **Typical use case** | Any accepted assessment |
 
 ::: {.callout-tip}
-## Help complete this entry
-This page is a stub. Use **Edit this page** (top right) or open a *New method entry* issue. Each field is described in [Catalogue structure](../framework/catalogue-structure.qmd).
+## Basic entry
+This page is populated with the information available so far. Full documentation will follow the pattern of the showcase entries ([FLicc](../methods/dynamic-pool/flicc.qmd), [cpueTargeting](../data-tools/cpuetargeting.qmd), [FishualizeR](../data-tools/fishualizer.qmd), [mmsyFM](../methods/multispecies/mmsyfm.qmd)). Use **Edit this page** (top right) or open a *New method entry* issue to contribute.
 :::
 
 Repository: [Henning-Winker/FLRef](https://github.com/Henning-Winker/FLRef). Converts SPiCT, JABBA and FLicc fits to FLR objects (`spict2FLStockR()`, `jabba2FLStockR()`, `flicc2FLStockR()`) for standard advice plots (`plotAdvice()`).
@@ -35,7 +35,7 @@ Repository: [Henning-Winker/FLRef](https://github.com/Henning-Winker/FLRef). Con
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | [To be completed]{.todo} <br><small>Defines the minimum inputs needed for implementation.</small> |
+| **Minimum data** | See method documentation. |
 | **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
 | **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
@@ -56,8 +56,8 @@ Repository: [Henning-Winker/FLRef](https://github.com/Henning-Winker/FLRef). Con
 |---|---|
 | **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
+| **Error structure** | n/a |
+| **State-space formulation** | n/a |
 | **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
 
 ## Assumptions and sensitivities
@@ -83,7 +83,7 @@ method_warnings("flref")
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | [To be completed]{.todo} <br><small>States whether outputs support status only, indicator-based HCRs, catch advice or MSE.</small> |
+| **Advice suitability** | Advice translation |
 
 ## Applications and support
 

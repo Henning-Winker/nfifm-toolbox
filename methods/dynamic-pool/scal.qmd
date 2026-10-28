@@ -4,7 +4,7 @@ subtitle: "Catch + index + length composition"
 categories: [dynamic pool, length-based, integrated]
 ---
 
-[Stub]{.status-badge .status-stub}
+[Basic]{.status-badge .status-basic}
 
 ```{r}
 #| echo: false
@@ -18,14 +18,14 @@ method_attributes("scal")
 | Field | Entry |
 |---|---|
 | **Family / class** | Dynamic pool models → Length-based age-structured |
-| **Method name** | [To be completed]{.todo} <br><small>Identifies the named method or platform.</small> |
-| **Short description** | [To be completed]{.todo} <br><small>Summarizes the method in plain language.</small> |
-| **Main outputs** | [To be completed]{.todo} <br><small>Lists key status indicators or reference-point outputs.</small> |
-| **Typical use case** | [To be completed]{.todo} <br><small>Describes when the method is commonly applied.</small> |
+| **Method name** | Statistical catch-at-length |
+| **Short description** | Statistical catch-at-length models that fit catch, indices and length compositions with a size-structured population model (e.g. a4a, Stock Synthesis configurations). |
+| **Main outputs** | Dynamic size-structured status |
+| **Typical use case** | Catch + index + length composition |
 
 ::: {.callout-tip}
-## Help complete this entry
-This page is a stub. Use **Edit this page** (top right) or open a *New method entry* issue. Each field is described in [Catalogue structure](../../framework/catalogue-structure.qmd).
+## Basic entry
+This page is populated with the information available so far. Full documentation will follow the pattern of the showcase entries ([FLicc](../../methods/dynamic-pool/flicc.qmd), [cpueTargeting](../../data-tools/cpuetargeting.qmd), [FishualizeR](../../data-tools/fishualizer.qmd), [mmsyFM](../../methods/multispecies/mmsyfm.qmd)). Use **Edit this page** (top right) or open a *New method entry* issue to contribute.
 :::
 
 
@@ -33,7 +33,7 @@ This page is a stub. Use **Edit this page** (top right) or open a *New method en
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | [To be completed]{.todo} <br><small>Defines the minimum inputs needed for implementation.</small> |
+| **Minimum data** | Catch time series, one or more abundance indices, representative annual length compositions, local life-history parameters (as recorded in the method selector). |
 | **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
 | **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
@@ -54,8 +54,8 @@ This page is a stub. Use **Edit this page** (top right) or open a *New method en
 |---|---|
 | **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
+| **Error structure** | Observation or process + observation error |
+| **State-space formulation** | Variant-dependent |
 | **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
 
 ## Assumptions and sensitivities
@@ -81,7 +81,7 @@ method_warnings("scal")
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | [To be completed]{.todo} <br><small>States whether outputs support status only, indicator-based HCRs, catch advice or MSE.</small> |
+| **Advice suitability** | Status, catch advice |
 
 ## Applications and support
 

@@ -13,3 +13,7 @@ lbspr|lbb|flicc|fishblicc|scal,length,some,caution,Check sample size per gear-ye
 lbspr|lbb|flicc|fishblicc,goal,catch advice,caution,"Length-based per-recruit methods give status relative to F reference points, not biomass or catch levels. Catch advice needs an additional step (e.g. an indicator-based HCR)."
 lbspr|lbb|flicc|fishblicc|ypr|scal,species,mixed,caution,Single-stock per-recruit reference points ignore technical interactions between species caught together.
 *,goal,HCR testing,caution,An assessment fit alone does not test a harvest control rule. Use the assessment as the estimation model in an MSE (see FLR mse).
+tropfishr,gears,multiple,caution,ELEFAN and the catch curve assume one selectivity; pooled gears blur the growth modes and the catch curve. Analyse a single gear.
+tropfishr,lifehistory,long-lived,caution,"ELEFAN needs clear modal progression; for slow-growing, long-lived species the length modes overlap and growth estimates are unreliable. Prefer independent growth estimates."
+lbi,goal,catch advice,caution,Length-based indicators flag selectivity and exploitation patterns; they do not give biomass or catch levels on their own. Use them inside an indicator-based HCR.
+lbi,gears,multiple,caution,Indicators from pooled gears mix selectivity patterns; compute them per gear or for the gear that dominates the catch.

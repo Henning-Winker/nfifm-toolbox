@@ -1,0 +1,63 @@
+---
+title: "Training and apps"
+subtitle: "Workstream 4: capacity building with no-code apps, worked examples and mentoring"
+---
+
+The toolbox is closely tied to the programme's capacity-building work. The **[Stock Monitoring Tool](smt.qmd)** on the iMarine gateway is the main training environment: trainees run methods there without programming, and use the toolbox pages for the method's data needs, assumptions, diagnostics and misuse risks. The apps lower the entry barrier; the catalogue pages are what keep their results interpretable.
+
+| Training element | Apps | Status |
+|---|---|---|
+| Length-based assessment | SMT: TropFishR, LBI, LBSPR; FLicc module | Live; FLicc prototype in development |
+| Surplus production models | SMT: SPiCT, JABBA, CMSY | Live; CMSY temporarily unavailable |
+| Data preparation | FishualizeR | Live |
+| Mixed fisheries and harvest strategies | mmsyFM Shiny app | Runs locally; iMarine hosting under consideration |
+
+::: {.ws-grid}
+::: {.ws-card style="--ws:#1f6a8a"}
+[No-code app]{.ws-num}
+
+#### [Stock Monitoring Tool](smt.qmd)
+FAO R-Shiny app on the iMarine gateway: length-based methods (TropFishR, LBI, LBSPR), surplus production models (SPiCT, JABBA, CMSY) and supporting tools.
+:::
+::: {.ws-card style="--ws:#c4552b"}
+[No-code app]{.ws-num}
+
+#### [FishualizeR](../data-tools/fishualizer.qmd)
+Data inventory, quality control and exploratory analysis of fishery data; companion to FAO Technical Paper 706.
+:::
+::: {.ws-card style="--ws:#2e7d4f"}
+[Workshop app]{.ws-num}
+
+#### [mmsyFM](../methods/multispecies/mmsyfm.qmd)
+Participatory workshops on multispecies MSY, effort caps and closures in mixed fisheries.
+:::
+::: {.ws-card style="--ws:#6b4fa0"}
+[Self-paced learning]{.ws-num}
+
+#### FAO SDG 14.4.1 eLearning
+Background on the methods behind stock status reporting; linked from each method in the Stock Monitoring Tool.
+:::
+:::
+
+## Methods and where to run them
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+m <- read_methods()
+m <- m[m$category == "Assessment" | m$app != "", ]
+knitr::kable(data.frame(Method = link_name(m, "../"), Category = m$category,
+                        `In R` = m$software, `No-code app` = ifelse(m$app == "", "–", m$app),
+                        check.names = FALSE), row.names = FALSE, escape = FALSE)
+```
+
+## From training to assessment
+
+Apps are well suited to learning a method and to first screening of a stock. Before results are used for advice, the analysis should meet the same standard as a scripted one:
+
+- the [data preparation](../data-tools/data-preparation.qmd) steps have been done on the real data;
+- the method's **misuse prevention** checks pass;
+- the [diagnostics](../guidance/diagnostics.qmd) and [sensitivity runs](../guidance/sensitivity.qmd) are reported;
+- the settings and data are saved, so that the run can be repeated, ideally as an R script.
+
+[To add: training curricula, course materials and mentoring programmes by region.]{.todo}

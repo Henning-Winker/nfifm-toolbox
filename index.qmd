@@ -27,7 +27,7 @@ Start by [preparing and inventorying the data](data-tools/data-preparation.qmd),
 [Workstream 1]{.ws-num}
 
 #### [Multispecies and multigear assessment](methods/multispecies/index.qmd)
-Multispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity.
+Multispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity (mmsyFM).
 :::
 ::: {.ws-card style="--ws:#2e7d4f"}
 [Workstream 2]{.ws-num}
@@ -44,8 +44,8 @@ Stock status and reference points, standard advice formats, HCRs, capacity and e
 ::: {.ws-card style="--ws:#6b4fa0"}
 [Workstream 4]{.ws-num}
 
-#### [Capacity building](resources/installation.qmd)
-National and regional mentoring, working groups, e-learning and training of trainers.
+#### [Capacity building](training/index.qmd)
+National and regional mentoring, working groups, e-learning, training of trainers, with the Stock Monitoring Tool as the main training environment.
 :::
 ::: {.ws-card style="--ws:#0f7c86"}
 [Workstream 5]{.ws-num}
@@ -65,6 +65,20 @@ Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, R
 
 The toolbox is shared; regional hubs add their own case studies, data and priorities. See [Regional hubs](regions/index.qmd). The first hub is the **[CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)** (Africa, WASOP-CECAF).
 
+## Showcase entries
+
+Five entries are documented in full as examples of what every entry will eventually contain: data templates and preparation, the method and its software or app, outputs with diagnostics and sensitivities, use and misuse guidance, and worked examples.
+
+| Entry | Pillar | No-code app |
+|---|---|---|
+| [FishualizeR](data-tools/fishualizer.qmd) | Data preparation | FishualizeR web app |
+| [cpueTargeting](data-tools/cpuetargeting.qmd) | Data: CPUE standardisation | – |
+| [FLicc](methods/dynamic-pool/flicc.qmd) | Assessment: length-based | Stock Monitoring Tool module (prototype) |
+| [mmsyFM](methods/multispecies/mmsyfm.qmd) | Multispecies harvest strategies | mmsyFM Shiny app |
+| [JABBA](methods/biomass-dynamic/jabba.qmd) (candidate) | Assessment: surplus production | Stock Monitoring Tool |
+
+Other methods are **basic** entries, populated with the information available so far.
+
 ## Current status
 
 ```{r}
@@ -72,9 +86,11 @@ The toolbox is shared; regional hubs add their own case studies, data and priori
 source("R/toolbox.R")
 m <- read_methods()
 tab <- as.data.frame.matrix(table(factor(m$category, levels = c("Assessment", "Data and CPUE tools", "Advice and MSE")),
-                                  factor(m$status, levels = c("stub", "draft", "reviewed"))))
-tab <- cbind(Section = rownames(tab), tab); rownames(tab) <- NULL
-names(tab) <- c("Section", "Stub", "Draft", "Reviewed")
+                                  factor(m$status, levels = c("basic", "draft", "reviewed"))))
+tab <- cbind(Section = rownames(tab), tab,
+             Showcase = as.vector(tapply(m$showcase != "", factor(m$category, levels = c("Assessment", "Data and CPUE tools", "Advice and MSE")), sum)))
+rownames(tab) <- NULL
+names(tab) <- c("Section", "Basic", "Draft", "Reviewed", "Showcase")
 knitr::kable(tab)
 ```
 

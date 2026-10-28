@@ -3,7 +3,7 @@ title: "Assessment methods"
 subtitle: "Catalogue entries for assessment methods, with data needs, assumptions and misuse warnings"
 listing:
   id: methods
-  contents: ["biomass-dynamic/*.qmd", "dynamic-pool/*.qmd", "age-structured/*.qmd", "multispecies/*.qmd", "!*/index.qmd"]
+  contents: ["biomass-dynamic/*.qmd", "dynamic-pool/*.qmd", "empirical/*.qmd", "age-structured/*.qmd", "multispecies/*.qmd", "!*/index.qmd"]
   type: table
   fields: [title, subtitle, categories]
   sort: title
@@ -16,7 +16,8 @@ Not sure which method fits? Start with the **[method selector](../select/index.q
 | Branch | Overview |
 |---|---|
 | Biomass dynamic models | [Surplus production models](biomass-dynamic/index.qmd): SPiCT, JABBA, CMSY+/BSM |
-| Dynamic pool: equilibrium per-recruit | [Length-based and per-recruit methods](dynamic-pool/index.qmd): FLicc, LBSPR, LBB, fishblicc, YPR/SPR |
+| Dynamic pool: equilibrium per-recruit | [Length-based and per-recruit methods](dynamic-pool/index.qmd): FLicc, LBSPR, LBB, fishblicc, TropFishR, YPR/SPR |
+| Empirical indicators | [Length-based indicators](empirical/lbi.qmd) |
 | Dynamic pool: structured dynamic | [Statistical catch-at-length](dynamic-pool/scal.qmd), [age-structured models](age-structured/age-structured.qmd) |
 | Multispecies and mixed fisheries | [Overview](multispecies/index.qmd): mmsyFM |
 

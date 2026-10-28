@@ -4,7 +4,7 @@ subtitle: "Visualisation and quality control of length data"
 categories: [data, length composition, QC, Shiny]
 ---
 
-[Draft]{.status-badge .status-draft}
+[Draft]{.status-badge .status-draft} [Showcase entry]{.status-badge .status-showcase}
 
 ```{r}
 #| echo: false

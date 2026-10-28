@@ -38,6 +38,8 @@ website:
         href: data-tools/index.qmd
       - text: "Advice"
         href: advice/index.qmd
+      - text: "Training and apps"
+        href: training/index.qmd
       - text: "Regional hubs"
         href: regions/index.qmd
     right:
@@ -72,8 +74,12 @@ website:
               - methods/dynamic-pool/lbspr.qmd
               - methods/dynamic-pool/lbb.qmd
               - methods/dynamic-pool/fishblicc.qmd
+              - methods/dynamic-pool/tropfishr.qmd
               - methods/dynamic-pool/ypr-spr.qmd
               - methods/dynamic-pool/scal.qmd
+          - section: "Empirical indicators"
+            contents:
+              - methods/empirical/lbi.qmd
           - methods/age-structured/age-structured.qmd
           - section: "Multispecies"
             contents:
@@ -96,6 +102,10 @@ website:
           - guidance/misuse.qmd
           - guidance/diagnostics.qmd
           - guidance/sensitivity.qmd
+      - section: "Training and apps"
+        contents:
+          - training/index.qmd
+          - training/smt.qmd
       - regions/index.qmd
       - section: "Resources"
         contents:

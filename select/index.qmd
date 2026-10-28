@@ -67,6 +67,10 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
 <label><input type="radio" name="dynamics" id="q-dynamics-stable" value="stable" checked> Fairly stable</label>
 <label><input type="radio" name="dynamics" id="q-dynamics-changing" value="changing"> Changed strongly</label>
 </div>
+<div class="sel-field" data-q="capacity"><div class="sel-label">Analyst setup</div>
+<label><input type="radio" name="capacity" id="q-capacity-r" value="r" checked> Can run R scripts</label>
+<label><input type="radio" name="capacity" id="q-capacity-nocode" value="nocode"> No-code apps only</label>
+</div>
 <div class="sel-field" data-q="goal"><div class="sel-label">Purpose</div>
 <label><input type="radio" name="goal" id="q-goal-status" value="status" checked> Stock status</label>
 <label><input type="radio" name="goal" id="q-goal-catch-advice" value="catch advice"> Catch advice</label>
@@ -135,6 +139,8 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
     var a = answers();
     var ass = methods.filter(function (m) { return m.category === "Assessment"; }).map(function (m) {
       var w = warns(m, a);
+      if (a.capacity === "nocode" && !m.app) w = w.concat([{severity: "caution", message: "No no-code app yet: running this method needs R. See Training and apps for options."}]);
+      if (a.capacity === "nocode" && /unavailable|planned/.test(m.app)) w = w.concat([{severity: "caution", message: "App status: " + m.app + "."}]);
       return {m: m, miss: missing(m, a), w: w, stops: w.filter(function (x) { return x.severity === "stop"; }).length, cautions: w.filter(function (x) { return x.severity === "caution"; }).length};
     });
     var fit = ass.filter(function (x) { return !x.miss.length; }).sort(function (p, q) { return p.stops - q.stops || p.cautions - q.cautions; });
@@ -144,7 +150,7 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
     document.getElementById("sel-fit").innerHTML = fit.length ? fit.map(function (x) {
       var cls = x.stops ? "sel-stop" : (x.cautions ? "sel-caution" : "sel-ok");
       var pill = x.stops ? "Do not use" : (x.cautions ? x.cautions + " caution" + (x.cautions > 1 ? "s" : "") : "No flags");
-      var body = '<div class="sel-meta">' + esc(x.m.class) + " · " + esc(x.m.application) + '</div><div class="sel-meta"><b>Gives:</b> ' + esc(x.m.outputs) + " · <b>Role:</b> " + esc(x.m.advice_role) + "</div>";
+      var body = '<div class="sel-meta">' + esc(x.m.class) + " · " + esc(x.m.application) + '</div><div class="sel-meta"><b>Gives:</b> ' + esc(x.m.outputs) + " · <b>Role:</b> " + esc(x.m.advice_role) + "</div>" + (x.m.app ? '<div class="sel-meta"><b>No-code app:</b> ' + esc(x.m.app) + "</div>" : "");
       if (x.w.length) body += '<ul class="sel-warn">' + x.w.map(function (w) { return "<li><b>" + (w.severity === "stop" ? "Do not use:" : "Caution:") + "</b> " + esc(w.message) + "</li>"; }).join("") + "</ul>";
       return card(x.m, cls, pill, body);
     }).join("") : '<p class="sel-none">No assessment method fits these data. See the table below for what each method would need.</p>';
@@ -152,7 +158,7 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
       return m.id === "dataprep" || (m.id === "cpuetargeting" && a.index > 0 && a.index_type === "commercial") || (m.id === "jara" && (a.index >= 2 || a.catch === "incomplete")) || (m.id === "fishualizer" && a.length !== "none");
     });
     document.getElementById("sel-data").innerHTML = data.length ? data.map(function (m) { return card(m, "sel-data", "Data step", '<div class="sel-meta">' + esc(m.subclass) + " · " + esc(m.application) + "</div>"); }).join("") : '<p class="sel-none">No specific data-preparation tool suggested for these answers.</p>';
-    var adv = methods.filter(function (m) { return m.category === "Advice and MSE"; }).filter(function (m) { return m.id === "flref" ? fit.length > 0 : a.goal === "HCR testing"; });
+    var adv = methods.filter(function (m) { return m.category === "Advice and MSE"; }).filter(function (m) { return m.id === "flref" ? fit.length > 0 : (m.id === "mmsyfm" ? a.species === "mixed" : a.goal === "HCR testing"); });
     document.getElementById("sel-advice").innerHTML = adv.length ? adv.map(function (m) { return card(m, "sel-advice", "Advice step", '<div class="sel-meta">' + esc(m.outputs) + "</div>"); }).join("") : '<p class="sel-none">No candidate assessment yet, so no advice step.</p>';
     document.getElementById("sel-nofit").innerHTML = nofit.map(function (x) { return '<tr><td><a href="' + href(x.m) + '">' + esc(x.m.name) + "</a></td><td>" + esc(x.miss.join(", ")) + "</td></tr>"; }).join("");
   }

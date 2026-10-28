@@ -24,11 +24,12 @@ crosswalk_table <- function(site_root = "../", category = NULL) {
   if (!is.null(category)) m <- m[m$category %in% category, ]
   out <- data.frame(
     Class = m$class, `Sub-class` = m$subclass, Application = m$application,
-    Tool = link_name(m, site_root), Status = m$status,
+    Tool = link_name(m, site_root), Status = ifelse(m$showcase == "", m$status, paste0(m$status, " (showcase", ifelse(m$showcase == "candidate", " candidate", ""), ")")),
     Bayesian = m$bayesian, `State space` = m$state_space,
     `Error structure` = m$error_structure, `Multiple indices` = m$multiple_indices,
     `Multi-gear` = m$multi_gear, `Dome selectivity` = m$dome_selectivity,
     Outputs = m$outputs, `Advice role` = m$advice_role, Software = m$software,
+    `No-code app` = m$app,
     check.names = FALSE)
   DT::datatable(out, rownames = FALSE, escape = FALSE, filter = "top",
                 options = list(pageLength = 25, scrollX = TRUE, dom = "tip"),
@@ -44,7 +45,8 @@ method_attributes <- function(id) {
     Application = m$application, Bayesian = m$bayesian, `State space` = m$state_space,
     `Error structure` = m$error_structure, `Multi-gear` = m$multi_gear,
     `Dome selectivity` = m$dome_selectivity, Outputs = m$outputs,
-    `Advice role` = m$advice_role, check.names = FALSE), row.names = FALSE)
+    `Advice role` = m$advice_role, `No-code app` = ifelse(m$app == "", "None yet", m$app),
+    check.names = FALSE), row.names = FALSE)
 }
 
 # Misuse warnings that apply to a method (from data/misuse_rules.csv), as a callout list.

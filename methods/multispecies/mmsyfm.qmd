@@ -1,10 +1,10 @@
 ---
 title: "mmsyFM"
-subtitle: "Multispecies / multigear fisheries"
-categories: [multispecies, mixed fisheries, multigear]
+subtitle: "Multispecies MSY and harvest strategies for mixed fisheries"
+categories: [multispecies, mixed fisheries, harvest strategies, MSE, Shiny]
 ---
 
-[Stub]{.status-badge .status-stub}
+[Draft]{.status-badge .status-draft} [Showcase entry]{.status-badge .status-showcase}
 
 ```{r}
 #| echo: false
@@ -17,58 +17,74 @@ method_attributes("mmsyfm")
 
 | Field | Entry |
 |---|---|
-| **Family / class** | Multispecies and mixed fisheries → Multispecies MSY |
-| **Method name** | [To be completed]{.todo} <br><small>Identifies the named method or platform.</small> |
-| **Short description** | [To be completed]{.todo} <br><small>Summarizes the method in plain language.</small> |
-| **Main outputs** | [To be completed]{.todo} <br><small>Lists key status indicators or reference-point outputs.</small> |
-| **Typical use case** | [To be completed]{.todo} <br><small>Describes when the method is commonly applied.</small> |
+| **Family / class** | Multispecies and mixed fisheries → multispecies MSY and harvest strategies |
+| **Method name** | mmsyFM, multispecies MSY fleet model (R + Shiny): [Henning-Winker/mmsyFM](https://github.com/Henning-Winker/mmsyFM) · [documentation](https://henning-winker.github.io/mmsyFM/) |
+| **Short description** | Simulates mixed fisheries in which fleet segments allocate fishing days across métiers by expected profit, on Schaefer stocks with seasonal availability. Finds the multispecies MSY with a safeguard for every stock and tunes and tests effort- and closure-based harvest strategies under uncertainty. |
+| **Main outputs** | Equilibrium effort by segment and métier; yield curves (shared q, profit-blind and profit-seeking fleets, closures); safeguarded MMSY for yield, revenue, profit or one stock; harvest-strategy comparisons with projections, trade-offs and colour-coded decision tables. |
+| **Typical use case** | Multispecies trawl and multigear fisheries where single-stock MSY targets cannot all be met at once; participatory workshops on effort caps and closures. |
 
-::: {.callout-tip}
-## Help complete this entry
-This page is a stub. Use **Edit this page** (top right) or open a *New method entry* issue. Each field is described in [Catalogue structure](../../framework/catalogue-structure.qmd).
-:::
+### Shiny app for workshops
 
-Repository: [Henning-Winker/mmsyFM](https://github.com/Henning-Winker/mmsyFM). Description to be added.
+`mmsyFM::run_app()` opens an app for participatory workshops, with these tabs:
+
+1. **Set-up:** Atlantic example, Gulf of Thailand draft or uploaded tables; capacity, profit preference, daily costs.
+2. **Equilibrium:** days by segment and open métiers.
+3. **Yield curves:** shared q, profit-blind and profit-seeking fleets, closures.
+4. **Safeguarded MMSY:** total yield, revenue, profit or the catch of one stock, with every stock at or above Bpa.
+5. **Harvest strategy:** compare rules (no control, fixed MMSY effort, feedback rules, stock and métier closures) under uncertainty.
+6. **Tune triggers.**
+7. **Management options** and **Guide.**
+
+Hosting on the iMarine gateway next to the [Stock Monitoring Tool](../../training/smt.qmd) is under consideration.
 
 
 ## Data requirements
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | [To be completed]{.todo} <br><small>Defines the minimum inputs needed for implementation.</small> |
-| **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
-| **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
+| **Minimum data** | Four tables (`read_ms_system()`): `species` (species, code, group, r, K, price), `metiers` (metier, tactic, ground), `catchability` (metier × stock), `segments` (share, loyalty, efficiency, cost multiplier, vessel CV, home métier). |
+| **Preferred data** | Stock depletions from assessments for conditioning (`ms_condition()`); real prices and daily costs; habitat maps to derive catchability (`ms_landscape()`). |
+| **Optional auxiliary data** | Seasonal availability (`season_amp`, `season_peak`), persistence floor `F_cap`, starting depletion `dep_init`, segment capacity. |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
+
+```r
+library(mmsyFM)
+sys <- atlantic_system()                                        # 10 stocks, 6 métiers, 3 segments
+sq  <- ms_status_quo(sys, capacity = 1000, gamma = 1.5)          # open-access status quo
+opt <- ms_optimise(sys, "yield", levers = "total", gamma = 1.5)  # MMSY with every stock >= Bpa
+plot_kobe(list("Status quo" = sq, "Safeguarded MMSY" = opt), sys)
+```
+
 
 ## Data processing requirements
 
 | Field | Entry |
 |---|---|
-| **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
+| **Pre-processing steps** | Build or upload the four tables; tune the fleet to the open-access status quo (`ms_tune()`); condition stock status (`ms_condition()`). |
 | **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
 | **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
-| **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
+| **Fleet / gear handling** | Métiers are tactic × ground; segments have home métiers, loyalty, efficiency and costs; fishers choose métiers by expected profit, $P(\text{métier}) \propto \max(\text{efficiency} \times \text{revenue} - \text{cost}, 0)^\gamma$. |
 | **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
 
 ## Model documentation
 
 | Field | Entry |
 |---|---|
-| **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
+| **Key parameters** | Stock $r$, $K$, price; catchability matrix; segment loyalty, efficiency and costs; profit preference $\gamma$; fleet capacity. |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
-| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+| **Error structure** | JABBA-type process error scaled by $r$ and depletion; assessment and implementation error, effort noise and data lags in closed-loop rules. |
+| **State-space formulation** | Simulation model (operating model), not fitted to data. |
+| **Implementation notes** | Key functions: `ms_status_quo()`, `ms_optimise()`, `hcr_effort()`, `ms_tune_hcr()`, `ms_perf()`, `plot_kobe()`, `plot_quilt()`. Examples: `atlantic_system()` (10 stocks, 6 métiers, 3 segments) and `got_system_draft()` (Gulf of Thailand, 20 stock groups). |
 
 ## Assumptions and sensitivities
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
-| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
-| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
-| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
-| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
+| **Core assumptions** | Schaefer production for each stock; catchability by métier constant over time; effort allocated by expected profit; stock parameters ($r$, $K$, depletion) taken from assessments. |
+| **Main sensitivities** | Catchability matrix, profit preference $\gamma$, prices and costs, stock productivity and depletion used for conditioning. |
+| **Likely violations** | Catchability changing with technology or targeting; stocks whose dynamics are poorly described by Schaefer production; prices and costs that shift effort in ways not modelled. |
+| **Expected bias** | If $r$ and $K$ are taken from weak assessments, the MMSY and the risk of breaching Bpa inherit their bias; a shared-q simplification forces all rules along one line ($F_i/F_j = q_i/q_j$). |
+| **Warning signs** | Status quo that cannot be tuned to observed effort and depletions; MMSY that requires effort far outside historical levels; decision tables dominated by one stock at its safeguard. |
 
 ## Misuse prevention
 
@@ -80,31 +96,31 @@ method_warnings("mmsyfm")
 
 | Field | Entry |
 |---|---|
-| **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
-| **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
-| **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | [To be completed]{.todo} <br><small>States whether outputs support status only, indicator-based HCRs, catch advice or MSE.</small> |
+| **Do not use when** | As a stock assessment: it does not estimate stock status from data. It needs status and productivity from assessments of the main stocks. |
+| **Common misuses** | Reading the safeguarded MMSY as a precise target rather than a comparison of options; ignoring the stocks held at their Bpa safeguard; skipping conditioning on current depletions. |
+| **Pre-use checklist** | Fleet tuned to the status quo; stocks conditioned on current depletion; sensitivity to the catchability matrix and $\gamma$; rules tested with assessment and implementation error. |
+| **Advice suitability** | Harvest strategies for mixed fisheries (effort caps by segment, métier and seasonal closures, feedback rules); trade-off analysis for workshops. |
 
 ## Applications and support
 
 | Field | Entry |
 |---|---|
-| **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | [To be completed]{.todo} <br><small>Provides primary literature and supporting documents.</small> |
-| **Software / tools** | mmsyFM (R) |
+| **Applications / case studies** | Atlantic example system; Gulf of Thailand draft (trawl, purse seine and small-scale fisheries, conditioned on 2024 depletions). |
+| **References** | Builds on the multispecies MSY app [mmsyapp](https://maitepons.shinyapps.io/mmsyapp/) (Amoroso, Pons and Sharma) and the logbook simulator of [cpueTargeting](../../data-tools/cpuetargeting.qmd); Thorson et al. (2017); Winker et al. (2013, 2014, 2025). |
+| **Software / tools** | `remotes::install_github("Henning-Winker/mmsyFM")`; Shiny app `mmsyFM::run_app()`. Authors: H. Winker, R. Amoroso, M. Pons, R. Sharma. Licence MIT. |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Suitable example
 :::
-[To be completed]{.todo}
+Gulf of Thailand draft: 20 stock groups, trawl, purse seine and small-scale segments with coastal zoning, conditioned on 2024 depletions.
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Assumption sensitivity
 :::
-[To be completed]{.todo}
+Shared-q versus profit-seeking fleets in the yield curves: how much the MMSY depends on fleet behaviour.
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
