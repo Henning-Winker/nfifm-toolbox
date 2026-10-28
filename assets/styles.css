@@ -200,3 +200,4 @@ fieldset.selector-q legend { float:left; width:100%; font-size:.95rem; text-tran
 @media (max-width: 768px) {
   main.content table:not(.dataTable) { display:block; overflow-x:auto; max-width:100%; }
 }
+.sel-note { font-size:.85rem; opacity:.75; margin:.4em 0 0; }

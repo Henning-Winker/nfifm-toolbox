@@ -27,3 +27,13 @@ cmsy,catch_pattern,increasing,stop,"In a developing fishery with still-increasin
 cmsy,catch_pattern,light,stop,Lightly exploited stocks: the catch series carries almost no information on productivity.
 bsm|jabba|spict,catch_pattern,increasing,caution,"With catches still increasing and little contrast, productivity and depletion are weakly identified; rely on the index and informative priors, and test initial depletion."
 cmsy,catch,reliable,caution,"Depletion priors derived only from the ratio of recent to maximum catch are assumptions, not data; set them with expert input or length and CPUE evidence where possible."
+bsm|jabba|spict|trendind,index_behaviour,hyperstable,caution,"A hyperstable index (catch rates stay high while the stock declines, e.g. aggregating species or targeting on hotspots) hides depletion. Standardise for targeting (cpueTargeting) and run a hyperstability sensitivity, or down-weight the index."
+bsm|jabba|spict|trendind,index_behaviour,hyperdepletion,caution,"A hyperdepleting index exaggerates declines and gives pessimistic status. Check spatial coverage and gear changes, and run a sensitivity with a non-linear index–biomass relationship."
+bsm|jabba|spict|trendind|cpuetargeting,effort_creep,increasing,caution,"Increasing fishing efficiency (new gear, engines, electronics) inflates CPUE. Include vessel and gear covariates in the standardisation, or apply an efficiency-creep correction (e.g. 2% per year) as a sensitivity."
+flref,measures,technical,caution,"Catch limits are not feasible here: express advice as effort, size or area measures, and test them in simulation (FPAT App or FLR mse) before use."
+*,goal,management options,caution,"An assessment fit alone does not compare management options. Use it to condition an operating model and compare options in simulation (FPAT App for screening, FLR mse for HCR testing)."
+fpat,catch,incomplete,caution,The FPAT operating model is reconstructed from the catch series. Correct for under-reporting first (App Question 9) or the projected yields and abundance are biased.
+fpat,species,mixed,caution,"The FPAT App runs one species at a time. In a mixed fishery, run the main species separately and use mmsyFM for joint reference points and effort allocation."
+fpat,goal,HCR testing,caution,The FPAT App compares a fixed menu of management procedures with limited conditioning. For formal testing of a harvest control rule use FLR mse.
+fpi,goal,catch advice,stop,FPI scores benchmark fishery performance and point to interventions; they give no stock status or catch level.
+fpi,goal,status,caution,"FPI stock metrics are expert-scored (quality grade A–C). Use them as indicative context next to an assessment, not as stock status."

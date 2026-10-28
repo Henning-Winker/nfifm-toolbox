@@ -597,6 +597,12 @@ window.Quarto = {
  <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -696,6 +702,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../../advice/mse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FLR mse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../advice/fpat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FPAT App</span></a>
   </div>
 </li>
       </ul>
@@ -1183,6 +1195,7 @@ window.Quarto = {
 <li><strong>Do not use:</strong> when <em>catch_pattern = increasing</em>: In a developing fishery with still-increasing catches the peak has not been reached, so carrying capacity cannot be bounded from the catch.</li>
 <li><strong>Do not use:</strong> when <em>catch_pattern = light</em>: Lightly exploited stocks: the catch series carries almost no information on productivity.</li>
 <li><strong>Caution:</strong> when <em>catch = reliable</em>: Depletion priors derived only from the ratio of recent to maximum catch are assumptions, not data; set them with expert input or length and CPUE evidence where possible.</li>
+<li><strong>Caution:</strong> when <em>goal = management options</em>: An assessment fit alone does not compare management options. Use it to condition an operating model and compare options in simulation (FPAT App for screening, FLR mse for HCR testing).</li>
 </ul>
 <p>Rules are maintained in <code>data/misuse_rules.csv</code>.</p>
 </div>
@@ -1204,6 +1217,10 @@ window.Quarto = {
 <li><strong>Caution:</strong> when <em>species = mixed</em>: Single-species production models ignore technical interactions; reference points may not be jointly achievable in mixed fisheries.</li>
 <li><strong>Caution:</strong> when <em>goal = HCR testing</em>: An assessment fit alone does not test a harvest control rule. Use the assessment as the estimation model in an MSE (see FLR mse).</li>
 <li><strong>Caution:</strong> when <em>catch_pattern = increasing</em>: With catches still increasing and little contrast, productivity and depletion are weakly identified; rely on the index and informative priors, and test initial depletion.</li>
+<li><strong>Caution:</strong> when <em>index_behaviour = hyperstable</em>: A hyperstable index (catch rates stay high while the stock declines, e.g.&nbsp;aggregating species or targeting on hotspots) hides depletion. Standardise for targeting (cpueTargeting) and run a hyperstability sensitivity, or down-weight the index.</li>
+<li><strong>Caution:</strong> when <em>index_behaviour = hyperdepletion</em>: A hyperdepleting index exaggerates declines and gives pessimistic status. Check spatial coverage and gear changes, and run a sensitivity with a non-linear index–biomass relationship.</li>
+<li><strong>Caution:</strong> when <em>effort_creep = increasing</em>: Increasing fishing efficiency (new gear, engines, electronics) inflates CPUE. Include vessel and gear covariates in the standardisation, or apply an efficiency-creep correction (e.g.&nbsp;2% per year) as a sensitivity.</li>
+<li><strong>Caution:</strong> when <em>goal = management options</em>: An assessment fit alone does not compare management options. Use it to condition an operating model and compare options in simulation (FPAT App for screening, FLR mse for HCR testing).</li>
 </ul>
 <p>Rules are maintained in <code>data/misuse_rules.csv</code>.</p>
 </div>

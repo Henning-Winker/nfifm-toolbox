@@ -568,6 +568,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -667,6 +673,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../advice/mse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FLR mse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advice/fpat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FPAT App</span></a>
   </div>
 </li>
       </ul>
@@ -781,6 +793,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#methods-and-where-to-run-them" id="toc-methods-and-where-to-run-them" class="nav-link active" data-scroll-target="#methods-and-where-to-run-them">Methods and where to run them</a></li>
+  <li><a href="#from-assessment-to-management-fpat-workshops" id="toc-from-assessment-to-management-fpat-workshops" class="nav-link" data-scroll-target="#from-assessment-to-management-fpat-workshops">From assessment to management: FPAT workshops</a></li>
   <li><a href="#from-training-to-assessment" id="toc-from-training-to-assessment" class="nav-link" data-scroll-target="#from-training-to-assessment">From training to assessment</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/training/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/training/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -844,6 +857,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>mmsyFM Shiny app</td>
 <td>Runs locally; iMarine hosting under consideration</td>
 </tr>
+<tr class="odd">
+<td>Assessment to management (participatory)</td>
+<td>FPAT workbook and FPAT App</td>
+<td>R package runs locally; hosted app to be confirmed</td>
+</tr>
 </tbody>
 </table>
 <div class="ws-grid">
@@ -873,6 +891,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fao-sdg-14.4.1-elearning" class="level4">
 <h4 class="anchored" data-anchor-id="fao-sdg-14.4.1-elearning">FAO SDG 14.4.1 eLearning</h4>
 <p>Background on the methods behind stock status reporting; linked from each method in the Stock Monitoring Tool.</p>
+</section>
+</div>
+</div>
+<div class="ws-grid">
+<div class="ws-card" style="--ws:#b7791f">
+<p><span class="ws-num">Workshop app</span></p>
+<section id="fpat" class="level4">
+<h4 class="anchored" data-anchor-id="fpat"><a href="../advice/fpat.html">FPAT</a></h4>
+<p>Fishery performance and governance scoring with stakeholders, then the FPAT App to compare management options (FAO TP 737).</p>
 </section>
 </div>
 </div>
@@ -1005,15 +1032,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: left;">–</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><a href="../methods/empirical/fpi.html">Fishery Performance Indicators (FPI) and governance</a></td>
+<td style="text-align: left;">Assessment</td>
+<td style="text-align: left;">FPAT Excel workbook</td>
+<td style="text-align: left;">FPAT web app (FPI panels)</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><a href="../data-tools/fishualizer.html">FishualizeR</a></td>
 <td style="text-align: left;">Data and CPUE tools</td>
 <td style="text-align: left;">FishualizeR Shiny app (FAO TP 706; MPL-2.0)</td>
 <td style="text-align: left;">FishualizeR (web app)</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="../advice/fpat.html">FPAT App (openMSE)</a></td>
+<td style="text-align: left;">Advice and MSE</td>
+<td style="text-align: left;">FPAT (R/Shiny on openMSE)</td>
+<td style="text-align: left;">FPAT web app (Blue Matter)</td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
+</section>
+<section id="from-assessment-to-management-fpat-workshops" class="level2">
+<h2 class="anchored" data-anchor-id="from-assessment-to-management-fpat-workshops">From assessment to management: FPAT workshops</h2>
+<p>FAO Technical Paper 737 describes two linked workshops, each about three days, tested in West Africa, Indonesia and Latin America.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Workshop</th>
+<th>Participants</th>
+<th>Sequence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Fishery performance assessment</strong></td>
+<td>3–12 each of harvesters, post-harvest representatives and managers, plus scientists</td>
+<td>Review pre-scored <a href="../methods/empirical/fpi.html">FPI and governance metrics</a> by sector → share and compare with reference fisheries → agree 3–8 outcomes to improve → identify actions and the enabling conditions they change</td>
+</tr>
+<tr class="even">
+<td><strong>FPAT App / MSE</strong></td>
+<td>4–12 scientists and technical managers</td>
+<td>Population dynamics basics → app overview → agree the input data → agree feasible measures → historical reconstruction and projections → compare options against the agreed outcomes → try alternative datasets → assign responsibility for a management plan and data collection</td>
+</tr>
+</tbody>
+</table>
+<p>Lessons from the pilots that apply to any toolbox training:</p>
+<ul>
+<li>Agree the basic terms (<em>stock</em>, <em>population</em>, <em>fishery</em>, <em>fishing effort</em>) first, in a dedicated session or pre-reading.</li>
+<li>A slide overview, then a live demonstration on a case study, then hands-on work in small groups. One-to-one work on the participants’ own data teaches more than presentations about data.</li>
+<li>Start the MSE session from a summary of the current management system for each stock (size limits, closures, catch limits).</li>
+<li>Taking part in a workshop does not by itself build the capacity to lead one; train facilitators separately.</li>
+</ul>
 </section>
 <section id="from-training-to-assessment" class="level2">
 <h2 class="anchored" data-anchor-id="from-training-to-assessment">From training to assessment</h2>
@@ -1521,56 +1592,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Surplus production models <span class="pp">|</span> SMT: SPiCT, JABBA, CMSY <span class="pp">|</span> Live; CMSY temporarily unavailable <span class="pp">|</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Data preparation <span class="pp">|</span> FishualizeR <span class="pp">|</span> Live <span class="pp">|</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mixed fisheries and harvest strategies <span class="pp">|</span> mmsyFM Shiny app <span class="pp">|</span> Runs locally; iMarine hosting under consideration <span class="pp">|</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.ws-grid}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#1f6a8a"}</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">No-code app</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Stock Monitoring Tool](smt.qmd)</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>FAO R-Shiny app on the iMarine gateway: length-based methods (TropFishR, LBI, LBSPR), surplus production models (SPiCT, JABBA, CMSY) and supporting tools.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#c4552b"}</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">No-code app</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [FishualizeR](../data-tools/fishualizer.qmd)</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Data inventory, quality control and exploratory analysis of fishery data; companion to FAO Technical Paper 706.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#2e7d4f"}</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workshop app</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [mmsyFM](../methods/multispecies/mmsyfm.qmd)</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Participatory workshops on multispecies MSY, effort caps and closures in mixed fisheries.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#6b4fa0"}</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Self-paced learning</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">#### FAO SDG 14.4.1 eLearning</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Background on the methods behind stock status reporting; linked from each method in the Stock Monitoring Tool.</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Assessment to management (participatory) <span class="pp">|</span> FPAT workbook and FPAT App <span class="pp">|</span> R package runs locally; hosted app to be confirmed <span class="pp">|</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>::: {.ws-grid}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#1f6a8a"}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">No-code app</span><span class="co">]</span>{.ws-num}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Stock Monitoring Tool](smt.qmd)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>FAO R-Shiny app on the iMarine gateway: length-based methods (TropFishR, LBI, LBSPR), surplus production models (SPiCT, JABBA, CMSY) and supporting tools.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#c4552b"}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">No-code app</span><span class="co">]</span>{.ws-num}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [FishualizeR](../data-tools/fishualizer.qmd)</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Data inventory, quality control and exploratory analysis of fishery data; companion to FAO Technical Paper 706.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#2e7d4f"}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workshop app</span><span class="co">]</span>{.ws-num}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [mmsyFM](../methods/multispecies/mmsyfm.qmd)</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Participatory workshops on multispecies MSY, effort caps and closures in mixed fisheries.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#6b4fa0"}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Self-paced learning</span><span class="co">]</span>{.ws-num}</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">#### FAO SDG 14.4.1 eLearning</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Background on the methods behind stock status reporting; linked from each method in the Stock Monitoring Tool.</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods and where to run them</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">read_methods</span>()</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> m[m<span class="sc">$</span>category <span class="sc">==</span> <span class="st">"Assessment"</span> <span class="sc">|</span> m<span class="sc">$</span>app <span class="sc">!=</span> <span class="st">""</span>, ]</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">data.frame</span>(<span class="at">Method =</span> <span class="fu">link_name</span>(m, <span class="st">"../"</span>), <span class="at">Category =</span> m<span class="sc">$</span>category,</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">In R</span><span class="st">`</span> <span class="ot">=</span> m<span class="sc">$</span>software, <span class="st">`</span><span class="at">No-code app</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(m<span class="sc">$</span>app <span class="sc">==</span> <span class="st">""</span>, <span class="st">"–"</span>, m<span class="sc">$</span>app),</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>                        <span class="at">check.names =</span> <span class="cn">FALSE</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## From training to assessment</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>Apps are well suited to learning a method and to first screening of a stock. Before results are used for advice, the analysis should meet the same standard as a scripted one:</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the <span class="co">[</span><span class="ot">data preparation</span><span class="co">](../data-tools/data-preparation.qmd)</span> steps have been done on the real data;</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the method's **misuse prevention** checks pass;</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the <span class="co">[</span><span class="ot">diagnostics</span><span class="co">](../guidance/diagnostics.qmd)</span> and <span class="co">[</span><span class="ot">sensitivity runs</span><span class="co">](../guidance/sensitivity.qmd)</span> are reported;</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the settings and data are saved, so that the run can be repeated, ideally as an R script.</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To add: training curricula, course materials and mentoring programmes by region.</span><span class="co">]</span>{.todo}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>::: {.ws-grid}</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#b7791f"}</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workshop app</span><span class="co">]</span>{.ws-num}</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [FPAT](../advice/fpat.qmd)</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Fishery performance and governance scoring with stakeholders, then the FPAT App to compare management options (FAO TP 737).</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods and where to run them</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">read_methods</span>()</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> m[m<span class="sc">$</span>category <span class="sc">==</span> <span class="st">"Assessment"</span> <span class="sc">|</span> m<span class="sc">$</span>app <span class="sc">!=</span> <span class="st">""</span>, ]</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">data.frame</span>(<span class="at">Method =</span> <span class="fu">link_name</span>(m, <span class="st">"../"</span>), <span class="at">Category =</span> m<span class="sc">$</span>category,</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>                        <span class="st">`</span><span class="at">In R</span><span class="st">`</span> <span class="ot">=</span> m<span class="sc">$</span>software, <span class="st">`</span><span class="at">No-code app</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(m<span class="sc">$</span>app <span class="sc">==</span> <span class="st">""</span>, <span class="st">"–"</span>, m<span class="sc">$</span>app),</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>                        <span class="at">check.names =</span> <span class="cn">FALSE</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">escape =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## From assessment to management: FPAT workshops</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>FAO Technical Paper 737 describes two linked workshops, each about three days, tested in West Africa, Indonesia and Latin America.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Workshop <span class="pp">|</span> Participants <span class="pp">|</span> Sequence <span class="pp">|</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fishery performance assessment** <span class="pp">|</span> 3–12 each of harvesters, post-harvest representatives and managers, plus scientists <span class="pp">|</span> Review pre-scored <span class="co">[</span><span class="ot">FPI and governance metrics</span><span class="co">](../methods/empirical/fpi.qmd)</span> by sector → share and compare with reference fisheries → agree 3–8 outcomes to improve → identify actions and the enabling conditions they change <span class="pp">|</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **FPAT App / MSE** <span class="pp">|</span> 4–12 scientists and technical managers <span class="pp">|</span> Population dynamics basics → app overview → agree the input data → agree feasible measures → historical reconstruction and projections → compare options against the agreed outcomes → try alternative datasets → assign responsibility for a management plan and data collection <span class="pp">|</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Lessons from the pilots that apply to any toolbox training:</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Agree the basic terms (*stock*, *population*, *fishery*, *fishing effort*) first, in a dedicated session or pre-reading.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A slide overview, then a live demonstration on a case study, then hands-on work in small groups. One-to-one work on the participants' own data teaches more than presentations about data.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Start the MSE session from a summary of the current management system for each stock (size limits, closures, catch limits).</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Taking part in a workshop does not by itself build the capacity to lead one; train facilitators separately.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## From training to assessment</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Apps are well suited to learning a method and to first screening of a stock. Before results are used for advice, the analysis should meet the same standard as a scripted one:</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the <span class="co">[</span><span class="ot">data preparation</span><span class="co">](../data-tools/data-preparation.qmd)</span> steps have been done on the real data;</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the method's **misuse prevention** checks pass;</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the <span class="co">[</span><span class="ot">diagnostics</span><span class="co">](../guidance/diagnostics.qmd)</span> and <span class="co">[</span><span class="ot">sensitivity runs</span><span class="co">](../guidance/sensitivity.qmd)</span> are reported;</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the settings and data are saved, so that the run can be repeated, ideally as an R script.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To add: training curricula, course materials and mentoring programmes by region.</span><span class="co">]</span>{.todo}</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

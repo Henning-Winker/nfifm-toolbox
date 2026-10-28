@@ -566,6 +566,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -665,6 +671,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../advice/mse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FLR mse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../advice/fpat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FPAT App</span></a>
   </div>
 </li>
       </ul>
@@ -840,6 +852,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Life history and fishery exposure</td>
 <td>Prioritising which stocks to assess</td>
 <td><a href="../../methods/empirical/psa.html">PSA</a></td>
+</tr>
+<tr class="even">
+<td><strong>Fishery performance</strong></td>
+<td>Expert and interview scores of ecology, economics, community and governance</td>
+<td>Benchmarking, choice of interventions, monitoring (FPAT step 1)</td>
+<td><a href="../../methods/empirical/fpi.html">FPI and governance</a></td>
 </tr>
 </tbody>
 </table>
@@ -1358,16 +1376,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Size-based** <span class="pp">|</span> Length compositions, life-history reference lengths <span class="pp">|</span> Selectivity and exploitation pattern <span class="pp">|</span> <span class="co">[</span><span class="ot">Length-based indicators (LBI)</span><span class="co">](lbi.qmd)</span> <span class="pp">|</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Multi-indicator** <span class="pp">|</span> Several indicators, including local and traditional knowledge <span class="pp">|</span> Traffic-light status, agreed management responses <span class="pp">|</span> <span class="co">[</span><span class="ot">Multi-indicator dashboards</span><span class="co">](dashboard.qmd)</span> <span class="pp">|</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Risk-based** <span class="pp">|</span> Life history and fishery exposure <span class="pp">|</span> Prioritising which stocks to assess <span class="pp">|</span> <span class="co">[</span><span class="ot">PSA</span><span class="co">](psa.qmd)</span> <span class="pp">|</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Using indicators responsibly</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indicators show **direction and pattern**, rarely a sustainable catch level; catch advice needs an empirical rule tuned by simulation or an assessment.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Read every indicator against the **timeline of influential events** (gear changes, regulations, markets, reporting systems) from the <span class="co">[</span><span class="ot">data preparation workflow</span><span class="co">](../../data-tools/data-preparation.qmd)</span>; many apparent trends are artefacts of these changes.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use **standardised** CPUE (<span class="co">[</span><span class="ot">cpueTargeting</span><span class="co">](../../data-tools/cpuetargeting.qmd)</span>), not nominal catch rates.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indicators that agree across groups are stronger evidence than any single one; disagreement points to data problems or changing conditions.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To be developed: catch-based classification of development phase, empirical harvest control rules (e.g. rfb, trend rules), ecosystem indicators, and how indicators enter the weight of evidence.</span><span class="co">]</span>{.todo}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fishery performance** <span class="pp">|</span> Expert and interview scores of ecology, economics, community and governance <span class="pp">|</span> Benchmarking, choice of interventions, monitoring (FPAT step 1) <span class="pp">|</span> <span class="co">[</span><span class="ot">FPI and governance</span><span class="co">](fpi.qmd)</span> <span class="pp">|</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Using indicators responsibly</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indicators show **direction and pattern**, rarely a sustainable catch level; catch advice needs an empirical rule tuned by simulation or an assessment.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Read every indicator against the **timeline of influential events** (gear changes, regulations, markets, reporting systems) from the <span class="co">[</span><span class="ot">data preparation workflow</span><span class="co">](../../data-tools/data-preparation.qmd)</span>; many apparent trends are artefacts of these changes.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Use **standardised** CPUE (<span class="co">[</span><span class="ot">cpueTargeting</span><span class="co">](../../data-tools/cpuetargeting.qmd)</span>), not nominal catch rates.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Indicators that agree across groups are stronger evidence than any single one; disagreement points to data problems or changing conditions.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To be developed: catch-based classification of development phase, empirical harvest control rules (e.g. rfb, trend rules), ecosystem indicators, and how indicators enter the weight of evidence.</span><span class="co">]</span>{.todo}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

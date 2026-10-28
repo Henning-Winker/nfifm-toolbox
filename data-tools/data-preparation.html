@@ -595,6 +595,12 @@ window.Quarto = {
  <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item">
@@ -694,6 +700,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../advice/mse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FLR mse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../advice/fpat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FPAT App</span></a>
   </div>
 </li>
       </ul>
@@ -808,6 +820,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#checks-that-most-often-change-the-assessment" id="toc-checks-that-most-often-change-the-assessment" class="nav-link active" data-scroll-target="#checks-that-most-often-change-the-assessment">Checks that most often change the assessment</a></li>
+  <li><a href="#socio-economic-and-management-data-fao-tp-737" id="toc-socio-economic-and-management-data-fao-tp-737" class="nav-link" data-scroll-target="#socio-economic-and-management-data-fao-tp-737">Socio-economic and management data (FAO TP 737)</a></li>
   <li><a href="#method-data-templates" id="toc-method-data-templates" class="nav-link" data-scroll-target="#method-data-templates">Method data templates</a></li>
   <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul>
@@ -901,6 +914,10 @@ window.Quarto = {
 <li><strong>Short index, long exploitation history:</strong> complement with local knowledge and alternative sources (export records, vessel registries). Expert knowledge can reveal early depletion that official series miss.</li>
 </ul>
 </section>
+<section id="socio-economic-and-management-data-fao-tp-737" class="level2">
+<h2 class="anchored" data-anchor-id="socio-economic-and-management-data-fao-tp-737">Socio-economic and management data (FAO TP 737)</h2>
+<p>The FPAT manual (De Alessi <em>et al.</em>, 2026, Chapter 4) extends TP 706 beyond the stock: landings, trips, ex-vessel and wholesale prices and revenue by year, costs and assets, and the information needed to score fishery performance and governance. Its Annex 3 is a semi-structured interview guide for filling gaps with harvesters, buyers and managers, and Annex 4 shows how to take life-history proxies from related stocks and FishBase. The same workbook feeds the <a href="../methods/empirical/fpi.html">Fishery Performance Indicators</a> and the <a href="../advice/fpat.html">FPAT App</a>.</p>
+</section>
 <section id="method-data-templates" class="level2">
 <h2 class="anchored" data-anchor-id="method-data-templates">Method data templates</h2>
 <p>Each method expects its inputs in a fixed layout. Download a template, fill it from the cleaned data, and keep it alongside the analysis.</p>
@@ -929,6 +946,11 @@ window.Quarto = {
 <td><code>trip</code>, <code>vessel</code>, <code>year</code>, <code>month</code>, <code>lat</code>, <code>lon</code>, <code>effort</code>, <code>species</code>, <code>catch</code></td>
 </tr>
 <tr class="even">
+<td><a href="https://github.com/Blue-Matter/FPAT/tree/master/inst/shiny_apps/FPAT/Data">FPAT workbook</a> (Excel, external)</td>
+<td>FPAT App, FPI</td>
+<td>Sheets “Fishery Data” (metadata, biology, selectivity, time series, CAA, CAL, reference points) and “FPAT App Questions”; FPI and governance scoresheets</td>
+</tr>
+<tr class="odd">
 <td><a href="../data/templates/life_history.csv"><code>life_history.csv</code></a></td>
 <td>All length-based and per-recruit methods</td>
 <td><code>parameter</code>, <code>value</code>, <code>sd</code>, <code>sex</code>, <code>area</code>, <code>source</code></td>
@@ -940,6 +962,7 @@ window.Quarto = {
 <section id="reference" class="level2">
 <h2 class="anchored" data-anchor-id="reference">Reference</h2>
 <p>Amoroso, R., Lomonico, S., Snouffer, B. &amp; Gutierrez, N.L. 2024. <em>Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.</em> FAO Fisheries and Aquaculture Technical Paper 706. Rome, FAO. <a href="https://doi.org/10.4060/cd0366en" class="uri">https://doi.org/10.4060/cd0366en</a>. The Excel templates and mock datasets (<code>Mock_length_freq.csv</code> and others) are distributed with the manual.</p>
+<p>De Alessi, M., Anderson, C., Carruthers, T., Hordyk, A., Sock, F. &amp; Gutierrez, N.L. 2026. <em>The Fisheries Performance Assessment Toolkit (FPAT): a practical manual.</em> FAO Fisheries and Aquaculture Technical Paper 737. Rome, FAO (in press).</p>
 
 
 <!-- -->
@@ -1454,22 +1477,29 @@ window.Quarto = {
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**CPUE:** changes in targeting, fleet composition or technology. Nominal CPUE should not go into an assessment without <span class="co">[</span><span class="ot">standardisation</span><span class="co">](cpuetargeting.qmd)</span>.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Short index, long exploitation history:** complement with local knowledge and alternative sources (export records, vessel registries). Expert knowledge can reveal early depletion that official series miss.</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method data templates</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Socio-economic and management data (FAO TP 737)</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Each method expects its inputs in a fixed layout. Download a template, fill it from the cleaned data, and keep it alongside the analysis.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The FPAT manual (De Alessi *et al.*, 2026, Chapter 4) extends TP 706 beyond the stock: landings, trips, ex-vessel and wholesale prices and revenue by year, costs and assets, and the information needed to score fishery performance and governance. Its Annex 3 is a semi-structured interview guide for filling gaps with harvesters, buyers and managers, and Annex 4 shows how to take life-history proxies from related stocks and FishBase. The same workbook feeds the <span class="co">[</span><span class="ot">Fishery Performance Indicators</span><span class="co">](../methods/empirical/fpi.qmd)</span> and the <span class="co">[</span><span class="ot">FPAT App</span><span class="co">](../advice/fpat.qmd)</span>.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Template <span class="pp">|</span> For <span class="pp">|</span> Columns <span class="pp">|</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`length_long.csv`</span><span class="co">](../data/templates/length_long.csv)</span> <span class="pp">|</span> FLicc, LBSPR, LBB, fishblicc <span class="pp">|</span> <span class="in">`len`</span> (bin lower bound), <span class="in">`year`</span>, <span class="in">`data`</span> (count), <span class="in">`qname`</span> (gear) <span class="pp">|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`catch_index.csv`</span><span class="co">](../data/templates/catch_index.csv)</span> <span class="pp">|</span> SPiCT, JABBA, BSM <span class="pp">|</span> <span class="in">`year`</span>, <span class="in">`catch`</span>, <span class="in">`index_1`</span>, <span class="in">`se_1`</span> (add <span class="in">`index_2`</span>, <span class="in">`se_2`</span> …) <span class="pp">|</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`logbook_long.csv`</span><span class="co">](../data/templates/logbook_long.csv)</span> <span class="pp">|</span> cpueTargeting <span class="pp">|</span> <span class="in">`trip`</span>, <span class="in">`vessel`</span>, <span class="in">`year`</span>, <span class="in">`month`</span>, <span class="in">`lat`</span>, <span class="in">`lon`</span>, <span class="in">`effort`</span>, <span class="in">`species`</span>, <span class="in">`catch`</span> <span class="pp">|</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`life_history.csv`</span><span class="co">](../data/templates/life_history.csv)</span> <span class="pp">|</span> All length-based and per-recruit methods <span class="pp">|</span> <span class="in">`parameter`</span>, <span class="in">`value`</span>, <span class="in">`sd`</span>, <span class="in">`sex`</span>, <span class="in">`area`</span>, <span class="in">`source`</span> <span class="pp">|</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Templates are first drafts; method owners to confirm.</span><span class="co">]</span>{.todo}</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reference</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Amoroso, R., Lomonico, S., Snouffer, B. &amp; Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. Rome, FAO. <span class="ot">&lt;https://doi.org/10.4060/cd0366en&gt;</span>. The Excel templates and mock datasets (<span class="in">`Mock_length_freq.csv`</span> and others) are distributed with the manual.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Method data templates</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Each method expects its inputs in a fixed layout. Download a template, fill it from the cleaned data, and keep it alongside the analysis.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Template <span class="pp">|</span> For <span class="pp">|</span> Columns <span class="pp">|</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`length_long.csv`</span><span class="co">](../data/templates/length_long.csv)</span> <span class="pp">|</span> FLicc, LBSPR, LBB, fishblicc <span class="pp">|</span> <span class="in">`len`</span> (bin lower bound), <span class="in">`year`</span>, <span class="in">`data`</span> (count), <span class="in">`qname`</span> (gear) <span class="pp">|</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`catch_index.csv`</span><span class="co">](../data/templates/catch_index.csv)</span> <span class="pp">|</span> SPiCT, JABBA, BSM <span class="pp">|</span> <span class="in">`year`</span>, <span class="in">`catch`</span>, <span class="in">`index_1`</span>, <span class="in">`se_1`</span> (add <span class="in">`index_2`</span>, <span class="in">`se_2`</span> …) <span class="pp">|</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`logbook_long.csv`</span><span class="co">](../data/templates/logbook_long.csv)</span> <span class="pp">|</span> cpueTargeting <span class="pp">|</span> <span class="in">`trip`</span>, <span class="in">`vessel`</span>, <span class="in">`year`</span>, <span class="in">`month`</span>, <span class="in">`lat`</span>, <span class="in">`lon`</span>, <span class="in">`effort`</span>, <span class="in">`species`</span>, <span class="in">`catch`</span> <span class="pp">|</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">FPAT workbook</span><span class="co">](https://github.com/Blue-Matter/FPAT/tree/master/inst/shiny_apps/FPAT/Data)</span> (Excel, external) <span class="pp">|</span> FPAT App, FPI <span class="pp">|</span> Sheets "Fishery Data" (metadata, biology, selectivity, time series, CAA, CAL, reference points) and "FPAT App Questions"; FPI and governance scoresheets <span class="pp">|</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">`life_history.csv`</span><span class="co">](../data/templates/life_history.csv)</span> <span class="pp">|</span> All length-based and per-recruit methods <span class="pp">|</span> <span class="in">`parameter`</span>, <span class="in">`value`</span>, <span class="in">`sd`</span>, <span class="in">`sex`</span>, <span class="in">`area`</span>, <span class="in">`source`</span> <span class="pp">|</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Templates are first drafts; method owners to confirm.</span><span class="co">]</span>{.todo}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reference</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Amoroso, R., Lomonico, S., Snouffer, B. &amp; Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. Rome, FAO. <span class="ot">&lt;https://doi.org/10.4060/cd0366en&gt;</span>. The Excel templates and mock datasets (<span class="in">`Mock_length_freq.csv`</span> and others) are distributed with the manual.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>De Alessi, M., Anderson, C., Carruthers, T., Hordyk, A., Sock, F. &amp; Gutierrez, N.L. 2026. *The Fisheries Performance Assessment Toolkit (FPAT): a practical manual.* FAO Fisheries and Aquaculture Technical Paper 737. Rome, FAO (in press).</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
