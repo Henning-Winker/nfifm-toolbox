@@ -6,6 +6,10 @@ categories: [dynamic pool, per-recruit, length-based]
 
 [Basic]{.status-badge .status-basic}
 
+::: {.path}
+[1 · Data](#data){.step} [→]{.arrow} [2 · Method](#method){.step} [→]{.arrow} [3 · Outputs](#outputs-diagnostics-and-sensitivities){.step} [·]{.arrow} [Use and misuse](#use-and-misuse){.step} [·]{.arrow} [Case studies](#case-studies-and-references){.step}
+:::
+
 ```{r}
 #| echo: false
 source("R/toolbox.R")
@@ -13,7 +17,7 @@ method_attributes("lbspr")
 ```
 
 
-## Method overview
+## Overview
 
 | Field | Entry |
 |---|---|
@@ -31,7 +35,7 @@ This page is populated with the information available so far. Full documentation
 Can be reproduced as a configuration of [FLicc](flicc.qmd).
 
 
-## Data requirements
+## 1 · Data {#data}
 
 | Field | Entry |
 |---|---|
@@ -39,38 +43,45 @@ Can be reproduced as a configuration of [FLicc](flicc.qmd).
 | **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
 | **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
-
-## Data processing requirements
-
-| Field | Entry |
-|---|---|
 | **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
 | **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
 | **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
 | **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
 | **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
 
-## Model documentation
+**Data template:** [`length_long.csv`](../../data/templates/length_long.csv) and [`life_history.csv`](../../data/templates/life_history.csv). Prepare the data first with the [data preparation workflow](../../data-tools/data-preparation.qmd).
+
+
+## 2 · Method {#method}
 
 | Field | Entry |
 |---|---|
+| **Software / tools** | LBSPR (R); FLicc configuration · No-code app: Stock Monitoring Tool (iMarine) |
+| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
 | **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
 | **Error structure** | Observation error |
 | **State-space formulation** | No |
-| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
 
-## Assumptions and sensitivities
+## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
 | **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
 | **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
 | **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
 | **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
 
-## Misuse prevention
+**Diagnostics:** apply the [model acceptance checklist](../../guidance/diagnostics.qmd#model-acceptance-checklist) (convergence, residuals, prior vs posterior, retrospective, hindcast, jitter, plausibility) before results are used for advice.
+
+
+#### Sensitivity demos
+
+[Demos of the key sensitivities to be added (each sensitivity → a worked demo in markdown or an app).]{.todo}
+
+
+## Use and misuse {#use-and-misuse}
 
 ```{r}
 #| echo: false
@@ -80,19 +91,18 @@ method_warnings("lbspr")
 
 | Field | Entry |
 |---|---|
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Status (indicator) |
 
-## Applications and support
+## Case studies and references {#case-studies-and-references}
 
 | Field | Entry |
 |---|---|
 | **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
 | **References** | Hordyk, A. et al. (2015) *ICES J. Mar. Sci.* 72(1): 217–231, doi:10.1093/icesjms/fsu004; Hordyk, A. et al. (2016) *Can. J. Fish. Aquat. Sci.* 73(12): 1787–1799, doi:10.1139/cjfas-2015-0422. |
-| **Software / tools** | LBSPR (R); FLicc configuration · No-code app: Stock Monitoring Tool (iMarine) |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}

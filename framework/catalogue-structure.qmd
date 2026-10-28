@@ -70,6 +70,10 @@ Data or configurations that violate the assumptions and may induce bias.
 :::
 :::
 
+## Page layout: the method pipeline
+
+Each method page reads in the order an analyst works, following the pipeline in the toolbox concept (N. Gutierrez): **1 · Data** (requirements, method-specific data template, preparation) → **2 · Method** (software or app, settings, assumptions) → **3 · Outputs** (diagnostics and sensitivity demos), with **use and misuse** guidance and **case studies** alongside. Every step has its own guidance. The standard fields below are grouped into these steps; the *Page section* column shows where each field appears.
+
 ## Standard catalogue fields
 
 Every method page in the [catalogue](../methods/index.qmd) follows these sections and fields. The template is [`methods/_template.qmd`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/methods/_template.qmd).

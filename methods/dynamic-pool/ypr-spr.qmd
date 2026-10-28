@@ -6,6 +6,10 @@ categories: [dynamic pool, per-recruit, age-based]
 
 [Basic]{.status-badge .status-basic}
 
+::: {.path}
+[1 · Data](#data){.step} [→]{.arrow} [2 · Method](#method){.step} [→]{.arrow} [3 · Outputs](#outputs-diagnostics-and-sensitivities){.step} [·]{.arrow} [Use and misuse](#use-and-misuse){.step} [·]{.arrow} [Case studies](#case-studies-and-references){.step}
+:::
+
 ```{r}
 #| echo: false
 source("R/toolbox.R")
@@ -13,7 +17,7 @@ method_attributes("ypr")
 ```
 
 
-## Method overview
+## Overview
 
 | Field | Entry |
 |---|---|
@@ -29,7 +33,7 @@ This page is populated with the information available so far. Full documentation
 :::
 
 
-## Data requirements
+## 1 · Data {#data}
 
 | Field | Entry |
 |---|---|
@@ -37,38 +41,45 @@ This page is populated with the information available so far. Full documentation
 | **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
 | **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
-
-## Data processing requirements
-
-| Field | Entry |
-|---|---|
 | **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
 | **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
 | **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
 | **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
 | **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
 
-## Model documentation
+**Data template:** [`length_long.csv`](../../data/templates/length_long.csv) and [`life_history.csv`](../../data/templates/life_history.csv). Prepare the data first with the [data preparation workflow](../../data-tools/data-preparation.qmd).
+
+
+## 2 · Method {#method}
 
 | Field | Entry |
 |---|---|
+| **Software / tools** | FLBRP, FLRef (R) |
+| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
 | **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
 | **Error structure** | Deterministic or simplified |
 | **State-space formulation** | No |
-| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+| **Core assumptions** | Constant growth, mortality, maturity and fecundity regardless of stock size; stock–recruitment relationship implicitly linear (no density dependence). |
 
-## Assumptions and sensitivities
+## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | Constant growth, mortality, maturity and fecundity regardless of stock size; stock–recruitment relationship implicitly linear (no density dependence). |
 | **Main sensitivities** | Natural mortality $M$ (drives F~current~ = Z − M), selectivity (L~c~ or T~c~), growth. |
 | **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
 | **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
 | **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
 
-## Misuse prevention
+**Diagnostics:** apply the [model acceptance checklist](../../guidance/diagnostics.qmd#model-acceptance-checklist) (convergence, residuals, prior vs posterior, retrospective, hindcast, jitter, plausibility) before results are used for advice.
+
+
+#### Sensitivity demos
+
+[Demos of the key sensitivities to be added (each sensitivity → a worked demo in markdown or an app).]{.todo}
+
+
+## Use and misuse {#use-and-misuse}
 
 ```{r}
 #| echo: false
@@ -78,19 +89,18 @@ method_warnings("ypr")
 
 | Field | Entry |
 |---|---|
+| **Pre-run checks** | Is the weight-at-age (or length) sample representative of the full population, with all age groups sampled? Is natural mortality estimated from several methods (e.g. the Stock Monitoring Tool natural mortality estimators) rather than a single value? (after Gutierrez and Kleisner, 2018) |
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Pre-run checks** | Is the weight-at-age (or length) sample representative of the full population, with all age groups sampled? Is natural mortality estimated from several methods (e.g. the Stock Monitoring Tool natural mortality estimators) rather than a single value? (after Gutierrez and Kleisner, 2018) |
 | **Advice suitability** | F-based reference points (F~max~, F~0.1~, F~SPR%~); F~0.1~ is more precautionary than F~max~. |
 
-## Applications and support
+## Case studies and references {#case-studies-and-references}
 
 | Field | Entry |
 |---|---|
 | **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
 | **References** | Beverton, R.J.H. & Holt, S.J. (1957) *On the dynamics of exploited fish populations*; Thompson, W.F. & Bell, F.H. (1934). |
-| **Software / tools** | FLBRP, FLRef (R) |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}

@@ -6,6 +6,10 @@ categories: [data, length composition, QC, Shiny]
 
 [Draft]{.status-badge .status-draft} [Showcase entry]{.status-badge .status-showcase}
 
+::: {.path}
+[1 · Data](#data){.step} [→]{.arrow} [2 · Method](#method){.step} [→]{.arrow} [3 · Outputs](#outputs-diagnostics-and-sensitivities){.step} [·]{.arrow} [Use and misuse](#use-and-misuse){.step} [·]{.arrow} [Case studies](#case-studies-and-references){.step}
+:::
+
 ```{r}
 #| echo: false
 source("R/toolbox.R")
@@ -13,7 +17,7 @@ method_attributes("fishualizer")
 ```
 
 
-## Method overview
+## Overview
 
 | Field | Entry |
 |---|---|
@@ -26,7 +30,7 @@ method_attributes("fishualizer")
 FishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support FAO Technical Paper 706, which sets out the data-preparation workflow: data inventory, timeline of influential events, life-history parameter inventory, cleaning and outlier handling, and exploratory data analysis. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.
 
 
-## Data requirements
+## 1 · Data {#data}
 
 | Field | Entry |
 |---|---|
@@ -34,38 +38,55 @@ FishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support F
 | **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
 | **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
 | **Data quality considerations** | Mixed units (cm vs mm), gaps in time or space, and uneven coverage across gears or areas, all of which the app helps detect. |
-
-## Data processing requirements
-
-| Field | Entry |
-|---|---|
 | **Pre-processing steps** | Upload the CSV, correct unit inconsistencies, inspect raw distributions, check coverage. |
 | **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
 | **Aggregation / binning choices** | User-defined length-bin width; counts per bin at chosen levels (e.g. year and fishing zone). |
 | **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
 | **Missing data handling** | Shows where data are missing over time or location; downloadable coverage metrics. |
 
-## Model documentation
+**Data template:** [To be added]{.todo}. Prepare the data first with the [data preparation workflow](../data-tools/data-preparation.qmd).
+
+
+## 2 · Method {#method}
 
 | Field | Entry |
 |---|---|
+| **Software / tools** | FishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (`FLQuantLen()`), LBSPR, LBB. |
+| **Implementation notes** | Shiny app (`ui.R`, `server.R`) with an `renv.lock` for dependencies; no R functions are exported for scripted use. |
 | **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
 | **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
 | **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
 | **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
-| **Implementation notes** | Shiny app (`ui.R`, `server.R`) with an `renv.lock` for dependencies; no R functions are exported for scripted use. |
+| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
 
-## Assumptions and sensitivities
+## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
 | **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
 | **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
 | **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
 | **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
 
-## Misuse prevention
+#### Sensitivity demos
+
+::: {.catalogue-example-grid}
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Bin width
+:::
+Effect of the length-bin width on the composition and on downstream SPR.
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Coverage filters
+:::
+Dropping poorly covered years, areas or gears: how the composition changes.
+:::
+:::
+
+
+## Use and misuse {#use-and-misuse}
 
 ```{r}
 #| echo: false
@@ -75,19 +96,18 @@ method_warnings("fishualizer")
 
 | Field | Entry |
 |---|---|
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Do not use when** | Treating binned output as representative of the catch without checking sampling coverage and raising to catch. |
 | **Common misuses** | Pooling gears or areas with different selectivity into one composition; ignoring years with very small samples. |
 | **Pre-use checklist** | Units consistent; coverage by year and gear reviewed; sample size per gear-year noted (red flag below about 50 fish or 10 bins, see FLicc checks). |
-| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Input data only: prepares length compositions for assessment; produces no stock status. |
 
-## Applications and support
+## Case studies and references {#case-studies-and-references}
 
 | Field | Entry |
 |---|---|
 | **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
 | **References** | Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <https://doi.org/10.4060/cd0366en> |
-| **Software / tools** | FishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (`FLQuantLen()`), LBSPR, LBB. |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}
