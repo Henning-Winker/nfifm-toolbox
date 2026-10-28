@@ -8,7 +8,7 @@ Answer the questions about the stock and the data you have. The selector lists t
 
 ::: {.callout-note collapse="true"}
 ## How the selector decides
-Each tool's data requirements are recorded in [`data/methods.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/methods.csv), and each warning is a rule in [`data/misuse_rules.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/misuse_rules.csv). **Do not use** means a core assumption is violated by the data you describe. **Caution** means the method can be used, but only with the extra checks named in the warning. The rules are a first draft for review.
+Each tool's data requirements are recorded in [`data/methods.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/methods.csv), and each warning is a rule in [`data/misuse_rules.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/misuse_rules.csv). **Do not use** means a core assumption is violated by the data you describe. **Caution** means the method can be used, but only with the extra checks named in the warning. Candidates are ranked with model-based methods first, ordered by whether they handle your gears, then by how much of your data they use (methods that use more of the available data are preferred), then by the number of cautions; fishery indicators follow as complementary evidence. The rules are a first draft for review.
 :::
 
 ```{=html}
@@ -151,14 +151,22 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
       if (a.capacity === "nocode" && /unavailable|planned/.test(m.app)) w = w.concat([{severity: "caution", message: "App status: " + m.app + "."}]);
       return {m: m, miss: missing(m, a), w: w, stops: w.filter(function (x) { return x.severity === "stop"; }).length, cautions: w.filter(function (x) { return x.severity === "caution"; }).length};
     });
-    var fit = ass.filter(function (x) { return !x.miss.length; }).sort(function (p, q) { return p.stops - q.stops || p.cautions - q.cautions; });
+    function dataUse(m) {
+      // weights: indices and age data carry more information than life-history proxies
+      return (m.req_catch === "reliable" ? 1 : 0) + 2 * (+m.req_index || 0) + (lvl.length[m.req_length] || 0) + (m.req_age === "yes" ? 2 : 0) + 0.5 * (lvl.lh[m.req_lh] || 0);
+    }
+    function isInd(m) { return m.class === "Empirical indicators" ? 1 : 0; }
+    function gearMiss(m) { return (a.gears === "multiple" && m.gears === "single") ? 1 : 0; }
+    // rank: usable first; model-based before indicators; methods using more of the data first; then fewer cautions
+    var fit = ass.filter(function (x) { return !x.miss.length; }).sort(function (p, q) {
+      return p.stops - q.stops || isInd(p.m) - isInd(q.m) || gearMiss(p.m) - gearMiss(q.m) || dataUse(q.m) - dataUse(p.m) || p.cautions - q.cautions; });
     var nofit = ass.filter(function (x) { return x.miss.length; });
     var ok = fit.filter(function (x) { return !x.stops; }).length;
     document.getElementById("sel-summary").innerHTML = '<span class="sel-count">' + ok + '</span> candidate methods · <span class="sel-count">' + (fit.length - ok) + '</span> not recommended for your data · <span class="sel-count">' + nofit.length + "</span> need data you don't have";
     document.getElementById("sel-fit").innerHTML = fit.length ? fit.map(function (x) {
       var cls = x.stops ? "sel-stop" : (x.cautions ? "sel-caution" : "sel-ok");
       var pill = x.stops ? "Do not use" : (x.cautions ? x.cautions + " caution" + (x.cautions > 1 ? "s" : "") : "No flags");
-      var body = '<div class="sel-meta">' + esc(x.m.class) + " · " + esc(x.m.application) + '</div><div class="sel-meta"><b>Gives:</b> ' + esc(x.m.outputs) + " · <b>Role:</b> " + esc(x.m.advice_role) + "</div>" + (x.m.app ? '<div class="sel-meta"><b>No-code app:</b> ' + esc(x.m.app) + "</div>" : "");
+      var body = (isInd(x.m) ? '<div class="sel-meta"><b>Complementary indicator</b></div>' : '') + '<div class="sel-meta">' + esc(x.m.class) + " · " + esc(x.m.application) + '</div><div class="sel-meta"><b>Gives:</b> ' + esc(x.m.outputs) + " · <b>Role:</b> " + esc(x.m.advice_role) + "</div>" + (x.m.app ? '<div class="sel-meta"><b>No-code app:</b> ' + esc(x.m.app) + "</div>" : "");
       if (x.w.length) body += '<ul class="sel-warn">' + x.w.map(function (w) { return "<li><b>" + (w.severity === "stop" ? "Do not use:" : "Caution:") + "</b> " + esc(w.message) + "</li>"; }).join("") + "</ul>";
       return card(x.m, cls, pill, body);
     }).join("") : '<p class="sel-none">No assessment method fits these data. See the table below for what each method would need.</p>';
