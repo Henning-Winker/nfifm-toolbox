@@ -18,12 +18,12 @@ method_attributes("fishualizer")
 | Field | Entry |
 |---|---|
 | **Family / class** | Data and CPUE tools → length composition data |
-| **Method name** | fishualizeR: [DanOvando/fishualizeR](https://github.com/DanOvando/fishualizeR) (Shiny app; hosted at [danovando.shinyapps.io/fishualizeR](https://danovando.shinyapps.io/fishualizeR/)) |
+| **Method name** | FishualizeR: R Shiny app accompanying FAO Fisheries and Aquaculture Technical Paper 706 (code: [DanOvando/fishualizeR](https://github.com/DanOvando/fishualizeR); app: [apps.upwellsolutionsllc.com/app/FishualizeR](http://apps.upwellsolutionsllc.com/app/FishualizeR)) |
 | **Short description** | Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions. |
 | **Main outputs** | Plots of raw data (with colour and faceting options), data-coverage metrics over time or location, and length compositions in user-defined bins, all downloadable. |
 | **Typical use case** | First look at length samples before a length-based assessment (FLicc, LBSPR, LBB): check units, gaps and coverage, then bin by year, area or gear. |
 
-Developed by Dan Ovando. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.
+FishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support FAO Technical Paper 706, which sets out the data-preparation workflow: data inventory, timeline of influential events, life-history parameter inventory, cleaning and outlier handling, and exploratory data analysis. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.
 
 
 ## Data requirements
@@ -85,8 +85,8 @@ method_warnings("fishualizer")
 | Field | Entry |
 |---|---|
 | **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | [github.com/DanOvando/fishualizeR](https://github.com/DanOvando/fishualizeR) |
-| **Software / tools** | fishualizeR (Shiny); licence MPL-2.0. Output feeds FLicc (`FLQuantLen()`), LBSPR, LBB. |
+| **References** | Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <https://doi.org/10.4060/cd0366en> |
+| **Software / tools** | FishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (`FLQuantLen()`), LBSPR, LBB. |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}
