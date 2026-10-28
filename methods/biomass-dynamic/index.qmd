@@ -5,6 +5,8 @@ subtitle: "Shared concepts for SPiCT, JABBA and BSM"
 
 Surplus production models (SPMs) are used where catch histories and one or more relative abundance indices are available but age-structured data are absent, incomplete or not reliable enough for an integrated assessment. They are central to data-limited and data-moderate assessments in many regions, where many stocks with heterogeneous data quality must be assessed.
 
+Good practice for applying SPMs follows Kokkalis *et al.* (2024); see the [model acceptance checklist](../../guidance/diagnostics.qmd#model-acceptance-checklist).
+
 This page sets out the concepts shared by the SPMs in the catalogue ([SPiCT](spict.qmd), [JABBA](jabba.qmd) and [BSM/CMSY+](cmsy.qmd)): the biomass dynamic logic, the state-space formulation, and the assumptions and caveats common to all of them.
 
 ## Conceptual model

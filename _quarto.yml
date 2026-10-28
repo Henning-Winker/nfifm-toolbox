@@ -31,7 +31,7 @@ website:
       - text: "Method selector"
         href: select/index.qmd
       - text: "Framework"
-        href: framework/hierarchy.qmd
+        href: framework/principles.qmd
       - text: "Methods"
         href: methods/index.qmd
       - text: "Data"
@@ -55,6 +55,7 @@ website:
       - select/index.qmd
       - section: "Framework"
         contents:
+          - framework/principles.qmd
           - framework/hierarchy.qmd
           - framework/crosswalk.qmd
           - framework/catalogue-structure.qmd
@@ -77,9 +78,14 @@ website:
               - methods/dynamic-pool/tropfishr.qmd
               - methods/dynamic-pool/ypr-spr.qmd
               - methods/dynamic-pool/scal.qmd
-          - section: "Empirical indicators"
+          - section: "Fishery indicators"
             contents:
+              - methods/empirical/index.qmd
+              - methods/empirical/exploitation-history.qmd
+              - methods/empirical/trend-indicators.qmd
               - methods/empirical/lbi.qmd
+              - methods/empirical/dashboard.qmd
+              - methods/empirical/psa.qmd
           - methods/age-structured/age-structured.qmd
           - section: "Multispecies"
             contents:

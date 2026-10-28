@@ -1,0 +1,24 @@
+---
+title: "Fishery indicators"
+subtitle: "Empirical indicators of stock and fishery state, from length ratios to exploitation history"
+---
+
+Not every stock can be assessed with a model, and models are not the only evidence. Fishery indicators summarise what the data and the fishery's history say directly: how the catch developed, where catch rates and effort are heading, what the size structure shows, and what fishers observe. They are used for triage, as lines of evidence alongside assessments, and as the basis of empirical harvest control rules.
+
+| Indicator group | What it uses | Typical use | Entry |
+|---|---|---|---|
+| **Exploitation history** | Catch trajectory, fishery development, timeline of events | Phase of development, triage, context for any assessment | [Exploitation history indicators](exploitation-history.qmd) |
+| **Trends** | Catch, standardised CPUE, effort, fleet capacity | Direction of change, trend-based rules | [Trend indicators](trend-indicators.qmd) |
+| **Size-based** | Length compositions, life-history reference lengths | Selectivity and exploitation pattern | [Length-based indicators (LBI)](lbi.qmd) |
+| **Multi-indicator** | Several indicators, including local and traditional knowledge | Traffic-light status, agreed management responses | [Multi-indicator dashboards](dashboard.qmd) |
+| **Risk-based** | Life history and fishery exposure | Prioritising which stocks to assess | [PSA](psa.qmd) |
+
+::: {.callout-warning}
+## Using indicators responsibly
+- Indicators show **direction and pattern**, rarely a sustainable catch level; catch advice needs an empirical rule tuned by simulation or an assessment.
+- Read every indicator against the **timeline of influential events** (gear changes, regulations, markets, reporting systems) from the [data preparation workflow](../../data-tools/data-preparation.qmd); many apparent trends are artefacts of these changes.
+- Use **standardised** CPUE ([cpueTargeting](../../data-tools/cpuetargeting.qmd)), not nominal catch rates.
+- Indicators that agree across groups are stronger evidence than any single one; disagreement points to data problems or changing conditions.
+:::
+
+[To be developed: catch-based classification of development phase, empirical harvest control rules (e.g. rfb, trend rules), ecosystem indicators, and how indicators enter the weight of evidence.]{.todo}

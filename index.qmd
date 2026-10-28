@@ -12,6 +12,10 @@ The toolbox is the **shared method library and code** of the programme's cross-r
 
 Every method is documented the same way. Each page covers data requirements, assumptions, diagnostics, worked examples and code, and has an explicit **misuse prevention** section: when *not* to use the method, common misuses, and checks to pass before results are used for advice.
 
+## Philosophy
+
+The toolbox follows a **[hierarchical assessment framework](framework/principles.qmd)**: one assessment logic and one set of biological assumptions across the data ladder, from length data only to catch, length and abundance indices; **risk-equivalent** advice whichever tier a stock is assessed at; and the **value of information** of each data source measured in simulated and real case studies.
+
 ## From data to advice
 
 ::: {.path}

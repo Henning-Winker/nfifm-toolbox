@@ -148,6 +148,7 @@ method_warnings("spict")
 | **Do not use when** | The catch series is substantially incomplete or under-reported; the only index is short and flat (no contrast); process and observation variance both float freely with a short index. |
 | **Common misuses** | Presenting SPiCT Kobe plots as posterior probabilities; accepting a fit without checking convergence and residuals; estimating the production shape with little contrast. |
 | **Pre-use checklist** | Convergence and finite SEs; residual runs tests; retrospective Mohn's rho; hindcast MASE; sensitivity to $r$ prior, $B_1/K$ and process error. |
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Stock status; catch advice via forecasts; estimation model in MSE. |
 
 ## Applications and support

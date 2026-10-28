@@ -1,0 +1,58 @@
+---
+title: "Principles"
+subtitle: "A hierarchical framework: one assessment logic across the data ladder, risk-equivalent advice, and the value of information"
+---
+
+The toolbox is built on a **hierarchical assessment framework** (Kell *et al.*, 2025). Stocks are assessed with whatever data exist, but the assessment logic, the biology and the definition of reference points stay the same as data are added. Advice is then **risk-equivalent**: the probability of breaching a limit is the same whichever tier a stock is assessed at, with larger precautionary buffers where information is poorer. This puts data-poor and data-moderate stocks on a common footing instead of treating them as separate, incomparable worlds.
+
+## The data ladder
+
+| Tier | Data | Methods in the toolbox | Status informed by |
+|---|---|---|---|
+| 0 | Life history, exploitation history, qualitative information | [Fishery indicators](../methods/empirical/index.qmd): exploitation history, trends, dashboards, PSA for triage | Indicators and expert knowledge (indicative, not quantitative status) |
+| 1 | Length compositions (by gear) | [FLicc](../methods/dynamic-pool/flicc.qmd), with [LBSPR](../methods/dynamic-pool/lbspr.qmd), [LBB](../methods/dynamic-pool/lbb.qmd) and [fishblicc](../methods/dynamic-pool/fishblicc.qmd) as special cases; [TropFishR](../methods/dynamic-pool/tropfishr.qmd) | Size structure: SPR, F/F~SPR~, selectivity |
+| 2 | Catch + length | FLicc-SPM (in development) | Scale from catch, depletion from SPR, trend from length-based indicators |
+| 3 | Catch + length + abundance indices | FLicc-SPM (in development); [JABBA](../methods/biomass-dynamic/jabba.qmd) and [SPiCT](../methods/biomass-dynamic/spict.qmd) with length-based F/F~MSY~ as auxiliary data | As tier 2, plus index trends |
+| 4 | Catch-at-age, surveys, full integrated data | [Age-structured and integrated models](../methods/age-structured/age-structured.qmd) | All data in one likelihood |
+
+Catch-only methods ([CMSY+](../methods/biomass-dynamic/cmsy.qmd)) sit beside the ladder rather than on it: without length data or an index, their depletion is set by priors, so they are used for triage and with explicit caution.
+
+## One logic across tiers
+
+- **Shared biology.** Growth, natural mortality, maturity, selectivity and steepness are defined once and used by every tier, so moving up a tier changes the information, not the assumptions.
+- **Unifying model families.** On the length side, FLicc reproduces LBSPR, LBB and fishblicc as configurations of one model. FLicc-SPM extends the same model with surplus production dynamics, so that length data, catches and indices enter one likelihood. Unlike a fully structured model it does not fit the catch exactly, and it keeps uncertainty in all fits.
+- **Consistent reference points.** F~SPR~ and SPR-based rules at tier 1, and F~MSY~ and B~MSY~ at tiers 2–4, come from the same per-recruit model.
+
+## Value of information
+
+Because the tiers share one model and one set of assumptions, the contribution of each data source can be measured directly: run the same stock at each tier and compare how well status and advice recover the truth.
+
+- **Simulated twins:** operating models with known truth (for example the FLicc simulator, the cpueTargeting and mmsyFM operating models) generate catches, indices and length compositions for the same stock.
+- **Metrics by tier:** bias and precision of B/B~MSY~ and F/F~MSY~, probability of misclassifying status, and the buffer needed for risk-equivalent advice, by exploitation phase (fishing down, rebuilding).
+- **Real data:** the same comparisons on well-studied stocks (for example ICES case studies) where a data-rich assessment serves as a benchmark.
+
+The answer guides two decisions: which method a stock's data support now, and which data collection would improve advice most.
+
+## One standard of good practice
+
+Risk equivalence only holds if every assessment that informs advice, at every tier, has passed the same standard of scrutiny. The toolbox adopts the four objective properties of a plausible model (Carvalho *et al.*, 2021): **convergence**, **fit to the data**, **model consistency** and **prediction skill**, with **plausibility** (consistency with the biology and the exploitation history) as the overarching check. No single diagnostic is used in isolation to accept or reject a model. For surplus production models these are made operational in the good practice guidelines of Kokkalis *et al.* (2024); the [model acceptance checklist](../guidance/diagnostics.qmd#model-acceptance-checklist) applies them across the toolbox.
+
+## How the toolbox puts this into practice
+
+| Principle | Where in the toolbox |
+|---|---|
+| Know your data first | [Data preparation workflow](../data-tools/data-preparation.qmd) |
+| Match the method to the tier | [Method selector](../select/index.qmd), [hierarchy](hierarchy.qmd) |
+| Use methods within their assumptions | Misuse prevention on every page; [misuse rules](../guidance/misuse.qmd) |
+| Accept models on the same criteria at every tier | [Model acceptance checklist](../guidance/diagnostics.qmd#model-acceptance-checklist) |
+| Several lines of evidence | Weight of evidence across methods [to be added]{.todo} |
+| Risk-equivalent advice | [Advice and harvest strategies](../advice/index.qmd) |
+| Independent review | Endorsement by a review panel of assessment experts, every 1–2 years [to be set up]{.todo} |
+
+## References
+
+Carvalho, F., Winker, H., Courtney, D., Kapur, M., Kell, L., Cardinale, M., Schirripa, M., Kitakado, T., Yemane, D., Piner, K.R., Maunder, M.N., Taylor, I., Wetzel, C.R., Doering, K., Johnson, K.F. & Methot, R.D. (2021). A cookbook for using model diagnostics in integrated stock assessments. *Fisheries Research* 240: 105959.
+
+Kell, L.T. *et al.* (2025). Hierarchical assessment framework [full reference to be added]{.todo}.
+
+Kokkalis, A., Berg, C.W., Kapur, M.S., Winker, H., Jacobsen, N.S., Taylor, M.H., Ichinokawa, M., Miyagawa, M., Medeiros-Leal, W., Nielsen, J.R. & Mildenberger, T.K. (2024). Good practices for surplus production models. *Fisheries Research* 275: 107010. <https://doi.org/10.1016/j.fishres.2024.107010>

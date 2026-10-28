@@ -63,9 +63,11 @@ Stock assessment methods
 - [HCR testing]{.app-label}<br>[[FLR mse](../advice/mse.qmd)]{.method-label}
 :::
 ::: {.class-card .note-box}
-### Empirical indicators
+### Fishery indicators
 
+- [Exploitation history, trends]{.app-label}<br>[[Exploitation history](../methods/empirical/exploitation-history.qmd) / [Trend indicators](../methods/empirical/trend-indicators.qmd)]{.method-label}
 - [Length-based indicators]{.app-label}<br>[[LBI](../methods/empirical/lbi.qmd)]{.method-label}
+- [Multi-indicator, risk]{.app-label}<br>[[Dashboards](../methods/empirical/dashboard.qmd) / [PSA](../methods/empirical/psa.qmd)]{.method-label}
 - [Indicator-based HCRs]{.app-label}<br>[FLicc `lbi.hcr()`, `rfb.flicc.hcr()`]{.method-label}
 :::
 :::

@@ -62,8 +62,8 @@ This page is populated with the information available so far. Full documentation
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
-| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
+| **Core assumptions** | Constant growth, mortality, maturity and fecundity regardless of stock size; stock–recruitment relationship implicitly linear (no density dependence). |
+| **Main sensitivities** | Natural mortality $M$ (drives F~current~ = Z − M), selectivity (L~c~ or T~c~), growth. |
 | **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
 | **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
 | **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
@@ -81,7 +81,8 @@ method_warnings("ypr")
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | Reference points |
+| **Pre-run checks** | Is the weight-at-age (or length) sample representative of the full population, with all age groups sampled? Is natural mortality estimated from several methods (e.g. the Stock Monitoring Tool natural mortality estimators) rather than a single value? (after Gutierrez and Kleisner, 2018) |
+| **Advice suitability** | F-based reference points (F~max~, F~0.1~, F~SPR%~); F~0.1~ is more precautionary than F~max~. |
 
 ## Applications and support
 

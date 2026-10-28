@@ -195,3 +195,8 @@ fieldset.selector-q legend { float:left; width:100%; font-size:.95rem; text-tran
 .status-candidate { background:#ffffff; color:#1f6a8a; border:1px solid #1f6a8a; }
 .quarto-dark .status-basic { background:#2b3a48; color:#cfe0ee; }
 .quarto-dark .status-candidate { background:transparent; color:#6fb6d6; border-color:#6fb6d6; }
+
+/* wide markdown tables scroll inside their own box on small screens */
+@media (max-width: 768px) {
+  main.content table:not(.dataTable) { display:block; overflow-x:auto; max-width:100%; }
+}

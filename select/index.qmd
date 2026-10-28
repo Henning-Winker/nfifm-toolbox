@@ -19,6 +19,12 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
 <label><input type="radio" name="catch" id="q-catch-incomplete" value="incomplete"> Incomplete or under-reported</label>
 <label><input type="radio" name="catch" id="q-catch-reliable" value="reliable" checked> Reasonably complete</label>
 </div>
+<div class="sel-field" data-q="catch_pattern"><div class="sel-label">Catch history</div>
+<label><input type="radio" name="catch_pattern" id="q-catch_pattern-full" value="full" checked> ≥ 20 years with rise, peak and decline</label>
+<label><input type="radio" name="catch_pattern" id="q-catch_pattern-increasing" value="increasing"> Still increasing (developing fishery)</label>
+<label><input type="radio" name="catch_pattern" id="q-catch_pattern-light" value="light"> Lightly exploited throughout</label>
+<label><input type="radio" name="catch_pattern" id="q-catch_pattern-short" value="short"> Short (&lt; 20 years) or flat</label>
+</div>
 <div class="sel-field" data-q="index"><div class="sel-label">Abundance indices</div>
 <label><input type="radio" name="index" id="q-index-0" value="0"> None</label>
 <label><input type="radio" name="index" id="q-index-1" value="1" checked> One</label>
@@ -111,6 +117,8 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
     var a = {};
     form.querySelectorAll('input[type="radio"]:checked').forEach(function (el) { a[el.name] = el.value; });
     a.index = +a.index;
+    form.querySelectorAll('input[name="catch_pattern"]').forEach(function (el) { el.disabled = a.catch === "none"; });
+    if (a.catch === "none") a.catch_pattern = "none";
     var noIdx = a.index === 0;
     ["index_type", "index_length"].forEach(function (k) {
       form.querySelectorAll('input[name="' + k + '"]').forEach(function (el) { el.disabled = noIdx; });

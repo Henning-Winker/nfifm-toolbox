@@ -3,6 +3,32 @@ title: "Diagnostics and model validation"
 subtitle: "Convergence, fit, consistency, prediction skill and plausibility"
 ---
 
+## Model acceptance checklist
+
+Every assessment that informs advice should be evaluated on four properties, **convergence, fit to the data, model consistency and prediction skill** (Carvalho *et al.*, 2021), plus **plausibility**. For surplus production models, Kokkalis *et al.* (2024) set these out as a seven-point checklist. No criterion is used in isolation; together they support accepting a model, rejecting it, or keeping it as a sensitivity run.
+
+| # | Check | What to look at | Rule of thumb or red flag |
+|---|---|---|---|
+| 1 | **Convergence** | Optimiser status, finite parameters and variances (ML); Rhat, ESS and trace plots (MCMC) | Non-finite estimates or failed convergence: revisit data and assumptions, not just settings |
+| 2 | **Residuals** | One-step-ahead residuals (TMB, e.g. SPiCT) or "one sample from the posterior" residuals (MCMC, e.g. JABBA); runs test; three-sigma outliers; joint residual plot | Failed runs test; points beyond three sigma; trends in residuals. RMSE ≤ 0.3 suggests a reasonably precise index fit, but RMSE is not for model selection on its own |
+| 3 | **Prior vs posterior** | Overlap of prior and posterior for key parameters | Posterior identical to the prior: no information in the data; run prior sensitivities, especially if the prior SD was arbitrary |
+| 4 | **Retrospective analysis** | Peels of B/B~MSY~ and F/F~MSY~ (or SSB, F); Mohn's ρ | Peels outside the base-run interval; ρ outside −0.15 to 0.20 (longer-lived) or −0.22 to 0.30 (shorter-lived) (Hurtado-Ferro *et al.*, 2015) |
+| 5 | **Hindcast cross-validation** | Prediction of withheld index observations; MASE | MASE > 1: the model predicts worse than a naive "same as last year" forecast |
+| 6 | **Jitter analysis** | Estimates from a range of starting values | Different optima: local minima; ensure the global optimum |
+| 7 | **Plausibility** | Parameters and status consistent with the biology and exploitation history; size of uncertainty | 95% intervals of B/B~MSY~ or F/F~MSY~ spanning more than an order of magnitude: likely too uncertain for advice; very skewed production curves (B~MSY~/K < 0.5) need extra scrutiny |
+
+For integrated models, Carvalho *et al.* (2021) add **likelihood profiles** (e.g. on R~0~) to reveal conflicts between data sources and the **ASPM diagnostic** to check whether catches and indices alone carry the production signal.
+
+### Good practice for surplus production models (Kokkalis *et al.*, 2024)
+
+- **Data:** at least about 15 years of data with contrast to estimate all parameters; index observations assigned to their correct timing; uncertainty scaling of catches and indices stated.
+- **Priors:** from auxiliary information, not convenience; restrictive priors only when justified, always with sensitivity runs.
+- **Shape:** avoid very skewed production curves; prefer $n > 1$, in line with a more precautionary approach.
+- **Reference points:** use stochastic reference points in state-space models when $n > 1$.
+- **Model choice:** information criteria only between models fitted to the same data (including priors); otherwise the most precautionary model, a set of base cases, or an ensemble.
+
+
+
 ## Why diagnostics matter
 
 Modern SPM workflows should not stop at a base-case fit. A model can fit the observed CPUE but still provide poor advice if the fit is achieved through overfitting, implausible process error, unsuitable priors, or unrecognized data conflicts.

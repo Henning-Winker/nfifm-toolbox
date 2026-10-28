@@ -83,6 +83,7 @@ method_warnings("lbspr")
 | **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
 | **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Status (indicator) |
 
 ## Applications and support

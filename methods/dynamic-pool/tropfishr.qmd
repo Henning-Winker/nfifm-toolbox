@@ -1,6 +1,6 @@
 ---
 title: "TropFishR (ELEFAN_GA + YPR/SBPR)"
-subtitle: "Length-based (growth from length data + per-recruit)"
+subtitle: "Length-frequency analysis: growth (ELEFAN), mortality and per-recruit status"
 categories: [dynamic pool, per-recruit, length-based, growth]
 ---
 
@@ -17,58 +17,77 @@ method_attributes("tropfishr")
 
 | Field | Entry |
 |---|---|
-| **Family / class** | Dynamic pool models → Equilibrium per-recruit |
-| **Method name** | TropFishR (ELEFAN_GA + YPR/SBPR) |
-| **Short description** | Length-based workflow: growth estimation from length frequencies with ELEFAN (genetic algorithm), mortality from the length-converted catch curve, and YPR/SBPR reference points. |
-| **Main outputs** | Growth parameters (Linf, K), Z and F from catch curve, YPR/SBPR reference points (F0.1, Fmax, F30–40%) |
-| **Typical use case** | Length-based (growth from length data + per-recruit) |
+| **Family / class** | Dynamic pool models → equilibrium per-recruit (length-based, with growth estimation) |
+| **Method name** | TropFishR 1.6.6 (R, CRAN; GPL-3): [tokami/TropFishR](https://github.com/tokami/TropFishR) · [manual](https://cran.r-universe.dev/TropFishR/doc/manual.html) |
+| **Short description** | Compilation of length-frequency methods for data-poor fisheries, implementing the FAO manual of Sparre and Venema (1998) and newer methods: growth from length frequencies (ELEFAN with genetic algorithm or simulated annealing), mortality from length-converted catch curves, selectivity, VPA and per-recruit and yield models. |
+| **Main outputs** | Growth parameters ($L_\infty$, $K$, $t_{anchor}$, seasonal $C$, $t_s$); $Z$, $M$, $F = Z - M$; selectivity ($L_{50}$, $L_{75}$); YPR and SBPR curves with $F_{max}$, $F_{0.1}$, $F_{0.5}$ and current exploitation status. |
+| **Typical use case** | Tropical and data-poor fisheries with length-frequency samples and no reliable age data, typically a single gear. |
 
-::: {.callout-tip}
-## Basic entry
-This page is populated with the information available so far. Full documentation will follow the pattern of the showcase entries ([FLicc](../../methods/dynamic-pool/flicc.qmd), [cpueTargeting](../../data-tools/cpuetargeting.qmd), [FishualizeR](../../data-tools/fishualizer.qmd), [mmsyFM](../../methods/multispecies/mmsyfm.qmd)). Use **Edit this page** (top right) or open a *New method entry* issue to contribute.
-:::
+### Functions by step
 
-Runs in the [Stock Monitoring Tool](../../training/smt.qmd) (length-based workflow, TropFishR 1.6.6). Repository: [tokami/TropFishR](https://github.com/tokami/TropFishR).
+| Step | Functions |
+|---|---|
+| Data | `lfqCreate()`, `lfqModify()`, `lfqRestructure()`, `plot.lfq()` |
+| Growth | `ELEFAN()`, `ELEFAN_GA()`, `ELEFAN_SA()`, `Bhattacharya()`, `powell_wetherall()`, `growth_length_age()`, `growth_tagging()`, `VBGF()`, `lfqFitCurves()` |
+| Mortality | `M_empirical()`, `catchCurve()`, `Z_BevertonHolt()`, `Z_CPUE()` |
+| Selectivity | `select()`, `select_ogive()`, `select_Millar()`, `gillnetfit()` |
+| Recruitment | `recruitment()` |
+| Stock and yield | `VPA()`, `ypr()`, `ypr_sel()`, `predict_mod()` (Thompson & Bell, Beverton & Holt), `prod_mod()`, `prod_mod_ts()` |
+| Simulation | `stock_sim()`, synthetic datasets `synLFQ1`–`synLFQ8` |
 
 
 ## Data requirements
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | Representative annual length compositions (as recorded in the method selector). |
-| **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
-| **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
+| **Minimum data** | A length-frequency matrix: catches in numbers by length class (rows) and sampling date (columns), with the vector of sampling dates (`lfqCreate()`). |
+| **Preferred data** | Monthly or more frequent samples over at least a year, covering all sizes; some direct age readings to check growth. |
+| **Optional auxiliary data** | Water temperature and $L_{max}$ for empirical $M$ (`M_empirical()`); length–weight parameters; gear selectivity experiments (`select_Millar()`, `gillnetfit()`). |
 | **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
 
 ## Data processing requirements
 
 | Field | Entry |
 |---|---|
-| **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
+| **Pre-processing steps** | `lfqCreate()` from raw lengths, `lfqModify()` to aggregate bins, years or plus groups, `lfqRestructure()` (moving-average restructuring used by ELEFAN). |
 | **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
-| **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
+| **Aggregation / binning choices** | Bin width and moving-average span (`MA`) strongly affect ELEFAN; aggregate by year or quarter consistently. |
 | **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
 | **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
+
+```r
+library(TropFishR)
+data(synLFQ7)
+lfq <- lfqModify(synLFQ7, bin_size = 4)
+fit <- ELEFAN_GA(lfq, MA = 5, seasonalised = FALSE,
+                 low_par = list(Linf = 70, K = 0.1, t_anchor = 0),
+                 up_par  = list(Linf = 110, K = 1, t_anchor = 1))
+Ms  <- M_empirical(Linf = fit$par$Linf, K_l = fit$par$K, method = "Then_growth")
+lfq2 <- lfqModify(lfqRestructure(lfq, MA = 5), par = list(Linf = fit$par$Linf, K = fit$par$K))
+cc  <- catchCurve(lfq2, reg_int = NULL, calc_ogive = TRUE)   # Z and selectivity
+```
+Settings are illustrative; check argument names against the [manual](https://cran.r-universe.dev/TropFishR/doc/manual.html).
+
 
 ## Model documentation
 
 | Field | Entry |
 |---|---|
-| **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
-| **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | Deterministic (growth fitted by genetic algorithm) |
-| **State-space formulation** | No |
-| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+| **Key parameters** | $L_\infty$, $K$, $t_{anchor}$, $C$, $t_s$; $M$; selectivity; $L_c$ or $t_c$. |
+| **Priors / fixed inputs** | Search ranges for growth parameters (`low_par`, `up_par`); $L_\infty$ starting value from `powell_wetherall()` or $L_{max}$. |
+| **Error structure** | None formal: ELEFAN maximises a score; catch curve by regression. |
+| **State-space formulation** | No. |
+| **Implementation notes** | ELEFAN restructures the length frequencies (bin scores relative to a moving average), scores growth curves by the bins they cross, and searches for the VBGF parameters with the highest score; growth is more reliable when at least some direct age readings are available. |
 
 ## Assumptions and sensitivities
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
-| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
-| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
-| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
-| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
+| **Core assumptions** | Length frequencies represent the population (all ages, areas and habitats sampled); growth follows a (seasonal) von Bertalanffy curve; mortality and recruitment are constant (equilibrium). |
+| **Main sensitivities** | Moving-average span and bin width; search ranges for $L_\infty$ and $K$; $M$ estimator; seasonal growth on or off. |
+| **Likely violations** | Emigration from the fishing grounds (overestimates Z); strong sexual dimorphism in size (biases growth); juveniles and adults in different habitats with sampling in only one of them. |
+| **Expected bias** | Wrong growth parameters propagate into $Z$, $M$ and status; under emigration $Z$ is overestimated. |
+| **Warning signs** | ELEFAN score surface flat or with several peaks; $L_\infty$ at a search bound; growth curves not following visible modes. |
 
 ## Misuse prevention
 
@@ -80,36 +99,37 @@ method_warnings("tropfishr")
 
 | Field | Entry |
 |---|---|
-| **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
-| **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
+| **Do not use when** | Length samples come from one habitat or gear that misses part of the population; modes are not visible (slow growth, long-lived species); several gears with different selectivity are pooled. |
+| **Common misuses** | Accepting the first ELEFAN solution without checking the score surface; using one empirical $M$; reading $F_{current} > F_{0.1}$ as precise status. |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | Status (indicator), reference points |
+| **Pre-run checks** | Is the length-frequency sample representative of the whole population? Are all age groups sampled? Were samples taken across the areas where different life stages live (e.g. juveniles nearshore, adults offshore)? Were gears with different selectivity used, so that several age groups appear? If not, F estimates will be biased (after Gutierrez and Kleisner, 2018). |
+| **Advice suitability** | F-based status relative to per-recruit reference points ($F_{0.1}$ preferred to $F_{max}$); no biomass or catch level. |
 
 ## Applications and support
 
 | Field | Entry |
 |---|---|
-| **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | Mildenberger, T.K., Taylor, M.H. & Wolff, M. (2017) TropFishR: an R package for fisheries analysis with length-frequency data. *Methods in Ecology and Evolution* 8: 1520–1527. |
-| **Software / tools** | TropFishR (R) · No-code app: Stock Monitoring Tool (iMarine) |
+| **Applications / case studies** | Example datasets in the package (`synLFQ1`–`synLFQ8`, `alba`, `goatfish`, `hake` and others); the Stock Monitoring Tool length-based workflow. |
+| **References** | Mildenberger, T.K., Taylor, M.H. & Wolff, M. (2017) *Methods in Ecology and Evolution* 8: 1520–1527; Sparre, P. & Venema, S.C. (1998) *Introduction to tropical fish stock assessment*. FAO Fisheries Technical Paper 306/1; Gutierrez, N.L. and Kleisner, K. (2018). |
+| **Software / tools** | `install.packages("TropFishR")`; Stock Monitoring Tool (ELEFAN_GA and YPR/SBPR, TropFishR 1.6.6). |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Suitable example
 :::
-[To be completed]{.todo}
+Synthetic data `synLFQ7` with known growth: recover $L_\infty$ and $K$ and check against the truth.
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Assumption sensitivity
 :::
-[To be completed]{.todo}
+ELEFAN results across moving-average spans (`MA`) and bin sizes; alternative empirical $M$ estimators.
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Unsuitable example
 :::
-[To be completed]{.todo}
+Samples from one gear or habitat only (e.g. adults offshore), or a slow-growing species without visible modes.
 :::
 :::

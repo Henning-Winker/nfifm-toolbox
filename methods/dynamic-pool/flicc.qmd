@@ -161,6 +161,7 @@ method_warnings("flicc")
 | **Do not use when** | Length samples are not representative of the catch; $L_\infty$ is inconsistent with the largest fish; strong recruitment pulses dominate the compositions and are read as F. |
 | **Common misuses** | Unsupported dome-shaped selectivity that inflates SPR; using raw counts in the thousands with a multinomial likelihood; treating equilibrium SPR as current status during rebuilding. |
 | **Pre-use checklist** | The 10 FLicc checks (sample size, consistency, largest fish vs $L_\infty$, catch curves, life history, selectivity, convergence, fit, retrospective, indicators). |
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Status relative to $F_{SPR}$; indicator-based HCRs; estimation model in MSE (`flicc.sa()`). |
 
 ## Applications and support

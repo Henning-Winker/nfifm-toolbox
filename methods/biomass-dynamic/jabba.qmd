@@ -132,6 +132,7 @@ method_warnings("jabba")
 | **Do not use when** | Catch is substantially incomplete; indices conflict and cannot be reconciled; posterior is essentially the prior for key quantities. |
 | **Common misuses** | Using default priors without justification; ignoring prior–posterior overlap; reporting a single run without sensitivity grid. |
 | **Pre-use checklist** | MCMC convergence (Rhat, ESS); residual runs tests; retrospective and hindcast (MASE); prior vs posterior plots; sensitivity to $r$, $K$, $\psi$. |
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Stock status with probabilities; catch advice and risk tables; projections. |
 
 ## Applications and support

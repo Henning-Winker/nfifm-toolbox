@@ -103,6 +103,7 @@ method_warnings("cpuetargeting")
 | **Do not use when** | There is no operation-level data (only annual aggregates); the species is a rare bycatch whose catches are not reliably recorded. |
 | **Common misuses** | Using nominal CPUE directly in an assessment; adding many PCs to improve fit, which absorbs the abundance signal; dropping the processing log so the selections cannot be reviewed. |
 | **Pre-use checklist** | Complete the reporting checklist below; compare Cluster and DPC indices; run sensitivity to species set and number of PCs; check influence and predictive plots. |
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Input data: produces the abundance index used by assessments and empirical rules. |
 
 ### Reporting checklist

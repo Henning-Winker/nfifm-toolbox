@@ -26,6 +26,7 @@ Assumptions and sensitivities,Warning signs,Lists simple indicators that the met
 Misuse prevention,Do not use when,Lists data situations or configurations under which the method should not be applied.
 Misuse prevention,Common misuses,Describes frequent ways the method is applied incorrectly and their consequences.
 Misuse prevention,Pre-use checklist,Minimum checks to pass before results are used for advice.
+Misuse prevention,Pre-run checks,"Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018)."
 Misuse prevention,Advice suitability,"States whether outputs support status only, indicator-based HCRs, catch advice or MSE."
 Applications / support,Applications / case studies,Links to worked examples or comparative applications.
 Applications / support,References,Provides primary literature and supporting documents.

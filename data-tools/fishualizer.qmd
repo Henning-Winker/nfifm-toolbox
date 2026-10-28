@@ -78,6 +78,7 @@ method_warnings("fishualizer")
 | **Do not use when** | Treating binned output as representative of the catch without checking sampling coverage and raising to catch. |
 | **Common misuses** | Pooling gears or areas with different selectivity into one composition; ignoring years with very small samples. |
 | **Pre-use checklist** | Units consistent; coverage by year and gear reviewed; sample size per gear-year noted (red flag below about 50 fish or 10 bins, see FLicc checks). |
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Input data only: prepares length compositions for assessment; produces no stock status. |
 
 ## Applications and support

@@ -99,6 +99,7 @@ method_warnings("mmsyfm")
 | **Do not use when** | As a stock assessment: it does not estimate stock status from data. It needs status and productivity from assessments of the main stocks. |
 | **Common misuses** | Reading the safeguarded MMSY as a precise target rather than a comparison of options; ignoring the stocks held at their Bpa safeguard; skipping conditioning on current depletions. |
 | **Pre-use checklist** | Fleet tuned to the status quo; stocks conditioned on current depletion; sensitivity to the catchability matrix and $\gamma$; rules tested with assessment and implementation error. |
+| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
 | **Advice suitability** | Harvest strategies for mixed fisheries (effort caps by segment, métier and seasonal closures, feedback rules); trade-off analysis for workshops. |
 
 ## Applications and support

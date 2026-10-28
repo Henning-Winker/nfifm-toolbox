@@ -1,10 +1,10 @@
 ---
 title: "CMSY+"
-subtitle: "Catch-only"
+subtitle: "Catch-only (CMSY++) and catch + index (BSM) surplus production"
 categories: [biomass dynamic, catch-only, Bayesian]
 ---
 
-[Basic]{.status-badge .status-basic}
+[Draft]{.status-badge .status-draft}
 
 ```{r}
 #| echo: false
@@ -17,15 +17,15 @@ method_attributes(c("cmsy", "bsm"))
 
 | Field | Entry |
 |---|---|
-| **Family / class** | Biomass dynamic models → Unstructured biomass dynamics |
-| **Method name** | CMSY+ |
-| **Short description** | Catch-only surplus production method: estimates productivity and depletion from a catch series and priors on resilience and depletion; BSM adds an abundance index in a Bayesian state-space model. |
-| **Main outputs** | Relative biomass, depletion, productivity proxies |
-| **Typical use case** | Catch-only |
+| **Family / class** | Biomass dynamic models → unstructured biomass dynamics (catch-only; BSM with an index) |
+| **Method name** | CMSY++ / CMSY+ (catch-only) and BSM (Bayesian state-space Schaefer model with an index) |
+| **Short description** | Runs a Schaefer production model for many r–k pairs drawn from prior ranges and keeps the pairs whose biomass trajectories neither collapse nor exceed carrying capacity and end within the assumed final depletion range; BSM adds an abundance index. |
+| **Main outputs** | MSY with uncertainty, r, k, B/B~MSY~ and F/F~MSY~ trajectories. |
+| **Typical use case** | Stocks with a long catch history and no reliable index; triage of many stocks; BSM where an index exists. |
 
-::: {.callout-tip}
-## Basic entry
-This page is populated with the information available so far. Full documentation will follow the pattern of the showcase entries ([FLicc](../../methods/dynamic-pool/flicc.qmd), [cpueTargeting](../../data-tools/cpuetargeting.qmd), [FishualizeR](../../data-tools/fishualizer.qmd), [mmsyFM](../../methods/multispecies/mmsyfm.qmd)). Use **Edit this page** (top right) or open a *New method entry* issue to contribute.
+::: {.callout-note}
+## Origin of the guidance on this page
+The pre-run checks, prior rules and expert questions follow the guidance for uses and misuses of data-limited methods developed by N. Gutierrez and K. Kleisner (2018) for the FAO online modules, updated here for CMSY++ and BSM.
 :::
 
 
@@ -33,10 +33,10 @@ This page is populated with the information available so far. Full documentation
 
 | Field | Entry |
 |---|---|
-| **Minimum data** | Catch time series, life-history proxies (as recorded in the method selector). |
-| **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
-| **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
-| **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
+| **Minimum data** | A catch time series of at least 20 years covering development, peak and decline, with the peak not in the first or last 5 years (after Gutierrez and Kleisner, 2018). |
+| **Preferred data** | An abundance index (for BSM); independent information on depletion at the start and end of the series (length data, CPUE, expert knowledge). |
+| **Optional auxiliary data** | Resilience category or life-history information for the r prior ($r \approx 2M$, $r \approx 2F_{MSY}$). |
+| **Data quality considerations** | The catch series must be complete: missing periods of exploitation or under-reporting bias productivity and depletion directly. |
 
 ## Data processing requirements
 
@@ -52,21 +52,34 @@ This page is populated with the information available so far. Full documentation
 
 | Field | Entry |
 |---|---|
-| **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
-| **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | Process uncertainty via priors |
-| **State-space formulation** | No |
+| **Key parameters** | $r$, $k$, initial and final relative biomass ($B/B_0$), process error SD. |
+| **Priors / fixed inputs** | r from resilience: High 0.6–1.5, Medium 0.2–0.8, Low 0.05–0.5, Very low 0.015–0.1 (FishBase categories); k between max catch and a multiple of it; start and end depletion ranges from expert judgement or catch rules. |
+| **Error structure** | Process uncertainty via priors; lognormal i.i.d. process error in the stochastic version; observation error on the index in BSM. |
+| **State-space formulation** | BSM: yes. Catch-only CMSY: no (filtering of r–k pairs). |
 | **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+
+### Setting the priors: questions to experts
+
+| Prior | Question to experts | Rule of thumb |
+|---|---|---|
+| Start year | From what year onward are the catch data reliable? | The retained series must still be ≥ 20 years |
+| Start biomass ($B/B_0$) | Was the stock lightly fished, fully exploited or overfished at the start? | Low 0.1–0.4, Medium 0.2–0.6, High 0.5–0.9 |
+| Intermediate biomass | Is there a year when biomass was particularly low or high (change in exploitation, exceptional year class)? | Optional intermediate prior |
+| End biomass ($B/B_0$) | Was the stock lightly fished, fully exploited or overfished at the end? | Catch-ratio rule: last/max catch < 0.3 → Low (0.01–0.4); > 0.7 → High (0.5–0.9); otherwise Medium (0.2–0.6) |
+| Resilience ($r$) | What is the best range for adult natural mortality $M$, or for $F_{MSY}$? | $r \approx 2M$; $r \approx 2F_{MSY}$ |
+
+If start **and** end biomass are both judged low, a catch-only method should not be used.
+
 
 ## Assumptions and sensitivities
 
 | Field | Entry |
 |---|---|
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
-| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
-| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
-| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
-| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
+| **Core assumptions** | Schaefer production; stationary productivity (constant parameters); complete catch series; depletion priors reflect the true start and end state. |
+| **Main sensitivities** | Lower bound of the r prior; start and final depletion priors; upper bound on k in developing fisheries. |
+| **Likely violations** | Incomplete or under-reported catches; catches driven by markets or regulation rather than abundance; developing fisheries without a peak; lightly exploited stocks. |
+| **Expected bias** | Evaluations found k overestimated by about 10% and r (and F~MSY~) underestimated, closer to F~0.1~ (after Gutierrez and Kleisner, 2018); with short or incomplete catch series, status can be biased in either direction. |
+| **Warning signs** | Posterior close to the depletion prior; r estimate at the lower prior bound; very wide range of viable r–k pairs. |
 
 ## Misuse prevention
 
@@ -78,36 +91,96 @@ method_warnings("cmsy"); method_warnings("bsm")
 
 | Field | Entry |
 |---|---|
-| **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
-| **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
+| **Do not use when** | The catch series is shorter than about 20 years, flat, still increasing, or misses important periods of exploitation; the stock is lightly exploited; start and end biomass are both judged low. |
+| **Common misuses** | Using default depletion priors from the catch ratio as if they were data; reporting depletion from catch-only runs as an estimate (no data update the depletion prior); using catch-only status as the sole basis for catch advice. |
 | **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
-| **Advice suitability** | Status (indicative) |
+| **Pre-run checks** | Catch series length ≥ 20 years; peak not in the first or last 5 years; no continuous increase or decrease; expert questions on start, intermediate and end status answered; r range justified from $M$ or $F_{MSY}$ (after Gutierrez and Kleisner, 2018). Use the catch-series check below. |
+| **Advice suitability** | Triage and indicative status; catch advice only with an index (BSM) or supporting evidence. |
+
+### Catch-series check
+
+Paste the catch series (one `year, catch` pair per line) and answer the two expert questions. The check applies the pre-run rules for catch-only methods and suggests the depletion-prior category.
+
+```{=html}
+<div class="sel-card" style="border-left-color:var(--sel-data)">
+<label for="cc-data" style="font-weight:600">Catch series (year, catch)</label>
+<textarea id="cc-data" rows="8" style="width:100%;font-family:monospace;font-size:.85rem">1985, 120
+1988, 340
+1991, 760
+1994, 1210
+1997, 1480
+2000, 1530
+2003, 1290
+2006, 1010
+2009, 880
+2012, 760
+2015, 690
+2018, 610
+2021, 540
+2024, 500</textarea>
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin:.6em 0">
+<label>Fishing pressure at the start <select id="cc-start"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label>
+<label>Fishing pressure at the end <select id="cc-end"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label>
+</div>
+<div id="cc-out" class="sel-meta" aria-live="polite"></div>
+<p class="sel-meta" style="margin-top:.6em">Example data are illustrative. Annual data are expected; the example uses every third year.</p>
+</div>
+<script>
+(function () {
+  function run() {
+    var rows = document.getElementById("cc-data").value.split(/\n/).map(function (l) { return l.split(/[,;\t ]+/).filter(Boolean).map(Number); })
+      .filter(function (r) { return r.length >= 2 && isFinite(r[0]) && isFinite(r[1]); }).sort(function (a, b) { return a[0] - b[0]; });
+    var out = [], stop = false;
+    function add(kind, msg) { if (kind === "stop") stop = true; out.push("<li><b>" + (kind === "stop" ? "Do not use:" : (kind === "ok" ? "Pass:" : "Caution:")) + "</b> " + msg + "</li>"); }
+    if (rows.length < 3) { document.getElementById("cc-out").innerHTML = "Enter at least three years."; return; }
+    var y0 = rows[0][0], y1 = rows[rows.length - 1][0], span = y1 - y0 + 1;
+    var c = rows.map(function (r) { return r[1]; }), max = Math.max.apply(null, c), iMax = c.indexOf(max), yMax = rows[iMax][0];
+    var ratio = c[c.length - 1] / max;
+    if (span >= 20) add("ok", "series spans " + span + " years (" + y0 + "–" + y1 + ").");
+    else add("stop", "series spans only " + span + " years; at least 20 are needed to cover development, peak and decline.");
+    if (yMax - y0 < 5) add("stop", "the catch peak (" + yMax + ") is in the first 5 years: the development phase is missing, so depletion at the start is unknown.");
+    else if (y1 - yMax < 5) add("stop", "the catch peak (" + yMax + ") is in the last 5 years: the fishery may still be developing, so carrying capacity cannot be bounded.");
+    else add("ok", "catch peak in " + yMax + ", away from both ends of the series.");
+    var up = 0, down = 0; for (var i = 1; i < c.length; i++) { if (c[i] > c[i - 1]) up++; else if (c[i] < c[i - 1]) down++; }
+    if (up === c.length - 1 || down === c.length - 1) add("stop", "catches rise or fall throughout; no peak can be identified.");
+    var endCat = ratio < 0.3 ? "Low (0.01–0.4)" : (ratio > 0.7 ? "High (0.5–0.9)" : "Medium (0.2–0.6)");
+    add("caution", "last catch / maximum catch = " + ratio.toFixed(2) + ": catch-ratio rule gives final biomass prior <b>" + endCat + "</b>. This is an assumption, not an estimate; confirm it with expert, length or CPUE evidence.");
+    var s = document.getElementById("cc-start").value, e = document.getElementById("cc-end").value;
+    if (s === "low" && e === "low") add("stop", "start and end biomass both judged low: the catch series cannot separate productivity from depletion.");
+    document.getElementById("cc-out").innerHTML = '<p style="margin:0 0 .3em"><b>' + (stop ? "Do not run a catch-only assessment with these data." : "Pre-run checks passed; continue with careful prior setting.") + "</b></p><ul class='sel-warn'>" + out.join("") + "</ul>";
+  }
+  ["cc-data", "cc-start", "cc-end"].forEach(function (id) { document.getElementById(id).addEventListener("input", run); document.getElementById(id).addEventListener("change", run); });
+  run();
+})();
+</script>
+```
+
 
 ## Applications and support
 
 | Field | Entry |
 |---|---|
-| **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | Froese, R. et al. (2023) New developments in the analysis of catch time series as the basis for fish stock assessments: the CMSY++ method. *Acta Ichthyologica et Piscatoria* 53: 173–189. |
-| **Software / tools** | CMSY++ / CMSY2plus (R) · No-code app: Stock Monitoring Tool (iMarine) – temporarily unavailable |
+| **Applications / case studies** | Widely used for global and regional status screening, e.g. for SOFIA and Mediterranean stocks. |
+| **References** | Froese, R. et al. (2017) Estimating fisheries reference points from catch and resilience. *Fish and Fisheries* 18: 506–526; Froese, R. et al. (2023) The CMSY++ method. *Acta Ichthyologica et Piscatoria* 53: 173–189; Gutierrez, N.L. and Kleisner, K. (2018) Guidance for uses and misuses of data-limited methods (FAO working document). |
+| **Software / tools** | CMSY++ (R); Stock Monitoring Tool module (temporarily unavailable). |
 
 ::: {.catalogue-example-grid}
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Suitable example
 :::
-[To be completed]{.todo}
+Catch series with a clear development, peak and decline over more than 20 years, with independent evidence of current depletion.
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Assumption sensitivity
 :::
-[To be completed]{.todo}
+Alternative lower bounds of the r prior and alternative final-depletion ranges; compare with BSM when an index exists.
 :::
 ::: {.catalogue-example}
 ::: {.catalogue-example-title}
 Unsuitable example
 :::
-[To be completed]{.todo}
+A developing fishery with still-increasing catches, or a series that starts at the peak: k and depletion cannot be bounded from the catch.
 :::
 :::

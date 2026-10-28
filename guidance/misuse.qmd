@@ -24,6 +24,10 @@ DT::datatable(r[, c("Severity", "Methods", "When", "message")], rownames = FALSE
               class = "compact stripe hover")
 ```
 
+## Pre-run checks
+
+Each catalogue entry now lists **pre-run checks**: concrete questions an analyst, or an app such as the [Stock Monitoring Tool](../training/smt.qmd), should answer before a method is run, and what to do if a check fails. The idea goes back to the guidance for uses and misuses of data-limited methods developed by N. Gutierrez and K. Kleisner (2018) for the FAO online modules: for example, at least 20 years of catch with a peak away from the ends of the series before a catch-only method is run, or a representative length sample across habitats and gears before ELEFAN. The [CMSY+ page](../methods/biomass-dynamic/cmsy.qmd) includes an interactive catch-series check that applies these rules.
+
 ## General red flags
 
 - Status depends mostly on priors or fixed inputs rather than data (prior and posterior nearly identical).

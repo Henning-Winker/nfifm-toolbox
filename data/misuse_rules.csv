@@ -17,3 +17,13 @@ tropfishr,gears,multiple,caution,ELEFAN and the catch curve assume one selectivi
 tropfishr,lifehistory,long-lived,caution,"ELEFAN needs clear modal progression; for slow-growing, long-lived species the length modes overlap and growth estimates are unreliable. Prefer independent growth estimates."
 lbi,goal,catch advice,caution,Length-based indicators flag selectivity and exploitation patterns; they do not give biomass or catch levels on their own. Use them inside an indicator-based HCR.
 lbi,gears,multiple,caution,Indicators from pooled gears mix selectivity patterns; compute them per gear or for the gear that dominates the catch.
+exphist|trendind,goal,catch advice,caution,"Trends and development phase show direction, not a sustainable catch level. Pair them with an empirical rule or an assessment before setting catches."
+exphist,catch,incomplete,stop,"Development phase from catch history assumes catch tracks abundance; under-reporting, market or management changes produce false declines or recoveries."
+trendind,index_type,commercial,caution,Nominal commercial CPUE can be hyperstable; standardise it (cpueTargeting) and check the timeline of events before reading a trend.
+psa,goal,catch advice,stop,PSA ranks relative vulnerability for prioritisation; it is not an assessment and gives no status or catch level.
+psa,goal,status,caution,PSA does not estimate stock status. Use it to decide which stocks to assess first.
+cmsy,catch_pattern,short,stop,"Catch-only methods need at least about 20 years of catch covering development, peak and decline; shorter or flat series contain too little information on productivity (Gutierrez and Kleisner, 2018)."
+cmsy,catch_pattern,increasing,stop,"In a developing fishery with still-increasing catches the peak has not been reached, so carrying capacity cannot be bounded from the catch."
+cmsy,catch_pattern,light,stop,Lightly exploited stocks: the catch series carries almost no information on productivity.
+bsm|jabba|spict,catch_pattern,increasing,caution,"With catches still increasing and little contrast, productivity and depletion are weakly identified; rely on the index and informative priors, and test initial depletion."
+cmsy,catch,reliable,caution,"Depletion priors derived only from the ratio of recent to maximum catch are assumptions, not data; set them with expert input or length and CPUE evidence where possible."
