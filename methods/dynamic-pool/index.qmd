@@ -1,0 +1,25 @@
+---
+title: "Length-based and per-recruit methods"
+subtitle: "Dynamic pool models for data-poor and small-scale fisheries"
+---
+
+Equilibrium per-recruit methods evaluate the expected contribution of an average recruit under assumed constant conditions. Length-based variants infer fishing mortality relative to natural mortality from the length composition of the catch, together with growth and maturity. They are the main option where only length data and life-history information are available, which is common in small-scale fisheries (workstream 2).
+
+[FLicc](flicc.qmd) brings LBSPR, LBB and fishblicc into one framework: each is a configuration of FLicc, reproduced on its own example data in the [FLicc user guide](../../resources/guides/FLicc_user_guide.html).
+
+::: {.callout-warning}
+## Shared caveats
+- **Equilibrium:** status lags behind changes in F or recruitment.
+- **Selectivity:** pooling gears with different selectivity biases SPR; dome-shaped selectivity must be supported by data.
+- **Life history:** results are most sensitive to $L_\infty$ and $M/k$; proxies need sensitivity runs.
+- **Sampling:** length samples must represent the catch of each gear.
+:::
+
+| Method | Gears | Status |
+|---|---|---|
+| [FLicc](flicc.qmd) | Single and multi-gear | Draft |
+| [LBSPR](lbspr.qmd) | Single | Stub |
+| [LBB](lbb.qmd) | Single | Stub |
+| [fishblicc](fishblicc.qmd) | Multi-gear | Stub |
+| [YPR / SPR / Thompson & Bell](ypr-spr.qmd) | Age-based | Stub |
+| [Statistical catch-at-length](scal.qmd) | Dynamic, length-based | Stub |

@@ -1,0 +1,216 @@
+---
+title: "Institutional applications"
+subtitle: "Documented use of SPiCT and JABBA in advisory bodies"
+---
+
+## ICES
+
+ICES represents a well-documented institutional implementation pathway for SPiCT.
+
+Relevant pathways include:
+
+- WKBMSYSPiCT workshops;
+- WKLIFE applications;
+- ICES Category 2 and 3 advice systems;
+- operational stock annexes.
+
+Typical applications include demersal stocks, deep-sea stocks, Nephrops functional units and data-limited mixed fisheries.
+
+| Theme | Examples |
+|---|---|
+| Benchmarking | WKBMSYSPiCT workshops |
+| Operational advice | Pollack, blackspot seabream, brill |
+
+## Northwest Atlantic and NAFO-related records
+
+The SOFIA assessment reference list adds several Northwest Atlantic records. These include SPiCT records for northern prawn (*Pandalus borealis*) in East and West Greenland assessment contexts and Greenland halibut (*Reinhardtius hippoglossoides*) in NAFO Subarea 0 + 1 offshore. The list also includes a JABBA record for American sea scallop in the southern Gulf of St. Lawrence.
+
+These records complement the public ICES and NAFO entries in the linked catalogue and indicate that SPiCT/JABBA use in the Northwest Atlantic is not limited to the stocks already represented in the public reference-case table.
+
+## ICCAT
+
+ICCAT contains a large publicly accessible collection of JABBA applications, mainly through SCRS reports and Collective Volumes of Scientific Papers.
+
+Main stock groups include:
+
+- tropical tunas;
+- billfishes;
+- sharks;
+- swordfish.
+
+| Theme | Example stocks |
+|---|---|
+| Structural uncertainty | South Atlantic albacore |
+| Model weighting | South Atlantic albacore |
+| Index sensitivity | Mediterranean albacore |
+| Historical catch sensitivity | Mediterranean swordfish |
+| Drop-one CPUE sensitivity | Blue marlin |
+| Ensemble uncertainty grids | Skipjack tuna |
+| SPiCT/JABBA comparisons | Mediterranean swordfish |
+| JABBA-Select development | Shortfin mako |
+
+## IOTC
+
+IOTC applications are concentrated mainly in billfish, tropical tunas and exploratory production model comparisons.
+
+| Stock | Notes |
+|---|---|
+| Indian Ocean blue marlin | Operational JABBA application |
+| Indian Ocean black marlin | Kobe-status JABBA application |
+| Indian Ocean striped marlin | JABBA Kobe II Strategy Matrix |
+| Yellowfin tuna | Alternative CPUE/productivity scenarios |
+| Bigeye tuna | Preliminary JABBA assessment |
+
+## GFCM and Mediterranean systems
+
+GFCM represents an operational regional implementation pathway for SPiCT outside ICES. Many Mediterranean small pelagic assessments are now conducted using SPiCT frameworks within SAC/WGSAD workflows. SPiCT is routinely applied to several Mediterranean sardine, anchovy and sardinella stocks.
+
+The SOFIA assessment reference list complements this by identifying 49 FAO area 37 records mentioning SPiCT or JABBA, including 42 SPiCT records and 7 JABBA records. The SPiCT records include small pelagic, demersal, cephalopod and crustacean applications. The JABBA records include Nephrops functional units, giant red shrimp and common cuttlefish records.
+
+Recent GFCM applications also include demersal and crustacean cases where SPiCT or JABBA are used in benchmark, exploratory or ensemble settings.
+
+| Stock | Main feature |
+|---|---|
+| Sardinella, GSA 26 | Recent SPiCT benchmark application |
+| Sardinella, GSA 24 | Recent SPiCT benchmark application |
+| Deep-water rose shrimp (DPS), GSAs 17--20 | SPiCT implementation with time-varying recruitment/productivity |
+| Giant red shrimp (ARS), GSAs 12--16 and 21W | JABBA ensemble application |
+| Norway lobster (Nephrops), GSAs 17--18 functional units | Early Mediterranean FU-level JABBA assessment |
+| Small pelagics, GSAs 17--18 | Comparative SPiCT/JABBA outputs |
+
+Two GFCM/SAC working-group streams are particularly relevant:
+
+| Working group | Main role |
+|---|---|
+| WGSAS | Working Group on Stock Assessment of Small Pelagic Species |
+| WGSASP | Working Group on Stock Assessment of Small Pelagic Species in the Black Sea |
+
+These working groups document SPiCT applications for sardine, anchovy, sardinella, Black Sea pelagic stocks and selected Adriatic and eastern Mediterranean small pelagics.
+
+## NOAA and Pacific Islands
+
+NOAA benchmark systems provide examples of national operational implementation of JABBA.
+
+| Stock | Notes |
+|---|---|
+| Hawaii Deep-7 bottomfish | Benchmark application |
+| Guam/CNMI/American Samoa bottomfish | Multi-species complexes |
+| Kona crab | Data-moderate benchmark assessment |
+| Great hammerhead shark | SEDAR JABBA application |
+| Coral reef complexes | Exploratory state-space SPMs |
+
+
+## Brazil national assessment stream
+
+Portuguese-language technical reports indicate that Brazil has implemented a national assessment stream using JABBA, SS3, CMSY++ and related Bayesian surplus production models.
+
+The SOFIA assessment reference list adds 14 JABBA records in FAO area 41. These include Brazilian stock units and Argentina--Uruguay shared-stock contexts. The recorded species include lane snapper, king weakfish, Argentine hake, whitemouth croaker, narrownose smooth-hound, yellowtail snapper, Patagonian flounder, bluewing searobin, rays and skates, angular angel shark and Argentine croaker.
+
+Many applications are documented in:
+
+- technical appendices;
+- national audit reports;
+- advisory summaries;
+- consultancy reports;
+- Portuguese-language stock cards.
+
+| Species/stock | Notes |
+|---|---|
+| Urophycis brasiliensis | Demersal southeast/south stock |
+| Mugil liza | Tainha assessment |
+| Octopus americanus | Cephalopod assessment |
+| Merluccius hubbsi | Hake application |
+| Lutjanus cyanopterus | Reef fish application |
+| Bagre species | Coastal demersal application |
+| Deep-water demersals | National demersal synthesis |
+| Blue shark | CITES/NDF-linked applications |
+
+## Pacific RFMO and Asian applications
+
+### NPFC
+
+| Stock | Model |
+|---|---|
+| Pacific saury | JABBA |
+| Neon flying squid | SPiCT |
+| Neon flying squid cohorts | JABBA |
+
+### China
+
+China has documented comparative applications involving JABBA, SPiCT, CMSY++ and BSM.
+
+| Stock | Notes |
+|---|---|
+| Chub mackerel | Multi-model comparison |
+| Silver croaker | JABBA/CMSY++ comparison |
+| Chinese icefish | SPiCT application |
+| Yellow Sea/Bohai commercial stocks | National TAC-system evaluations |
+
+
+## Complementary information from the SOFIA assessment reference list
+
+A confidential SOFIA assessment reference list was used as complementary information to review the global use of SPiCT and JABBA for stock status classification. This list is not assumed to be complete and should not be used to replace the public reference catalogue. It provides additional evidence on assessment methods, regional uptake and stock groups where SPiCT or JABBA have been recorded in assessment metadata.
+
+Filtering the SOFIA list by `assessment_method` and `assessment_description` identified 128 records mentioning SPiCT or JABBA:
+
+| Method class | Number of records |
+|---|---:|
+| SPiCT | 46 |
+| JABBA | 81 |
+| SPiCT + JABBA | 1 |
+| Total | 128 |
+
+The SOFIA-derived records are concentrated in a limited set of FAO major fishing areas. They complement, but do not replace, the public-document-based evidence used elsewhere in this appendix.
+
+| FAO area | JABBA | SPiCT | SPiCT + JABBA | Main interpretation from SOFIA metadata |
+|---|---:|---:|---:|---|
+| 21 | 1 | 3 | 0 | Northwest Atlantic examples, including northern prawn, Greenland halibut and scallop records |
+| 31 | 50 | 0 | 0 | Western Central Atlantic and Caribbean national or regional JABBA applications, including queen conch and other coastal/invertebrate stocks |
+| 34 | 1 | 0 | 0 | Eastern Central Atlantic JABBA record |
+| 37 | 7 | 42 | 0 | Mediterranean and Black Sea SPiCT applications, with additional JABBA records for crustacean and cephalopod stocks |
+| 41 | 14 | 0 | 0 | Southwest Atlantic JABBA records, including Brazil and Argentina--Uruguay shared-stock contexts |
+| 47 | 2 | 0 | 0 | Southeast Atlantic JABBA records for Namibia-associated stocks |
+| 51 | 1 | 0 | 0 | Western Indian Ocean JABBA-Select record |
+| 57 | 1 | 0 | 0 | Eastern Indian Ocean / IOTC-associated JABBA record |
+| 87 | 0 | 1 | 0 | Southeast Pacific SPiCT record for jumbo flying squid |
+| Global / multi-area | 4 | 0 | 1 | Ocean-basin or multi-area tuna and shark records, including porbeagle with SPiCT/JABBA |
+
+By ISSCAAP group, the SOFIA records show a broad range of species groups rather than use being confined to tunas or small pelagics.
+
+| ISSCAAP group | JABBA | SPiCT | SPiCT + JABBA | Total |
+|---|---:|---:|---:|---:|
+| Miscellaneous coastal fishes | 23 | 10 | 0 | 33 |
+| Herrings, sardines, anchovies | 4 | 19 | 0 | 23 |
+| Tunas, bonitos, billfishes | 12 | 0 | 0 | 12 |
+| Abalones, winkles, conchs | 10 | 1 | 0 | 11 |
+| Sharks, rays, chimaeras | 7 | 2 | 1 | 10 |
+| Shrimps, prawns | 1 | 8 | 0 | 9 |
+| Squids, cuttlefishes, octopuses | 3 | 5 | 0 | 8 |
+| Lobsters, spiny-rock lobsters | 7 | 0 | 0 | 7 |
+
+The SOFIA list therefore adds several complementary patterns to the public reference review:
+
+- FAO area 37 supports the view that SPiCT is routinely used in Mediterranean and Black Sea small pelagic and mixed-fishery contexts.
+- FAO area 31 indicates a substantial set of JABBA applications in Western Central Atlantic and Caribbean national or regional stock contexts, especially queen conch and other coastal/invertebrate resources.
+- FAO area 41 adds South American JABBA applications, including Brazilian and Argentina--Uruguay shared-stock contexts.
+- FAO area 21 adds Northwest Atlantic SPiCT records beyond the ICES examples already listed.
+- The single SPiCT + JABBA record in the SOFIA extract corresponds to a joint biomass-dynamic porbeagle assessment context.
+
+
+## Synthesis
+
+SPiCT and JABBA have developed from methodological frameworks into state-space assessment tools used across several advisory contexts, including:
+
+- ICES advisory systems;
+- tuna RFMOs;
+- NOAA benchmark assessments;
+- Mediterranean mixed-fishery systems;
+- national assessment systems;
+- Pacific pelagic and squid assessments;
+- Asian comparative TAC frameworks.
+
+SPiCT has documented implementation within ICES and GFCM and is increasingly documented in Pacific and South American systems. JABBA has documented use within ICCAT, IOTC, NOAA and selected national applications, including Brazil.
+
+The use of uncertainty-grid approaches, model weighting, retrospective filtering and ensemble-style inference indicates a broader transition towards risk-based and structurally explicit surplus production modelling workflows.
+
+The catalogue should be viewed as a working reference list of documented applications and as a basis for further linkage with the FAO global assessment database.

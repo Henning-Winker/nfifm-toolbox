@@ -1,0 +1,83 @@
+---
+title: "Catalogue structure"
+subtitle: "Standard fields for documenting each assessment method"
+---
+
+Alongside the hierarchy, every method gets a **standardised catalogue entry**. The catalogue does more than list methods: it guides their responsible use by documenting data needs, pre-processing requirements, model assumptions, sensitivities, **misuse prevention** (when not to use a method, common misuses, a pre-use checklist and advice suitability) and the implementation resources available.
+
+::: {.catalogue-wrap}
+::: {.catalogue-grid}
+::: {.catalogue-card}
+### Catalogue of assessment methods
+
+- Method families with links to named methods
+- Biomass dynamic and dynamic pool branches, with equilibrium per-recruit and length-based age-structured sub-classes
+- Method entries that can be expanded with interactive tools
+:::
+
+::: {.catalogue-mini-stack}
+::: {.catalogue-mini}
+Data requirements
+:::
+::: {.catalogue-mini}
+Data processing requirements
+:::
+::: {.catalogue-mini}
+Model documentation
+:::
+::: {.catalogue-mini}
+Assumptions and sensitivities
+:::
+::: {.catalogue-mini}
+Misuse prevention
+:::
+::: {.catalogue-mini}
+Applications / case studies
+:::
+::: {.catalogue-mini}
+References and tools
+:::
+:::
+
+::: {.catalogue-card}
+### Illustrative method entry
+
+::: {.catalogue-example-grid style="grid-template-columns:1fr"}
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Suitable example
+:::
+Worked example where the data are broadly consistent with the core assumptions.
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Assumption sensitivity
+:::
+Short demonstrations of key sensitivities, diagnostics and likely failure points.
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Unsuitable example
+:::
+Data or configurations that violate the assumptions and may induce bias.
+:::
+:::
+:::
+:::
+
+::: {.catalogue-note}
+**Concept:** the catalogue complements the hierarchy. It documents what each method requires, how it should be prepared and interpreted, and where a mismatch between assumptions and data is likely to cause bias.
+:::
+:::
+
+## Standard catalogue fields
+
+Every method page in the [catalogue](../methods/index.qmd) follows these sections and fields. The template is [`methods/_template.qmd`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/methods/_template.qmd).
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+DT::datatable(read_catalogue_fields(), rownames = FALSE, filter = "top",
+              options = list(pageLength = 30, dom = "t", scrollX = TRUE),
+              class = "compact stripe hover")
+```

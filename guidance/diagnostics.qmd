@@ -1,0 +1,207 @@
+---
+title: "Diagnostics and model validation"
+subtitle: "Convergence, fit, consistency, prediction skill and plausibility"
+---
+
+## Why diagnostics matter
+
+Modern SPM workflows should not stop at a base-case fit. A model can fit the observed CPUE but still provide poor advice if the fit is achieved through overfitting, implausible process error, unsuitable priors, or unrecognized data conflicts.
+
+The diagnostic framework should evaluate four broad properties:
+
+1. **Convergence**: did the optimizer or MCMC estimation behave adequately?
+2. **Fit to data**: are residuals acceptable and broadly random?
+3. **Model consistency**: are estimates stable under retrospective peels?
+4. **Prediction skill**: can the model predict withheld observations?
+5. **Plausibility**: does the model predict a realistic biological state that is consistent with the exploitation history?
+
+
+Modern diagnostics should therefore not focus solely on goodness-of-fit. Contemporary assessment frameworks increasingly evaluate models according to multiple complementary dimensions.
+
+A useful conceptual framework is shown below.
+
+```{r fig-modern-diagnostics, echo=FALSE, message=FALSE, warning=FALSE, fig.width=12, fig.height=9}
+
+
+library(ggplot2)
+library(grid)
+
+theme_set(theme_void())
+
+p1 <- ggplot() +
+
+  geom_rect(aes(xmin=0, xmax=10, ymin=0, ymax=7),
+            fill="#d88bd4", colour="black", linewidth=1) +
+
+  geom_rect(aes(xmin=0.4, xmax=9.6, ymin=0.4, ymax=6.6),
+            fill="#f2b705", colour="black", linewidth=1) +
+
+  geom_rect(aes(xmin=1.0, xmax=3.4, ymin=1.0, ymax=2.2),
+            fill="yellow", colour="black", linewidth=1) +
+  annotate("text", x=2.2, y=1.6, label="Fit to data", size=6) +
+
+  geom_rect(aes(xmin=6.8, xmax=9.2, ymin=1.0, ymax=2.2),
+            fill="#9fd356", colour="black", linewidth=1) +
+  annotate("text", x=8.0, y=1.6, label="Retrospective\nconsistency", size=5.1) +
+
+  geom_rect(aes(xmin=3.5, xmax=6.4, ymin=4.0, ymax=5.4),
+            fill="#16a6e1", colour="black", linewidth=1) +
+  annotate("text", x=4.9, y=4.7, label="Prediction skill", size=6) +
+
+  annotate("text", x=5.0, y=6.85, label="Plausibility", size=7) +
+  annotate("text", x=2.1, y=6.05, label="Convergence", size=6) +
+  annotate("text", x=5.0, y=3.0, label="Trade-offs", size=7) +
+  annotate("text", x=5.0, y=0.18,
+           label="Consistency with prior knowledge about exploitation history and population biology",
+           size=3.7) +
+  annotate("text", x=5., y=5.7, label="Validate", colour="darkcyan", size=6.5) 
+
+p2 <- p1 + 
+
+  geom_segment(aes(x=2.5, y=2.3, xend=3.5, yend=3.9),
+               arrow=arrow(length=unit(0.22,"cm")),
+               linewidth=1.3, colour="#00a6ff") +
+  geom_segment(aes(x=3.5, y=3.9, xend=2.5, yend=2.3),
+               arrow=arrow(length=unit(0.22,"cm")),
+               linewidth=1.3, colour="#00a6ff") +
+
+  geom_segment(aes(x=7.5, y=2.3, xend=6.4, yend=3.9),
+               arrow=arrow(length=unit(0.22,"cm")),
+               linewidth=1.3, colour="#00a6ff") +
+  geom_segment(aes(x=6.4, y=3.9, xend=7.5, yend=2.3),
+               arrow=arrow(length=unit(0.22,"cm")),
+               linewidth=1.3, colour="#00a6ff") +
+
+  geom_segment(aes(x=3.5, y=1.6, xend=6.7, yend=1.6),
+               arrow=arrow(length=unit(0.22,"cm")),
+               linewidth=1.3, colour="#00a6ff") +
+  geom_segment(aes(x=6.7, y=1.6, xend=3.5, yend=1.6),
+               arrow=arrow(length=unit(0.22,"cm")),
+               linewidth=1.3, colour="#00a6ff") 
+
+  
+ p <- p2+
+
+  annotate("text", x=2.8, y=3.3, label="Complexity", angle=58, size=4.4) +
+  annotate("text", x=7.1, y=3.3, label="Updating to data", angle=-53, size=4.4) +
+  annotate("text", x=3.95, y=1.9, label="Overfitting", colour="red3", size=4.2) +
+  annotate("text", x=6.0, y=1.4, label="Ignoring data", colour="red3", size=4.2) +
+
+  # Legend on the right
+  annotate("text", x=10.6, y=6.2, label="Diagnostic category",
+           hjust=0, fontface="bold", size=4.5) +
+
+  geom_rect(aes(xmin=10.6, xmax=11.2, ymin=5.35, ymax=5.75),
+            fill="#f2b705", colour="black") +
+  annotate("text", x=11.35, y=5.55, label="Convergence", hjust=0, size=4) +
+
+  geom_rect(aes(xmin=10.6, xmax=11.2, ymin=4.65, ymax=5.05),
+            fill="yellow", colour="black") +
+  annotate("text", x=11.35, y=4.85, label="Goodness-of-fit", hjust=0, size=4) +
+
+  geom_rect(aes(xmin=10.6, xmax=11.2, ymin=3.95, ymax=4.35),
+            fill="#9fd356", colour="black") +
+  annotate("text", x=11.35, y=4.15, label="Model consistency", hjust=0, size=4) +
+
+  geom_rect(aes(xmin=10.6, xmax=11.2, ymin=3.25, ymax=3.65),
+            fill="#16a6e1", colour="black") +
+  annotate("text", x=11.35, y=3.45, label="Prediction skill", hjust=0, size=4) +
+
+  geom_rect(aes(xmin=10.6, xmax=11.2, ymin=2.55, ymax=2.95),
+            fill="#d88bd4", colour="black") +
+  annotate("text", x=11.35, y=2.75, label="Plausibility", hjust=0, size=4) +
+
+  coord_fixed() +
+  xlim(-0.2, 14.4) +
+  ylim(-0.3, 7.2)
+
+p
+```
+*Residual diagnostics*
+
+Residual diagnostics evaluate whether the fitted model systematically over- or under-predicts observations.
+
+For CPUE or survey indices, the guide should include:
+
+- residual plots by index;
+- joint residual plots across indices;
+- RMSE summaries;
+- runs tests for non-random residual sequences;
+- outlier checks;
+- comparison of residual patterns across model scenarios.
+
+A good fit to residuals is necessary but not sufficient. Residuals can improve when extra parameters are added, even if prediction skill deteriorates.
+
+*Retrospective analysis*
+
+Retrospective analysis evaluates the stability of model-derived quantities as recent years of data are sequentially removed. It is useful for identifying systematic changes in estimates of stock status or fishing mortality when new data are added.
+
+However, retrospective analysis uses latent model quantities such as biomass or fishing mortality. These quantities are not observed directly. Therefore, retrospective stability alone is not validation.
+
+In the guide, retrospective analysis should be interpreted as a model-consistency diagnostic, not as the final model-acceptance test.
+
+*Hindcast cross-validation*
+
+Hindcast cross-validation evaluates prediction skill by withholding observations from the terminal period, fitting the model to the truncated dataset, and comparing model predictions to the withheld observations.
+
+This is critical because it evaluates the model against observations that were not used for fitting.
+
+The basic workflow is:
+
+1. remove the most recent observation from one or more CPUE/index series;
+2. refit the model;
+3. predict the withheld observation;
+4. compare predicted and observed values;
+5. repeat for multiple peels and prediction horizons;
+6. summarize prediction residuals and prediction skill.
+
+This can be applied to CPUE, survey indices and, where relevant, empirical composition summaries such as mean length or mean age.
+
+MASE metric: mean absolute scaled error
+
+A practical prediction-skill metric is the mean absolute scaled error (MASE). It compares the model prediction error to a naïve baseline forecast, typically the previous observation.
+
+Interpretation:
+
+- $MASE < 1$: the model predicts better than the naïve baseline;
+- $MASE = 1$: the model predicts about as well as the naïve baseline;
+- $MASE > 1$: the model predicts worse than the naïve baseline;
+- $MASE = 0.5$: the model is approximately twice as accurate as the naïve baseline.
+
+This makes MASE useful because it is interpretable and can be compared across indices with different scales.
+
+
+For each SPiCT and JABBA case study, the following diagnostic sequence is recommended:
+
+```{r diagnostic-checklist-table, echo=FALSE}
+diags <- data.frame(
+  Step = c(
+    "1. Convergence",
+    "2. Residual diagnostics",
+    "3. Production-function interpretation",
+    "4. Retrospective analysis",
+    "5. Hindcast cross-validation",
+    "6. Sensitivity analysis",
+    "7. Plausibility review"
+  ),
+  Purpose = c(
+    "Check whether estimation succeeded",
+    "Evaluate fit to CPUE/index data and residual randomness",
+    "Assess whether the data support a plausible production curve and MSY reference points",
+    "Evaluate stability of latent model quantities under data peels",
+    "Evaluate prediction skill against withheld observations",
+    "Evaluate robustness to priors, process error, initial depletion, catch and CPUE assumptions",
+    "Assess consistency with biology, exploitation history and expert knowledge"
+  ),
+  Key_outputs = c(
+    "Optimizer status, gradients, Hessian; or MCMC Rhat/ESS/trace plots",
+    "Residual plots, RMSE, runs tests",
+    "Production curve, B trajectory on curve, MSY point",
+    "Retrospective biomass and F/harvest plots, Mohn's rho",
+    "Prediction residuals, MASE, hindcast plots",
+    "Sensitivity tables and comparative figures",
+    "Narrative decision on acceptance, rejection or use as sensitivity"
+  )
+)
+knitr::kable(diags, caption = "Summary of diagnostic sequence for SPiCT and JABBA case studies.")
+```

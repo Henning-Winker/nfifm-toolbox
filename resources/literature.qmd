@@ -1,0 +1,95 @@
+---
+title: "Methodological literature"
+subtitle: "Peer-reviewed references for SPiCT, JABBA and related methods"
+---
+
+SPiCT and JABBA are widely documented state-space surplus production model frameworks in fisheries assessment. SPiCT is based on a continuous-time stochastic production model formulation. JABBA is a Bayesian state-space biomass-dynamics framework implemented in JAGS. The peer-reviewed literature includes core model descriptions, practical guidance, time-varying productivity developments, selectivity extensions and risk-equivalence frameworks.
+
+## Core references
+
+Pedersen, M.W. and Berg, C.W. 2017. A stochastic surplus production model in continuous time. *Fish and Fisheries*, 18(2): 226--243. <https://doi.org/10.1111/faf.12174>
+
+- Core SPiCT reference paper.
+- Introduces the continuous-time stochastic surplus production model.
+- Separates process variation in stock dynamics from observation error in biomass indices.
+- Includes fisheries dynamics so that uncertainty in catches can be propagated into estimated parameters and management quantities.
+
+
+Winker, H., Carvalho, F. and Kapur, M. 2018. JABBA: Just Another Bayesian Biomass Assessment. *Fisheries Research*, 204: 275--288. <https://doi.org/10.1016/j.fishres.2018.03.010>
+
+- Core JABBA reference paper.
+- Presents an open-source Bayesian state-space biomass-dynamics assessment framework.
+- Includes alternative production functions, multiple CPUE series, additional observation variance, retrospective diagnostics and projections.
+- Case study: South Atlantic swordfish.
+
+### JABBA-Select extension
+
+Winker, H., Carvalho, F., Thorson, J.T., Kell, L.T., Parker, D., Kapur, M., Sharma, R., Booth, A.J. and Kerwath, S.E. 2020. JABBA-Select: Incorporating life history and fisheries' selectivity into surplus production models. *Fisheries Research*, 222: 105355. <https://doi.org/10.1016/j.fishres.2019.105355>
+
+- Extends JABBA to account for fisheries selectivity and life-history information.
+- Distinguishes exploitable biomass from spawning biomass.
+- Provides a bridge between conventional surplus production models and age-structured production models.
+- Case study: South African silver kob.
+
+### Hierarchical assessment frameworks and risk equivalence
+
+Kell, L.T., Cardinale, M., Mosqueira, I., Winker, H. and Sharma, R. 2025. Transforming Data and Capacity-Limited Stock Assessment: Achieving Risk Equivalence with Hierarchical Assessment Frameworks and Auxiliary Data. *Sustainability*, 17(21): 9383. <https://doi.org/10.3390/su17219383>
+
+- Methodological synthesis and extension.
+- Proposes a hierarchical assessment framework (HAF) built around Bayesian state-space biomass dynamic models.
+- Uses JABBA with auxiliary data to demonstrate the framework.
+- Evaluates risk equivalence across data-rich and data-limited assessment tiers.
+- Integrates auxiliary information including fishing mortality indicators, depletion information and length-based metrics into JABBA-type biomass dynamic assessments.
+- Uses simulation testing conditioned on 82 assessed Northeast Atlantic stocks.
+
+### Comparative evaluation and uncertainty literature
+
+Kell, L.T., Sharma, R. and Winker, H. Artefact and Artifice: evaluation of the skill of catch-only methods for classifying stock status.
+
+- Comparative paper on assessment skill and classification performance.
+- Explores JABBA in a catch-only configuration alongside other catch-only assessment methods.
+- Relevant to model plausibility, structural uncertainty, stock-status misclassification risk and comparative assessment frameworks.
+
+### Good-practice reference for SPiCT and JABBA
+
+Kokkalis, A., Berg, C.W., Kapur, M.S., Winker, H., Jacobsen, N.S., Taylor, M.H., Ichinokawa, M., Miyagawa, M., Medeiros-Leal, W., Nielsen, J.R. and Mildenberger, T.K. 2024. Good practices for surplus production models. *Fisheries Research*, 275: 107010. <https://doi.org/10.1016/j.fishres.2024.107010>
+
+- Provides good-practice recommendations for applying surplus production models.
+- Discusses SPiCT and JABBA.
+- Covers input data, priors, diagnostics, simulation testing and use of SPMs for advice.
+
+### Management strategy evaluation and SPiCT performance testing
+
+Mildenberger, T.K., Berg, C.W., Kokkalis, A., Nielsen, J.R., Punt, A.E. and co-authors. Full citation to be completed once bibliographic details are verified.
+
+- Evaluates SPiCT within a management strategy evaluation framework.
+- Tests harvest control rules and robustness of SPiCT-based management advice.
+- Links SPiCT to operational management procedures and risk-performance evaluation.
+
+### Time-varying productivity extensions
+
+Chang, Y.-J., Winker, H., Sculley, M. and Hsu, J. 2020. Evaluation of the status and risk of overexploitation of the Pacific billfish stocks considering non-stationary population processes. *Deep Sea Research Part II: Topical Studies in Oceanography*, 175: 104707. <https://doi.org/10.1016/j.dsr2.2019.104707>
+
+- Uses the JABBA framework with non-stationary population processes.
+- Explores implications for biomass trajectories and management reference points.
+- Illustrates extension of Bayesian surplus production models beyond stationary production assumptions.
+
+Mildenberger, T.K. et al. 2025. Estimating time-varying productivity and reference points: A case of North Sea demersal fish stocks. *Fish and Fisheries*. <https://doi.org/10.1111/faf.12910>
+
+- Applies a modified SPiCT-type framework with time-varying productivity.
+- Relevant for cases where productivity and reference points are not stationary.
+
+
+### Classical surplus production models
+
+- Schaefer, M.B. (1954). Some aspects of the dynamics of populations important to the management of commercial marine fisheries. *Inter-American Tropical Tuna Commission Bulletin*, 1: 27–56.
+
+- Schaefer, M.B. (1957). A study of the dynamics of the fishery for yellowfin tuna in the eastern tropical Pacific Ocean. *Inter-American Tropical Tuna Commission Bulletin*, 2: 247–285.
+
+- Fox, W.W. (1970). An exponential surplus-yield model for optimizing exploited fish populations. *Transactions of the American Fisheries Society*, 99: 80–88.
+
+- Pella, J.J. and Tomlinson, P.K. (1969). A generalized stock production model. *Inter-American Tropical Tuna Commission Bulletin*, 13: 421–496.
+
+*State-space and Bayesian biomass dynamic models*
+
+- Meyer, R. and Millar, R.B. (1999). BUGS in Bayesian stock assessments. *Canadian Journal of Fisheries and Aquatic Sciences*, 56: 1078–1087.

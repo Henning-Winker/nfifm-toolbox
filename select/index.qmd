@@ -1,0 +1,164 @@
+---
+title: "Method selector"
+subtitle: "Which assessment methods fit your data, and what to watch out for"
+toc: false
+---
+
+Answer the questions about the stock and the data you have. The selector lists the methods whose data requirements you meet, the ones you don't (and why), and **misuse warnings** for your situation. It is a screening aid in the spirit of FishPath: it narrows the options and flags risks, and it does not replace diagnostics or working-group review.
+
+::: {.callout-note collapse="true"}
+## How the selector decides
+Each tool's data requirements are recorded in [`data/methods.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/methods.csv), and each warning is a rule in [`data/misuse_rules.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/misuse_rules.csv). **Do not use** means a core assumption is violated by the data you describe. **Caution** means the method can be used, but only with the extra checks named in the warning. The rules are a first draft for review.
+:::
+
+```{=html}
+<form id="selector" class="selector-grid" onsubmit="return false">
+<fieldset class="selector-q"><legend>Catch and abundance data</legend>
+<div class="sel-field" data-q="catch"><div class="sel-label">Catch time series</div>
+<label><input type="radio" name="catch" id="q-catch-none" value="none"> No catch series</label>
+<label><input type="radio" name="catch" id="q-catch-incomplete" value="incomplete"> Incomplete or under-reported</label>
+<label><input type="radio" name="catch" id="q-catch-reliable" value="reliable" checked> Reasonably complete</label>
+</div>
+<div class="sel-field" data-q="index"><div class="sel-label">Abundance indices</div>
+<label><input type="radio" name="index" id="q-index-0" value="0"> None</label>
+<label><input type="radio" name="index" id="q-index-1" value="1" checked> One</label>
+<label><input type="radio" name="index" id="q-index-2" value="2"> Two or more</label>
+</div>
+<div class="sel-field" data-q="index_type"><div class="sel-label">Main index type</div>
+<label><input type="radio" name="index_type" id="q-index_type-survey" value="survey"> Fishery-independent survey</label>
+<label><input type="radio" name="index_type" id="q-index_type-commercial" value="commercial" checked> Commercial CPUE</label>
+</div>
+<div class="sel-field" data-q="index_length"><div class="sel-label">Index length</div>
+<label><input type="radio" name="index_length" id="q-index_length-short" value="short" checked> Short (under ~10 years, or much shorter than catch)</label>
+<label><input type="radio" name="index_length" id="q-index_length-long" value="long"> Long, with contrast</label>
+</div>
+</fieldset>
+<fieldset class="selector-q"><legend>Length, age and biology</legend>
+<div class="sel-field" data-q="length"><div class="sel-label">Length composition</div>
+<label><input type="radio" name="length" id="q-length-none" value="none"> None</label>
+<label><input type="radio" name="length" id="q-length-some" value="some" checked> Some years or small samples</label>
+<label><input type="radio" name="length" id="q-length-annual" value="annual"> Representative, most years</label>
+</div>
+<div class="sel-field" data-q="age"><div class="sel-label">Age data</div>
+<label><input type="radio" name="age" id="q-age-no" value="no" checked> No</label>
+<label><input type="radio" name="age" id="q-age-yes" value="yes"> Yes, catch-at-age</label>
+</div>
+<div class="sel-field" data-q="lh"><div class="sel-label">Life-history parameters</div>
+<label><input type="radio" name="lh" id="q-lh-none" value="none"> None</label>
+<label><input type="radio" name="lh" id="q-lh-proxy" value="proxy" checked> Proxies (e.g. FishBase, resilience)</label>
+<label><input type="radio" name="lh" id="q-lh-local" value="local"> Local estimates (growth, M, maturity)</label>
+</div>
+<div class="sel-field" data-q="lifehistory"><div class="sel-label">Life history</div>
+<label><input type="radio" name="lifehistory" id="q-lifehistory-short-lived" value="short-lived"> Short-lived (e.g. small pelagics)</label>
+<label><input type="radio" name="lifehistory" id="q-lifehistory-medium" value="medium" checked> Medium</label>
+<label><input type="radio" name="lifehistory" id="q-lifehistory-long-lived" value="long-lived"> Long-lived</label>
+</div>
+</fieldset>
+<fieldset class="selector-q"><legend>Fishery and purpose</legend>
+<div class="sel-field" data-q="gears"><div class="sel-label">Gears</div>
+<label><input type="radio" name="gears" id="q-gears-single" value="single"> One main gear</label>
+<label><input type="radio" name="gears" id="q-gears-multiple" value="multiple" checked> Several gears with different selectivity</label>
+</div>
+<div class="sel-field" data-q="species"><div class="sel-label">Fishery</div>
+<label><input type="radio" name="species" id="q-species-single" value="single" checked> Single stock</label>
+<label><input type="radio" name="species" id="q-species-mixed" value="mixed"> Mixed or multispecies fishery</label>
+</div>
+<div class="sel-field" data-q="dynamics"><div class="sel-label">Recent F or recruitment</div>
+<label><input type="radio" name="dynamics" id="q-dynamics-stable" value="stable" checked> Fairly stable</label>
+<label><input type="radio" name="dynamics" id="q-dynamics-changing" value="changing"> Changed strongly</label>
+</div>
+<div class="sel-field" data-q="goal"><div class="sel-label">Purpose</div>
+<label><input type="radio" name="goal" id="q-goal-status" value="status" checked> Stock status</label>
+<label><input type="radio" name="goal" id="q-goal-catch-advice" value="catch advice"> Catch advice</label>
+<label><input type="radio" name="goal" id="q-goal-HCR-testing" value="HCR testing"> Test a harvest control rule</label>
+</div>
+</fieldset>
+</form>
+<h2 id="results">Results</h2>
+<div id="sel-summary" class="sel-summary">Loading the method registry…</div>
+<div id="sel-fit" class="sel-cards"></div>
+<h3>Data preparation you will likely need</h3>
+<div id="sel-data" class="sel-cards"></div>
+<h3>Turning results into advice</h3>
+<div id="sel-advice" class="sel-cards"></div>
+<h3>Methods that need data you don't have</h3>
+<table class="sel-table"><thead><tr><th>Method</th><th>Would also need</th></tr></thead><tbody id="sel-nofit"></tbody></table>
+<script>
+(function () {
+  function parseCSV(text) {
+    var rows = [], row = [], f = "", q = false;
+    for (var i = 0; i < text.length; i++) {
+      var c = text[i];
+      if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+      else if (c === '"') q = true;
+      else if (c === ",") { row.push(f); f = ""; }
+      else if (c === "\n") { row.push(f); rows.push(row); row = []; f = ""; }
+      else if (c !== "\r") f += c;
+    }
+    if (f !== "" || row.length) { row.push(f); rows.push(row); }
+    var h = rows.shift();
+    return rows.filter(function (r) { return r.length === h.length; }).map(function (r) {
+      var o = {}; h.forEach(function (k, j) { o[k] = r[j]; }); return o; });
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
+  var lvl = {length: {none: 0, some: 1, annual: 2}, lh: {none: 0, proxy: 1, local: 2}};
+  var form = document.getElementById("selector"), methods = [], rules = [];
+  function answers() {
+    var a = {};
+    form.querySelectorAll('input[type="radio"]:checked').forEach(function (el) { a[el.name] = el.value; });
+    a.index = +a.index;
+    var noIdx = a.index === 0;
+    ["index_type", "index_length"].forEach(function (k) {
+      form.querySelectorAll('input[name="' + k + '"]').forEach(function (el) { el.disabled = noIdx; });
+      if (noIdx) a[k] = "none";
+    });
+    return a;
+  }
+  function missing(m, a) {
+    var out = [];
+    if (m.req_catch === "reliable" && a.catch === "none") out.push("a catch time series");
+    if (+m.req_index > a.index) out.push(+m.req_index === 1 ? "an abundance index" : "two or more indices");
+    if (lvl.length[m.req_length] > lvl.length[a.length]) out.push(m.req_length === "annual" ? "representative annual length data" : "length composition data");
+    if (m.req_age === "yes" && a.age !== "yes") out.push("catch-at-age data");
+    if (lvl.lh[m.req_lh] > lvl.lh[a.lh]) out.push(m.req_lh === "local" ? "local life-history estimates" : "life-history proxies");
+    if (m.species === "mixed" && a.species !== "mixed") out.push("a mixed or multispecies fishery");
+    return out;
+  }
+  function warns(m, a) {
+    return rules.filter(function (r) { return (r.methods === "*" || r.methods.split("|").indexOf(m.id) >= 0) && String(a[r.question]) === r.value; });
+  }
+  function href(m) { return "../" + m.page.replace(/\.qmd$/, ".html"); }
+  function card(m, cls, pill, body) {
+    return '<div class="sel-card ' + cls + '"><div class="sel-head"><a href="' + href(m) + '">' + esc(m.name) + '</a><span class="sel-pill">' + pill + '</span></div>' + body + '</div>';
+  }
+  function update() {
+    var a = answers();
+    var ass = methods.filter(function (m) { return m.category === "Assessment"; }).map(function (m) {
+      var w = warns(m, a);
+      return {m: m, miss: missing(m, a), w: w, stops: w.filter(function (x) { return x.severity === "stop"; }).length, cautions: w.filter(function (x) { return x.severity === "caution"; }).length};
+    });
+    var fit = ass.filter(function (x) { return !x.miss.length; }).sort(function (p, q) { return p.stops - q.stops || p.cautions - q.cautions; });
+    var nofit = ass.filter(function (x) { return x.miss.length; });
+    var ok = fit.filter(function (x) { return !x.stops; }).length;
+    document.getElementById("sel-summary").innerHTML = '<span class="sel-count">' + ok + '</span> candidate methods · <span class="sel-count">' + (fit.length - ok) + '</span> not recommended for your data · <span class="sel-count">' + nofit.length + "</span> need data you don't have";
+    document.getElementById("sel-fit").innerHTML = fit.length ? fit.map(function (x) {
+      var cls = x.stops ? "sel-stop" : (x.cautions ? "sel-caution" : "sel-ok");
+      var pill = x.stops ? "Do not use" : (x.cautions ? x.cautions + " caution" + (x.cautions > 1 ? "s" : "") : "No flags");
+      var body = '<div class="sel-meta">' + esc(x.m.class) + " · " + esc(x.m.application) + '</div><div class="sel-meta"><b>Gives:</b> ' + esc(x.m.outputs) + " · <b>Role:</b> " + esc(x.m.advice_role) + "</div>";
+      if (x.w.length) body += '<ul class="sel-warn">' + x.w.map(function (w) { return "<li><b>" + (w.severity === "stop" ? "Do not use:" : "Caution:") + "</b> " + esc(w.message) + "</li>"; }).join("") + "</ul>";
+      return card(x.m, cls, pill, body);
+    }).join("") : '<p class="sel-none">No assessment method fits these data. See the table below for what each method would need.</p>';
+    var data = methods.filter(function (m) { return m.category === "Data and CPUE tools"; }).filter(function (m) {
+      return (m.id === "cpuetargeting" && a.index > 0 && a.index_type === "commercial") || (m.id === "jara" && (a.index >= 2 || a.catch === "incomplete")) || (m.id === "fishsize" && a.length !== "none");
+    });
+    document.getElementById("sel-data").innerHTML = data.length ? data.map(function (m) { return card(m, "sel-data", "Data step", '<div class="sel-meta">' + esc(m.subclass) + " · " + esc(m.application) + "</div>"); }).join("") : '<p class="sel-none">No specific data-preparation tool suggested for these answers.</p>';
+    var adv = methods.filter(function (m) { return m.category === "Advice and MSE"; }).filter(function (m) { return m.id === "flref" ? fit.length > 0 : a.goal === "HCR testing"; });
+    document.getElementById("sel-advice").innerHTML = adv.length ? adv.map(function (m) { return card(m, "sel-advice", "Advice step", '<div class="sel-meta">' + esc(m.outputs) + "</div>"); }).join("") : '<p class="sel-none">No candidate assessment yet, so no advice step.</p>';
+    document.getElementById("sel-nofit").innerHTML = nofit.map(function (x) { return '<tr><td><a href="' + href(x.m) + '">' + esc(x.m.name) + "</a></td><td>" + esc(x.miss.join(", ")) + "</td></tr>"; }).join("");
+  }
+  Promise.all(["../data/methods.csv", "../data/misuse_rules.csv"].map(function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.text(); }); }))
+    .then(function (t) { methods = parseCSV(t[0]); rules = parseCSV(t[1]); form.addEventListener("change", update); update(); })
+    .catch(function () { document.getElementById("sel-summary").textContent = "The method registry could not be loaded. Open the site from a web server (quarto preview or GitHub Pages), not as a local file."; });
+})();
+</script>
+```

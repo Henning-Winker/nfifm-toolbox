@@ -1,0 +1,81 @@
+---
+title: "NFIFM Toolbox"
+subtitle: "Shared method library and code for stock assessment, from data to management advice"
+toc: false
+---
+
+::: {.callout-important appearance="simple"}
+**Development version.** *NFIFM Toolbox* is a working title for the shared method library of the FAO Global Stock Assessment Capacity Programme. Content is draft and not an official FAO product.
+:::
+
+The toolbox is the **shared method library and code** of the programme's cross-regional learning hub. It helps national and regional analysts pick an assessment method that fits their data, prepare the data properly, run and diagnose the assessment, and turn results into management advice. It is used across the regional implementation platforms and reports into SOFIA, FIRMS and SDG 14.4.1.
+
+Every method is documented the same way. Each page covers data requirements, assumptions, diagnostics, worked examples and code, and has an explicit **misuse prevention** section: when *not* to use the method, common misuses, and checks to pass before results are used for advice.
+
+## From data to advice
+
+::: {.path}
+[1 · Select a method](select/index.qmd) [→]{.arrow} [2 · Prepare data](data-tools/index.qmd) [→]{.arrow} [3 · Assess](methods/index.qmd) [→]{.arrow} [4 · Diagnose and check for misuse](guidance/diagnostics.qmd) [→]{.arrow} [5 · Advice and HCRs](advice/index.qmd)
+:::
+
+Start with the **[method selector](select/index.qmd)**. Describe your data (catch, indices, length or age composition, life history, gears, fishery) and it lists the candidate methods, the data you would still need for others, and the misuse warnings for your situation.
+
+## Thematic workstreams
+
+::: {.ws-grid}
+::: {.ws-card style="--ws:#1f5fa8"}
+[Workstream 1]{.ws-num}
+
+#### [Multispecies and multigear assessment](methods/multispecies/index.qmd)
+Multispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity.
+:::
+::: {.ws-card style="--ws:#2e7d4f"}
+[Workstream 2]{.ws-num}
+
+#### [Data-poor and small-scale fisheries](methods/dynamic-pool/index.qmd)
+Length-based and catch-only methods, SSF catch and effort monitoring, participatory data collection.
+:::
+::: {.ws-card style="--ws:#c4552b"}
+[Workstream 3]{.ws-num}
+
+#### [Assessment to advice and harvest strategies](advice/index.qmd)
+Stock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE.
+:::
+::: {.ws-card style="--ws:#6b4fa0"}
+[Workstream 4]{.ws-num}
+
+#### [Capacity building](resources/installation.qmd)
+National and regional mentoring, working groups, e-learning and training of trainers.
+:::
+::: {.ws-card style="--ws:#0f7c86"}
+[Workstream 5]{.ws-num}
+
+#### [Knowledge sharing and consensus](contributing.qmd)
+Shared methods and code, peer review, technical consultations, global reporting (SOFIA, SDG 14.4.1).
+:::
+::: {.ws-card style="--ws:#b7791f"}
+[Workstream 6]{.ws-num}
+
+#### [National assessments ↔ RFMOs](regions/index.qmd)
+Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, RFMO data obligations.
+:::
+:::
+
+## Regional platforms
+
+The toolbox is shared; regional hubs add their own case studies, data and priorities. See [Regional hubs](regions/index.qmd). The first hub is the **[CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)** (Africa, WASOP-CECAF).
+
+## Current status
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+m <- read_methods()
+tab <- as.data.frame.matrix(table(factor(m$category, levels = c("Assessment", "Data and CPUE tools", "Advice and MSE")),
+                                  factor(m$status, levels = c("stub", "draft", "reviewed"))))
+tab <- cbind(Section = rownames(tab), tab); rownames(tab) <- NULL
+names(tab) <- c("Section", "Stub", "Draft", "Reviewed")
+knitr::kable(tab)
+```
+
+Every page has **Edit this page** and **Report an issue** links (top right). Changes are proposed as pull requests and reviewed before they go live. See [Contributing](contributing.qmd).

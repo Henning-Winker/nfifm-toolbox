@@ -1,0 +1,17 @@
+---
+title: "Crosswalk"
+subtitle: "Cross-cutting attributes of all tools in the catalogue"
+---
+
+The crosswalk lists every tool in the catalogue with its attributes. Use the filter boxes to screen tools; click a name to open its catalogue entry. It is **not** a ranking: its purpose is to make assumptions and data requirements explicit.
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+crosswalk_table(site_root = "../")
+```
+
+::: {.callout-note}
+## Source of truth
+Generated from [`data/methods.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/methods.csv), which also drives the [method selector](../select/index.qmd) and the attribute row on each method page. Edit one row and all three update on the next build.
+:::

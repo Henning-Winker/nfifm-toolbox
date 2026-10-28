@@ -1,0 +1,180 @@
+---
+title: "SPiCT"
+subtitle: "Catch + one or more indices (+ auxiliary)"
+categories: [biomass dynamic, state-space, likelihood]
+---
+
+[Draft]{.status-badge .status-draft}
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+method_attributes("spict")
+```
+
+
+## Method overview
+
+| Field | Entry |
+|---|---|
+| **Family / class** | Biomass dynamic models → unstructured biomass dynamics |
+| **Method name** | SPiCT (R/TMB) — [DTUAqua/spict](https://github.com/DTUAqua/spict) |
+| **Short description** | State-space surplus production model in continuous time, fitted by maximum likelihood with random effects integrated by the Laplace approximation (TMB). |
+| **Main outputs** | Biomass and F trajectories, catch and index fits, production curve, $B/B_{MSY}$, $F/F_{MSY}$ with confidence intervals, forecasts. |
+| **Typical use case** | Catch + one or more indices; fast dynamics, seasonal or irregularly timed data; repeated sensitivity runs. |
+
+SPiCT, the Stochastic Production Model in Continuous Time, is a state-space surplus production model implemented in R using Template Model Builder (TMB). Its continuous-time formulation is a key distinction from annual discrete-time SPMs. This can be useful for shorter-lived species, seasonal fisheries, and cases where catches or indices occur at irregular times.
+
+SPiCT estimates latent biomass and fishing-mortality trajectories while accounting for stochastic process variation and observation error. The model is fitted by maximum likelihood, with random effects integrated using the Laplace approximation.
+
+### Conceptual strengths
+
+SPiCT is particularly useful where:
+
+- the stock has relatively fast dynamics;
+- data include seasonal or irregular timing;
+- analysts need fast fitting and repeated sensitivity runs;
+- a likelihood-based framework is preferred;
+- continuous-time biomass and fishing-mortality dynamics are advantageous;
+- diagnostics and forecast functions are required in a reproducible workflow.
+
+### Outputs to emphasise
+
+The SPiCT chapter should emphasize:
+
+- biomass trajectory;
+- fishing mortality or harvest-rate trajectory;
+- catch and index fits;
+- production-function plot;
+- relative stock status $B/B_{MSY}$ and $F/F_{MSY}$;
+- uncertainty intervals;
+- residual diagnostics;
+- retrospective analysis;
+- hindcast cross-validation;
+- sensitivity tables.
+
+A SPiCT Kobe-style plot can be included for descriptive status communication, but it should not be described as posterior probability output.
+
+
+## Data requirements
+
+| Field | Entry |
+|---|---|
+| **Minimum data** | Catch time series and at least one biomass index (CPUE or survey). |
+| **Preferred data** | Long catch series with contrast; several indices with standard errors; sub-annual data where available. |
+| **Optional auxiliary data** | Life-history information for priors on $r$; initial depletion information ($B_1/K$); catch uncertainty. |
+| **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
+
+## Data processing requirements
+
+| Field | Entry |
+|---|---|
+| **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
+| **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
+| **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
+| **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
+| **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
+
+## Model documentation
+
+| Field | Entry |
+|---|---|
+| **Key parameters** | $r$ (or $m$), $K$, shape $n$, $q$, process and observation SDs, $B_1/K$. |
+| **Priors / fixed inputs** | Penalties/priors entered as likelihood components (e.g. `logn`, `logbkfrac`, `logr`, variance ratios). See below. |
+| **Error structure** | Process error on biomass and F; observation error on indices and catch. |
+| **State-space formulation** | Yes — latent biomass and fishing mortality. |
+| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+
+See [Surplus production models](index.qmd) for the shared conceptual model, the state-space formulation and caveats common to all SPMs.
+
+### Estimation and penalties
+
+SPiCT is not a fully Bayesian model in the same sense as JABBA. Priors or penalties in SPiCT enter the likelihood as additional probability components or constraints. They can stabilize estimation, regularize weakly identified parameters and reflect external information, but the resulting inference is still likelihood-based rather than posterior Bayesian inference.
+
+This distinction should be made clearly in the guide:
+
+- in **JABBA**, priors define probability distributions and inference is based on the posterior;
+- in **SPiCT**, prior-like terms are treated as penalties or likelihood components in a maximum-likelihood framework.
+
+In practice, the distinction can become blurred in low-information assessments because both Bayesian priors and frequentist penalties regularize weakly identified models. However, the interpretation of uncertainty differs.
+
+
+## Assumptions and sensitivities
+
+| Field | Entry |
+|---|---|
+| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
+| **Main sensitivities** | Initial depletion, production shape, priors on $r$, process and observation variance. |
+| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
+| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
+| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
+
+### Common prior and penalty options
+
+The specific options depend on SPiCT version and implementation details, but several practical categories are commonly explored within assessments.
+
+Recommended considerations include:
+
+- **Initial depletion assumptions**: assumptions regarding initial biomass relative to carrying capacity ($B_1/K$) can strongly influence model trajectories when the catch series does not begin near the start of exploitation. Where early catches are low and the fishery developed gradually, relatively high initial depletion (e.g. $B_1/K=0.9$) assumptions may be appropriate. Where substantial exploitation had already occurred before the beginning of the catch series, lower depletion scenarios should also be explored. In SPiCT, $B_1/K$ can be attempted to be estimated without prior. In some case, a vaguegly informative prior (e.g. $log.sd=0.5$) was then added around the initial unconstrained estimate to stabilise the model for future updates.  
+
+
+- **Production-shape assumptions**: flexible production-shape estimation should generally only be explored when the data contain sufficient contrast. Schaefer production functions are often used as reference scenarios because they provide stable and interpretable reference points and considered generally robust for advice. Shape parameters below 1 (i.e. more skewed than a Fox model) were typically not considered in recent benchmark assessments of ICES and GFCM, where a simple Schaefer model is most commonly chosen. Alternative shape assumptions should be compared through production-function plots, diagnostics and sensitivity analyses.
+
+- **Productivity priors or penalties**: intrinsic productivity ($r$) is frequently weakly identified, especially when CPUE series are short relative to catch histories. Life-history information can therefore provide useful stabilizing information for defining biologically plausible productivity ranges. Implausibly high productivity estimates should generally be treated cautiously, particularly for long-lived or low-productivity species. All recent benchmark assessments in ICES and GFCM considered informative priors on $r$.
+
+- **Process variance assumptions**: assumptions regarding process variance can influence biomass flexibility, uncertainty propagation and retrospective behaviour. Very low process variance assumptions may over-constrain biomass trajectories, whereas highly flexible process variance assumptions may allow unrealistic fluctuations. Alternative process-variance assumptions should therefore be explored where diagnostics or retrospective analyses indicate instability. 
+
+- **Observation variance assumptions**: CPUE variance assumptions, additional variance estimation and relative weighting among indices can substantially affect model fits and uncertainty estimates. Indices with uncertain standardization or inconsistent temporal coverage may require more conservative observation-error assumptions.
+
+- **Parameter bounds and constraints**: practical estimation bounds are sometimes required to avoid implausible parameter combinations or unstable optimization behaviour, particularly in low-information situations. However, strongly restrictive bounds should be avoided unless supported by biological or fishery knowledge.
+
+- **Penalty strength and regularization**: SPiCT uses a penalized likelihood framework in which penalties may help stabilize estimation and avoid unrealistic parameter combinations. Penalty assumptions should therefore be evaluated carefully to ensure that model behaviour remains driven primarily by the observed data rather than excessive regularization.
+
+These assumptions should generally be treated as sensitivity axes rather than fixed truths. The objective is not to identify a single “best” configuration, but rather to evaluate the robustness, plausibility and consistency of alternative model formulations.
+
+[Diagnostics](../../guidance/diagnostics.qmd) · [Sensitivity analysis](../../guidance/sensitivity.qmd)
+
+
+## Misuse prevention
+
+```{r}
+#| echo: false
+#| results: asis
+method_warnings("spict")
+```
+
+| Field | Entry |
+|---|---|
+| **Do not use when** | The catch series is substantially incomplete or under-reported; the only index is short and flat (no contrast); process and observation variance both float freely with a short index. |
+| **Common misuses** | Presenting SPiCT Kobe plots as posterior probabilities; accepting a fit without checking convergence and residuals; estimating the production shape with little contrast. |
+| **Pre-use checklist** | Convergence and finite SEs; residual runs tests; retrospective Mohn's rho; hindcast MASE; sensitivity to $r$ prior, $B_1/K$ and process error. |
+| **Advice suitability** | Stock status; catch advice via forecasts; estimation model in MSE. |
+
+## Applications and support
+
+| Field | Entry |
+|---|---|
+| **Applications / case studies** | [CECAF hub: *Sardinella maderensis* (South)](https://henning-winker.github.io/cecaf-assessment-catalogue/case-studies/sardinella-maderensis-south.html) · [Institutional applications](../../resources/applications.qmd) |
+| **References** | Pedersen & Berg (2017) *Fish and Fisheries* 18: 226–243. <https://doi.org/10.1111/faf.12174> · [Literature](../../resources/literature.qmd) |
+| **Software / tools** | R package `spict` (dev branch); [installation](../../resources/installation.qmd) |
+
+::: {.catalogue-example-grid}
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Suitable example
+:::
+Reference-case fit in the [CECAF hub: *Sardinella maderensis* (South)](https://henning-winker.github.io/cecaf-assessment-catalogue/case-studies/sardinella-maderensis-south.html).
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Assumption sensitivity
+:::
+Priors on $r$ and process error in the same case study.
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Unsuitable example
+:::
+[To be completed]{.todo}
+:::
+:::

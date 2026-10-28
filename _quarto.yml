@@ -1,0 +1,126 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "resources/guides/*.html"   # full package guides, served as-is
+    - "data/*.csv"                # read by the method selector in the browser
+  render:
+    - "**/*.qmd"                  # .md files (README, CONTRIBUTING, LICENSE) are for GitHub only
+  execute-dir: project            # all R paths (e.g. "data/...") are relative to the repo root
+
+execute:
+  freeze: false                   # pages rebuild on every push, so CSV edits always show up
+  echo: true
+  warning: false
+  message: false
+
+website:
+  title: "NFIFM Toolbox"
+  description: "Shared method library and code for stock assessment, from data to management advice (development version)"
+  site-url: https://henning-winker.github.io/nfifm-toolbox
+  repo-url: https://github.com/Henning-Winker/nfifm-toolbox
+  repo-actions: [edit, source, issue]
+  page-navigation: true
+  reader-mode: true
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    left:
+      - text: "Method selector"
+        href: select/index.qmd
+      - text: "Framework"
+        href: framework/hierarchy.qmd
+      - text: "Methods"
+        href: methods/index.qmd
+      - text: "Data tools"
+        href: data-tools/index.qmd
+      - text: "Advice"
+        href: advice/index.qmd
+      - text: "Regional hubs"
+        href: regions/index.qmd
+    right:
+      - text: "Contribute"
+        href: contributing.qmd
+      - icon: github
+        href: https://github.com/Henning-Winker/nfifm-toolbox
+  sidebar:
+    style: docked
+    collapse-level: 2
+    contents:
+      - index.qmd
+      - select/index.qmd
+      - section: "Framework"
+        contents:
+          - framework/hierarchy.qmd
+          - framework/crosswalk.qmd
+          - framework/catalogue-structure.qmd
+      - section: "Assessment methods"
+        contents:
+          - methods/index.qmd
+          - section: "Biomass dynamic"
+            contents:
+              - methods/biomass-dynamic/index.qmd
+              - methods/biomass-dynamic/spict.qmd
+              - methods/biomass-dynamic/jabba.qmd
+              - methods/biomass-dynamic/cmsy.qmd
+          - section: "Length-based and per-recruit"
+            contents:
+              - methods/dynamic-pool/index.qmd
+              - methods/dynamic-pool/flicc.qmd
+              - methods/dynamic-pool/lbspr.qmd
+              - methods/dynamic-pool/lbb.qmd
+              - methods/dynamic-pool/fishblicc.qmd
+              - methods/dynamic-pool/ypr-spr.qmd
+              - methods/dynamic-pool/scal.qmd
+          - methods/age-structured/age-structured.qmd
+          - section: "Multispecies"
+            contents:
+              - methods/multispecies/index.qmd
+              - methods/multispecies/mmsyfm.qmd
+      - section: "Data and CPUE tools"
+        contents:
+          - data-tools/index.qmd
+          - data-tools/cpuetargeting.qmd
+          - data-tools/jara.qmd
+          - data-tools/fishsize.qmd
+      - section: "Advice and MSE"
+        contents:
+          - advice/index.qmd
+          - advice/flref.qmd
+          - advice/mse.qmd
+      - section: "Guidance"
+        contents:
+          - guidance/misuse.qmd
+          - guidance/diagnostics.qmd
+          - guidance/sensitivity.qmd
+      - regions/index.qmd
+      - section: "Resources"
+        contents:
+          - resources/installation.qmd
+          - resources/literature.qmd
+          - resources/applications.qmd
+          - text: "FLicc user guide"
+            href: resources/guides/FLicc_user_guide.html
+      - contributing.qmd
+  page-footer:
+    left: "NFIFM Toolbox · development version, not an official FAO product"
+    right: "Content CC BY 4.0 · Code MIT"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: assets/styles.css
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js"
+    toc: true
+    toc-depth: 3
+    code-fold: show
+    code-tools: true
+    df-print: paged
+    fig-align: center
+    fig-width: 8
+    fig-height: 5

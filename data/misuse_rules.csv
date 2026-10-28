@@ -1,0 +1,15 @@
+methods,question,value,severity,message
+cmsy,catch,incomplete,stop,Catch-only methods assume the catch series is complete. Under-reported or missing catches bias productivity and depletion directly.
+cmsy,goal,catch advice,caution,Catch-only status is driven largely by priors on depletion and resilience. It should not be the sole basis for catch advice.
+cmsy,lifehistory,short-lived,caution,"Short-lived, recruitment-driven stocks fluctuate strongly; catch-only depletion priors are rarely informative for them."
+bsm|jabba|spict,catch,incomplete,stop,Surplus production models treat catch as (near) complete removals. Reconstruct missing catches or add catch uncertainty before fitting.
+bsm|jabba|spict,index_length,short,caution,A short index relative to the catch history weakly identifies depletion and productivity. Use informative priors and test initial-depletion sensitivity.
+bsm|jabba|spict,index_type,commercial,caution,Commercial CPUE may be hyperstable or affected by changing targeting. Standardise it (see cpueTargeting) before use.
+bsm|jabba|spict,species,mixed,caution,Single-species production models ignore technical interactions; reference points may not be jointly achievable in mixed fisheries.
+lbspr|lbb,gears,multiple,caution,"Single-fleet length methods assume one selectivity. Pooling gears with different selectivity biases SPR; use a multi-gear model (FLicc, fishblicc) or analyse gears separately."
+lbspr|lbb|flicc|fishblicc|ypr,dynamics,changing,caution,"Equilibrium per-recruit methods lag behind changes in F or recruitment: pessimistic during a rebuild, optimistic while F increases."
+lbspr|flicc|fishblicc,lh,proxy,caution,Results are most sensitive to Linf and M/k. Life-history proxies (e.g. from FishBase) require sensitivity runs over plausible ranges.
+lbspr|lbb|flicc|fishblicc|scal,length,some,caution,Check sample size per gear-year: fewer than about 50 fish or 10 length bins is a red flag. Pool or drop poorly sampled years.
+lbspr|lbb|flicc|fishblicc,goal,catch advice,caution,"Length-based per-recruit methods give status relative to F reference points, not biomass or catch levels. Catch advice needs an additional step (e.g. an indicator-based HCR)."
+lbspr|lbb|flicc|fishblicc|ypr|scal,species,mixed,caution,Single-stock per-recruit reference points ignore technical interactions between species caught together.
+*,goal,HCR testing,caution,An assessment fit alone does not test a harvest control rule. Use the assessment as the estimation model in an MSE (see FLR mse).

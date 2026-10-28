@@ -1,0 +1,49 @@
+name: New method entry
+description: Propose an assessment method for the catalogue
+title: "[Method] "
+labels: ["method", "catalogue"]
+body:
+  - type: input
+    id: name
+    attributes: {label: Method name, placeholder: "e.g. LBSPR"}
+    validations: {required: true}
+  - type: dropdown
+    id: class
+    attributes:
+      label: Model class
+      options:
+        - Biomass dynamic models
+        - Dynamic pool models – length-based or per-recruit
+        - Dynamic pool models – age- or length-structured dynamic
+        - Multispecies and mixed fisheries
+        - Data and CPUE tool
+        - Advice and MSE tool
+        - Other / unsure
+    validations: {required: true}
+  - type: checkboxes
+    id: context
+    attributes:
+      label: Application contexts
+      options:
+        - label: Catch-only
+        - label: Catch + index
+        - label: Catch + multiple indices
+        - label: Catch + index + auxiliary data
+        - label: Length composition
+        - label: Age composition
+  - type: textarea
+    id: data
+    attributes: {label: "Minimum and preferred data", description: "What data does the method need?"}
+  - type: textarea
+    id: assumptions
+    attributes: {label: Core assumptions and main sensitivities}
+  - type: textarea
+    id: software
+    attributes: {label: "Software, references and applications", description: "Packages, key papers, RFMO / CECAF uses"}
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contribution
+      options:
+        - label: I can draft the catalogue page
+        - label: I can provide a worked example / case study

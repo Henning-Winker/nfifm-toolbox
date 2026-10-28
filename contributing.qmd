@@ -1,0 +1,45 @@
+---
+title: "Contributing"
+subtitle: "How to add or improve methods, guidance and case studies"
+---
+
+The toolbox works like a wiki with peer review. Anyone can propose a change, and a reviewer from the CECAF working group checks it before it goes live. Nothing is edited live on the website.
+
+## Three ways to contribute
+
+| You want to… | Do this | Git needed? |
+|---|---|---|
+| Fix a typo, add a reference, clarify a paragraph | Click **Edit this page** (top right of any page), edit in the browser, choose *Propose changes* | No |
+| Suggest a method, report an error, ask a question | Click **Report an issue**, or open an issue from a template: *New method entry*, *Case study*, *Correction* | No |
+| Add a method page or an executable case study | Fork / branch, add files, render locally, open a pull request | Yes |
+
+## Adding a method
+
+1. Add one row to `data/methods.csv` (id, data requirements for the selector, attributes, page path). Add any misuse warnings to `data/misuse_rules.csv`.
+2. Copy `methods/_template.qmd` into `the matching folder (`methods/...`, `data-tools/` or `advice/`).
+3. Fill in the standard fields (see [Catalogue structure](framework/catalogue-structure.qmd)). Keep `[To be completed]{.todo}` for anything you do not yet know.
+4. Add the page to the `sidebar` in `_quarto.yml`.
+5. Set the status badge: `stub` → `draft` → `reviewed` (reviewed only after working-group sign-off).
+
+## Adding a case study
+
+1. Put the input data in `rdata/` (small CSV/RData files only; large outputs do not belong in git).
+2. Case studies live in the regional hubs (e.g. the CECAF assessment catalogue); copy one there and adapt it. Keep `freeze: true` in the page header.
+3. Render it locally: `quarto render case-studies/<your-file>.qmd`.
+4. Commit the page **and** the generated `_freeze/case-studies/<your-file>/` folder, so the website can be rebuilt without re-running the models.
+
+## Working locally
+
+```bash
+git clone https://github.com/Henning-Winker/nfifm-toolbox.git
+cd nfifm-toolbox
+quarto preview          # live preview at http://localhost:xxxx
+```
+
+Requirements: [Quarto](https://quarto.org/docs/get-started/) ≥ 1.4, R ≥ 4.3 with `knitr`, `rmarkdown`, `DT` and `ggplot2`. To run the case studies you also need the assessment packages and JAGS (see [Installation](resources/installation.qmd)).
+
+## Review and status
+
+- Every pull request needs at least one approving review from a maintainer.
+- A page moves to **reviewed** only after it has been discussed by the relevant CECAF working group. Note the meeting in the pull request.
+- Content is licensed CC BY 4.0 and code MIT, so contributions are accepted under these licences.

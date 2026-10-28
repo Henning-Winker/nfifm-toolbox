@@ -1,0 +1,14 @@
+---
+title: "Advice and harvest strategies"
+subtitle: "Workstream 3: from accepted assessments to reference points, advice and HCRs"
+---
+
+An accepted assessment becomes advice in three steps: stock status against reference points, a standard advice format, and, where needed, a harvest control rule tested by (simplified) MSE.
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+crosswalk_table(site_root = "../", category = "Advice and MSE")
+```
+
+[Content to be added: standard advice formats, reference-point conventions (e.g. $B_{lim}$, $F_{MSY}$ proxies), capacity and effort limits.]{.todo}

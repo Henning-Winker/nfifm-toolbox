@@ -1,0 +1,164 @@
+---
+title: "JABBA"
+subtitle: "Catch + one or more indices (+ auxiliary)"
+categories: [biomass dynamic, state-space, Bayesian]
+---
+
+[Draft]{.status-badge .status-draft}
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+method_attributes("jabba")
+```
+
+
+## Method overview
+
+| Field | Entry |
+|---|---|
+| **Family / class** | Biomass dynamic models → unstructured biomass dynamics |
+| **Method name** | JABBA (R/JAGS) — [jabbamodel/JABBA](https://github.com/jabbamodel/JABBA) |
+| **Short description** | Bayesian state-space surplus production model fitted by MCMC, estimating biomass dynamics, process and observation error, reference points and stock status. |
+| **Main outputs** | Posterior biomass, depletion and harvest-rate trajectories; MSY reference points; Kobe probabilities; projections and risk tables. |
+| **Typical use case** | Catch + one or more indices where priors matter and probabilistic status statements are required; long catch histories with shorter CPUE series. |
+
+JABBA, Just Another Bayesian Biomass Assessment, is a Bayesian state-space surplus production model implemented in R/JAGS. It estimates biomass dynamics, process error, observation error, reference points and stock status using MCMC. JABBA has been widely used in tuna, billfish, shark and coastal fish assessments, often in contexts with long catch histories and shorter CPUE series.
+
+JABBA is particularly useful where:
+
+- prior information is important;
+- uncertainty needs to be expressed probabilistically;
+- posterior stock-status probabilities are required;
+- multiple CPUE series need to be fitted;
+- scenario testing and ensemble-style assessment are central;
+- Kobe plots and risk tables are required for management interpretation.
+
+
+## Data requirements
+
+| Field | Entry |
+|---|---|
+| **Minimum data** | Catch time series and at least one abundance index. |
+| **Preferred data** | Multiple standardised indices with standard errors; catch with contrast. |
+| **Optional auxiliary data** | Life-history priors on $r$; priors on $K$ and initial depletion $\psi$; auxiliary data types supported in recent versions. |
+| **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
+
+## Data processing requirements
+
+| Field | Entry |
+|---|---|
+| **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
+| **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
+| **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
+| **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
+| **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
+
+## Model documentation
+
+| Field | Entry |
+|---|---|
+| **Key parameters** | $r$, $K$, $\psi = B_1/K$, shape $m$, $q$, $\sigma_{proc}$, $\sigma_{obs}$. |
+| **Priors / fixed inputs** | Formal Bayesian priors on $r$, $K$, $\psi$, shape, process and observation variance, catchability. |
+| **Error structure** | Process error on biomass; lognormal observation error for each index. |
+| **State-space formulation** | Yes — latent biomass. |
+| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+
+See [Surplus production models](index.qmd) for the shared conceptual model, the state-space formulation and caveats common to all SPMs.
+
+### Bayesian priors
+
+Priors are central to JABBA. In data-limited and data-moderate SPMs, priors are not merely technical details; they often provide essential biological regularization.
+
+### Posterior interpretation
+
+JABBA outputs should be interpreted as posterior distributions. This allows direct calculation of probabilities such as:
+
+- probability that $B/B_{MSY} < 1$;
+- probability that $F/F_{MSY} > 1$;
+- probability of being in each Kobe quadrant;
+- probability that catch advice achieves a specified risk threshold.
+
+This is a major distinction from SPiCT. JABBA's Kobe plot is a posterior probability summary, while SPiCT's status plot is likelihood-based and should be presented accordingly.
+
+
+## Assumptions and sensitivities
+
+| Field | Entry |
+|---|---|
+| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
+| **Main sensitivities** | Priors on $r$, $K$ and $\psi$; process and observation variance; production shape; index selection. |
+| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
+| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
+| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
+
+### Common prior options
+
+JABBA provides substantial flexibility for incorporating prior information within a Bayesian state-space framework. Prior assumptions can strongly influence model behaviour in low-information situations and should therefore be documented transparently and explored through sensitivity analyses.
+
+Recommended considerations include:
+
+- **Initial depletion priors**: assumptions regarding initial biomass relative to carrying capacity ($\psi = B_1/K$) can strongly influence estimated biomass trajectories, particularly when catch histories begin after substantial exploitation has already occurred. Where historical catches begin close to the onset of exploitation and early catches are low, relatively high initial depletion assumptions may be appropriate. Where fisheries were already substantially developed at the start of the catch series, lower initial depletion scenarios should also be explored.
+
+- **Productivity priors**: intrinsic productivity ($r$) is commonly informed using life-history characteristics, resilience classifications or previous assessments. Long-lived, slow-growing species generally require lower productivity assumptions than short-lived or highly productive species. Alternative productivity priors should usually be evaluated through sensitivity analyses, particularly where abundance indices are short relative to catch histories.
+
+- **Carrying capacity priors**: assumptions regarding carrying capacity ($K$) can influence depletion estimates and biomass scaling, especially where abundance indices contain limited contrast. Very broad priors may lead to unstable or weakly identified biomass trajectories, whereas overly restrictive priors may constrain the model unrealistically. Priors should therefore remain biologically plausible while allowing reasonable flexibility.
+
+- **Production-shape assumptions**: Schaefer, Fox or Pella-Tomlinson production functions may imply substantially different production dynamics and reference points. Schaefer-type production functions are often useful as transparent reference scenarios, while more flexible shape assumptions should generally only be interpreted cautiously unless the data provide sufficient contrast.
+
+- **Process variance priors**: assumptions regarding stochastic biomass variability influence uncertainty propagation, retrospective behaviour and stock-status trajectories. Very low process variance assumptions may over-constrain biomass dynamics, whereas very high process variance may allow unrealistic biomass flexibility. Alternative process-variance assumptions should therefore be explored where diagnostics or retrospective patterns suggest instability.
+
+- **Observation variance priors**: assumptions regarding observation error can substantially influence relative weighting among CPUE or survey indices, particularly when multiple indices differ in quality or standardization approach. Indices with uncertain standardization or limited spatial coverage may require more conservative observation-error assumptions.
+
+- **Catchability assumptions**: priors or constraints on catchability coefficients may sometimes be useful where abundance indices are poorly scaled or where strong prior knowledge regarding relative index behaviour exists. Abrupt or implausible catchability estimates may indicate problems with index standardization or insufficient contrast in the data.
+
+- **Priors for poorly identified parameters**: informative priors may help stabilize estimation where catches and abundance indices alone provide insufficient contrast to estimate parameters robustly. However, strongly informative priors should be interpreted cautiously and evaluated through posterior diagnostics and sensitivity analyses to ensure that assessment conclusions are not driven primarily by prior assumptions.
+
+Because JABBA estimates full posterior distributions, prior assumptions should always be evaluated carefully through posterior diagnostics and sensitivity analyses. Particular attention should be given to situations where posterior estimates remain strongly influenced by prior assumptions rather than the observed data.
+
+[Diagnostics](../../guidance/diagnostics.qmd) · [Sensitivity analysis](../../guidance/sensitivity.qmd)
+
+
+## Misuse prevention
+
+```{r}
+#| echo: false
+#| results: asis
+method_warnings("jabba")
+```
+
+| Field | Entry |
+|---|---|
+| **Do not use when** | Catch is substantially incomplete; indices conflict and cannot be reconciled; posterior is essentially the prior for key quantities. |
+| **Common misuses** | Using default priors without justification; ignoring prior–posterior overlap; reporting a single run without sensitivity grid. |
+| **Pre-use checklist** | MCMC convergence (Rhat, ESS); residual runs tests; retrospective and hindcast (MASE); prior vs posterior plots; sensitivity to $r$, $K$, $\psi$. |
+| **Advice suitability** | Stock status with probabilities; catch advice and risk tables; projections. |
+
+## Applications and support
+
+| Field | Entry |
+|---|---|
+| **Applications / case studies** | [CECAF hub: *Sardinella maderensis* (South)](https://henning-winker.github.io/cecaf-assessment-catalogue/case-studies/sardinella-maderensis-south.html) · [Institutional applications](../../resources/applications.qmd) |
+| **References** | Winker, Carvalho & Kapur (2018) *Fisheries Research* 204: 275–288. <https://doi.org/10.1016/j.fishres.2018.03.010> · [Literature](../../resources/literature.qmd) |
+| **Software / tools** | R package `JABBA` + JAGS; [installation](../../resources/installation.qmd) |
+
+::: {.catalogue-example-grid}
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Suitable example
+:::
+Reference-case fit in the [CECAF hub: *Sardinella maderensis* (South)](https://henning-winker.github.io/cecaf-assessment-catalogue/case-studies/sardinella-maderensis-south.html).
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Assumption sensitivity
+:::
+Prior-vs-posterior checks, retrospectives and hindcasts in the same case study.
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Unsuitable example
+:::
+[To be completed]{.todo}
+:::
+:::

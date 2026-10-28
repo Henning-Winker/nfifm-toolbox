@@ -1,0 +1,12 @@
+---
+title: "Multispecies and mixed fisheries"
+subtitle: "Workstream 1: multispecies MSY, gear interactions and effort allocation"
+---
+
+Many fisheries in the programme's regions are multispecies trawl and multigear fisheries, where single-stock reference points cannot all be achieved at once. This branch collects methods for multispecies MSY and mixed approaches, gear interactions, and effort allocation and fleet capacity.
+
+| Tool | Purpose | Status |
+|---|---|---|
+| [mmsyFM](mmsyfm.qmd) | Multispecies MSY and fishing-mortality trade-offs (description to come) | Stub |
+
+[Content to be added: scope, methods and case studies for this workstream.]{.todo}

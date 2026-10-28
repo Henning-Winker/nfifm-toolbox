@@ -1,0 +1,35 @@
+---
+title: "Misuse prevention"
+subtitle: "Caveats, assumptions and red flags across methods"
+---
+
+A method that fits the data can still give misleading advice if its assumptions are violated. Each catalogue entry has a **Misuse prevention** section, and the [method selector](../select/index.qmd) raises warnings for the situation you describe. This page lists all warning rules in one place.
+
+- **Do not use:** a core assumption is violated by the data; results should not be used for advice.
+- **Caution:** the method can be used, but only with the additional checks named.
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+r <- read_misuse()
+m <- read_methods()
+nm <- setNames(m$name, m$id)
+r$Methods <- vapply(strsplit(r$methods, "|", fixed = TRUE),
+                    function(x) if ("*" %in% x) "All methods" else paste(nm[x], collapse = ", "), "")
+r$Severity <- ifelse(r$severity == "stop", "Do not use", "Caution")
+r$`When` <- paste(r$question, "=", r$value)
+DT::datatable(r[, c("Severity", "Methods", "When", "message")], rownames = FALSE,
+              colnames = c("Severity", "Methods", "When", "Warning"), filter = "top",
+              options = list(pageLength = 25, dom = "tip", scrollX = TRUE),
+              class = "compact stripe hover")
+```
+
+## General red flags
+
+- Status depends mostly on priors or fixed inputs rather than data (prior and posterior nearly identical).
+- Good fit to data but poor prediction skill (hindcast MASE > 1).
+- Strong retrospective patterns (Mohn's rho beyond about ±0.2).
+- Results inconsistent with the exploitation history or the biology of the stock.
+- A single "best" run reported without sensitivity analysis.
+
+[Draft rules for review. Add or edit rules in `data/misuse_rules.csv`.]{.todo}

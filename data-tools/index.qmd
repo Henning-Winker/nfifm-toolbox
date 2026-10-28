@@ -1,0 +1,23 @@
+---
+title: "Data and CPUE tools"
+subtitle: "Preparing catch, abundance indices and length data before assessment"
+listing:
+  id: datatools
+  contents: ["*.qmd", "!index.qmd"]
+  type: table
+  fields: [title, subtitle, categories]
+  sort: title
+---
+
+Most assessment problems start in the data. Unstandardised CPUE, incomplete catches and unrepresentative length samples bias any method, whichever one is chosen. These tools prepare the inputs; each page follows the same catalogue fields as the methods, including misuse prevention.
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+crosswalk_table(site_root = "../", category = "Data and CPUE tools")
+```
+
+::: {#datatools}
+:::
+
+[More tools to be added (CPUE standardisation, catch reconstruction, length raising).]{.todo}

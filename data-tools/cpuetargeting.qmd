@@ -1,0 +1,115 @@
+---
+title: "cpueTargeting"
+subtitle: "Commercial CPUE with changing targeting"
+categories: [data, CPUE standardisation, targeting]
+---
+
+[Stub]{.status-badge .status-stub}
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+method_attributes("cpuetargeting")
+```
+
+
+## Method overview
+
+| Field | Entry |
+|---|---|
+| **Family / class** | CPUE and abundance indices → CPUE standardisation |
+| **Method name** | [To be completed]{.todo} <br><small>Identifies the named method or platform.</small> |
+| **Short description** | [To be completed]{.todo} <br><small>Summarizes the method in plain language.</small> |
+| **Main outputs** | [To be completed]{.todo} <br><small>Lists key status indicators or reference-point outputs.</small> |
+| **Typical use case** | [To be completed]{.todo} <br><small>Describes when the method is commonly applied.</small> |
+
+::: {.callout-tip}
+## Help complete this entry
+This page is a stub. Use **Edit this page** (top right) or open a *New method entry* issue. Each field is described in [Catalogue structure](../framework/catalogue-structure.qmd).
+:::
+
+Repository: [Henning-Winker/cpueTargeting](https://github.com/Henning-Winker/cpueTargeting). Description to be added.
+
+
+## Data requirements
+
+| Field | Entry |
+|---|---|
+| **Minimum data** | [To be completed]{.todo} <br><small>Defines the minimum inputs needed for implementation.</small> |
+| **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
+| **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
+| **Data quality considerations** | [To be completed]{.todo} <br><small>Highlights representativeness, consistency and screening needs.</small> |
+
+## Data processing requirements
+
+| Field | Entry |
+|---|---|
+| **Pre-processing steps** | [To be completed]{.todo} <br><small>Specifies preparation steps before fitting or calculation.</small> |
+| **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
+| **Aggregation / binning choices** | [To be completed]{.todo} <br><small>Documents how catches, ages or lengths should be grouped.</small> |
+| **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
+| **Missing data handling** | [To be completed]{.todo} <br><small>Describes treatment of gaps and partial information.</small> |
+
+## Model documentation
+
+| Field | Entry |
+|---|---|
+| **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
+| **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
+| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
+| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
+| **Implementation notes** | [To be completed]{.todo} <br><small>Captures practical details relevant to coding or interpretation.</small> |
+
+## Assumptions and sensitivities
+
+| Field | Entry |
+|---|---|
+| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
+| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
+| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
+| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
+| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
+
+## Misuse prevention
+
+```{r}
+#| echo: false
+#| results: asis
+method_warnings("cpuetargeting")
+```
+
+| Field | Entry |
+|---|---|
+| **Do not use when** | [To be completed]{.todo} <br><small>Lists data situations or configurations under which the method should not be applied.</small> |
+| **Common misuses** | [To be completed]{.todo} <br><small>Describes frequent ways the method is applied incorrectly and their consequences.</small> |
+| **Pre-use checklist** | [To be completed]{.todo} <br><small>Minimum checks to pass before results are used for advice.</small> |
+| **Advice suitability** | [To be completed]{.todo} <br><small>States whether outputs support status only, indicator-based HCRs, catch advice or MSE.</small> |
+
+## Applications and support
+
+| Field | Entry |
+|---|---|
+| **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
+| **References** | [To be completed]{.todo} <br><small>Provides primary literature and supporting documents.</small> |
+| **Software / tools** | cpueTargeting (R) |
+
+::: {.catalogue-example-grid}
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Suitable example
+:::
+[To be completed]{.todo}
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Assumption sensitivity
+:::
+[To be completed]{.todo}
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Unsuitable example
+:::
+[To be completed]{.todo}
+:::
+:::

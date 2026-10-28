@@ -1,0 +1,24 @@
+---
+title: "Assessment methods"
+subtitle: "Catalogue entries for assessment methods, with data needs, assumptions and misuse warnings"
+listing:
+  id: methods
+  contents: ["biomass-dynamic/*.qmd", "dynamic-pool/*.qmd", "age-structured/*.qmd", "multispecies/*.qmd", "!*/index.qmd"]
+  type: table
+  fields: [title, subtitle, categories]
+  sort: title
+  categories: true
+  filter-ui: true
+---
+
+Not sure which method fits? Start with the **[method selector](../select/index.qmd)**. Every entry follows the [standard catalogue fields](../framework/catalogue-structure.qmd), including **misuse prevention**.
+
+| Branch | Overview |
+|---|---|
+| Biomass dynamic models | [Surplus production models](biomass-dynamic/index.qmd): SPiCT, JABBA, CMSY+/BSM |
+| Dynamic pool: equilibrium per-recruit | [Length-based and per-recruit methods](dynamic-pool/index.qmd): FLicc, LBSPR, LBB, fishblicc, YPR/SPR |
+| Dynamic pool: structured dynamic | [Statistical catch-at-length](dynamic-pool/scal.qmd), [age-structured models](age-structured/age-structured.qmd) |
+| Multispecies and mixed fisheries | [Overview](multispecies/index.qmd): mmsyFM |
+
+::: {#methods}
+:::

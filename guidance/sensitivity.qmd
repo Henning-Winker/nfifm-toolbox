@@ -1,0 +1,24 @@
+---
+title: "Sensitivity analysis"
+subtitle: "Structured evaluation of robustness to alternative assumptions"
+---
+
+Sensitivity analysis should be treated as a required component of the assessment process rather than a small number of optional exploratory runs. The objective is to evaluate whether key assessment conclusions remain robust under plausible alternative assumptions.
+
+Typical sensitivity analyses include:
+
+- **Initial depletion**: alternative assumptions for $B_1/K$ or $\psi$, particularly when the catch series does not begin near the start of exploitation.
+
+- **Productivity**: alternative priors or penalties on $r$, especially for long-lived or low-productivity species.
+
+- **Process error**: alternative assumptions regarding process variance to evaluate whether model results depend strongly on stochastic biomass flexibility.
+
+- **Observation error**: alternative CPUE variance assumptions, including input CVs, estimated additional variance, or index-specific weighting.
+
+- **CPUE/index selection**: alternative index combinations where indices conflict or differ substantially in standardization quality.
+
+- **Catch history**: alternative catch reconstructions or historical-removal scenarios where catches are uncertain or incompletely reconstructed.
+
+- **Production-shape assumption**: alternative Schaefer, Fox or Pella-Tomlinson production functions where biologically plausible, while retaining the Schaefer formulation as a transparent reference scenario.
+
+Sensitivity analyses should not be interpreted as attempts to identify a single “best” model, but rather as a structured evaluation of the robustness, plausibility and management consistency of alternative assessment assumptions.

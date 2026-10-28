@@ -1,0 +1,13 @@
+/.quarto/
+/_site/
+*_files/
+*.html
+!assets/*.html
+!resources/guides/*.html
+.Rproj.user
+.Rhistory
+.RData
+.DS_Store
+# model outputs written by case studies at the repo root
+/jbfit.rdata
+/jabba.hindcast.rdata

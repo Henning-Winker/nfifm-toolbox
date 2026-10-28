@@ -1,0 +1,240 @@
+---
+title: "Installation guide"
+subtitle: "R, Rtools, SPiCT, JABBA and JARA"
+---
+
+```{r}
+#| include: false
+# Demo outputs are shown only when the packages and the stored test fits are available
+has_test_fits <- file.exists("rdata/install.test.rdata")
+knitr::opts_chunk$set(eval = TRUE)
+```
+
+## Install and update r and rstudio
+
+In general the lastest version of R and at least R 4.4 or higher is recommended.
+You can download the Windows version of [R (Last version)](https://cran.r-project.org/bin/windows/base/)
+The easier way to do this is by installing the package and accepting the default suggestions. 
+You may be asked to install and update the packages in your previous version of R. You would want to allow it. The latest version is 4.4.1
+
+Additionally, you might need to install or update Rstudio
+You may find the last version [RStudio 2023.12.1+402](https://posit.co/download/rstudio-desktop/#download)
+
+You can check the version of r with _R.version_
+You should retrieve the below information where version 4.3.2 is indicated
+
+**Note**: Please make sure you have updated the version of R that rstudio runs. 
+So, please in RStudio click the 'Tools' tab, go to 'Global options' and 'R version' to link the wished R version to RStudio.
+
+```{r }
+
+R.version
+
+```
+
+## Install Rtools
+
+
+For any R version of 4.3.x, you need to select to install Rtools 43 and for R version 4.4.x, you need to install Rtools 44 [Rtools](https://cran.r-project.org/bin/windows/Rtools/). 
+An _exe_ file will be downloaded. Click on it and follow instructions. 
+
+ 
+
+
+To install SPiCT and JABBA from github needs some additional packages, first and foremost `devtools` and `TMB` (SPict)
+
+Note that it is recommended to install `TMB` from `type =  source`, which will also be required for running `spict`. The installation of `TMB` required that `Rtools` is correctly installed (see above)!
+
+
+```{r, eval=F}
+install.packages("devtools")
+install.packages("TMB", type = "source")
+```
+
+
+## SPiCT: Surplus Production models in Continuous-Time
+
+[SPiCT](https://github.com/DTUAqua/spict) is an R-package for fitting surplus production models in continuous-time to fisheries catch data and biomass indices.
+
+This package requires the installation of `TMB` and `Rtools`. Fortunately, these packages were already installed. In order to access the most recent version of `spict` that, among others, allows us to plot several scenarios at once, we will use the development branch. 
+
+
+```{r,eval=F }
+
+devtools::install_github("DTUAqua/spict/spict", ref = "dev")
+
+```
+
+Test run `spict`
+
+### Testing SPiCT
+
+Finally, we check that the last version of `spict` has been correctly installed. We call the data pre-loaded in the package, `pol`.
+
+
+```{r, eval=requireNamespace("spict", quietly=TRUE), fig.height=7,fig.width=8,warning=FALSE,message=FALSE, fig.cap = paste0("SPiCT test")}
+
+library(spict)
+data(pol)
+inp <- pol$hake
+inp$dteuler =1/4
+rep1 <- fit.spict(inp)
+inp$priors$logbkfrac <- c(log(0.3), 0.1, 1)
+rep2 <- fit.spict(inp)
+plotspict.compare(list(def = rep1, bkprior = rep2))
+
+
+```
+
+
+Literature related to SPiCT can be found in [SPiCT Github](https://github.com/DTUAqua/spict) under the headline 'Help files', including:
+
+- i)   vignette for the package
+- ii)  technical guidelines for using SPiCT
+- iii) published paper
+
+
+Some examples of SPiCT for formal stock assessment in ICES are found below:
+
+- [WKBMSYSPiCT](https://orbit.dtu.dk/en/publications/benchmark-workshop-on-the-development-of-msy-advice-for-category-)
+
+- [WKBMSYSPiCT2](https://ices-library.figshare.com/articles/report/Benchmark_workshop_2_on_development_of_MSY_advice_using_SPiCT_WKBMSYSPiCT2_/23372990/1)
+
+- [Benchmark Workshop for selected elasmobranch stocks (WKBELASMO)](https://ices-library.figshare.com/articles/report/Benchmark_Workshop_for_selected_elasmobranch_stocks_WKBELASMO_/22760042)
+
+- [Good practices for surplus production models(Fish.Res.)](https://www.sciencedirect.com/science/article/pii/S0165783624000742)
+
+## JABBA: Just Another Bayesian Biomass Assessment 
+
+[JABBA](https://github.com/jabbamodel/JABBA) is a surplus production stock assessment model, including projections, retrospective analysis, and hindcasting (forecasting skills). 
+
+Further details are presented in the paper of [JABBA](https://github.com/jabbamodel/JABBA)
+
+Additionally, you can find here a further JABBA development incorporating life history and fisheries’ selectivity into surplus production models:
+
+[JABBA-Select](https://www.sciencedirect.com/science/article/abs/pii/S0165783619302103?casa_token=mRUIoC7e5RcAAAAA:wVXwmkGWEKYx7-SjusCensxzkgZJG0s4dcNZ2zlMOXkQOqVLxAcH6bwlaVVbTGsCwruZlm4)
+
+Some examples of JABBA for formal stock assessment in ICCAT are found below:
+
++ [Mediterranean albacore](https://www.iccat.int/Documents/CVSP/CV078_2021/n_8/CV078080245.pdf)
+
++ [South Atlantic albacore](https://www.iccat.int/Documents/CVSP/CV077_2020/n_7/CV077070352.pdf)
+
++ [Mediterranean swordfish](https://www.iccat.int/Documents/CVSP/CV077_2020/n_3/CV077030508.pdf)
+
+
+Before installing JABBA download and install [`JAGS`](https://sourceforge.net/projects/mcmc-jags/). This is very quick.
+
+Next install `JABBA` from `github`
+
+```{r, eval=F}
+
+devtools::install_github("jabbamodel/JABBA")
+
+```
+
+Test run JABBA
+
+```{r,echo=FALSE,eval=has_test_fits}
+
+load("rdata/install.test.rdata")
+#save(bet1,fitjr, file="rdata/install.test.rdata")
+```
+
+```{r, eval=F}
+
+library(JABBA)
+jbinput <- build_jabba(catch=iccat$bet$catch,cpue=iccat$bet$cpue,se=iccat$bet$se,model.type="Schaefer",verbose=F)
+bet1 = fit_jabba(jbinput,quickmcmc=FALSE,verbose=FALSE)
+p = jbplot_summary(bet1,verbose = F)
+
+```
+
+
+```{r,echo=FALSE,eval=has_test_fits, fig.height=7,fig.width=8,warning=FALSE,message=FALSE, fig.cap = paste0("JABBA test")}
+library(JABBA)
+p = jbplot_summary(bet1,verbose = F)
+```
+
+## JARA: Just Another Red-list Assessment
+
+[JARA](https://github.com/Henning-Winker/JARA) is a Bayesian state-space trend analysis tool. This tool was developed to support decisions regarding the extinction risk of threatened species, incorporating process error and uncertainty. 
+
+Please find some literature, including a description of the model, applications, and most recent implementation below:
+
+- [JARA: Just Another Red-List Assessment](https://www.biorxiv.org/content/10.1101/672899v3.full.pdf)
+
+- [Estimating IUCN Red List population reduction: JARA](https://conbio.onlinelibrary.wiley.com/doi/full/10.1111/conl.12688)
+
+- [Half a century of global decline in oceanic sharks and rays](https://www.nature.com/articles/s41586-020-03173-9)
+
+- [Coupling state-of-the-art modelling tools for better informed Red List assessments of marine fishes](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2664.14601)
+
+- [The conservation status and population decline of the African penguin deconstructed in space and time](https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.6554)
+
+
+However, `JARA` has also established as a tool to create joint CPUE indices from multiple CPUE or survey indices as well as catch reconstructions with missing year/fleet records. For example, JARA can exactly reproduce the Hierarchical analysis of multiple noisy abundance indices by [Conn, 2009](https://cdnsciencepub.com/doi/full/10.1139/F09-175?casa_token=yYzUyHEzE1gAAAAA%3AF6Pq5z316C4GADQqqemGSoaV5qCF-1VuVV4MDMtsFwi-0awVchtiFW1ovCER7vLut4SXo4hemg4) to create a joint index with estimated uncertainty
+
+
+The General Fisheries Commission of the Mediterranean - recently adopted JARA to track the status of Mediterranean stocks
+
+- [SoMFi 2025](https://openknowledge.fao.org/items/a4b60529-906f-4c6b-a671-c91f9f827564)
+
+Similarly, the Joint Research Centre (JRC) of the European Commission has adopted JARA for monitoring trends in stock status against the Common Fisheries Policy 
+
+- [Winker et al. 2022](https://publications.jrc.ec.europa.eu/repository/handle/JRC129283). Suitability study of the Bayesian State-Space model ‘JARA’ for stock status indicator estimation (STECF-Adhoc-22-02)
+
+- [JRC 2024](https://publications.jrc.ec.europa.eu/repository/handle/JRC137731) Monitoring the Performance of the Common Fisheries Policy (STECF-Adhoc-24-01)
+
+- Winker H, Cardinale M, Gerritsen H, Herrera JG, Castellanos P, Farias I, Sampedro P, Moura T, Mosqueira I, Kell L. [The ICES MSY approach to reference point estimation is not precautionary](https://academic.oup.com/icesjms/article/82/11/fsaf204/8327677). ICES Journal of Marine Science. 2025 Nov;82(11):fsaf204.
+
+Like `JABBA`, `JARA` requires `JAGS` to be installed
+
+```{r, eval=F}
+
+devtools::install_github("henning-winker/JARA")
+
+```
+
+
+Test run JARA
+
+```{r,eval=F}
+
+library(JARA)
+
+data(jaradata)
+inp = jrdat$Yellowspot_skate
+buildjr <- build_jara(I = inp$I,se=inp$SE,GL=12,silent = T)
+fitjr <- fit_jara(buildjr,silent = T)
+
+jrplot_fits(fitjr,silent = T)
+jrplot_jointindex(fitjr)
+
+```
+
+```{r, eval=has_test_fits, fig.height=5,fig.width=8,warning=FALSE,message=FALSE, fig.cap = paste0("JARA test")}
+library(JARA)
+jrplot_fits(fitjr,silent = T)
+jrplot_jointindex(fitjr)
+```
+
+
+ 
+
+
+## sessionInfo
+
+Once we have confirmed that all packages that will be used during the course have been installed and working properly, we could want to review the session information. Thus, we take a look at the version of all installed packages. 
+
+If you managed to successfully run the whole script of this guideline, **congratulations!**. So, you can confirm that your computer is ready to have fun running stock assessments. 
+
+```{r,eval=F}
+
+sessionInfo()
+
+
+```
+
+
+If you are facing difficulty installing any core package of this guideline ( JABBA and SPiCT), please be aware that most of the issues may be related to installing or updating libraries used by these stock assessment packages. The general recommendation is to check in `sessionInfo` of this guideline and compare it with the version of those installed in your laptop. So you may update packages accordingly. Additionally, check the `Error` message provided in the RStudio console to identify what is the issue and act appropriately. Sometimes, deleting the main folder of a given package and installing it from scratch is needed.

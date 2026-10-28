@@ -1,0 +1,19 @@
+---
+title: "Regional hubs"
+subtitle: "Regional implementation platforms that use and extend the toolbox"
+---
+
+The toolbox holds the shared methods and code. Each regional hub adds its own case studies, data and priorities, and links back to the shared method pages.
+
+| Platform | Focus | Key partners | Hub |
+|---|---|---|---|
+| **Africa** (West, Central, East and Southern) | Shared small pelagics, demersal and small-scale fisheries, data-poor methods | WASOP-CECAF, SRFC, FCWC, SWIOFC, BCC | [CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue) |
+| **Asia** (South, Southeast and East) | Multispecies trawl and multigear fleets, overcapacity, tropical demersals | SEAFDEC, BOBP-IGO, APFIC | [To be set up]{.todo} |
+| **Latin America** (Pacific coast, Central America) | Upwelling pelagics, shrimp and demersal multigear fisheries | WECAFC, OSPESCA, CPPS | [To be set up]{.todo} |
+| **SIDS** (Pacific, Caribbean, Indian Ocean) | Reef and coastal multispecies stocks, EEZ tuna linkages, small national teams | SPC, FFA, CRFM, WECAFC, IOTC | [To be set up]{.todo} |
+| **Inland fisheries** (lakes, rivers, reservoirs) | Transboundary inland stocks, data-limited methods | LVFO, LTA, Nile, Niger, Mekong bodies | [To be set up]{.todo} |
+| **Developed countries** (partner role) | Method partners, peer review, twinning and mentoring | ICES, NOAA, IMR Norway | Contributors |
+
+## Setting up a hub
+
+A hub is its own repository built from the same template (for example `cecaf-assessment-catalogue`). It links to method pages here instead of copying them, so methods are maintained in one place. See [Contributing](../contributing.qmd).

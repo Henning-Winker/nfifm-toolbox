@@ -1,0 +1,193 @@
+---
+title: "FLicc"
+subtitle: "Length-based (single and multi-gear)"
+categories: [dynamic pool, per-recruit, length-based, multi-gear, FLR]
+---
+
+[Draft]{.status-badge .status-draft}
+
+```{r}
+#| echo: false
+source("R/toolbox.R")
+method_attributes("flicc")
+```
+
+
+## Method overview
+
+| Field | Entry |
+|---|---|
+| **Family / class** | Dynamic pool models → equilibrium per-recruit (length-based, single-fleet and multi-gear) |
+| **Method name** | FLicc (R/FLR/TMB): length-interval catch curves |
+| **Short description** | Equilibrium length-interval catch curve that explains the length composition of the catch by growth, natural mortality, fishing mortality and gear selectivity, integrated over length bins. LBSPR, LBB and fishblicc are each a configuration of FLicc. |
+| **Main outputs** | SPR by year with CI, $F_{SPR}$ reference points, exploitable potential ratio (EPR, the LBB $B/B_0$), steepness-corrected $B/B_{tgt}$, selectivity by gear, length-based indicators (LBIspr, LBImean), yield/SPR contours over selectivity and F. |
+| **Typical use case** | Length-frequency data by gear and year with life-history information and no reliable index or age data; multi-gear fisheries with asymptotic and dome-shaped selectivity; estimation model in an FLR MSE. |
+
+FLicc brings the main lines of length-based per-recruit assessment into one framework, built on FLR and fitted with TMB:
+
+| Tool | FLicc configuration |
+|---|---|
+| LBSPR | `pop_model = "gtg"` (`ngtg = 13`, `maxsd = 2`, CVL 0.1), `obs_model = "mn"`, Linf, M/k and CVL fixed, `by_year = TRUE` |
+| LBB | `lbb_flicc()`: `pop_model = "gtg"` with `ngtg = 1`, `obs_model = "dm"` (fixed precision, `ess = 20000`), priors on Linf and M/k, `by_year = TRUE` |
+| fishblicc | `pop_model = "gamma"`, `obs_model = "nb"`, several gears, catch shares in numbers |
+| FLicc default | `pop_model = "gtg"`, `obs_model = "dm"` with precision estimated (`dm_theta = "saturating"`), all years jointly with a random walk on F |
+
+On this basis FLicc adds what a routine assessment and management procedure needs: several years fitted jointly with shared selectivity, alternative observation models, treatment of the tail of the composition, reference points with steepness, length-based indicators, residual diagnostics, and use as the estimation model of an MSE in FLR.
+
+::: {.callout-tip}
+## Full documentation
+The complete [FLicc user guide](../../resources/guides/FLicc_user_guide.html) (H. Winker, FAO-NFI, October 2026) covers the assessment step by step (Part I), the technical options (Part II) and use in MSE (Part III).
+:::
+
+
+## Data requirements
+
+| Field | Entry |
+|---|---|
+| **Minimum data** | Length-frequency counts by length bin, year and gear (`len`, `year`, `data`, `qname`); life history: $L_\infty$, $k$, $M$, $L_{50}$, length–weight $a$, $b$. |
+| **Preferred data** | Several years per gear with ≥ 50 fish and ≥ 10 bins per gear-year; raw counts or ESS ≥ 500 per gear-year; catch shares by gear (in weight). |
+| **Optional auxiliary data** | Catch shares by gear; priors on $L_\infty$ and $M/k$; external selectivity information; steepness for $B/B_{tgt}$. |
+| **Data quality considerations** | Representativeness and sample size per gear-year; consistency of modes and left limbs between years; share of fish at or above $L_\infty$ (red flag > 1%). |
+
+### Quick start
+
+```r
+# install.packages("TMB", type = "source")
+# install.packages(c("FLCore", "ggplotFL"),
+#   repos = c("https://flr.r-universe.dev", "https://cloud.r-project.org"))
+# remotes::install_github("henning-winker/FLicc")
+library(FLicc)
+
+# 1. length data as a long table: len (bin lower bound), year, data (count), qname (gear)
+data("alfonsino")
+lfd_df <- as.data.frame(lfd_alfonsino)[, c("len", "year", "data", "qname")]
+
+# 2. convert to FLQuants, one per gear
+lfd <- FLQuantLen(lfd_long_to_wide(lfd_df), unit = "cm", midL = FALSE)
+plot_lfd(lfd)
+
+# 3. life history and stock object
+lhpar  <- FLPar(linf = 55.7, k = 0.08, M = 0.162, L50 = 31.1859,
+                a = 0.004721956 / 1000, b = 3.146168)
+stklen <- stocklen(lfd, lhpar, m_model = "constant")
+
+# 4. fit: one selectivity shape and one catch share (by weight) per gear
+fit <- fiticc(lfd, stklen,
+              sel_fun = c("dsnormal", "logistic"),
+              catch_by_gear = c(0.95, 0.05),
+              settings = list(CVL = 0.1, obs_model = "dm", dm_theta = "saturating"))
+
+# 5. check and report
+flicc_convergence(fit)
+plot_len(fit); plot_sel(fit); plot_spr(fit, ci = TRUE)
+sprcur_flicc(fit)
+```
+
+
+## Data processing requirements
+
+| Field | Entry |
+|---|---|
+| **Pre-processing steps** | Long table → `lfd_long_to_wide()` → `FLQuantLen()` (`midL`, `unit`); `stocklen()` to build the `FLStockLen` with an M-at-length model. |
+| **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
+| **Aggregation / binning choices** | Bin lower bound vs mid-point (`midL`); tail cut at about 0.80–0.85 × $L_\infty$ as an absolute length; plus group. |
+| **Fleet / gear handling** | One selectivity per gear (`logistic`, `dsnormal`, `normal`, `binormal`, `bidsnormal`); F split between gears through `catch_by_gear`. |
+| **Missing data handling** | Keep zeros and rely on the random walk on F; do not drop the random walk when years are missing. |
+
+## Model documentation
+
+| Field | Entry |
+|---|---|
+| **Key parameters** | F by year (random walk, `sigmaF`), selectivity parameters per gear, Dirichlet-multinomial precision; fixed $L_\infty$, CVL, $M$, $k$. |
+| **Priors / fixed inputs** | Growth ($L_\infty$, CVL) and M fixed by default; optional priors (`linf.sd`); `sigmaF` fixed at 0.3 by default. |
+| **Error structure** | Observation error: multinomial (`mn`), Dirichlet-multinomial (`dm`, default, precision estimated) or negative binomial (`nb`). |
+| **State-space formulation** | Partly: F can follow a random walk (random effects); the population model is equilibrium. |
+| **Implementation notes** | Default: `pop_model = "gtg"`, `obs_model = "dm"`, `dm_theta = "saturating"`, all years fitted jointly. `pop_model = "gamma"` + `obs_model = "nb"` reproduces fishblicc; `lbb_flicc()` reproduces LBB. |
+
+## Assumptions and sensitivities
+
+| Field | Entry |
+|---|---|
+| **Core assumptions** | Equilibrium within each year (constant recruitment and mortality), von Bertalanffy growth with variability among growth-type groups, selectivity constant over the years fitted, representative length samples. |
+| **Main sensitivities** | $L_\infty$ (the main one), dome-shaped vs logistic selectivity, CVL, tail cut, effective sample size. |
+| **Likely violations** | Recruitment pulses and cohort signals; changing gear mix or selectivity; non-representative sampling; $L_\infty$ inconsistent with the data. |
+| **Expected bias** | The equilibrium model tends to be pessimistic during a rebuild and optimistic while F is increasing; unsupported domes inflate SPR. |
+| **Warning signs** | Failed convergence checks, narrow or unsupported domes, systematic residuals or failed runs test, retrospective rho beyond ±0.2, gears disagreeing on status. |
+
+### Checks and red flags
+
+| # | Check | Red flag | Action |
+|---|---|---|---|
+| 1 | Sample size by gear-year (`plot_lfdn`) | < 50 fish or < 10 bins; gear mix changing | ESS per gear; drop or pool poor gear-years |
+| 2 | Composition consistency (`plot_lfd`) | Shifts in mode or left limb | Split gears or periods; restrict years |
+| 3 | Largest fish vs $L_\infty$ | > 1% at or above $L_\infty$ | Revisit $L_\infty$; tail cut |
+| 4 | Empirical catch curves (`plot_zlcc`) | Curved limbs, jumping slopes | Dome or tail cut; keep random walk |
+| 5 | Life-history inputs (`plot_growth`, `growth_phase_flicc`) | $L_\infty$ inconsistent with data; odd $M/k$; cohort modes not following growth | $L_\infty$ sensitivity; priors as a check; `maxsd` |
+| 6 | Selectivity plausibility (`plot_sel`) | Narrow or unsupported domes | Logistic; fix from external data; `dome_sens_flicc()` |
+| 7 | Convergence (`flicc_convergence`) | Gradient, Hessian, bounds | Restarts; simplify; tail cut |
+| 8 | Fit to compositions (`plot_len`, `plot_resid_bubble`, `lmean_resid_flicc`, `ppc_flicc`) | Systematic misfit; failed runs test | Selectivity, $L_\infty$, tail cut; lower ESS |
+| 9 | Retrospective | Rho beyond ±0.2 | Look for trends in selectivity or sampling |
+| 10 | Indicators vs status | Gears disagree | Best gear; pooling; HCR smoothing |
+
+### Recommended defaults
+
+| Topic | Recommendation |
+|---|---|
+| Observation model | `dm` with real data |
+| Sample size | `dm` with `dm_theta = "saturating"` on raw counts or ESS ≥ 500; with fixed precision or `mn`, ESS about 150–200 per gear-year |
+| Single year | `mn` (ESS 150–200 per gear) or `dm` with `dm_theta = "fixed"` |
+| Growth | Fix $L_\infty$ and CVL; $L_\infty$ is the main sensitivity; default `maxsd = 3`, `ngtg = 13` |
+| Selectivity | Logistic unless supported; always run `dome_sens_flicc()` |
+| Sensitivity runs | `fits_summary()` for the table; `ensemble_flicc()` with equal weights |
+| F over time | Random walk, `sigmaF` fixed (0.3 or the estimate) |
+| Tail | `tail_cut` at about 0.80–0.85 × $L_\infty$, as a length |
+| Missing data | Keep zeros, rely on the random walk |
+| Status | SPR at the year's F; `s` for $B/B_{tgt}$ under Beverton–Holt; `plot_LBAdvice(flicc2FLStockR(fit))` |
+| MSE | Fixed `sigmaF`, absolute tail cut, `se = FALSE`; tune with the HCR |
+
+See also the general [diagnostics](../../guidance/diagnostics.qmd) and [sensitivity](../../guidance/sensitivity.qmd) guidance.
+
+
+## Misuse prevention
+
+```{r}
+#| echo: false
+#| results: asis
+method_warnings("flicc")
+```
+
+| Field | Entry |
+|---|---|
+| **Do not use when** | Length samples are not representative of the catch; $L_\infty$ is inconsistent with the largest fish; strong recruitment pulses dominate the compositions and are read as F. |
+| **Common misuses** | Unsupported dome-shaped selectivity that inflates SPR; using raw counts in the thousands with a multinomial likelihood; treating equilibrium SPR as current status during rebuilding. |
+| **Pre-use checklist** | The 10 FLicc checks (sample size, consistency, largest fish vs $L_\infty$, catch curves, life history, selectivity, convergence, fit, retrospective, indicators). |
+| **Advice suitability** | Status relative to $F_{SPR}$; indicator-based HCRs; estimation model in MSE (`flicc.sa()`). |
+
+## Applications and support
+
+| Field | Entry |
+|---|---|
+| **Applications / case studies** | Alfonsino worked example in the [FLicc user guide](../../resources/guides/FLicc_user_guide.html); reproductions of LBSPR, LBB (*Illex*) and fishblicc on their own example data. CECAF case study: to be added. |
+| **References** | Medley (2025) *ICES J. Mar. Sci.* 82: fsaf224 · Hordyk et al. (2015, 2016) · Froese et al. (2018) · Kell et al. (2007) · Kristensen et al. (2016). Full list in the [FLicc user guide](../../resources/guides/FLicc_user_guide.html). |
+| **Software / tools** | R package `FLicc` ([henning-winker/FLicc](https://github.com/henning-winker/FLicc)); depends on `FLCore`, `ggplotFL`, `TMB`. MSE: `flicc.sa()`, `lbi.hcr()`, `rfb.flicc.hcr()`. |
+
+::: {.catalogue-example-grid}
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Suitable example
+:::
+Alfonsino reference fit in the [FLicc user guide](../../resources/guides/FLicc_user_guide.html).
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Assumption sensitivity
+:::
+Dome sensitivity, $L_\infty$, CVL and tail-cut runs (`fits_summary()`, `ensemble_flicc()`).
+:::
+::: {.catalogue-example}
+::: {.catalogue-example-title}
+Unsuitable example
+:::
+Rebuilding stock refitted year by year: equilibrium SPR stays pessimistic while biomass recovers.
+:::
+:::

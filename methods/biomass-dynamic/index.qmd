@@ -1,0 +1,169 @@
+---
+title: "Surplus production models"
+subtitle: "Shared concepts for SPiCT, JABBA and BSM"
+---
+
+Surplus production models (SPMs) are used where catch histories and one or more relative abundance indices are available but age-structured data are absent, incomplete or not reliable enough for an integrated assessment. They are central to data-limited and data-moderate assessments in many regions, where many stocks with heterogeneous data quality must be assessed.
+
+This page sets out the concepts shared by the SPMs in the catalogue ([SPiCT](spict.qmd), [JABBA](jabba.qmd) and [BSM/CMSY+](cmsy.qmd)): the biomass dynamic logic, the state-space formulation, and the assumptions and caveats common to all of them.
+
+## Conceptual model
+
+### Biomass dynamic logic
+
+All three approaches considered here belong to the same general family of biomass dynamic models. They represent the stock using an aggregated biomass state and describe changes in biomass as the balance between biological production and removals by fishing.
+
+For the Schaefer form, the deterministic biomass process can be written as:
+
+$$
+B_{t+1} = B_t + r B_t \left(1 - \frac{B_t}{K}\right) - C_t,
+$$
+
+where $B_t$ is biomass in year $t$, $r$ is the intrinsic rate of population increase, $K$ is carrying capacity, and $C_t$ is catch or removals.
+
+The abundance index is typically linked to biomass through a catchability parameter:
+
+$$
+I_t = q B_t \exp(\eta_t),
+$$
+
+where $I_t$ is the observed CPUE or survey index, $q$ is catchability, and $\eta_t$ is observation error.
+
+Under the Schaefer production model, the common MSY reference points are:
+
+$$
+B_{MSY} = \frac{K}{2}, \quad F_{MSY} = \frac{r}{2}, \quad MSY = \frac{rK}{4}.
+$$
+
+
+Alternative production functions, such as Fox or Pella-Tomlinson forms, change the shape of the production curve and therefore the position of $B_{MSY}$ relative to $K$.
+
+### Production function as the central interpretive figure
+
+For reporting, the production-function plot should be treated as a central cross-model figure. It links the estimated biomass trajectory to the implied surplus production curve and MSY reference points. It is particularly useful because it helps assess whether the data provide sufficient contrast to estimate productivity and depletion.
+
+For SPiCT, the production-function plot is more central than a Kobe plot. SPiCT produces likelihood-based estimates and uncertainty intervals, not posterior probabilities. Kobe-style summaries may be useful descriptively, but they should not be framed as posterior Kobe probabilities.
+
+For JABBA, the Kobe plot has a stronger probabilistic interpretation because stock status probabilities are derived from the joint posterior distribution of biomass and fishing-mortality or harvest-rate states.
+
+
+
+## State-space surplus production models
+
+### Why state-space models?
+
+A key advance in modern SPMs is the separation of the true but unobserved stock trajectory from noisy observations. In a state-space model, biomass is a latent state, while CPUE or survey indices are observations of that latent state.
+
+The process model describes how biomass changes through time:
+
+$$
+B_{t+1} = f(B_t, C_t, \theta) \exp(\varepsilon_t),
+$$
+
+where $f(\cdot)$ is the deterministic biomass update function and $\varepsilon_t$ is process error.
+
+The observation model describes how indices relate to biomass:
+
+$$
+I_t = q B_t \exp(\eta_t),
+$$
+
+where $\eta_t$ is observation error.
+
+Process error may reflect recruitment variability, environmental variability, natural-mortality variation, growth variation, changes in availability, and structural mismatch between the simple biomass model and the true age-, size- or spatially structured population. Observation error reflects sampling error, CPUE standardization uncertainty, reporting error, and unmodelled variation in catchability.
+
+### Process error: practical interpretation
+
+Process error should be explained pragmatically rather than treated as a technical debate about the exact placement of the error term. The most important messages are:
+
+- process error allows the biomass trajectory to deviate from the deterministic production curve;
+- this is realistic because real stocks do not follow smooth deterministic trajectories;
+- estimating process and observation error simultaneously is difficult in low-information assessments;
+- process-error assumptions can strongly influence stock trajectories, uncertainty and forecasts;
+- estimated process error should be biologically plausible and should be evaluated through diagnostics and sensitivity analyses.
+
+Process error should not be interpreted simply as “noise”. In an SPM it absorbs both natural population variability and structural limitations of the model. This is important because SPMs do not explicitly represent age structure, size structure, spatial dynamics, recruitment pulses, changing selectivity or changes in catchability.
+
+### Plausible magnitude of process error
+
+The likely magnitude of process error depends on life history, recruitment variability, exploitation level and the degree to which the biomass model approximates the true stock dynamics.
+
+Short-lived species and small pelagics are expected to show larger process variation than long-lived demersal or deep-water species. Process variation may also increase under heavy fishing because age truncation makes biomass more sensitive to recruitment variability.
+
+This concept should be used qualitatively to motivate sensitivity analyses. For example:
+
+- small pelagics may justify higher process-error assumptions;
+- long-lived coastal or demersal species may justify lower process-error assumptions;
+- strongly depleted stocks may require wider process-error sensitivity ranges;
+- short CPUE series may not contain enough information to estimate process and observation error reliably.
+
+
+## Comparing SPiCT and JABBA
+
+The following table summarises the main conceptual and practical differences between the two state-space SPMs in the toolbox.
+
+```{r model-comparison-table, echo=FALSE}
+comparison <- data.frame(
+  Feature = c(
+    "Software platform",
+    "Estimation framework",
+    "Time structure",
+    "State-space process error",
+    "Observation error",
+    "Prior/penalty philosophy",
+    "Uncertainty interpretation",
+    "Main diagnostics",
+    "Kobe plot interpretation",
+    "Production-function plot",
+    "Typical strengths"
+  ),
+  SPiCT = c(
+    "R/TMB",
+    "Maximum likelihood with random effects and Laplace approximation",
+    "Continuous time",
+    "Explicit stochastic biomass and fishing-mortality dynamics",
+    "Explicit index and catch observation components",
+    "Penalties and priors as likelihood components; not fully Bayesian posterior inference",
+    "Likelihood-based estimates and confidence intervals",
+    "Convergence, residuals, retrospective, hindcast, jitter/sensitivity",
+    "Useful descriptively, but not posterior Kobe probabilities",
+    "Central diagnostic and interpretive figure",
+    "Fast, flexible, strong for dynamic/shorter-lived or seasonal systems"
+  ),
+  JABBA = c(
+    "R/JAGS",
+    "Fully Bayesian MCMC state-space model",
+    "Discrete annual",
+    "Explicit stochastic biomass dynamics",
+    "Explicit lognormal observation models for one or more indices",
+    "Formal Bayesian priors and posterior inference",
+    "Posterior distributions and credible intervals",
+    "MCMC diagnostics, residuals, retrospective, hindcast, prior-posterior checks",
+    "Proper posterior probability interpretation",
+    "Central together with posterior stock-status plots",
+    "Strong prior integration, posterior risk, RFMO-style uncertainty summaries"
+  )
+)
+knitr::kable(comparison, caption = "Comparison of SPiCT and JABBA.")
+```
+
+
+## Assumptions and caveats common to surplus production models
+
+SPiCT and JABBA differ in estimation philosophy and time structure, but they share most of the core assumptions and limitations of surplus production models. These assumptions should therefore be evaluated carefully when interpreting stock status, reference points and management advice.
+
+
+- **Aggregated biomass representation**: surplus production models summarize the stock as a single biomass state and do not explicitly model age structure, length structure, sex structure or spatial structure. This parsimony can be advantageous in data-limited situations, but may also obscure important biological processes and population dynamics.
+
+- **Selectivity and catchability assumptions**: surplus production models generally assume that abundance indices remain proportional to exploitable biomass through time. This assumption may be violated by changing fleet behaviour, technological creep, spatial targeting, hyperstability, hyperdepletion, changing selectivity, changes in species composition or expansion and contraction of fishing grounds. In many practical applications, these issues may influence model behaviour more strongly than the choice between SPiCT and JABBA.
+
+- **Lag effects and delayed population responses**: surplus production models do not explicitly represent lagged relationships between recruitment, spawning biomass and exploitable biomass. For medium- and long-lived species, strong recruitment events or recruitment failures may only influence exploitable biomass several years later. Within surplus production models, these effects are typically absorbed into process variability or may appear as model misspecification.
+
+- **Stationary productivity assumptions**: surplus production models generally assume that the underlying production relationship remains stationary through time. This assumption may be violated under climate-driven productivity shifts, ecosystem changes, regime shifts or persistent changes in recruitment dynamics.
+
+- **Data contrast requirements**: reliable estimation of productivity and depletion requires sufficient contrast in catch and abundance-index data. Long catch histories combined with short CPUE series may still provide useful information, but can also allow multiple plausible depletion trajectories. Short, flat or contradictory CPUE series are particularly challenging and may reduce parameter identifiability and prediction skill.
+
+These assumptions should not necessarily be interpreted as reasons to reject surplus production models. Rather, they define the conditions under which results should be interpreted cautiously and evaluated through diagnostics, hindcast validation and sensitivity analyses.
+### Data contrast
+
+SPMs require contrast in catch and abundance data to estimate productivity and depletion. Long catch series with short CPUE series can be informative, but may also allow multiple plausible depletion histories. Short, flat or contradictory CPUE series are particularly challenging.

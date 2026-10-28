@@ -1,0 +1,23 @@
+name: Case study
+description: Propose a CECAF stock as a worked example
+title: "[Case study] "
+labels: ["case-study"]
+body:
+  - type: input
+    id: stock
+    attributes: {label: Stock, placeholder: "e.g. Sardinella aurita – North"}
+    validations: {required: true}
+  - type: input
+    id: wg
+    attributes: {label: CECAF working group}
+  - type: textarea
+    id: data
+    attributes: {label: "Available data", description: "Catch years, indices (CPUE/survey), length/age data"}
+  - type: textarea
+    id: methods
+    attributes: {label: "Methods to apply / compare", description: "e.g. BioDyn reference vs SPiCT and JABBA"}
+  - type: dropdown
+    id: share
+    attributes:
+      label: Can the input data be published in the repository?
+      options: ["Yes", "Aggregated only", "No – results only", "To be agreed"]

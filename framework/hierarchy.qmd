@@ -1,0 +1,81 @@
+---
+title: "Hierarchical framework"
+subtitle: "Classifying assessment methods and the tools around them"
+---
+
+Methods are described at three levels: **model class** (with sub-class or population structure), **application context** (the data situation the method is intended for) and **named method**. Cross-cutting attributes (Bayesian, state-space, process error, multiple indices, multi-gear, dome selectivity) are listed in the [crosswalk](crosswalk.qmd). Around the assessment methods sit two further layers: **data and CPUE tools** that prepare the inputs, and **advice and MSE tools** that turn accepted assessments into management advice.
+
+::: {.hierarchy-wrap}
+::: {.hierarchy-root}
+::: {.root-box}
+Stock assessment methods
+:::
+:::
+
+::: {.class-grid}
+::: {.class-card .bio-card}
+### Biomass dynamic models
+
+#### Unstructured biomass dynamics
+
+- [Catch-only]{.app-label}<br>[[CMSY+](../methods/biomass-dynamic/cmsy.qmd)]{.method-label}
+- [Catch + index]{.app-label}<br>[[BSM](../methods/biomass-dynamic/cmsy.qmd) / [JABBA](../methods/biomass-dynamic/jabba.qmd) / [SPiCT](../methods/biomass-dynamic/spict.qmd)]{.method-label}
+- [Catch + multiple indices / auxiliary data]{.app-label}<br>[JABBA / SPiCT]{.method-label}
+:::
+
+::: {.class-card .eq-card}
+### Dynamic pool models
+
+#### Equilibrium per-recruit
+
+- [Age-based]{.app-label}<br>[[YPR / SPR / Thompson & Bell](../methods/dynamic-pool/ypr-spr.qmd)]{.method-label}
+- [Length-based (single fleet)]{.app-label}<br>[[LBSPR](../methods/dynamic-pool/lbspr.qmd) / [LBB](../methods/dynamic-pool/lbb.qmd) / [FLicc](../methods/dynamic-pool/flicc.qmd)]{.method-label}
+- [Length-based (multi-gear)]{.app-label}<br>[[FLicc](../methods/dynamic-pool/flicc.qmd) / [fishblicc](../methods/dynamic-pool/fishblicc.qmd)]{.method-label}
+
+#### Structured dynamic
+
+- [Catch-at-length]{.app-label}<br>[[Statistical catch-at-length](../methods/dynamic-pool/scal.qmd)]{.method-label}
+- [Catch-at-age]{.app-label}<br>[[XSA, SAM, a4a, SS3](../methods/age-structured/age-structured.qmd)]{.method-label}
+:::
+
+::: {.class-card .dyn-card}
+### Multispecies and mixed fisheries
+
+#### Technical interactions
+
+- [Multispecies MSY / multigear]{.app-label}<br>[[mmsyFM](../methods/multispecies/mmsyfm.qmd)]{.method-label}
+:::
+:::
+
+::: {.class-grid style="margin-top:18px"}
+::: {.class-card .note-box}
+### Data and CPUE tools
+
+- [CPUE standardisation]{.app-label}<br>[[cpueTargeting](../data-tools/cpuetargeting.qmd)]{.method-label}
+- [Joint indices, trends]{.app-label}<br>[[JARA](../data-tools/jara.qmd)]{.method-label}
+- [Length compositions]{.app-label}<br>[[fishsize (TBC)](../data-tools/fishsize.qmd)]{.method-label}
+:::
+::: {.class-card .note-box}
+### Advice and MSE
+
+- [Reference points, advice tables]{.app-label}<br>[[FLRef](../advice/flref.qmd)]{.method-label}
+- [HCR testing]{.app-label}<br>[[FLR mse](../advice/mse.qmd)]{.method-label}
+:::
+::: {.class-card .note-box}
+### Choosing among them
+
+Use the [method selector](../select/index.qmd) to match methods to your data, and check the [misuse warnings](../guidance/misuse.qmd).
+:::
+:::
+:::
+
+## Core model classes
+
+```{r}
+#| echo: false
+knitr::kable(read.csv("data/model_classes.csv", check.names = FALSE))
+```
+
+## Notes on interpretation
+
+The hierarchy is a simplified, practical classification. Some named methods appear in more than one application context. JABBA and SPiCT, for example, can be used with one index, several indices or auxiliary information, and FLicc covers both single- and multi-gear length data. The hierarchy is therefore used together with the [crosswalk](crosswalk.qmd), the [selector](../select/index.qmd) and each method's misuse-prevention section.

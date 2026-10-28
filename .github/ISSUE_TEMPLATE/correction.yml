@@ -1,0 +1,16 @@
+name: Correction or question
+description: Report an error, outdated information, or ask a question about a page
+title: "[Fix] "
+labels: ["correction"]
+body:
+  - type: input
+    id: page
+    attributes: {label: Page URL or file}
+    validations: {required: true}
+  - type: textarea
+    id: issue
+    attributes: {label: What is wrong or unclear?}
+    validations: {required: true}
+  - type: textarea
+    id: suggestion
+    attributes: {label: Suggested change (optional)}
