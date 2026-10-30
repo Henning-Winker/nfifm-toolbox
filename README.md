@@ -26,6 +26,10 @@ quarto preview      # local live preview
 quarto render       # full build into _site/
 ```
 
+### Develop in RStudio
+
+Open `nfifm-toolbox.Rproj`, then run `source("scripts/preview.R")`. The site opens in the Viewer and each page re-renders when you save it (also after edits to `data/*.csv`). Alternatively use the **Build** pane → *Render Website*, or the **Render** button on a single `.qmd`. Stop the preview with `quarto::quarto_preview_stop()`. Nothing is published until you push to `main`.
+
 ### Local build after every pull (not published)
 
 Enable once per clone, so that every `git pull` rebuilds the site into `_site/` on your machine:
