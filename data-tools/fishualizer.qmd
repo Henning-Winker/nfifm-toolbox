@@ -6,126 +6,213 @@ categories: [data, length composition, QC, Shiny]
 
 [Draft]{.status-badge .status-draft} [Showcase entry]{.status-badge .status-showcase}
 
-::: {.path}
-[1 · Data](#data){.step} [→]{.arrow} [2 · Method](#method){.step} [→]{.arrow} [3 · Outputs](#outputs-diagnostics-and-sensitivities){.step} [·]{.arrow} [Use and misuse](#use-and-misuse){.step} [·]{.arrow} [Case studies](#case-studies-and-references){.step}
+::: {.fz-lead}
+Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions.
 :::
 
-```{r}
-#| echo: false
-source("R/toolbox.R")
-method_attributes("fishualizer")
+- **Find errors:** typos, mixed units and impossible values.
+- **Understand your data:** what you have, from when, and from which sources.
+- **Check coverage:** which years, gears and areas are well sampled.
+
+FishualizeR does not fit a model or assess a stock. It prepares you for tools such as [FLicc](../methods/dynamic-pool/flicc.qmd), [LBSPR](../methods/dynamic-pool/lbspr.qmd) and [LBB](../methods/dynamic-pool/lbb.qmd) by showing whether your data are ready for them.
+
+[Open the FishualizeR Shiny App](http://apps.upwellsolutionsllc.com/app/FishualizeR){.btn .btn-primary} [Where to start](#workflow){.btn .btn-outline-primary}
+
+
+## What you provide and what you get {#inputs-outputs}
+
+::::: {.fz-flow}
+
+<div class="fz-flow-head"><span>You have</span><span>Key parameters</span><span>Output</span></div>
+
+:::: {.fz-row}
+::: {.fz-card .fz-in}
+**Data inventory**  
+Excel template  
+[Template to be added]{.todo}
+:::
+::: {.fz-card .fz-mid}
+Data types held, years covered, key events (fishery start, catch peaks)
+:::
+::: {.fz-card .fz-out}
+**Timeline of your data**  
+Years covered by each data type, with events marked, so gaps and changes are easy to see.
+:::
+::::
+
+:::: {.fz-row}
+::: {.fz-card .fz-in}
+**Life history data**  
+Excel template  
+[Template to be added]{.todo}
+:::
+::: {.fz-card .fz-mid}
+Growth, natural mortality, maturity, length-weight
+:::
+::: {.fz-card .fz-out}
+**Curves to compare**  
+Growth, maturity, length-weight and mortality side by side, to spot conflicting values.
+:::
+::::
+
+:::: {.fz-row}
+::: {.fz-card .fz-in}
+**Length data**  
+CSV file  
+[Example files to be added]{.todo}
+:::
+::: {.fz-card .fz-mid}
+Length (individual or per bin), year, gear, area or location
+:::
+::: {.fz-card .fz-out}
+**Plots and compositions**  
+Raw-data plots (colour, facets); coverage over time or location; length compositions in set bins.
+:::
+::::
+
+:::::
+
+::: {.fz-caption}
+Each row works on its own. The two templates are optional, but they are the habit worth building: they record what your data are and where they came from.
+:::
+
+
+## Workflow {#workflow}
+
+```{=html}
+<div class="fz-svg-wrap"><svg class="fz-svg" viewBox="0 0 760 612" role="img" aria-label="Workflow in three steps. Step 1: learn the app with practice files. Step 2: use the app on your own data. Gather your materials, run the Shiny app, then explore gaps, errors, coverage and limitations. If there are gaps or errors to deal with, revise your data as appropriate and re-run the app to explore again. When there are none, you understand your data and can move on to FLicc, LBSPR or LBB. Step 3, optional: look in more detail.">
+<defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="currentColor"/></marker></defs>
+<rect class="f-tool" x="6" y="12" width="748" height="72" rx="10"/>
+<circle class="f-n" cx="32" cy="36" r="12"/><text class="f-nt" x="32" y="41" text-anchor="middle">1</text>
+<text class="f-t" x="52" y="41">Learn the app</text>
+<text class="f-s" x="52" y="58">New to FishualizeR? Practise first with the practice templates and example datasets,</text>
+<text class="f-s" x="52" y="73">where you know what the results should look like.</text>
+<path class="f-link" d="M380 87 V112" marker-end="url(#ah2)"/>
+<text class="f-lbl" x="392" y="104">Used the app before? Start at step 2</text>
+<rect class="f-band2" x="6" y="116" width="748" height="300" rx="12"/>
+<circle class="f-n" cx="32" cy="138" r="12"/><text class="f-nt" x="32" y="143" text-anchor="middle">2</text>
+<text class="f-t" x="52" y="143">Use the app on your own data</text>
+<rect class="f-in" x="20" y="156" width="210" height="80" rx="8"/><text class="f-t" x="36" y="185">Gather materials</text><text class="f-s" x="36" y="206">Data inventory, life history</text><text class="f-s" x="36" y="222">and length data (CSV)</text><rect class="f-tool" x="275" y="156" width="210" height="80" rx="8"/><text class="f-t" x="291" y="185">Run the Shiny app</text><text class="f-s" x="291" y="206">Load your files and open</text><text class="f-s" x="291" y="222">each tab in turn</text><rect class="f-tool" x="530" y="156" width="210" height="80" rx="8"/><text class="f-t" x="546" y="185">Explore the results</text><text class="f-s" x="546" y="206">Check gaps, errors, coverage</text><text class="f-s" x="546" y="222">and limitations</text><path class="f-link" d="M233 196 H268" marker-end="url(#ah2)"/><path class="f-link" d="M488 196 H523" marker-end="url(#ah2)"/><path class="f-link" d="M635 239 V268" marker-end="url(#ah2)"/><polygon class="f-dia" points="535,325 635,275 735,325 635,375"/><text class="f-t" x="635" y="321" text-anchor="middle">Gaps or errors</text><text class="f-t" x="635" y="339" text-anchor="middle">to deal with?</text><path class="f-link" d="M533 325 H491" marker-end="url(#ah2)"/><text class="f-lbl" x="498" y="316">Yes</text><rect class="f-out" x="275" y="285" width="210" height="80" rx="8"/><text class="f-t" x="291" y="314">Revise your data</text><text class="f-s" x="291" y="335">As appropriate: fix errors,</text><text class="f-s" x="291" y="351">fill gaps from known sources</text><path class="f-link" d="M380 282 V242" marker-end="url(#ah2)"/><text class="f-lbl" x="392" y="266">Re-run and explore again</text><rect class="f-note" x="20" y="285" width="210" height="80" rx="8"/><text class="f-s" x="36" y="314">Not every gap can be fixed.</text><text class="f-s" x="36" y="330">Record the rest as caveats to</text><text class="f-s" x="36" y="346">carry into later tools.</text><path class="f-link" d="M635 378 V444" marker-end="url(#ah2)"/><text class="f-lbl" x="647" y="428">No</text><rect class="f-end" x="6" y="448" width="748" height="60" rx="10"/><text class="f-et" x="380" y="475" text-anchor="middle">You understand your data</text><text class="f-et2" x="380" y="494" text-anchor="middle">Gaps, coverage and limits are clear. Move on to FLicc, LBSPR or LBB.</text><path class="f-link f-dash" d="M380 511 V532" marker-end="url(#ah2)"/><rect class="f-note" x="6" y="536" width="748" height="64" rx="10"/><circle class="f-n" cx="32" cy="560" r="12"/><text class="f-nt" x="32" y="565" text-anchor="middle">3</text><text class="f-t" x="52" y="565">Look in more detail (optional)</text><text class="f-s" x="52" y="586">How the methods work, why the checks matter, and how the app is built.</text></svg></div>
 ```
 
-
-## Overview
-
-| Field | Entry |
-|---|---|
-| **Family / class** | Data and CPUE tools → length composition data |
-| **Method name** | FishualizeR: R Shiny app accompanying FAO Fisheries and Aquaculture Technical Paper 706 (code: [DanOvando/fishualizeR](https://github.com/DanOvando/fishualizeR); app: [apps.upwellsolutionsllc.com/app/FishualizeR](http://apps.upwellsolutionsllc.com/app/FishualizeR)) |
-| **Short description** | Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions. |
-| **Main outputs** | Plots of raw data (with colour and faceting options), data-coverage metrics over time or location, and length compositions in user-defined bins, all downloadable. |
-| **Typical use case** | First look at length samples before a length-based assessment (FLicc, LBSPR, LBB): check units, gaps and coverage, then bin by year, area or gear. |
-
-FishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support FAO Technical Paper 706, which sets out the data-preparation workflow: data inventory, timeline of influential events, life-history parameter inventory, cleaning and outlier handling, and exploratory data analysis. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.
-
-
-## 1 · Data {#data}
-
-| Field | Entry |
-|---|---|
-| **Minimum data** | A `.csv` file of length data: either individual measurements or counts per length bin. |
-| **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
-| **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
-| **Data quality considerations** | Mixed units (cm vs mm), gaps in time or space, and uneven coverage across gears or areas, all of which the app helps detect. |
-| **Pre-processing steps** | Upload the CSV, correct unit inconsistencies, inspect raw distributions, check coverage. |
-| **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
-| **Aggregation / binning choices** | User-defined length-bin width; counts per bin at chosen levels (e.g. year and fishing zone). |
-| **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
-| **Missing data handling** | Shows where data are missing over time or location; downloadable coverage metrics. |
-
-**Data template:** [To be added]{.todo}. Prepare the data first with the [data preparation workflow](../data-tools/data-preparation.qmd).
-
-
-## 2 · Method {#method}
-
-| Field | Entry |
-|---|---|
-| **Software / tools** | FishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (`FLQuantLen()`), LBSPR, LBB. |
-| **Implementation notes** | Shiny app (`ui.R`, `server.R`) with an `renv.lock` for dependencies; no R functions are exported for scripted use. |
-| **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
-| **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
-
-## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}
-
-| Field | Entry |
-|---|---|
-| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
-| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
-| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
-| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
-
-#### Sensitivity demos
-
-::: {.catalogue-example-grid}
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Bin width
+::: {.fz-caption}
+Most people go around the loop in step 2 more than once. Each pass leaves the data better understood, or its limits better documented.
 :::
-Effect of the length-bin width on the composition and on downstream SPR.
+
+**Resources for each step**
+
+::::: {.fz-groups}
+
+:::: {.fz-group}
+[Essentials]{.fz-group-title}  
+Needed throughout
+
+- [FishualizeR Shiny App](http://apps.upwellsolutionsllc.com/app/FishualizeR)<br><small>Opens in your browser. Nothing to install.</small>
+- [Shiny App User Guide]{.todo}<br><small>Every tab explained with screenshots, and what to look for.</small>
+::::
+
+:::: {.fz-group}
+[Learning]{.fz-group-title}  
+Practise before using your own data
+
+- [Practice templates]{.todo}<br><small>Both Excel templates, filled in, to load into the app.</small>
+- [Practice datasets]{.todo}<br><small>Example data files to try in the app.</small>
+::::
+
+:::: {.fz-group}
+[On your own]{.fz-group-title}  
+Prepare and load your own data
+
+- [Blank templates]{.todo}<br><small>Data inventory and life-history templates for your own data.</small>
+- [Data preparation workflow](../data-tools/data-preparation.qmd)<br><small>How to prepare and inventory your data before using any tool.</small>
+- [Data Standards Guide]{.todo}<br><small>How to record, store and organise your data so it works with any tool in the toolbox.</small>
+::::
+
+:::: {.fz-group}
+[Going deeper]{.fz-group-title}  
+Optional background and code
+
+- [FAO Technical Paper 706](https://doi.org/10.4060/cd0366en)<br><small>The practical manual on preparing data for data-limited fisheries.</small>
+- [Code repository](https://github.com/DanOvando/fishualizeR)<br><small>Source code for the app, to read or run on your own computer.</small>
+- [Package technical guide]{.todo}<br><small>Using the FishualizeR code directly. Only if made available.</small>
+::::
+
+:::::
+
+
+## Is FishualizeR the right tool? {#right-tool}
+
+:::: {.fz-fit}
+::: {.fz-yes}
+[Use it to]{.fz-fit-title}
+
+- Take a first look at length samples.
+- Check units, gaps and uneven coverage across years, areas and gears.
+- Record which data you hold and which events may explain changes.
 :::
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Coverage filters
+::: {.fz-no}
+[Use something else to]{.fz-fit-title}
+
+- Estimate stock status or fit a model. Use an assessment tool such as [FLicc](../methods/dynamic-pool/flicc.qmd).
+- Test harvest control rules or screen management options.
+- Judge data quality for you. The app shows problems; you decide what they mean.
 :::
-Dropping poorly covered years, areas or gears: how the composition changes.
-:::
-:::
+::::
 
 
 ## Use and misuse {#use-and-misuse}
 
+::: {.callout-warning title="Before you rely on the results"}
+The app shows problems; it does not fix them or judge your data for you.
+:::
+
+:::: {.fz-twocol}
+::: {.fz-col}
+**Check first**
+
+- Units are consistent (for example, not cm mixed with mm).
+- Coverage is reviewed by year and by gear.
+- Sample size is noted for each gear and year.
+:::
+::: {.fz-col}
+**Common mistakes**
+
+- Pooling gears or areas with different selectivity into one view.
+- Ignoring years with very small samples.
+- Treating summaries as representative of the catch without checking sampling coverage.
+:::
+::::
+
 ```{r}
 #| echo: false
 #| results: asis
+source("R/toolbox.R")
 method_warnings("fishualizer")
 ```
 
-| Field | Entry |
-|---|---|
-| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
-| **Do not use when** | Treating binned output as representative of the catch without checking sampling coverage and raising to catch. |
-| **Common misuses** | Pooling gears or areas with different selectivity into one composition; ignoring years with very small samples. |
-| **Pre-use checklist** | Units consistent; coverage by year and gear reviewed; sample size per gear-year noted (red flag below about 50 fish or 10 bins, see FLicc checks). |
-| **Advice suitability** | Input data only: prepares length compositions for assessment; produces no stock status. |
 
-## Case studies and references {#case-studies-and-references}
+## Where the results go next {#next}
 
-| Field | Entry |
-|---|---|
-| **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <https://doi.org/10.4060/cd0366en> |
+::: {.fz-pills}
+[FLicc](../methods/dynamic-pool/flicc.qmd) [LBSPR](../methods/dynamic-pool/lbspr.qmd) [LBB](../methods/dynamic-pool/lbb.qmd)
+:::
 
-::: {.catalogue-example-grid}
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Suitable example
+::: {.fz-pills}
+**Related:** [cpueTargeting](../data-tools/cpuetargeting.qmd) [JARA](../data-tools/jara.qmd)
 :::
-Length samples from several gears and years that need checking and binning before an FLicc fit.
-:::
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Assumption sensitivity
-:::
-[To be completed]{.todo}
-:::
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Unsuitable example
-:::
-[To be completed]{.todo}
-:::
-:::
+
+Not sure which tool fits your data? Use the [method selector](../select/index.qmd).
+
+
+## Technical details and references {#references}
+
+<details class="fz-details">
+<summary>Show details</summary>
+
+**Software.** R Shiny app, with package versions pinned in `renv.lock`. No R functions are exported for scripted use. App code licence: MPL-2.0.
+
+**Reference.** Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <https://doi.org/10.4060/cd0366en>
+
+**Still to complete.** [Preferred and auxiliary data, standardisation, handling of fleets and gears, and worked case studies.]{.todo}
+
+</details>
