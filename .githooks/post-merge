@@ -1,0 +1,5 @@
+#!/bin/sh
+# Rebuild the local site after every `git pull` (enable once with: git config core.hooksPath .githooks).
+# Skip a build with: NFIFM_SKIP_BUILD=1 git pull
+[ -n "$NFIFM_SKIP_BUILD" ] && exit 0
+sh "$(git rev-parse --show-toplevel)/scripts/build-local.sh"

@@ -32,6 +32,7 @@ jobs:
             any::tibble
             any::dplyr
             any::htmltools
+            any::jsonlite
 
       - uses: quarto-dev/quarto-actions/publish@v2
         with:

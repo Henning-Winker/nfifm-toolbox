@@ -11,6 +11,14 @@ Answer the questions about the stock and the data you have. The selector lists t
 Each tool's data requirements are recorded in [`data/methods.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/methods.csv), and each warning is a rule in [`data/misuse_rules.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/misuse_rules.csv). **Do not use** means a core assumption is violated by the data you describe. **Caution** means the method can be used, but only with the extra checks named in the warning. Candidates are ranked with model-based methods first, ordered by whether they handle your gears, then by how much of your data they use (methods that use more of the available data are preferred), then by the number of cautions; fishery indicators follow as complementary evidence. The rules are a first draft for review.
 :::
 
+```{r}
+#| echo: false
+#| results: asis
+# Embed the registries so the selector also works when the built site is opened from disk (file://)
+csv <- function(f) jsonlite::toJSON(paste(readLines(f, encoding = "UTF-8", warn = FALSE), collapse = "\n"), auto_unbox = TRUE)
+cat("<script>window.NFIFM_CSV = {methods: ", csv("data/methods.csv"), ", rules: ", csv("data/misuse_rules.csv"), "};</script>\n", sep = "")
+```
+
 ```{=html}
 <form id="selector" class="selector-grid" onsubmit="return false">
 <fieldset class="selector-q"><legend>Catch and abundance data</legend>
@@ -204,7 +212,8 @@ Each tool's data requirements are recorded in [`data/methods.csv`](https://githu
       return card(m, "sel-advice", "Advice step", body); }).join("") : '<p class="sel-none">No candidate assessment yet, so no advice step.</p>';
     document.getElementById("sel-nofit").innerHTML = nofit.map(function (x) { return '<tr><td><a href="' + href(x.m) + '">' + esc(x.m.name) + "</a></td><td>" + esc(x.miss.join(", ")) + "</td></tr>"; }).join("");
   }
-  Promise.all(["../data/methods.csv", "../data/misuse_rules.csv"].map(function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.text(); }); }))
+  (window.NFIFM_CSV ? Promise.resolve([window.NFIFM_CSV.methods, window.NFIFM_CSV.rules]) :
+   Promise.all(["../data/methods.csv", "../data/misuse_rules.csv"].map(function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.text(); }); })))
     .then(function (t) { methods = parseCSV(t[0]); rules = parseCSV(t[1]); form.addEventListener("change", update); update(); })
     .catch(function () { document.getElementById("sel-summary").textContent = "The method registry could not be loaded. Open the site from a web server (quarto preview or GitHub Pages), not as a local file."; });
 })();
