@@ -80,23 +80,84 @@ Each row works on its own. The two templates are optional, but they are the habi
 ## Workflow {#workflow}
 
 ```{=html}
-<div class="fz-svg-wrap"><svg class="fz-svg" viewBox="0 0 760 612" role="img" aria-label="Workflow in three steps. Step 1: learn the app with practice files. Step 2: use the app on your own data. Gather your materials, run the Shiny app, then explore gaps, errors, coverage and limitations. If there are gaps or errors to deal with, revise your data as appropriate and re-run the app to explore again. When there are none, you understand your data and can move on to FLicc, LBSPR or LBB. Step 3, optional: look in more detail.">
-<defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="currentColor"/></marker></defs>
-<rect class="f-tool" x="6" y="12" width="748" height="72" rx="10"/>
-<circle class="f-n" cx="32" cy="36" r="12"/><text class="f-nt" x="32" y="41" text-anchor="middle">1</text>
-<text class="f-t" x="52" y="41">Learn the app</text>
-<text class="f-s" x="52" y="58">New to FishualizeR? Practise first with the practice templates and example datasets,</text>
-<text class="f-s" x="52" y="73">where you know what the results should look like.</text>
-<path class="f-link" d="M380 87 V112" marker-end="url(#ah2)"/>
-<text class="f-lbl" x="392" y="104">Used the app before? Start at step 2</text>
-<rect class="f-band2" x="6" y="116" width="748" height="300" rx="12"/>
-<circle class="f-n" cx="32" cy="138" r="12"/><text class="f-nt" x="32" y="143" text-anchor="middle">2</text>
-<text class="f-t" x="52" y="143">Use the app on your own data</text>
-<rect class="f-in" x="20" y="156" width="210" height="80" rx="8"/><text class="f-t" x="36" y="185">Gather materials</text><text class="f-s" x="36" y="206">Data inventory, life history</text><text class="f-s" x="36" y="222">and length data (CSV)</text><rect class="f-tool" x="275" y="156" width="210" height="80" rx="8"/><text class="f-t" x="291" y="185">Run the Shiny app</text><text class="f-s" x="291" y="206">Load your files and open</text><text class="f-s" x="291" y="222">each tab in turn</text><rect class="f-tool" x="530" y="156" width="210" height="80" rx="8"/><text class="f-t" x="546" y="185">Explore the results</text><text class="f-s" x="546" y="206">Check gaps, errors, coverage</text><text class="f-s" x="546" y="222">and limitations</text><path class="f-link" d="M233 196 H268" marker-end="url(#ah2)"/><path class="f-link" d="M488 196 H523" marker-end="url(#ah2)"/><path class="f-link" d="M635 239 V268" marker-end="url(#ah2)"/><polygon class="f-dia" points="535,325 635,275 735,325 635,375"/><text class="f-t" x="635" y="321" text-anchor="middle">Gaps or errors</text><text class="f-t" x="635" y="339" text-anchor="middle">to deal with?</text><path class="f-link" d="M533 325 H491" marker-end="url(#ah2)"/><text class="f-lbl" x="498" y="316">Yes</text><rect class="f-out" x="275" y="285" width="210" height="80" rx="8"/><text class="f-t" x="291" y="314">Revise your data</text><text class="f-s" x="291" y="335">As appropriate: fix errors,</text><text class="f-s" x="291" y="351">fill gaps from known sources</text><path class="f-link" d="M380 282 V242" marker-end="url(#ah2)"/><text class="f-lbl" x="392" y="266">Re-run and explore again</text><rect class="f-note" x="20" y="285" width="210" height="80" rx="8"/><text class="f-s" x="36" y="314">Not every gap can be fixed.</text><text class="f-s" x="36" y="330">Record the rest as caveats to</text><text class="f-s" x="36" y="346">carry into later tools.</text><path class="f-link" d="M635 378 V444" marker-end="url(#ah2)"/><text class="f-lbl" x="647" y="428">No</text><rect class="f-end" x="6" y="448" width="748" height="60" rx="10"/><text class="f-et" x="380" y="475" text-anchor="middle">You understand your data</text><text class="f-et2" x="380" y="494" text-anchor="middle">Gaps, coverage and limits are clear. Move on to FLicc, LBSPR or LBB.</text><path class="f-link f-dash" d="M380 511 V532" marker-end="url(#ah2)"/><rect class="f-note" x="6" y="536" width="748" height="64" rx="10"/><circle class="f-n" cx="32" cy="560" r="12"/><text class="f-nt" x="32" y="565" text-anchor="middle">3</text><text class="f-t" x="52" y="565">Look in more detail (optional)</text><text class="f-s" x="52" y="586">How the methods work, why the checks matter, and how the app is built.</text></svg></div>
+<div class="fz-svg-wrap">
+<svg class="fz-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Flowchart of the FishualizeR workflow: open the app, learn the tools, complete the practice exercises, upload your data in the Shiny app, explore your data, assess coverage and data gaps, revise errors as needed and re-run the app, then move on to the next tool using the method selector. A note says to record any gaps you cannot fix as caveats.">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f9fd"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1f4a63" flood-opacity="0.16"/></filter>
+<marker id="m9db8c8" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#9db8c8"/></marker><marker id="m4db3e6" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#4db3e6"/></marker><marker id="m3a9fd9" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#3a9fd9"/></marker><marker id="m2b8ac7" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2b8ac7"/></marker><marker id="m2273ae" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2273ae"/></marker><marker id="m1d7a94" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#1d7a94"/></marker><marker id="m2a9a84" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2a9a84"/></marker><marker id="me08a1e" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#e08a1e"/></marker>
+</defs>
+<rect width="1040" height="640" rx="22" fill="url(#bg)"/>
+<path d="M0 602 Q86 580 173 602 T346 602 T520 602 T693 602 T866 602 T1040 602 V640 H0 Z" fill="#e6f2f9"/>
+<path d="M0 618 Q86 598 173 618 T346 618 T520 618 T693 618 T866 618 T1040 618 V640 H0 Z" fill="#d6eaf5" opacity="0.8"/>
+<g transform="translate(120,622) scale(0.9,0.9)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"/><path d="M-12 0 L-24 -8 L-24 8 Z"/><circle cx="7" cy="-2" r="1.8" fill="#fff"/></g><g transform="translate(190,630) scale(0.65,0.65)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"/><path d="M-12 0 L-24 -8 L-24 8 Z"/><circle cx="7" cy="-2" r="1.8" fill="#fff"/></g><g transform="translate(940,624) scale(-0.8,0.8)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"/><path d="M-12 0 L-24 -8 L-24 8 Z"/><circle cx="7" cy="-2" r="1.8" fill="#fff"/></g>
+<circle cx="985" cy="70" r="6" fill="none" stroke="#b7d9ec" stroke-width="2"/>
+<circle cx="1010" cy="45" r="4" fill="none" stroke="#b7d9ec" stroke-width="2"/>
+<circle cx="965" cy="40" r="3" fill="none" stroke="#b7d9ec" stroke-width="2"/>
+<path d="M127.5 117.0 C127.5 22 910.5 22 910.5 114.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#m9db8c8)"/>
+<g transform="translate(519.0,57) rotate(0)"><rect x="-125.0" y="-11" width="250" height="22" rx="11" fill="#eaf3f9"/><text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f6a85">Used the app before? Skip ahead</text></g>
+<path d="M235 160 H278" fill="none" stroke="#4db3e6" stroke-width="4" stroke-linecap="round" marker-end="url(#m4db3e6)"/>
+<path d="M496 160 H539" fill="none" stroke="#3a9fd9" stroke-width="4" stroke-linecap="round" marker-end="url(#m3a9fd9)"/>
+<path d="M757 160 H800" fill="none" stroke="#2b8ac7" stroke-width="4" stroke-linecap="round" marker-end="url(#m2b8ac7)"/>
+<path d="M910.5 203.0 V299.0" fill="none" stroke="#2273ae" stroke-width="4" stroke-linecap="round" marker-end="url(#m2273ae)"/>
+<path d="M803 345 H760" fill="none" stroke="#1d7a94" stroke-width="4" stroke-linecap="round" marker-end="url(#m1d7a94)"/>
+<path d="M542 345 H499" fill="none" stroke="#2a9a84" stroke-width="4" stroke-linecap="round" marker-end="url(#m2a9a84)"/>
+<path d="M281 345 H238" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" marker-end="url(#me08a1e)"/>
+<path d="M446 390.0 C446 428.0 470 442.0 512 442.0 H870.5 C900.5 442.0 910.5 426.0 910.5 392.0" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#me08a1e)"/>
+<g transform="translate(691.25,442.0) rotate(0)"><rect x="-65.0" y="-11" width="130" height="22" rx="11" fill="#e08a1e"/><text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Re-run the app</text></g>
+<path d="M336 477.0 V393.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/>
+<rect x="20" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="53" cy="160" r="20" fill="#4db3e6"/>
+<g transform="translate(53,160) scale(0.9)"><path d="M-5 -8 L8 0 L-5 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="#fff"/></g>
+<text x="82" y="156" font-size="15" font-weight="700" fill="#1b3a4b">Open the app</text>
+<text x="82" y="176" font-size="12.5" fill="#5c6f7c">Runs in your browser</text>
+<g transform="translate(72,116.0) rotate(0)"><rect x="-41.0" y="-11" width="82" height="22" rx="11" fill="#2b8ac7"/><text x="0" y="4.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">Start here</text></g>
+<rect x="281" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="314" cy="160" r="20" fill="#3a9fd9"/>
+<g transform="translate(314,160) scale(0.9)"><path d="M-10 -7 Q-4 -9 0 -5 Q4 -9 10 -7 V8 Q4 6 0 10 Q-4 6 -10 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 -5 V10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="343" y="156" font-size="15" font-weight="700" fill="#1b3a4b">Learn the tools</text>
+<text x="343" y="176" font-size="12.5" fill="#5c6f7c">Get to know each tab</text>
+<rect x="542" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="575" cy="160" r="20" fill="#2b8ac7"/>
+<g transform="translate(575,160) scale(0.9)"><rect x="-10" y="-10" width="20" height="20" rx="4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M-5 0 L-1 5 L6 -5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="604" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b">Complete the</text>
+<text x="604" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b">practice exercises</text>
+<rect x="803" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="836" cy="160" r="20" fill="#2273ae"/>
+<g transform="translate(836,160) scale(0.9)"><path d="M0 6 V-8 M-6 -2 L0 -8 L6 -2" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 10 H9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="865" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b">Upload your data</text>
+<text x="865" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b">in the Shiny app</text>
+<rect x="803" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="836" cy="345" r="20" fill="#1d7a94"/>
+<g transform="translate(836,345) scale(0.9)"><circle cx="-2" cy="-2" r="7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3 L10 10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="865" y="350.5" font-size="15" font-weight="700" fill="#1b3a4b">Explore your data</text>
+<rect x="542" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="575" cy="345" r="20" fill="#2a9a84"/>
+<g transform="translate(575,345) scale(0.9)"><path d="M-10 7 L-4 -1 L1 3 L10 -8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="-4" cy="-1" r="1.6" fill="#fff"/><circle cx="1" cy="3" r="1.6" fill="#fff"/></g>
+<text x="604" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Assess coverage</text>
+<text x="604" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">and data gaps</text>
+<rect x="281" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="314" cy="345" r="20" fill="#e08a1e"/>
+<g transform="translate(314,345) scale(0.9)"><path d="M-8 9 L-8 4 L3 -7 L8 -2 L-3 9 Z M0 -4 L5 1" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="343" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Revise errors</text>
+<text x="343" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">as needed</text>
+<rect x="20" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="53" cy="345" r="20" fill="#2e8b57"/>
+<g transform="translate(53,345) scale(0.9)"><path d="M-9 0 H8 M2 -7 L9 0 L2 7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="82" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Move on to the</text>
+<text x="82" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">next tool</text>
+<text x="82" y="379" font-size="12.5" fill="#5c6f7c">via the method selector</text>
+<rect x="281" y="480.0" width="215" height="86" rx="14" fill="#fff" stroke="#9db8c8" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="297" y="504.0" font-size="12.5" fill="#5c6f7c">No dataset is perfect.</text>
+<text x="297" y="521.0" font-size="12.5" fill="#5c6f7c">Note what you can't fix</text>
+<text x="297" y="538.0" font-size="12.5" fill="#5c6f7c">as a caveat and carry it</text>
+<text x="297" y="555.0" font-size="12.5" fill="#5c6f7c">into the next tool.</text>
+</svg>
+</div>
 ```
 
 ::: {.fz-caption}
-Most people go around the loop in step 2 more than once. Each pass leaves the data better understood, or its limits better documented.
+Most people go around the re-run loop more than once. Each pass leaves the data better understood, or its limits better documented.
 :::
 
 **Resources for each step**
