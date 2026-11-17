@@ -6,126 +6,274 @@ categories: [data, length composition, QC, Shiny]
 
 [Draft]{.status-badge .status-draft} [Showcase entry]{.status-badge .status-showcase}
 
-::: {.path}
-[1 · Data](#data){.step} [→]{.arrow} [2 · Method](#method){.step} [→]{.arrow} [3 · Outputs](#outputs-diagnostics-and-sensitivities){.step} [·]{.arrow} [Use and misuse](#use-and-misuse){.step} [·]{.arrow} [Case studies](#case-studies-and-references){.step}
+::: {.fz-lead}
+Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions.
 :::
 
-```{r}
-#| echo: false
-source("R/toolbox.R")
-method_attributes("fishualizer")
+- **Find errors:** typos, mixed units and impossible values.
+- **Understand your data:** what you have, from when, and from which sources.
+- **Check coverage:** which years, gears and areas are well sampled.
+
+FishualizeR does not fit a model or assess a stock. It prepares you for tools such as [FLicc](../methods/dynamic-pool/flicc.qmd), [LBSPR](../methods/dynamic-pool/lbspr.qmd) and [LBB](../methods/dynamic-pool/lbb.qmd) by showing whether your data are ready for them.
+
+[Open the FishualizeR Shiny App](http://apps.upwellsolutionsllc.com/app/FishualizeR){.btn .btn-primary} [Where to start](#workflow){.btn .btn-outline-primary}
+
+
+## What you provide and what you get {#inputs-outputs}
+
+::::: {.fz-flow}
+
+<div class="fz-flow-head"><span>You have</span><span>Key parameters</span><span>Output</span></div>
+
+:::: {.fz-row}
+::: {.fz-card .fz-in}
+**Data inventory**  
+Excel template  
+[Template to be added]{.todo}
+:::
+::: {.fz-card .fz-mid}
+Data types held, years covered, key events (fishery start, catch peaks)
+:::
+::: {.fz-card .fz-out}
+**Timeline of your data**  
+Years covered by each data type, with events marked, so gaps and changes are easy to see.
+:::
+::::
+
+:::: {.fz-row}
+::: {.fz-card .fz-in}
+**Life history data**  
+Excel template  
+[Template to be added]{.todo}
+:::
+::: {.fz-card .fz-mid}
+Growth, natural mortality, maturity, length-weight
+:::
+::: {.fz-card .fz-out}
+**Curves to compare**  
+Growth, maturity, length-weight and mortality side by side, to spot conflicting values.
+:::
+::::
+
+:::: {.fz-row}
+::: {.fz-card .fz-in}
+**Length data**  
+CSV file  
+[Example files to be added]{.todo}
+:::
+::: {.fz-card .fz-mid}
+Length (individual or per bin), year, gear, area or location
+:::
+::: {.fz-card .fz-out}
+**Plots and compositions**  
+Raw-data plots (colour, facets); coverage over time or location; length compositions in set bins.
+:::
+::::
+
+:::::
+
+::: {.fz-caption}
+Each row works on its own. The two templates are optional, but they are the habit worth building: they record what your data are and where they came from.
+:::
+
+
+## Workflow {#workflow}
+
+```{=html}
+<div class="fz-svg-wrap">
+<svg class="fz-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Flowchart of the FishualizeR workflow: open the app, learn the tools, complete the practice exercises, upload your data in the Shiny app, explore your data, assess coverage and data gaps, revise errors as needed and re-run the app, then move on to the next tool using the method selector. A note says to record any gaps you cannot fix as caveats.">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f9fd"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1f4a63" flood-opacity="0.16"/></filter>
+<marker id="m9db8c8" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#9db8c8"/></marker><marker id="m4db3e6" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#4db3e6"/></marker><marker id="m3a9fd9" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#3a9fd9"/></marker><marker id="m2b8ac7" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2b8ac7"/></marker><marker id="m2273ae" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2273ae"/></marker><marker id="m1d7a94" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#1d7a94"/></marker><marker id="m2a9a84" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2a9a84"/></marker><marker id="me08a1e" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#e08a1e"/></marker>
+</defs>
+<rect width="1040" height="640" rx="22" fill="url(#bg)"/>
+<path d="M0 602 Q86 580 173 602 T346 602 T520 602 T693 602 T866 602 T1040 602 V640 H0 Z" fill="#e6f2f9"/>
+<path d="M0 618 Q86 598 173 618 T346 618 T520 618 T693 618 T866 618 T1040 618 V640 H0 Z" fill="#d6eaf5" opacity="0.8"/>
+<g transform="translate(120,622) scale(0.9,0.9)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"/><path d="M-12 0 L-24 -8 L-24 8 Z"/><circle cx="7" cy="-2" r="1.8" fill="#fff"/></g><g transform="translate(190,630) scale(0.65,0.65)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"/><path d="M-12 0 L-24 -8 L-24 8 Z"/><circle cx="7" cy="-2" r="1.8" fill="#fff"/></g><g transform="translate(940,624) scale(-0.8,0.8)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"/><path d="M-12 0 L-24 -8 L-24 8 Z"/><circle cx="7" cy="-2" r="1.8" fill="#fff"/></g>
+<circle cx="985" cy="70" r="6" fill="none" stroke="#b7d9ec" stroke-width="2"/>
+<circle cx="1010" cy="45" r="4" fill="none" stroke="#b7d9ec" stroke-width="2"/>
+<circle cx="965" cy="40" r="3" fill="none" stroke="#b7d9ec" stroke-width="2"/>
+<path d="M127.5 117.0 C127.5 22 910.5 22 910.5 114.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#m9db8c8)"/>
+<g transform="translate(519.0,57) rotate(0)"><rect x="-125.0" y="-11" width="250" height="22" rx="11" fill="#eaf3f9"/><text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f6a85">Used the app before? Skip ahead</text></g>
+<path d="M235 160 H278" fill="none" stroke="#4db3e6" stroke-width="4" stroke-linecap="round" marker-end="url(#m4db3e6)"/>
+<path d="M496 160 H539" fill="none" stroke="#3a9fd9" stroke-width="4" stroke-linecap="round" marker-end="url(#m3a9fd9)"/>
+<path d="M757 160 H800" fill="none" stroke="#2b8ac7" stroke-width="4" stroke-linecap="round" marker-end="url(#m2b8ac7)"/>
+<path d="M910.5 203.0 V299.0" fill="none" stroke="#2273ae" stroke-width="4" stroke-linecap="round" marker-end="url(#m2273ae)"/>
+<path d="M803 345 H760" fill="none" stroke="#1d7a94" stroke-width="4" stroke-linecap="round" marker-end="url(#m1d7a94)"/>
+<path d="M542 345 H499" fill="none" stroke="#2a9a84" stroke-width="4" stroke-linecap="round" marker-end="url(#m2a9a84)"/>
+<path d="M281 345 H238" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" marker-end="url(#me08a1e)"/>
+<path d="M446 390.0 C446 428.0 470 442.0 512 442.0 H870.5 C900.5 442.0 910.5 426.0 910.5 392.0" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#me08a1e)"/>
+<g transform="translate(691.25,442.0) rotate(0)"><rect x="-65.0" y="-11" width="130" height="22" rx="11" fill="#e08a1e"/><text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Re-run the app</text></g>
+<path d="M336 477.0 V393.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/>
+<rect x="20" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="53" cy="160" r="20" fill="#4db3e6"/>
+<g transform="translate(53,160) scale(0.9)"><path d="M-5 -8 L8 0 L-5 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="#fff"/></g>
+<text x="82" y="156" font-size="15" font-weight="700" fill="#1b3a4b">Open the app</text>
+<text x="82" y="176" font-size="12.5" fill="#5c6f7c">Runs in your browser</text>
+<g transform="translate(72,116.0) rotate(0)"><rect x="-41.0" y="-11" width="82" height="22" rx="11" fill="#2b8ac7"/><text x="0" y="4.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">Start here</text></g>
+<rect x="281" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="314" cy="160" r="20" fill="#3a9fd9"/>
+<g transform="translate(314,160) scale(0.9)"><path d="M-10 -7 Q-4 -9 0 -5 Q4 -9 10 -7 V8 Q4 6 0 10 Q-4 6 -10 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 -5 V10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="343" y="156" font-size="15" font-weight="700" fill="#1b3a4b">Learn the tools</text>
+<text x="343" y="176" font-size="12.5" fill="#5c6f7c">Get to know each tab</text>
+<rect x="542" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="575" cy="160" r="20" fill="#2b8ac7"/>
+<g transform="translate(575,160) scale(0.9)"><rect x="-10" y="-10" width="20" height="20" rx="4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M-5 0 L-1 5 L6 -5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="604" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b">Complete the</text>
+<text x="604" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b">practice exercises</text>
+<rect x="803" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="836" cy="160" r="20" fill="#2273ae"/>
+<g transform="translate(836,160) scale(0.9)"><path d="M0 6 V-8 M-6 -2 L0 -8 L6 -2" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M-9 10 H9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="865" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b">Upload your data</text>
+<text x="865" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b">in the Shiny app</text>
+<rect x="803" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="836" cy="345" r="20" fill="#1d7a94"/>
+<g transform="translate(836,345) scale(0.9)"><circle cx="-2" cy="-2" r="7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3 L10 10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="865" y="350.5" font-size="15" font-weight="700" fill="#1b3a4b">Explore your data</text>
+<rect x="542" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="575" cy="345" r="20" fill="#2a9a84"/>
+<g transform="translate(575,345) scale(0.9)"><path d="M-10 7 L-4 -1 L1 3 L10 -8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="-4" cy="-1" r="1.6" fill="#fff"/><circle cx="1" cy="3" r="1.6" fill="#fff"/></g>
+<text x="604" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Assess coverage</text>
+<text x="604" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">and data gaps</text>
+<rect x="281" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="314" cy="345" r="20" fill="#e08a1e"/>
+<g transform="translate(314,345) scale(0.9)"><path d="M-8 9 L-8 4 L3 -7 L8 -2 L-3 9 Z M0 -4 L5 1" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="343" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Revise errors</text>
+<text x="343" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">as needed</text>
+<rect x="20" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/>
+<circle cx="53" cy="345" r="20" fill="#2e8b57"/>
+<g transform="translate(53,345) scale(0.9)"><path d="M-9 0 H8 M2 -7 L9 0 L2 7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="82" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Move on to the</text>
+<text x="82" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">next tool</text>
+<text x="82" y="379" font-size="12.5" fill="#5c6f7c">via the method selector</text>
+<rect x="281" y="480.0" width="215" height="86" rx="14" fill="#fff" stroke="#9db8c8" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="297" y="504.0" font-size="12.5" fill="#5c6f7c">No dataset is perfect.</text>
+<text x="297" y="521.0" font-size="12.5" fill="#5c6f7c">Note what you can't fix</text>
+<text x="297" y="538.0" font-size="12.5" fill="#5c6f7c">as a caveat and carry it</text>
+<text x="297" y="555.0" font-size="12.5" fill="#5c6f7c">into the next tool.</text>
+</svg>
+</div>
 ```
 
-
-## Overview
-
-| Field | Entry |
-|---|---|
-| **Family / class** | Data and CPUE tools → length composition data |
-| **Method name** | FishualizeR: R Shiny app accompanying FAO Fisheries and Aquaculture Technical Paper 706 (code: [DanOvando/fishualizeR](https://github.com/DanOvando/fishualizeR); app: [apps.upwellsolutionsllc.com/app/FishualizeR](http://apps.upwellsolutionsllc.com/app/FishualizeR)) |
-| **Short description** | Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions. |
-| **Main outputs** | Plots of raw data (with colour and faceting options), data-coverage metrics over time or location, and length compositions in user-defined bins, all downloadable. |
-| **Typical use case** | First look at length samples before a length-based assessment (FLicc, LBSPR, LBB): check units, gaps and coverage, then bin by year, area or gear. |
-
-FishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support FAO Technical Paper 706, which sets out the data-preparation workflow: data inventory, timeline of influential events, life-history parameter inventory, cleaning and outlier handling, and exploratory data analysis. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.
-
-
-## 1 · Data {#data}
-
-| Field | Entry |
-|---|---|
-| **Minimum data** | A `.csv` file of length data: either individual measurements or counts per length bin. |
-| **Preferred data** | [To be completed]{.todo} <br><small>Describes additional data that improve performance or interpretation.</small> |
-| **Optional auxiliary data** | [To be completed]{.todo} <br><small>Lists supporting information such as effort or related inputs.</small> |
-| **Data quality considerations** | Mixed units (cm vs mm), gaps in time or space, and uneven coverage across gears or areas, all of which the app helps detect. |
-| **Pre-processing steps** | Upload the CSV, correct unit inconsistencies, inspect raw distributions, check coverage. |
-| **Standardization needs** | [To be completed]{.todo} <br><small>Identifies whether indices or samples require standardization.</small> |
-| **Aggregation / binning choices** | User-defined length-bin width; counts per bin at chosen levels (e.g. year and fishing zone). |
-| **Fleet / gear handling** | [To be completed]{.todo} <br><small>Explains whether fleets or gears should be split or combined.</small> |
-| **Missing data handling** | Shows where data are missing over time or location; downloadable coverage metrics. |
-
-**Data template:** [To be added]{.todo}. Prepare the data first with the [data preparation workflow](../data-tools/data-preparation.qmd).
-
-
-## 2 · Method {#method}
-
-| Field | Entry |
-|---|---|
-| **Software / tools** | FishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (`FLQuantLen()`), LBSPR, LBB. |
-| **Implementation notes** | Shiny app (`ui.R`, `server.R`) with an `renv.lock` for dependencies; no R functions are exported for scripted use. |
-| **Key parameters** | [To be completed]{.todo} <br><small>Lists principal model parameters or derived quantities.</small> |
-| **Priors / fixed inputs** | [To be completed]{.todo} <br><small>Documents fixed values, priors and externally supplied assumptions.</small> |
-| **Error structure** | [To be completed]{.todo} <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small> |
-| **State-space formulation** | [To be completed]{.todo} <br><small>States whether latent process and observation components are separated explicitly.</small> |
-| **Core assumptions** | [To be completed]{.todo} <br><small>Summarizes the assumptions needed for valid interpretation.</small> |
-
-## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}
-
-| Field | Entry |
-|---|---|
-| **Main sensitivities** | [To be completed]{.todo} <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small> |
-| **Likely violations** | [To be completed]{.todo} <br><small>Highlights common ways the assumptions may be broken in practice.</small> |
-| **Expected bias** | [To be completed]{.todo} <br><small>Describes likely bias or misleading inference under assumption violation.</small> |
-| **Warning signs** | [To be completed]{.todo} <br><small>Lists simple indicators that the method may be unsuitable.</small> |
-
-#### Sensitivity demos
-
-::: {.catalogue-example-grid}
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Bin width
+::: {.fz-caption}
+Most people go around the re-run loop more than once. Each pass leaves the data better understood, or its limits better documented.
 :::
-Effect of the length-bin width on the composition and on downstream SPR.
+
+**Resources for each step**
+
+::::: {.fz-groups}
+
+:::: {.fz-group}
+[Essentials]{.fz-group-title}  
+Needed throughout
+
+- [FishualizeR Shiny App](http://apps.upwellsolutionsllc.com/app/FishualizeR)<br><small>Opens in your browser. Nothing to install.</small>
+- [Shiny App User Guide]{.todo}<br><small>Every tab explained with screenshots, and what to look for.</small>
+::::
+
+:::: {.fz-group}
+[Learning]{.fz-group-title}  
+Practise before using your own data
+
+- [Practice templates]{.todo}<br><small>Both Excel templates, filled in, to load into the app.</small>
+- [Practice datasets]{.todo}<br><small>Example data files to try in the app.</small>
+::::
+
+:::: {.fz-group}
+[On your own]{.fz-group-title}  
+Prepare and load your own data
+
+- [Blank templates]{.todo}<br><small>Data inventory and life-history templates for your own data.</small>
+- [Data preparation workflow](../data-tools/data-preparation.qmd)<br><small>How to prepare and inventory your data before using any tool.</small>
+- [Data Standards Guide]{.todo}<br><small>How to record, store and organise your data so it works with any tool in the toolbox.</small>
+::::
+
+:::: {.fz-group}
+[Going deeper]{.fz-group-title}  
+Optional background and code
+
+- [FAO Technical Paper 706](https://doi.org/10.4060/cd0366en)<br><small>The practical manual on preparing data for data-limited fisheries.</small>
+- [Code repository](https://github.com/DanOvando/fishualizeR)<br><small>Source code for the app, to read or run on your own computer.</small>
+- [Package technical guide]{.todo}<br><small>Using the FishualizeR code directly. Only if made available.</small>
+::::
+
+:::::
+
+
+## Is FishualizeR the right tool? {#right-tool}
+
+:::: {.fz-fit}
+::: {.fz-yes}
+[Use it to]{.fz-fit-title}
+
+- Take a first look at length samples.
+- Check units, gaps and uneven coverage across years, areas and gears.
+- Record which data you hold and which events may explain changes.
 :::
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Coverage filters
+::: {.fz-no}
+[Use something else to]{.fz-fit-title}
+
+- Estimate stock status or fit a model. Use an assessment tool such as [FLicc](../methods/dynamic-pool/flicc.qmd).
+- Test harvest control rules or screen management options.
+- Judge data quality for you. The app shows problems; you decide what they mean.
 :::
-Dropping poorly covered years, areas or gears: how the composition changes.
-:::
-:::
+::::
 
 
 ## Use and misuse {#use-and-misuse}
 
+::: {.callout-warning title="Before you rely on the results"}
+The app shows problems; it does not fix them or judge your data for you.
+:::
+
+:::: {.fz-twocol}
+::: {.fz-col}
+**Check first**
+
+- Units are consistent (for example, not cm mixed with mm).
+- Coverage is reviewed by year and by gear.
+- Sample size is noted for each gear and year.
+:::
+::: {.fz-col}
+**Common mistakes**
+
+- Pooling gears or areas with different selectivity into one view.
+- Ignoring years with very small samples.
+- Treating summaries as representative of the catch without checking sampling coverage.
+:::
+::::
+
 ```{r}
 #| echo: false
 #| results: asis
+source("R/toolbox.R")
 method_warnings("fishualizer")
 ```
 
-| Field | Entry |
-|---|---|
-| **Pre-run checks** | [To be completed]{.todo} <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small> |
-| **Do not use when** | Treating binned output as representative of the catch without checking sampling coverage and raising to catch. |
-| **Common misuses** | Pooling gears or areas with different selectivity into one composition; ignoring years with very small samples. |
-| **Pre-use checklist** | Units consistent; coverage by year and gear reviewed; sample size per gear-year noted (red flag below about 50 fish or 10 bins, see FLicc checks). |
-| **Advice suitability** | Input data only: prepares length compositions for assessment; produces no stock status. |
 
-## Case studies and references {#case-studies-and-references}
+## Where the results go next {#next}
 
-| Field | Entry |
-|---|---|
-| **Applications / case studies** | [To be completed]{.todo} <br><small>Links to worked examples or comparative applications.</small> |
-| **References** | Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <https://doi.org/10.4060/cd0366en> |
+::: {.fz-pills}
+[FLicc](../methods/dynamic-pool/flicc.qmd) [LBSPR](../methods/dynamic-pool/lbspr.qmd) [LBB](../methods/dynamic-pool/lbb.qmd)
+:::
 
-::: {.catalogue-example-grid}
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Suitable example
+::: {.fz-pills}
+**Related:** [cpueTargeting](../data-tools/cpuetargeting.qmd) [JARA](../data-tools/jara.qmd)
 :::
-Length samples from several gears and years that need checking and binning before an FLicc fit.
-:::
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Assumption sensitivity
-:::
-[To be completed]{.todo}
-:::
-::: {.catalogue-example}
-::: {.catalogue-example-title}
-Unsuitable example
-:::
-[To be completed]{.todo}
-:::
-:::
+
+Not sure which tool fits your data? Use the [method selector](../select/index.qmd).
+
+
+## Technical details and references {#references}
+
+<details class="fz-details">
+<summary>Show details</summary>
+
+**Software.** R Shiny app, with package versions pinned in `renv.lock`. No R functions are exported for scripted use. App code licence: MPL-2.0.
+
+**Reference.** Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <https://doi.org/10.4060/cd0366en>
+
+**Still to complete.** [Preferred and auxiliary data, standardisation, handling of fleets and gears, and worked case studies.]{.todo}
+
+</details>
