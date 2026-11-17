@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -77,18 +77,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8357332147aef23ee49569f9a9ac6ceb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b0ec255b4dafb7a5a03c00628cdf6300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -137,12 +138,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -178,7 +173,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -201,6 +196,7 @@ window.Quarto = {
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -230,13 +226,19 @@ window.Quarto = {
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -330,6 +332,7 @@ window.Quarto = {
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -344,15 +347,14 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NFIFM Toolbox</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -399,22 +401,23 @@ window.Quarto = {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -422,7 +425,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -439,13 +442,10 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Framework</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Framework</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/principles.html" class="sidebar-item-text sidebar-link">
@@ -474,13 +474,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Assessment methods</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Assessment methods</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/index.html" class="sidebar-item-text sidebar-link active">
@@ -489,13 +486,10 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Biomass dynamic</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Biomass dynamic</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/biomass-dynamic/index.html" class="sidebar-item-text sidebar-link">
@@ -524,13 +518,10 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Length-based and per-recruit</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Length-based and per-recruit</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/dynamic-pool/index.html" class="sidebar-item-text sidebar-link">
@@ -583,13 +574,10 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Fishery indicators</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Fishery indicators</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/empirical/index.html" class="sidebar-item-text sidebar-link">
@@ -642,13 +630,10 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Multispecies</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Multispecies</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/multispecies/index.html" class="sidebar-item-text sidebar-link">
@@ -667,13 +652,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Data preparation and tools</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Data preparation and tools</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data-tools/index.html" class="sidebar-item-text sidebar-link">
@@ -708,13 +690,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Advice and MSE</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-8-label">Advice and MSE</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advice/index.html" class="sidebar-item-text sidebar-link">
@@ -743,13 +722,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
- <span class="menu-text">Guidance</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-9-label">Guidance</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guidance/misuse.html" class="sidebar-item-text sidebar-link">
@@ -772,13 +748,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
- <span class="menu-text">Training and apps</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-10-label">Training and apps</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../training/index.html" class="sidebar-item-text sidebar-link">
@@ -801,13 +774,10 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-11-label">Resources</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../resources/installation.html" class="sidebar-item-text sidebar-link">
@@ -849,10 +819,10 @@ window.Quarto = {
         
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(18)</span></div><div class="category" data-category="YWdlLWJhc2Vk">age-based <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YWdlLXN0cnVjdHVyZWQ=">age-structured <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QmF5ZXNpYW4=">Bayesian <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YmlvbWFzcyUyMGR5bmFtaWM=">biomass dynamic <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y2F0Y2glMjBoaXN0b3J5">catch history <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2F0Y2gtb25seQ==">catch-only <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZHluYW1pYyUyMHBvb2w=">dynamic pool <span class="quarto-category-count">(8)</span></div><div class="category" data-category="ZW1waXJpY2Fs">empirical <span class="quarto-category-count">(6)</span></div><div class="category" data-category="ZmlzaGVyeSUyMGluZGljYXRvcnM=">fishery indicators <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RkxS">FLR <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RlBBVA==">FPAT <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z292ZXJuYW5jZQ==">governance <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z3Jvd3Ro">growth <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGFydmVzdCUyMHN0cmF0ZWdpZXM=">harvest strategies <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZWdyYXRlZA==">integrated <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGVuZ3RoLWJhc2Vk">length-based <span class="quarto-category-count">(5)</span></div><div class="category" data-category="bGVuZ3RoLWJhc2VkJTIwaW5kaWNhdG9ycw==">length-based indicators <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGlrZWxpaG9vZA==">likelihood <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bG9jYWwlMjBrbm93bGVkZ2U=">local knowledge <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWl4ZWQlMjBmaXNoZXJpZXM=">mixed fisheries <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TVNF">MSE <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bXVsdGktZ2Vhcg==">multi-gear <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bXVsdGlzcGVjaWVz">multispecies <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGVyLXJlY3J1aXQ=">per-recruit <span class="quarto-category-count">(6)</span></div><div class="category" data-category="cmlzaw==">risk <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2hpbnk=">Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c29jaW8tZWNvbm9taWM=">socio-economic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3RhdGUtc3BhY2U=">state-space <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dHJhZmZpYyUyMGxpZ2h0">traffic light <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJlbmRz">trends <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJpYWdl">triage <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Assessment methods</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Catalogue entries for assessment methods, with data needs, assumptions and misuse warnings</p>
@@ -940,7 +910,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="ZHluYW1pYyUyMHBvb2wlMkNhZ2Utc3RydWN0dXJlZA==" data-listing-file-modified-sort="1793349516744" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="Age-structured models (XSA, SAM, a4a, SS3)" data-listing-filename-sort="age-structured.qmd">
+<tr data-index="0" data-categories="ZHluYW1pYyUyMHBvb2wlMkNhZ2Utc3RydWN0dXJlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="Age-structured models (XSA, SAM, a4a, SS3)" data-listing-filename-sort="age-structured.qmd">
 <td>
 <a href="../methods/age-structured/age-structured.html" class="title listing-title">Age-structured models (XSA, SAM, a4a, SS3)</a>
 </td>
@@ -953,7 +923,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNjYXRjaC1vbmx5JTJDQmF5ZXNpYW4=" data-listing-file-modified-sort="1793349516744" data-listing-reading-time-sort="10" data-listing-word-count-sort="1827" data-listing-title-sort="CMSY+" data-listing-filename-sort="cmsy.qmd">
+<tr data-index="1" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNjYXRjaC1vbmx5JTJDQmF5ZXNpYW4=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="10" data-listing-word-count-sort="1827" data-listing-title-sort="CMSY+" data-listing-filename-sort="cmsy.qmd">
 <td>
 <a href="../methods/biomass-dynamic/cmsy.html" class="title listing-title">CMSY+</a>
 </td>
@@ -966,7 +936,7 @@ Categories
 
 </tr>
 
-<tr data-index="2" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmVuZHM=" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="Catch, CPUE and effort trend indicators" data-listing-filename-sort="trend-indicators.qmd">
+<tr data-index="2" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmVuZHM=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="Catch, CPUE and effort trend indicators" data-listing-filename-sort="trend-indicators.qmd">
 <td>
 <a href="../methods/empirical/trend-indicators.html" class="title listing-title">Catch, CPUE and effort trend indicators</a>
 </td>
@@ -979,7 +949,7 @@ Categories
 
 </tr>
 
-<tr data-index="3" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkNjYXRjaCUyMGhpc3Rvcnk=" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="705" data-listing-title-sort="Exploitation history indicators" data-listing-filename-sort="exploitation-history.qmd">
+<tr data-index="3" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkNjYXRjaCUyMGhpc3Rvcnk=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="705" data-listing-title-sort="Exploitation history indicators" data-listing-filename-sort="exploitation-history.qmd">
 <td>
 <a href="../methods/empirical/exploitation-history.html" class="title listing-title">Exploitation history indicators</a>
 </td>
@@ -992,7 +962,7 @@ Categories
 
 </tr>
 
-<tr data-index="4" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ211bHRpLWdlYXIlMkNGTFI=" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="9" data-listing-word-count-sort="1756" data-listing-title-sort="FLicc" data-listing-filename-sort="flicc.qmd">
+<tr data-index="4" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ211bHRpLWdlYXIlMkNGTFI=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="9" data-listing-word-count-sort="1756" data-listing-title-sort="FLicc" data-listing-filename-sort="flicc.qmd">
 <td>
 <a href="../methods/dynamic-pool/flicc.html" class="title listing-title">FLicc</a>
 </td>
@@ -1005,7 +975,7 @@ Categories
 
 </tr>
 
-<tr data-index="5" data-categories="ZW1waXJpY2FsJTJDc29jaW8tZWNvbm9taWMlMkNnb3Zlcm5hbmNlJTJDRlBBVA==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="772" data-listing-title-sort="Fishery Performance Indicators (FPI) and governance" data-listing-filename-sort="fpi.qmd">
+<tr data-index="5" data-categories="ZW1waXJpY2FsJTJDc29jaW8tZWNvbm9taWMlMkNnb3Zlcm5hbmNlJTJDRlBBVA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="772" data-listing-title-sort="Fishery Performance Indicators (FPI) and governance" data-listing-filename-sort="fpi.qmd">
 <td>
 <a href="../methods/empirical/fpi.html" class="title listing-title">Fishery Performance Indicators (FPI) and governance</a>
 </td>
@@ -1018,7 +988,7 @@ Categories
 
 </tr>
 
-<tr data-index="6" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ0JheWVzaWFu" data-listing-file-modified-sort="1793349516744" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407" data-listing-title-sort="JABBA" data-listing-filename-sort="jabba.qmd">
+<tr data-index="6" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ0JheWVzaWFu" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407" data-listing-title-sort="JABBA" data-listing-filename-sort="jabba.qmd">
 <td>
 <a href="../methods/biomass-dynamic/jabba.html" class="title listing-title">JABBA</a>
 </td>
@@ -1031,7 +1001,7 @@ Categories
 
 </tr>
 
-<tr data-index="7" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="670" data-listing-title-sort="LBB" data-listing-filename-sort="lbb.qmd">
+<tr data-index="7" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="670" data-listing-title-sort="LBB" data-listing-filename-sort="lbb.qmd">
 <td>
 <a href="../methods/dynamic-pool/lbb.html" class="title listing-title">LBB</a>
 </td>
@@ -1044,7 +1014,7 @@ Categories
 
 </tr>
 
-<tr data-index="8" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="LBSPR" data-listing-filename-sort="lbspr.qmd">
+<tr data-index="8" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="LBSPR" data-listing-filename-sort="lbspr.qmd">
 <td>
 <a href="../methods/dynamic-pool/lbspr.html" class="title listing-title">LBSPR</a>
 </td>
@@ -1057,7 +1027,7 @@ Categories
 
 </tr>
 
-<tr data-index="9" data-categories="ZW1waXJpY2FsJTJDbGVuZ3RoLWJhc2VkJTIwaW5kaWNhdG9ycw==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="702" data-listing-title-sort="Length-based indicators (LBI)" data-listing-filename-sort="lbi.qmd">
+<tr data-index="9" data-categories="ZW1waXJpY2FsJTJDbGVuZ3RoLWJhc2VkJTIwaW5kaWNhdG9ycw==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="702" data-listing-title-sort="Length-based indicators (LBI)" data-listing-filename-sort="lbi.qmd">
 <td>
 <a href="../methods/empirical/lbi.html" class="title listing-title">Length-based indicators (LBI)</a>
 </td>
@@ -1070,7 +1040,7 @@ Categories
 
 </tr>
 
-<tr data-index="10" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmFmZmljJTIwbGlnaHQlMkNsb2NhbCUyMGtub3dsZWRnZQ==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="675" data-listing-title-sort="Multi-indicator dashboards (traffic light)" data-listing-filename-sort="dashboard.qmd">
+<tr data-index="10" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmFmZmljJTIwbGlnaHQlMkNsb2NhbCUyMGtub3dsZWRnZQ==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="675" data-listing-title-sort="Multi-indicator dashboards (traffic light)" data-listing-filename-sort="dashboard.qmd">
 <td>
 <a href="../methods/empirical/dashboard.html" class="title listing-title">Multi-indicator dashboards (traffic light)</a>
 </td>
@@ -1083,7 +1053,7 @@ Categories
 
 </tr>
 
-<tr data-index="11" data-categories="ZW1waXJpY2FsJTJDcmlzayUyQ3RyaWFnZQ==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="666" data-listing-title-sort="Productivity–susceptibility analysis (PSA)" data-listing-filename-sort="psa.qmd">
+<tr data-index="11" data-categories="ZW1waXJpY2FsJTJDcmlzayUyQ3RyaWFnZQ==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="666" data-listing-title-sort="Productivity–susceptibility analysis (PSA)" data-listing-filename-sort="psa.qmd">
 <td>
 <a href="../methods/empirical/psa.html" class="title listing-title">Productivity–susceptibility analysis (PSA)</a>
 </td>
@@ -1096,7 +1066,7 @@ Categories
 
 </tr>
 
-<tr data-index="12" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ2xpa2VsaWhvb2Q=" data-listing-file-modified-sort="1793349516744" data-listing-reading-time-sort="8" data-listing-word-count-sort="1528" data-listing-title-sort="SPiCT" data-listing-filename-sort="spict.qmd">
+<tr data-index="12" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ2xpa2VsaWhvb2Q=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="8" data-listing-word-count-sort="1528" data-listing-title-sort="SPiCT" data-listing-filename-sort="spict.qmd">
 <td>
 <a href="../methods/biomass-dynamic/spict.html" class="title listing-title">SPiCT</a>
 </td>
@@ -1109,7 +1079,7 @@ Categories
 
 </tr>
 
-<tr data-index="13" data-categories="ZHluYW1pYyUyMHBvb2wlMkNsZW5ndGgtYmFzZWQlMkNpbnRlZ3JhdGVk" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="665" data-listing-title-sort="Statistical catch-at-length" data-listing-filename-sort="scal.qmd">
+<tr data-index="13" data-categories="ZHluYW1pYyUyMHBvb2wlMkNsZW5ndGgtYmFzZWQlMkNpbnRlZ3JhdGVk" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="665" data-listing-title-sort="Statistical catch-at-length" data-listing-filename-sort="scal.qmd">
 <td>
 <a href="../methods/dynamic-pool/scal.html" class="title listing-title">Statistical catch-at-length</a>
 </td>
@@ -1122,7 +1092,7 @@ Categories
 
 </tr>
 
-<tr data-index="14" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ2dyb3d0aA==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119" data-listing-title-sort="TropFishR (ELEFAN_GA + YPR/SBPR)" data-listing-filename-sort="tropfishr.qmd">
+<tr data-index="14" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ2dyb3d0aA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119" data-listing-title-sort="TropFishR (ELEFAN_GA + YPR/SBPR)" data-listing-filename-sort="tropfishr.qmd">
 <td>
 <a href="../methods/dynamic-pool/tropfishr.html" class="title listing-title">TropFishR (ELEFAN_GA + YPR/SBPR)</a>
 </td>
@@ -1135,7 +1105,7 @@ Categories
 
 </tr>
 
-<tr data-index="15" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2FnZS1iYXNlZA==" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="YPR / SPR / Thompson &amp; Bell" data-listing-filename-sort="ypr-spr.qmd">
+<tr data-index="15" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2FnZS1iYXNlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="YPR / SPR / Thompson &amp; Bell" data-listing-filename-sort="ypr-spr.qmd">
 <td>
 <a href="../methods/dynamic-pool/ypr-spr.html" class="title listing-title">YPR / SPR / Thompson &amp; Bell</a>
 </td>
@@ -1148,7 +1118,7 @@ Categories
 
 </tr>
 
-<tr data-index="16" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ211bHRpLWdlYXIlMkNCYXllc2lhbg==" data-listing-file-modified-sort="1793349516744" data-listing-reading-time-sort="4" data-listing-word-count-sort="682" data-listing-title-sort="fishblicc" data-listing-filename-sort="fishblicc.qmd">
+<tr data-index="16" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ211bHRpLWdlYXIlMkNCYXllc2lhbg==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="682" data-listing-title-sort="fishblicc" data-listing-filename-sort="fishblicc.qmd">
 <td>
 <a href="../methods/dynamic-pool/fishblicc.html" class="title listing-title">fishblicc</a>
 </td>
@@ -1161,7 +1131,7 @@ Categories
 
 </tr>
 
-<tr data-index="17" data-categories="bXVsdGlzcGVjaWVzJTJDbWl4ZWQlMjBmaXNoZXJpZXMlMkNoYXJ2ZXN0JTIwc3RyYXRlZ2llcyUyQ01TRSUyQ1NoaW55" data-listing-file-modified-sort="1793349516745" data-listing-reading-time-sort="6" data-listing-word-count-sort="1158" data-listing-title-sort="mmsyFM" data-listing-filename-sort="mmsyfm.qmd">
+<tr data-index="17" data-categories="bXVsdGlzcGVjaWVzJTJDbWl4ZWQlMjBmaXNoZXJpZXMlMkNoYXJ2ZXN0JTIwc3RyYXRlZ2llcyUyQ01TRSUyQ1NoaW55" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="6" data-listing-word-count-sort="1158" data-listing-title-sort="mmsyFM" data-listing-filename-sort="mmsyfm.qmd">
 <td>
 <a href="../methods/multispecies/mmsyfm.html" class="title listing-title">mmsyFM</a>
 </td>
@@ -1189,15 +1159,50 @@ Categories
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1327,7 +1332,8 @@ Categories
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1336,8 +1342,69 @@ Categories
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1351,6 +1418,7 @@ Categories
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1513,44 +1581,54 @@ Categories
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1649,7 +1727,10 @@ Categories
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../framework/catalogue-structure.html" class="pagination-link" aria-label="Catalogue structure">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Catalogue structure</span>

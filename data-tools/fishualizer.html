@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -75,18 +75,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../data-tools/cpuetargeting.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b626d73c4c936ccc3cb08be7d45d1df6.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8357332147aef23ee49569f9a9ac6ceb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-b5c5bb59a2a7c2780937f303e56e9f4d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b0ec255b4dafb7a5a03c00628cdf6300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -120,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -143,6 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       for (let i=0; i < toggles.length; i++) {
         const toggle = toggles[i];
         if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
           if (alternate) {
             toggle.classList.add("alternate");
           } else {
@@ -172,13 +174,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       manageTransitions('#quarto-margin-sidebar .nav-link', true);
       // Switch the toggles
       setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
       if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
         manageTransitions("body", false);
-        window.scrollTo(0, 1);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
         setTimeout(() => {
-          window.scrollTo(0, 0);
+          window.scrollTo(0, scrollY);
           manageTransitions("body", true);
         }, 40);
       }
@@ -272,6 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       // Read the current dark / light value
       let toAlternate = !hasAlternateSentinel();
       toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
       window.dispatchEvent(new Event('resize'));
@@ -286,15 +295,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">NFIFM Toolbox</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -341,22 +349,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/fishualizer.html">FishualizeR</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/fishualizer.html">FishualizeR</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -364,7 +373,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -381,13 +390,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Framework</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Framework</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../framework/principles.html" class="sidebar-item-text sidebar-link">
@@ -416,13 +422,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Assessment methods</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Assessment methods</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/index.html" class="sidebar-item-text sidebar-link">
@@ -431,13 +434,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Biomass dynamic</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Biomass dynamic</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/biomass-dynamic/index.html" class="sidebar-item-text sidebar-link">
@@ -466,13 +466,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Length-based and per-recruit</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Length-based and per-recruit</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/dynamic-pool/index.html" class="sidebar-item-text sidebar-link">
@@ -525,13 +522,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text">Fishery indicators</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-5-label">Fishery indicators</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/empirical/index.html" class="sidebar-item-text sidebar-link">
@@ -584,13 +578,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
- <span class="menu-text">Multispecies</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-6-label">Multispecies</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../methods/multispecies/index.html" class="sidebar-item-text sidebar-link">
@@ -609,13 +600,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Data preparation and tools</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-7-label">Data preparation and tools</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data-tools/index.html" class="sidebar-item-text sidebar-link">
@@ -650,13 +638,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Advice and MSE</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-8-label">Advice and MSE</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../advice/index.html" class="sidebar-item-text sidebar-link">
@@ -685,13 +670,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
- <span class="menu-text">Guidance</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-9-label">Guidance</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../guidance/misuse.html" class="sidebar-item-text sidebar-link">
@@ -714,13 +696,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
- <span class="menu-text">Training and apps</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-10-label">Training and apps</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../training/index.html" class="sidebar-item-text sidebar-link">
@@ -743,13 +722,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">Resources</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-11-label">Resources</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../resources/installation.html" class="sidebar-item-text sidebar-link">
@@ -788,24 +764,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">1 · Data</a></li>
-  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">2 · Method</a></li>
-  <li><a href="#outputs-diagnostics-and-sensitivities" id="toc-outputs-diagnostics-and-sensitivities" class="nav-link" data-scroll-target="#outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</a></li>
+  <li><a href="#inputs-outputs" id="toc-inputs-outputs" class="nav-link active" data-scroll-target="#inputs-outputs">What you provide and what you get</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <li><a href="#right-tool" id="toc-right-tool" class="nav-link" data-scroll-target="#right-tool">Is FishualizeR the right tool?</a></li>
   <li><a href="#use-and-misuse" id="toc-use-and-misuse" class="nav-link" data-scroll-target="#use-and-misuse">Use and misuse</a></li>
-  <li><a href="#case-studies-and-references" id="toc-case-studies-and-references" class="nav-link" data-scroll-target="#case-studies-and-references">Case studies and references</a></li>
+  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next">Where the results go next</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">Technical details and references</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/data-tools/fishualizer.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data-tools/fishualizer.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/fishualizer.html">FishualizeR</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/fishualizer.html">FishualizeR</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">FishualizeR</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Visualisation and quality control of length data</p>
@@ -832,237 +808,240 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><span class="status-badge status-draft">Draft</span> <span class="status-badge status-showcase">Showcase entry</span></p>
-<div class="path">
-<p><a href="#data" class="step">1 · Data</a> <span class="arrow">→</span> <a href="#method" class="step">2 · Method</a> <span class="arrow">→</span> <a href="#outputs-diagnostics-and-sensitivities" class="step">3 · Outputs</a> <span class="arrow">·</span> <a href="#use-and-misuse" class="step">Use and misuse</a> <span class="arrow">·</span> <a href="#case-studies-and-references" class="step">Case studies</a></p>
+<div class="fz-lead">
+<p>Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions.</p>
 </div>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 4%">
-<col style="width: 5%">
-<col style="width: 7%">
-<col style="width: 5%">
-<col style="width: 7%">
-<col style="width: 38%">
-<col style="width: 5%">
-<col style="width: 10%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Application</th>
-<th style="text-align: left;">Bayesian</th>
-<th style="text-align: left;">State space</th>
-<th style="text-align: left;">Error structure</th>
-<th style="text-align: left;">Multi-gear</th>
-<th style="text-align: left;">Dome selectivity</th>
-<th style="text-align: left;">Outputs</th>
-<th style="text-align: left;">Advice role</th>
-<th style="text-align: left;">No-code app</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Raw or binned length data (CSV)</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">QC plots, data-coverage metrics, length compositions binned by year, area or gear</td>
-<td style="text-align: left;">Input data</td>
-<td style="text-align: left;">FishualizeR (web app)</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><strong>Find errors:</strong> typos, mixed units and impossible values.</li>
+<li><strong>Understand your data:</strong> what you have, from when, and from which sources.</li>
+<li><strong>Check coverage:</strong> which years, gears and areas are well sampled.</li>
+</ul>
+<p>FishualizeR does not fit a model or assess a stock. It prepares you for tools such as <a href="../methods/dynamic-pool/flicc.html">FLicc</a>, <a href="../methods/dynamic-pool/lbspr.html">LBSPR</a> and <a href="../methods/dynamic-pool/lbb.html">LBB</a> by showing whether your data are ready for them.</p>
+<p><a href="http://apps.upwellsolutionsllc.com/app/FishualizeR" class="btn btn-primary">Open the FishualizeR Shiny App</a> <a href="#workflow" class="btn btn-outline-primary">Where to start</a></p>
+<section id="inputs-outputs" class="level2">
+<h2 class="anchored" data-anchor-id="inputs-outputs">What you provide and what you get</h2>
+<div class="fz-flow">
+<div class="fz-flow-head">
+<span>You have</span><span>Key parameters</span><span>Output</span>
+</div>
+<div class="fz-row">
+<div class="fz-card fz-in">
+<p><strong>Data inventory</strong><br>
+Excel template<br>
+<span class="todo">Template to be added</span></p>
+</div>
+<div class="fz-card fz-mid">
+<p>Data types held, years covered, key events (fishery start, catch peaks)</p>
+</div>
+<div class="fz-card fz-out">
+<p><strong>Timeline of your data</strong><br>
+Years covered by each data type, with events marked, so gaps and changes are easy to see.</p>
 </div>
 </div>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Family / class</strong></td>
-<td>Data and CPUE tools → length composition data</td>
-</tr>
-<tr class="even">
-<td><strong>Method name</strong></td>
-<td>FishualizeR: R Shiny app accompanying FAO Fisheries and Aquaculture Technical Paper 706 (code: <a href="https://github.com/DanOvando/fishualizeR">DanOvando/fishualizeR</a>; app: <a href="http://apps.upwellsolutionsllc.com/app/FishualizeR">apps.upwellsolutionsllc.com/app/FishualizeR</a>)</td>
-</tr>
-<tr class="odd">
-<td><strong>Short description</strong></td>
-<td>Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions.</td>
-</tr>
-<tr class="even">
-<td><strong>Main outputs</strong></td>
-<td>Plots of raw data (with colour and faceting options), data-coverage metrics over time or location, and length compositions in user-defined bins, all downloadable.</td>
-</tr>
-<tr class="odd">
-<td><strong>Typical use case</strong></td>
-<td>First look at length samples before a length-based assessment (FLicc, LBSPR, LBB): check units, gaps and coverage, then bin by year, area or gear.</td>
-</tr>
-</tbody>
-</table>
-<p>FishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support FAO Technical Paper 706, which sets out the data-preparation workflow: data inventory, timeline of influential events, life-history parameter inventory, cleaning and outlier handling, and exploratory data analysis. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.</p>
+<div class="fz-row">
+<div class="fz-card fz-in">
+<p><strong>Life history data</strong><br>
+Excel template<br>
+<span class="todo">Template to be added</span></p>
+</div>
+<div class="fz-card fz-mid">
+<p>Growth, natural mortality, maturity, length-weight</p>
+</div>
+<div class="fz-card fz-out">
+<p><strong>Curves to compare</strong><br>
+Growth, maturity, length-weight and mortality side by side, to spot conflicting values.</p>
+</div>
+</div>
+<div class="fz-row">
+<div class="fz-card fz-in">
+<p><strong>Length data</strong><br>
+CSV file<br>
+<span class="todo">Example files to be added</span></p>
+</div>
+<div class="fz-card fz-mid">
+<p>Length (individual or per bin), year, gear, area or location</p>
+</div>
+<div class="fz-card fz-out">
+<p><strong>Plots and compositions</strong><br>
+Raw-data plots (colour, facets); coverage over time or location; length compositions in set bins.</p>
+</div>
+</div>
+</div>
+<div class="fz-caption">
+<p>Each row works on its own. The two templates are optional, but they are the habit worth building: they record what your data are and where they came from.</p>
+</div>
 </section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">1 · Data</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Minimum data</strong></td>
-<td>A <code>.csv</code> file of length data: either individual measurements or counts per length bin.</td>
-</tr>
-<tr class="even">
-<td><strong>Preferred data</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Describes additional data that improve performance or interpretation.</small></td>
-</tr>
-<tr class="odd">
-<td><strong>Optional auxiliary data</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Lists supporting information such as effort or related inputs.</small></td>
-</tr>
-<tr class="even">
-<td><strong>Data quality considerations</strong></td>
-<td>Mixed units (cm vs mm), gaps in time or space, and uneven coverage across gears or areas, all of which the app helps detect.</td>
-</tr>
-<tr class="odd">
-<td><strong>Pre-processing steps</strong></td>
-<td>Upload the CSV, correct unit inconsistencies, inspect raw distributions, check coverage.</td>
-</tr>
-<tr class="even">
-<td><strong>Standardization needs</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Identifies whether indices or samples require standardization.</small></td>
-</tr>
-<tr class="odd">
-<td><strong>Aggregation / binning choices</strong></td>
-<td>User-defined length-bin width; counts per bin at chosen levels (e.g.&nbsp;year and fishing zone).</td>
-</tr>
-<tr class="even">
-<td><strong>Fleet / gear handling</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Explains whether fleets or gears should be split or combined.</small></td>
-</tr>
-<tr class="odd">
-<td><strong>Missing data handling</strong></td>
-<td>Shows where data are missing over time or location; downloadable coverage metrics.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Data template:</strong> <span class="todo">To be added</span>. Prepare the data first with the <a href="../data-tools/data-preparation.html">data preparation workflow</a>.</p>
-</section>
-<section id="method" class="level2">
-<h2 class="anchored" data-anchor-id="method">2 · Method</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Software / tools</strong></td>
-<td>FishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (<code>FLQuantLen()</code>), LBSPR, LBB.</td>
-</tr>
-<tr class="even">
-<td><strong>Implementation notes</strong></td>
-<td>Shiny app (<code>ui.R</code>, <code>server.R</code>) with an <code>renv.lock</code> for dependencies; no R functions are exported for scripted use.</td>
-</tr>
-<tr class="odd">
-<td><strong>Key parameters</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Lists principal model parameters or derived quantities.</small></td>
-</tr>
-<tr class="even">
-<td><strong>Priors / fixed inputs</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Documents fixed values, priors and externally supplied assumptions.</small></td>
-</tr>
-<tr class="odd">
-<td><strong>Error structure</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Describes whether the method is deterministic or includes observation and/or process error.</small></td>
-</tr>
-<tr class="even">
-<td><strong>State-space formulation</strong></td>
-<td><span class="todo">To be completed</span> <br><small>States whether latent process and observation components are separated explicitly.</small></td>
-</tr>
-<tr class="odd">
-<td><strong>Core assumptions</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Summarizes the assumptions needed for valid interpretation.</small></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="outputs-diagnostics-and-sensitivities" class="level2">
-<h2 class="anchored" data-anchor-id="outputs-diagnostics-and-sensitivities">3 · Outputs, diagnostics and sensitivities</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Main sensitivities</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Identifies parameters, inputs or settings to which results are most sensitive.</small></td>
-</tr>
-<tr class="even">
-<td><strong>Likely violations</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Highlights common ways the assumptions may be broken in practice.</small></td>
-</tr>
-<tr class="odd">
-<td><strong>Expected bias</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Describes likely bias or misleading inference under assumption violation.</small></td>
-</tr>
-<tr class="even">
-<td><strong>Warning signs</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Lists simple indicators that the method may be unsuitable.</small></td>
-</tr>
-</tbody>
-</table>
-<section id="sensitivity-demos" class="level4">
-<h4 class="anchored" data-anchor-id="sensitivity-demos">Sensitivity demos</h4>
-<div class="catalogue-example-grid">
-<div class="catalogue-example">
-<div class="catalogue-example-title">
-<p>Bin width</p>
+<section id="workflow" class="level2">
+<h2 class="anchored" data-anchor-id="workflow">Workflow</h2>
+<div class="fz-svg-wrap">
+<svg class="fz-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1040 640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Flowchart of the FishualizeR workflow: open the app, learn the tools, complete the practice exercises, upload your data in the Shiny app, explore your data, assess coverage and data gaps, revise errors as needed and re-run the app, then move on to the next tool using the method selector. A note says to record any gaps you cannot fix as caveats.">
+<defs>
+<lineargradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f9fd"></stop><stop offset="1" stop-color="#ffffff"></stop></lineargradient>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="140%"><fedropshadow dx="0" dy="3" stddeviation="5" flood-color="#1f4a63" flood-opacity="0.16"></fedropshadow></filter>
+<marker id="m9db8c8" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#9db8c8"></path></marker><marker id="m4db3e6" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#4db3e6"></path></marker><marker id="m3a9fd9" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#3a9fd9"></path></marker><marker id="m2b8ac7" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2b8ac7"></path></marker><marker id="m2273ae" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2273ae"></path></marker><marker id="m1d7a94" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#1d7a94"></path></marker><marker id="m2a9a84" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2a9a84"></path></marker><marker id="me08a1e" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#e08a1e"></path></marker>
+</defs>
+<rect width="1040" height="640" rx="22" fill="url(#bg)"></rect>
+<path d="M0 602 Q86 580 173 602 T346 602 T520 602 T693 602 T866 602 T1040 602 V640 H0 Z" fill="#e6f2f9"></path>
+<path d="M0 618 Q86 598 173 618 T346 618 T520 618 T693 618 T866 618 T1040 618 V640 H0 Z" fill="#d6eaf5" opacity="0.8"></path>
+<g transform="translate(120,622) scale(0.9,0.9)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"></ellipse><path d="M-12 0 L-24 -8 L-24 8 Z"></path><circle cx="7" cy="-2" r="1.8" fill="#fff"></circle></g><g transform="translate(190,630) scale(0.65,0.65)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"></ellipse><path d="M-12 0 L-24 -8 L-24 8 Z"></path><circle cx="7" cy="-2" r="1.8" fill="#fff"></circle></g><g transform="translate(940,624) scale(-0.8,0.8)" fill="#b4d6ea"><ellipse cx="0" cy="0" rx="14" ry="7"></ellipse><path d="M-12 0 L-24 -8 L-24 8 Z"></path><circle cx="7" cy="-2" r="1.8" fill="#fff"></circle></g>
+<circle cx="985" cy="70" r="6" fill="none" stroke="#b7d9ec" stroke-width="2"></circle>
+<circle cx="1010" cy="45" r="4" fill="none" stroke="#b7d9ec" stroke-width="2"></circle>
+<circle cx="965" cy="40" r="3" fill="none" stroke="#b7d9ec" stroke-width="2"></circle>
+<path d="M127.5 117.0 C127.5 22 910.5 22 910.5 114.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#m9db8c8)"></path>
+<g transform="translate(519.0,57) rotate(0)"><rect x="-125.0" y="-11" width="250" height="22" rx="11" fill="#eaf3f9"></rect><text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f6a85">Used the app before? Skip ahead</text></g>
+<path d="M235 160 H278" fill="none" stroke="#4db3e6" stroke-width="4" stroke-linecap="round" marker-end="url(#m4db3e6)"></path>
+<path d="M496 160 H539" fill="none" stroke="#3a9fd9" stroke-width="4" stroke-linecap="round" marker-end="url(#m3a9fd9)"></path>
+<path d="M757 160 H800" fill="none" stroke="#2b8ac7" stroke-width="4" stroke-linecap="round" marker-end="url(#m2b8ac7)"></path>
+<path d="M910.5 203.0 V299.0" fill="none" stroke="#2273ae" stroke-width="4" stroke-linecap="round" marker-end="url(#m2273ae)"></path>
+<path d="M803 345 H760" fill="none" stroke="#1d7a94" stroke-width="4" stroke-linecap="round" marker-end="url(#m1d7a94)"></path>
+<path d="M542 345 H499" fill="none" stroke="#2a9a84" stroke-width="4" stroke-linecap="round" marker-end="url(#m2a9a84)"></path>
+<path d="M281 345 H238" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" marker-end="url(#me08a1e)"></path>
+<path d="M446 390.0 C446 428.0 470 442.0 512 442.0 H870.5 C900.5 442.0 910.5 426.0 910.5 392.0" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#me08a1e)"></path>
+<g transform="translate(691.25,442.0) rotate(0)"><rect x="-65.0" y="-11" width="130" height="22" rx="11" fill="#e08a1e"></rect><text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">Re-run the app</text></g>
+<path d="M336 477.0 V393.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"></path>
+<rect x="20" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="53" cy="160" r="20" fill="#4db3e6"></circle>
+<g transform="translate(53,160) scale(0.9)"><path d="M-5 -8 L8 0 L-5 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="82" y="156" font-size="15" font-weight="700" fill="#1b3a4b">Open the app</text>
+<text x="82" y="176" font-size="12.5" fill="#5c6f7c">Runs in your browser</text>
+<g transform="translate(72,116.0) rotate(0)"><rect x="-41.0" y="-11" width="82" height="22" rx="11" fill="#2b8ac7"></rect><text x="0" y="4.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">Start here</text></g>
+<rect x="281" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="314" cy="160" r="20" fill="#3a9fd9"></circle>
+<g transform="translate(314,160) scale(0.9)"><path d="M-10 -7 Q-4 -9 0 -5 Q4 -9 10 -7 V8 Q4 6 0 10 Q-4 6 -10 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M0 -5 V10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="343" y="156" font-size="15" font-weight="700" fill="#1b3a4b">Learn the tools</text>
+<text x="343" y="176" font-size="12.5" fill="#5c6f7c">Get to know each tab</text>
+<rect x="542" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="575" cy="160" r="20" fill="#2b8ac7"></circle>
+<g transform="translate(575,160) scale(0.9)"><rect x="-10" y="-10" width="20" height="20" rx="4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M-5 0 L-1 5 L6 -5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="604" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b">Complete the</text>
+<text x="604" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b">practice exercises</text>
+<rect x="803" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="836" cy="160" r="20" fill="#2273ae"></circle>
+<g transform="translate(836,160) scale(0.9)"><path d="M0 6 V-8 M-6 -2 L0 -8 L6 -2" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M-9 10 H9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="865" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b">Upload your data</text>
+<text x="865" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b">in the Shiny app</text>
+<rect x="803" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="836" cy="345" r="20" fill="#1d7a94"></circle>
+<g transform="translate(836,345) scale(0.9)"><circle cx="-2" cy="-2" r="7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M3 3 L10 10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="865" y="350.5" font-size="15" font-weight="700" fill="#1b3a4b">Explore your data</text>
+<rect x="542" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="575" cy="345" r="20" fill="#2a9a84"></circle>
+<g transform="translate(575,345) scale(0.9)"><path d="M-10 7 L-4 -1 L1 3 L10 -8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="-4" cy="-1" r="1.6" fill="#fff"></circle><circle cx="1" cy="3" r="1.6" fill="#fff"></circle></g>
+<text x="604" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Assess coverage</text>
+<text x="604" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">and data gaps</text>
+<rect x="281" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="314" cy="345" r="20" fill="#e08a1e"></circle>
+<g transform="translate(314,345) scale(0.9)"><path d="M-8 9 L-8 4 L3 -7 L8 -2 L-3 9 Z M0 -4 L5 1" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="343" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Revise errors</text>
+<text x="343" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">as needed</text>
+<rect x="20" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"></rect>
+<circle cx="53" cy="345" r="20" fill="#2e8b57"></circle>
+<g transform="translate(53,345) scale(0.9)"><path d="M-9 0 H8 M2 -7 L9 0 L2 7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></g>
+<text x="82" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b">Move on to the</text>
+<text x="82" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b">next tool</text>
+<text x="82" y="379" font-size="12.5" fill="#5c6f7c">via the method selector</text>
+<rect x="281" y="480.0" width="215" height="86" rx="14" fill="#fff" stroke="#9db8c8" stroke-width="2" stroke-dasharray="6 5"></rect>
+<text x="297" y="504.0" font-size="12.5" fill="#5c6f7c">No dataset is perfect.</text>
+<text x="297" y="521.0" font-size="12.5" fill="#5c6f7c">Note what you can't fix</text>
+<text x="297" y="538.0" font-size="12.5" fill="#5c6f7c">as a caveat and carry it</text>
+<text x="297" y="555.0" font-size="12.5" fill="#5c6f7c">into the next tool.</text>
+</svg>
 </div>
-<p>Effect of the length-bin width on the composition and on downstream SPR.</p>
+<div class="fz-caption">
+<p>Most people go around the re-run loop more than once. Each pass leaves the data better understood, or its limits better documented.</p>
 </div>
-<div class="catalogue-example">
-<div class="catalogue-example-title">
-<p>Coverage filters</p>
+<p><strong>Resources for each step</strong></p>
+<div class="fz-groups">
+<div class="fz-group">
+<p><span class="fz-group-title">Essentials</span><br>
+Needed throughout</p>
+<ul>
+<li><a href="http://apps.upwellsolutionsllc.com/app/FishualizeR">FishualizeR Shiny App</a><br><small>Opens in your browser. Nothing to install.</small></li>
+<li><span class="todo">Shiny App User Guide</span><br><small>Every tab explained with screenshots, and what to look for.</small></li>
+</ul>
 </div>
-<p>Dropping poorly covered years, areas or gears: how the composition changes.</p>
+<div class="fz-group">
+<p><span class="fz-group-title">Learning</span><br>
+Practise before using your own data</p>
+<ul>
+<li><span class="todo">Practice templates</span><br><small>Both Excel templates, filled in, to load into the app.</small></li>
+<li><span class="todo">Practice datasets</span><br><small>Example data files to try in the app.</small></li>
+</ul>
+</div>
+<div class="fz-group">
+<p><span class="fz-group-title">On your own</span><br>
+Prepare and load your own data</p>
+<ul>
+<li><span class="todo">Blank templates</span><br><small>Data inventory and life-history templates for your own data.</small></li>
+<li><a href="../data-tools/data-preparation.html">Data preparation workflow</a><br><small>How to prepare and inventory your data before using any tool.</small></li>
+<li><span class="todo">Data Standards Guide</span><br><small>How to record, store and organise your data so it works with any tool in the toolbox.</small></li>
+</ul>
+</div>
+<div class="fz-group">
+<p><span class="fz-group-title">Going deeper</span><br>
+Optional background and code</p>
+<ul>
+<li><a href="https://doi.org/10.4060/cd0366en">FAO Technical Paper 706</a><br><small>The practical manual on preparing data for data-limited fisheries.</small></li>
+<li><a href="https://github.com/DanOvando/fishualizeR">Code repository</a><br><small>Source code for the app, to read or run on your own computer.</small></li>
+<li><span class="todo">Package technical guide</span><br><small>Using the FishualizeR code directly. Only if made available.</small></li>
+</ul>
 </div>
 </div>
 </section>
+<section id="right-tool" class="level2">
+<h2 class="anchored" data-anchor-id="right-tool">Is FishualizeR the right tool?</h2>
+<div class="fz-fit">
+<div class="fz-yes">
+<p><span class="fz-fit-title">Use it to</span></p>
+<ul>
+<li>Take a first look at length samples.</li>
+<li>Check units, gaps and uneven coverage across years, areas and gears.</li>
+<li>Record which data you hold and which events may explain changes.</li>
+</ul>
+</div>
+<div class="fz-no">
+<p><span class="fz-fit-title">Use something else to</span></p>
+<ul>
+<li>Estimate stock status or fit a model. Use an assessment tool such as <a href="../methods/dynamic-pool/flicc.html">FLicc</a>.</li>
+<li>Test harvest control rules or screen management options.</li>
+<li>Judge data quality for you. The app shows problems; you decide what they mean.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="use-and-misuse" class="level2">
 <h2 class="anchored" data-anchor-id="use-and-misuse">Use and misuse</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Before you rely on the results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The app shows problems; it does not fix them or judge your data for you.</p>
+</div>
+</div>
+<div class="fz-twocol">
+<div class="fz-col">
+<p><strong>Check first</strong></p>
+<ul>
+<li>Units are consistent (for example, not cm mixed with mm).</li>
+<li>Coverage is reviewed by year and by gear.</li>
+<li>Sample size is noted for each gear and year.</li>
+</ul>
+</div>
+<div class="fz-col">
+<p><strong>Common mistakes</strong></p>
+<ul>
+<li>Pooling gears or areas with different selectivity into one view.</li>
+<li>Ignoring years with very small samples.</li>
+<li>Treating summaries as representative of the catch without checking sampling coverage.</li>
+</ul>
+</div>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1080,81 +1059,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Rules are maintained in <code>data/misuse_rules.csv</code>.</p>
 </div>
 </div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Pre-run checks</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).</small></td>
-</tr>
-<tr class="even">
-<td><strong>Do not use when</strong></td>
-<td>Treating binned output as representative of the catch without checking sampling coverage and raising to catch.</td>
-</tr>
-<tr class="odd">
-<td><strong>Common misuses</strong></td>
-<td>Pooling gears or areas with different selectivity into one composition; ignoring years with very small samples.</td>
-</tr>
-<tr class="even">
-<td><strong>Pre-use checklist</strong></td>
-<td>Units consistent; coverage by year and gear reviewed; sample size per gear-year noted (red flag below about 50 fish or 10 bins, see FLicc checks).</td>
-</tr>
-<tr class="odd">
-<td><strong>Advice suitability</strong></td>
-<td>Input data only: prepares length compositions for assessment; produces no stock status.</td>
-</tr>
-</tbody>
-</table>
 </section>
-<section id="case-studies-and-references" class="level2">
-<h2 class="anchored" data-anchor-id="case-studies-and-references">Case studies and references</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Field</th>
-<th>Entry</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Applications / case studies</strong></td>
-<td><span class="todo">To be completed</span> <br><small>Links to worked examples or comparative applications.</small></td>
-</tr>
-<tr class="even">
-<td><strong>References</strong></td>
-<td>Amoroso, R., Lomonico, S., Snouffer, B. &amp; Gutierrez, N.L. 2024. <em>Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.</em> FAO Fisheries and Aquaculture Technical Paper 706. <a href="https://doi.org/10.4060/cd0366en" class="uri">https://doi.org/10.4060/cd0366en</a></td>
-</tr>
-</tbody>
-</table>
-<div class="catalogue-example-grid">
-<div class="catalogue-example">
-<div class="catalogue-example-title">
-<p>Suitable example</p>
+<section id="next" class="level2">
+<h2 class="anchored" data-anchor-id="next">Where the results go next</h2>
+<div class="fz-pills">
+<p><a href="../methods/dynamic-pool/flicc.html">FLicc</a> <a href="../methods/dynamic-pool/lbspr.html">LBSPR</a> <a href="../methods/dynamic-pool/lbb.html">LBB</a></p>
 </div>
-<p>Length samples from several gears and years that need checking and binning before an FLicc fit.</p>
+<div class="fz-pills">
+<p><strong>Related:</strong> <a href="../data-tools/cpuetargeting.html">cpueTargeting</a> <a href="../data-tools/jara.html">JARA</a></p>
 </div>
-<div class="catalogue-example">
-<div class="catalogue-example-title">
-<p>Assumption sensitivity</p>
-</div>
-<p><span class="todo">To be completed</span></p>
-</div>
-<div class="catalogue-example">
-<div class="catalogue-example-title">
-<p>Unsuitable example</p>
-</div>
-<p><span class="todo">To be completed</span></p>
-</div>
-</div>
+<p>Not sure which tool fits your data? Use the <a href="../select/index.html">method selector</a>.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">Technical details and references</h2>
+<details class="fz-details">
+<summary>
+Show details
+</summary>
+<p><strong>Software.</strong> R Shiny app, with package versions pinned in <code>renv.lock</code>. No R functions are exported for scripted use. App code licence: MPL-2.0.</p>
+<p><strong>Reference.</strong> Amoroso, R., Lomonico, S., Snouffer, B. &amp; Gutierrez, N.L. 2024. <em>Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.</em> FAO Fisheries and Aquaculture Technical Paper 706. <a href="https://doi.org/10.4060/cd0366en" class="uri">https://doi.org/10.4060/cd0366en</a></p>
+<p><strong>Still to complete.</strong> <span class="todo">Preferred and auxiliary data, standardisation, handling of fleets and gears, and worked case studies.</span></p>
+</details>
 
 
 <!-- -->
@@ -1166,15 +1091,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
       const i = window.document.createElement("i");
       i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
     }
     setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
@@ -1304,7 +1264,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -1313,8 +1274,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -1328,6 +1350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1490,44 +1513,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1626,7 +1659,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../data-tools/cpuetargeting.html" class="pagination-link" aria-label="cpueTargeting">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">cpueTargeting</span>
@@ -1646,129 +1682,277 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Draft</span><span class="co">]</span>{.status-badge .status-draft} <span class="co">[</span><span class="ot">Showcase entry</span><span class="co">]</span>{.status-badge .status-showcase}</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>::: {.path}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1 · Data</span><span class="co">](#data)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">2 · Method</span><span class="co">](#method)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">3 · Outputs</span><span class="co">](#outputs-diagnostics-and-sensitivities)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Use and misuse</span><span class="co">](#use-and-misuse)</span>{.step} <span class="co">[</span><span class="ot">·</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">Case studies</span><span class="co">](#case-studies-and-references)</span>{.step}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>::: {.fz-lead}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">method_attributes</span>(<span class="st">"fishualizer"</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Find errors:** typos, mixed units and impossible values.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Understand your data:** what you have, from when, and from which sources.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Check coverage:** which years, gears and areas are well sampled.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>FishualizeR does not fit a model or assess a stock. It prepares you for tools such as <span class="co">[</span><span class="ot">FLicc</span><span class="co">](../methods/dynamic-pool/flicc.qmd)</span>, <span class="co">[</span><span class="ot">LBSPR</span><span class="co">](../methods/dynamic-pool/lbspr.qmd)</span> and <span class="co">[</span><span class="ot">LBB</span><span class="co">](../methods/dynamic-pool/lbb.qmd)</span> by showing whether your data are ready for them.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open the FishualizeR Shiny App</span><span class="co">](http://apps.upwellsolutionsllc.com/app/FishualizeR)</span>{.btn .btn-primary} <span class="co">[</span><span class="ot">Where to start</span><span class="co">](#workflow)</span>{.btn .btn-outline-primary}</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you provide and what you get {#inputs-outputs}</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Family / class** <span class="pp">|</span> Data and CPUE tools → length composition data <span class="pp">|</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Method name** <span class="pp">|</span> FishualizeR: R Shiny app accompanying FAO Fisheries and Aquaculture Technical Paper 706 (code: <span class="co">[</span><span class="ot">DanOvando/fishualizeR</span><span class="co">](https://github.com/DanOvando/fishualizeR)</span>; app: <span class="co">[</span><span class="ot">apps.upwellsolutionsllc.com/app/FishualizeR</span><span class="co">](http://apps.upwellsolutionsllc.com/app/FishualizeR)</span>) <span class="pp">|</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Short description** <span class="pp">|</span> Interactive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions. <span class="pp">|</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main outputs** <span class="pp">|</span> Plots of raw data (with colour and faceting options), data-coverage metrics over time or location, and length compositions in user-defined bins, all downloadable. <span class="pp">|</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Typical use case** <span class="pp">|</span> First look at length samples before a length-based assessment (FLicc, LBSPR, LBB): check units, gaps and coverage, then bin by year, area or gear. <span class="pp">|</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>FishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support FAO Technical Paper 706, which sets out the data-preparation workflow: data inventory, timeline of influential events, life-history parameter inventory, cleaning and outlier handling, and exploratory data analysis. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## 1 · Data {#data}</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Minimum data** <span class="pp">|</span> A <span class="in">`.csv`</span> file of length data: either individual measurements or counts per length bin. <span class="pp">|</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Preferred data** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Describes additional data that improve performance or interpretation.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Optional auxiliary data** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Lists supporting information such as effort or related inputs.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data quality considerations** <span class="pp">|</span> Mixed units (cm vs mm), gaps in time or space, and uneven coverage across gears or areas, all of which the app helps detect. <span class="pp">|</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-processing steps** <span class="pp">|</span> Upload the CSV, correct unit inconsistencies, inspect raw distributions, check coverage. <span class="pp">|</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Standardization needs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies whether indices or samples require standardization.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Aggregation / binning choices** <span class="pp">|</span> User-defined length-bin width; counts per bin at chosen levels (e.g. year and fishing zone). <span class="pp">|</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Fleet / gear handling** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Explains whether fleets or gears should be split or combined.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Missing data handling** <span class="pp">|</span> Shows where data are missing over time or location; downloadable coverage metrics. <span class="pp">|</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>**Data template:** <span class="co">[</span><span class="ot">To be added</span><span class="co">]</span>{.todo}. Prepare the data first with the <span class="co">[</span><span class="ot">data preparation workflow</span><span class="co">](../data-tools/data-preparation.qmd)</span>.</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2 · Method {#method}</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Software / tools** <span class="pp">|</span> FishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (<span class="in">`FLQuantLen()`</span>), LBSPR, LBB. <span class="pp">|</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Implementation notes** <span class="pp">|</span> Shiny app (<span class="in">`ui.R`</span>, <span class="in">`server.R`</span>) with an <span class="in">`renv.lock`</span> for dependencies; no R functions are exported for scripted use. <span class="pp">|</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Key parameters** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Lists principal model parameters or derived quantities.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Priors / fixed inputs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Documents fixed values, priors and externally supplied assumptions.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Error structure** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Describes whether the method is deterministic or includes observation and/or process error.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **State-space formulation** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>States whether latent process and observation components are separated explicitly.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Core assumptions** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Summarizes the assumptions needed for valid interpretation.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## 3 · Outputs, diagnostics and sensitivities {#outputs-diagnostics-and-sensitivities}</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Main sensitivities** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Identifies parameters, inputs or settings to which results are most sensitive.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Likely violations** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Highlights common ways the assumptions may be broken in practice.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Expected bias** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Describes likely bias or misleading inference under assumption violation.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Warning signs** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Lists simple indicators that the method may be unsuitable.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>::::: {.fz-flow}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fz-flow-head"</span><span class="dt">&gt;&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>You have<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>Key parameters<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>Output<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::: {.fz-row}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-in}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Data inventory**  </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Excel template  </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Template to be added</span><span class="co">]</span>{.todo}</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-mid}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Data types held, years covered, key events (fishery start, catch peaks)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-out}</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>**Timeline of your data**  </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Years covered by each data type, with events marked, so gaps and changes are easy to see.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>:::: {.fz-row}</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-in}</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>**Life history data**  </span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Excel template  </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Template to be added</span><span class="co">]</span>{.todo}</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-mid}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Growth, natural mortality, maturity, length-weight</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-out}</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>**Curves to compare**  </span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Growth, maturity, length-weight and mortality side by side, to spot conflicting values.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>:::: {.fz-row}</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-in}</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>**Length data**  </span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>CSV file  </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Example files to be added</span><span class="co">]</span>{.todo}</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-mid}</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Length (individual or per bin), year, gear, area or location</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>::: {.fz-card .fz-out}</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>**Plots and compositions**  </span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Raw-data plots (colour, facets); coverage over time or location; length compositions in set bins.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>::::</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sensitivity demos</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>:::::</span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>Bin width</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Effect of the length-bin width on the composition and on downstream SPR.</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Coverage filters</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>Dropping poorly covered years, areas or gears: how the composition changes.</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use and misuse {#use-and-misuse}</span></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"fishualizer"</span>)</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-run checks** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Do not use when** <span class="pp">|</span> Treating binned output as representative of the catch without checking sampling coverage and raising to catch. <span class="pp">|</span></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Common misuses** <span class="pp">|</span> Pooling gears or areas with different selectivity into one composition; ignoring years with very small samples. <span class="pp">|</span></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pre-use checklist** <span class="pp">|</span> Units consistent; coverage by year and gear reviewed; sample size per gear-year noted (red flag below about 50 fish or 10 bins, see FLicc checks). <span class="pp">|</span></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Advice suitability** <span class="pp">|</span> Input data only: prepares length compositions for assessment; produces no stock status. <span class="pp">|</span></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Case studies and references {#case-studies-and-references}</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Field <span class="pp">|</span> Entry <span class="pp">|</span></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Applications / case studies** <span class="pp">|</span> <span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo} <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Links to worked examples or comparative applications.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **References** <span class="pp">|</span> Amoroso, R., Lomonico, S., Snouffer, B. &amp; Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <span class="ot">&lt;https://doi.org/10.4060/cd0366en&gt;</span> <span class="pp">|</span></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-grid}</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>Suitable example</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>Length samples from several gears and years that need checking and binning before an FLicc fit.</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>Assumption sensitivity</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo}</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example}</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>::: {.catalogue-example-title}</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>Unsuitable example</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To be completed</span><span class="co">]</span>{.todo}</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>::: {.fz-caption}</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Each row works on its own. The two templates are optional, but they are the habit worth building: they record what your data are and where they came from.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## Workflow {#workflow}</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div class="fz-svg-wrap"&gt;</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;svg class="fz-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 640" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Flowchart of the FishualizeR workflow: open the app, learn the tools, complete the practice exercises, upload your data in the Shiny app, explore your data, assess coverage and data gaps, revise errors as needed and re-run the app, then move on to the next tool using the method selector. A note says to record any gaps you cannot fix as caveats."&gt;</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;defs&gt;</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"&gt;&lt;stop offset="0" stop-color="#f3f9fd"/&gt;&lt;stop offset="1" stop-color="#ffffff"/&gt;&lt;/linearGradient&gt;</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;filter id="sh" x="-10%" y="-10%" width="120%" height="140%"&gt;&lt;feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1f4a63" flood-opacity="0.16"/&gt;&lt;/filter&gt;</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;marker id="m9db8c8" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#9db8c8"/&gt;&lt;/marker&gt;&lt;marker id="m4db3e6" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#4db3e6"/&gt;&lt;/marker&gt;&lt;marker id="m3a9fd9" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#3a9fd9"/&gt;&lt;/marker&gt;&lt;marker id="m2b8ac7" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#2b8ac7"/&gt;&lt;/marker&gt;&lt;marker id="m2273ae" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#2273ae"/&gt;&lt;/marker&gt;&lt;marker id="m1d7a94" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#1d7a94"/&gt;&lt;/marker&gt;&lt;marker id="m2a9a84" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#2a9a84"/&gt;&lt;/marker&gt;&lt;marker id="me08a1e" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"&gt;&lt;path d="M1 1 L9 5 L1 9 z" fill="#e08a1e"/&gt;&lt;/marker&gt;</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/defs&gt;</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect width="1040" height="640" rx="22" fill="url(#bg)"/&gt;</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M0 602 Q86 580 173 602 T346 602 T520 602 T693 602 T866 602 T1040 602 V640 H0 Z" fill="#e6f2f9"/&gt;</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M0 618 Q86 598 173 618 T346 618 T520 618 T693 618 T866 618 T1040 618 V640 H0 Z" fill="#d6eaf5" opacity="0.8"/&gt;</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(120,622) scale(0.9,0.9)" fill="#b4d6ea"&gt;&lt;ellipse cx="0" cy="0" rx="14" ry="7"/&gt;&lt;path d="M-12 0 L-24 -8 L-24 8 Z"/&gt;&lt;circle cx="7" cy="-2" r="1.8" fill="#fff"/&gt;&lt;/g&gt;&lt;g transform="translate(190,630) scale(0.65,0.65)" fill="#b4d6ea"&gt;&lt;ellipse cx="0" cy="0" rx="14" ry="7"/&gt;&lt;path d="M-12 0 L-24 -8 L-24 8 Z"/&gt;&lt;circle cx="7" cy="-2" r="1.8" fill="#fff"/&gt;&lt;/g&gt;&lt;g transform="translate(940,624) scale(-0.8,0.8)" fill="#b4d6ea"&gt;&lt;ellipse cx="0" cy="0" rx="14" ry="7"/&gt;&lt;path d="M-12 0 L-24 -8 L-24 8 Z"/&gt;&lt;circle cx="7" cy="-2" r="1.8" fill="#fff"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="985" cy="70" r="6" fill="none" stroke="#b7d9ec" stroke-width="2"/&gt;</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="1010" cy="45" r="4" fill="none" stroke="#b7d9ec" stroke-width="2"/&gt;</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="965" cy="40" r="3" fill="none" stroke="#b7d9ec" stroke-width="2"/&gt;</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M127.5 117.0 C127.5 22 910.5 22 910.5 114.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#m9db8c8)"/&gt;</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(519.0,57) rotate(0)"&gt;&lt;rect x="-125.0" y="-11" width="250" height="22" rx="11" fill="#eaf3f9"/&gt;&lt;text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#3f6a85"&gt;Used the app before? Skip ahead&lt;/text&gt;&lt;/g&gt;</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M235 160 H278" fill="none" stroke="#4db3e6" stroke-width="4" stroke-linecap="round" marker-end="url(#m4db3e6)"/&gt;</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M496 160 H539" fill="none" stroke="#3a9fd9" stroke-width="4" stroke-linecap="round" marker-end="url(#m3a9fd9)"/&gt;</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M757 160 H800" fill="none" stroke="#2b8ac7" stroke-width="4" stroke-linecap="round" marker-end="url(#m2b8ac7)"/&gt;</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M910.5 203.0 V299.0" fill="none" stroke="#2273ae" stroke-width="4" stroke-linecap="round" marker-end="url(#m2273ae)"/&gt;</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M803 345 H760" fill="none" stroke="#1d7a94" stroke-width="4" stroke-linecap="round" marker-end="url(#m1d7a94)"/&gt;</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M542 345 H499" fill="none" stroke="#2a9a84" stroke-width="4" stroke-linecap="round" marker-end="url(#m2a9a84)"/&gt;</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M281 345 H238" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" marker-end="url(#me08a1e)"/&gt;</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M446 390.0 C446 428.0 470 442.0 512 442.0 H870.5 C900.5 442.0 910.5 426.0 910.5 392.0" fill="none" stroke="#e08a1e" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 7" marker-end="url(#me08a1e)"/&gt;</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(691.25,442.0) rotate(0)"&gt;&lt;rect x="-65.0" y="-11" width="130" height="22" rx="11" fill="#e08a1e"/&gt;&lt;text x="0" y="4.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff"&gt;Re-run the app&lt;/text&gt;&lt;/g&gt;</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;path d="M336 477.0 V393.0" fill="none" stroke="#9db8c8" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/&gt;</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="20" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="53" cy="160" r="20" fill="#4db3e6"/&gt;</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(53,160) scale(0.9)"&gt;&lt;path d="M-5 -8 L8 0 L-5 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="#fff"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="82" y="156" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Open the app&lt;/text&gt;</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="82" y="176" font-size="12.5" fill="#5c6f7c"&gt;Runs in your browser&lt;/text&gt;</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(72,116.0) rotate(0)"&gt;&lt;rect x="-41.0" y="-11" width="82" height="22" rx="11" fill="#2b8ac7"/&gt;&lt;text x="0" y="4.5" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff"&gt;Start here&lt;/text&gt;&lt;/g&gt;</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="281" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="314" cy="160" r="20" fill="#3a9fd9"/&gt;</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(314,160) scale(0.9)"&gt;&lt;path d="M-10 -7 Q-4 -9 0 -5 Q4 -9 10 -7 V8 Q4 6 0 10 Q-4 6 -10 8 Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;path d="M0 -5 V10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="343" y="156" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Learn the tools&lt;/text&gt;</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="343" y="176" font-size="12.5" fill="#5c6f7c"&gt;Get to know each tab&lt;/text&gt;</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="542" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="575" cy="160" r="20" fill="#2b8ac7"/&gt;</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(575,160) scale(0.9)"&gt;&lt;rect x="-10" y="-10" width="20" height="20" rx="4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;path d="M-5 0 L-1 5 L6 -5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="604" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Complete the&lt;/text&gt;</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="604" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;practice exercises&lt;/text&gt;</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="803" y="117.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="836" cy="160" r="20" fill="#2273ae"/&gt;</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(836,160) scale(0.9)"&gt;&lt;path d="M0 6 V-8 M-6 -2 L0 -8 L6 -2" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;path d="M-9 10 H9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="865" y="156.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Upload your data&lt;/text&gt;</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="865" y="175.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;in the Shiny app&lt;/text&gt;</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="803" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="836" cy="345" r="20" fill="#1d7a94"/&gt;</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(836,345) scale(0.9)"&gt;&lt;circle cx="-2" cy="-2" r="7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;path d="M3 3 L10 10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="865" y="350.5" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Explore your data&lt;/text&gt;</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="542" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="575" cy="345" r="20" fill="#2a9a84"/&gt;</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(575,345) scale(0.9)"&gt;&lt;path d="M-10 7 L-4 -1 L1 3 L10 -8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;circle cx="-4" cy="-1" r="1.6" fill="#fff"/&gt;&lt;circle cx="1" cy="3" r="1.6" fill="#fff"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="604" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Assess coverage&lt;/text&gt;</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="604" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;and data gaps&lt;/text&gt;</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="281" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="314" cy="345" r="20" fill="#e08a1e"/&gt;</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(314,345) scale(0.9)"&gt;&lt;path d="M-8 9 L-8 4 L3 -7 L8 -2 L-3 9 Z M0 -4 L5 1" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="343" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Revise errors&lt;/text&gt;</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="343" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;as needed&lt;/text&gt;</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="20" y="302.0" width="215" height="86" rx="18" fill="#fff" stroke="#dbe6ee" filter="url(#sh)"/&gt;</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;circle cx="53" cy="345" r="20" fill="#2e8b57"/&gt;</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;g transform="translate(53,345) scale(0.9)"&gt;&lt;path d="M-9 0 H8 M2 -7 L9 0 L2 7" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/&gt;&lt;/g&gt;</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="82" y="341.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;Move on to the&lt;/text&gt;</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="82" y="360.0" font-size="15" font-weight="700" fill="#1b3a4b"&gt;next tool&lt;/text&gt;</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="82" y="379" font-size="12.5" fill="#5c6f7c"&gt;via the method selector&lt;/text&gt;</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;rect x="281" y="480.0" width="215" height="86" rx="14" fill="#fff" stroke="#9db8c8" stroke-width="2" stroke-dasharray="6 5"/&gt;</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="297" y="504.0" font-size="12.5" fill="#5c6f7c"&gt;No dataset is perfect.&lt;/text&gt;</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="297" y="521.0" font-size="12.5" fill="#5c6f7c"&gt;Note what you can't fix&lt;/text&gt;</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="297" y="538.0" font-size="12.5" fill="#5c6f7c"&gt;as a caveat and carry it&lt;/text&gt;</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;text x="297" y="555.0" font-size="12.5" fill="#5c6f7c"&gt;into the next tool.&lt;/text&gt;</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/svg&gt;</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>::: {.fz-caption}</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>Most people go around the re-run loop more than once. Each pass leaves the data better understood, or its limits better documented.</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>**Resources for each step**</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>::::: {.fz-groups}</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>:::: {.fz-group}</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Essentials</span><span class="co">]</span>{.fz-group-title}  </span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>Needed throughout</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">FishualizeR Shiny App</span><span class="co">](http://apps.upwellsolutionsllc.com/app/FishualizeR)</span><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Opens in your browser. Nothing to install.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Shiny App User Guide</span><span class="co">]</span>{.todo}<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Every tab explained with screenshots, and what to look for.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>:::: {.fz-group}</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Learning</span><span class="co">]</span>{.fz-group-title}  </span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>Practise before using your own data</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Practice templates</span><span class="co">]</span>{.todo}<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Both Excel templates, filled in, to load into the app.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Practice datasets</span><span class="co">]</span>{.todo}<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Example data files to try in the app.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>:::: {.fz-group}</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">On your own</span><span class="co">]</span>{.fz-group-title}  </span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>Prepare and load your own data</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Blank templates</span><span class="co">]</span>{.todo}<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Data inventory and life-history templates for your own data.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Data preparation workflow</span><span class="co">](../data-tools/data-preparation.qmd)</span><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>How to prepare and inventory your data before using any tool.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Data Standards Guide</span><span class="co">]</span>{.todo}<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>How to record, store and organise your data so it works with any tool in the toolbox.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>:::: {.fz-group}</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Going deeper</span><span class="co">]</span>{.fz-group-title}  </span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>Optional background and code</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">FAO Technical Paper 706</span><span class="co">](https://doi.org/10.4060/cd0366en)</span><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>The practical manual on preparing data for data-limited fisheries.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Code repository</span><span class="co">](https://github.com/DanOvando/fishualizeR)</span><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Source code for the app, to read or run on your own computer.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Package technical guide</span><span class="co">]</span>{.todo}<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">small</span><span class="dt">&gt;</span>Using the FishualizeR code directly. Only if made available.<span class="dt">&lt;/</span><span class="kw">small</span><span class="dt">&gt;</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>:::::</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Is FishualizeR the right tool? {#right-tool}</span></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>:::: {.fz-fit}</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>::: {.fz-yes}</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Use it to</span><span class="co">]</span>{.fz-fit-title}</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Take a first look at length samples.</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Check units, gaps and uneven coverage across years, areas and gears.</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Record which data you hold and which events may explain changes.</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>::: {.fz-no}</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Use something else to</span><span class="co">]</span>{.fz-fit-title}</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Estimate stock status or fit a model. Use an assessment tool such as <span class="co">[</span><span class="ot">FLicc</span><span class="co">](../methods/dynamic-pool/flicc.qmd)</span>.</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Test harvest control rules or screen management options.</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Judge data quality for you. The app shows problems; you decide what they mean.</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="fu">## Use and misuse {#use-and-misuse}</span></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning title="Before you rely on the results"}</span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>The app shows problems; it does not fix them or judge your data for you.</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>:::: {.fz-twocol}</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>::: {.fz-col}</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>**Check first**</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Units are consistent (for example, not cm mixed with mm).</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Coverage is reviewed by year and by gear.</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sample size is noted for each gear and year.</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>::: {.fz-col}</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>**Common mistakes**</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pooling gears or areas with different selectivity into one view.</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ignoring years with very small samples.</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Treating summaries as representative of the catch without checking sampling coverage.</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: asis</span></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a><span class="fu">method_warnings</span>(<span class="st">"fishualizer"</span>)</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## Where the results go next {#next}</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>::: {.fz-pills}</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">FLicc</span><span class="co">](../methods/dynamic-pool/flicc.qmd)</span> <span class="co">[</span><span class="ot">LBSPR</span><span class="co">](../methods/dynamic-pool/lbspr.qmd)</span> <span class="co">[</span><span class="ot">LBB</span><span class="co">](../methods/dynamic-pool/lbb.qmd)</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>::: {.fz-pills}</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>**Related:** <span class="co">[</span><span class="ot">cpueTargeting</span><span class="co">](../data-tools/cpuetargeting.qmd)</span> <span class="co">[</span><span class="ot">JARA</span><span class="co">](../data-tools/jara.qmd)</span></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>Not sure which tool fits your data? Use the <span class="co">[</span><span class="ot">method selector</span><span class="co">](../select/index.qmd)</span>.</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="fu">## Technical details and references {#references}</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fz-details"</span><span class="dt">&gt;</span></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Show details<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>**Software.** R Shiny app, with package versions pinned in <span class="in">`renv.lock`</span>. No R functions are exported for scripted use. App code licence: MPL-2.0.</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>**Reference.** Amoroso, R., Lomonico, S., Snouffer, B. &amp; Gutierrez, N.L. 2024. *Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual.* FAO Fisheries and Aquaculture Technical Paper 706. <span class="ot">&lt;https://doi.org/10.4060/cd0366en&gt;</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>**Still to complete.** <span class="co">[</span><span class="ot">Preferred and auxiliary data, standardisation, handling of fleets and gears, and worked case studies.</span><span class="co">]</span>{.todo}</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

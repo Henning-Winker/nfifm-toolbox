@@ -1329,7 +1329,7 @@
     "href": "data-tools/fishualizer.html",
     "title": "FishualizeR",
     "section": "",
-    "text": "Draft Showcase entry\nApplication\nBayesian\nState space\nError structure\nMulti-gear\nDome selectivity\nOutputs\nAdvice role\nNo-code app\n\n\n\n\nRaw or binned length data (CSV)\nn/a\nn/a\nn/a\nn/a\nn/a\nQC plots, data-coverage metrics, length compositions binned by year, area or gear\nInput data\nFishualizeR (web app)",
+    "text": "Draft Showcase entry\nFishualizeR does not fit a model or assess a stock. It prepares you for tools such as FLicc, LBSPR and LBB by showing whether your data are ready for them.\nOpen the FishualizeR Shiny App Where to start",
     "crumbs": [
       "Method selector",
       "Data preparation and tools",
@@ -1337,11 +1337,11 @@
     ]
   },
   {
-    "objectID": "data-tools/fishualizer.html#overview",
-    "href": "data-tools/fishualizer.html#overview",
+    "objectID": "data-tools/fishualizer.html#inputs-outputs",
+    "href": "data-tools/fishualizer.html#inputs-outputs",
     "title": "FishualizeR",
-    "section": "Overview",
-    "text": "Overview\n\n\n\nField\nEntry\n\n\n\n\nFamily / class\nData and CPUE tools → length composition data\n\n\nMethod name\nFishualizeR: R Shiny app accompanying FAO Fisheries and Aquaculture Technical Paper 706 (code: DanOvando/fishualizeR; app: apps.upwellsolutionsllc.com/app/FishualizeR)\n\n\nShort description\nInteractive app that walks users through common visualisation and quality control of fisheries length data, and aggregates it into length compositions.\n\n\nMain outputs\nPlots of raw data (with colour and faceting options), data-coverage metrics over time or location, and length compositions in user-defined bins, all downloadable.\n\n\nTypical use case\nFirst look at length samples before a length-based assessment (FLicc, LBSPR, LBB): check units, gaps and coverage, then bin by year, area or gear.\n\n\n\nFishualizeR was developed (led by Brian Snouffer, Upwell Solutions) to support FAO Technical Paper 706, which sets out the data-preparation workflow: data inventory, timeline of influential events, life-history parameter inventory, cleaning and outlier handling, and exploratory data analysis. The app supports four steps: (1) upload length data and fix unit inconsistencies such as cm and mm; (2) plot and examine the raw data; (3) assess coverage over time or location and download coverage metrics; (4) aggregate into length bins at chosen levels and download the result.",
+    "section": "What you provide and what you get",
+    "text": "What you provide and what you get\n\n\nYou haveKey parametersOutput\n\n\n\nData inventory\nExcel template\nTemplate to be added\n\n\nData types held, years covered, key events (fishery start, catch peaks)\n\n\nTimeline of your data\nYears covered by each data type, with events marked, so gaps and changes are easy to see.\n\n\n\n\nLife history data\nExcel template\nTemplate to be added\n\n\nGrowth, natural mortality, maturity, length-weight\n\n\nCurves to compare\nGrowth, maturity, length-weight and mortality side by side, to spot conflicting values.\n\n\n\n\nLength data\nCSV file\nExample files to be added\n\n\nLength (individual or per bin), year, gear, area or location\n\n\nPlots and compositions\nRaw-data plots (colour, facets); coverage over time or location; length compositions in set bins.\n\n\n\n\nEach row works on its own. The two templates are optional, but they are the habit worth building: they record what your data are and where they came from.",
     "crumbs": [
       "Method selector",
       "Data preparation and tools",
@@ -1349,11 +1349,11 @@
     ]
   },
   {
-    "objectID": "data-tools/fishualizer.html#data",
-    "href": "data-tools/fishualizer.html#data",
+    "objectID": "data-tools/fishualizer.html#workflow",
+    "href": "data-tools/fishualizer.html#workflow",
     "title": "FishualizeR",
-    "section": "1 · Data",
-    "text": "1 · Data\n\n\n\n\n\n\n\nField\nEntry\n\n\n\n\nMinimum data\nA .csv file of length data: either individual measurements or counts per length bin.\n\n\nPreferred data\nTo be completed Describes additional data that improve performance or interpretation.\n\n\nOptional auxiliary data\nTo be completed Lists supporting information such as effort or related inputs.\n\n\nData quality considerations\nMixed units (cm vs mm), gaps in time or space, and uneven coverage across gears or areas, all of which the app helps detect.\n\n\nPre-processing steps\nUpload the CSV, correct unit inconsistencies, inspect raw distributions, check coverage.\n\n\nStandardization needs\nTo be completed Identifies whether indices or samples require standardization.\n\n\nAggregation / binning choices\nUser-defined length-bin width; counts per bin at chosen levels (e.g. year and fishing zone).\n\n\nFleet / gear handling\nTo be completed Explains whether fleets or gears should be split or combined.\n\n\nMissing data handling\nShows where data are missing over time or location; downloadable coverage metrics.\n\n\n\nData template: To be added. Prepare the data first with the data preparation workflow.",
+    "section": "Workflow",
+    "text": "Workflow\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsed the app before? Skip ahead\n\n\n\n\n\n\n\n\nRe-run the app\n\n\n\n\nOpen the app\nRuns in your browser\nStart here\n\n\n\nLearn the tools\nGet to know each tab\n\n\n\nComplete the\npractice exercises\n\n\n\nUpload your data\nin the Shiny app\n\n\n\nExplore your data\n\n\n\nAssess coverage\nand data gaps\n\n\n\nRevise errors\nas needed\n\n\n\nMove on to the\nnext tool\nvia the method selector\n\nNo dataset is perfect.\nNote what you can't fix\nas a caveat and carry it\ninto the next tool.\n\n\n\nMost people go around the re-run loop more than once. Each pass leaves the data better understood, or its limits better documented.\n\nResources for each step\n\n\nEssentials\nNeeded throughout\n\nFishualizeR Shiny AppOpens in your browser. Nothing to install.\nShiny App User GuideEvery tab explained with screenshots, and what to look for.\n\n\n\nLearning\nPractise before using your own data\n\nPractice templatesBoth Excel templates, filled in, to load into the app.\nPractice datasetsExample data files to try in the app.\n\n\n\nOn your own\nPrepare and load your own data\n\nBlank templatesData inventory and life-history templates for your own data.\nData preparation workflowHow to prepare and inventory your data before using any tool.\nData Standards GuideHow to record, store and organise your data so it works with any tool in the toolbox.\n\n\n\nGoing deeper\nOptional background and code\n\nFAO Technical Paper 706The practical manual on preparing data for data-limited fisheries.\nCode repositorySource code for the app, to read or run on your own computer.\nPackage technical guideUsing the FishualizeR code directly. Only if made available.",
     "crumbs": [
       "Method selector",
       "Data preparation and tools",
@@ -1361,23 +1361,11 @@
     ]
   },
   {
-    "objectID": "data-tools/fishualizer.html#method",
-    "href": "data-tools/fishualizer.html#method",
+    "objectID": "data-tools/fishualizer.html#right-tool",
+    "href": "data-tools/fishualizer.html#right-tool",
     "title": "FishualizeR",
-    "section": "2 · Method",
-    "text": "2 · Method\n\n\n\n\n\n\n\nField\nEntry\n\n\n\n\nSoftware / tools\nFishualizeR (Shiny; code licence MPL-2.0) plus the Excel templates and sample datasets of TP 706. Output feeds FLicc (FLQuantLen()), LBSPR, LBB.\n\n\nImplementation notes\nShiny app (ui.R, server.R) with an renv.lock for dependencies; no R functions are exported for scripted use.\n\n\nKey parameters\nTo be completed Lists principal model parameters or derived quantities.\n\n\nPriors / fixed inputs\nTo be completed Documents fixed values, priors and externally supplied assumptions.\n\n\nError structure\nTo be completed Describes whether the method is deterministic or includes observation and/or process error.\n\n\nState-space formulation\nTo be completed States whether latent process and observation components are separated explicitly.\n\n\nCore assumptions\nTo be completed Summarizes the assumptions needed for valid interpretation.",
-    "crumbs": [
-      "Method selector",
-      "Data preparation and tools",
-      "FishualizeR"
-    ]
-  },
-  {
-    "objectID": "data-tools/fishualizer.html#outputs-diagnostics-and-sensitivities",
-    "href": "data-tools/fishualizer.html#outputs-diagnostics-and-sensitivities",
-    "title": "FishualizeR",
-    "section": "3 · Outputs, diagnostics and sensitivities",
-    "text": "3 · Outputs, diagnostics and sensitivities\n\n\n\n\n\n\n\nField\nEntry\n\n\n\n\nMain sensitivities\nTo be completed Identifies parameters, inputs or settings to which results are most sensitive.\n\n\nLikely violations\nTo be completed Highlights common ways the assumptions may be broken in practice.\n\n\nExpected bias\nTo be completed Describes likely bias or misleading inference under assumption violation.\n\n\nWarning signs\nTo be completed Lists simple indicators that the method may be unsuitable.\n\n\n\n\nSensitivity demos\n\n\n\nBin width\n\nEffect of the length-bin width on the composition and on downstream SPR.\n\n\n\nCoverage filters\n\nDropping poorly covered years, areas or gears: how the composition changes.",
+    "section": "Is FishualizeR the right tool?",
+    "text": "Is FishualizeR the right tool?\n\n\nUse it to\n\nTake a first look at length samples.\nCheck units, gaps and uneven coverage across years, areas and gears.\nRecord which data you hold and which events may explain changes.\n\n\n\nUse something else to\n\nEstimate stock status or fit a model. Use an assessment tool such as FLicc.\nTest harvest control rules or screen management options.\nJudge data quality for you. The app shows problems; you decide what they mean.",
     "crumbs": [
       "Method selector",
       "Data preparation and tools",
@@ -1389,7 +1377,7 @@
     "href": "data-tools/fishualizer.html#use-and-misuse",
     "title": "FishualizeR",
     "section": "Use and misuse",
-    "text": "Use and misuse\n\n\n\n\n\n\nWarningMisuse warnings shown by the method selector\n\n\n\n\nCaution: when goal = HCR testing: An assessment fit alone does not test a harvest control rule. Use the assessment as the estimation model in an MSE (see FLR mse).\nCaution: when goal = management options: An assessment fit alone does not compare management options. Use it to condition an operating model and compare options in simulation (FPAT App for screening, FLR mse for HCR testing).\n\nRules are maintained in data/misuse_rules.csv.\n\n\n\n\n\n\n\n\n\nField\nEntry\n\n\n\n\nPre-run checks\nTo be completed Concrete checks an app or analyst runs before fitting, with the action if a check fails (after Gutierrez and Kleisner, 2018).\n\n\nDo not use when\nTreating binned output as representative of the catch without checking sampling coverage and raising to catch.\n\n\nCommon misuses\nPooling gears or areas with different selectivity into one composition; ignoring years with very small samples.\n\n\nPre-use checklist\nUnits consistent; coverage by year and gear reviewed; sample size per gear-year noted (red flag below about 50 fish or 10 bins, see FLicc checks).\n\n\nAdvice suitability\nInput data only: prepares length compositions for assessment; produces no stock status.",
+    "text": "Use and misuse\n\n\n\n\n\n\nWarningBefore you rely on the results\n\n\n\nThe app shows problems; it does not fix them or judge your data for you.\n\n\n\n\nCheck first\n\nUnits are consistent (for example, not cm mixed with mm).\nCoverage is reviewed by year and by gear.\nSample size is noted for each gear and year.\n\n\n\nCommon mistakes\n\nPooling gears or areas with different selectivity into one view.\nIgnoring years with very small samples.\nTreating summaries as representative of the catch without checking sampling coverage.\n\n\n\n\n\n\n\n\n\nWarningMisuse warnings shown by the method selector\n\n\n\n\nCaution: when goal = HCR testing: An assessment fit alone does not test a harvest control rule. Use the assessment as the estimation model in an MSE (see FLR mse).\nCaution: when goal = management options: An assessment fit alone does not compare management options. Use it to condition an operating model and compare options in simulation (FPAT App for screening, FLR mse for HCR testing).\n\nRules are maintained in data/misuse_rules.csv.",
     "crumbs": [
       "Method selector",
       "Data preparation and tools",
@@ -1397,11 +1385,23 @@
     ]
   },
   {
-    "objectID": "data-tools/fishualizer.html#case-studies-and-references",
-    "href": "data-tools/fishualizer.html#case-studies-and-references",
+    "objectID": "data-tools/fishualizer.html#next",
+    "href": "data-tools/fishualizer.html#next",
     "title": "FishualizeR",
-    "section": "Case studies and references",
-    "text": "Case studies and references\n\n\n\nField\nEntry\n\n\n\n\nApplications / case studies\nTo be completed Links to worked examples or comparative applications.\n\n\nReferences\nAmoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual. FAO Fisheries and Aquaculture Technical Paper 706. https://doi.org/10.4060/cd0366en\n\n\n\n\n\n\nSuitable example\n\nLength samples from several gears and years that need checking and binning before an FLicc fit.\n\n\n\nAssumption sensitivity\n\nTo be completed\n\n\n\nUnsuitable example\n\nTo be completed",
+    "section": "Where the results go next",
+    "text": "Where the results go next\n\nFLicc LBSPR LBB\n\n\nRelated: cpueTargeting JARA\n\nNot sure which tool fits your data? Use the method selector.",
+    "crumbs": [
+      "Method selector",
+      "Data preparation and tools",
+      "FishualizeR"
+    ]
+  },
+  {
+    "objectID": "data-tools/fishualizer.html#references",
+    "href": "data-tools/fishualizer.html#references",
+    "title": "FishualizeR",
+    "section": "Technical details and references",
+    "text": "Technical details and references\n\n\nShow details\n\nSoftware. R Shiny app, with package versions pinned in renv.lock. No R functions are exported for scripted use. App code licence: MPL-2.0.\nReference. Amoroso, R., Lomonico, S., Snouffer, B. & Gutierrez, N.L. 2024. Data preparation to inform assessment and management approaches in data-limited fisheries – A practical manual. FAO Fisheries and Aquaculture Technical Paper 706. https://doi.org/10.4060/cd0366en\nStill to complete. Preferred and auxiliary data, standardisation, handling of fleets and gears, and worked case studies.",
     "crumbs": [
       "Method selector",
       "Data preparation and tools",
