@@ -5,6 +5,7 @@ toc: false
 sidebar: false
 page-layout: full
 title-block-style: none
+code-tools: false
 css:
   - ../assets/toolbox.css
   - ../assets/toolbox-selector.css

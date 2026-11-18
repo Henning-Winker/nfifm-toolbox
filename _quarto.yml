@@ -29,11 +29,7 @@ website:
   navbar:
     left:
       - text: "NFIFM Toolbox"
-        menu:
-          - text: "Overview"
-            href: index.qmd
-          - text: "Framework"
-            href: framework/index.qmd
+        href: index.qmd
       - text: "Data preparation"
         href: data-tools/index.qmd
       - text: "Method selector"

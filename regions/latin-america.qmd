@@ -1,0 +1,26 @@
+---
+title: "Latin America"
+pagetitle: "Latin America · NFIFM Toolbox"
+toc: false
+sidebar: false
+page-layout: full
+title-block-style: none
+code-tools: false
+css:
+  - ../assets/toolbox.css
+  - ../assets/toolbox-regions.css
+---
+
+:::::: {.column-screen}
+
+```{=html}
+<div class="tbx p-reg">
+<div class="subnav"><a href="index.qmd">Overview</a><a href="asia.qmd">Asia</a><a href="africa.qmd">Africa</a><a class="on" href="latin-america.qmd">Latin America</a><a href="sids.qmd">SIDS</a><a href="inland-fisheries.qmd">Inland fisheries</a><a href="developed-countries.qmd">Developed countries</a></div><div class="hero" style="--c:#2b7bc4"><div class="rh"><div><h1>Latin America<span class="pill">Draft</span></h1>
+<p class="lead" style="margin-bottom:10px"><b>Pacific coast and Central America</b></p><p class="lead">This hub follows the layout of the Asia hub: tools often used in the region, then case studies. Content for Latin America has not been drafted yet.</p>
+<div class="label" style="margin:14px 0 6px">Regional priorities</div><div class="chips"><span class="chip">Upwelling pelagics</span><span class="chip">Shrimp and demersal multigear fisheries</span><span class="chip">Data-poor methods</span></div>
+<p style="margin:16px 0 4px;font-size:16.5px"><b>Key partners:</b> WECAFC, OSPESCA, CPPS</p><p style="margin:0;font-size:16.5px"><b>Linked programmes:</b> Humboldt LME (GEF), CLME+ (GEF)</p></div>
+<div class="rimg"><img src="../assets/img/regions/region-latam.png" alt="Latin America"></div></div></div><div class="band tint"><h2>To follow</h2><p class="sub">Tools often used in the region and example case studies will be added here once the Asia layout is agreed.</p><p><a href="asia.qmd" style="color:var(--accent);font-weight:700;text-decoration:underline">See the Asia hub →</a></p></div>
+</div>
+```
+
+::::::
