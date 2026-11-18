@@ -13,8 +13,8 @@ css:
 ```{=html}
 <div class="tbx p-framework"><div class="subnav"><a href="../index.qmd">Overview</a><a class="on" href="index.qmd">Framework</a></div>
 <div class="hero"><h1>Framework</h1>
-<p class="lead">This page covers the route from data to management advice, the standard of good practice, the crosswalk of method attributes, and the structure of each catalogue entry.</p>
-<div class="jump"><span class="label">On this page</span><a href="#route">From data to advice</a><a href="#practice">Good practice</a><a href="#crosswalk">Crosswalk</a><a href="#catalogue">Catalogue structure</a></div></div>
+<p class="lead">This page covers the route from data to management advice, the standard of good practice, and the structure of each catalogue entry.</p>
+<div class="jump"><span class="label">On this page</span><a href="#route">From data to advice</a><a href="#practice">Good practice</a><a href="#catalogue">Catalogue structure</a></div></div>
 
 <div class="band" id="route"><h2>From data to management advice</h2>
 <div class="intro"><p class="lead2" style="margin:0">Stock assessment and management are iterative processes, in which data and assessments evolve continuously. The toolbox builds users' capacity to understand their data, run assessment methods themselves and with greater confidence, and turn results into management advice and action.</p></div>
@@ -43,40 +43,7 @@ a.wf-cv:hover{filter:brightness(1.08)}
 <div class="fo" style="--c:#2b6fd6"><h4>Model consistency</h4><p>Do results hold when data are removed or retrospectively added?</p><span class="stp" style="--c:#2b6fd6">Run assessment methods</span></div>
 <div class="fo" style="--c:#8e44ad"><h4>Prediction skill</h4><p>Can the model predict data it has not seen?</p><span class="stp" style="--c:#8e44ad">Management advice and action</span></div></div></div>
 <p class="ref">For surplus production models these properties are made operational in good practice guidelines (Kokkalis <i>et al.</i>, 2024). The <b>model acceptance checklist</b> applies them across the toolbox.</p></div>
-<script>(function(){var w=document.querySelector('.wfw'),f=w&&w.firstElementChild;if(!w)return;function r(){var s=Math.min(1,w.clientWidth/1320);f.style.transformOrigin='0 0';f.style.transform='scale('+s+')';w.style.height=(f.offsetHeight*s+26*s)+'px'}r();addEventListener('resize',r);addEventListener('load',r)})();</script>
-</div>
-```
-
-::: {.tbx .p-framework}
-::: {.band .tint #crosswalk}
-## Crosswalk
-
-The crosswalk lists every tool in the catalogue with its attributes, so assumptions and data requirements are explicit. Users can filter by attribute and open each tool's catalogue entry. It is a screening aid and does not rank methods.
-
-```{r}
-#| echo: false
-source("R/toolbox.R")
-m <- read_methods()
-tab <- data.frame(
-  Tool = link_name(m, "../"), Class = m$class, `Sub-class` = m$subclass,
-  Application = m$application, Bayesian = m$bayesian, `State space` = m$state_space,
-  `Multiple indices` = m$multiple_indices, `Multi-gear` = m$multi_gear,
-  `Dome selectivity` = m$dome_selectivity, check.names = FALSE)
-DT::datatable(tab, rownames = FALSE, escape = FALSE, class = "compact stripe hover",
-  options = list(paging = FALSE, scrollY = "380px", scrollX = TRUE,
-                 scrollCollapse = TRUE, dom = "ft",
-                 language = list(search = "Filter tools:")))
-```
-
-::: {.callout-note}
-## One source of truth
-Generated from [`data/methods.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/methods.csv), which also drives the [method selector](../select/index.qmd) and the attribute row on each method page. Edit one row and all three update on the next build. The [full crosswalk](crosswalk.qmd) lists every attribute.
-:::
-:::
-:::
-
-```{=html}
-<div class="tbx p-framework"><div class="band" id="catalogue"><h2>Catalogue structure</h2>
+<script>(function(){var w=document.querySelector('.wfw'),f=w&&w.firstElementChild;if(!w)return;function r(){var s=Math.min(1,w.clientWidth/1320);f.style.transformOrigin='0 0';f.style.transform='scale('+s+')';w.style.height=(f.offsetHeight*s+26*s)+'px'}r();addEventListener('resize',r);addEventListener('load',r)})();</script><div class="band" id="catalogue"><h2>Catalogue structure</h2>
 <p class="sub">Every method has a standardised catalogue entry that guides responsible use by documenting data needs, pre-processing, model assumptions, sensitivities, misuse prevention, and available resources. Each entry follows the three key steps of the workflow, from understanding data through running the method to management advice and action, with use and misuse guidance and case studies alongside.</p>
 <div class="ovb"><b>Method overview</b><span class="cf">Family / class</span><span class="cf">Method name</span><span class="cf">Short description</span><span class="cf">Main outputs</span><span class="cf">Typical use case</span></div>
 <div class="pipe">
