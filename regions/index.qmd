@@ -49,6 +49,7 @@ css:
 <div class="lh"><div class="mini2" style="--c:#1b4965"><h4>Shared method library and code</h4><p>The toolbox itself, so a method documented once can be used in every region.</p></div><div class="mini2" style="--c:#1b4965"><h4>Joint working groups</h4><p>Groups on shared or similar stocks, linking analysts across regions.</p></div><div class="mini2" style="--c:#1b4965"><h4>Analyst and trainer exchange</h4><p>Staff move between hubs, which spreads regional methods and builds trainer capacity.</p></div><div class="mini2" style="--c:#1b4965"><h4>South–South and triangular cooperation</h4><p>Regions with similar fisheries learn from each other, with support from partners.</p></div></div>
 <p class="note" style="margin-top:20px">Users with a regional method or case study to share can use <a class="lnk" href="../contributing.qmd">Contribute</a>. Training material is on <a class="lnk" href="../training/index.qmd">Resources and training</a>.</p></div>
 </div>
+<script>(function(){var f=document.querySelector('.p-reg #methods .flow');if(!f)return;var w=document.createElement('div');f.parentNode.insertBefore(w,f);w.appendChild(f);w.style.cssText='width:100%;overflow:hidden;position:relative';f.style.width='1320px';f.style.transformOrigin='0 0';function r(){var s=Math.min(1,w.clientWidth/1320);f.style.transform='scale('+s+')';w.style.height=((f.scrollHeight+f.offsetTop+40)*s)+'px'}r();addEventListener('resize',r);addEventListener('load',r);if(window.ResizeObserver){var o=new ResizeObserver(r);o.observe(w);o.observe(f)}})();</script>
 ```
 
 ::::::
