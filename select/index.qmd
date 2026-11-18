@@ -1,15 +1,54 @@
 ---
 title: "Method selector"
-subtitle: "Which assessment methods fit your data, and what to watch out for"
+pagetitle: "Method selector · NFIFM Toolbox"
 toc: false
+sidebar: false
+page-layout: full
+title-block-style: none
+css:
+  - ../assets/toolbox.css
+  - ../assets/toolbox-selector.css
 ---
 
-Answer the questions about the stock and the data you have. The selector lists the methods whose data requirements you meet, the ones you don't (and why), and **misuse warnings** for your situation. It is a screening aid in the spirit of FishPath: it narrows the options and flags risks, and it does not replace diagnostics or working-group review.
+```{=html}
+<div class="tbx p-sel">
+<div class="head">
+<h1>Method selector</h1>
+<span class="badge">Draft</span>
+<p class="lead">Which assessment methods fit your data, and what to watch out for. Users answer seventeen short questions about their stock, data and purpose, and the selector returns candidate methods, data-preparation steps, advice steps and misuse warnings in one place.</p>
+<div class="jump"><span class="label">On this page</span><a href="#what">What it does</a><a href="#methods">Assessment methods</a><a href="#selector">Selector</a><a href="#results">Results</a></div>
+</div>
 
-::: {.callout-note collapse="true"}
-## How the selector decides
-Each tool's data requirements are recorded in [`data/methods.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/methods.csv), and each warning is a rule in [`data/misuse_rules.csv`](https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data/misuse_rules.csv). **Do not use** means a core assumption is violated by the data you describe. **Caution** means the method can be used, but only with the extra checks named in the warning. Candidates are ranked with model-based methods first, ordered by whether they handle your gears, then by how much of your data they use (methods that use more of the available data are preferred), then by the number of cautions; fishery indicators follow as complementary evidence. The rules are a first draft for review.
-:::
+<div class="band" id="what">
+<h2>What the method selector does, and why it matters</h2>
+<p class="sub">The selector helps users decide which assessment methods suit a stock before investing time in any one of them. It lists methods whose data requirements are met, flags assumptions their situation may violate, and names methods needing data they do not yet have. It is a screening aid in the spirit of FishPath: it narrows options and flags risks, and does not replace diagnostics or working-group review.</p>
+<div class="why">
+<div class="wc" style="--c:#2273ae"><h4>Matching method to data</h4><p>A method used on data it was not designed for gives confident-looking results that can mislead management: catch-only methods fail on under-reported catch, single-fleet length methods on pooled gears, and production models on hyperstable CPUE.</p></div>
+<div class="wc" style="--c:#b7791f"><h4>Warnings, not just a yes or no</h4><p>Each result carries a status. <b>Do not use</b> means a core assumption is violated by the data described, whereas <b>caution</b> means a method can be used with the checks and sensitivity runs listed on its card.</p></div>
+<div class="wc" style="--c:#6b4fa0"><h4>A route through the whole toolbox</h4><p>Results link to each method's landing page, suggest data-preparation tools needed beforehand, and point to advice steps such as FLRef and FPAT, so users see what to do next rather than only which model to try.</p></div>
+</div>
+<div class="how">
+<div class="hs"><span class="hn" style="background:#4db3e6">1</span><div><b>Users answer</b><span>Seventeen questions in four groups, with defaults pre-selected so results appear straight away.</span></div></div>
+<div class="hs"><span class="hn" style="background:#2b8ac7">2</span><div><b>Requirements are checked</b><span>Each method's data needs, recorded in <code>methods.csv</code>, are compared with the answers.</span></div></div>
+<div class="hs"><span class="hn" style="background:#1d7a94">3</span><div><b>Rules are matched</b><span>Misuse rules in <code>misuse_rules.csv</code> raise cautions or stops, so contributors can add a rule without touching code.</span></div></div>
+<div class="hs"><span class="hn" style="background:#2a9a84">4</span><div><b>Results are ranked</b><span>Usable methods first, model-based before indicators, then by how much of the available data each one uses.</span></div></div>
+</div>
+</div>
+
+<div class="band white" id="methods">
+<h2>Assessment methods</h2>
+<p class="sub">Single-species assessment tools fall into four groups, from empirical indicators needing little data to age-structured models needing the most. Tools can serve several purposes and each sits under its main use. Simulation, single-species MSE and multispecies tools sit alongside, and arrows show common next steps or complements rather than a required order.</p>
+<img src="../assets/img/assessment-figure.png" alt="Assessment methods figure" style="display:block;width:100%;max-width:1320px;height:auto">
+<div style="margin-top:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"><a href="../methods/index.qmd" style="background:#1b4965;color:#fff;font-weight:700;border-radius:8px;padding:10px 20px;text-decoration:none;font-size:19px">Read more about the individual assessment methods &#8594;</a><span style="font-size:18px;color:#5b6b78">Opens the Assessment methods page, with the FAO tools and the strengths and limits of current practice.</span></div>
+</div>
+</div>
+```
+
+::: {.selband #selector}
+
+## Use the method selector
+
+[Answers are pre-set to sensible defaults, and users change any of them to describe their own stock. Questions about the index switch off when users select "None" for abundance indices.]{.selsub}
 
 ```{r}
 #| echo: false
@@ -20,7 +59,7 @@ cat("<script>window.NFIFM_CSV = {methods: ", csv("data/methods.csv"), ", rules: 
 ```
 
 ```{=html}
-<form id="selector" class="selector-grid" onsubmit="return false">
+<div class="seltool"><div class="selbanner"><div class="selic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><div class="selbt"><h3>Method selector tool</h3><p>Seventeen questions in four groups. Results update automatically with every answer, so no button needs pressing.</p></div><button type="button" id="sel-reset" class="selreset">Reset to defaults</button></div><div class="selbody"><form id="selector" class="selector-grid" onsubmit="return false">
 <fieldset class="selector-q"><legend>Catch and abundance data</legend>
 <div class="sel-field" data-q="catch"><div class="sel-label">Catch time series</div>
 <label><input type="radio" name="catch" id="q-catch-none" value="none"> No catch series</label>
@@ -109,10 +148,11 @@ cat("<script>window.NFIFM_CSV = {methods: ", csv("data/methods.csv"), ", rules: 
 </div>
 <p class="sel-note">After the FPAT App Questions (FAO Technical Paper 737). Catch reporting accuracy is covered by the catch question above.</p>
 </fieldset>
-</form>
+</form></div></div>
 <h2 id="results">Results</h2>
 <div id="sel-summary" class="sel-summary">Loading the method registry…</div>
 <div id="sel-fit" class="sel-cards"></div>
+<div id="sel-more" class="sel-more"></div>
 <h3>Data preparation you will likely need</h3>
 <div id="sel-data" class="sel-cards"></div>
 <h3>Turning results into advice</h3>
@@ -138,7 +178,7 @@ cat("<script>window.NFIFM_CSV = {methods: ", csv("data/methods.csv"), ", rules: 
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; }); }
   var lvl = {length: {none: 0, some: 1, annual: 2}, lh: {none: 0, proxy: 1, local: 2}};
-  var form = document.getElementById("selector"), methods = [], rules = [];
+  var form = document.getElementById("selector"), methods = [], rules = []; var CAP = 6, expanded = false;
   function answers() {
     var a = {};
     form.querySelectorAll('input[type="radio"]:checked').forEach(function (el) { a[el.name] = el.value; });
@@ -189,13 +229,15 @@ cat("<script>window.NFIFM_CSV = {methods: ", csv("data/methods.csv"), ", rules: 
     var nofit = ass.filter(function (x) { return x.miss.length; });
     var ok = fit.filter(function (x) { return !x.stops; }).length;
     document.getElementById("sel-summary").innerHTML = '<span class="sel-count">' + ok + '</span> candidate methods · <span class="sel-count">' + (fit.length - ok) + '</span> not recommended for your data · <span class="sel-count">' + nofit.length + "</span> need data you don't have";
-    document.getElementById("sel-fit").innerHTML = fit.length ? fit.map(function (x) {
+    var shown = expanded ? fit : fit.slice(0, CAP);
+    document.getElementById("sel-fit").innerHTML = fit.length ? shown.map(function (x) {
       var cls = x.stops ? "sel-stop" : (x.cautions ? "sel-caution" : "sel-ok");
       var pill = x.stops ? "Do not use" : (x.cautions ? x.cautions + " caution" + (x.cautions > 1 ? "s" : "") : "No flags");
       var body = (isInd(x.m) ? '<div class="sel-meta"><b>Complementary indicator</b></div>' : '') + '<div class="sel-meta">' + esc(x.m.class) + " · " + esc(x.m.application) + '</div><div class="sel-meta"><b>Gives:</b> ' + esc(x.m.outputs) + " · <b>Role:</b> " + esc(x.m.advice_role) + "</div>" + (x.m.app ? '<div class="sel-meta"><b>No-code app:</b> ' + esc(x.m.app) + "</div>" : "");
       if (x.w.length) body += '<ul class="sel-warn">' + x.w.map(function (w) { return "<li><b>" + (w.severity === "stop" ? "Do not use:" : "Caution:") + "</b> " + esc(w.message) + "</li>"; }).join("") + "</ul>";
       return card(x.m, cls, pill, body);
     }).join("") : '<p class="sel-none">No assessment method fits these data. See the table below for what each method would need.</p>';
+    document.getElementById("sel-more").innerHTML = fit.length > CAP ? '<span>Showing the ' + shown.length + ' best-ranked of ' + fit.length + ' methods whose data requirements are met.</span><button type="button" id="sel-toggle">' + (expanded ? "Show fewer" : "Show all " + fit.length) + '</button>' : "";
     var data = methods.filter(function (m) { return m.category === "Data and CPUE tools"; }).filter(function (m) {
       return m.id === "dataprep" || (m.id === "cpuetargeting" && a.index > 0 && a.index_type === "commercial") || (m.id === "jara" && (a.index >= 2 || a.catch === "incomplete")) || (m.id === "fishualizer" && a.length !== "none");
     });
@@ -214,8 +256,10 @@ cat("<script>window.NFIFM_CSV = {methods: ", csv("data/methods.csv"), ", rules: 
   }
   (window.NFIFM_CSV ? Promise.resolve([window.NFIFM_CSV.methods, window.NFIFM_CSV.rules]) :
    Promise.all(["../data/methods.csv", "../data/misuse_rules.csv"].map(function (u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error(u); return r.text(); }); })))
-    .then(function (t) { methods = parseCSV(t[0]); rules = parseCSV(t[1]); form.addEventListener("change", update); update(); })
+    .then(function (t) { methods = parseCSV(t[0]); rules = parseCSV(t[1]); form.addEventListener("change", update); document.getElementById("sel-more").addEventListener("click", function (e) { if (e.target.id === "sel-toggle") { expanded = !expanded; update(); } }); document.getElementById("sel-reset").addEventListener("click", function () { form.reset(); expanded = false; update(); }); update(); })
     .catch(function () { document.getElementById("sel-summary").textContent = "The method registry could not be loaded. Open the site from a web server (quarto preview or GitHub Pages), not as a local file."; });
 })();
 </script>
 ```
+
+:::
