@@ -207,4 +207,4 @@
 @media (max-width:1100px){.selband{padding:32px 24px 40px}.tbx.p-sel .why,.tbx.p-sel .how{grid-template-columns:repeat(2,minmax(0,1fr))}.tbx.p-sel .head,.tbx.p-sel .band{padding-left:24px;padding-right:24px}}
 @media (max-width:700px){.tbx.p-sel .why,.tbx.p-sel .how{grid-template-columns:1fr}}
 
-.selband{--gut:max(40px,calc((100% - 1640px)/2))}
+.selband{--gut:max(40px,calc((100% - 1280px)/2))}
