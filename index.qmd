@@ -1,117 +1,39 @@
 ---
 title: "NFIFM Toolbox"
-subtitle: "Shared method library and code for stock assessment, from data to management advice"
+pagetitle: "NFIFM Toolbox"
 toc: false
-lightbox: true
+sidebar: false
+page-layout: full
+title-block-style: none
+css: assets/toolbox.css
 ---
 
-::: {.callout-important appearance="simple"}
-**Development version.** *NFIFM Toolbox* is a working title for the shared method library of the FAO Global Stock Assessment Capacity Programme. Content is draft and not an official FAO product.
-:::
+```{=html}
+<div class="tbx">
+<div class="hero"><h1>NFIFM Toolbox</h1>
+<p class="lead">Shared method library and code for stock assessment, from data to management advice. The toolbox is part of the FAO Global Stock Assessment Capacity Programme.</p>
+<div class="dev"><b>Development version.</b> NFIFM Toolbox is a working title for the shared method library of the programme. Content is draft and not an official FAO product.</div>
+<div class="jump"><span class="label">On this page</span><a href="#programme">The programme</a><a href="#obj">Objectives</a><a href="#logic">One assessment logic</a><a href="#ws">Toolbox by workstream</a></div></div>
 
-## Part of the Global Stock Assessment Capacity Programme
+<div class="band" id="programme"><h2>The Global Stock Assessment Capacity Programme</h2>
+<p class="sub">The programme links FAO's normative work and global reporting with regional implementation platforms and six thematic workstreams, so that stock assessments routinely inform fleet capacity limits, effort management and harvest strategies. Its cross-regional learning hub connects regions and themes, and the toolbox is the hub's shared method library and code.</p>
+<div class="fig"><img src="assets/img/global-capacity-programme.jpg" alt="The FAO Global Stock Assessment Capacity Programme"><p class="cap">The FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the shared method library and code of the cross-regional learning hub (bottom).</p></div></div>
 
-![The FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the *shared method library and code* of the cross-regional learning hub (bottom). Click to enlarge.](assets/img/global-capacity-programme.jpg){fig-alt="Diagram of the FAO Global Stock Assessment Capacity Programme: FAO normative work and global reporting (SOFIA, State of stocks, FIRMS, global fishery management) on the left; six regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, developed countries as partners) across the top; six thematic workstreams across all regions in the middle; the cross-regional learning hub with a shared method library and code at the bottom; and outcomes for fleet capacity, effort management and harvest strategies on the right." .lightbox}
+<div class="band tint" id="obj"><h2>Objectives of the toolbox</h2>
+<p class="sub">The toolbox supports the programme's aim that stock assessments routinely inform management, and pursues four objectives. <span style="color:#7a5200">Objective wording is a draft for discussion.</span></p>
+<div class="obj"><div class="oc" style="--c:#2273ae"><span class="on">1</span><h4>One shared method library</h4><p>Every method is documented once, in the same format (data, method, outputs, diagnostics, code, and use and misuse), so every region draws on the same material.</p></div><div class="oc" style="--c:#1d8a78"><span class="on">2</span><h4>Methods matched to data</h4><p>A method selector and a crosswalk of method attributes match methods to the data a stock has, and flag assumptions that its data may violate.</p></div><div class="oc" style="--c:#c27b1a"><span class="on">3</span><h4>Comparable, risk-equivalent advice</h4><p>Common principles and acceptance criteria make status from different regions and data tiers comparable for SOFIA, FIRMS and SDG 14.4.1.</p></div><div class="oc" style="--c:#6b4fa0"><span class="on">4</span><h4>Misuse prevented, capacity built</h4><p>Explicit misuse guidance on every page and no-code apps with worked examples help analysts apply methods within their assumptions.</p></div></div></div>
 
-The programme links FAO's normative work and global reporting with **regional implementation platforms** and six **thematic workstreams**, so that stock assessments routinely inform fleet capacity limits, effort management and harvest strategies. Its **cross-regional learning hub** connects regions and themes. The toolbox is the hub's **shared method library and code**: the common place where methods, data tools, guidance and training material are documented once and used by every region.
+<div class="band" id="logic"><h2>One assessment logic for many data situations</h2>
+<p class="sub">The toolbox is built on a hierarchical assessment framework (Kell <i>et al.</i>, 2025), in which one assessment logic and one set of biological assumptions apply whatever data exist. One tool family can work with length compositions, catches, abundance indices, and age data, so stocks assessed with very different data remain comparable within one larger toolbox, and advice carries equivalent risk at every level of data richness.</p>
+<div class="lg"><div class="lgc"><div class="lgh">Many data situations</div><div class="lgl"><span style="--c:#c27b1a">Life history and exploitation history</span><span style="--c:#1d8a78">Length compositions, by gear</span><span style="--c:#2b7fb0">Catch</span><span style="--c:#4a67c0">Abundance indices</span><span style="--c:#6b4fa0">Catch-at-age and surveys</span></div></div>
+<div class="lga">→</div>
+<div class="lgc hub"><div class="lgh">One assessment logic</div><div class="hubt">One tool family with many capabilities</div><ul><li><b>Shared biology:</b> growth, mortality, maturity and selectivity defined once</li><li><b>Shared reference points</b> from one per-recruit model</li><li><b>Shared diagnostics</b> and model acceptance criteria</li></ul></div>
+<div class="lga">→</div>
+<div class="lgc"><div class="lgh">One comparable result</div><div class="lgl out"><span>Stock status on a common footing</span><span>Advice with equivalent risk at every level of data</span><span>Clear signals on which data would improve advice</span></div></div></div></div>
 
-### Where the toolbox fits
-
-| Programme element | What the toolbox provides |
-|---|---|
-| **Cross-regional learning hub:** shared method library and code | The whole toolbox: [data preparation](data-tools/index.qmd), [method selector](select/index.qmd), [method catalogue](methods/index.qmd), [fishery indicators](methods/empirical/index.qmd), [advice and harvest strategies](advice/index.qmd) |
-| Joint working groups; analyst and trainer exchange | [Training and apps](training/index.qmd), with the Stock Monitoring Tool as the main training environment; shared [case studies](regions/index.qmd) |
-| **Regional implementation platforms** | [Regional hubs](regions/index.qmd) that add their own case studies and priorities (first: [CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)) |
-| **Thematic workstreams 1–6** | Entry points by workstream (below) |
-| **FAO normative work and global reporting** (SOFIA, FIRMS, SDG 14.4.1) | Common [principles](framework/principles.qmd), [model acceptance criteria](guidance/diagnostics.qmd#model-acceptance-checklist) and [misuse prevention](guidance/misuse.qmd), so that status reported from different regions and data tiers is comparable |
-| Developed-country partners: method partners and peer review | Contributions through GitHub review and a proposed expert review panel |
-
-Every method is documented the same way. Each page follows the pipeline **data → method → outputs**, with diagnostics, sensitivity demos, worked examples and code, and an explicit **use and misuse** section: when *not* to use the method, pre-run checks, and the checks to pass before results are used for advice.
-
-## Philosophy
-
-The toolbox follows a **[hierarchical assessment framework](framework/principles.qmd)**: one assessment logic and one set of biological assumptions across the data ladder, from length data only to catch, length and abundance indices; **risk-equivalent** advice whichever tier a stock is assessed at; and the **value of information** of each data source measured in simulated and real case studies.
-
-## From data to advice
-
-::: {.path}
-[1 · Prepare data](data-tools/data-preparation.qmd) [→]{.arrow} [2 · Select methods](select/index.qmd) [→]{.arrow} [3 · Assess](methods/index.qmd) [→]{.arrow} [4 · Diagnose and check for misuse](guidance/diagnostics.qmd) [→]{.arrow} [5 · Advice and HCRs](advice/index.qmd)
-:::
-
-Start by [preparing and inventorying the data](data-tools/data-preparation.qmd), then use the **[method selector](select/index.qmd)**: describe your data (catch, indices, length or age composition, life history, gears, fishery) and it lists the candidate methods, the data you would still need for others, and the misuse warnings for your situation.
-
-## The toolbox by workstream
-
-::: {.ws-grid}
-::: {.ws-card style="--ws:#1f5fa8"}
-[Workstream 1]{.ws-num}
-
-#### [Multispecies and multigear assessment](methods/multispecies/index.qmd)
-Multispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity (mmsyFM).
-:::
-::: {.ws-card style="--ws:#2e7d4f"}
-[Workstream 2]{.ws-num}
-
-#### [Data-poor and small-scale fisheries](methods/dynamic-pool/index.qmd)
-Length-based and catch-only methods, SSF catch and effort monitoring, participatory data collection.
-:::
-::: {.ws-card style="--ws:#c4552b"}
-[Workstream 3]{.ws-num}
-
-#### [Assessment to advice and harvest strategies](advice/index.qmd)
-Stock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE and participatory comparison of management options (FPAT).
-:::
-::: {.ws-card style="--ws:#6b4fa0"}
-[Workstream 4]{.ws-num}
-
-#### [Capacity building](training/index.qmd)
-National and regional mentoring, working groups, e-learning, training of trainers, with the Stock Monitoring Tool as the main training environment.
-:::
-::: {.ws-card style="--ws:#0f7c86"}
-[Workstream 5]{.ws-num}
-
-#### [Knowledge sharing and consensus](contributing.qmd)
-Shared methods and code, peer review, technical consultations, global reporting (SOFIA, SDG 14.4.1).
-:::
-::: {.ws-card style="--ws:#b7791f"}
-[Workstream 6]{.ws-num}
-
-#### [National assessments ↔ RFMOs](regions/index.qmd)
-Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, RFMO data obligations.
-:::
-:::
-
-## Regional platforms
-
-The toolbox is shared across the regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, with developed countries as partners); regional hubs add their own case studies, data and priorities. See [Regional hubs](regions/index.qmd). The first hub is the **[CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)** (Africa, WASOP-CECAF).
-
-## Showcase entries
-
-Five entries are documented in full as examples of what every entry will eventually contain: data templates and preparation, the method and its software or app, outputs with diagnostics and sensitivities, use and misuse guidance, and worked examples.
-
-| Entry | Pillar | No-code app |
-|---|---|---|
-| [FishualizeR](data-tools/fishualizer.qmd) | Data preparation | FishualizeR web app |
-| [cpueTargeting](data-tools/cpuetargeting.qmd) | Data: CPUE standardisation | – |
-| [FLicc](methods/dynamic-pool/flicc.qmd) | Assessment: length-based | Stock Monitoring Tool module (prototype) |
-| [mmsyFM](methods/multispecies/mmsyfm.qmd) | Multispecies harvest strategies | mmsyFM Shiny app |
-| [JABBA](methods/biomass-dynamic/jabba.qmd) (candidate) | Assessment: surplus production | Stock Monitoring Tool |
-
-Other methods are **basic** entries, populated with the information available so far.
-
-## Current status
-
-```{r}
-#| echo: false
-source("R/toolbox.R")
-m <- read_methods()
-tab <- as.data.frame.matrix(table(factor(m$category, levels = c("Assessment", "Data and CPUE tools", "Advice and MSE")),
-                                  factor(m$status, levels = c("basic", "draft", "reviewed"))))
-tab <- cbind(Section = rownames(tab), tab,
-             Showcase = as.vector(tapply(m$showcase != "", factor(m$category, levels = c("Assessment", "Data and CPUE tools", "Advice and MSE")), sum)))
-rownames(tab) <- NULL
-names(tab) <- c("Section", "Basic", "Draft", "Reviewed", "Showcase")
-knitr::kable(tab)
+<div class="band tint" id="ws"><h2>Toolbox by workstream</h2>
+<p class="sub">Each of the programme's six thematic workstreams is implemented across all regions. Each box below describes the workstream and links the tools and pages most relevant to it; tools can appear under several workstreams.</p>
+<div class="wsg"><div class="ws" style="--c:#0356a6"><div class="wh"><span class="wn">1</span><div><small>Workstream 1</small><h4>Multispecies and multigear assessment</h4></div></div><div class="wb"><p>Multispecies MSY and mixed-fishery approaches, gear interactions, effort allocation and fleet capacity.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="methods/multispecies/mmsyfm.qmd">mmsyFM</a><span class="chip">FLicc multi-gear</span><span class="chip pl">Multispecies MSE tool <i>planned</i></span><a class="chip" href="methods/multispecies/index.qmd">Multispecies overview</a></div></div></div><div class="ws" style="--c:#2a8c46"><div class="wh"><span class="wn">2</span><div><small>Workstream 2</small><h4>Data-poor and small-scale fisheries</h4></div></div><div class="wb"><p>Length-based and catch-only methods, catch and effort monitoring for small-scale fisheries, and participatory data collection.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="methods/biomass-dynamic/cmsy.qmd">CMSY+</a><a class="chip" href="methods/dynamic-pool/flicc.qmd">FLicc</a><a class="chip" href="methods/dynamic-pool/lbspr.qmd">LBSPR</a><a class="chip" href="methods/dynamic-pool/lbb.qmd">LBB</a><a class="chip" href="methods/dynamic-pool/tropfishr.qmd">TropFishR</a><a class="chip" href="methods/empirical/index.qmd">Fishery indicators</a><a class="chip" href="data-tools/index.qmd">Data preparation</a><a class="chip" href="data-tools/fishualizer.qmd">FishualizeR</a><a class="chip" href="data-tools/cpuetargeting.qmd">cpueTargeting</a></div></div></div><div class="ws" style="--c:#e25e20"><div class="wh"><span class="wn">3</span><div><small>Workstream 3</small><h4>Assessment to advice and harvest strategies</h4></div></div><div class="wb"><p>Stock status and reference points, standard advice formats, harvest control rules, capacity and effort limits, and simplified MSE.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="advice/flref.qmd">FLRef</a><a class="chip" href="advice/mse.qmd">FLR mse</a><a class="chip" href="advice/fpat.qmd">FPAT App</a><span class="chip pl">FLOSS <i>planned</i></span><a class="chip" href="guidance/diagnostics.qmd">Diagnostics and validation</a><a class="chip" href="advice/index.qmd">Advice overview</a></div></div></div><div class="ws" style="--c:#64419c"><div class="wh"><span class="wn">4</span><div><small>Workstream 4</small><h4>Capacity building</h4></div></div><div class="wb"><p>National and regional mentoring, working groups, e-learning and training of trainers.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="training/smt.qmd">Stock Monitoring Tool</a><a class="chip" href="training/index.qmd">Training and apps</a><a class="chip" href="resources/installation.qmd">Installation guide</a><span class="chip">FLicc user guide</span></div></div></div><div class="ws" style="--c:#07788f"><div class="wh"><span class="wn">5</span><div><small>Workstream 5</small><h4>Knowledge sharing and consensus</h4></div></div><div class="wb"><p>Shared methods and code, peer review, technical consultations and global reporting (SOFIA, SDG 14.4.1).</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="framework/principles.qmd">Principles</a><a class="chip" href="guidance/misuse.qmd">Misuse prevention</a><span class="chip">Model acceptance checklist</span><a class="chip" href="resources/literature.qmd">Methodological literature</a><a class="chip" href="contributing.qmd">Contribute</a></div></div></div><div class="ws" style="--c:#c99410"><div class="wh"><span class="wn">6</span><div><small>Workstream 6</small><h4>National assessments and RFMOs</h4></div></div><div class="wb"><p>Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, and RFMO data obligations.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="select/index.qmd">Method selector</a><a class="chip" href="methods/biomass-dynamic/jabba.qmd">JABBA</a><a class="chip" href="methods/biomass-dynamic/spict.qmd">SPiCT</a><a class="chip" href="methods/age-structured/age-structured.qmd">Age-structured models</a><a class="chip" href="regions/index.qmd">Regional hubs</a></div></div></div></div>
+<div class="chips" style="margin-top:18px;align-items:center"><span class="label" style="margin-right:6px">Key</span><span class="chip">Available tool or page</span><span class="chip pl">Planned tool <i>planned</i></span></div></div>
+</div>
 ```
-
-Every page has **Edit this page** and **Report an issue** links (top right). Changes are proposed as pull requests and reviewed before they go live. See [Contributing](contributing.qmd).
