@@ -1,55 +1,130 @@
 ---
-title: "Data preparation and tools"
-subtitle: "From raw fishery data to inputs an assessment or indicator can trust"
+title: "Data preparation"
+pagetitle: "Data preparation · NFIFM Toolbox"
+toc: false
+sidebar: false
+page-layout: full
+title-block-style: none
+css:
+  - ../assets/toolbox.css
+  - ../assets/toolbox-data.css
 ---
 
-Most assessment problems start in the data: unstandardised CPUE, incomplete catches and unrepresentative length samples bias any method, however well it is chosen. This pillar of the toolbox covers everything that happens **before** a method is run. It sits alongside the assessment catalogue, not underneath it, because the same prepared data feed several methods and the weight of evidence across methods.
+```{=html}
+<div class="tbx p-data">
+<div class="head">
+<h1>Data preparation</h1>
+<span class="badge">Draft</span>
+<p class="lead">Data preparation precedes any assessment, indicator or harvest-strategy analysis, and consists of inventorying, cleaning and exploring fishery data so methods chosen later receive input fit for purpose. This page explains why preparation matters, how the workflow operates as an iterative cycle, and which toolbox tools support each stage.</p>
+<div class="jump"><span class="label" style="margin:0">On this page</span><a href="#why">Why it matters</a><a href="#workflow">Workflow</a><a href="#tools">Tools</a><a href="#next">Next step</a></div>
 
-::: {.ws-grid}
-::: {.ws-card style="--ws:#1f6a8a"}
-[Fishery level]{.ws-num}
+</div>
+<div class="band">
+<section id="why">
+<h2>Why data preparation matters</h2>
+<p class="sub">Assessment methods inherit every weakness in data supplied to them: unstandardised CPUE, incomplete catches and unrepresentative length samples bias results from any method, whereas well-prepared data can feed several methods and support consistent advice across them. Time invested at this point therefore reduces risk in every later step.</p>
+<div class="label">Checks most likely to change an assessment</div>
+<div class="checks">
+<div class="chk"><h4>Gaps in coverage</h4><p>Missing years, areas or gears leave estimates resting on partial evidence.</p></div>
+<div class="chk"><h4>Hidden shifts in the timeline</h4><p>New gear, regulations or reporting systems can look like abundance change when none has occurred.</p></div>
+<div class="chk"><h4>Weak length samples</h4><p>Too few fish or bins per gear and year, inconsistent units, or fish far beyond L∞ undermine length-based methods.</p></div>
+<div class="chk"><h4>Missing catch</h4><p>Under-reported catch, absent fleets and "nei" species aggregates distort total removals.</p></div>
+<div class="chk"><h4>Nominal CPUE</h4><p>Raw catch rates used without standardisation reflect changes in fishing behaviour as much as in abundance.</p></div>
+<div class="chk"><h4>Short series, long histories</h4><p>Brief index series paired with long exploitation histories can hide early depletion, which local knowledge may reveal.</p></div>
+</div>
+</section>
+</div>
+<div class="band white">
+<section id="workflow">
+<h2>Workflow: an iterative cycle</h2>
+<p class="sub">Six stages usually repeat several times, since exploration often reveals errors or gaps that send users back to earlier stages. Each pass leaves data better understood, or their limits better documented.</p>
+<div class="flowW"><div class="flow">
+<svg width="1320" height="850" viewBox="0 0 1320 850">
+<defs><marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#3a9fd9"/></marker><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2273ae"/></marker><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#1d7a94"/></marker><marker id="a4" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2a9a84"/></marker><marker id="a5" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2e8b57"/></marker><marker id="a6" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#e08a1e"/></marker></defs>
+<path d="M422 145 H486" stroke="#3a9fd9" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a1)"/>
+<path d="M872 145 H936" stroke="#2b8ac7" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a1)"/>
+<path d="M1130 292 V356" stroke="#2273ae" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a2)"/>
+<path d="M938 505 H874" stroke="#2273ae" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a3)"/>
+<path d="M488 505 H424" stroke="#1d7a94" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a4)"/>
+<path d="M230 652 V716" stroke="#2a9a84" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a5)"/>
+<path d="M38 505 H30 Q16 505 16 491 V159 Q16 145 30 145 H36" stroke="#e08a1e" stroke-width="4" stroke-dasharray="9 7" stroke-linecap="round" fill="none" marker-end="url(#a6)"/>
+<g transform="translate(16,325) rotate(-90)"><rect x="-74" y="-12" width="148" height="24" rx="12" fill="#e08a1e"/><text x="0" y="5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#fff">Repeat as needed</text></g>
+</svg>
+<div class="card" style="left:40px;top:0px"><div class="ch"><span class="num" style="background:#4db3e6">1</span><h3>Data inventory and timeline</h3></div><p>Lists every data source with its coverage and quality, and records events such as gear changes, closures and reporting changes that may explain shifts in data.</p><div class="chips"><a class="chip db">Database set-up</a><a class="chip tpl"><b>XLSX</b>Template 1: Data inventory</a><a class="chip fish" href="fishualizer.qmd">FishualizeR</a></div></div>
+<div class="card" style="left:490px;top:0px"><div class="ch"><span class="num" style="background:#3a9fd9">2</span><h3>Life-history inventory</h3></div><p>Compiles growth, natural mortality, maturity and length–weight parameters, noting sex, area and method of estimation for each.</p><div class="chips"><a class="chip db">Database set-up</a><a class="chip tpl"><b>XLSX</b>Template 2: Life history</a><a class="chip fish" href="fishualizer.qmd">FishualizeR</a><a class="chip oth">Stock Monitoring Tool</a></div></div>
+<div class="card" style="left:940px;top:0px"><div class="ch"><span class="num" style="background:#2b8ac7">3</span><h3>Database set-up</h3></div><p>Stores data in long format with one record per observation, supported by validation rules and a change log.</p><div class="chips"><a class="chip db">Database set-up</a><a class="chip tpl"><b>CSV</b>Method data templates</a></div></div>
+<div class="card" style="left:940px;top:360px"><div class="ch"><span class="num" style="background:#2273ae">4</span><h3>Cleaning and outliers</h3></div><p>Standardises names, codes and units, checks numbers and dates, and reviews outliers, retaining those that carry real signal.</p><div class="chips"><a class="chip oth plain">Excel</a><a class="chip fish" href="fishualizer.qmd">FishualizeR</a></div></div>
+<div class="card" style="left:490px;top:360px"><div class="ch"><span class="num" style="background:#1d7a94">5</span><h3>Exploratory analysis</h3></div><p>Examines coverage over time and space, quality of length compositions, catch and effort trends, and representativeness of indices.</p><div class="chips"><a class="chip fish" href="fishualizer.qmd">FishualizeR</a></div></div>
+<div class="card" style="left:40px;top:360px"><div class="ch"><span class="num" style="background:#2a9a84">6</span><h3>Data-type tools</h3></div><p>Standardises CPUE, combines indices and prepares length compositions by gear and year, depending on data held.</p><div class="chips"><a class="chip cpue" href="cpuetargeting.qmd">cpueTargeting</a><a class="chip jara" href="jara.qmd">JARA</a><a class="chip fish" href="fishualizer.qmd">FishualizeR</a></div></div>
+<div class="card" style="left:40px;top:720px;height:110px;border:2px solid #2e8b57"><div class="ch"><span class="num" style="background:#2e8b57">&#8594;</span><h3>Method selector*</h3></div><p style="margin:0">Uses the completed inventory to show which methods data can support.</p></div>
+</div></div>
+<p class="fnote">* <b>No dataset is perfect.</b> Whatever cannot be corrected is recorded as a caveat and carried into the next tool, so later advice reflects real limits of the data rather than an assumption of completeness.</p>
+<div class="legend"><span>Chips are links:</span><a class="chip fish" href="fishualizer.qmd">Tool</a><a class="chip tpl"><b>XLSX</b>Template</a></div>
+</section>
+</div>
+<div class="band">
+<section id="tools">
+<h2>Tools that support the workflow</h2>
+<p class="sub">Four tools support the workflow. Database set-up serves users beginning without a digital dataset, whereas the other three address specific data types, so users choose according to data held. Numbered badges show workflow stages in which each tool applies.</p>
+<div class="tools">
 
-#### [Data preparation workflow](data-preparation.qmd)
-Data inventory and timeline of events, life-history inventory, database set-up, cleaning and outliers, exploratory analysis. Based on FAO Technical Paper 706, with Excel templates.
-:::
-::: {.ws-card style="--ws:#2e7d4f"}
-[Abundance indices]{.ws-num}
+<div class="tool" style="--c:#2e7d4f;--tint:#eef7f1">
+<div class="th"><h3>Database set-up</h3><span class="tag">Guide</span></div>
+<div class="tb">
+<p class="obj">Supports users starting without a digital dataset, whether by digitising existing records such as logbooks, landing sheets and survey forms or by designing a new collection, and sets out how to store data in long format, with one record per observation, validation rules and a change log, so every tool in the toolbox can read results.</p>
+<dl><dt>Works on</dt><dd>Paper or spreadsheet records, or no existing records</dd><dt>Feeds into</dt><dd>Every tool and method in the toolbox</dd><dt>Stages</dt><dd><span class="sn">1</span><span class="sn">2</span><span class="sn">3</span></dd></dl>
+<div class="links">
+<a class="btn">Start building a dataset &#8599;</a>
+<a class="lk off">Data Standards Guide <i>Soon</i></a>
+<a class="lk" href="data-preparation.qmd#method-data-templates">Method data templates <span>&#8594;</span></a>
+<a class="lk">Inventory templates (Excel) <span>&#8594;</span></a>
+</div></div></div>
 
-#### [cpueTargeting](cpuetargeting.qmd)
-CPUE standardisation for multispecies and multi-tactic fisheries, in nine steps from the raw logbook to an index with SE, with simulation tests of targeting.
-:::
-::: {.ws-card style="--ws:#c4552b"}
-[Length and biology]{.ws-num}
+<div class="tool" style="--c:#1f5fa8;--tint:#eef4fb">
+<div class="th"><h3>FishualizeR</h3><span class="tag">Shiny app</span></div>
+<div class="tb">
+<p class="obj">Guides users through visualisation and quality control of fisheries length data, from fixing unit inconsistencies and examining raw distributions to assessing coverage and aggregating samples into length compositions; developed as companion app to FAO Technical Paper 706.</p>
+<dl><dt>Works on</dt><dd>Length data in CSV format, as individual measurements or counts per bin</dd><dt>Feeds into</dt><dd>FLicc, LBSPR and LBB</dd><dt>Stages</dt><dd><span class="sn">1</span><span class="sn">2</span><span class="sn">4</span><span class="sn">5</span><span class="sn">6</span></dd></dl>
+<div class="links">
+<a class="btn">Open the app &#8599;</a>
+<a class="lk off">Shiny app user guide <i>Soon</i></a>
+<a class="lk off">Practice exercises <i>Soon</i></a>
+<a class="lk">Code on GitHub <span>&#8594;</span></a>
+</div></div></div>
 
-#### [FishualizeR](fishualizer.qmd)
-Interactive quality control, coverage and binning of length data; companion app to Technical Paper 706.
-:::
-::: {.ws-card style="--ws:#6b4fa0"}
-[Combining indices]{.ws-num}
+<div class="tool" style="--c:#0f7c86;--tint:#eef8f8">
+<div class="th"><h3>cpueTargeting</h3><span class="tag">R package</span></div>
+<div class="tb">
+<p class="obj">Standardises real catch and effort data from multispecies and multi-tactic fisheries where targeting changes over time, and tests through simulated operating models how well standardisation copes with such changes.</p>
+<dl><dt>Works on</dt><dd>Commercial logbook or observer CPUE</dd><dt>Feeds into</dt><dd>SPiCT, JABBA, BSM or empirical rules</dd><dt>Stage</dt><dd><span class="sn">6</span></dd></dl>
+<div class="links">
+<a class="btn">Open project page &#8599;</a>
+<a class="lk" href="cpuetargeting.qmd">Real-data guide <span>&#8594;</span></a>
+<a class="lk">Logbook example <span>&#8594;</span></a>
+<a class="lk">Logbook data template <span>&#8594;</span></a>
+<a class="lk">Code on GitHub <span>&#8594;</span></a>
+</div></div></div>
 
-#### [JARA](jara.qmd)
-Joint index from several noisy series with missing years; trend and decline rates.
-:::
-::: {.ws-card style="--ws:#0f7c86"}
-[Inputs for each method]{.ws-num}
+<div class="tool" style="--c:#6b4fa0;--tint:#f4f0fa">
+<div class="th"><h3>JARA</h3><span class="tag">R package</span></div>
+<div class="tb">
+<p class="obj">Combines several noisy abundance indices, including series with missing years, into a joint index using a Bayesian state-space model, and estimates population trends and rates of decline with uncertainty.</p>
+<dl><dt>Works on</dt><dd>One or more abundance indices</dd><dt>Feeds into</dt><dd>Trend status and input data for assessment</dd><dt>Stage</dt><dd><span class="sn">6</span></dd></dl>
+<div class="links">
+<a class="btn">Open on GitHub &#8599;</a>
+<a class="lk off">Manual <i>To be added</i></a>
+<a class="lk" href="jara.qmd">Toolbox entry page <span>&#8594;</span></a>
+</div></div></div>
 
-#### [Method data templates](data-preparation.qmd#method-data-templates)
-CSV layouts for length-based methods, surplus production models, CPUE standardisation and life history.
-:::
-::: {.ws-card style="--ws:#b7791f"}
-[Next step]{.ws-num}
+</div>
+</section>
 
-#### [Method selector](../select/index.qmd)
-The data inventory answers the selector's questions: which methods the prepared data can support.
-:::
-:::
+<div class="next" id="next">
+<div><h3>Data prepared and ready?</h3><p>Use the method selector to see which methods the completed inventory can support, and which additional data would open further options.</p></div>
+<a href="../select/index.qmd">Open the method selector &#8594;</a>
+</div>
 
-## All data tools
-
-```{r}
-#| echo: false
-source("R/toolbox.R")
-crosswalk_table(site_root = "../", category = "Data and CPUE tools")
+</div>
+</div>
+<script>(function(){var w=document.querySelector('.p-data .flowW'),f=w&&w.firstElementChild;if(!w)return;function r(){var s=Math.min(1,w.clientWidth/1320);f.style.transformOrigin='0 0';f.style.transform='scale('+s+')';w.style.height=(f.offsetHeight*s+10)+'px'}r();addEventListener('resize',r);addEventListener('load',r)})();</script>
 ```
-
-[To add: catch reconstruction, raising length samples to the catch, survey index design-based estimators.]{.todo}

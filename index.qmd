@@ -9,7 +9,7 @@ css: assets/toolbox.css
 ---
 
 ```{=html}
-<div class="tbx">
+<div class="tbx p-home">
 <div class="subnav"><a class="on" href="index.qmd">Overview</a><a href="framework/index.qmd">Framework</a></div>
 
 
