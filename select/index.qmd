@@ -10,6 +10,8 @@ css:
   - ../assets/toolbox-selector.css
 ---
 
+:::::: {.column-screen}
+
 ```{=html}
 <div class="tbx p-sel">
 <div class="head">
@@ -263,3 +265,5 @@ cat("<script>window.NFIFM_CSV = {methods: ", csv("data/methods.csv"), ", rules: 
 ```
 
 :::
+
+::::::

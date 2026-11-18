@@ -10,6 +10,8 @@ css:
   - ../assets/toolbox-data.css
 ---
 
+:::::: {.column-screen}
+
 ```{=html}
 <div class="tbx p-data">
 <div class="head">
@@ -128,3 +130,5 @@ css:
 </div>
 <script>(function(){var w=document.querySelector('.p-data .flowW'),f=w&&w.firstElementChild;if(!w)return;function r(){var s=Math.min(1,w.clientWidth/1320);f.style.transformOrigin='0 0';f.style.transform='scale('+s+')';w.style.height=(f.offsetHeight*s+10)+'px'}r();addEventListener('resize',r);addEventListener('load',r)})();</script>
 ```
+
+::::::

@@ -8,6 +8,8 @@ title-block-style: none
 css: assets/toolbox.css
 ---
 
+:::::: {.column-screen}
+
 ```{=html}
 <div class="tbx p-home">
 <div class="subnav"><a class="on" href="index.qmd">Overview</a><a href="framework/index.qmd">Framework</a></div>
@@ -40,3 +42,5 @@ css: assets/toolbox.css
 <div class="chips" style="margin-top:18px;align-items:center"><span class="label" style="margin-right:6px">Key</span><span class="chip">Available tool or page</span><span class="chip pl">Planned tool <i>planned</i></span></div></div>
 </div>
 ```
+
+::::::

@@ -10,6 +10,8 @@ css:
   - ../assets/toolbox-framework.css
 ---
 
+:::::: {.column-screen}
+
 ```{=html}
 <div class="tbx p-framework"><div class="subnav"><a href="../index.qmd">Overview</a><a class="on" href="index.qmd">Framework</a></div>
 <div class="hero"><h1>Framework</h1>
@@ -54,3 +56,5 @@ a.wf-cv:hover{filter:brightness(1.08)}
 <div class="exs"><div style="--c:#1d7a4a"><b>Suitable example</b>Worked example where data are broadly consistent with the core assumptions.</div><div style="--c:#b7791f"><b>Assumption sensitivity</b>Short demonstrations of key sensitivities, diagnostics and likely failure points.</div><div style="--c:#b23b3b"><b>Unsuitable example</b>Data or configurations that violate assumptions and may induce bias.</div></div></div>
 </div>
 ```
+
+::::::
