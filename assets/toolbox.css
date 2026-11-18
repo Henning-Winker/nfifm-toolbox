@@ -115,6 +115,10 @@
 .tbx .hubt{font-size:23px;font-weight:800;line-height:1.25;margin-bottom:12px}
 .tbx .lgc.hub ul{margin:0;padding-left:18px;font-size:18px;line-height:1.55;color:#eaf4fa}
 .tbx .lgc.hub li{margin-bottom:6px}
+.tbx .subnav{background:#fff;border-bottom:1px solid var(--line);padding:0 60px;display:flex;gap:28px;height:46px;align-items:center;font-size:18px}
+.tbx .subnav a{color:var(--muted);font-weight:600;padding:10px 0 9px;border-bottom:3px solid transparent}.tbx .subnav a:hover{color:#12364d}
+.tbx .subnav a.on{color:#12364d;font-weight:700;border-bottom-color:#1b4965}
+@media (max-width:1100px){.tbx .subnav{padding:0 24px}}
 @media (max-width:1100px){
 .tbx .obj,.tbx .use,.tbx .comp,.tbx .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
 .tbx .wsg{grid-template-columns:repeat(2,minmax(0,1fr))}

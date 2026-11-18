@@ -10,6 +10,9 @@ css: assets/toolbox.css
 
 ```{=html}
 <div class="tbx">
+<div class="subnav"><a class="on" href="index.qmd">Overview</a><a href="framework/index.qmd">Framework</a></div>
+
+
 <div class="hero"><h1>NFIFM Toolbox</h1>
 <p class="lead">Shared method library and code for stock assessment, from data to management advice. The toolbox is part of the FAO Global Stock Assessment Capacity Programme.</p>
 <div class="dev"><b>Development version.</b> NFIFM Toolbox is a working title for the shared method library of the programme. Content is draft and not an official FAO product.</div>
