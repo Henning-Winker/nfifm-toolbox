@@ -11,3 +11,5 @@
 # model outputs written by case studies at the repo root
 /jbfit.rdata
 /jabba.hindcast.rdata
+
+**/*.quarto_ipynb

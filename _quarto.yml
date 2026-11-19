@@ -28,20 +28,20 @@ website:
     type: overlay
   navbar:
     left:
+      - text: "NFIFM Toolbox"
+        href: index.qmd
+      - text: "Data preparation"
+        href: data-tools/index.qmd
       - text: "Method selector"
         href: select/index.qmd
-      - text: "Framework"
-        href: framework/principles.qmd
-      - text: "Methods"
+      - text: "Assessment methods"
         href: methods/index.qmd
-      - text: "Data"
-        href: data-tools/index.qmd
-      - text: "Advice"
+      - text: "Advice and MSE"
         href: advice/index.qmd
-      - text: "Training and apps"
-        href: training/index.qmd
       - text: "Regional hubs"
         href: regions/index.qmd
+      - text: "Resources and training"
+        href: training/index.qmd
     right:
       - text: "Contribute"
         href: contributing.qmd
@@ -55,6 +55,7 @@ website:
       - select/index.qmd
       - section: "Framework"
         contents:
+          - framework/index.qmd
           - framework/principles.qmd
           - framework/hierarchy.qmd
           - framework/crosswalk.qmd

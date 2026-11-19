@@ -1,55 +1,35 @@
 ---
-title: "Training and apps"
-subtitle: "Workstream 4: capacity building with no-code apps, worked examples and mentoring"
+title: "Resources and training"
+pagetitle: "Resources and training · NFIFM Toolbox"
+toc: false
+sidebar: false
+page-layout: full
+title-block-style: none
+code-tools: false
+css:
+  - ../assets/toolbox.css
+  - ../assets/toolbox-training.css
 ---
 
-The toolbox is closely tied to the programme's capacity-building work. The **[Stock Monitoring Tool](smt.qmd)** on the iMarine gateway is the main training environment: trainees run methods there without programming, and use the toolbox pages for the method's data needs, assumptions, diagnostics and misuse risks. The apps lower the entry barrier; the catalogue pages are what keep their results interpretable.
+:::::: {.column-screen}
 
-| Training element | Apps | Status |
-|---|---|---|
-| Length-based assessment | SMT: TropFishR, LBI, LBSPR; FLicc module | Live; FLicc prototype in development |
-| Surplus production models | SMT: SPiCT, JABBA, CMSY | Live; CMSY temporarily unavailable |
-| Data preparation | FishualizeR | Live |
-| Mixed fisheries and harvest strategies | mmsyFM Shiny app | Runs locally; iMarine hosting under consideration |
-| Assessment to management (participatory) | FPAT workbook and FPAT App | R package runs locally; hosted app to be confirmed |
-
-::: {.ws-grid}
-::: {.ws-card style="--ws:#1f6a8a"}
-[No-code app]{.ws-num}
-
-#### [Stock Monitoring Tool](smt.qmd)
-FAO R-Shiny app on the iMarine gateway: length-based methods (TropFishR, LBI, LBSPR), surplus production models (SPiCT, JABBA, CMSY) and supporting tools.
-:::
-::: {.ws-card style="--ws:#c4552b"}
-[No-code app]{.ws-num}
-
-#### [FishualizeR](../data-tools/fishualizer.qmd)
-Data inventory, quality control and exploratory analysis of fishery data; companion to FAO Technical Paper 706.
-:::
-::: {.ws-card style="--ws:#2e7d4f"}
-[Workshop app]{.ws-num}
-
-#### [mmsyFM](../methods/multispecies/mmsyfm.qmd)
-Participatory workshops on multispecies MSY, effort caps and closures in mixed fisheries.
-:::
-::: {.ws-card style="--ws:#6b4fa0"}
-[Self-paced learning]{.ws-num}
-
-#### FAO SDG 14.4.1 eLearning
-Background on the methods behind stock status reporting; linked from each method in the Stock Monitoring Tool.
-:::
-:::
-
-::: {.ws-grid}
-::: {.ws-card style="--ws:#b7791f"}
-[Workshop app]{.ws-num}
-
-#### [FPAT](../advice/fpat.qmd)
-Fishery performance and governance scoring with stakeholders, then the FPAT App to compare management options (FAO TP 737).
-:::
-:::
-
-## Methods and where to run them
+```{=html}
+<div class="tbx p-res">
+<div class="hero"><h1>Resources and training<span class="pill">Draft</span></h1>
+<p class="lead">The toolbox is closely tied to the programme's capacity-building work. This page brings together training apps, workshops and sources. It is a draft, and its layout and content will be revised once planned.</p>
+<div class="jump"><span class="label">On this page</span><a href="#apps">Training and apps</a><a href="#run">Where to run methods</a><a href="#fpat">FPAT workshops</a><a href="#assessment">From training to assessment</a><a href="#sources">Sources</a></div></div>
+<div class="band" id="apps"><h2>Training and apps</h2>
+<p class="sub">The <a href="smt.qmd">Stock Monitoring Tool</a> on the iMarine gateway is the main training environment. Trainees run methods there without programming, and use the toolbox pages for each method's data needs, assumptions, diagnostics and misuse risks. The apps lower the entry barrier, and the catalogue pages keep their results interpretable.</p>
+<div class="rg"><div class="rc" style="--c:#3a6a93"><span class="kind">No-code app</span><h3><a href="smt.qmd">Stock Monitoring Tool</a></h3><p>FAO R-Shiny app on the iMarine gateway: length-based methods (TropFishR, LBI, LBSPR), surplus production models (SPiCT, JABBA, CMSY) and supporting tools.</p></div><div class="rc" style="--c:#a3604b"><span class="kind">No-code app</span><h3><a href="../data-tools/fishualizer.qmd">FishualizeR</a></h3><p>Data inventory, quality control and exploratory analysis of fishery data; companion to FAO Technical Paper 706.</p></div><div class="rc" style="--c:#4a7358"><span class="kind">Workshop app</span><h3><a href="../methods/multispecies/mmsyfm.qmd">mmsyFM</a></h3><p>Participatory workshops on multispecies MSY, effort caps and closures in mixed fisheries.</p></div><div class="rc" style="--c:#66507f"><span class="kind">Self-paced learning</span><h3>FAO SDG 14.4.1 eLearning</h3><p>Background on the methods behind stock status reporting; linked from each method in the Stock Monitoring Tool.</p></div><div class="rc" style="--c:#94742f"><span class="kind">Workshop app</span><h3><a href="../advice/fpat.qmd">FPAT</a></h3><p>Fishery performance and governance scoring with stakeholders, then the FPAT App to compare management options (FAO TP 737).</p></div></div>
+<div class="tablew" style="margin-top:22px"><table><thead><tr><th>Training element</th><th>Apps</th><th>Status</th></tr></thead><tbody>
+<tr><td>Length-based assessment</td><td>SMT: TropFishR, LBI, LBSPR; FLicc module</td><td>Live; FLicc prototype in development</td></tr>
+<tr><td>Surplus production models</td><td>SMT: SPiCT, JABBA, CMSY</td><td>Live; CMSY temporarily unavailable</td></tr>
+<tr><td>Data preparation</td><td>FishualizeR</td><td>Live</td></tr>
+<tr><td>Mixed fisheries and harvest strategies</td><td>mmsyFM Shiny app</td><td>Runs locally; iMarine hosting under consideration</td></tr>
+<tr><td>Assessment to management (participatory)</td><td>FPAT workbook and FPAT App</td><td>R package runs locally; hosted app to be confirmed</td></tr></tbody></table></div></div>
+<div class="band tint" id="run"><h2>Methods and where to run them</h2>
+<div class="tablew">
+```
 
 ```{r}
 #| echo: false
@@ -61,29 +41,30 @@ knitr::kable(data.frame(Method = link_name(m, "../"), Category = m$category,
                         check.names = FALSE), row.names = FALSE, escape = FALSE)
 ```
 
-## From assessment to management: FPAT workshops
+```{=html}
+</div></div>
+<div class="band" id="fpat"><h2>From assessment to management: FPAT workshops</h2>
+<p class="sub">FAO Technical Paper 737 describes two linked workshops, each about three days, tested in West Africa, Indonesia and Latin America.</p>
+<div class="tablew"><table><thead><tr><th>Workshop</th><th>Participants</th><th>Sequence</th></tr></thead><tbody>
+<tr><td>Fishery performance assessment</td><td>3–12 each of harvesters, post-harvest representatives and managers, plus scientists</td><td>Review pre-scored <a href="../methods/empirical/fpi.qmd">FPI and governance metrics</a> by sector, share and compare with reference fisheries, agree 3–8 outcomes to improve, then identify actions and the enabling conditions they change</td></tr>
+<tr><td>FPAT App / MSE</td><td>4–12 scientists and technical managers</td><td>Population dynamics basics, app overview, agreeing the input data and feasible measures, historical reconstruction and projections, comparing options against the agreed outcomes, trying alternative datasets, and assigning responsibility for a management plan and data collection</td></tr></tbody></table></div>
+<div class="box" style="margin-top:18px"><h3>Lessons from the pilots that apply to any toolbox training</h3><ul>
+<li>Agree the basic terms (<i>stock</i>, <i>population</i>, <i>fishery</i>, <i>fishing effort</i>) first, in a dedicated session or pre-reading.</li>
+<li>Use a slide overview, then a live demonstration on a case study, then hands-on work in small groups. One-to-one work on the participants' own data teaches more than presentations about data.</li>
+<li>Start the MSE session from a summary of the current management system for each stock (size limits, closures, catch limits).</li>
+<li>Taking part in a workshop does not by itself build the capacity to lead one, so train facilitators separately.</li></ul></div></div>
+<div class="band tint" id="assessment"><h2>From training to assessment</h2>
+<p class="sub">Apps are well suited to learning a method and to first screening of a stock. Before results are used for advice, the analysis should meet the same standard as a scripted one.</p>
+<div class="box"><ul>
+<li>The <a href="../data-tools/index.qmd">data preparation</a> steps have been done on the real data.</li>
+<li>The method's <b>misuse prevention</b> checks pass.</li>
+<li>The <a href="../guidance/diagnostics.qmd">diagnostics</a> and <a href="../guidance/sensitivity.qmd">sensitivity runs</a> are reported.</li>
+<li>The settings and data are saved, so that the run can be repeated, ideally as an R script.</li></ul></div>
+<div class="todo">To add: training curricula, course materials and mentoring programmes by region.</div></div>
+<div class="band" id="sources"><div class="srcb"><h2>Sources</h2>
+<p class="sub">Sources cited on the regional hub pages. Currently these are the sources for the Asia hub.</p>
+<ol><li id="src1">The status of marine fishery stock assessments in the Asian region and the potential for a network of practitioners (<a href="https://www.researchgate.net/publication/377500038_The_status_of_marine_fishery_stock_assessments_in_the_Asian_region_and_the_potential_for_a_network_of_practitioners" target="_blank">ResearchGate</a>).</li><li id="src2">APFIC. Stock assessments (APFIC/23/04) (<a href="https://www.fao.org/uploads/media/APFIC-23-04_Stock_assessments_v3_.pdf" target="_blank">FAO</a>).</li><li id="src3">FAO. 2024. The State of World Fisheries and Aquaculture 2024: In Brief (<a href="https://www.comhafat.org/wp-content/uploads/2025/07/doc_publication_0120-1.pdf" target="_blank">copy on COMHAFAT site; check against the FAO edition</a>).</li><li id="src4">FAO FIRMS. Review of the state of world marine fishery resources, presentation to the 14th FIRMS Steering Committee, 2025 (item 5) (<a href="https://www.fao.org/fishery/services/storage/fs/firms/documents/2025_06_firms_fsc14/presentations/firms_fsc14_item5.pdf" target="_blank">FAO</a>).</li><li id="src5">FAO RAP. 2012. Regional overview of fisheries and aquaculture in Asia and the Pacific 2012 (RAP Publication 2012/26). Figures are for 2010 or earlier (<a href="https://www.fao.org/4/i3185e/i3185e00.pdf" target="_blank">FAO</a>).</li><li id="src6">SEAFDEC and FAO. 2025. Regional capacity building workshop in support of FAO's State of Stocks Index (SoSI), Bangkok, 8–10 September 2025 (<a href="https://www.seafdec.org/seafdec-and-fao-co-organize-regional-capacity-building-workshop-to-support-of-faos-state-of-stocks-index-sosi/" target="_blank">SEAFDEC</a>).</li><li id="src7">SEAFDEC and FAO. 2021. Consultative planning and training workshop on stock assessment (online), 9 and 13–17 December 2021 (<a href="https://www.seafdec.org/building-human-capacity-on-fish-stock-assessment-in-southeast-asia-towards-sustainable-use-of-fishery-resources/" target="_blank">SEAFDEC</a>).</li><li id="src8">SEAFDEC. Report to the FIRMS Steering Committee, June 2017 to April 2019 (<a href="https://www.fao.org/fi/static-media/MeetingDocuments/FIRMS/FIRMS_FSC11/2me.pdf" target="_blank">FAO FIRMS</a>).</li><li id="src9">Mongabay. 2022. Data show decline in Indonesian fish stocks amid push for higher productivity (reporting Indonesian Ministry of Marine Affairs and Fisheries stock estimates). The primary national document is still to be located (<a href="https://news.mongabay.com/2022/04/data-show-decline-in-indonesian-fish-stocks-amid-push-for-higher-productivity/" target="_blank">news report</a>).</li><li id="src10">IOTC. Members and cooperating non-contracting parties (<a href="https://iotc.org/node/66" target="_blank">IOTC</a>).</li><li id="src11">WCPFC. Members and observers (<a href="https://www.wcpfc.int/node/53924" target="_blank">WCPFC</a>).</li><li id="src12">BOBP-IGO. About BOBP-IGO (<a href="https://bobpigo.org/html_site/aboutbobp.htm" target="_blank">BOBP-IGO</a>).</li><li id="src13">SEAFDEC. About SEAFDEC (<a href="https://www.seafdec.org/about/" target="_blank">SEAFDEC</a>).</li><li id="src14">BOBP-IGO. BOBSAN Regional Dialogue Outcome Document, Kochi, April 2024 (<a href="https://www.bobpigo.org/publications/BOBSAN%20Regional%20Dialogue%20Outcome%20Document.pdf" target="_blank">BOBP-IGO</a>).</li><li id="src15">BOBP-IGO. Fish stock assessment in South Asia (BOBSAN) (<a href="https://www.bobpigo.org/publications/Fish%20Stock%20Assessment-BOBSAN-FINAL.pdf" target="_blank">BOBP-IGO</a>).</li><li id="src16">JIRCAS. Summary of The State of World Fisheries and Aquaculture 2026, 23 June 2026 (secondary summary of SOFIA 2026) (<a href="https://www.jircas.go.jp/en/program/proc/blog/20260623" target="_blank">JIRCAS</a>).</li><li id="src17">Sunday Times (Sri Lanka). Asia leads global aquatic food production: FAO report, 21 June 2026 (press report on SOFIA 2026) (<a href="https://www.sundaytimes.lk/260621/news/asia-leads-global-aquatic-food-production-fao-report-646838.html" target="_blank">Sunday Times</a>).</li><li id="src18">BOBP-IGO. FIRMS Workshop Report, Kochi, 29–31 May 2025 (<a href="https://www.bobpigo.org/webroot/publications/FIRMS%20Workshop%20Report.pdf" target="_blank">BOBP-IGO</a>).</li></ol><p>Regional priorities, partners and linked programmes come from the Global Stock Assessment Capacity Programme figure. FIRMS, SOFIA and national reports were used as far as they could be retrieved. SOFIA 2026 was read through press and institute summaries (sources 16 and 17), not the report itself. Primary national reports and APFIC membership are still to be checked.</p></div></div>
+</div>
+```
 
-FAO Technical Paper 737 describes two linked workshops, each about three days, tested in West Africa, Indonesia and Latin America.
-
-| Workshop | Participants | Sequence |
-|---|---|---|
-| **Fishery performance assessment** | 3–12 each of harvesters, post-harvest representatives and managers, plus scientists | Review pre-scored [FPI and governance metrics](../methods/empirical/fpi.qmd) by sector → share and compare with reference fisheries → agree 3–8 outcomes to improve → identify actions and the enabling conditions they change |
-| **FPAT App / MSE** | 4–12 scientists and technical managers | Population dynamics basics → app overview → agree the input data → agree feasible measures → historical reconstruction and projections → compare options against the agreed outcomes → try alternative datasets → assign responsibility for a management plan and data collection |
-
-Lessons from the pilots that apply to any toolbox training:
-
-- Agree the basic terms (*stock*, *population*, *fishery*, *fishing effort*) first, in a dedicated session or pre-reading.
-- A slide overview, then a live demonstration on a case study, then hands-on work in small groups. One-to-one work on the participants' own data teaches more than presentations about data.
-- Start the MSE session from a summary of the current management system for each stock (size limits, closures, catch limits).
-- Taking part in a workshop does not by itself build the capacity to lead one; train facilitators separately.
-
-## From training to assessment
-
-Apps are well suited to learning a method and to first screening of a stock. Before results are used for advice, the analysis should meet the same standard as a scripted one:
-
-- the [data preparation](../data-tools/data-preparation.qmd) steps have been done on the real data;
-- the method's **misuse prevention** checks pass;
-- the [diagnostics](../guidance/diagnostics.qmd) and [sensitivity runs](../guidance/sensitivity.qmd) are reported;
-- the settings and data are saved, so that the run can be repeated, ideally as an R script.
-
-[To add: training curricula, course materials and mentoring programmes by region.]{.todo}
+::::::
