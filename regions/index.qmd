@@ -30,7 +30,7 @@ css:
 </div></div>
 <div class="pk" style="--c:#1d8a78"><div class="pkh"><h4>Case studies</h4><span>Case studies</span></div><div class="pkb">
 <p>Case studies follow one fishery from data to management decision, showing a method working on real data with real limits. All use one format, so fisheries in different regions can be read side by side.</p>
-<div class="lab">Benefits</div><ul><li>See methods in practice for a fishery like the user's own</li><li>Follow the route from assessment to management advice</li><li>Compare fisheries with similar species, gears or data</li><li>Learn from limits and what was done about them</li></ul>
+<div class="lab">Benefits</div><ul><li>See methods in practice for a fishery like the user's own</li><li>Follow the route from assessment to scientific advice</li><li>Compare fisheries with similar species, gears or data</li><li>Learn from limits and what was done about them</li></ul>
 </div></div></div></div>
 <div class="band tint" id="regions"><h2>Regions included</h2>
 <p class="sub">The six hubs follow the regional implementation platforms of the Global Stock Assessment Capacity Programme. Each hub has its own page, with regional priorities and partners as set out in the programme.</p>

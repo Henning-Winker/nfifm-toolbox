@@ -3,7 +3,7 @@ title: "Hierarchical framework"
 subtitle: "Classifying assessment methods and the tools around them"
 ---
 
-Methods are described at three levels: **model class** (with sub-class or population structure), **application context** (the data situation the method is intended for) and **named method**. Cross-cutting attributes (Bayesian, state-space, process error, multiple indices, multi-gear, dome selectivity) are listed in the [crosswalk](crosswalk.qmd). Use the [method selector](../select/index.qmd) to match methods to your data. Around the assessment methods sit two further layers: **data and CPUE tools** that prepare the inputs, and **advice and MSE tools** that turn accepted assessments into management advice.
+Methods are described at three levels: **model class** (with sub-class or population structure), **application context** (the data situation the method is intended for) and **named method**. Cross-cutting attributes (Bayesian, state-space, process error, multiple indices, multi-gear, dome selectivity) are listed in the [crosswalk](crosswalk.qmd). Use the [method selector](../select/index.qmd) to match methods to your data. Around the assessment methods sit two further layers: **data and CPUE tools** that prepare the inputs, and **advice and MSE tools** that turn accepted assessments into scientific advice.
 
 ::: {.hierarchy-wrap}
 ::: {.hierarchy-root}

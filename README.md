@@ -1,6 +1,6 @@
 # NFIFM Toolbox (working title)
 
-Shared method library and code for stock assessment, from data to management advice. Development version of the toolbox for the FAO Global Stock Assessment Capacity Programme; **not an official FAO product**.
+Shared method library and code for stock assessment, from data to scientific advice. Development version of the toolbox for the FAO Global Stock Assessment Capacity Programme; **not an official FAO product**.
 
 **Website:** https://henning-winker.github.io/nfifm-toolbox
 

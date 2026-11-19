@@ -152,7 +152,7 @@ knitr::kable(comparison, caption = "Comparison of SPiCT and JABBA.")
 
 ## Assumptions and caveats common to surplus production models
 
-SPiCT and JABBA differ in estimation philosophy and time structure, but they share most of the core assumptions and limitations of surplus production models. These assumptions should therefore be evaluated carefully when interpreting stock status, reference points and management advice.
+SPiCT and JABBA differ in estimation philosophy and time structure, but they share most of the core assumptions and limitations of surplus production models. These assumptions should therefore be evaluated carefully when interpreting stock status, reference points and scientific advice.
 
 
 - **Aggregated biomass representation**: surplus production models summarize the stock as a single biomass state and do not explicitly model age structure, length structure, sex structure or spatial structure. This parsimony can be advantageous in data-limited situations, but may also obscure important biological processes and population dynamics.

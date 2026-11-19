@@ -63,7 +63,7 @@ Kokkalis, A., Berg, C.W., Kapur, M.S., Winker, H., Jacobsen, N.S., Taylor, M.H.,
 Mildenberger, T.K., Berg, C.W., Kokkalis, A., Nielsen, J.R., Punt, A.E. and co-authors. Full citation to be completed once bibliographic details are verified.
 
 - Evaluates SPiCT within a management strategy evaluation framework.
-- Tests harvest control rules and robustness of SPiCT-based management advice.
+- Tests harvest control rules and robustness of SPiCT-based scientific advice.
 - Links SPiCT to operational management procedures and risk-performance evaluation.
 
 ### Time-varying productivity extensions

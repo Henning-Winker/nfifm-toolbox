@@ -17,7 +17,7 @@ execute:
 
 website:
   title: "NFIFM Toolbox"
-  description: "Shared method library and code for stock assessment, from data to management advice (development version)"
+  description: "Shared method library and code for stock assessment, from data to scientific advice (development version)"
   site-url: https://henning-winker.github.io/nfifm-toolbox
   repo-url: https://github.com/Henning-Winker/nfifm-toolbox
   repo-actions: [edit, source, issue]

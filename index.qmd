@@ -17,7 +17,7 @@ css: assets/toolbox.css
 
 
 <div class="hero"><h1>NFIFM Toolbox</h1>
-<p class="lead">Shared method library and code for stock assessment, from data to management advice. The toolbox is part of the FAO Global Stock Assessment Capacity Programme.</p>
+<p class="lead">Shared method library and code for stock assessment, from data to scientific advice. The toolbox is part of the FAO Global Stock Assessment Capacity Programme.</p>
 <div class="dev"><b>Development version.</b> NFIFM Toolbox is a working title for the shared method library of the programme. Content is draft and not an official FAO product.</div>
 <div class="jump"><span class="label">On this page</span><a href="#programme">The programme</a><a href="#obj">Objectives</a><a href="#logic">One assessment logic</a><a href="#ws">Toolbox by workstream</a></div></div>
 
