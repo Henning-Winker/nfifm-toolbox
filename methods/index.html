@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assessment methods – NFIFM Toolbox</title>
+<title>Assessment methods · NFIFM Toolbox – NFIFM Toolbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -87,9 +52,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b0ec255b4dafb7a5a03c00628cdf6300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-40878361a1e1eef6773465f72c3396e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -126,7 +91,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
 
     const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-title","listing-author"],
     };
@@ -171,9 +136,11 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/toolbox.css">
+<link rel="stylesheet" href="../assets/toolbox-methods.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -360,32 +327,32 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../select/index.html" aria-current="page"> 
-<span class="menu-text">Method selector</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../framework/principles.html"> 
-<span class="menu-text">Framework</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../methods/index.html"> 
-<span class="menu-text">Methods</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">NFIFM Toolbox</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../data-tools/index.html"> 
-<span class="menu-text">Data</span></a>
+<span class="menu-text">Data preparation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../select/index.html"> 
+<span class="menu-text">Method selector</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../methods/index.html" aria-current="page"> 
+<span class="menu-text">Assessment methods</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../advice/index.html"> 
-<span class="menu-text">Advice</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../training/index.html"> 
-<span class="menu-text">Training and apps</span></a>
+<span class="menu-text">Advice and MSE</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../regions/index.html"> 
 <span class="menu-text">Regional hubs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../training/index.html"> 
+<span class="menu-text">Resources and training</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -411,468 +378,42 @@ window.Quarto = {
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NFIFM Toolbox</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../select/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Method selector</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">Framework</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Principles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/hierarchy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hierarchical framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/crosswalk.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Crosswalk</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/catalogue-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catalogue structure</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-2-label">Assessment methods</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Assessment methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-3-label">Biomass dynamic</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Surplus production models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/spict.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SPiCT</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/jabba.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JABBA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/cmsy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CMSY+</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-4-label">Length-based and per-recruit</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based and per-recruit methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/flicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/lbspr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBSPR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/lbb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBB</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/fishblicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fishblicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/tropfishr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TropFishR (ELEFAN_GA + YPR/SBPR)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/ypr-spr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YPR / SPR / Thompson &amp; Bell</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/scal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical catch-at-length</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-5-label">Fishery indicators</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/exploitation-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exploitation history indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/trend-indicators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catch, CPUE and effort trend indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/lbi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based indicators (LBI)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-indicator dashboards (traffic light)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/psa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/age-structured/age-structured.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Age-structured models (XSA, SAM, a4a, SS3)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-6-label">Multispecies</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/multispecies/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multispecies and mixed fisheries</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/multispecies/mmsyfm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">mmsyFM</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-7-label">Data preparation and tools</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data preparation and tools</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/data-preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data preparation workflow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/cpuetargeting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">cpueTargeting</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/fishualizer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FishualizeR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/jara.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JARA</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-8-label">Advice and MSE</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Advice and harvest strategies</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/flref.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLRef</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/mse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLR mse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/fpat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FPAT App</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-9-label">Guidance</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/misuse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Misuse prevention</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/diagnostics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diagnostics and model validation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/sensitivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sensitivity analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-10-label">Training and apps</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../training/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Training and apps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../training/smt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Stock Monitoring Tool</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../regions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regional hubs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-11-label">Resources</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Installation guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methodological literature</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Institutional applications</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/guides/FLicc_user_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc user guide</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(18)</span></div><div class="category" data-category="YWdlLWJhc2Vk">age-based <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YWdlLXN0cnVjdHVyZWQ=">age-structured <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QmF5ZXNpYW4=">Bayesian <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YmlvbWFzcyUyMGR5bmFtaWM=">biomass dynamic <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y2F0Y2glMjBoaXN0b3J5">catch history <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y2F0Y2gtb25seQ==">catch-only <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZHluYW1pYyUyMHBvb2w=">dynamic pool <span class="quarto-category-count">(8)</span></div><div class="category" data-category="ZW1waXJpY2Fs">empirical <span class="quarto-category-count">(6)</span></div><div class="category" data-category="ZmlzaGVyeSUyMGluZGljYXRvcnM=">fishery indicators <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RkxS">FLR <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RlBBVA==">FPAT <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z292ZXJuYW5jZQ==">governance <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z3Jvd3Ro">growth <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aGFydmVzdCUyMHN0cmF0ZWdpZXM=">harvest strategies <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50ZWdyYXRlZA==">integrated <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGVuZ3RoLWJhc2Vk">length-based <span class="quarto-category-count">(5)</span></div><div class="category" data-category="bGVuZ3RoLWJhc2VkJTIwaW5kaWNhdG9ycw==">length-based indicators <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGlrZWxpaG9vZA==">likelihood <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bG9jYWwlMjBrbm93bGVkZ2U=">local knowledge <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWl4ZWQlMjBmaXNoZXJpZXM=">mixed fisheries <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TVNF">MSE <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bXVsdGktZ2Vhcg==">multi-gear <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bXVsdGlzcGVjaWVz">multispecies <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGVyLXJlY3J1aXQ=">per-recruit <span class="quarto-category-count">(6)</span></div><div class="category" data-category="cmlzaw==">risk <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U2hpbnk=">Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c29jaW8tZWNvbm9taWM=">socio-economic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c3RhdGUtc3BhY2U=">state-space <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dHJhZmZpYyUyMGxpZ2h0">traffic light <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJlbmRz">trends <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJpYWdl">triage <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1">
+<main class="content page-columns page-full column-body" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li></ol></nav><h1 class="title display-7">Assessment methods</h1></header>
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li><li class="breadcrumb-item"><a href="../methods/index.html">Assessment methods</a></li></ol></nav>
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Assessment methods</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Catalogue entries for assessment methods, with data needs, assumptions and misuse warnings</p>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+<header id="title-block-header">
 
 
 </header>
 
 
-<p>Not sure which method fits? Start with the <strong><a href="../select/index.html">method selector</a></strong>. Every entry follows the <a href="../framework/catalogue-structure.html">standard catalogue fields</a>, including <strong>misuse prevention</strong>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Branch</th>
-<th>Overview</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Biomass dynamic models</td>
-<td><a href="../methods/biomass-dynamic/index.html">Surplus production models</a>: SPiCT, JABBA, CMSY+/BSM</td>
-</tr>
-<tr class="even">
-<td>Dynamic pool: equilibrium per-recruit</td>
-<td><a href="../methods/dynamic-pool/index.html">Length-based and per-recruit methods</a>: FLicc, LBSPR, LBB, fishblicc, TropFishR, YPR/SPR</td>
-</tr>
-<tr class="odd">
-<td>Fishery indicators</td>
-<td><a href="../methods/empirical/index.html">Overview</a>: exploitation history, trends, LBI, dashboards, PSA</td>
-</tr>
-<tr class="even">
-<td>Dynamic pool: structured dynamic</td>
-<td><a href="../methods/dynamic-pool/scal.html">Statistical catch-at-length</a>, <a href="../methods/age-structured/age-structured.html">age-structured models</a></td>
-</tr>
-<tr class="odd">
-<td>Multispecies and mixed fisheries</td>
-<td><a href="../methods/multispecies/index.html">Overview</a>: mmsyFM</td>
-</tr>
-</tbody>
-</table>
+<div class="column-screen">
+<div class="tbx p-methods">
+<div class="hero"><h1>Assessment methods<span class="pill">Draft</span></h1>
+<p class="lead">Numerous stock assessment methods are available, and they differ in quality, in the data they require, and in how widely they are applied. The toolbox maps this landscape and provides a small set of well-documented FAO tools, supported with training, applications and manuals.</p>
+<div class="jump"><span class="label">On this page</span><a href="#compare">Current and FAO tools</a><a href="#figure">Methods map</a><a href="#endorsed">FAO tools</a><a href="#regional">Regional methods</a><a href="#catalogue">Catalogue entries</a></div></div>
+<div class="band" id="compare"><h2 class="anchored">Current tools and FAO tools</h2>
+<p class="sub">Methods already in use have real strengths, and FAO tools add documentation and support. The comparison below sets out the trade-offs of each.</p><div class="cmp2">
+<div class="cl"><div class="ch" style="background:#6b7a86"><small>Current practice</small><b>Established and regional tools</b><p>Methods already in use in countries and regions, many developed locally or over several decades.</p></div><div class="bd"><div class="pro"><h5 class="anchored">Strengths</h5><ul><li>Familiar to analysts and institutions, so teams can start without retraining</li><li>Long records of results support continuity of time series and comparison with past assessments</li><li>Already embedded in national and regional reporting routines</li><li>Suited to local fisheries and data where they were developed</li></ul></div><div class="con"><h5 class="anchored">Limitations</h5><ul><li>Documentation, assumptions and outputs vary, so results are hard to compare between countries</li><li>Some tools are older software with limited maintenance and limited treatment of uncertainty</li><li>Limited guidance on which data conditions suit each method</li><li>Training and support depend on individual institutes and a few experts</li></ul></div></div></div>
+<div class="cl"><div class="ch" style="background:#0f766e"><small>Toolbox approach</small><b>FAO tools</b><p>A small set of tools the FAO toolbox recommends and supports with resources.</p></div><div class="bd"><div class="pro"><h5 class="anchored">Strengths</h5><ul><li>Documented, maintained and tested, with training materials, Shiny apps and manuals</li><li>Outputs are consistent and align with FAO stock status reporting</li><li>Tools are designed to connect, so the output of one can feed the next</li><li>Cover the main data situations, from catch-only to length-based and multispecies</li></ul></div><div class="con"><h5 class="anchored">Limitations</h5><ul><li>Adoption requires change from familiar tools and some retraining</li><li>Not every data situation is covered yet, for example age-structured models and simulation are planned</li><li>Results may differ from those of established methods during a transition</li><li>Apps and documentation need continuing support from the toolbox team</li></ul></div></div></div></div>
+<p class="note">Neither group is wrong in itself. Established tools remain mapped in the figure below to show connections, and regional hubs discuss when to keep, extend or change them.</p></div>
+<div class="band tint" id="figure"><h2 class="anchored">Methods map</h2><p class="sub">Tools can serve more than one purpose, so the figure groups them by main use. Arrows show where the output of one tool feeds another.</p>
+<div class="figw"><a href="../assets/img/assessment-figure.png" target="_blank"><img src="../assets/img/assessment-figure.png" alt="Assessment methods figure"></a></div><p class="figlk"><a href="../assets/img/assessment-figure.png" target="_blank">Open the figure at full size ↗</a></p></div>
+<div class="band" id="endorsed"><h2 class="anchored">FAO tools</h2><p class="sub">Tools are grouped by main purpose. Each lists the data it needs, what it produces, and the resources available for it. JABBA3 provides CMSY+, SPiCT and BSM, and FLicc provides LBSPR and LBB; these, with TropFishR and the age-structured models, are documented under catalogue entries. Resource lists are provisional and are to be confirmed with the toolbox team.</p><div class="gh" style="--c:#c27a1a"><h3 class="anchored">Data preparation and empirical indicators</h3></div><div class="tg"><div class="tc" style="--c:#c27a1a"><div class="tn"><a href="../data-tools/fishualizer.html">FishualizeR</a><span>Data preparation</span></div><p>Inventory, quality control and exploratory analysis of fishery data.</p><dl><dt>Data</dt><dd>Length, catch and effort data</dd><dt>Output</dt><dd>Indicators and quality checks</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Shiny app</a></li><li><a>Manual</a></li><li><a>Training materials</a></li></ul></div></div><div class="tc" style="--c:#c27a1a"><div class="tn"><a href="../data-tools/cpuetargeting.html">cpueTargeting</a><span>Data preparation</span></div><p>Standardises CPUE while allowing for changes in targeting.</p><dl><dt>Data</dt><dd>Catch and effort data</dd><dt>Output</dt><dd>Standardised CPUE trends</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Manual</a></li><li><a>Training materials</a></li><li><a href="../data-tools/cpuetargeting.html">Documentation</a></li></ul></div></div><div class="tc" style="--c:#c27a1a"><div class="tn"><a href="../data-tools/jara.html">JARA</a><span>Data preparation</span></div><p>Combines several abundance indices in one trend analysis.</p><dl><dt>Data</dt><dd>Abundance indices</dd><dt>Output</dt><dd>Joint trend and rate of change</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Manual</a></li><li><a>Training materials</a></li><li><a href="../data-tools/jara.html">Documentation</a></li></ul></div></div></div><div class="gh" style="--c:#2b6fd6"><h3 class="anchored">Assessment framework tools</h3></div><div class="tg"><div class="tc" style="--c:#2b6fd6"><div class="tn"><a href="../methods/biomass-dynamic/jabba.html">JABBA3</a><span>Framework</span></div><p>Bayesian biomass dynamic framework that includes CMSY+, SPiCT and BSM.</p><dl><dt>Data</dt><dd>Catch, with or without abundance index</dd><dt>Output</dt><dd>Biomass and fishing mortality against reference points</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Shiny app</a></li><li><a>Manual</a></li><li><a>Training materials</a></li><li><a href="../methods/biomass-dynamic/jabba.html">Documentation</a></li></ul></div></div><div class="tc" style="--c:#0f766e"><div class="tn"><a href="../methods/dynamic-pool/flicc.html">FLicc</a><span>Framework</span></div><p>Length-based framework for single and multiple gears that includes LBSPR and LBB, with length indicators.</p><dl><dt>Data</dt><dd>Length compositions, life-history parameters</dd><dt>Output</dt><dd>SPR, B/B0 and length indicators</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Shiny app</a></li><li><a>Manual</a></li><li><a>Training materials</a></li><li><a href="../methods/dynamic-pool/flicc.html">Documentation</a></li></ul></div></div></div><div class="gh" style="--c:#8e44ad"><h3 class="anchored">Management strategy evaluation and multispecies tools</h3></div><div class="tg"><div class="tc" style="--c:#8e44ad"><div class="tn">FLR mse<span>Single-species</span></div><p>Tests harvest control rules and management procedures against an operating model.</p><dl><dt>Data</dt><dd>Operating model and rules</dd><dt>Output</dt><dd>Performance of management procedures</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Manual</a></li><li><a>Documentation</a></li></ul></div></div><div class="tc" style="--c:#8e44ad"><div class="tn"><a href="../methods/multispecies/mmsyfm.html">mmsyFM</a><span>Multispecies</span></div><p>Multispecies MSY and harvest strategies for mixed fisheries, used in participatory workshops.</p><dl><dt>Data</dt><dd>Catch and effort by species group</dd><dt>Output</dt><dd>Multispecies reference points, effort caps</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Shiny app</a></li><li><a>Training materials</a></li></ul></div></div></div><div class="gh" style="--c:#b5446e"><h3 class="anchored">Data simulation</h3></div><div class="tg"><div class="tc" style="--c:#b5446e"><div class="tn">FLOSS<span>Data simulation</span></div><p>Standalone simulator whose output can feed any other tool.</p><dl><dt>Data</dt><dd>Operating model settings</dd><dt>Output</dt><dd>Simulated data</dd></dl><div class="rs2"><b>Available resources</b><ul><li><a>Shiny app</a></li><li><a>Manual</a></li></ul></div></div></div></div>
+<div class="band tint" id="regional"><h2 class="anchored">Methods used in specific regions</h2><p class="sub">Regions often use methods that are not FAO tools, which is not wrong in itself. The regional hubs list those methods with their limits and the toolbox option that does the same job or can supplement them.</p>
+<div class="ctc"><div><h4 class="anchored">See regional methods</h4><p>Start with the Asia hub, which shows tools in use, caveats and FAO tool alternatives.</p></div><a href="../regions/index.html">Regional hubs</a></div></div>
+</div>
+<div id="catalogue" class="cat-list">
+<section id="catalogue-entries" class="level2">
+<h2 class="anchored" data-anchor-id="catalogue-entries">Catalogue entries</h2>
+<p>Methods provided within JABBA3 and FLicc (CMSY+, SPiCT, BSM, LBSPR and LBB), together with TropFishR and the age-structured models, are listed here. Every entry follows the <a href="../framework/catalogue-structure.html">standard catalogue fields</a>, including misuse prevention. Not sure which method fits? Start with the <a href="../select/index.html">method selector</a>.</p>
 <div id="listing-methods" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
@@ -902,244 +443,186 @@ window.Quarto = {
 Subtitle
 </th>
 
-<th>
-Categories
-</th>
-
 </tr>
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="ZHluYW1pYyUyMHBvb2wlMkNhZ2Utc3RydWN0dXJlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="Age-structured models (XSA, SAM, a4a, SS3)" data-listing-filename-sort="age-structured.qmd">
+<tr data-index="0" data-categories="ZHluYW1pYyUyMHBvb2wlMkNhZ2Utc3RydWN0dXJlZA==" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="Age-structured models (XSA, SAM, a4a, SS3)" data-listing-filename-sort="age-structured.qmd">
 <td>
 <a href="../methods/age-structured/age-structured.html" class="title listing-title">Age-structured models (XSA, SAM, a4a, SS3)</a>
 </td>
 <td>
 <span class="listing-subtitle">Catch-at-age + indices</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, age-structured</span>
-</td>
 
 </tr>
 
-<tr data-index="1" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNjYXRjaC1vbmx5JTJDQmF5ZXNpYW4=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="10" data-listing-word-count-sort="1827" data-listing-title-sort="CMSY+" data-listing-filename-sort="cmsy.qmd">
+<tr data-index="1" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNjYXRjaC1vbmx5JTJDQmF5ZXNpYW4=" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="10" data-listing-word-count-sort="1827" data-listing-title-sort="CMSY+" data-listing-filename-sort="cmsy.qmd">
 <td>
 <a href="../methods/biomass-dynamic/cmsy.html" class="title listing-title">CMSY+</a>
 </td>
 <td>
 <span class="listing-subtitle">Catch-only (CMSY++) and catch + index (BSM) surplus production</span>
 </td>
-<td>
-<span class="listing-categories">biomass dynamic, catch-only, Bayesian</span>
-</td>
 
 </tr>
 
-<tr data-index="2" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmVuZHM=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="Catch, CPUE and effort trend indicators" data-listing-filename-sort="trend-indicators.qmd">
+<tr data-index="2" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmVuZHM=" data-listing-file-modified-sort="1795087142571" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="Catch, CPUE and effort trend indicators" data-listing-filename-sort="trend-indicators.qmd">
 <td>
 <a href="../methods/empirical/trend-indicators.html" class="title listing-title">Catch, CPUE and effort trend indicators</a>
 </td>
 <td>
 <span class="listing-subtitle">Time series of catch, CPUE, effort, fleet capacity</span>
 </td>
-<td>
-<span class="listing-categories">empirical, fishery indicators, trends</span>
-</td>
 
 </tr>
 
-<tr data-index="3" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkNjYXRjaCUyMGhpc3Rvcnk=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="705" data-listing-title-sort="Exploitation history indicators" data-listing-filename-sort="exploitation-history.qmd">
+<tr data-index="3" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkNjYXRjaCUyMGhpc3Rvcnk=" data-listing-file-modified-sort="1795087142571" data-listing-reading-time-sort="4" data-listing-word-count-sort="705" data-listing-title-sort="Exploitation history indicators" data-listing-filename-sort="exploitation-history.qmd">
 <td>
 <a href="../methods/empirical/exploitation-history.html" class="title listing-title">Exploitation history indicators</a>
 </td>
 <td>
 <span class="listing-subtitle">Catch history, fishery development and timeline of events</span>
 </td>
-<td>
-<span class="listing-categories">empirical, fishery indicators, catch history</span>
-</td>
 
 </tr>
 
-<tr data-index="4" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ211bHRpLWdlYXIlMkNGTFI=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="9" data-listing-word-count-sort="1756" data-listing-title-sort="FLicc" data-listing-filename-sort="flicc.qmd">
+<tr data-index="4" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ211bHRpLWdlYXIlMkNGTFI=" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="9" data-listing-word-count-sort="1756" data-listing-title-sort="FLicc" data-listing-filename-sort="flicc.qmd">
 <td>
 <a href="../methods/dynamic-pool/flicc.html" class="title listing-title">FLicc</a>
 </td>
 <td>
 <span class="listing-subtitle">Length-based (single and multi-gear)</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, per-recruit, length-based, multi-gear, FLR</span>
-</td>
 
 </tr>
 
-<tr data-index="5" data-categories="ZW1waXJpY2FsJTJDc29jaW8tZWNvbm9taWMlMkNnb3Zlcm5hbmNlJTJDRlBBVA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="772" data-listing-title-sort="Fishery Performance Indicators (FPI) and governance" data-listing-filename-sort="fpi.qmd">
+<tr data-index="5" data-categories="ZW1waXJpY2FsJTJDc29jaW8tZWNvbm9taWMlMkNnb3Zlcm5hbmNlJTJDRlBBVA==" data-listing-file-modified-sort="1795087142571" data-listing-reading-time-sort="4" data-listing-word-count-sort="772" data-listing-title-sort="Fishery Performance Indicators (FPI) and governance" data-listing-filename-sort="fpi.qmd">
 <td>
 <a href="../methods/empirical/fpi.html" class="title listing-title">Fishery Performance Indicators (FPI) and governance</a>
 </td>
 <td>
 <span class="listing-subtitle">Triple-bottom-line and governance scoring: step 1 of the Fisheries Performance Assessment Toolkit (FPAT)</span>
 </td>
-<td>
-<span class="listing-categories">empirical, socio-economic, governance, FPAT</span>
-</td>
 
 </tr>
 
-<tr data-index="6" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ0JheWVzaWFu" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407" data-listing-title-sort="JABBA" data-listing-filename-sort="jabba.qmd">
+<tr data-index="6" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ0JheWVzaWFu" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="8" data-listing-word-count-sort="1407" data-listing-title-sort="JABBA" data-listing-filename-sort="jabba.qmd">
 <td>
 <a href="../methods/biomass-dynamic/jabba.html" class="title listing-title">JABBA</a>
 </td>
 <td>
 <span class="listing-subtitle">Catch + one or more indices (+ auxiliary)</span>
 </td>
-<td>
-<span class="listing-categories">biomass dynamic, state-space, Bayesian</span>
-</td>
 
 </tr>
 
-<tr data-index="7" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="670" data-listing-title-sort="LBB" data-listing-filename-sort="lbb.qmd">
+<tr data-index="7" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="4" data-listing-word-count-sort="670" data-listing-title-sort="LBB" data-listing-filename-sort="lbb.qmd">
 <td>
 <a href="../methods/dynamic-pool/lbb.html" class="title listing-title">LBB</a>
 </td>
 <td>
 <span class="listing-subtitle">Length-based (single fleet)</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, per-recruit, length-based</span>
-</td>
 
 </tr>
 
-<tr data-index="8" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="LBSPR" data-listing-filename-sort="lbspr.qmd">
+<tr data-index="8" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZA==" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="4" data-listing-word-count-sort="681" data-listing-title-sort="LBSPR" data-listing-filename-sort="lbspr.qmd">
 <td>
 <a href="../methods/dynamic-pool/lbspr.html" class="title listing-title">LBSPR</a>
 </td>
 <td>
 <span class="listing-subtitle">Length-based (single fleet)</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, per-recruit, length-based</span>
-</td>
 
 </tr>
 
-<tr data-index="9" data-categories="ZW1waXJpY2FsJTJDbGVuZ3RoLWJhc2VkJTIwaW5kaWNhdG9ycw==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="702" data-listing-title-sort="Length-based indicators (LBI)" data-listing-filename-sort="lbi.qmd">
+<tr data-index="9" data-categories="ZW1waXJpY2FsJTJDbGVuZ3RoLWJhc2VkJTIwaW5kaWNhdG9ycw==" data-listing-file-modified-sort="1795087142571" data-listing-reading-time-sort="4" data-listing-word-count-sort="702" data-listing-title-sort="Length-based indicators (LBI)" data-listing-filename-sort="lbi.qmd">
 <td>
 <a href="../methods/empirical/lbi.html" class="title listing-title">Length-based indicators (LBI)</a>
 </td>
 <td>
 <span class="listing-subtitle">Length composition + Linf and maturity</span>
 </td>
-<td>
-<span class="listing-categories">empirical, length-based indicators</span>
-</td>
 
 </tr>
 
-<tr data-index="10" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmFmZmljJTIwbGlnaHQlMkNsb2NhbCUyMGtub3dsZWRnZQ==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="675" data-listing-title-sort="Multi-indicator dashboards (traffic light)" data-listing-filename-sort="dashboard.qmd">
+<tr data-index="10" data-categories="ZW1waXJpY2FsJTJDZmlzaGVyeSUyMGluZGljYXRvcnMlMkN0cmFmZmljJTIwbGlnaHQlMkNsb2NhbCUyMGtub3dsZWRnZQ==" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="4" data-listing-word-count-sort="675" data-listing-title-sort="Multi-indicator dashboards (traffic light)" data-listing-filename-sort="dashboard.qmd">
 <td>
 <a href="../methods/empirical/dashboard.html" class="title listing-title">Multi-indicator dashboards (traffic light)</a>
 </td>
 <td>
 <span class="listing-subtitle">Several quantitative and qualitative indicators, including local knowledge</span>
 </td>
-<td>
-<span class="listing-categories">empirical, fishery indicators, traffic light, local knowledge</span>
-</td>
 
 </tr>
 
-<tr data-index="11" data-categories="ZW1waXJpY2FsJTJDcmlzayUyQ3RyaWFnZQ==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="666" data-listing-title-sort="Productivity–susceptibility analysis (PSA)" data-listing-filename-sort="psa.qmd">
+<tr data-index="11" data-categories="ZW1waXJpY2FsJTJDcmlzayUyQ3RyaWFnZQ==" data-listing-file-modified-sort="1795087142571" data-listing-reading-time-sort="4" data-listing-word-count-sort="666" data-listing-title-sort="Productivity–susceptibility analysis (PSA)" data-listing-filename-sort="psa.qmd">
 <td>
 <a href="../methods/empirical/psa.html" class="title listing-title">Productivity–susceptibility analysis (PSA)</a>
 </td>
 <td>
 <span class="listing-subtitle">Life history and fishery exposure, no time series needed</span>
 </td>
-<td>
-<span class="listing-categories">empirical, risk, triage</span>
-</td>
 
 </tr>
 
-<tr data-index="12" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ2xpa2VsaWhvb2Q=" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="8" data-listing-word-count-sort="1528" data-listing-title-sort="SPiCT" data-listing-filename-sort="spict.qmd">
+<tr data-index="12" data-categories="YmlvbWFzcyUyMGR5bmFtaWMlMkNzdGF0ZS1zcGFjZSUyQ2xpa2VsaWhvb2Q=" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="8" data-listing-word-count-sort="1528" data-listing-title-sort="SPiCT" data-listing-filename-sort="spict.qmd">
 <td>
 <a href="../methods/biomass-dynamic/spict.html" class="title listing-title">SPiCT</a>
 </td>
 <td>
 <span class="listing-subtitle">Catch + one or more indices (+ auxiliary)</span>
 </td>
-<td>
-<span class="listing-categories">biomass dynamic, state-space, likelihood</span>
-</td>
 
 </tr>
 
-<tr data-index="13" data-categories="ZHluYW1pYyUyMHBvb2wlMkNsZW5ndGgtYmFzZWQlMkNpbnRlZ3JhdGVk" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="665" data-listing-title-sort="Statistical catch-at-length" data-listing-filename-sort="scal.qmd">
+<tr data-index="13" data-categories="ZHluYW1pYyUyMHBvb2wlMkNsZW5ndGgtYmFzZWQlMkNpbnRlZ3JhdGVk" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="4" data-listing-word-count-sort="665" data-listing-title-sort="Statistical catch-at-length" data-listing-filename-sort="scal.qmd">
 <td>
 <a href="../methods/dynamic-pool/scal.html" class="title listing-title">Statistical catch-at-length</a>
 </td>
 <td>
 <span class="listing-subtitle">Catch + index + length composition</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, length-based, integrated</span>
-</td>
 
 </tr>
 
-<tr data-index="14" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ2dyb3d0aA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119" data-listing-title-sort="TropFishR (ELEFAN_GA + YPR/SBPR)" data-listing-filename-sort="tropfishr.qmd">
+<tr data-index="14" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2xlbmd0aC1iYXNlZCUyQ2dyb3d0aA==" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="6" data-listing-word-count-sort="1119" data-listing-title-sort="TropFishR (ELEFAN_GA + YPR/SBPR)" data-listing-filename-sort="tropfishr.qmd">
 <td>
 <a href="../methods/dynamic-pool/tropfishr.html" class="title listing-title">TropFishR (ELEFAN_GA + YPR/SBPR)</a>
 </td>
 <td>
 <span class="listing-subtitle">Length-frequency analysis: growth (ELEFAN), mortality and per-recruit status</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, per-recruit, length-based, growth</span>
-</td>
 
 </tr>
 
-<tr data-index="15" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2FnZS1iYXNlZA==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="YPR / SPR / Thompson &amp; Bell" data-listing-filename-sort="ypr-spr.qmd">
+<tr data-index="15" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ2FnZS1iYXNlZA==" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="4" data-listing-word-count-sort="691" data-listing-title-sort="YPR / SPR / Thompson &amp; Bell" data-listing-filename-sort="ypr-spr.qmd">
 <td>
 <a href="../methods/dynamic-pool/ypr-spr.html" class="title listing-title">YPR / SPR / Thompson &amp; Bell</a>
 </td>
 <td>
 <span class="listing-subtitle">Age-based</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, per-recruit, age-based</span>
-</td>
 
 </tr>
 
-<tr data-index="16" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ211bHRpLWdlYXIlMkNCYXllc2lhbg==" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="4" data-listing-word-count-sort="682" data-listing-title-sort="fishblicc" data-listing-filename-sort="fishblicc.qmd">
+<tr data-index="16" data-categories="ZHluYW1pYyUyMHBvb2wlMkNwZXItcmVjcnVpdCUyQ211bHRpLWdlYXIlMkNCYXllc2lhbg==" data-listing-file-modified-sort="1795087142570" data-listing-reading-time-sort="4" data-listing-word-count-sort="682" data-listing-title-sort="fishblicc" data-listing-filename-sort="fishblicc.qmd">
 <td>
 <a href="../methods/dynamic-pool/fishblicc.html" class="title listing-title">fishblicc</a>
 </td>
 <td>
 <span class="listing-subtitle">Length-based (multi-gear)</span>
 </td>
-<td>
-<span class="listing-categories">dynamic pool, per-recruit, multi-gear, Bayesian</span>
-</td>
 
 </tr>
 
-<tr data-index="17" data-categories="bXVsdGlzcGVjaWVzJTJDbWl4ZWQlMjBmaXNoZXJpZXMlMkNoYXJ2ZXN0JTIwc3RyYXRlZ2llcyUyQ01TRSUyQ1NoaW55" data-listing-file-modified-sort="1794911998334" data-listing-reading-time-sort="6" data-listing-word-count-sort="1158" data-listing-title-sort="mmsyFM" data-listing-filename-sort="mmsyfm.qmd">
+<tr data-index="17" data-categories="bXVsdGlzcGVjaWVzJTJDbWl4ZWQlMjBmaXNoZXJpZXMlMkNoYXJ2ZXN0JTIwc3RyYXRlZ2llcyUyQ01TRSUyQ1NoaW55" data-listing-file-modified-sort="1795087142571" data-listing-reading-time-sort="6" data-listing-word-count-sort="1158" data-listing-title-sort="mmsyFM" data-listing-filename-sort="mmsyfm.qmd">
 <td>
 <a href="../methods/multispecies/mmsyfm.html" class="title listing-title">mmsyFM</a>
 </td>
 <td>
 <span class="listing-subtitle">Multispecies MSY and harvest strategies for mixed fisheries</span>
-</td>
-<td>
-<span class="listing-categories">multispecies, mixed fisheries, harvest strategies, MSE, Shiny</span>
 </td>
 
 </tr>
@@ -1148,10 +631,11 @@ Categories
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
+</section>
+</div>
+</div>
 
 
-
-<!-- -->
 
 
 </main> <!-- /main -->
@@ -1273,57 +757,6 @@ Categories
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
-        for (let i=0; i<cellDetails.length; i++) {
-          const details = cellDetails[i];
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1730,7 +1163,7 @@ Categories
   <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
-<nav class="page-navigation" aria-label="Page">
+<nav class="page-navigation column-body" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../framework/catalogue-structure.html" class="pagination-link" aria-label="Catalogue structure">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Catalogue structure</span>
@@ -1741,33 +1174,7 @@ Categories
         <span class="nav-page-text">Surplus production models</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Assessment methods"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Catalogue entries for assessment methods, with data needs, assumptions and misuse warnings"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  id: methods</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  contents: ["biomass-dynamic/*.qmd", "dynamic-pool/*.qmd", "empirical/*.qmd", "age-structured/*.qmd", "multispecies/*.qmd", "!*/index.qmd"]</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  type: table</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  fields: [title, subtitle, categories]</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  sort: title</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  categories: true</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  filter-ui: true</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Not sure which method fits? Start with the **[method selector](../select/index.qmd)**. Every entry follows the [standard catalogue fields](../framework/catalogue-structure.qmd), including **misuse prevention**.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Branch <span class="pp">|</span> Overview <span class="pp">|</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Biomass dynamic models <span class="pp">|</span> <span class="co">[</span><span class="ot">Surplus production models</span><span class="co">](biomass-dynamic/index.qmd)</span>: SPiCT, JABBA, CMSY+/BSM <span class="pp">|</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dynamic pool: equilibrium per-recruit <span class="pp">|</span> <span class="co">[</span><span class="ot">Length-based and per-recruit methods</span><span class="co">](dynamic-pool/index.qmd)</span>: FLicc, LBSPR, LBB, fishblicc, TropFishR, YPR/SPR <span class="pp">|</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fishery indicators <span class="pp">|</span> <span class="co">[</span><span class="ot">Overview</span><span class="co">](empirical/index.qmd)</span>: exploitation history, trends, LBI, dashboards, PSA <span class="pp">|</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Dynamic pool: structured dynamic <span class="pp">|</span> <span class="co">[</span><span class="ot">Statistical catch-at-length</span><span class="co">](dynamic-pool/scal.qmd)</span>, <span class="co">[</span><span class="ot">age-structured models</span><span class="co">](age-structured/age-structured.qmd)</span> <span class="pp">|</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Multispecies and mixed fisheries <span class="pp">|</span> <span class="co">[</span><span class="ot">Overview</span><span class="co">](multispecies/index.qmd)</span>: mmsyFM <span class="pp">|</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>::: {#methods}</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

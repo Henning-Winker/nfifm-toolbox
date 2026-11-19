@@ -26,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -84,12 +49,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-b0ec255b4dafb7a5a03c00628cdf6300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-40878361a1e1eef6773465f72c3396e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -116,14 +78,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/toolbox.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -310,32 +271,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./select/index.html" aria-current="page"> 
-<span class="menu-text">Method selector</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./framework/principles.html"> 
-<span class="menu-text">Framework</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./methods/index.html"> 
-<span class="menu-text">Methods</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">NFIFM Toolbox</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./data-tools/index.html"> 
-<span class="menu-text">Data</span></a>
+<span class="menu-text">Data preparation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./select/index.html"> 
+<span class="menu-text">Method selector</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./methods/index.html"> 
+<span class="menu-text">Assessment methods</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./advice/index.html"> 
-<span class="menu-text">Advice</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./training/index.html"> 
-<span class="menu-text">Training and apps</span></a>
+<span class="menu-text">Advice and MSE</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./regions/index.html"> 
 <span class="menu-text">Regional hubs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./training/index.html"> 
+<span class="menu-text">Resources and training</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -361,642 +322,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">NFIFM Toolbox</a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">NFIFM Toolbox</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./select/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Method selector</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">Framework</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./framework/principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Principles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./framework/hierarchy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hierarchical framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./framework/crosswalk.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Crosswalk</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./framework/catalogue-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catalogue structure</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-2-label">Assessment methods</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assessment methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-3-label">Biomass dynamic</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/biomass-dynamic/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Surplus production models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/biomass-dynamic/spict.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SPiCT</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/biomass-dynamic/jabba.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JABBA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/biomass-dynamic/cmsy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CMSY+</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-4-label">Length-based and per-recruit</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based and per-recruit methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/flicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/lbspr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBSPR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/lbb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBB</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/fishblicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fishblicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/tropfishr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TropFishR (ELEFAN_GA + YPR/SBPR)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/ypr-spr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YPR / SPR / Thompson &amp; Bell</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/dynamic-pool/scal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical catch-at-length</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-5-label">Fishery indicators</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/empirical/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/empirical/exploitation-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exploitation history indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/empirical/trend-indicators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catch, CPUE and effort trend indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/empirical/lbi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based indicators (LBI)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/empirical/dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-indicator dashboards (traffic light)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/empirical/psa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/age-structured/age-structured.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Age-structured models (XSA, SAM, a4a, SS3)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-6-label">Multispecies</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/multispecies/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multispecies and mixed fisheries</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./methods/multispecies/mmsyfm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">mmsyFM</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-7-label">Data preparation and tools</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data-tools/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data preparation and tools</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data-tools/data-preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data preparation workflow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data-tools/cpuetargeting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">cpueTargeting</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data-tools/fishualizer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FishualizeR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data-tools/jara.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JARA</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-8-label">Advice and MSE</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advice/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Advice and harvest strategies</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advice/flref.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLRef</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advice/mse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLR mse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./advice/fpat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FPAT App</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-9-label">Guidance</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guidance/misuse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Misuse prevention</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guidance/diagnostics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diagnostics and model validation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guidance/sensitivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sensitivity analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-10-label">Training and apps</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./training/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Training and apps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./training/smt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Stock Monitoring Tool</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./regions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regional hubs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-11-label">Resources</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Installation guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methodological literature</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Institutional applications</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources/guides/FLicc_user_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc user guide</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1">
+<main class="content page-columns page-full column-body" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">NFIFM Toolbox</h1></header>
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">NFIFM Toolbox</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Shared method library and code for stock assessment, from data to management advice</p>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+<header id="title-block-header">
 
 
 </header>
 
 
-<div class="callout callout-style-simple callout-important">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Development version.</strong> <em>NFIFM Toolbox</em> is a working title for the shared method library of the FAO Global Stock Assessment Capacity Programme. Content is draft and not an official FAO product.</p>
-</div>
-</div>
-</div>
-<section id="part-of-the-global-stock-assessment-capacity-programme" class="level2">
-<h2 class="anchored" data-anchor-id="part-of-the-global-stock-assessment-capacity-programme">Part of the Global Stock Assessment Capacity Programme</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/img/global-capacity-programme.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="The FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the shared method library and code of the cross-regional learning hub (bottom). Click to enlarge."><img src="assets/img/global-capacity-programme.jpg" class="img-fluid figure-img" alt="Diagram of the FAO Global Stock Assessment Capacity Programme: FAO normative work and global reporting (SOFIA, State of stocks, FIRMS, global fishery management) on the left; six regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, developed countries as partners) across the top; six thematic workstreams across all regions in the middle; the cross-regional learning hub with a shared method library and code at the bottom; and outcomes for fleet capacity, effort management and harvest strategies on the right."></a></p>
-<figcaption>The FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the <em>shared method library and code</em> of the cross-regional learning hub (bottom). Click to enlarge.</figcaption>
-</figure>
-</div>
-<p>The programme links FAO’s normative work and global reporting with <strong>regional implementation platforms</strong> and six <strong>thematic workstreams</strong>, so that stock assessments routinely inform fleet capacity limits, effort management and harvest strategies. Its <strong>cross-regional learning hub</strong> connects regions and themes. The toolbox is the hub’s <strong>shared method library and code</strong>: the common place where methods, data tools, guidance and training material are documented once and used by every region.</p>
-<section id="where-the-toolbox-fits" class="level3">
-<h3 class="anchored" data-anchor-id="where-the-toolbox-fits">Where the toolbox fits</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Programme element</th>
-<th>What the toolbox provides</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Cross-regional learning hub:</strong> shared method library and code</td>
-<td>The whole toolbox: <a href="./data-tools/index.html">data preparation</a>, <a href="./select/index.html">method selector</a>, <a href="./methods/index.html">method catalogue</a>, <a href="./methods/empirical/index.html">fishery indicators</a>, <a href="./advice/index.html">advice and harvest strategies</a></td>
-</tr>
-<tr class="even">
-<td>Joint working groups; analyst and trainer exchange</td>
-<td><a href="./training/index.html">Training and apps</a>, with the Stock Monitoring Tool as the main training environment; shared <a href="./regions/index.html">case studies</a></td>
-</tr>
-<tr class="odd">
-<td><strong>Regional implementation platforms</strong></td>
-<td><a href="./regions/index.html">Regional hubs</a> that add their own case studies and priorities (first: <a href="https://henning-winker.github.io/cecaf-assessment-catalogue">CECAF assessment catalogue</a>)</td>
-</tr>
-<tr class="even">
-<td><strong>Thematic workstreams 1–6</strong></td>
-<td>Entry points by workstream (below)</td>
-</tr>
-<tr class="odd">
-<td><strong>FAO normative work and global reporting</strong> (SOFIA, FIRMS, SDG 14.4.1)</td>
-<td>Common <a href="./framework/principles.html">principles</a>, <a href="./guidance/diagnostics.html#model-acceptance-checklist">model acceptance criteria</a> and <a href="./guidance/misuse.html">misuse prevention</a>, so that status reported from different regions and data tiers is comparable</td>
-</tr>
-<tr class="even">
-<td>Developed-country partners: method partners and peer review</td>
-<td>Contributions through GitHub review and a proposed expert review panel</td>
-</tr>
-</tbody>
-</table>
-<p>Every method is documented the same way. Each page follows the pipeline <strong>data → method → outputs</strong>, with diagnostics, sensitivity demos, worked examples and code, and an explicit <strong>use and misuse</strong> section: when <em>not</em> to use the method, pre-run checks, and the checks to pass before results are used for advice.</p>
-</section>
-</section>
-<section id="philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="philosophy">Philosophy</h2>
-<p>The toolbox follows a <strong><a href="./framework/principles.html">hierarchical assessment framework</a></strong>: one assessment logic and one set of biological assumptions across the data ladder, from length data only to catch, length and abundance indices; <strong>risk-equivalent</strong> advice whichever tier a stock is assessed at; and the <strong>value of information</strong> of each data source measured in simulated and real case studies.</p>
-</section>
-<section id="from-data-to-advice" class="level2">
-<h2 class="anchored" data-anchor-id="from-data-to-advice">From data to advice</h2>
-<div class="path">
-<p><a href="./data-tools/data-preparation.html">1 · Prepare data</a> <span class="arrow">→</span> <a href="./select/index.html">2 · Select methods</a> <span class="arrow">→</span> <a href="./methods/index.html">3 · Assess</a> <span class="arrow">→</span> <a href="./guidance/diagnostics.html">4 · Diagnose and check for misuse</a> <span class="arrow">→</span> <a href="./advice/index.html">5 · Advice and HCRs</a></p>
-</div>
-<p>Start by <a href="./data-tools/data-preparation.html">preparing and inventorying the data</a>, then use the <strong><a href="./select/index.html">method selector</a></strong>: describe your data (catch, indices, length or age composition, life history, gears, fishery) and it lists the candidate methods, the data you would still need for others, and the misuse warnings for your situation.</p>
-</section>
-<section id="the-toolbox-by-workstream" class="level2">
-<h2 class="anchored" data-anchor-id="the-toolbox-by-workstream">The toolbox by workstream</h2>
-<div class="ws-grid">
-<div class="ws-card" style="--ws:#1f5fa8">
-<p><span class="ws-num">Workstream 1</span></p>
-<section id="multispecies-and-multigear-assessment" class="level4">
-<h4 class="anchored" data-anchor-id="multispecies-and-multigear-assessment"><a href="./methods/multispecies/index.html">Multispecies and multigear assessment</a></h4>
-<p>Multispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity (mmsyFM).</p>
-</section>
-</div>
-<div class="ws-card" style="--ws:#2e7d4f">
-<p><span class="ws-num">Workstream 2</span></p>
-<section id="data-poor-and-small-scale-fisheries" class="level4">
-<h4 class="anchored" data-anchor-id="data-poor-and-small-scale-fisheries"><a href="./methods/dynamic-pool/index.html">Data-poor and small-scale fisheries</a></h4>
-<p>Length-based and catch-only methods, SSF catch and effort monitoring, participatory data collection.</p>
-</section>
-</div>
-<div class="ws-card" style="--ws:#c4552b">
-<p><span class="ws-num">Workstream 3</span></p>
-<section id="assessment-to-advice-and-harvest-strategies" class="level4">
-<h4 class="anchored" data-anchor-id="assessment-to-advice-and-harvest-strategies"><a href="./advice/index.html">Assessment to advice and harvest strategies</a></h4>
-<p>Stock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE and participatory comparison of management options (FPAT).</p>
-</section>
-</div>
-<div class="ws-card" style="--ws:#6b4fa0">
-<p><span class="ws-num">Workstream 4</span></p>
-<section id="capacity-building" class="level4">
-<h4 class="anchored" data-anchor-id="capacity-building"><a href="./training/index.html">Capacity building</a></h4>
-<p>National and regional mentoring, working groups, e-learning, training of trainers, with the Stock Monitoring Tool as the main training environment.</p>
-</section>
-</div>
-<div class="ws-card" style="--ws:#0f7c86">
-<p><span class="ws-num">Workstream 5</span></p>
-<section id="knowledge-sharing-and-consensus" class="level4">
-<h4 class="anchored" data-anchor-id="knowledge-sharing-and-consensus"><a href="./contributing.html">Knowledge sharing and consensus</a></h4>
-<p>Shared methods and code, peer review, technical consultations, global reporting (SOFIA, SDG 14.4.1).</p>
-</section>
-</div>
-<div class="ws-card" style="--ws:#b7791f">
-<p><span class="ws-num">Workstream 6</span></p>
-<section id="national-assessments-rfmos" class="level4">
-<h4 class="anchored" data-anchor-id="national-assessments-rfmos"><a href="./regions/index.html">National assessments ↔︎ RFMOs</a></h4>
-<p>Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, RFMO data obligations.</p>
-</section>
-</div>
-</div>
-</section>
-<section id="regional-platforms" class="level2">
-<h2 class="anchored" data-anchor-id="regional-platforms">Regional platforms</h2>
-<p>The toolbox is shared across the regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, with developed countries as partners); regional hubs add their own case studies, data and priorities. See <a href="./regions/index.html">Regional hubs</a>. The first hub is the <strong><a href="https://henning-winker.github.io/cecaf-assessment-catalogue">CECAF assessment catalogue</a></strong> (Africa, WASOP-CECAF).</p>
-</section>
-<section id="showcase-entries" class="level2">
-<h2 class="anchored" data-anchor-id="showcase-entries">Showcase entries</h2>
-<p>Five entries are documented in full as examples of what every entry will eventually contain: data templates and preparation, the method and its software or app, outputs with diagnostics and sensitivities, use and misuse guidance, and worked examples.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Entry</th>
-<th>Pillar</th>
-<th>No-code app</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="./data-tools/fishualizer.html">FishualizeR</a></td>
-<td>Data preparation</td>
-<td>FishualizeR web app</td>
-</tr>
-<tr class="even">
-<td><a href="./data-tools/cpuetargeting.html">cpueTargeting</a></td>
-<td>Data: CPUE standardisation</td>
-<td>–</td>
-</tr>
-<tr class="odd">
-<td><a href="./methods/dynamic-pool/flicc.html">FLicc</a></td>
-<td>Assessment: length-based</td>
-<td>Stock Monitoring Tool module (prototype)</td>
-</tr>
-<tr class="even">
-<td><a href="./methods/multispecies/mmsyfm.html">mmsyFM</a></td>
-<td>Multispecies harvest strategies</td>
-<td>mmsyFM Shiny app</td>
-</tr>
-<tr class="odd">
-<td><a href="./methods/biomass-dynamic/jabba.html">JABBA</a> (candidate)</td>
-<td>Assessment: surplus production</td>
-<td>Stock Monitoring Tool</td>
-</tr>
-</tbody>
-</table>
-<p>Other methods are <strong>basic</strong> entries, populated with the information available so far.</p>
-</section>
-<section id="current-status" class="level2">
-<h2 class="anchored" data-anchor-id="current-status">Current status</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Section</th>
-<th style="text-align: right;">Basic</th>
-<th style="text-align: right;">Draft</th>
-<th style="text-align: right;">Reviewed</th>
-<th style="text-align: right;">Showcase</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Assessment</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Data and CPUE tools</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Advice and MSE</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Every page has <strong>Edit this page</strong> and <strong>Report an issue</strong> links (top right). Changes are proposed as pull requests and reviewed before they go live. See <a href="./contributing.html">Contributing</a>.</p>
+<div class="column-screen">
+<div class="tbx p-home">
+<div class="subnav"><a class="on" href="./index.html">Overview</a><a href="./framework/index.html">Framework</a></div>
 
 
-<!-- -->
+<div class="hero"><h1>NFIFM Toolbox</h1>
+<p class="lead">Shared method library and code for stock assessment, from data to management advice. The toolbox is part of the FAO Global Stock Assessment Capacity Programme.</p>
+<div class="dev"><b>Development version.</b> NFIFM Toolbox is a working title for the shared method library of the programme. Content is draft and not an official FAO product.</div>
+<div class="jump"><span class="label">On this page</span><a href="#programme">The programme</a><a href="#obj">Objectives</a><a href="#logic">One assessment logic</a><a href="#ws">Toolbox by workstream</a></div></div>
 
-</section>
+<div class="band" id="programme"><h2 class="anchored">The Global Stock Assessment Capacity Programme</h2>
+<p class="sub">The programme links FAO's normative work and global reporting with regional implementation platforms and six thematic workstreams, so that stock assessments routinely inform fleet capacity limits, effort management and harvest strategies. Its cross-regional learning hub connects regions and themes, and the toolbox is the hub's shared method library and code.</p>
+<div class="fig"><img src="assets/img/global-capacity-programme.jpg" alt="The FAO Global Stock Assessment Capacity Programme"><p class="cap">The FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the shared method library and code of the cross-regional learning hub (bottom).</p></div></div>
+
+<div class="band tint" id="obj"><h2 class="anchored">Objectives of the toolbox</h2>
+<p class="sub">The toolbox supports the programme's aim that stock assessments routinely inform management, and pursues four objectives. <span style="color:#7a5200">Objective wording is a draft for discussion.</span></p>
+<div class="obj"><div class="oc" style="--c:#2273ae"><span class="on">1</span><h4 class="anchored">One shared method library</h4><p>Every method is documented once, in the same format (data, method, outputs, diagnostics, code, and use and misuse), so every region draws on the same material.</p></div><div class="oc" style="--c:#1d8a78"><span class="on">2</span><h4 class="anchored">Methods matched to data</h4><p>A method selector and a crosswalk of method attributes match methods to the data a stock has, and flag assumptions that its data may violate.</p></div><div class="oc" style="--c:#c27b1a"><span class="on">3</span><h4 class="anchored">Comparable, risk-equivalent advice</h4><p>Common principles and acceptance criteria make status from different regions and data tiers comparable for SOFIA, FIRMS and SDG 14.4.1.</p></div><div class="oc" style="--c:#6b4fa0"><span class="on">4</span><h4 class="anchored">Misuse prevented, capacity built</h4><p>Explicit misuse guidance on every page and no-code apps with worked examples help analysts apply methods within their assumptions.</p></div></div></div>
+
+<div class="band" id="logic"><h2 class="anchored">One assessment logic for many data situations</h2>
+<p class="sub">The toolbox is built on a hierarchical assessment framework (Kell <i>et al.</i>, 2025), in which one assessment logic and one set of biological assumptions apply whatever data exist. One tool family can work with length compositions, catches, abundance indices, and age data, so stocks assessed with very different data remain comparable within one larger toolbox, and advice carries equivalent risk at every level of data richness.</p>
+<div class="lg"><div class="lgc"><div class="lgh">Many data situations</div><div class="lgl"><span style="--c:#c27b1a">Life history and exploitation history</span><span style="--c:#1d8a78">Length compositions, by gear</span><span style="--c:#2b7fb0">Catch</span><span style="--c:#4a67c0">Abundance indices</span><span style="--c:#6b4fa0">Catch-at-age and surveys</span></div></div>
+<div class="lga">→</div>
+<div class="lgc hub"><div class="lgh">One assessment logic</div><div class="hubt">One tool family with many capabilities</div><ul><li><b>Shared biology:</b> growth, mortality, maturity and selectivity defined once</li><li><b>Shared reference points</b> from one per-recruit model</li><li><b>Shared diagnostics</b> and model acceptance criteria</li></ul></div>
+<div class="lga">→</div>
+<div class="lgc"><div class="lgh">One comparable result</div><div class="lgl out"><span>Stock status on a common footing</span><span>Advice with equivalent risk at every level of data</span><span>Clear signals on which data would improve advice</span></div></div></div></div>
+
+<div class="band tint" id="ws"><h2 class="anchored">Toolbox by workstream</h2>
+<p class="sub">Each of the programme's six thematic workstreams is implemented across all regions. Each box below describes the workstream and links the tools and pages most relevant to it; tools can appear under several workstreams.</p>
+<div class="wsg"><div class="ws" style="--c:#0356a6"><div class="wh"><span class="wn">1</span><div><small>Workstream 1</small><h4 class="anchored">Multispecies and multigear assessment</h4></div></div><div class="wb"><p>Multispecies MSY and mixed-fishery approaches, gear interactions, effort allocation and fleet capacity.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="./methods/multispecies/mmsyfm.html">mmsyFM</a><span class="chip">FLicc multi-gear</span><span class="chip pl">Multispecies MSE tool <i>planned</i></span><a class="chip" href="./methods/multispecies/index.html">Multispecies overview</a></div></div></div><div class="ws" style="--c:#2a8c46"><div class="wh"><span class="wn">2</span><div><small>Workstream 2</small><h4 class="anchored">Data-poor and small-scale fisheries</h4></div></div><div class="wb"><p>Length-based and catch-only methods, catch and effort monitoring for small-scale fisheries, and participatory data collection.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="./methods/biomass-dynamic/cmsy.html">CMSY+</a><a class="chip" href="./methods/dynamic-pool/flicc.html">FLicc</a><a class="chip" href="./methods/dynamic-pool/lbspr.html">LBSPR</a><a class="chip" href="./methods/dynamic-pool/lbb.html">LBB</a><a class="chip" href="./methods/dynamic-pool/tropfishr.html">TropFishR</a><a class="chip" href="./methods/empirical/index.html">Fishery indicators</a><a class="chip" href="./data-tools/index.html">Data preparation</a><a class="chip" href="./data-tools/fishualizer.html">FishualizeR</a><a class="chip" href="./data-tools/cpuetargeting.html">cpueTargeting</a></div></div></div><div class="ws" style="--c:#e25e20"><div class="wh"><span class="wn">3</span><div><small>Workstream 3</small><h4 class="anchored">Assessment to advice and harvest strategies</h4></div></div><div class="wb"><p>Stock status and reference points, standard advice formats, harvest control rules, capacity and effort limits, and simplified MSE.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="./advice/flref.html">FLRef</a><a class="chip" href="./advice/mse.html">FLR mse</a><a class="chip" href="./advice/fpat.html">FPAT App</a><span class="chip pl">FLOSS <i>planned</i></span><a class="chip" href="./guidance/diagnostics.html">Diagnostics and validation</a><a class="chip" href="./advice/index.html">Advice overview</a></div></div></div><div class="ws" style="--c:#64419c"><div class="wh"><span class="wn">4</span><div><small>Workstream 4</small><h4 class="anchored">Capacity building</h4></div></div><div class="wb"><p>National and regional mentoring, working groups, e-learning and training of trainers.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="./training/smt.html">Stock Monitoring Tool</a><a class="chip" href="./training/index.html">Training and apps</a><a class="chip" href="./resources/installation.html">Installation guide</a><span class="chip">FLicc user guide</span></div></div></div><div class="ws" style="--c:#07788f"><div class="wh"><span class="wn">5</span><div><small>Workstream 5</small><h4 class="anchored">Knowledge sharing and consensus</h4></div></div><div class="wb"><p>Shared methods and code, peer review, technical consultations and global reporting (SOFIA, SDG 14.4.1).</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="./framework/principles.html">Principles</a><a class="chip" href="./guidance/misuse.html">Misuse prevention</a><span class="chip">Model acceptance checklist</span><a class="chip" href="./resources/literature.html">Methodological literature</a><a class="chip" href="./contributing.html">Contribute</a></div></div></div><div class="ws" style="--c:#c99410"><div class="wh"><span class="wn">6</span><div><small>Workstream 6</small><h4 class="anchored">National assessments and RFMOs</h4></div></div><div class="wb"><p>Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, and RFMO data obligations.</p><div class="lab">Relevant tools and pages</div><div class="chips"><a class="chip" href="./select/index.html">Method selector</a><a class="chip" href="./methods/biomass-dynamic/jabba.html">JABBA</a><a class="chip" href="./methods/biomass-dynamic/spict.html">SPiCT</a><a class="chip" href="./methods/age-structured/age-structured.html">Age-structured models</a><a class="chip" href="./regions/index.html">Regional hubs</a></div></div></div></div>
+<div class="chips" style="margin-top:18px;align-items:center"><span class="label" style="margin-right:6px">Key</span><span class="chip">Available tool or page</span><span class="chip pl">Planned tool <i>planned</i></span></div></div>
+</div>
+</div>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1117,57 +492,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
-        for (let i=0; i<cellDetails.length; i++) {
-          const details = cellDetails[i];
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1574,7 +898,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
-<nav class="page-navigation" aria-label="Page">
+<nav class="page-navigation column-body" aria-label="Page">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
@@ -1582,126 +906,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <span class="nav-page-text">Method selector</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "NFIFM Toolbox"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Shared method library and code for stock assessment, from data to management advice"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> false</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> true</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>::: {.callout-important appearance="simple"}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Development version.** *NFIFM Toolbox* is a working title for the shared method library of the FAO Global Stock Assessment Capacity Programme. Content is draft and not an official FAO product.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part of the Global Stock Assessment Capacity Programme</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="al">![The FAO Global Stock Assessment Capacity Programme: from assessments to management for sustainable fisheries. The toolbox is the *shared method library and code* of the cross-regional learning hub (bottom). Click to enlarge.](assets/img/global-capacity-programme.jpg)</span>{fig-alt="Diagram of the FAO Global Stock Assessment Capacity Programme: FAO normative work and global reporting (SOFIA, State of stocks, FIRMS, global fishery management) on the left; six regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, developed countries as partners) across the top; six thematic workstreams across all regions in the middle; the cross-regional learning hub with a shared method library and code at the bottom; and outcomes for fleet capacity, effort management and harvest strategies on the right." .lightbox}</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The programme links FAO's normative work and global reporting with **regional implementation platforms** and six **thematic workstreams**, so that stock assessments routinely inform fleet capacity limits, effort management and harvest strategies. Its **cross-regional learning hub** connects regions and themes. The toolbox is the hub's **shared method library and code**: the common place where methods, data tools, guidance and training material are documented once and used by every region.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Where the toolbox fits</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Programme element <span class="pp">|</span> What the toolbox provides <span class="pp">|</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Cross-regional learning hub:** shared method library and code <span class="pp">|</span> The whole toolbox: <span class="co">[</span><span class="ot">data preparation</span><span class="co">](data-tools/index.qmd)</span>, <span class="co">[</span><span class="ot">method selector</span><span class="co">](select/index.qmd)</span>, <span class="co">[</span><span class="ot">method catalogue</span><span class="co">](methods/index.qmd)</span>, <span class="co">[</span><span class="ot">fishery indicators</span><span class="co">](methods/empirical/index.qmd)</span>, <span class="co">[</span><span class="ot">advice and harvest strategies</span><span class="co">](advice/index.qmd)</span> <span class="pp">|</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Joint working groups; analyst and trainer exchange <span class="pp">|</span> <span class="co">[</span><span class="ot">Training and apps</span><span class="co">](training/index.qmd)</span>, with the Stock Monitoring Tool as the main training environment; shared <span class="co">[</span><span class="ot">case studies</span><span class="co">](regions/index.qmd)</span> <span class="pp">|</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Regional implementation platforms** <span class="pp">|</span> <span class="co">[</span><span class="ot">Regional hubs</span><span class="co">](regions/index.qmd)</span> that add their own case studies and priorities (first: <span class="co">[</span><span class="ot">CECAF assessment catalogue</span><span class="co">](https://henning-winker.github.io/cecaf-assessment-catalogue)</span>) <span class="pp">|</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Thematic workstreams 1–6** <span class="pp">|</span> Entry points by workstream (below) <span class="pp">|</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **FAO normative work and global reporting** (SOFIA, FIRMS, SDG 14.4.1) <span class="pp">|</span> Common <span class="co">[</span><span class="ot">principles</span><span class="co">](framework/principles.qmd)</span>, <span class="co">[</span><span class="ot">model acceptance criteria</span><span class="co">](guidance/diagnostics.qmd#model-acceptance-checklist)</span> and <span class="co">[</span><span class="ot">misuse prevention</span><span class="co">](guidance/misuse.qmd)</span>, so that status reported from different regions and data tiers is comparable <span class="pp">|</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Developed-country partners: method partners and peer review <span class="pp">|</span> Contributions through GitHub review and a proposed expert review panel <span class="pp">|</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Every method is documented the same way. Each page follows the pipeline **data → method → outputs**, with diagnostics, sensitivity demos, worked examples and code, and an explicit **use and misuse** section: when *not* to use the method, pre-run checks, and the checks to pass before results are used for advice.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Philosophy</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>The toolbox follows a **[hierarchical assessment framework](framework/principles.qmd)**: one assessment logic and one set of biological assumptions across the data ladder, from length data only to catch, length and abundance indices; **risk-equivalent** advice whichever tier a stock is assessed at; and the **value of information** of each data source measured in simulated and real case studies.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## From data to advice</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>::: {.path}</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1 · Prepare data</span><span class="co">](data-tools/data-preparation.qmd)</span> <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">2 · Select methods</span><span class="co">](select/index.qmd)</span> <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">3 · Assess</span><span class="co">](methods/index.qmd)</span> <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">4 · Diagnose and check for misuse</span><span class="co">](guidance/diagnostics.qmd)</span> <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">5 · Advice and HCRs</span><span class="co">](advice/index.qmd)</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Start by <span class="co">[</span><span class="ot">preparing and inventorying the data</span><span class="co">](data-tools/data-preparation.qmd)</span>, then use the **[method selector](select/index.qmd)**: describe your data (catch, indices, length or age composition, life history, gears, fishery) and it lists the candidate methods, the data you would still need for others, and the misuse warnings for your situation.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## The toolbox by workstream</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>::: {.ws-grid}</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#1f5fa8"}</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workstream 1</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Multispecies and multigear assessment](methods/multispecies/index.qmd)</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Multispecies MSY and mixed approaches, gear interactions, effort allocation and fleet capacity (mmsyFM).</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#2e7d4f"}</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workstream 2</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Data-poor and small-scale fisheries](methods/dynamic-pool/index.qmd)</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Length-based and catch-only methods, SSF catch and effort monitoring, participatory data collection.</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#c4552b"}</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workstream 3</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Assessment to advice and harvest strategies](advice/index.qmd)</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Stock status and reference points, standard advice formats, HCRs, capacity and effort limits, simplified MSE and participatory comparison of management options (FPAT).</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#6b4fa0"}</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workstream 4</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Capacity building](training/index.qmd)</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>National and regional mentoring, working groups, e-learning, training of trainers, with the Stock Monitoring Tool as the main training environment.</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#0f7c86"}</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workstream 5</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Knowledge sharing and consensus](contributing.qmd)</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Shared methods and code, peer review, technical consultations, global reporting (SOFIA, SDG 14.4.1).</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#b7791f"}</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Workstream 6</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [National assessments ↔ RFMOs](regions/index.qmd)</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Stronger national EEZ assessments, small-scale catches of RFMO-managed stocks, RFMO data obligations.</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regional platforms</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>The toolbox is shared across the regional implementation platforms (Asia, Africa, Latin America, SIDS, inland fisheries, with developed countries as partners); regional hubs add their own case studies, data and priorities. See <span class="co">[</span><span class="ot">Regional hubs</span><span class="co">](regions/index.qmd)</span>. The first hub is the **[CECAF assessment catalogue](https://henning-winker.github.io/cecaf-assessment-catalogue)** (Africa, WASOP-CECAF).</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## Showcase entries</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>Five entries are documented in full as examples of what every entry will eventually contain: data templates and preparation, the method and its software or app, outputs with diagnostics and sensitivities, use and misuse guidance, and worked examples.</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Entry <span class="pp">|</span> Pillar <span class="pp">|</span> No-code app <span class="pp">|</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|---|---|</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">FishualizeR</span><span class="co">](data-tools/fishualizer.qmd)</span> <span class="pp">|</span> Data preparation <span class="pp">|</span> FishualizeR web app <span class="pp">|</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">cpueTargeting</span><span class="co">](data-tools/cpuetargeting.qmd)</span> <span class="pp">|</span> Data: CPUE standardisation <span class="pp">|</span> – <span class="pp">|</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">FLicc</span><span class="co">](methods/dynamic-pool/flicc.qmd)</span> <span class="pp">|</span> Assessment: length-based <span class="pp">|</span> Stock Monitoring Tool module (prototype) <span class="pp">|</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">mmsyFM</span><span class="co">](methods/multispecies/mmsyfm.qmd)</span> <span class="pp">|</span> Multispecies harvest strategies <span class="pp">|</span> mmsyFM Shiny app <span class="pp">|</span></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">JABBA</span><span class="co">](methods/biomass-dynamic/jabba.qmd)</span> (candidate) <span class="pp">|</span> Assessment: surplus production <span class="pp">|</span> Stock Monitoring Tool <span class="pp">|</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Other methods are **basic** entries, populated with the information available so far.</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## Current status</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">read_methods</span>()</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">as.data.frame.matrix</span>(<span class="fu">table</span>(<span class="fu">factor</span>(m<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Assessment"</span>, <span class="st">"Data and CPUE tools"</span>, <span class="st">"Advice and MSE"</span>)),</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">factor</span>(m<span class="sc">$</span>status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"basic"</span>, <span class="st">"draft"</span>, <span class="st">"reviewed"</span>))))</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">Section =</span> <span class="fu">rownames</span>(tab), tab,</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>             <span class="at">Showcase =</span> <span class="fu">as.vector</span>(<span class="fu">tapply</span>(m<span class="sc">$</span>showcase <span class="sc">!=</span> <span class="st">""</span>, <span class="fu">factor</span>(m<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Assessment"</span>, <span class="st">"Data and CPUE tools"</span>, <span class="st">"Advice and MSE"</span>)), sum)))</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(tab) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(tab) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Section"</span>, <span class="st">"Basic"</span>, <span class="st">"Draft"</span>, <span class="st">"Reviewed"</span>, <span class="st">"Showcase"</span>)</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tab)</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>Every page has **Edit this page** and **Report an issue** links (top right). Changes are proposed as pull requests and reviewed before they go live. See <span class="co">[</span><span class="ot">Contributing</span><span class="co">](contributing.qmd)</span>.</span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1716,38 +921,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

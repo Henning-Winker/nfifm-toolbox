@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Advice and harvest strategies – NFIFM Toolbox</title>
+<title>Advice and MSE · NFIFM Toolbox – NFIFM Toolbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -85,9 +50,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b0ec255b4dafb7a5a03c00628cdf6300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-40878361a1e1eef6773465f72c3396e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,57 +79,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="../site_libs/datatables-binding-0.34.0/datatables.js"></script>
-<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-<link href="../site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
-<script src="../site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="../site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
-<script src="../site_libs/selectize-0.12.0/selectize.min.js"></script>
-<link href="../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-<script src="../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/toolbox.css">
+<link rel="stylesheet" href="../assets/toolbox-advice.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -351,32 +273,32 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../select/index.html" aria-current="page"> 
-<span class="menu-text">Method selector</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../framework/principles.html"> 
-<span class="menu-text">Framework</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../methods/index.html"> 
-<span class="menu-text">Methods</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">NFIFM Toolbox</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../data-tools/index.html"> 
-<span class="menu-text">Data</span></a>
+<span class="menu-text">Data preparation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../advice/index.html"> 
-<span class="menu-text">Advice</span></a>
+    <a class="nav-link" href="../select/index.html"> 
+<span class="menu-text">Method selector</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../training/index.html"> 
-<span class="menu-text">Training and apps</span></a>
+    <a class="nav-link" href="../methods/index.html"> 
+<span class="menu-text">Assessment methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../advice/index.html" aria-current="page"> 
+<span class="menu-text">Advice and MSE</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../regions/index.html"> 
 <span class="menu-text">Regional hubs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../training/index.html"> 
+<span class="menu-text">Resources and training</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -402,463 +324,71 @@ window.Quarto = {
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../advice/index.html">Advice and MSE</a></li><li class="breadcrumb-item"><a href="../advice/index.html">Advice and harvest strategies</a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NFIFM Toolbox</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../select/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Method selector</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">Framework</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Principles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/hierarchy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hierarchical framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/crosswalk.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Crosswalk</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/catalogue-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catalogue structure</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-2-label">Assessment methods</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assessment methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-3-label">Biomass dynamic</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Surplus production models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/spict.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SPiCT</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/jabba.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JABBA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/cmsy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CMSY+</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-4-label">Length-based and per-recruit</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based and per-recruit methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/flicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/lbspr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBSPR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/lbb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBB</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/fishblicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fishblicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/tropfishr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TropFishR (ELEFAN_GA + YPR/SBPR)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/ypr-spr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YPR / SPR / Thompson &amp; Bell</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/scal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical catch-at-length</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-5-label">Fishery indicators</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/exploitation-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exploitation history indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/trend-indicators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catch, CPUE and effort trend indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/lbi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based indicators (LBI)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-indicator dashboards (traffic light)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/psa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/age-structured/age-structured.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Age-structured models (XSA, SAM, a4a, SS3)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-6-label">Multispecies</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/multispecies/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multispecies and mixed fisheries</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/multispecies/mmsyfm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">mmsyFM</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-7-label">Data preparation and tools</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data preparation and tools</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/data-preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data preparation workflow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/cpuetargeting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">cpueTargeting</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/fishualizer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FishualizeR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/jara.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JARA</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-8-label">Advice and MSE</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Advice and harvest strategies</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/flref.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLRef</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/mse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLR mse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/fpat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FPAT App</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-9-label">Guidance</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/misuse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Misuse prevention</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/diagnostics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diagnostics and model validation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/sensitivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sensitivity analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-10-label">Training and apps</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../training/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Training and apps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../training/smt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Stock Monitoring Tool</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../regions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regional hubs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-11-label">Resources</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Installation guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methodological literature</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Institutional applications</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/guides/FLicc_user_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc user guide</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#comparing-management-options-fpat" id="toc-comparing-management-options-fpat" class="nav-link active" data-scroll-target="#comparing-management-options-fpat">Comparing management options: FPAT</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/advice/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/advice/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1">
+<main class="content page-columns page-full column-body" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../advice/index.html">Advice and MSE</a></li><li class="breadcrumb-item"><a href="../advice/index.html">Advice and MSE</a></li></ol></nav><h1 class="title display-7">Advice and MSE</h1></header>
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../advice/index.html">Advice and MSE</a></li><li class="breadcrumb-item"><a href="../advice/index.html">Advice and harvest strategies</a></li></ol></nav>
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Advice and harvest strategies</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Workstream 3: from accepted assessments to reference points, advice and HCRs</p>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+<header id="title-block-header">
 
 
 </header>
 
 
-<p>An accepted assessment becomes advice in three steps: stock status against reference points, a standard advice format, and, where needed, a harvest control rule tested by (simplified) MSE.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-d0eda1c9e0f164962229" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-d0eda1c9e0f164962229">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["Multispecies and mixed fisheries","Advice and reference points","Management strategy evaluation","Management strategy evaluation"],["Multispecies MSY and mixed-fishery harvest strategies","Reference points and advice tables","Simplified and full MSE","Rapid participatory MSE"],["Mixed fisheries: several stocks, métiers and fleet segments","Any accepted assessment","Testing HCRs and management procedures","Comparing feasible management options (catch, effort, size limits, closures) with stakeholders"],["<a href=\"../methods/multispecies/mmsyfm.html\">mmsyFM<\/a>","<a href=\"../advice/flref.html\">FLRef<\/a>","<a href=\"../advice/mse.html\">FLR mse<\/a>","<a href=\"../advice/fpat.html\">FPAT App (openMSE)<\/a>"],["draft (showcase)","basic","basic","draft"],["No","n/a","n/a","n/a"],["Simulation (Schaefer stocks with JABBA-type process error)","n/a","n/a","n/a"],["Process error; assessment and implementation error in closed loop","n/a","n/a","n/a"],["n/a","n/a","n/a","n/a"],["Yes (métiers × segments)","n/a","n/a","n/a"],["n/a","n/a","n/a","n/a"],["Safeguarded multispecies MSY (every stock ≥ Bpa), yield/revenue/profit curves, effort and closure rules tuned to risk, performance statistics and decision tables","Reference points, stock status plots, advice tables, HCR summaries","Performance of HCRs against risk, yield and stability","Projected catch and abundance under alternative management procedures; trade-off plots"],["Mixed-fishery harvest strategies (effort caps, closures)","Advice translation","HCR testing","Screening of management options"],["mmsyFM (R; MIT)","FLRef (R/FLR)","mse (R/FLR)","FPAT (R/Shiny on openMSE)"],["mmsyFM Shiny app (run_app()); iMarine hosting under consideration","","","FPAT web app (Blue Matter)"]],"container":"<table class=\"compact stripe hover\">\n  <thead>\n    <tr>\n      <th>Class<\/th>\n      <th>Sub-class<\/th>\n      <th>Application<\/th>\n      <th>Tool<\/th>\n      <th>Status<\/th>\n      <th>Bayesian<\/th>\n      <th>State space<\/th>\n      <th>Error structure<\/th>\n      <th>Multiple indices<\/th>\n      <th>Multi-gear<\/th>\n      <th>Dome selectivity<\/th>\n      <th>Outputs<\/th>\n      <th>Advice role<\/th>\n      <th>Software<\/th>\n      <th>No-code app<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":25,"scrollX":true,"dom":"tip","columnDefs":[{"name":"Class","targets":0},{"name":"Sub-class","targets":1},{"name":"Application","targets":2},{"name":"Tool","targets":3},{"name":"Status","targets":4},{"name":"Bayesian","targets":5},{"name":"State space","targets":6},{"name":"Error structure","targets":7},{"name":"Multiple indices","targets":8},{"name":"Multi-gear","targets":9},{"name":"Dome selectivity","targets":10},{"name":"Outputs","targets":11},{"name":"Advice role","targets":12},{"name":"Software","targets":13},{"name":"No-code app","targets":14}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<div class="column-screen">
+<div class="tbx p-advice">
+<div class="head"><h1>Advice and MSE</h1><span class="badge">Draft</span>
+<p class="lead">An accepted assessment becomes management advice in three steps: stock status is compared with reference points, results are set out in a standard advice format, and, where a harvest control rule or technical measure needs testing, simplified management strategy evaluation (MSE) shows how options perform before they are adopted.</p>
+<div class="jump"><span class="label" style="margin:0">On this page</span><a href="#route">From assessment to advice</a><a href="#which">Choosing a route</a><a href="#tools">Tools</a><a href="#planned">Planned content</a></div></div>
+<div class="band"><section id="route"><h2 class="anchored">From assessment to advice</h2><p class="sub">Part of workstream 3. The three steps apply to results from any FAO tool, so advice stays comparable across methods and stocks.</p><div class="stg"><div class="fs" style="--c:#2b6fd6"><small>Step 1</small><b>Compare status with reference points</b><p>An accepted assessment gives biomass and fishing mortality, which are compared with reference points such as B<sub>lim</sub> and proxies for F<sub>MSY</sub> to show where the stock stands.</p></div><div class="ar">→</div><div class="fs" style="--c:#0f766e"><small>Step 2</small><b>Present advice in a standard format</b><p>Results are set out in a consistent set of plots and tables, whichever assessment method produced them, so managers see comparable advice across stocks.</p></div><div class="ar">→</div><div class="fs" style="--c:#8e44ad"><small>Step 3</small><b>Test rules and measures where needed</b><p>Where a harvest control rule or technical measure must be chosen, simplified management strategy evaluation shows how options perform against risk, yield, and stability before adoption.</p></div></div></section></div>
+<div class="band white"><section id="which"><h2 class="anchored">Choosing a route</h2><p class="sub">The route depends on the question being asked, because a stock assessment alone does not test a rule or compare management options.</p>
+<table class="rt caption-top table">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Question</th>
+<th data-quarto-table-cell-role="th">Route</th>
+<th data-quarto-table-cell-role="th">Tool</th>
+<th data-quarto-table-cell-role="th">Result</th>
+</tr>
+<tr class="even">
+<td>How does the stock compare with reference points, and what does that imply for advice?</td>
+<td>Advice translation</td>
+<td><a href="#flref">FLRef</a></td>
+<td>Reference points, status plots, advice tables</td>
+</tr>
+<tr class="odd">
+<td>Will a harvest control rule meet objectives for risk, yield, and stability?</td>
+<td>Formal MSE</td>
+<td><a href="#flrmse">FLR mse</a></td>
+<td>Performance of rules against an operating model</td>
+</tr>
+<tr class="even">
+<td>Which technical measure (size limit, effort cap, closure, or catch limit) suits the fishery?</td>
+<td>Participatory screening</td>
+<td><a href="#fpat">FPAT App</a></td>
+<td>Projected catch and abundance by measure</td>
+</tr>
+<tr class="odd">
+<td>How should a mixed fishery with several species and one effort cap be handled?</td>
+<td>Multispecies methods</td>
+<td><a href="#mmsyfm">mmsyFM</a> with <a href="#msmse">MSMSE</a> or <a href="#flrmse">FLR mse</a></td>
+<td>Multispecies reference points, effort caps, and rule performance</td>
+</tr>
+</tbody>
+</table>
+</section></div>
+<div class="band"><section id="tools"><h2 class="anchored">Tools for advice and MSE</h2><p class="sub">Five tools cover the steps, from translating an assessment into advice to quick screening of measures and formal testing of harvest control rules, with multispecies tools for mixed fisheries. Each box sets out what the tool does, the data it needs, what it produces, cautions, and links to code and materials.</p><div class="tools tools3"><div class="tool" id="flref" style="--c:#1f5fa8;--tint:#eef4fb"><div class="th"><h3 class="anchored">FLRef</h3><span class="tag">R package</span></div><div class="tb"><p class="obj">Turns accepted assessments from SPiCT, JABBA, and FLicc into reference points and a standard set of advice plots and tables, so that results from different methods reach managers in one consistent format, whichever model produced them.</p><dl></dl><h5 class="anchored">Data needed</h5><ul class="bl"><li>Output of an accepted assessment from SPiCT, JABBA, or FLicc</li><li>Converter function for that tool: <b>spict2FLStockR()</b>, <b>jabba2FLStockR()</b>, or <b>flicc2FLStockR()</b></li></ul><h5 class="anchored">Outputs</h5><ul class="bl"><li>Reference points</li><li>Stock status plots from <b>plotAdvice()</b></li><li>Advice tables</li><li>Harvest control rule summaries</li></ul><h5 class="anchored">How to use the outputs</h5><ul class="bl"><li>Compare stock status with reference points</li><li>Present advice in one standard format across stocks and methods</li><li>Pass results to an MSE when a rule or measure must be tested</li></ul><h5 class="anchored">Use with care</h5><div class="wn"><b>Testing rules.</b> An assessment alone does not test a harvest control rule. Use it as the estimation model within an MSE.</div><div class="wn"><b>Technical measures.</b> Express advice as effort, size, or area rather than catch limits, and test options in simulation.</div><div class="wn"><b>Comparing options.</b> Condition an operating model and compare options in simulation.</div><div class="wn"><b>Still to complete.</b> Diagnostics and sensitivities, and case studies, are to be added.</div><div class="sp"></div><div class="links"><a class="btn" href="https://github.com/Henning-Winker/FLRef" target="_blank">Code on GitHub ↗</a><a class="lk" href="../advice/flref.html" target="_blank">Toolbox entry page <span>→</span></a><a class="lk off">Standard advice formats <i>To be added</i></a><a class="lk off">Reference-point conventions <i>To be added</i></a></div></div></div><div class="tool" id="flrmse" style="--c:#6b4fa0;--tint:#f4f0fa"><div class="th"><h3 class="anchored">FLR mse</h3><span class="tag">R package</span></div><div class="tb"><p class="obj">Tests harvest control rules and management procedures against an operating model in closed-loop simulation, showing how each performs for risk, yield, and stability before a rule is adopted. It covers simplified and full MSE.</p><dl></dl><h5 class="anchored">Data needed</h5><ul class="bl"><li>An operating model for the stock and fishery</li><li>An estimation model, for example an assessment such as FLicc through <b>flicc.sa()</b></li><li>Candidate harvest control rules or management procedures</li></ul><h5 class="anchored">Outputs</h5><ul class="bl"><li>Performance of each rule against risk, yield, and stability</li><li>Comparison of management procedures under the same operating model</li></ul><h5 class="anchored">How to use the outputs</h5><ul class="bl"><li>Choose between rules by weighing risk, yield, and stability</li><li>Test a rule before adoption</li><li>Follow quick screening with FPAT App by formal testing of a chosen rule</li></ul><h5 class="anchored">Use with care</h5><div class="wn"><b>Testing rules.</b> A fitted assessment does not test a rule. Use it as the estimation model within an MSE.</div><div class="wn"><b>Comparing options.</b> Condition an operating model and compare options in simulation. Use FPAT App for quick screening and FLR mse for rule testing.</div><div class="wn"><b>Still to complete.</b> Data template, key parameters, assumptions, sensitivity demos, and case studies are to be added.</div><div class="sp"></div><div class="links"><a class="lk" href="../advice/mse.html" target="_blank">Toolbox entry page <span>→</span></a><a class="lk off">Kell et al. (2007) paper <i>Link to add</i></a><a class="lk off">Training materials <i>To be added</i></a><a class="lk off">Sensitivity demos <i>To be added</i></a></div></div></div><div class="tool" id="fpat" style="--c:#0f7c86;--tint:#eef8f8"><div class="th"><h3 class="anchored">FPAT App</h3><span class="tag">Shiny app</span></div><div class="tb"><p class="obj">Builds an operating model from the Fisheries Performance Assessment Toolkit (FPAT) workbook and projects how catch limits, effort limits, size limits, or closures might change abundance and catch. It suits quick, participatory screening when the question is which measure to use rather than how much to catch.</p><dl></dl><h5 class="anchored">Data needed</h5><ul class="bl"><li>Catch history, with incomplete catches corrected first</li><li>Core life-history parameters</li><li>Answers to ten app questions on completeness, discards, closures, feasibility, and index behaviour</li><li>A standardised index (recommended), for example from cpueTargeting</li><li>Fishery treated as one aggregate fleet</li></ul><h5 class="anchored">Outputs</h5><ul class="bl"><li>Projected catch and abundance for each procedure</li><li>Trade-off plots</li><li>Procedures compared: current catch, current effort, two size limits, two length-targeting rules, two index-targeting rules, and area closures</li></ul><h5 class="anchored">How to use the outputs</h5><p style="margin:0 0 6px;font-size:17px;line-height:1.45">The app is step 2 of the FPAT cycle (FAO Technical Paper 737), used in workshops of about three days with 4 to 12 participants.</p><ol class="cy"><li><span><b>Benchmark.</b> Fishery performance indicators and a governance review show where a fishery underperforms and which measures are enforceable.</span></li><li class="me"><span><b>Plan.</b> This app compares candidate measures in simulation.</span></li><li><span><b>Decide.</b> Stakeholders weigh the trade-offs and choose.</span></li><li><span><b>Monitor and repeat.</b> Performance is reassessed as data improve.</span></li></ol><h5 class="anchored">Use with care</h5><div class="wn"><b>Screening only.</b> The app gives no stand-alone catch advice. Use FLR mse for formal rule testing.</div><div class="wn"><b>Mixed fisheries.</b> Use mmsyFM or MSMSE instead. A multispecies trawl fishery with a joint effort cap is an unsuitable case, and a single-species, single-gear coastal fishery a suitable one.</div><div class="wn"><b>Sensitivities.</b> Results depend on starting depletion (fixed at 1), natural mortality and steepness, reporting bias, effort creep, and index behaviour.</div><div class="wn"><b>Software status.</b> The R package (v0.2.0, on openMSE) was last updated in September 2023. Confirm availability of the hosted app with Blue Matter Science before using it in training.</div><div class="sp"></div><div class="links"><a class="lk off">Open FPAT App <i>Hosted app to confirm</i></a><a class="lk" href="../advice/fpat.html" target="_blank">Toolbox entry page <span>→</span></a><a class="lk off">FAO Technical Paper 737 <i>In press</i></a><a class="lk off">Sensitivity demos <i>To be added</i></a></div></div></div><div class="tool" id="mmsyfm" style="--c:#b0386b;--tint:#fbf0f5"><div class="th"><h3 class="anchored">mmsyFM</h3><span class="tag">R package</span></div><div class="tb"><p class="obj">Estimates multispecies reference points and effort caps for mixed fisheries in which several interacting species are caught together, so that a joint effort limit does not overexploit the weakest stock.</p><dl></dl><h5 class="anchored">Data needed</h5><ul class="bl"><li>To be added</li></ul><h5 class="anchored">Outputs</h5><ul class="bl"><li>Multispecies reference points</li><li>Effort caps for mixed fisheries</li></ul><h5 class="anchored">How to use the outputs</h5><ul class="bl"><li>Set a joint effort cap for a mixed fishery</li><li>Pass multispecies reference points to an MSE where a rule must be tested</li></ul><h5 class="anchored">Use with care</h5><div class="wn"><b>Still to complete.</b> Data needed, assumptions, key parameters, sensitivity demos, and case studies are to be added.</div><div class="wn"><b>Placement.</b> Also shown on the assessment methods figure. Confirm whether it sits there, here, or both.</div><div class="sp"></div><div class="links"><a class="lk off">Code on GitHub <i>Link to add</i></a><a class="lk off">Training materials <i>To be added</i></a></div></div></div><div class="tool" id="msmse" style="--c:#b45309;--tint:#fdf5ec"><div class="th"><h3 class="anchored">MSMSE</h3><span class="tag">R package</span></div><div class="tb"><p class="obj">Tests harvest control rules and management procedures for several interacting species in closed-loop simulation, as the multispecies counterpart of single-species MSE.</p><dl></dl><h5 class="anchored">Data needed</h5><ul class="bl"><li>To be added</li></ul><h5 class="anchored">Outputs</h5><ul class="bl"><li>Performance of rules and procedures for each species and for the fishery as a whole</li></ul><h5 class="anchored">How to use the outputs</h5><ul class="bl"><li>Compare management procedures under multispecies interactions</li><li>Weigh trade-offs among species before a rule is adopted</li></ul><h5 class="anchored">Use with care</h5><div class="wn"><b>Still to complete.</b> Objective, data needed, outputs, assumptions, sensitivity demos, and case studies are to be confirmed and added.</div><div class="wn"><b>Placement.</b> Confirm how its role differs from FLR mse and mmsyFM.</div><div class="sp"></div><div class="links"><a class="lk off">Code on GitHub <i>Link to add</i></a><a class="lk off">Training materials <i>To be added</i></a></div></div></div></div></section></div>
+<div class="band white"><section id="planned"><h2 class="anchored">Planned content</h2><p class="sub">Content still to be written for this section, as listed in the current catalogue: standard advice formats, reference-point conventions for data-limited stocks (such as B<sub>lim</sub> and F<sub>MSY</sub> proxies), and guidance on capacity and effort limits where catch limits are not practical.</p>
+<div class="next"><div><h3 class="anchored">Need abundance indices for assessment first?</h3><p>JARA combines several indices into a joint trend, and cpueTargeting standardises CPUE, before any advice step.</p></div><a href="../data-tools/index.html">Open data preparation →</a></div></section></div>
 </div>
 </div>
-<section id="comparing-management-options-fpat" class="level2">
-<h2 class="anchored" data-anchor-id="comparing-management-options-fpat">Comparing management options: FPAT</h2>
-<p>Where the question is <em>which measure</em> (a size limit, an effort cap, a closure or a catch limit) rather than <em>which catch</em>, the <a href="../advice/fpat.html">Fisheries Performance Assessment Toolkit</a> (FAO Technical Paper 737) provides a participatory route:</p>
-<div class="path">
-<p><a href="../methods/empirical/fpi.html" class="step">1 · Benchmark: FPI and governance</a> <span class="arrow">→</span> <a href="../advice/fpat.html" class="step">2 · Plan: FPAT App MSE</a> <span class="arrow">→</span> <span class="step">3 · Decide</span> <span class="arrow">→</span> <span class="step">4 · Monitor and repeat</span></p>
-</div>
-<p>The benchmarking shows where the fishery underperforms and which measures are feasible to enforce; the FPAT App compares those measures in simulation; the choice is made with stakeholders and re-assessed as data improve. FPAT is the quick screening end of MSE. Harvest control rules for formal adoption are tested with <a href="../advice/mse.html">FLR mse</a>.</p>
-<p><span class="todo">Content to be added: standard advice formats, reference-point conventions (e.g.&nbsp;<span class="math inline">\(B_{lim}\)</span>, <span class="math inline">\(F_{MSY}\)</span> proxies), capacity and effort limits.</span></p>
 
 
-<!-- -->
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -979,57 +509,6 @@ window.Quarto = {
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
-        for (let i=0; i<cellDetails.length; i++) {
-          const details = cellDetails[i];
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1436,7 +915,7 @@ window.Quarto = {
   <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
-<nav class="page-navigation" aria-label="Page">
+<nav class="page-navigation column-body" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../data-tools/jara.html" class="pagination-link" aria-label="JARA">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">JARA</span>
@@ -1447,33 +926,7 @@ window.Quarto = {
         <span class="nav-page-text">FLRef</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Advice and harvest strategies"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Workstream 3: from accepted assessments to reference points, advice and HCRs"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>An accepted assessment becomes advice in three steps: stock status against reference points, a standard advice format, and, where needed, a harvest control rule tested by (simplified) MSE.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">crosswalk_table</span>(<span class="at">site_root =</span> <span class="st">"../"</span>, <span class="at">category =</span> <span class="st">"Advice and MSE"</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Comparing management options: FPAT</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Where the question is *which measure* (a size limit, an effort cap, a closure or a catch limit) rather than *which catch*, the <span class="co">[</span><span class="ot">Fisheries Performance Assessment Toolkit</span><span class="co">](fpat.qmd)</span> (FAO Technical Paper 737) provides a participatory route:</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>::: {.path}</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1 · Benchmark: FPI and governance</span><span class="co">](../methods/empirical/fpi.qmd)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">2 · Plan: FPAT App MSE</span><span class="co">](fpat.qmd)</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">3 · Decide</span><span class="co">]</span>{.step} <span class="co">[</span><span class="ot">→</span><span class="co">]</span>{.arrow} <span class="co">[</span><span class="ot">4 · Monitor and repeat</span><span class="co">]</span>{.step}</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>The benchmarking shows where the fishery underperforms and which measures are feasible to enforce; the FPAT App compares those measures in simulation; the choice is made with stakeholders and re-assessed as data improve. FPAT is the quick screening end of MSE. Harvest control rules for formal adoption are tested with <span class="co">[</span><span class="ot">FLR mse</span><span class="co">](mse.qmd)</span>.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Content to be added: standard advice formats, reference-point conventions (e.g. $B_{lim}$, $F_{MSY}$ proxies), capacity and effort limits.</span><span class="co">]</span>{.todo}</span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1482,7 +935,7 @@ window.Quarto = {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/advice/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/advice/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/advice/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/advice/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Content CC BY 4.0 · Code MIT</p>
 </div>

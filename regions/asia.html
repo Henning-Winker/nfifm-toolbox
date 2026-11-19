@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Asia · NFIFM Toolbox – NFIFM Toolbox</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-40878361a1e1eef6773465f72c3396e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/toolbox.css">
+<link rel="stylesheet" href="../assets/toolbox-asia.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NFIFM Toolbox</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">NFIFM Toolbox</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data-tools/index.html"> 
+<span class="menu-text">Data preparation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../select/index.html"> 
+<span class="menu-text">Method selector</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../methods/index.html"> 
+<span class="menu-text">Assessment methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../advice/index.html"> 
+<span class="menu-text">Advice and MSE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../regions/index.html"> 
+<span class="menu-text">Regional hubs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../training/index.html"> 
+<span class="menu-text">Resources and training</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../contributing.html"> 
+<span class="menu-text">Contribute</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Henning-Winker/nfifm-toolbox"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Asia</h1></header>
+
+
+<header id="title-block-header">
+
+
+</header>
+
+
+<div class="column-screen">
+<div class="tbx p-asia">
+<div class="subnav"><a href="../regions/index.html">Overview</a><a class="on" href="../regions/asia.html">Asia</a><a href="../regions/africa.html">Africa</a><a href="../regions/latin-america.html">Latin America</a><a href="../regions/sids.html">SIDS</a><a href="../regions/inland-fisheries.html">Inland fisheries</a><a href="../regions/developed-countries.html">Developed countries</a></div><div class="hero" style="--c:#b9684f"><div class="rh"><div><h1>Asia<span class="pill">Draft</span></h1>
+<p class="lead" style="margin-bottom:10px"><b>South, Southeast and East Asia</b></p><p class="lead">Asia supplies most of the world's marine wild catch, much of it from multispecies and multigear fleets in the tropics. This page describes the region's fisheries, institutions and data, lists the assessment tools in use with their limits and toolbox options, and gives case studies and training.</p>
+<div class="label" style="margin:14px 0 6px">Regional priorities</div><div class="chips"><span class="chip">Multispecies trawl and multigear fleets</span><span class="chip">Fleet overcapacity</span><span class="chip">Tropical demersals</span><span class="chip">Data-poor methods</span></div>
+<p style="margin:16px 0 4px;font-size:16.5px"><b>Key partners:</b> SEAFDEC, BOBP-IGO, APFIC</p><p style="margin:0;font-size:16.5px"><b>Linked programmes:</b> EAF-Nansen (Bay of Bengal), BOBLME (GEF), ISLME, YSLME (GEF)</p></div>
+<div class="rimg"><img src="../assets/img/regions/region-asia.png" alt="Asia"></div></div></div><div class="band tint" id="context"><h2 class="anchored">Regional context</h2>
+<p class="sub">Asia combines the largest fishing fleet in the world with a large share of global marine catch, and most of that catch comes from small-scale and multispecies fisheries.</p>
+<div class="sixs">
+<div class="sn" style="--c:#b9684f"><b>about 38 million t</b><span>Average yearly marine wild-capture landings in the region since the mid-1990s.<sup class="cite"><a href="../training/index.html#src1">1</a></sup></span></div>
+<div class="sn" style="--c:#b9684f"><b>63% of marine capture</b><span>Asia's share of global marine capture production in SOFIA 2026. China, Indonesia, India, Viet Nam and Japan are the top five producers.<sup class="cite"><a href="../training/index.html#src16">16</a>, <a href="../training/index.html#src17">17</a></sup></span></div>
+<div class="sn" style="--c:#b9684f"><b>71% of the world fleet</b><span>Asia hosts 71% of fishing vessels worldwide and 80% of motorised vessels (2022).<sup class="cite"><a href="../training/index.html#src3">3</a></sup></span></div>
+<div class="sn" style="--c:#b9684f"><b>85% of workers</b><span>Asia has 85% of the 61.8 million people employed in the primary sector of fisheries and aquaculture.<sup class="cite"><a href="../training/index.html#src3">3</a></sup></span></div>
+<div class="sn" style="--c:#b9684f"><b>1.77 million vessels</b><span>In the South China Sea region, about 86% of them small-scale (2012 report; numbers have changed since).<sup class="cite"><a href="../training/index.html#src5">5</a></sup></span></div>
+<div class="sn" style="--c:#b9684f"><b>32% reported as "nei"</b><span>Of regional production in 2010, only reported in broad "not elsewhere included" categories, which hides effects of overfishing on juveniles of higher-value species.<sup class="cite"><a href="../training/index.html#src5">5</a></sup></span></div></div>
+</div><div class="band" id="stocks"><h2 class="anchored">Fisheries and stocks at a glance</h2>
+<p class="sub">How many stocks are tracked, how well they are assessed, and how many are fished sustainably. FAO reports these figures by fishing area, and the two areas that cover most of tropical Asia use different tier definitions, so the bars should not be compared directly. Choose an area to view its figures.</p>
+<div class="seg" id="areaseg"><button class="on" data-a="a57">Eastern Indian Ocean (Area 57)</button><button data-a="a71">Western Central Pacific (Area 71)</button></div>
+<div class="stg"><div><div class="pnl on" id="a57"><div class="scc"><h4 class="anchored">Eastern Indian Ocean (FAO Area 57)</h4><div class="big">335 stocks</div><div class="sm2">Bay of Bengal and Andaman Sea coasts, from Bangladesh and India to Indonesia and Australia.<sup class="cite"><a href="../training/index.html#src1">1</a></sup></div>
+<div class="row2"><div class="lb"><span>How well stocks are assessed</span></div><div class="bar3"><span style="width:60.6%;background:#1d8a78" class="">Formal 203 (61%)</span><span style="width:36.1%;background:#2273ae" class="">Catch-based 121 (36%)</span><span style="width:3.3%;background:#7d8b97" class=""></span></div><div class="cap2">Formal assessments 203, catch-based (sraplus) 121, CMSY 11.</div></div>
+<div class="row2"><div class="lb"><span>How many are fished sustainably</span></div><div class="bar3"><span style="width:77.0%;background:#3d8b5a" class="">Sustainable 77.0%</span><span style="width:23.0%;background:#b05a4f" class="">Overfished 23.0%</span></div><div class="cap2">Unweighted. Weighted by biomass, 71.1% sustainable and 28.9% overfished.</div></div>
+<div class="row2"><div class="lb"><span>Landings without an assessment</span></div><div class="bar3"><span class="hatch" style="width:100%">Not reported in the sources reviewed</span></div></div></div></div><div class="pnl" id="a71"><div class="scc"><h4 class="anchored">Western Central Pacific (FAO Area 71)</h4><div class="big">263 stocks</div><div class="sm2">South China Sea, Gulf of Thailand and Indonesian, Philippine and Viet Namese waters.<sup class="cite"><a href="../training/index.html#src4">4</a></sup></div>
+<div class="row2"><div class="lb"><span>How well stocks are assessed</span></div><div class="bar3"><span style="width:8.7%;background:#1d8a78" class=""></span><span style="width:19.4%;background:#2273ae" class="">Tier 2 51</span><span style="width:71.9%;background:#7d8b97" class="">Tier 3 189 (72%)</span></div><div class="cap2">Tier 1 (formal) 23, Tier 2 (catch plus index) 51, Tier 3 (limited data) 189.</div></div>
+<div class="row2"><div class="lb"><span>How many are fished sustainably</span></div><div class="bar3"><span style="width:52.9%;background:#3d8b5a" class="">Sustainable 52.9%</span><span style="width:47.1%;background:#b05a4f" class="">Unsustainable 47.1%</span></div><div class="cap2">Sustainable stocks provide 45.0% of landings.</div></div>
+<div class="row2"><div class="lb"><span>Landings without an assessment</span></div><div class="bar3"><span style="width:51%;background:#6c7e8c" class="">Assessed landings 51%</span><span style="width:49%;background:#dfe5ea" class="hatch">Not assessed 49%</span></div></div></div></div><div class="key"><span><i style="background:#1d8a78"></i>Formal assessment</span><span><i style="background:#2273ae"></i>Catch-based or catch plus index</span><span><i style="background:#7d8b97"></i>Limited data or catch-only</span><span><i style="background:#3d8b5a"></i>Sustainable</span><span><i style="background:#b05a4f"></i>Overfished or unsustainable</span><span><i class="hatch" style="background:repeating-linear-gradient(45deg,#dfe5ea,#dfe5ea 4px,#eef2f5 4px,#eef2f5 8px)"></i>Missing data</span></div></div>
+<div class="cbig"><h4 id="ctitle" class="anchored">Stocks assessed by country</h4><p class="cs0" id="csub">Eastern Indian Ocean (Area 57)</p><label for="csel">Choose a country</label><select id="csel"></select>
+<div class="cout"><div class="cn" id="cnum">–</div><div class="ct" id="ctxt">Select a country to see how many of its stocks have formal assessments.</div><div class="cst" id="cstat"></div></div>
+<p class="cnote">Status is shown only where the source reports it. The review reports overfished counts for Peninsular Malaysia, Sri Lanka and Thailand, and gives counts only for other countries.</p></div></div>
+<p class="src">Stock counts and status by country from the Asian assessment review <sup class="cite"><a href="../training/index.html#src1">1</a></sup>. The share of stocks under management measures is not reported in the sources reviewed.</p>
+<script>(function(){
+var D={a57:{t:"Eastern Indian Ocean (Area 57)",c:{"India":[78,"about","Status breakdown not reported in the review"],"Indonesia":[40,"","Status breakdown not reported in the review"],"Peninsular Malaysia":[23,"","14 of 23 overfished or subject to overfishing"],"Bangladesh":[14,"","Status breakdown not reported in the review"],"Thailand":[11,"","1 of 11 overfished"],"Sri Lanka":[5,"","3 of 5 overfished"]}},
+a71:{t:"Western Central Pacific (Area 71)",c:{"Indonesia":null,"Malaysia":null,"Philippines":null,"Thailand":null,"Viet Nam":null,"Cambodia":null}}};
+var cur="a57",sel=document.getElementById("csel");
+function fill(){var o='<option value="">Select a country</option>';Object.keys(D[cur].c).forEach(function(k){o+='<option>'+k+'</option>'});sel.innerHTML=o;document.getElementById("csub").textContent=D[cur].t;show()}
+function show(){var k=sel.value,n=document.getElementById("cnum"),t=document.getElementById("ctxt"),s=document.getElementById("cstat");
+ if(!k){n.textContent="–";t.textContent="Select a country to see how many of its stocks have formal assessments.";s.textContent="";return}
+ var v=D[cur].c[k];if(!v){n.textContent="–";t.textContent="Country breakdown for this area is not in the sources reviewed. To be added.";s.textContent="";return}
+ n.textContent=(v[1]?v[1]+" ":"")+v[0];t.textContent="stocks with formal assessments";s.textContent=v[2]}
+sel.addEventListener("change",show);
+var b=document.querySelectorAll("#areaseg button");b.forEach(function(x){x.addEventListener("click",function(){b.forEach(function(y){y.classList.remove("on")});x.classList.add("on");document.querySelectorAll(".pnl").forEach(function(p){p.classList.remove("on")});var a=x.getAttribute("data-a");document.getElementById(a).classList.add("on");cur=a;fill()})});
+fill();})();</script></div><div class="band tint" id="management"><h2 class="anchored">Management context and reporting layers</h2>
+<p class="sub">Each country reports through several layers, from its own agency to regional bodies, tuna commissions and FAO. The layers differ by country, so a country can answer to more than one body for the same species. The network view shows these links by subregion.</p>
+<h3 style="font-size:24px;margin:26px 0 0" class="anchored">Network of countries, regional bodies and FAO</h3>
+<p class="sub">Choose a subregion to see each country's national agency or institute, the regional bodies and tuna commissions it belongs to, and how this connects to FAO reporting. Where one country is linked to several bodies, it reports through several layers.</p>
+<div class="tabs" id="nettabs"><button data-t="all" class="on">All Asia</button><button data-t="east">East Asia</button><button data-t="south">South Asia</button><button data-t="se">Southeast Asia</button></div>
+<div class="net"><svg id="netsvg" viewbox="0 0 1100 480" role="img" aria-label="Network of countries, national agencies, regional bodies and FAO"></svg></div>
+<p class="src">Memberships from SEAFDEC, BOBP-IGO, IOTC and WCPFC lists.<sup class="cite"><a href="../training/index.html#src10">10</a>, <a href="../training/index.html#src11">11</a>, <a href="../training/index.html#src12">12</a>, <a href="../training/index.html#src13">13</a></sup> South Asian agencies from the FIRMS workshop report.<sup class="cite"><a href="../training/index.html#src18">18</a></sup> Agencies in italics are unreferenced and need checking with the countries. All countries also report directly to FAO through SDG 14.4.1.</p>
+<script>
+(function(){
+var TBA="To be added";
+var C={east:[["China",[],["IOTC","WCPFC"],TBA,0],["Japan",["SEAFDEC"],["IOTC","WCPFC"],TBA,0],["Republic of Korea",[],["IOTC","WCPFC"],TBA,0]],
+south:[["Bangladesh",["BOBP-IGO"],["IOTC"],"Dept of Fisheries; BFRI",1],["India",["BOBP-IGO"],["IOTC"],"Dept of Fisheries; FSI; ICAR-CMFRI",1],["Maldives",["BOBP-IGO"],["IOTC"],"Ministry of Fisheries; MMRI",1],["Pakistan",[],["IOTC"],TBA,0],["Sri Lanka",["BOBP-IGO"],["IOTC"],"Ministry of Fisheries; NARA",1]],
+se:[["Brunei Darussalam",["SEAFDEC"],[],"Dept of Fisheries",2],["Cambodia",["SEAFDEC"],[],"Fisheries Administration",2],["Indonesia",["SEAFDEC"],["IOTC","WCPFC"],"Ministry of Marine Affairs and Fisheries",1],["Lao PDR",["SEAFDEC"],[],"Dept of Livestock and Fisheries",2],["Malaysia",["SEAFDEC"],["IOTC"],"Dept of Fisheries",2],["Myanmar",["SEAFDEC"],[],"Dept of Fisheries",2],["Philippines",["SEAFDEC"],["IOTC","WCPFC"],"Bureau of Fisheries and Aquatic Resources",2],["Singapore",["SEAFDEC"],[],"To verify",2],["Thailand",["SEAFDEC"],["IOTC","WCPFC*"],"Dept of Fisheries",2],["Viet Nam",["SEAFDEC"],["WCPFC*"],"Directorate of Fisheries",2]]};
+C.all=C.east.concat(C.south,C.se);
+var BC={"SEAFDEC":"#2273ae","BOBP-IGO":"#1d8a78","IOTC":"#6b4fa0","WCPFC":"#b7791f"},BODIES=["SEAFDEC","BOBP-IGO","IOTC","WCPFC"];
+function esc(t){return t}
+function render(t){
+ var L=C[t],n=L.length,rowH=t==="all"?33:Math.min(54,Math.max(40,420/n)),H=Math.max(n*rowH+70,300);
+ var svg=document.getElementById("netsvg");svg.setAttribute("viewBox","0 0 1100 "+H);
+ var used={};L.forEach(function(r){r[1].concat(r[2]).forEach(function(b){used[b.replace("*","")]=1})});
+ var bl=BODIES.filter(function(b){return used[b]}),bgap=(H-50)/Math.max(bl.length,1),by={};
+ bl.forEach(function(b,i){by[b]=34+bgap*i+bgap/2-24});
+ var s="",AX=205,AW=300,BX=650,FX=930;
+ L.forEach(function(r,i){var y=34+i*rowH,cy=y+(rowH-8)/2;
+  s+='<line x1="180" y1="'+cy+'" x2="'+AX+'" y2="'+cy+'" stroke="#c9b4aa" stroke-width="2"/>';
+  r[1].concat(r[2]).forEach(function(b){var bb=b.replace("*",""),dash=b.indexOf("*")>-1?' stroke-dasharray="6 5"':'';
+   s+='<path d="M'+(AX+AW)+' '+cy+' C'+(AX+AW+80)+' '+cy+' '+(BX-90)+' '+(by[bb]+24)+' '+BX+' '+(by[bb]+24)+'" fill="none" stroke="'+BC[bb]+'" stroke-width="2.6" opacity=".75"'+dash+'/>';});
+ });
+ var mid=H/2;
+ bl.forEach(function(b){s+='<path d="M'+(BX+150)+' '+(by[b]+24)+' C'+(BX+210)+' '+(by[b]+24)+' '+(FX-70)+' '+mid+' '+(FX-6)+' '+mid+'" fill="none" stroke="#7d93a3" stroke-width="5" stroke-linecap="round"/>';});
+ s+='<polygon points="'+(FX-8)+','+(mid-10)+' '+(FX+10)+','+mid+' '+(FX-8)+','+(mid+10)+'" fill="#7d93a3"/>';
+ L.forEach(function(r,i){var y=34+i*rowH,h=rowH-8,ag=r[4]===0?TBA:r[3],it=r[4]!==1&&r[4]!==undefined?' font-style="italic"':'',col=r[4]===1?'#33444f':'#8a949c';
+  s+='<rect x="20" y="'+y+'" width="160" height="'+h+'" rx="8" fill="#fdf8f6" stroke="#b9684f" stroke-width="1.5"/><text x="32" y="'+(y+h/2+5)+'" font-size="14" font-weight="700" fill="#5a3a2e">'+r[0]+'</text>';
+  s+='<rect x="'+AX+'" y="'+y+'" width="'+AW+'" height="'+h+'" rx="8" fill="#fff" stroke="#c5d3dd" stroke-width="1.3"/><text x="'+(AX+12)+'" y="'+(y+h/2+4.5)+'" font-size="13.5" fill="'+col+'"'+it+'>'+ag+'</text>';});
+ bl.forEach(function(b){s+='<rect x="'+BX+'" y="'+by[b]+'" width="150" height="48" rx="10" fill="'+BC[b]+'"/><text x="'+(BX+75)+'" y="'+(by[b]+29)+'" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">'+b+'</text>';});
+ s+='<rect x="'+FX+'" y="'+(mid-60)+'" width="160" height="120" rx="12" fill="#12364d"/><text x="'+(FX+80)+'" y="'+(mid-26)+'" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">FAO</text><text x="'+(FX+80)+'" y="'+(mid-2)+'" text-anchor="middle" font-size="12.5" fill="#cfe0ec">SDG 14.4.1</text><text x="'+(FX+80)+'" y="'+(mid+18)+'" text-anchor="middle" font-size="12.5" fill="#cfe0ec">FIRMS · SOFIA</text><text x="'+(FX+80)+'" y="'+(mid+38)+'" text-anchor="middle" font-size="12" fill="#cfe0ec">State of Stocks Index</text>';
+ var hd=function(x,t){return '<text x="'+x+'" y="18" font-size="12" font-weight="700" fill="#7d93a3" letter-spacing="1">'+t+'</text>'};
+ s+=hd(20,"COUNTRIES")+hd(AX,"NATIONAL AGENCY OR INSTITUTE")+hd(BX,"REGIONAL AND TUNA BODIES")+hd(FX,"GLOBAL");
+ s+='<text x="'+BX+'" y="'+(H-6)+'" font-size="12" fill="#7d93a3">Dashed line: cooperating non-member (WCPFC*)</text>';
+ svg.innerHTML=s;
+}
+var tabs=document.querySelectorAll("#nettabs button");
+tabs.forEach(function(b){b.addEventListener("click",function(){tabs.forEach(function(x){x.classList.remove("on")});b.classList.add("on");render(b.getAttribute("data-t"))})});
+render("all");
+})();
+</script></div><div class="band" id="tools"><h2 class="anchored">Tools used in Asia</h2>
+<p class="sub">Compiled from the Asian stock assessment review, the APFIC assessment paper and SEAFDEC reports, which describe CPUE standardisation, yield per recruit and ASPIC in SEAFDEC work.<sup class="cite"><a href="../training/index.html#src1">1</a>, <a href="../training/index.html#src2">2</a>, <a href="../training/index.html#src8">8</a></sup> Select a data situation, or the tool or method already in use, to see the other methods used in that situation with their limits and the FAO toolbox tool recommended instead or alongside.</p>
+<div class="tsel"><label for="toolsel">Find by data situation or by tool or method</label><select id="toolsel"><optgroup label="Data situation"><option value="g|Catch and effort">Catch and effort</option><option value="g|Catch-only">Catch-only</option><option value="g|Length-based">Length-based</option><option value="g|Exploitation indicators">Exploitation indicators</option><option value="g|Multispecies and ecosystem">Multispecies and ecosystem</option><option value="g|Surveys and CPUE">Surveys and CPUE</option></optgroup><optgroup label="Tool or method"><option value="t|Catch and effort|ASPIC">ASPIC</option><option value="t|Catch and effort|JABBA">JABBA</option><option value="t|Catch-only|sraplus">sraplus</option><option value="t|Catch-only|CMSY">CMSY</option><option value="t|Length-based|LBSPR, LBB">LBSPR, LBB</option><option value="t|Length-based|FiSAT">FiSAT</option><option value="t|Exploitation indicators|Exploitation ratio, F-factor, F-ratio">Exploitation ratio, F-factor, F-ratio</option><option value="t|Multispecies and ecosystem|MMSY, species hub approach">MMSY, species hub approach</option><option value="t|Multispecies and ecosystem|Ecopath with Ecosim">Ecopath with Ecosim</option><option value="t|Multispecies and ecosystem|MERA (MSE)">MERA (MSE)</option><option value="t|Surveys and CPUE|Trawl surveys, standardised CPUE">Trawl surveys, standardised CPUE</option></optgroup></select><span id="toolcount"></span></div>
+
+<table id="tooltab" class="tt wide rt caption-top table">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="width: 11%">Data situation</th>
+<th data-quarto-table-cell-role="th" style="width: 16%">Tool or method</th>
+<th data-quarto-table-cell-role="th" style="width: 17%">What it does</th>
+<th data-quarto-table-cell-role="th" style="width: 30%">Caveats and limitations</th>
+<th data-quarto-table-cell-role="th" style="width: 26%">Tool recommendation</th>
+</tr>
+<tr class="even" data-g="Catch and effort" data-t="ASPIC">
+<td class="g">Catch and effort</td>
+<td><strong>ASPIC</strong></td>
+<td>Surplus production model</td>
+<td class="cv">Needs a reliable effort or CPUE series. Sensitive to starting values. Limited treatment of uncertainty.</td>
+<td class="sp rec">Switch to JABBA3. Keep ASPIC as cross-check.</td>
+</tr>
+<tr class="odd" data-g="Catch and effort" data-t="JABBA">
+<td class="g">Catch and effort</td>
+<td><strong>JABBA</strong></td>
+<td>Bayesian surplus production model</td>
+<td class="cv">Needs an index that tracks abundance, and informative priors for data-poor stocks.</td>
+<td class="sp rec">Use JABBA3. Prepare indices with cpueTargeting and JARA.</td>
+</tr>
+<tr class="even" data-g="Catch-only" data-t="sraplus">
+<td class="g">Catch-only</td>
+<td><strong>sraplus</strong></td>
+<td>Stock reduction analysis from catch (R package)</td>
+<td class="cv">Results are driven by priors on resilience and depletion, so status is indicative only.</td>
+<td class="sp rec">Switch to CMSY+ in JABBA3 and compare.</td>
+</tr>
+<tr class="odd" data-g="Catch-only" data-t="CMSY">
+<td class="g">Catch-only</td>
+<td><strong>CMSY</strong></td>
+<td>Catch-only stock status</td>
+<td class="cv">Prior-driven. Unreliable where catch does not track abundance, for example under changing effort or reporting.</td>
+<td class="sp rec">Use CMSY+ in JABBA3. Add an index through BSM where available.</td>
+</tr>
+<tr class="even" data-g="Length-based" data-t="LBSPR, LBB">
+<td class="g">Length-based</td>
+<td><strong>LBSPR, LBB</strong></td>
+<td>Spawning potential ratio, relative biomass</td>
+<td class="cv">Assume equilibrium and representative samples. Sensitive to M/K and asymptotic length. Poor fit for multigear catches.</td>
+<td class="sp rec">Switch to FLicc, which includes both. Check data with FishualizeR.</td>
+</tr>
+<tr class="odd" data-g="Length-based" data-t="FiSAT">
+<td class="g">Length-based</td>
+<td><strong>FiSAT</strong></td>
+<td>Length-frequency analysis (FAO-ICLARM)</td>
+<td class="cv">Older software. Growth from length frequencies can be unstable and gives limited uncertainty.</td>
+<td class="sp rec">Use TropFishR for growth and YPR, and FLicc for status.</td>
+</tr>
+<tr class="even" data-g="Exploitation indicators" data-t="Exploitation ratio, F-factor, F-ratio">
+<td class="g">Exploitation indicators</td>
+<td><strong>Exploitation ratio, F-factor, F-ratio</strong></td>
+<td>Indicators used in Indonesia, Thailand and Bangladesh</td>
+<td class="cv">Depend on mortality estimates. Give no biomass or reference points, so cannot show stock status alone.</td>
+<td class="sp rec">Supplement with FLicc SPR or JABBA3 status.</td>
+</tr>
+<tr class="odd" data-g="Multispecies and ecosystem" data-t="MMSY, species hub approach">
+<td class="g">Multispecies and ecosystem</td>
+<td><strong>MMSY, species hub approach</strong></td>
+<td>Multispecies yield, grouping by trophic level</td>
+<td class="cv">Data-hungry. Rest on assumptions about species interactions.</td>
+<td class="sp rec">Use mmsyFM.</td>
+</tr>
+<tr class="even" data-g="Multispecies and ecosystem" data-t="Ecopath with Ecosim">
+<td class="g">Multispecies and ecosystem</td>
+<td><strong>Ecopath with Ecosim</strong></td>
+<td>Ecosystem model</td>
+<td class="cv">Needs diet and biomass data. Results depend on model structure, which is hard to validate.</td>
+<td class="sp rec">Keep for context. Supplement with mmsyFM.</td>
+</tr>
+<tr class="odd" data-g="Multispecies and ecosystem" data-t="MERA (MSE)">
+<td class="g">Multispecies and ecosystem</td>
+<td><strong>MERA (MSE)</strong></td>
+<td>Management strategy evaluation used in Indonesia</td>
+<td class="cv">Results depend on the operating model assumed.</td>
+<td class="sp rec">Switch to FLR mse.</td>
+</tr>
+<tr class="even" data-g="Surveys and CPUE" data-t="Trawl surveys, standardised CPUE">
+<td class="g">Surveys and CPUE</td>
+<td><strong>Trawl surveys, standardised CPUE</strong></td>
+<td>Fishery-independent indices and CPUE standardisation</td>
+<td class="cv">Survey coverage and series length vary. CPUE standardisation needs covariates for targeting and gear changes.</td>
+<td class="sp rec">Use cpueTargeting, JARA and FishualizeR.</td>
+</tr>
+</tbody>
+</table>
+
+<p class="note">Caveats are drafted from general stock assessment practice and need review by method experts. The FAO tools are described on <a class="lnk" href="../methods/index.html">Assessment methods</a>.</p></div>
+
+<script>(function(){var s=document.getElementById("toolsel"),rows=[].slice.call(document.querySelectorAll("#tooltab tr[data-g]")),c=document.getElementById("toolcount");function go(){var v=s.value.split("|"),g=v[1]||v[0]&&"",t=v[0]=="t"?v[2]:null;if(v[0]=="g")g=v[1];var n=0;rows.forEach(function(r){var on=r.getAttribute("data-g")==g;r.hidden=!on;r.classList.toggle("hl",on&&t!==null&&r.getAttribute("data-t")==t);if(on)n++});c.textContent=n+(n==1?" method":" methods")+" shown for "+g.toLowerCase()}s.addEventListener("change",go);go()})()</script><div class="band" id="data"><h2 class="anchored">Data situation</h2>
+<p class="sub">Stock status in the region is mostly reported through FIRMS, SOFIA and SDG 14.4.1 data calls, supplemented by national reports. Many stocks have no formal assessment, so catch-based and weight-of-evidence methods carry much of the load.<sup class="cite"><a href="../training/index.html#src4">4</a></sup></p>
+<div class="feat"><div class="fh"><h4 class="anchored">Data sources</h4><p>Where stock and catch information for the region comes from, from global databases to national sampling.</p></div><ul><li><b>FIRMS and SDG 14.4.1 data calls.</b> Countries, regional databases and regional bodies report stock status through these channels.<sup class="cite"><a href="../training/index.html#src4">4</a>, <a href="../training/index.html#src6">6</a></sup></li><li><b>FAO catch statistics.</b> For stocks without national data, FAO estimates status from FishStat catch and effort data.<sup class="cite"><a href="../training/index.html#src4">4</a></sup></li><li><b>National landing statistics.</b> Long-running sampling systems record landings by species in some countries, and some countries run regular national assessment cycles.<sup class="cite"><a href="../training/index.html#src15">15</a></sup></li><li><b>Logbooks and observers.</b> Industrial fisheries often keep logbooks, while artisanal fisheries rely on land-based collection and research surveys.<sup class="cite"><a href="../training/index.html#src15">15</a></sup></li><li><b>Vessel monitoring.</b> Vessel monitoring covers part of the larger fleets and supports effort estimates.<sup class="cite"><a href="../training/index.html#src15">15</a></sup></li><li><b>Length sampling.</b> Fishery-dependent length data support length-based methods.<sup class="cite"><a href="../training/index.html#src15">15</a></sup></li><li><b>Trawl surveys.</b> Fishery-independent surveys support standardised CPUE.<sup class="cite"><a href="../training/index.html#src1">1</a></sup></li><li><b>Emerging sources.</b> Remote sensing and vessel electronic data can inform assessments.<sup class="cite"><a href="../training/index.html#src2">2</a></sup></li></ul></div>
+<div class="feat"><div class="fh"><h4 class="anchored">Regional monitoring and capacity work</h4><p>Regional programmes and networks that collect data or build assessment capacity across countries, as distinct from the routine data sources in the first tab.</p></div><ul><li><b>SEAFDEC landing surveys.</b> Landing data on sharks and rays are collected at sites in several Southeast Asian countries.<sup class="cite"><a href="../training/index.html#src8">8</a></sup></li><li><b>Neritic tuna study.</b> ASEAN member states took part in a population study that included DNA sampling.<sup class="cite"><a href="../training/index.html#src8">8</a></sup></li><li><b>BOBSAN.</b> The Bay of Bengal Stock Assessment Network of government-nominated practitioners is coordinated by BOBP-IGO.<sup class="cite"><a href="../training/index.html#src14">14</a></sup></li><li><b>BOBSAN priorities.</b> Members prioritised a regional catch and stock-status database, national assessment guidelines aligned with FAO, and documented success stories.<sup class="cite"><a href="../training/index.html#src14">14</a></sup></li><li><b>FAO pilot index.</b> FAO has completed proof-of-concept updates of its State of Stocks Index for several areas, including a revised index for Area 57.<sup class="cite"><a href="../training/index.html#src2">2</a></sup></li><li><b>SoSI action plan.</b> The 2025 SEAFDEC and FAO workshop produced an action plan to strengthen data collection and reporting.<sup class="cite"><a href="../training/index.html#src6">6</a></sup></li></ul></div></div><div class="band tint" id="pathways"><h2 class="anchored">Typical pathways, gaps and research needs</h2>
+<p class="sub">Three common data situations in Asian fisheries share the same steps, from understanding the data to running assessments and giving management advice, but differ in what data exist, what works well, and what holds assessment back in that situation. Gaps that affect all three are listed after the cards. Where more than one source exists for a stock, methods can be run side by side and compared before advice is given. These pathways are our proposal for discussion and have not been checked with regional partners.</p>
+<div class="dc3"><div class="dc"><div class="dh"><small>Data situation A</small><b>Multispecies trawl with length samples</b></div><div class="dp dav"><h5 class="anchored"><span></span>Data available</h5><ul><li>Length samples from landing sites and trawl surveys</li><li>Catch by gear</li><li>Some life-history parameters</li></ul></div><div class="dp gd"><h5 class="anchored"><span></span>Done well</h5><ul><li>Length sampling is routine in several national and regional programmes</li><li>Length-based methods need few inputs and give a quick status check</li></ul></div><div class="dp nd2"><h5 class="anchored"><span></span>Needs improvement</h5><ul><li>Few species-level samples, and many missing life-history parameters</li><li>Equilibrium assumptions fail for depleted trawl stocks</li><li>Gear-specific length samples are scarce</li></ul></div></div><div class="dc"><div class="dh"><small>Data situation B</small><b>Catch and effort series from logbooks</b></div><div class="dp dav"><h5 class="anchored"><span></span>Data available</h5><ul><li>Logbook catch and effort, mostly from industrial fleets</li><li>Long national landing series</li><li>Survey indices in some areas</li></ul></div><div class="dp gd"><h5 class="anchored"><span></span>Done well</h5><ul><li>Long landing series support trend analysis</li><li>Surplus production models need only catch and an abundance index</li></ul></div><div class="dp nd2"><h5 class="anchored"><span></span>Needs improvement</h5><ul><li>Effort units are inconsistent and catchability drifts with technology</li><li>Series are short, with little species-level catch</li></ul></div></div><div class="dc"><div class="dh"><small>Data situation C</small><b>Catch-only data for many stocks</b></div><div class="dp dav"><h5 class="anchored"><span></span>Data available</h5><ul><li>National landings and FAO catch statistics</li><li>Catch series for hundreds of stocks</li></ul></div><div class="dp gd"><h5 class="anchored"><span></span>Done well</h5><ul><li>Catch-only methods bring hundreds of stocks into regional reporting</li><li>Results are available quickly for screening</li></ul></div><div class="dp nd2"><h5 class="anchored"><span></span>Needs improvement</h5><ul><li>No abundance signal, so results follow priors</li><li>A long, reliable catch history is needed, and an index or lengths for priority stocks</li></ul></div></div></div>
+<h3 style="font-size:24px;margin:34px 0 0" class="anchored">Gaps and research needs across all three situations</h3>
+<p class="sub">Gaps and limits that the sources reviewed identify for current practice in the region, which feed the discussion of better options on the overview page.</p>
+<div class="feat" style="grid-template-columns:1fr;border:0;background:none;margin-top:6px"><ul style="columns:2;padding-left:22px"><li><b>Reporting in English.</b> Recent assessment reports are rarely published in English.<sup class="cite"><a href="../training/index.html#src1">1</a></sup></li><li><b>Aggregated catch.</b> A large share of production is reported in nei categories, which hides species composition.<sup class="cite"><a href="../training/index.html#src5">5</a></sup></li><li><b>Staff, funding and methods.</b> Staff shortages, limited funding for surveys and non-standard methods hold back assessment and comparison between countries.<sup class="cite"><a href="../training/index.html#src14">14</a>, <a href="../training/index.html#src15">15</a></sup></li><li><b>Science to management.</b> Links between scientists and managers are weak and assessments are generally weakly linked to management decisions, although data limitation is no reason to avoid management.<sup class="cite"><a href="../training/index.html#src1">1</a>, <a href="../training/index.html#src14">14</a></sup></li><li><b>Shared stocks.</b> Management of transboundary stocks remains inadequate.<sup class="cite"><a href="../training/index.html#src15">15</a></sup></li><li><b>Independent surveys.</b> Fishery-independent surveys are valuable for baselines and as indicators of stock change, and are underused.<sup class="cite"><a href="../training/index.html#src2">2</a></sup></li><li><b>Single-species approaches.</b> Rarely adequate for tropical multispecies fisheries, and suited mainly to fisheries where one species is clearly targeted.<sup class="cite"><a href="../training/index.html#src1">1</a>, <a href="../training/index.html#src14">14</a></sup></li><li><b>Bio-economic modelling.</b> The APFIC workshop identified a need for it to inform management of multispecies, multigear fisheries.<sup class="cite"><a href="../training/index.html#src2">2</a></sup></li><li><b>Uncertainty checks.</b> Practitioners need to evaluate priors, model assumptions and sensitivity, especially for data-limited models.<sup class="cite"><a href="../training/index.html#src2">2</a></sup></li><li><b>Inland data.</b> Inland catches may be underestimated because many countries struggle to collect data.<sup class="cite"><a href="../training/index.html#src3">3</a></sup></li></ul></div></div><div class="band" id="cases"><h2 class="anchored">Case studies from Asia</h2>
+<p class="sub">Four cases from the Asian assessment review, in the common case study format. Fields marked "To be added" are not stated in the sources reviewed so far.</p>
+<div class="cs"><div class="cb"><div class="ch" style="background:#b9684f"><h4 class="anchored">Blue swimming crab, north-west Sri Lanka</h4><small>Single-species assessment tied to a harvest strategy</small></div><dl><dt>Fishery</dt><dd>Crab fishery in north-west Sri Lanka</dd><dt>Species</dt><dd>Blue swimming crab</dd><dt>How it was managed</dt><dd>Assessment linked to a harvest strategy, which led to effective management<sup class="cite"><a href="../training/index.html#src2">2</a></sup></dd><dt>Tools used</dt><dd>Spawning potential ratio (SPR) based assessment, a single-species approach</dd><dt>Data and period</dt><dd><span class="tbd">To be added</span></dd><dt>Result</dt><dd>SPR of 0.37, classed as sustainable<sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Key lesson</dt><dd>A single-species approach suits a clearly targeted species<sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Reference</dt><dd>Source <sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Toolbox page</dt><dd><a class="lnk" href="../select/index.html">Method selector</a>; related tool FLicc (LBSPR)</dd></dl></div><div class="cb"><div class="ch" style="background:#b9684f"><h4 class="anchored">Grouper fisheries, Saleh Bay, Indonesia</h4><small>Harvest strategy built by many partners</small></div><dl><dt>Fishery</dt><dd>Grouper fisheries in Saleh Bay</dd><dt>Species</dt><dd>Groupers</dd><dt>How it was managed</dt><dd>Assessment linked to a harvest strategy developed by researchers, government, fishers, industry and NGOs<sup class="cite"><a href="../training/index.html#src2">2</a></sup></dd><dt>Tools used</dt><dd><span class="tbd">To be added</span></dd><dt>Data and period</dt><dd><span class="tbd">To be added</span></dd><dt>Result</dt><dd>Effective management action linked to the assessment<sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Key lesson</dt><dd>Collaboration across researchers, government, fishers, industry and NGOs supported uptake<sup class="cite"><a href="../training/index.html#src2">2</a></sup></dd><dt>Reference</dt><dd>Sources <sup class="cite"><a href="../training/index.html#src1">1</a>, <a href="../training/index.html#src2">2</a></sup></dd><dt>Toolbox page</dt><dd><a class="lnk" href="../advice/index.html">Advice and MSE</a></dd></dl></div><div class="cb"><div class="ch" style="background:#b9684f"><h4 class="anchored">Hilsa shad, India and Bangladesh</h4><small>A shared stock assessed in two countries</small></div><dl><dt>Fishery</dt><dd>Hilsa fisheries in India and Bangladesh</dd><dt>Species</dt><dd>Hilsa shad</dd><dt>How it was managed</dt><dd><span class="tbd">To be added</span></dd><dt>Tools used</dt><dd><span class="tbd">To be added</span></dd><dt>Data and period</dt><dd><span class="tbd">To be added</span></dd><dt>Result</dt><dd>Overfished in India (B/Bmsy 0.21); overfishing flagged in Bangladesh (B/Bmsy 0.96)<sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Key lesson</dt><dd><span class="tbd">To be added</span></dd><dt>Reference</dt><dd>Source <sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Toolbox page</dt><dd><a class="lnk" href="../select/index.html">Method selector</a></dd></dl></div><div class="cb"><div class="ch" style="background:#b9684f"><h4 class="anchored">Andaman and Nicobar Islands, India</h4><small>Catch-only assessment of many stocks</small></div><dl><dt>Fishery</dt><dd>Fisheries of the Andaman and Nicobar Islands</dd><dt>Species</dt><dd>11 stocks</dd><dt>How it was managed</dt><dd><span class="tbd">To be added</span></dd><dt>Tools used</dt><dd>CMSY, a catch-only method</dd><dt>Data and period</dt><dd>Catch series; period to be added</dd><dt>Result</dt><dd>9 stocks sustainable, 2 fully exploited<sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Key lesson</dt><dd>Catch-only methods can screen many stocks where data are limited<sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Reference</dt><dd>Source <sup class="cite"><a href="../training/index.html#src1">1</a></sup></dd><dt>Toolbox page</dt><dd>CMSY+ in <a class="lnk" href="../methods/index.html">Assessment methods</a> (JABBA3)</dd></dl></div></div>
+</div><div class="band" id="training"><h2 class="anchored">Workshops and training</h2>
+
+<table class="tt wk caption-top table">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="width: 56%">Workshop</th>
+<th data-quarto-table-cell-role="th" style="width: 22%">Date</th>
+<th data-quarto-table-cell-role="th">Materials</th>
+</tr>
+<tr class="even">
+<td><strong>SEAFDEC and FAO consultative planning and training workshop on stock assessment, Southeast Asia (online)</strong><sup><a href="../training/index.html#src7">7</a></sup></td>
+<td>9 and 13–17 December 2021</td>
+<td><a href="https://www.seafdec.org/building-human-capacity-on-fish-stock-assessment-in-southeast-asia-towards-sustainable-use-of-fishery-resources/" class="lnk" target="_blank">Materials</a></td>
+</tr>
+<tr class="odd">
+<td><strong>FAO regional workshop for a network of practitioners, South Asia (Bangkok)</strong><sup><a href="../training/index.html#src15">15</a></sup></td>
+<td>January 2023</td>
+<td><span class="lnk" target="_blank">Materials</span></td>
+</tr>
+<tr class="even">
+<td><strong>BOBSAN Second Regional Dialogue and FAO validation workshop for Area 51 stocks, South Asia (Kochi)</strong><sup><a href="../training/index.html#src14">14</a></sup></td>
+<td>14–20 April 2024</td>
+<td><a href="https://www.bobpigo.org/publications/BOBSAN%20Regional%20Dialogue%20Outcome%20Document.pdf" class="lnk" target="_blank">Materials</a></td>
+</tr>
+<tr class="odd">
+<td><strong>SEAFDEC and FAO regional workshop on the State of Stocks Index, Southeast Asia (Bangkok)</strong><sup><a href="../training/index.html#src6">6</a></sup></td>
+<td>8–10 September 2025</td>
+<td><a href="https://www.seafdec.org/seafdec-and-fao-co-organize-regional-capacity-building-workshop-to-support-of-faos-state-of-stocks-index-sosi/" class="lnk" target="_blank">Materials</a></td>
+</tr>
+<tr class="phr even">
+<td><strong>Placeholder: regional workshop on stock assessment tools, East Asia</strong></td>
+<td>15–17 March 2026 (placeholder)</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr odd">
+<td><strong>Placeholder: national training on JABBA3 and FLicc, South Asia</strong></td>
+<td>10–12 February 2026 (placeholder)</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr even">
+<td><strong>Placeholder: training on length-based methods, Southeast Asia</strong></td>
+<td>5–7 May 2026 (placeholder)</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr odd">
+<td><strong>Placeholder: upcoming workshop, South Asia</strong></td>
+<td>8–10 June 2027 (placeholder)</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr even">
+<td><strong>Placeholder: upcoming workshop, Southeast Asia</strong></td>
+<td>21–23 September 2027 (placeholder)</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr odd">
+<td><strong>Placeholder: upcoming workshop, East Asia</strong></td>
+<td>12–14 October 2027 (placeholder)</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="band" id="contact"><div class="ctc"><div><h4 class="anchored">FAO supports its members</h4><p>Members with questions, ideas or feedback, or who would like to request training, a tool or help with a data gap, are welcome to reach out to FAO.</p></div><a href="../contributing.html">Contact FAO</a></div></div><script>(function(){function mk(sel,box,cls,lab){var P=document.querySelectorAll(sel);if(!P.length)return;var bar=document.createElement("div");bar.className="tabs2";P.forEach(function(p,i){p.classList.add("tpane");var b=document.createElement("button");b.textContent=lab(p,i);if(i==0){b.classList.add("on");p.classList.add("on")}b.addEventListener("click",function(){bar.querySelectorAll("button").forEach(function(x){x.classList.remove("on")});P.forEach(function(x){x.classList.remove("on")});b.classList.add("on");p.classList.add("on")});bar.appendChild(b)});P[0].parentNode.insertBefore(bar,P[0])}
+mk("#data .feat",0,0,function(p){return p.querySelector("h4").textContent});
+})();</script>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/henning-winker\.github\.io\/nfifm-toolbox");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>NFIFM Toolbox · development version, not an official FAO product</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/regions/asia.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/regions/asia.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Content CC BY 4.0 · Code MIT</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

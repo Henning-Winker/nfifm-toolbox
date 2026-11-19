@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data preparation and tools – NFIFM Toolbox</title>
+<title>Data preparation · NFIFM Toolbox – NFIFM Toolbox</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -85,9 +50,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b0ec255b4dafb7a5a03c00628cdf6300.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-1ceba77659b33a8aa15976cd64a5f6b7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-40878361a1e1eef6773465f72c3396e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,28 +79,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="../site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="../site_libs/datatables-binding-0.34.0/datatables.js"></script>
-<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-<link href="../site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
-<script src="../site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="../site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
-<script src="../site_libs/selectize-0.12.0/selectize.min.js"></script>
-<link href="../site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-<script src="../site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-<link href="../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 <link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/toolbox.css">
+<link rel="stylesheet" href="../assets/toolbox-data.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -322,32 +273,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../select/index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">NFIFM Toolbox</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../data-tools/index.html" aria-current="page"> 
+<span class="menu-text">Data preparation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../select/index.html"> 
 <span class="menu-text">Method selector</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../framework/principles.html"> 
-<span class="menu-text">Framework</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../methods/index.html"> 
-<span class="menu-text">Methods</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../data-tools/index.html"> 
-<span class="menu-text">Data</span></a>
+<span class="menu-text">Assessment methods</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../advice/index.html"> 
-<span class="menu-text">Advice</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../training/index.html"> 
-<span class="menu-text">Training and apps</span></a>
+<span class="menu-text">Advice and MSE</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../regions/index.html"> 
 <span class="menu-text">Regional hubs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../training/index.html"> 
+<span class="menu-text">Resources and training</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -373,502 +324,142 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NFIFM Toolbox</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../select/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Method selector</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-1-label">Framework</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Principles</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/hierarchy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hierarchical framework</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/crosswalk.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Crosswalk</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../framework/catalogue-structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catalogue structure</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-2-label">Assessment methods</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assessment methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-3-label">Biomass dynamic</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Surplus production models</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/spict.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SPiCT</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/jabba.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JABBA</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/biomass-dynamic/cmsy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CMSY+</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-4-label">Length-based and per-recruit</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based and per-recruit methods</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/flicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/lbspr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBSPR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/lbb.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LBB</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/fishblicc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">fishblicc</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/tropfishr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">TropFishR (ELEFAN_GA + YPR/SBPR)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/ypr-spr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">YPR / SPR / Thompson &amp; Bell</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/dynamic-pool/scal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical catch-at-length</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-controls="quarto-sidebar-section-5" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-5-label">Fishery indicators</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-5" aria-labelledby="quarto-sidebar-section-5-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/exploitation-history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exploitation history indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/trend-indicators.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Catch, CPUE and effort trend indicators</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/lbi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Length-based indicators (LBI)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/dashboard.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multi-indicator dashboards (traffic light)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/psa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Productivity–susceptibility analysis (PSA)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/empirical/fpi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fishery Performance Indicators (FPI) and governance</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/age-structured/age-structured.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Age-structured models (XSA, SAM, a4a, SS3)</span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-controls="quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text" id="quarto-sidebar-section-6-label">Multispecies</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-6" aria-labelledby="quarto-sidebar-section-6-label" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/multispecies/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Multispecies and mixed fisheries</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../methods/multispecies/mmsyfm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">mmsyFM</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-controls="quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-7-label">Data preparation and tools</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-7" aria-labelledby="quarto-sidebar-section-7-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data preparation and tools</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/data-preparation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data preparation workflow</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/cpuetargeting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">cpueTargeting</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/fishualizer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FishualizeR</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../data-tools/jara.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JARA</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-controls="quarto-sidebar-section-8" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-8-label">Advice and MSE</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-8" aria-labelledby="quarto-sidebar-section-8-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Advice and harvest strategies</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/flref.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLRef</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/mse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLR mse</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../advice/fpat.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FPAT App</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-controls="quarto-sidebar-section-9" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-9-label">Guidance</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-9" aria-labelledby="quarto-sidebar-section-9-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/misuse.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Misuse prevention</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/diagnostics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Diagnostics and model validation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../guidance/sensitivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sensitivity analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-controls="quarto-sidebar-section-10" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-10-label">Training and apps</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-10" aria-labelledby="quarto-sidebar-section-10-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../training/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Training and apps</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../training/smt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Stock Monitoring Tool</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../regions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Regional hubs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-controls="quarto-sidebar-section-11" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-11-label">Resources</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-      </div>
-      <ul id="quarto-sidebar-section-11" aria-labelledby="quarto-sidebar-section-11-label" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/installation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Installation guide</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Methodological literature</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Institutional applications</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../resources/guides/FLicc_user_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">FLicc user guide</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#all-data-tools" id="toc-all-data-tools" class="nav-link active" data-scroll-target="#all-data-tools">All data tools</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/data-tools/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data-tools/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content" tabindex="-1">
+<main class="content page-columns page-full column-body" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation</a></li></ol></nav><h1 class="title display-7">Data preparation</h1></header>
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li><li class="breadcrumb-item"><a href="../data-tools/index.html">Data preparation and tools</a></li></ol></nav>
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Data preparation and tools</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">From raw fishery data to inputs an assessment or indicator can trust</p>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+<header id="title-block-header">
 
 
 </header>
 
 
-<p>Most assessment problems start in the data: unstandardised CPUE, incomplete catches and unrepresentative length samples bias any method, however well it is chosen. This pillar of the toolbox covers everything that happens <strong>before</strong> a method is run. It sits alongside the assessment catalogue, not underneath it, because the same prepared data feed several methods and the weight of evidence across methods.</p>
-<div class="ws-grid">
-<div class="ws-card" style="--ws:#1f6a8a">
-<p><span class="ws-num">Fishery level</span></p>
-<section id="data-preparation-workflow" class="level4">
-<h4 class="anchored" data-anchor-id="data-preparation-workflow"><a href="../data-tools/data-preparation.html">Data preparation workflow</a></h4>
-<p>Data inventory and timeline of events, life-history inventory, database set-up, cleaning and outliers, exploratory analysis. Based on FAO Technical Paper 706, with Excel templates.</p>
+<div class="column-screen">
+<div class="tbx p-data">
+<div class="head">
+<h1>Data preparation</h1>
+<span class="badge">Draft</span>
+<p class="lead">Data preparation precedes any assessment, indicator or harvest-strategy analysis, and consists of inventorying, cleaning and exploring fishery data so methods chosen later receive input fit for purpose. This page explains why preparation matters, how the workflow operates as an iterative cycle, and which toolbox tools support each stage.</p>
+<div class="jump"><span class="label" style="margin:0">On this page</span><a href="#why">Why it matters</a><a href="#workflow">Workflow</a><a href="#tools">Tools</a><a href="#next">Next step</a></div>
+
+</div>
+<div class="band">
+<section id="why">
+<h2 class="anchored">Why data preparation matters</h2>
+<p class="sub">Assessment methods inherit every weakness in data supplied to them: unstandardised CPUE, incomplete catches and unrepresentative length samples bias results from any method, whereas well-prepared data can feed several methods and support consistent advice across them. Time invested at this point therefore reduces risk in every later step.</p>
+<div class="label">Checks most likely to change an assessment</div>
+<div class="checks">
+<div class="chk"><h4 class="anchored">Gaps in coverage</h4><p>Missing years, areas or gears leave estimates resting on partial evidence.</p></div>
+<div class="chk"><h4 class="anchored">Hidden shifts in the timeline</h4><p>New gear, regulations or reporting systems can look like abundance change when none has occurred.</p></div>
+<div class="chk"><h4 class="anchored">Weak length samples</h4><p>Too few fish or bins per gear and year, inconsistent units, or fish far beyond L∞ undermine length-based methods.</p></div>
+<div class="chk"><h4 class="anchored">Missing catch</h4><p>Under-reported catch, absent fleets and "nei" species aggregates distort total removals.</p></div>
+<div class="chk"><h4 class="anchored">Nominal CPUE</h4><p>Raw catch rates used without standardisation reflect changes in fishing behaviour as much as in abundance.</p></div>
+<div class="chk"><h4 class="anchored">Short series, long histories</h4><p>Brief index series paired with long exploitation histories can hide early depletion, which local knowledge may reveal.</p></div>
+</div>
 </section>
 </div>
-<div class="ws-card" style="--ws:#2e7d4f">
-<p><span class="ws-num">Abundance indices</span></p>
-<section id="cpuetargeting" class="level4">
-<h4 class="anchored" data-anchor-id="cpuetargeting"><a href="../data-tools/cpuetargeting.html">cpueTargeting</a></h4>
-<p>CPUE standardisation for multispecies and multi-tactic fisheries, in nine steps from the raw logbook to an index with SE, with simulation tests of targeting.</p>
+<div class="band white">
+<section id="workflow">
+<h2 class="anchored">Workflow: an iterative cycle</h2>
+<p class="sub">Six stages usually repeat several times, since exploration often reveals errors or gaps that send users back to earlier stages. Each pass leaves data better understood, or their limits better documented.</p>
+<div class="flowW"><div class="flow">
+<svg width="1320" height="850" viewbox="0 0 1320 850">
+<defs><marker id="a1" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#3a9fd9"></path></marker><marker id="a2" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2273ae"></path></marker><marker id="a3" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#1d7a94"></path></marker><marker id="a4" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2a9a84"></path></marker><marker id="a5" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#2e8b57"></path></marker><marker id="a6" viewbox="0 0 10 10" refx="8" refy="5" markerunits="userSpaceOnUse" markerwidth="15" markerheight="15" orient="auto"><path d="M1 1 L9 5 L1 9 z" fill="#e08a1e"></path></marker></defs>
+<path d="M422 145 H486" stroke="#3a9fd9" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a1)"></path>
+<path d="M872 145 H936" stroke="#2b8ac7" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a1)"></path>
+<path d="M1130 292 V356" stroke="#2273ae" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a2)"></path>
+<path d="M938 505 H874" stroke="#2273ae" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a3)"></path>
+<path d="M488 505 H424" stroke="#1d7a94" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a4)"></path>
+<path d="M230 652 V716" stroke="#2a9a84" stroke-width="4" stroke-linecap="round" fill="none" marker-end="url(#a5)"></path>
+<path d="M38 505 H30 Q16 505 16 491 V159 Q16 145 30 145 H36" stroke="#e08a1e" stroke-width="4" stroke-dasharray="9 7" stroke-linecap="round" fill="none" marker-end="url(#a6)"></path>
+<g transform="translate(16,325) rotate(-90)"><rect x="-74" y="-12" width="148" height="24" rx="12" fill="#e08a1e"></rect><text x="0" y="5" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#fff">Repeat as needed</text></g>
+</svg>
+<div class="card" style="left:40px;top:0px"><div class="ch"><span class="num" style="background:#4db3e6">1</span><h3 class="anchored">Data inventory and timeline</h3></div><p>Lists every data source with its coverage and quality, and records events such as gear changes, closures and reporting changes that may explain shifts in data.</p><div class="chips"><a class="chip db">Database set-up</a><a class="chip tpl"><b>XLSX</b>Template 1: Data inventory</a><a class="chip fish" href="../data-tools/fishualizer.html">FishualizeR</a></div></div>
+<div class="card" style="left:490px;top:0px"><div class="ch"><span class="num" style="background:#3a9fd9">2</span><h3 class="anchored">Life-history inventory</h3></div><p>Compiles growth, natural mortality, maturity and length–weight parameters, noting sex, area and method of estimation for each.</p><div class="chips"><a class="chip db">Database set-up</a><a class="chip tpl"><b>XLSX</b>Template 2: Life history</a><a class="chip fish" href="../data-tools/fishualizer.html">FishualizeR</a><a class="chip oth">Stock Monitoring Tool</a></div></div>
+<div class="card" style="left:940px;top:0px"><div class="ch"><span class="num" style="background:#2b8ac7">3</span><h3 class="anchored">Database set-up</h3></div><p>Stores data in long format with one record per observation, supported by validation rules and a change log.</p><div class="chips"><a class="chip db">Database set-up</a><a class="chip tpl"><b>CSV</b>Method data templates</a></div></div>
+<div class="card" style="left:940px;top:360px"><div class="ch"><span class="num" style="background:#2273ae">4</span><h3 class="anchored">Cleaning and outliers</h3></div><p>Standardises names, codes and units, checks numbers and dates, and reviews outliers, retaining those that carry real signal.</p><div class="chips"><a class="chip oth plain">Excel</a><a class="chip fish" href="../data-tools/fishualizer.html">FishualizeR</a></div></div>
+<div class="card" style="left:490px;top:360px"><div class="ch"><span class="num" style="background:#1d7a94">5</span><h3 class="anchored">Exploratory analysis</h3></div><p>Examines coverage over time and space, quality of length compositions, catch and effort trends, and representativeness of indices.</p><div class="chips"><a class="chip fish" href="../data-tools/fishualizer.html">FishualizeR</a></div></div>
+<div class="card" style="left:40px;top:360px"><div class="ch"><span class="num" style="background:#2a9a84">6</span><h3 class="anchored">Data-type tools</h3></div><p>Standardises CPUE, combines indices and prepares length compositions by gear and year, depending on data held.</p><div class="chips"><a class="chip cpue" href="../data-tools/cpuetargeting.html">cpueTargeting</a><a class="chip jara" href="../data-tools/jara.html">JARA</a><a class="chip fish" href="../data-tools/fishualizer.html">FishualizeR</a></div></div>
+<div class="card" style="left:40px;top:720px;height:110px;border:2px solid #2e8b57"><div class="ch"><span class="num" style="background:#2e8b57">→</span><h3 class="anchored">Method selector*</h3></div><p style="margin:0">Uses the completed inventory to show which methods data can support.</p></div>
+</div></div>
+<p class="fnote">* <b>No dataset is perfect.</b> Whatever cannot be corrected is recorded as a caveat and carried into the next tool, so later advice reflects real limits of the data rather than an assumption of completeness.</p>
+<div class="legend"><span>Chips are links:</span><a class="chip fish" href="../data-tools/fishualizer.html">Tool</a><a class="chip tpl"><b>XLSX</b>Template</a></div>
 </section>
 </div>
-<div class="ws-card" style="--ws:#c4552b">
-<p><span class="ws-num">Length and biology</span></p>
-<section id="fishualizer" class="level4">
-<h4 class="anchored" data-anchor-id="fishualizer"><a href="../data-tools/fishualizer.html">FishualizeR</a></h4>
-<p>Interactive quality control, coverage and binning of length data; companion app to Technical Paper 706.</p>
+<div class="band">
+<section id="tools">
+<h2 class="anchored">Tools that support the workflow</h2>
+<p class="sub">Four tools support the workflow. Database set-up serves users beginning without a digital dataset, whereas the other three address specific data types, so users choose according to data held. Numbered badges show workflow stages in which each tool applies.</p>
+<div class="tools">
+
+<div class="tool" style="--c:#2e7d4f;--tint:#eef7f1">
+<div class="th"><h3 class="anchored">Database set-up</h3><span class="tag">Guide</span></div>
+<div class="tb">
+<p class="obj">Supports users starting without a digital dataset, whether by digitising existing records such as logbooks, landing sheets and survey forms or by designing a new collection, and sets out how to store data in long format, with one record per observation, validation rules and a change log, so every tool in the toolbox can read results.</p>
+<dl><dt>Works on</dt><dd>Paper or spreadsheet records, or no existing records</dd><dt>Feeds into</dt><dd>Every tool and method in the toolbox</dd><dt>Stages</dt><dd><span class="sn">1</span><span class="sn">2</span><span class="sn">3</span></dd></dl>
+<div class="links">
+<a class="btn">Start building a dataset ↗</a>
+<a class="lk off">Data Standards Guide <i>Soon</i></a>
+<a class="lk" href="../data-tools/data-preparation.html#method-data-templates">Method data templates <span>→</span></a>
+<a class="lk">Inventory templates (Excel) <span>→</span></a>
+</div></div></div>
+
+<div class="tool" style="--c:#1f5fa8;--tint:#eef4fb">
+<div class="th"><h3 class="anchored">FishualizeR</h3><span class="tag">Shiny app</span></div>
+<div class="tb">
+<p class="obj">Guides users through visualisation and quality control of fisheries length data, from fixing unit inconsistencies and examining raw distributions to assessing coverage and aggregating samples into length compositions; developed as companion app to FAO Technical Paper 706.</p>
+<dl><dt>Works on</dt><dd>Length data in CSV format, as individual measurements or counts per bin</dd><dt>Feeds into</dt><dd>FLicc, LBSPR and LBB</dd><dt>Stages</dt><dd><span class="sn">1</span><span class="sn">2</span><span class="sn">4</span><span class="sn">5</span><span class="sn">6</span></dd></dl>
+<div class="links">
+<a class="btn">Open the app ↗</a>
+<a class="lk off">Shiny app user guide <i>Soon</i></a>
+<a class="lk off">Practice exercises <i>Soon</i></a>
+<a class="lk">Code on GitHub <span>→</span></a>
+</div></div></div>
+
+<div class="tool" style="--c:#0f7c86;--tint:#eef8f8">
+<div class="th"><h3 class="anchored">cpueTargeting</h3><span class="tag">R package</span></div>
+<div class="tb">
+<p class="obj">Standardises real catch and effort data from multispecies and multi-tactic fisheries where targeting changes over time, and tests through simulated operating models how well standardisation copes with such changes.</p>
+<dl><dt>Works on</dt><dd>Commercial logbook or observer CPUE</dd><dt>Feeds into</dt><dd>SPiCT, JABBA, BSM or empirical rules</dd><dt>Stage</dt><dd><span class="sn">6</span></dd></dl>
+<div class="links">
+<a class="btn">Open project page ↗</a>
+<a class="lk" href="../data-tools/cpuetargeting.html">Real-data guide <span>→</span></a>
+<a class="lk">Logbook example <span>→</span></a>
+<a class="lk">Logbook data template <span>→</span></a>
+<a class="lk">Code on GitHub <span>→</span></a>
+</div></div></div>
+
+<div class="tool" style="--c:#6b4fa0;--tint:#f4f0fa">
+<div class="th"><h3 class="anchored">JARA</h3><span class="tag">R package</span></div>
+<div class="tb">
+<p class="obj">Combines several noisy abundance indices, including series with missing years, into a joint index using a Bayesian state-space model, and estimates population trends and rates of decline with uncertainty.</p>
+<dl><dt>Works on</dt><dd>One or more abundance indices</dd><dt>Feeds into</dt><dd>Trend status and input data for assessment</dd><dt>Stage</dt><dd><span class="sn">6</span></dd></dl>
+<div class="links">
+<a class="btn">Open on GitHub ↗</a>
+<a class="lk off">Manual <i>To be added</i></a>
+<a class="lk" href="../data-tools/jara.html">Toolbox entry page <span>→</span></a>
+</div></div></div>
+
+</div>
 </section>
+
+<div class="next" id="next">
+<div><h3 class="anchored">Data prepared and ready?</h3><p>Use the method selector to see which methods the completed inventory can support, and which additional data would open further options.</p></div>
+<a href="../select/index.html">Open the method selector →</a>
 </div>
-<div class="ws-card" style="--ws:#6b4fa0">
-<p><span class="ws-num">Combining indices</span></p>
-<section id="jara" class="level4">
-<h4 class="anchored" data-anchor-id="jara"><a href="../data-tools/jara.html">JARA</a></h4>
-<p>Joint index from several noisy series with missing years; trend and decline rates.</p>
-</section>
-</div>
-<div class="ws-card" style="--ws:#0f7c86">
-<p><span class="ws-num">Inputs for each method</span></p>
-<section id="method-data-templates" class="level4">
-<h4 class="anchored" data-anchor-id="method-data-templates"><a href="../data-tools/data-preparation.html#method-data-templates">Method data templates</a></h4>
-<p>CSV layouts for length-based methods, surplus production models, CPUE standardisation and life history.</p>
-</section>
-</div>
-<div class="ws-card" style="--ws:#b7791f">
-<p><span class="ws-num">Next step</span></p>
-<section id="method-selector" class="level4">
-<h4 class="anchored" data-anchor-id="method-selector"><a href="../select/index.html">Method selector</a></h4>
-<p>The data inventory answers the selector’s questions: which methods the prepared data can support.</p>
-</section>
+
 </div>
 </div>
-<section id="all-data-tools" class="level2">
-<h2 class="anchored" data-anchor-id="all-data-tools">All data tools</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-5ba51ce209fad84fd649" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-5ba51ce209fad84fd649">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["Data preparation","CPUE and abundance indices","CPUE and abundance indices","Length composition data"],["Inventory, cleaning and exploratory analysis","CPUE standardisation with targeting","Joint index and trend analysis","Length-composition QC and binning"],["All fisheries, before any assessment","Multispecies logbook or observer catch and effort","Multiple noisy indices; missing years","Raw or binned length data (CSV)"],["<a href=\"../data-tools/data-preparation.html\">Data preparation workflow (FAO TP 706)<\/a>","<a href=\"../data-tools/cpuetargeting.html\">cpueTargeting<\/a>","<a href=\"../data-tools/jara.html\">JARA<\/a>","<a href=\"../data-tools/fishualizer.html\">FishualizeR<\/a>"],["draft","draft (showcase)","basic","draft (showcase)"],["n/a","No (GAM, mgcv)","Yes","n/a"],["n/a","No","Yes","n/a"],["n/a","Tweedie or delta GAM","Process + observation error","n/a"],["n/a","n/a","Yes","n/a"],["n/a","Yes (tactics)","No","n/a"],["n/a","n/a","No","n/a"],["Data inventory, timeline of events, life-history inventory, cleaned data, coverage and EDA","Standardised CPUE index with log SE and CV; diagnostics (influence, residuals, predictive checks); simulation tests of targeting","Joint index with uncertainty, population trend and decline rates","QC plots, data-coverage metrics, length compositions binned by year, area or gear"],["Input data","Input data","Input data, trend status","Input data"],["Excel templates, FishualizeR","cpueTargeting (R; GPL-3)","JARA (R/JAGS)","FishualizeR Shiny app (FAO TP 706; MPL-2.0)"],["","","","FishualizeR (web app)"]],"container":"<table class=\"compact stripe hover\">\n  <thead>\n    <tr>\n      <th>Class<\/th>\n      <th>Sub-class<\/th>\n      <th>Application<\/th>\n      <th>Tool<\/th>\n      <th>Status<\/th>\n      <th>Bayesian<\/th>\n      <th>State space<\/th>\n      <th>Error structure<\/th>\n      <th>Multiple indices<\/th>\n      <th>Multi-gear<\/th>\n      <th>Dome selectivity<\/th>\n      <th>Outputs<\/th>\n      <th>Advice role<\/th>\n      <th>Software<\/th>\n      <th>No-code app<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":25,"scrollX":true,"dom":"tip","columnDefs":[{"name":"Class","targets":0},{"name":"Sub-class","targets":1},{"name":"Application","targets":2},{"name":"Tool","targets":3},{"name":"Status","targets":4},{"name":"Bayesian","targets":5},{"name":"State space","targets":6},{"name":"Error structure","targets":7},{"name":"Multiple indices","targets":8},{"name":"Multi-gear","targets":9},{"name":"Dome selectivity","targets":10},{"name":"Outputs","targets":11},{"name":"Advice role","targets":12},{"name":"Software","targets":13},{"name":"No-code app","targets":14}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<script>(function(){var w=document.querySelector('.p-data .flowW'),f=w&&w.firstElementChild;if(!w)return;function r(){var s=Math.min(1,w.clientWidth/1320);f.style.transformOrigin='0 0';f.style.transform='scale('+s+')';w.style.height=(f.offsetHeight*s+10)+'px'}r();addEventListener('resize',r);addEventListener('load',r)})();</script>
 </div>
-</div>
-<p><span class="todo">To add: catch reconstruction, raising length samples to the catch, survey index design-based estimators.</span></p>
 
 
-<!-- -->
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -989,57 +580,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
-        for (let i=0; i<cellDetails.length; i++) {
-          const details = cellDetails[i];
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1446,7 +986,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script type="application/javascript">
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
-<nav class="page-navigation" aria-label="Page">
+<nav class="page-navigation column-body" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../methods/multispecies/mmsyfm.html" class="pagination-link" aria-label="mmsyFM">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">mmsyFM</span>
@@ -1457,64 +997,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <span class="nav-page-text">Data preparation workflow</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Data preparation and tools"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "From raw fishery data to inputs an assessment or indicator can trust"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Most assessment problems start in the data: unstandardised CPUE, incomplete catches and unrepresentative length samples bias any method, however well it is chosen. This pillar of the toolbox covers everything that happens **before** a method is run. It sits alongside the assessment catalogue, not underneath it, because the same prepared data feed several methods and the weight of evidence across methods.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>::: {.ws-grid}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#1f6a8a"}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Fishery level</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Data preparation workflow](data-preparation.qmd)</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Data inventory and timeline of events, life-history inventory, database set-up, cleaning and outliers, exploratory analysis. Based on FAO Technical Paper 706, with Excel templates.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#2e7d4f"}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Abundance indices</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [cpueTargeting](cpuetargeting.qmd)</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>CPUE standardisation for multispecies and multi-tactic fisheries, in nine steps from the raw logbook to an index with SE, with simulation tests of targeting.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#c4552b"}</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Length and biology</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [FishualizeR](fishualizer.qmd)</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Interactive quality control, coverage and binning of length data; companion app to Technical Paper 706.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#6b4fa0"}</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Combining indices</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [JARA](jara.qmd)</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Joint index from several noisy series with missing years; trend and decline rates.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#0f7c86"}</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Inputs for each method</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Method data templates](data-preparation.qmd#method-data-templates)</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>CSV layouts for length-based methods, surplus production models, CPUE standardisation and life history.</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>::: {.ws-card style="--ws:#b7791f"}</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Next step</span><span class="co">]</span>{.ws-num}</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Method selector](../select/index.qmd)</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>The data inventory answers the selector's questions: which methods the prepared data can support.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## All data tools</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"R/toolbox.R"</span>)</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">crosswalk_table</span>(<span class="at">site_root =</span> <span class="st">"../"</span>, <span class="at">category =</span> <span class="st">"Data and CPUE tools"</span>)</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">To add: catch reconstruction, raising length samples to the catch, survey index design-based estimators.</span><span class="co">]</span>{.todo}</span>
-</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1523,7 +1006,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/data-tools/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data-tools/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/data-tools/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/data-tools/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Content CC BY 4.0 · Code MIT</p>
 </div>
