@@ -15,7 +15,7 @@ css:
 
 ```{=html}
 <div class="tbx p-reg">
-<div class="subnav"><a href="index.qmd">Overview</a><a href="asia.qmd">Asia</a><a href="africa.qmd">Africa</a><a href="latin-america.qmd">Latin America</a><a href="sids.qmd">SIDS</a><a class="on" href="inland-fisheries.qmd">Inland fisheries</a><a href="developed-countries.qmd">Developed countries</a></div><div class="hero" style="--c:#6b4fa0"><div class="rh"><div><h1>Inland fisheries<span class="pill">Draft</span></h1>
+<div class="subnav"><a href="index.qmd">Overview</a><a href="asia.qmd">Asia</a><a href="gfcm.qmd">Mediterranean and Black Sea</a><a href="africa.qmd">Africa</a><a href="latin-america.qmd">Latin America</a><a href="sids.qmd">SIDS</a><a class="on" href="inland-fisheries.qmd">Inland fisheries</a><a href="developed-countries.qmd">Developed countries</a></div><div class="hero" style="--c:#6b4fa0"><div class="rh"><div><h1>Inland fisheries<span class="pill">Draft</span></h1>
 <p class="lead" style="margin-bottom:10px"><b>Lakes, rivers and reservoirs</b></p><p class="lead">This hub follows the layout of the Asia hub: tools often used in the region, then case studies. Content for Inland fisheries has not been drafted yet.</p>
 <div class="label" style="margin:14px 0 6px">Regional priorities</div><div class="chips"><span class="chip">Inland fish stocks</span><span class="chip">Transboundary stocks</span><span class="chip">Data-limited methods</span></div>
 <p style="margin:16px 0 4px;font-size:16.5px"><b>Key partners:</b> Regional bodies, river basin organizations and national institutions (e.g. LVFO, LTA, Nile, Niger, Mekong)</p><p style="margin:0;font-size:16.5px"><b>Linked programmes:</b> Inland fisheries initiatives; FAO TCP and regional projects</p></div>

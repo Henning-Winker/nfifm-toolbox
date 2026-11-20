@@ -15,7 +15,7 @@ css:
 
 ```{=html}
 <div class="tbx p-reg">
-<div class="subnav"><a href="index.qmd">Overview</a><a href="asia.qmd">Asia</a><a href="africa.qmd">Africa</a><a href="latin-america.qmd">Latin America</a><a href="sids.qmd">SIDS</a><a href="inland-fisheries.qmd">Inland fisheries</a><a class="on" href="developed-countries.qmd">Developed countries</a></div><div class="hero" style="--c:#4a649c"><div class="rh"><div><h1>Developed countries<span class="pill">Draft</span></h1>
+<div class="subnav"><a href="index.qmd">Overview</a><a href="asia.qmd">Asia</a><a href="gfcm.qmd">Mediterranean and Black Sea</a><a href="africa.qmd">Africa</a><a href="latin-america.qmd">Latin America</a><a href="sids.qmd">SIDS</a><a href="inland-fisheries.qmd">Inland fisheries</a><a class="on" href="developed-countries.qmd">Developed countries</a></div><div class="hero" style="--c:#4a649c"><div class="rh"><div><h1>Developed countries<span class="pill">Draft</span></h1>
 <p class="lead" style="margin-bottom:10px"><b>Partner role</b></p><p class="lead">This hub follows the layout of the Asia hub: tools often used in the region, then case studies. Content for Developed countries has not been drafted yet.</p>
 <div class="label" style="margin:14px 0 6px">Regional priorities</div><div class="chips"><span class="chip">Method partners and peer review</span><span class="chip">Twinning and mentoring</span><span class="chip">Mixed-fishery advice experience</span></div>
 <p style="margin:16px 0 4px;font-size:16.5px"><b>Key partners:</b> ICES, NOAA, IMR Norway and other national laboratories</p><p style="margin:0;font-size:16.5px"><b>Linked programmes:</b> EAF-Nansen (IMR); donor trust funds</p></div>
