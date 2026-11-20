@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Mediterranean and Black Sea – NFIFM Toolbox</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-447e42e69aaa9833c0ba1b986f430b20.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-40878361a1e1eef6773465f72c3396e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-62341341a3bd1c5a4b29066455df023e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/toolbox.css">
+<link rel="stylesheet" href="../assets/toolbox-asia.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          toggle.setAttribute("aria-checked", alternate ? "true" : "false");
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455).
+    // Not run on load: stylesheets are set before first paint there, and
+    // scrolling would undo the scroll to a URL fragment (#14973).
+    // The one pixel nudge keeps the reader where they were.
+    const refreshSafariScrollbar = () => {
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        const scrollY = window.scrollY;
+        window.scrollTo(0, scrollY > 0 ? scrollY - 1 : 1);
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      refreshSafariScrollbar();
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NFIFM Toolbox</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">NFIFM Toolbox</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../data-tools/index.html"> 
+<span class="menu-text">Data preparation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../select/index.html"> 
+<span class="menu-text">Method selector</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../methods/index.html"> 
+<span class="menu-text">Assessment methods</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../advice/index.html"> 
+<span class="menu-text">Advice and MSE</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../regions/index.html"> 
+<span class="menu-text">Regional hubs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../training/index.html"> 
+<span class="menu-text">Resources and training</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../contributing.html"> 
+<span class="menu-text">Contribute</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Henning-Winker/nfifm-toolbox"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Mediterranean and Black Sea</h1></header>
+
+
+<header id="title-block-header">
+
+
+</header>
+
+
+<div class="column-screen">
+<div class="tbx p-asia">
+<div class="subnav"><a href="../regions/index.html">Overview</a><a href="../regions/asia.html">Asia</a><a class="on" href="../regions/gfcm.html">Mediterranean and Black Sea</a><a href="../regions/africa.html">Africa</a><a href="../regions/latin-america.html">Latin America</a><a href="../regions/sids.html">SIDS</a><a href="../regions/inland-fisheries.html">Inland fisheries</a><a href="../regions/developed-countries.html">Developed countries</a></div><div class="hero" style="--c:#2a6f97"><div class="rh"><div><h1>Mediterranean and Black Sea<span class="pill">Draft</span></h1>
+<p class="lead" style="margin-bottom:10px"><b>GFCM area of application, FAO Area 37</b></p><p class="lead">The Mediterranean and Black Sea combine an old, mostly small-scale fleet with a long record of overexploited demersal and small pelagic stocks. Overexploitation has fallen to its lowest level in a decade, and the General Fisheries Commission for the Mediterranean (GFCM) now gives quantitative advice for its key stocks through a harmonized summary sheet. This page describes the region's fisheries and stocks, the route from assessment to scientific advice, the tools in use with toolbox options, and case studies.</p>
+<div class="label" style="margin:14px 0 6px">Regional priorities</div><div class="chips"><span class="chip">Overexploited demersal stocks</span><span class="chip">Small pelagics</span><span class="chip">Multiannual management plans</span><span class="chip">Bycatch and discards</span><span class="chip">Small-scale fisheries</span></div>
+<p style="margin:16px 0 4px;font-size:16.5px"><b>Key partners:</b> GFCM (Scientific Advisory Committee, subregional committees, Working Group on the Black Sea), ICCAT for tunas</p><p style="margin:0;font-size:16.5px"><b>Main report:</b> <a class="lnk" href="https://doi.org/10.4060/cd7701en" target="_blank">The State of Mediterranean and Black Sea Fisheries 2025</a> (SoMFi)<sup class="cite"><a href="#g1">1</a></sup></p></div>
+<div class="rimg" style="max-width:300px;justify-self:end"><a href="https://doi.org/10.4060/cd7701en" target="_blank" title="Open The State of Mediterranean and Black Sea Fisheries 2025"><img src="../assets/img/regions/somfi-2025-cover.png" alt="Cover of The State of Mediterranean and Black Sea Fisheries 2025" style="filter:none"></a><div style="font-size:13px;text-align:center;margin-top:8px"><a class="lnk" href="https://doi.org/10.4060/cd7701en" target="_blank">Read SoMFi 2025</a></div></div></div></div><div class="band tint" id="context"><h2 class="anchored">Regional context</h2>
+<p class="sub">Most figures from SoMFi 2025, with data to 2023.<sup class="cite"><a href="#g1">1</a>, <a href="#g2">2</a></sup></p>
+<div class="sixs">
+<div class="sn" style="--c:#2a6f97"><b>1.12 million t</b><span>Capture landings in 2023, up 13% from 2022.<sup class="cite"><a href="#g1">1</a></sup></span></div>
+<div class="sn" style="--c:#2a6f97"><b>83 075 vessels</b><span>Average age over 35 years. Small-scale vessels are about 81% of the fleet but take 13% of landings.<sup class="cite"><a href="#g1">1</a></sup></span></div>
+<div class="sn" style="--c:#2a6f97"><b>63% of landings</b><span>From purse seiners and pelagic trawlers, which are 5.2% of the fleet.<sup class="cite"><a href="#g1">1</a></sup></span></div>
+<div class="sn" style="--c:#2a6f97"><b>39.5% from the Black Sea</b><span>Landed by about 13% of the fleet, mostly European anchovy.<sup class="cite"><a href="#g1">1</a></sup></span></div>
+<div class="sn" style="--c:#2a6f97"><b>750 000 jobs</b><span>Along the capture fisheries value chain, including 197 000 people on board. First-sale value USD 3.1 billion.<sup class="cite"><a href="#g1">1</a></sup></span></div>
+<div class="sn" style="--c:#2a6f97"><b>45% from aquaculture</b><span>Marine and brackish aquaculture produced 940 000 t in 2023, over 45% of regional aquatic food production.<sup class="cite"><a href="#g1">1</a>, <a href="#g2">2</a></sup></span></div></div>
+</div><div class="band" id="stocks"><h2 class="anchored">Fisheries and stocks at a glance</h2>
+<p class="sub">Two complementary views. FAO's State of Stocks Index (SoSI) classifies stocks in Area 37 by tier; the GFCM reports on the stocks with validated assessments.</p>
+<div class="stg" style="grid-template-columns:1fr"><div><div class="pnl on" id="a37"><div class="scc"><h4 class="anchored">Mediterranean and Black Sea (FAO Area 37)</h4><div class="big">127 stocks</div><div class="sm2">Western, central and eastern Mediterranean, Adriatic Sea and Black Sea. Landings about 1.2 million t.<sup class="cite"><a href="#g4">4</a></sup></div>
+<div class="row2"><div class="lb"><span>Stocks by tier and status (SoSI)</span></div><div style="display:flex;flex-wrap:wrap;gap:18px 28px;align-items:flex-end;margin:6px 0 4px"><div style="min-width:120px"><div style="font-size:22px;font-weight:800;color:#12364d;line-height:1">n = 127</div><div style="font-size:13px;color:#5b6b78;margin-top:4px">45.7% sustainable</div></div><div style="flex:1;min-width:170px"><div style="font-size:13px;font-weight:700;color:#12364d">Tier 1 <span style="font-weight:400;color:#5b6b78">Analytical assessments</span></div><div style="display:flex;gap:8px;margin-top:6px;font-size:11px;font-weight:700;color:#5b6b78"><div style="width:46px;text-align:center">U</div><div style="width:46px;text-align:center">M</div><div style="width:46px;text-align:center">O</div></div><div style="display:flex;gap:8px;margin-top:2px"><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;background:#8EC8E6;color:#0B3550">18</div><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;background:#1874CD;color:#fff">40</div><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;background:#FFA500;color:#1B2631">68</div></div></div><div style="flex:1;min-width:170px"><div style="font-size:13px;font-weight:700;color:#12364d">Tier 2 <span style="font-weight:400;color:#5b6b78">Catch and effort biomass dynamics</span></div><div style="display:flex;gap:8px;margin-top:6px;font-size:11px;font-weight:700;color:#5b6b78"><div style="width:46px;text-align:center">U</div><div style="width:46px;text-align:center">M</div><div style="width:46px;text-align:center">O</div></div><div style="display:flex;gap:8px;margin-top:2px"><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;border:1px dashed #d5dee5;color:#b8c4cd">–</div><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;border:1px dashed #d5dee5;color:#b8c4cd">–</div><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;border:1px dashed #d5dee5;color:#b8c4cd">–</div></div></div><div style="flex:1;min-width:170px"><div style="font-size:13px;font-weight:700;color:#12364d">Tier 3 <span style="font-weight:400;color:#5b6b78">Indicators, catch-only, length-based</span></div><div style="display:flex;gap:8px;margin-top:6px;font-size:11px;font-weight:700;color:#5b6b78"><div style="width:46px;text-align:center">U</div><div style="width:46px;text-align:center">M</div><div style="width:46px;text-align:center">O</div></div><div style="display:flex;gap:8px;margin-top:2px"><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;border:1px dashed #d5dee5;color:#b8c4cd">–</div><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;border:1px dashed #d5dee5;color:#b8c4cd">–</div><div style="display:flex;align-items:center;justify-content:center;width:46px;height:34px;border-radius:5px;font-weight:700;font-size:14px;background:#FFA500;color:#1B2631">1</div></div></div></div></div>
+<div class="row2"><div class="lb"><span>How many are fished sustainably (SoSI)</span></div><div class="bar3"><span style="width:45.7%;background:#1874CD">Sustainable 45.7%</span><span style="width:54.3%;background:#FFA500;color:#1B2631">Overfished 54.3%</span></div><div class="cap2">Share of stocks: 18 underfished and 40 maximally sustainably fished; 69 overfished. Nearly all stocks are in Tier 1.</div></div>
+<div class="row2"><div class="lb"><span>GFCM validated assessments (SoMFi 2025)</span></div><div class="bar3"><span style="width:48%;background:#1874CD">Not overexploited 48%</span><span style="width:52%;background:#FFA500;color:#1B2631">Overexploited 52%</span></div><div class="cap2">120 assessments in 2023, up from 45 in 2008; 67 give F/F<sub>MSY</sub> and 51 also biomass reference points. Overexploited stocks fell from 87% a decade earlier to 52%, the lowest in the series. F/F<sub>MSY</sub> 0.74 to 1.1; biomass of assessed commercial species up 25% since 2013.<sup class="cite"><a href="#g1">1</a>, <a href="#g2">2</a></sup></div></div>
+</div></div></div><div class="key"><span><i style="background:#8EC8E6"></i>U underfished</span><span><i style="background:#1874CD"></i>M maximally sustainably fished</span><span><i style="background:#FFA500"></i>O overfished</span></div></div>
+<p class="src">SoSI counts and status from the FAO State of Stocks Index, final classification by tier and area.<sup class="cite"><a href="#g4">4</a></sup> GFCM figures from SoMFi 2025.<sup class="cite"><a href="#g1">1</a></sup> The two views count stocks differently and are not directly comparable.</p></div><div class="band tint" id="management"><h2 class="anchored">From assessment to scientific advice</h2>
+<p class="sub">GFCM members report data through the Data Collection Reference Framework. Stock assessments are prepared and reviewed in the working groups on stock assessment, validated by the Scientific Advisory Committee (SAC), and turned into recommendations by the Commission.</p>
+<div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:18px 0 6px"><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:15.5px;color:#12364d">National data</div><div style="font-size:14px;color:#4f5f6b;margin-top:4px">Catch, effort, length and survey data reported through the Data Collection Reference Framework</div></div><div style="display:flex;align-items:center;color:#2a6f97;font-size:22px;font-weight:800">→</div><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:15.5px;color:#12364d">Working groups</div><div style="font-size:14px;color:#4f5f6b;margin-top:4px">Stock assessments of demersal and small pelagic stocks, and the Working Group on the Black Sea</div></div><div style="display:flex;align-items:center;color:#2a6f97;font-size:22px;font-weight:800">→</div><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:15.5px;color:#12364d">Subregional committees and SAC</div><div style="font-size:14px;color:#4f5f6b;margin-top:4px">Review and validation; scientific advice in a harmonized summary sheet</div></div><div style="display:flex;align-items:center;color:#2a6f97;font-size:22px;font-weight:800">→</div><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#2a6f97"><div style="font-weight:800;font-size:15.5px;color:#fff">Commission</div><div style="font-size:14px;color:#dbe9f2;margin-top:4px">Recommendations: multiannual management plans, fisheries restricted areas, catch and effort limits</div></div></div>
+<p class="src">Since 2013 GFCM members have adopted 11 management plans and established 11 fisheries restricted areas. About 7.3% of the fleet (over 6 000 vessels) is authorized under GFCM plans and measures.<sup class="cite"><a href="#g1">1</a>, <a href="#g2">2</a></sup> Stock status from GFCM assessments also informs FAO reporting through SoSI and SDG 14.4.1.</p>
+
+<h3 style="font-size:24px;margin:34px 0 0" class="anchored">Advice framework with FLRef <span class="pill">Placeholder</span></h3>
+<p class="sub">At the request of the SAC (2021 to 2023), a new summary sheet harmonizes how quantitative advice is reported for key stocks, particularly those under management plans. The SAC endorsed it, and it was tested in the working groups on stock assessment in 2024. Functions in the FLR package <a class="lnk" href="../advice/flref.html">FLRef</a> produce the sheet's tables and figures from the main assessment platforms.<sup class="cite"><a href="#g5">5</a></sup></p>
+<div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:18px 0 6px"><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:15.5px;color:#12364d">Assessment output</div><div style="font-size:14px;color:#4f5f6b;margin-top:4px">a4a, FLSAM, XSA, Stock Synthesis, SPiCT or JABBA</div></div><div style="display:flex;align-items:center;color:#2a6f97;font-size:22px;font-weight:800">→</div><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:15.5px;color:#12364d">FLRef</div><div style="font-size:14px;color:#4f5f6b;margin-top:4px">Converts the output to a stock object with reference points</div></div><div style="display:flex;align-items:center;color:#2a6f97;font-size:22px;font-weight:800">→</div><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:15.5px;color:#12364d">Status with uncertainty</div><div style="font-size:14px;color:#4f5f6b;margin-top:4px">Time series of recruitment, SSB, F and catch, or B/B<sub>target</sub> and F/F<sub>target</sub></div></div><div style="display:flex;align-items:center;color:#2a6f97;font-size:22px;font-weight:800">→</div><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#fff"><div style="font-weight:800;font-size:15.5px;color:#12364d">Fishing opportunities</div><div style="font-size:14px;color:#4f5f6b;margin-top:4px">F-based short-, medium- and long-term forecasts, aligned with the management plan</div></div><div style="display:flex;align-items:center;color:#2a6f97;font-size:22px;font-weight:800">→</div><div style="flex:1;min-width:160px;border:1.5px solid #2a6f97;border-radius:12px;padding:12px 14px;background:#2a6f97"><div style="font-weight:800;font-size:15.5px;color:#fff">Summary sheet</div><div style="font-size:14px;color:#dbe9f2;margin-top:4px">Advice table, status plots, forecasts, comparison with the previous assessment</div></div></div>
+<div class="feat" style="grid-template-columns:1fr;border:0;background:none;margin-top:6px"><ul style="columns:2;padding-left:22px">
+<li><b>Advice table.</b> Headline advice with current levels, reference points, quantitative status and the F reduction needed: % F reduction = (1 − 1/F<sub>ratio</sub>) × 100.<sup class="cite"><a href="#g5">5</a></sup></li>
+<li><b>Forecasts.</b> Short-term (intermediate year plus one), medium-term (about five years or to the end of the management plan) and, where rebuilding takes longer, long-term (about two generations).<sup class="cite"><a href="#g5">5</a></sup></li>
+<li><b>Comparison and partial F.</b> A plot comparing the update with the previous assessment, and partial fishing mortality by fleet or gear for integrated models such as Stock Synthesis.<sup class="cite"><a href="#g5">5</a></sup></li>
+<li><b>Output to the STAR template.</b> CSV files of time series and reference points for the GFCM stock assessment reporting template.<sup class="cite"><a href="#g5">5</a></sup></li>
+<li><b>User guides.</b> Worked examples for a4a (European hake GSA 3, red mullet GSA 16), SPiCT (deep-water rose shrimp GSAs 17–18) and Stock Synthesis (European hake GSAs 17–18).<sup class="cite"><a href="#g5">5</a></sup></li>
+<li><b>Model summary sheets.</b> Examples include European hake in GSAs 12–16 (Stock Synthesis) and round sardinella in GSAs 26 and 27 (SPiCT).<sup class="cite"><a href="#g6">6</a></sup></li></ul></div>
+<p class="note">Placeholder: user guides, example summary sheets and a worked FLRef example are to be added.</p></div><div class="band" id="tools"><h2 class="anchored">Tools used in the Mediterranean and Black Sea</h2>
+<p class="sub">Assessment platforms used for GFCM quantitative advice, as listed in the FLRef user guides, with other methods in use.<sup class="cite"><a href="#g5">5</a></sup> Select a data situation or a tool to see its limits and the toolbox option.</p>
+<div class="tsel"><label for="toolsel">Find by data situation or by tool or method</label><select id="toolsel"><optgroup label="Data situation"><option value="g|Catch-at-age">Catch-at-age</option><option value="g|Integrated">Integrated</option><option value="g|Catch and index">Catch and index</option><option value="g|Catch-only">Catch-only</option><option value="g|Length-based">Length-based</option><option value="g|Surveys">Surveys</option></optgroup><optgroup label="Tool or method"><option value="t|Catch-at-age|a4a (FLa4a)">a4a (FLa4a)</option><option value="t|Catch-at-age|XSA">XSA</option><option value="t|Catch-at-age|FLSAM (SAM)">FLSAM (SAM)</option><option value="t|Integrated|Stock Synthesis">Stock Synthesis</option><option value="t|Catch and index|SPiCT">SPiCT</option><option value="t|Catch and index|JABBA">JABBA</option><option value="t|Catch-only|CMSY">CMSY</option><option value="t|Length-based|LBSPR, length indicators">LBSPR, length indicators</option><option value="t|Surveys|MEDITS, MEDIAS and Black Sea surveys">MEDITS, MEDIAS and Black Sea surveys</option></optgroup></select><span id="toolcount"></span></div>
+
+<table id="tooltab" class="tt wide rt caption-top table">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="width: 11%">Data situation</th>
+<th data-quarto-table-cell-role="th" style="width: 16%">Tool or method</th>
+<th data-quarto-table-cell-role="th" style="width: 17%">What it does</th>
+<th data-quarto-table-cell-role="th" style="width: 30%">Caveats and limitations</th>
+<th data-quarto-table-cell-role="th" style="width: 26%">Tool recommendation</th>
+</tr>
+<tr class="even" data-g="Catch-at-age" data-t="a4a (FLa4a)">
+<td class="g">Catch-at-age</td>
+<td><strong>a4a (FLa4a)</strong></td>
+<td>Statistical catch-at-age model in FLR</td>
+<td class="cv">Needs catch-at-age and survey or CPUE indices. Results depend on the submodels chosen for F, catchability and recruitment.</td>
+<td class="sp rec">Keep. Report through FLRef; check with the model acceptance checklist.</td>
+</tr>
+<tr class="odd" data-g="Catch-at-age" data-t="XSA">
+<td class="g">Catch-at-age</td>
+<td><strong>XSA</strong></td>
+<td>Extended survivors analysis (virtual population analysis)</td>
+<td class="cv">Assumes catch-at-age is known without error. Sensitive to tuning indices and to the shrinkage settings.</td>
+<td class="sp rec">Prefer a4a or SAM where possible; report through FLRef.</td>
+</tr>
+<tr class="even" data-g="Catch-at-age" data-t="FLSAM (SAM)">
+<td class="g">Catch-at-age</td>
+<td><strong>FLSAM (SAM)</strong></td>
+<td>State-space assessment model</td>
+<td class="cv">Needs catch-at-age and indices. Process and observation variances can be confounded.</td>
+<td class="sp rec">Keep. Report through FLRef.</td>
+</tr>
+<tr class="odd" data-g="Integrated" data-t="Stock Synthesis">
+<td class="g">Integrated</td>
+<td><strong>Stock Synthesis</strong></td>
+<td>Integrated length- and age-structured model, multi-fleet</td>
+<td class="cv">Complex: many settings to agree; diagnostics are essential. Few national scientists run it.</td>
+<td class="sp rec">Keep for key stocks. Review with ss3diags2 and cross-check with JABBA3 and FLicc.</td>
+</tr>
+<tr class="even" data-g="Catch and index" data-t="SPiCT">
+<td class="g">Catch and index</td>
+<td><strong>SPiCT</strong></td>
+<td>Surplus production model in continuous time</td>
+<td class="cv">Needs an index that tracks abundance. Priors on the shape and process error affect status.</td>
+<td class="sp rec">Keep, following the good practice guidelines. Cross-check with JABBA3.</td>
+</tr>
+<tr class="odd" data-g="Catch and index" data-t="JABBA">
+<td class="g">Catch and index</td>
+<td><strong>JABBA</strong></td>
+<td>Bayesian surplus production model</td>
+<td class="cv">Needs an informative index and priors for data-poor stocks.</td>
+<td class="sp rec">Switch to JABBA3. Prepare indices with cpueTargeting.</td>
+</tr>
+<tr class="even" data-g="Catch-only" data-t="CMSY">
+<td class="g">Catch-only</td>
+<td><strong>CMSY</strong></td>
+<td>Catch-only stock status</td>
+<td class="cv">Prior-driven; not suitable for validated advice.</td>
+<td class="sp rec">Use CMSY+ in JABBA3 for screening only.</td>
+</tr>
+<tr class="odd" data-g="Length-based" data-t="LBSPR, length indicators">
+<td class="g">Length-based</td>
+<td><strong>LBSPR, length indicators</strong></td>
+<td>Spawning potential ratio and length-based indicators</td>
+<td class="cv">Assume equilibrium and representative samples; sensitive to M/K and asymptotic length.</td>
+<td class="sp rec">Use FLicc, including its length-based indicators.</td>
+</tr>
+<tr class="even" data-g="Surveys" data-t="MEDITS, MEDIAS and Black Sea surveys">
+<td class="g">Surveys</td>
+<td><strong>MEDITS, MEDIAS and Black Sea surveys</strong></td>
+<td>Trawl and acoustic surveys for demersal and small pelagic stocks</td>
+<td class="cv">Coverage and timing differ between areas and years.</td>
+<td class="sp rec">Use survey indices in JABBA3 and SPiCT; trends with JARA.</td>
+</tr>
+</tbody>
+</table>
+
+<p class="note">Caveats are drafted from general stock assessment practice and need review by GFCM working groups. The toolbox tools are described on <a class="lnk" href="../methods/index.html">Assessment methods</a>.</p></div>
+<script>(function(){var s=document.getElementById("toolsel"),rows=[].slice.call(document.querySelectorAll("#tooltab tr[data-g]")),c=document.getElementById("toolcount");function go(){var v=s.value.split("|"),g=v[0]=="g"?v[1]:v[1],t=v[0]=="t"?v[2]:null;var n=0;rows.forEach(function(r){var on=r.getAttribute("data-g")==g;r.hidden=!on;r.classList.toggle("hl",on&&t!==null&&r.getAttribute("data-t")==t);if(on)n++});c.textContent=n+(n==1?" method":" methods")+" shown for "+g.toLowerCase()}s.addEventListener("change",go);go()})()</script><div class="band" id="data"><h2 class="anchored">Data situation</h2>
+<p class="sub">The Mediterranean and Black Sea have more assessed stocks than most regions, but data gaps remain for bycatch, small-scale fisheries and the southern and eastern shores.</p>
+<div class="feat"><div class="fh"><h4 class="anchored">Data sources</h4><p>Where stock and catch information comes from.</p></div><ul><li><b>Data Collection Reference Framework.</b> GFCM members report catch, effort, fleet and biological data through it.</li><li><b>Scientific surveys.</b> Bottom trawl surveys for demersal stocks and acoustic surveys for small pelagics support the indices used in assessments.</li><li><b>Small-scale fisheries data.</b> 19 GFCM contracting and cooperating parties had small-scale fisheries data systems in 2025, up from 8 in 2022.<sup class="cite"><a href="#g1">1</a></sup></li><li><b>Stock assessment forms and summary sheets.</b> Each validated assessment is documented in a standard form and, since 2024, the harmonized summary sheet.<sup class="cite"><a href="#g5">5</a></sup></li></ul></div>
+<div class="feat"><div class="fh"><h4 class="anchored">Gaps identified in SoMFi 2025</h4><p>Challenges that the report lists for fisheries.</p></div><ul><li><b>Discards.</b> Bottom trawl discards are often 20 to 40% of the catch.<sup class="cite"><a href="#g1">1</a></sup></li><li><b>Vulnerable species.</b> Bycatch hot spots for elasmobranchs and sea turtles in the central and eastern Mediterranean and the Adriatic; cetacean bycatch mainly in Black Sea small-scale fisheries; stronger observer coverage needed.<sup class="cite"><a href="#g1">1</a></sup></li><li><b>Compliance and fleet.</b> Low compliance with measures, an ageing workforce, unequal profitability and energy costs up 32% for industrial fleets.<sup class="cite"><a href="#g1">1</a>, <a href="#g2">2</a></sup></li><li><b>Depleted stocks.</b> Sardine stocks have long been overexploited and still show biomass depletion; European hake recovery varies between subregions.<sup class="cite"><a href="#g2">2</a></sup></li></ul></div></div><div class="band" id="cases"><h2 class="anchored">Case studies from the Mediterranean and Black Sea</h2>
+<p class="sub">Four stocks highlighted in SoMFi 2025, in the common case study format. Fields marked "To be added" are not stated in the sources reviewed so far.</p>
+<div class="cs">
+<div class="cb"><div class="ch" style="background:#2a6f97"><h4 class="anchored">Turbot, Black Sea</h4><small>Recovery under a multiannual management plan</small></div><dl><dt>Species</dt><dd>Turbot</dd><dt>How it was managed</dt><dd>GFCM multiannual management plan for Black Sea turbot</dd><dt>Tools used</dt><dd><span class="tbd">To be added</span></dd><dt>Result</dt><dd>Fishing mortality down 86% and biomass up 310% since 2013<sup class="cite"><a href="#g1">1</a>, <a href="#g2">2</a></sup></dd><dt>Key lesson</dt><dd><span class="tbd">To be added</span></dd><dt>Toolbox page</dt><dd><a class="lnk" href="../advice/index.html">Advice and MSE</a></dd></dl></div>
+<div class="cb"><div class="ch" style="background:#2a6f97"><h4 class="anchored">Common sole, Adriatic Sea</h4><small>Fast response to reduced fishing</small></div><dl><dt>Species</dt><dd>Common sole</dd><dt>How it was managed</dt><dd>GFCM management measures for the Adriatic</dd><dt>Tools used</dt><dd>Model ensemble (SOL17), reported as ratios to reference points<sup class="cite"><a href="#g5">5</a></sup></dd><dt>Result</dt><dd>Fishing mortality down 42% and biomass up 64% since 2019<sup class="cite"><a href="#g1">1</a>, <a href="#g2">2</a></sup></dd><dt>Key lesson</dt><dd><span class="tbd">To be added</span></dd><dt>Toolbox page</dt><dd><a class="lnk" href="../advice/flref.html">FLRef</a></dd></dl></div>
+<div class="cb"><div class="ch" style="background:#2a6f97"><h4 class="anchored">European hake, several subregions</h4><small>Key demersal stock with integrated assessments</small></div><dl><dt>Species</dt><dd>European hake</dd><dt>How it was managed</dt><dd>Multiannual management plans; partial fishing mortality by fleet informs effort allocation</dd><dt>Tools used</dt><dd>Stock Synthesis (GSAs 12–16, 17–18) and a4a (GSA 3)<sup class="cite"><a href="#g5">5</a>, <a href="#g6">6</a></sup></dd><dt>Result</dt><dd>Fishing mortality down 38% since 2015; modest biomass recovery, variable between subregions<sup class="cite"><a href="#g2">2</a></sup></dd><dt>Key lesson</dt><dd><span class="tbd">To be added</span></dd><dt>Toolbox page</dt><dd><a class="lnk" href="../methods/index.html">Assessment methods</a>; ss3diags2 for review</dd></dl></div>
+<div class="cb"><div class="ch" style="background:#2a6f97"><h4 class="anchored">Sardine, Mediterranean</h4><small>Long-term overexploitation of a small pelagic</small></div><dl><dt>Species</dt><dd>European sardine</dd><dt>How it was managed</dt><dd><span class="tbd">To be added</span></dd><dt>Tools used</dt><dd><span class="tbd">To be added</span></dd><dt>Result</dt><dd>Long overexploited, with continued biomass depletion<sup class="cite"><a href="#g2">2</a></sup></dd><dt>Key lesson</dt><dd><span class="tbd">To be added</span></dd><dt>Toolbox page</dt><dd><a class="lnk" href="../select/index.html">Method selector</a></dd></dl></div>
+</div></div><div class="band" id="training"><h2 class="anchored">Workshops and training</h2>
+
+<table class="tt wk caption-top table">
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="width: 56%">Workshop</th>
+<th data-quarto-table-cell-role="th" style="width: 22%">Date</th>
+<th data-quarto-table-cell-role="th">Materials</th>
+</tr>
+<tr class="even">
+<td><strong>GFCM working groups on stock assessment: testing the new summary sheet with FLRef</strong></td>
+<td>2024</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr odd">
+<td><strong>Placeholder: training on FLRef advice outputs for the summary sheet</strong></td>
+<td>To be scheduled</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr even">
+<td><strong>Placeholder: training on Stock Synthesis diagnostics with ss3diags2</strong></td>
+<td>To be scheduled</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+<tr class="phr odd">
+<td><strong>Placeholder: training on JABBA3 and FLicc for data-limited stocks</strong></td>
+<td>To be scheduled</td>
+<td><span class="lnk">Materials</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="band" id="contact"><div class="ctc"><div><h4 class="anchored">FAO supports its members</h4><p>Members with questions, ideas or feedback, or who would like to request training, a tool or help with a data gap, are welcome to reach out to FAO.</p></div><a href="../contributing.html">Contact FAO</a></div></div><div class="band" id="sources"><h2 class="anchored">Sources</h2><ol style="font-size:15px;line-height:1.6">
+<li id="g1">FAO. 2025. <i>The State of Mediterranean and Black Sea Fisheries 2025.</i> General Fisheries Commission for the Mediterranean. Rome. <a class="lnk" href="https://doi.org/10.4060/cd7701en" target="_blank">https://doi.org/10.4060/cd7701en</a></li>
+<li id="g2">GFCM. 2025. News release on SoMFi 2025, 28 November 2025. <a class="lnk" href="https://www.fao.org/gfcm/news/detail/en/c/1754956/" target="_blank">fao.org/gfcm</a></li>
+<li id="g3">GFCM. 2025. SoMFi 2025 highlights. <a class="lnk" href="https://www.fao.org/gfcm/publications/somfi/2025/highlights/en" target="_blank">fao.org/gfcm</a></li>
+<li id="g4">FAO State of Stocks Index (SoSI): final classification by tier and area, and SOFIA map table for Area 37.</li>
+<li id="g5">Winker, H. 2024. User guides for generating GFCM assessment advice output with FLRef: a4a, SPiCT and Stock Synthesis. GFCM working groups on stock assessment (unpublished working documents).</li>
+<li id="g6">GFCM. 2024. Model examples of the new summary sheets (European hake GSAs 12–16; round sardinella GSAs 26 and 27). Working document.</li></ol></div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const toggle = window.document.createElement('button');
+      toggle.type = "button";
+      toggle.setAttribute("role", "switch");
+      toggle.setAttribute("aria-checked", "false");
+      toggle.classList.add('top-right');
+      toggle.classList.add('quarto-color-scheme-toggle');
+      toggle.setAttribute("aria-label", "Toggle dark mode");
+      toggle.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      toggle.appendChild(i);
+      // Put the toggle in a landmark of its own, so that landmark navigation
+      // can reach it.
+      //
+      // The container is always a fresh direct child of body, and the toggle is
+      // never moved into page furniture that the theme or the author controls.
+      // The toggle is positioned against the page, so any ancestor that
+      // establishes a containing block captures it: a positioned element or a
+      // grid for position: absolute, and transform, filter, will-change or
+      // contain for position: fixed. A direct child of body has none of these
+      // to inherit, and the shift when one appears is silent and visual.
+      //
+      // ARIA says a document should have at most one banner, and axe reports a
+      // duplicate whether or not the banners carry distinct labels. So use a
+      // header when the page has no banner yet, and a named region otherwise.
+      //
+      // A header is a banner wherever it sits, unless it is inside sectioning
+      // content, so this cannot just look at the children of body: a custom
+      // page layout wraps the title block header in a plain div. An explicit
+      // role="banner" always counts.
+      const sectioning = 'article, aside, main, nav, section, [role="article"], [role="complementary"], [role="main"], [role="navigation"], [role="region"]';
+      const hasBanner = Array.from(
+        window.document.querySelectorAll('header:not([role]), [role="banner"]')
+      ).some(function(el) {
+        return el.hasAttribute("role") || el.closest(sectioning) === null;
+      });
+      const container = window.document.createElement(hasBanner ? "div" : "header");
+      if (hasBanner) {
+        container.setAttribute("role", "region");
+        container.setAttribute("aria-label", "Toggle dark mode");
+      }
+      container.classList.add('quarto-color-scheme-toggle-container');
+      container.appendChild(toggle);
+      window.document.body.appendChild(container);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/henning-winker\.github\.io\/nfifm-toolbox");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>NFIFM Toolbox · development version, not an official FAO product</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/edit/main/regions/gfcm.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/blob/main/regions/gfcm.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Henning-Winker/nfifm-toolbox/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Content CC BY 4.0 · Code MIT</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
